@@ -41,6 +41,7 @@ python scripts/build_flujo.py      # → Flujo_Caja_ETC88.xlsx (modelo: topes, f
 python scripts/build_excel.py      # → Equipo_ETC88.xlsx
 python scripts/build_guia.py       # → GUIA_ETC88.md (fuente de la Carpeta)
 python scripts/build_html.py       # → index.html (Tablero)
+python scripts/build_trazabilidad.py # → preparacion/TRAZABILIDAD.md (registro de fuentes)
 python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```

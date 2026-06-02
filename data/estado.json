@@ -83,7 +83,10 @@
     "reunion_coordinadores": { "valor": "jueves 4-jun (Corpus Christi, virtual)", "estado": "confirmado", "fuente": "coordinadores" },
     "convivencia":           { "valor": "22-ago · inicia con miniretiro / reflexión · día completo", "estado": "confirmado", "fuente": "director" },
     "ensayo_general":        { "valor": "23-ago · asistencia obligatoria", "estado": "confirmado", "fuente": "director" },
-    "fecha_limite_cotizar_transporte": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "El director pidió fijar una fecha límite para cotizar transporte, biblias y peces. Falta definirla." }
+    "inicio_recaudacion":    { "valor": "F3 · primera formación de julio (5-jul)", "estado": "confirmado", "fuente": "director", "nota": "La recaudación de cuotas inicia en la 1ra formación de julio. El miembro paga todo o por cuotas, a su decisión." },
+    "profondo1_fechas":      { "valor": "31-jul → 2-ago", "estado": "confirmado", "fuente": "calendario", "nota": "Rifa (Profondo #1); el neto entra a inicios de agosto." },
+    "fecha_limite_cotizar_transporte": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "El director pidió fijar una fecha límite para cotizar transporte, biblias y peces. Falta definirla." },
+    "asignacion_entradas":   { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después." }
   },
 
   "decisiones_confirmadas": [

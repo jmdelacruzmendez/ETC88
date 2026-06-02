@@ -115,14 +115,14 @@ row(ws, r, ('= TOTAL A CUBRIR (META)', tot_b + DEUDA, tot_m + DEUDA, '', ''), bo
 # =========================================================== 3. FLUJO ======
 # [ESCENARIO] timing de entradas y salidas por mes (jun→sep). Se ajusta con fechas reales.
 ws = wb.create_sheet('3·Flujo de caja')
-title(ws, 'FLUJO DE CAJA MENSUAL · arranca en –$23,600 (deuda) · [ESCENARIO] de fechas', SAFARI, 6)
-ws.cell(row=2, column=1, value='Objetivo: que el SALDO no se vuelva crítico antes de un pago grande (casa, transporte). Las fechas son supuestos a confirmar.').font = Font(italic=True, size=10)
+title(ws, 'FLUJO DE CAJA MENSUAL · arranca en –$23,600 · recaudación inicia F3 (5-jul) · [EN HOLD]', SAFARI, 6)
+ws.cell(row=2, column=1, value='Recaudación de cuotas inicia en la 1ra formación de julio (pago lump o por cuotas, a decisión del miembro). Profondo #1: 31-jul→2-ago. JUNIO sin ingresos: F1/F2 se frontean. Fechas [ESCENARIO] a confirmar.').font = Font(italic=True, size=10)
 meses = ['jun', 'jul', 'ago', 'sep']
 eq_mes = OPER * 500  # [PROPUESTA] $500/mes
 entradas = {
-    'Cuotas equipo ($500/mes) [PROPUESTA]':        {'jun': eq_mes, 'jul': eq_mes, 'ago': eq_mes, 'sep': eq_mes},
-    'Cuotas participantes [ESTIMADO]':              {'jul': round(CUOTAS_PART*0.3), 'ago': CUOTAS_PART - round(CUOTAS_PART*0.3)},
-    'Rifa neta (Profondo #1) [ESCENARIO]':          {'ago': 180000},
+    'Cuotas equipo ($500/mes desde F3, flexible) [PROPUESTA]': {'jul': eq_mes, 'ago': eq_mes, 'sep': eq_mes},
+    'Cuotas participantes (desde jul) [ESTIMADO]':  {'jul': round(CUOTAS_PART*0.3), 'ago': CUOTAS_PART - round(CUOTAS_PART*0.3)},
+    'Rifa neta (Profondo #1, 31-jul→2-ago) [ESCENARIO]': {'ago': 180000},
     'Venta de comida (Profondo #2) [ESCENARIO]':    {'sep': 60000},
     'Donaciones en efectivo [ESCENARIO]':           {'jul': 25000, 'ago': 40000, 'sep': 0},
 }
