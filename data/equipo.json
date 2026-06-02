@@ -17,7 +17,7 @@
       "acreedor": "Consejo Eteciano SPM"
     },
     "cuota_participante": 3000,
-    "meta_recaudacion_total": 606881,
+    "meta_recaudacion_total": 583281,
     "meta_recaudacion_estado": "confirmado",
     "cuota_equipo_propuesta": {
       "total_rango": "1,500 – 2,000",
@@ -142,10 +142,10 @@
         "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
       },
       "meta_recaudacion_total": {
-        "valor": 606881,
+        "valor": 583281,
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + convivencia + ensayo con almuerzo + bizcocho post-ETC + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
+        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
       }
     },
     "recaudacion": {

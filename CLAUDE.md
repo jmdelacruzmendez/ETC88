@@ -36,7 +36,8 @@ escapado**. Las reglas de abajo evitan que vuelva a pasar.
 ```
 python scripts/build_data.py       # lee xlsx + estado.json → data/equipo.json + /tmp
 python scripts/build_docx.py       # → Documento_Asesores_ETC88.docx + Carpeta_F1_ETC88.docx
-python scripts/build_finanzas.py   # → Finanzas_ETC88.xlsx
+python scripts/build_finanzas.py   # → Finanzas_ETC88.xlsx (+ /tmp/etc88_costos.json)
+python scripts/build_flujo.py      # → Flujo_Caja_ETC88.xlsx (modelo: topes, flujo, optimización)
 python scripts/build_excel.py      # → Equipo_ETC88.xlsx
 python scripts/build_guia.py       # → GUIA_ETC88.md (fuente de la Carpeta)
 python scripts/build_html.py       # → index.html (Tablero)

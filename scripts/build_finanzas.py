@@ -106,16 +106,15 @@ ws.cell(row=r, column=1, value='BRECHA Y RECAUDACIÓN').font = Font(bold=True, s
 r += 1
 header(ws, r, [('Concepto', 36), ('Monto', 14), ('Notas', 50)], TIERRA)
 r += 1
-COSTO_BASE = tot_base                       # computado (con exención)
-TOTAL_CUBRIR = COSTO_BASE + DEUDA           # = META de recaudación
+COSTO_BASE = tot_base                       # computado (con exención); INCLUYE la casa completa
+TOTAL_CUBRIR = COSTO_BASE                    # = META. La deuda NO se suma: es parte de la casa (10% ya pagado).
 cuota_eq_low, cuota_eq_high = OPERATIVOS * CUOTA_LOW, OPERATIVOS * CUOTA_HIGH
 cuota_eq_mid = (cuota_eq_low + cuota_eq_high) // 2
 cuotas_part = PARTICIPANTES * CUOTA_PART
 brecha_fundraise = TOTAL_CUBRIR - cuotas_part - cuota_eq_mid  # lo que deben cubrir rifa+comida+donaciones
 brecha = [
- ('(+) Costo estimado base (con exención)', COSTO_BASE, 'Estimado · suma de arriba; precios a validar en F1'),
- ('(+) Deuda inicial al Consejo (10% casa)', DEUDA, 'Juan Manuel pagó 5-mar; ya devuelto. Arrancamos en NEGATIVO.'),
- ('(=) Total a cubrir = META de recaudación', TOTAL_CUBRIR, 'La meta NO es un número fijo: es este costo total.'),
+ ('(=) Costo total a cubrir = META de recaudación', TOTAL_CUBRIR, 'Incluye la casa completa; precios ESTIMADOS a validar en F1. La meta NO es fija: es el costo.'),
+ (f'    · de la casa (${casa_con:,}), $23,600 se deben al Consejo', None, 'Reserva (10%) ya pagada por JM; es la PRIMERA salida. Arrancamos en negativo (NO se suma: ya está dentro de la casa).'),
  (f'(-) Cuotas participantes (~{PARTICIPANTES} × ${CUOTA_PART:,})', cuotas_part, f'Para completar {PERSONAS} en la casa · confirmado $3,000/participante'),
  (f'(-) Cuotas equipo ({OPERATIVOS} × ${CUOTA_LOW:,}–{CUOTA_HIGH:,})', cuota_eq_mid, P + f'${CUOTA_MES}/mes · SIN CERRAR · rango ${cuota_eq_low:,}–${cuota_eq_high:,}'),
  ('(=) BRECHA: rifa + venta de comida + donaciones', brecha_fundraise, 'Montos VARIABLES (lo que se recaude). Rifa = primera actividad. Donaciones = responsabilidad de Directores.'),
@@ -416,6 +415,18 @@ for i, (txt, isheader) in enumerate(notas, start=1):
         c.font = Font(bold=True, size=13, color=TIERRA)
     else:
         c.font = Font(size=11)
+
+# Exporta el resumen de costos para que build_flujo.py use EXACTAMENTE estas cifras (trazabilidad).
+json.dump({
+    'items': [{'concepto': c[0], 'min': c[1], 'base': c[2], 'max': c[3], 'nota': c[4]}
+              for c in costo_items],
+    'total_min': tot_min, 'total_base': tot_base, 'total_max': tot_max,
+    'total_cubrir': TOTAL_CUBRIR, 'deuda': DEUDA,
+    'personas': PERSONAS, 'participantes': PARTICIPANTES, 'operativos': OPERATIVOS,
+    'cuota_part': CUOTA_PART, 'cuotas_part_total': cuotas_part,
+    'cuota_eq_low': cuota_eq_low, 'cuota_eq_mid': cuota_eq_mid, 'cuota_eq_high': cuota_eq_high,
+    'brecha_fundraise': brecha_fundraise, 'casa_con': casa_con, 'casa_sin': casa_sin,
+}, open('/tmp/etc88_costos.json', 'w'), ensure_ascii=False, indent=2)
 
 # Save
 wb.save('/home/user/ETC88/Finanzas_ETC88.xlsx')

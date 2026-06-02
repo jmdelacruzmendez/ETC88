@@ -50,7 +50,7 @@
     },
     "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
     "participantes_objetivo":        { "valor": 53, "estado": "propuesta", "fuente": "derivado (100 − 47 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
-    "meta_recaudacion_total":        { "valor": 606881, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + convivencia + ensayo con almuerzo + bizcocho post-ETC + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
+    "meta_recaudacion_total":        { "valor": 583281, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
   "recaudacion": {
