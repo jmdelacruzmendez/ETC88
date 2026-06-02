@@ -1,7 +1,16 @@
 # Profondo #1 — RIFA · plan integral
-### Equipo: Recaudación y Donaciones + Profondo · Meta: RD$ 100,000 neto
+### Equipo: Recaudación y Donaciones + Profondo
 
 > La rifa fue la **recomendación #1 del equipo** (23 menciones en el formulario). Este es el plan integral: distribución, alcance, recaudación, costo-beneficio, buenas prácticas, benchmarking y roadmap.
+
+## Meta — AGRESIVA (revisada)
+El presupuesto real subirá al itemizar los materiales faltantes (rosarios, antifaces, banderín…), así que la meta sube:
+- **Rifa (Profondo #1): RD$ 130,000 neto** (antes 100K) — escenario agresivo.
+- **+ Donaciones a empresas/particulares: RD$ 40–60K** → **responsabilidad de los Directores** (delegable a Recaudación, según el presupuesto).
+- **+ Venta de comida / garaje (Profondo #2): RD$ 50K** (el ETC 79 levantó ~$50K solo en venta de garaje).
+- **Objetivo combinado de recaudación: RD$ 220–240K** (vs ~325K de brecha → el resto con cuotas y exención).
+
+> Benchmark ETC 79: donaciones **$86K** + venta de garaje **$50K** + venta de comida. Es alcanzable ser más agresivos.
 
 ---
 
