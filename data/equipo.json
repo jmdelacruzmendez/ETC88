@@ -2437,7 +2437,7 @@
     },
     {
       "fecha": "2026-06-04",
-      "titulo": "Reunión de Coordinadores — jue 4-jun (Corpus Christi, virtual) o dom 7-jun (pre-misa)",
+      "titulo": "Reunión de Coordinadores (jueves 4-jun · Corpus Christi · virtual)",
       "tipo": "coordinacion"
     },
     {
@@ -2520,6 +2520,12 @@
       "titulo": "ETC 88 (4 → 6 sep)",
       "tipo": "retiro",
       "fin": "2026-09-06"
+    },
+    {
+      "fecha": "2026-09-09",
+      "titulo": "Bienvenida post-ETC a los nuevos (baile + bizcocho)",
+      "tipo": "post_retiro",
+      "sin_formacion": true
     }
   ],
   "banderas": [

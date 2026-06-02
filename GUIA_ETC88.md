@@ -48,7 +48,7 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 | Fecha | Actividad |
 |---|---|
 | 7-jun | Misa Eteciana *(sin formación)* |
-| 4-jun | Reunión de Coordinadores — jue 4-jun (Corpus Christi, virtual) o dom 7-jun (pre-misa) |
+| 4-jun | Reunión de Coordinadores (jueves 4-jun · Corpus Christi · virtual) |
 | 14-jun | F1 — Primera Formación (presupuesto, sentido, temática) |
 | 21-jun | Clausura ETC 87 — La Vega *(sin formación)* |
 | 28-jun | F2 — Segunda Formación |
@@ -64,6 +64,7 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 | 30-ago | Reunión final · deadline pagos equipo + padrinos |
 | 3-sep | Avanzada del Equipo de Cocina |
 | 4-sep | ETC 88 (4 → 6 sep) |
+| 9-sep | Bienvenida post-ETC a los nuevos (baile + bizcocho) *(sin formación)* |
 
 > **Retiro: 4–6 septiembre.** Asistencia obligatoria al **Ensayo General (23-ago)**. Máximo **3 ausencias justificadas** en las reuniones programadas.
 
