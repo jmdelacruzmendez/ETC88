@@ -67,7 +67,7 @@
 | Recordar la raíz | 10 min | Co-Dir vuelve al hilo principal |
 | Cuerpo del tema | 25 min | Motivaciones puras vs mezcladas · diferencias en la tripulación |
 | **Dinámica 1: "Compañero de cubierta"** | 30 min | En parejas (mezcladas comunidades/áreas): cada uno cuenta motivación profunda · el otro le devuelve qué escuchó · sin juicio |
-| **Dinámica 2: "Sanar el barco"** | 25 min | Momento de reconciliación · si hay fricciones pasadas, se ponen ante el grupo y se sanan (ojo con Luisa/Franklin/Fabelle/JM — banderas levantadas) |
+| **Dinámica 2: "Sanar el barco"** | 25 min | Momento de reconciliación · si hay fricciones pasadas, se ponen ante el grupo y se sanan (ojo con Luisa/Franklin/Fabelly/JM — banderas levantadas) |
 | **Operativo** | 20 min | Presupuesto v11 consolidado · arranca cobro · adaptación Guía/Horario 88 |
 | Avisos + oración | 10 min | |
 

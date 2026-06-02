@@ -10,7 +10,7 @@ Eres mi director de arte. Vamos a construir desde cero la **identidad visual del
 
 ## Anclas CONFIRMADas (no las cambies, son fijas)
 - **Lema eteciano:** "Siempre amigos" — Juan 15:15. Es la firma de la asociación.
-- **Público:** ~47 servidores (equipo) + ~48 participantes; jóvenes y adultos jóvenes; contexto católico.
+- **Público:** ~47 servidores (equipo) + el resto hasta completar 100 en la casa (~53 participantes); jóvenes y adultos jóvenes; contexto católico.
 - **Espíritu:** una sola tripulación con funciones distintas · amistad · servicio y humildad (el Lavatorio de los Pies, Juan 13, es un momento fuerte) · sobriedad propia de un retiro.
 - **Piezas a vestir:** portada e interior de la **Carpeta/Guía** (folleto impreso) · **Banderín** (estandarte de tela) · **carnets/gafetes** · portada del **cancionero** · plantillas de **anuncio para WhatsApp/redes** · motivo de la entrega de los **peces** (clausura).
 - **Producción real:** debe ser **imprimible y barato** (folleto a 1–2 tintas si hace falta, banner de tela), **legible** y con **buen contraste**.

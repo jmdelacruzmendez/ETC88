@@ -10,7 +10,7 @@
 **Recomendaciones:** que coords miren las **alergias/condiciones** antes de cerrar el menú; bendiciones breves ligadas al tema; Lavatorio en la cena del sábado.
 **Oportunidades:** presupuesto comparativo ya hecho (ahorro potencial RD$64K); donaciones en especie (arroz, habichuelas, aceite); compras por mayor (MERCADOM/El Suplidor).
 **Brechas:** equipo muy verde (13/18 con 0-1 servicio) y predominio femenino → reforzar veteranía/varón (cupo por decidir); 3 sin formulario (Olanlly + las que se confirmen).
-**Integraciones:** mezclar Belén (ETC 85) con Betania; emparejar rookies con veteranos en estaciones.
+**Integraciones:** mezclar Belén (ETC 85) con Betania; emparejar a los nuevos con quienes ya han servido en estaciones.
 **Salud crítica a respetar:** mariscos (4), piña (3), huevo, canela, gastritis severa (Candy), diabetes (Luisa), presión (María del Carmen).
 
 | Hito de Cocina | Fecha |
@@ -27,7 +27,7 @@
 **Recomendaciones:** preparar testimonios temprano; libretas/decoración del PG; aprenderse el horario; palanca a cada participante.
 **Oportunidades:** veteranía alta (solo 2 rookies) → buenos mentores; Camila ya fue directora.
 **Brechas:** cuidar **lazos/parejas** al armar PG (que no caigan hermanos/pareja de un miembro en su grupo — Directores fn. 9).
-**Integraciones:** 7 parejas color-coded equilibrando veterano + nuevo; cruzar comunidades.
+**Integraciones:** 7 parejas color-coded equilibrando experiencia previa + nuevo; cruzar comunidades.
 
 | Hito de Guías | Fecha |
 |---|---|
@@ -42,7 +42,7 @@
 
 ## MÚSICA (6) — Coord. José Tusen
 **Recomendaciones:** cancionero de los 3 días; **oración Sal y Luz "Bayuyo"** (antifaces); música al despertar; cantos de misa de clausura impresos; oración a María del sábado.
-**Oportunidades:** equipo veterano y cohesionado (sirvieron juntos en 85).
+**Oportunidades:** equipo experimentado y cohesionado (sirvieron juntos en 85).
 **Brechas:** equipo pequeño → blindar repertorio y sonido temprano; 1 sin formulario (Daylin).
 **Integraciones:** apoyo a todas las áreas desde el jueves previo (como en 85).
 

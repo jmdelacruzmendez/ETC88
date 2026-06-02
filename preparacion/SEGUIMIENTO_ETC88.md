@@ -22,7 +22,7 @@
 | Fecha | Decisión | Tomada por |
 |---|---|---|
 | 2-jun | **Constelación** quitada del branding | Co-Dir |
-| 2-jun | **Leober Carrión Soriano** (typo "Soriank") | Usuario |
+| 2-jun | **Leober Carrión Soriano** (typo "Soriano") | Usuario |
 | 2-jun | **Roselyn fuera** · vacante para varón (candidato Randolph) | Co-Dir |
 | 2-jun | Backups guías: **Rodolfo · Scarlett · Kamila Todd** | Co-Dir |
 | 2-jun | **Recaudación y Donaciones = 1 equipo** | Co-Dir |
@@ -36,7 +36,7 @@
 | 2-jun | **Branding se reconstruye desde 0** desde la raíz espiritual | Co-Dir |
 | 2-jun | Temática confirmada: **expedición / búsqueda de tesoro / aventura** | Co-Dir |
 | 2-jun | **Frank = asesor + lleva el Banderín** | Co-Dir |
-| 2-jun | **Fabelle = primer ETC** | Co-Dir |
+| 2-jun | **Fabelly = primer ETC** | Co-Dir |
 | 2-jun | **Cuota equipo y participante = RD$3,000** | Doc Asesores v10 |
 | 2-jun | **Casa tiene sonido** → música no renta | Co-Dir |
 

@@ -3,12 +3,12 @@
 
 > **¿Por qué los guías necesitan su propia guía?** Porque son quienes están **cara a cara** con el participante en el pequeño grupo (PG). Aquí está **qué hacen, cuándo, con qué materiales**, y **por qué** se distribuyen así los testimonios, las dinámicas y el acompañamiento. Sé descriptivo: esto es para que cualquiera lo entienda.
 >
-> **Pequeño Grupo (PG):** es el grupo de 6–7 participantes que cada pareja de guías acompaña durante todo el retiro. Cada PG tiene su color, su espacio y sus dos guías fijos — no se mezclan.
+> **Pequeño Grupo (PG):** es el grupo de participantes que cada pareja de guías acompaña durante todo el retiro. **Son siempre 7 parejas de guías (regla fija: 14 guías).** Cada PG tiene su color, su espacio y sus dos guías fijos — no se mezclan. Los grupos pueden quedar de **distinto tamaño** (uno con más participantes que otro), pero el número de parejas no cambia.
 
 ---
 
 ## 1. El rol del guía (en 1 párrafo)
-El guía **no enseña ni predica**: acompaña. Su trabajo es crear confianza, escuchar, y guiar al participante a su propio encuentro con Cristo. Trabajan **en pareja** (2 guías por PG de 6–7 participantes), combinando estilos y procurando que en cada pareja haya al menos alguien que ya haya servido antes.
+El guía **no enseña ni predica**: acompaña. Su trabajo es crear confianza, escuchar, y guiar al participante a su propio encuentro con Cristo. Trabajan **en pareja** (2 guías por PG). **Son 7 parejas — es una regla: no hay más ni menos.** Combinan estilos y procuran que en cada pareja haya al menos alguien que ya haya servido antes.
 
 ## 2. Por qué se distribuyen así (la lógica)
 - **Testimonios:** se reparten entre las parejas según el tema y la historia de vida de cada guía. **Quienes ya han dado testimonio antes pueden compartir primero**, para que sea más fluido entender el formato; los demás aprenden observando. No todos dan testimonio: se eligen los que encarnan con más claridad cada tema.
@@ -16,6 +16,7 @@ El guía **no enseña ni predica**: acompaña. Su trabajo es crear confianza, es
 - **Acompañamiento en el PG:** la pareja sigue a SUS participantes todo el fin de semana (no se mezclan), para crear vínculo y confidencialidad. Cada guía escribe **palanca a cada uno** de su grupo.
 
 ## 3. Las parejas (color-coded)
+- **Son 7 parejas — regla fija** (14 guías). El número de parejas **no cambia**; lo que varía es cuántos participantes lleva cada grupo (uno puede tener más que otro).
 - Se forman en **F1** y eligen un **color** (identifica al PG todo el retiro).
 - Equilibrio: experiencia previa + comunidad (mezclar Belén/Betania) + estilos.
 - La **pareja debe coordinarse de antemano y ensayar entre ellos**: que se note la fluidez al conducir el PG.

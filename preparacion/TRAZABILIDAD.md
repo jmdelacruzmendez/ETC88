@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 26 confirmados · 7 propuestas · 3 pendientes (en estado.json).
+**Resumen:** 27 confirmados · 7 propuestas · 3 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 47 · vacantes 1 · backups 3.
@@ -17,6 +17,7 @@
 | `retiro.fechas` | 4–6 de septiembre de 2026 | director |  |
 | `retiro.lugar` | Casa de Retiro La Ceiba del Salado, Higüey | director |  |
 | `retiro.co_direccion` | ["Juan Manuel de la Cruz", "Jean Carlo de la Cruz"] | director |  |
+| `reglas.parejas_guias` | 7 | director | REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo … |
 | `finanzas.casa_por_persona_sin_exencion` | 2300 | director |  |
 | `finanzas.casa_por_persona_con_exencion` | 2000 | director | Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona. |
 | `finanzas.casa_incluye` | gas y limpieza | director |  |

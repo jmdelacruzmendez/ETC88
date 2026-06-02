@@ -4,7 +4,7 @@
 ### Corte: 2-jun-2026 (v6)
 
 ## A. DECISIONES tomadas (consolidadas)
-1. **Universo del equipo:** 21 cocina · 14 guías · 6 música · 2 directores · 3 asesores del retiro · 2 espirituales · 2 SD · 1–2 La Vega · + auxiliares. **Ya no se usa "Constelación".**
+1. **Universo del equipo:** 20 cocina + 1 vacante · 14 guías · 6 música · 2 directores · 3 asesores del retiro · 2 espirituales · 2 SD · 1 La Vega (Leticia) · + auxiliares. **Ya no se usa "Constelación".**
 2. **Branding se reconstruye desde 0** partiendo de la **raíz espiritual** (por definir esta semana) → **temática narrativa** (expedición / búsqueda de tesoro / aventura, confirmada) → **branding visual** (en construcción).
 3. **Tema espiritual = por construir esta semana**, con: diagnóstico del formulario + **prioridad de los directores** (que sale de los formularios) + Sor Angelina y Padre Paul involucrados.
 4. **Frank** = asesor del retiro **+ lleva el Banderín**. **Espirituales = Paul + Sor Angelina.**
@@ -12,8 +12,8 @@
 6. **Backups de guías:** Rodolfo Telémaco · Scarlett Nivar · Kamila Todd.
 7. **Recaudación y Donaciones = un solo equipo.** Profondo = equipo. **Guagua = tarea operativa** (no equipo auxiliar).
 8. **Daylin + Olanlly** = llamadas confirmadas (sin formulario aún). **Pamela** por confirmar.
-9. **Fabelle = primer ETC** (0 servidos). **Camila y Darianny = veteranas.**
-10. **Leober** → apellido **Soriano** (era typo "Soriank").
+9. **Fabelly = primer ETC** (0 servidos). **Camila y Darianny = veteranas.**
+10. **Leober** → apellido **Soriano** (era typo "Soriano").
 11. **Reunión de coordinadores:** jue **4-jun** (virtual) o dom **7-jun** (pre-misa), con pre-lectura 48 h.
 12. **Convivencia (22-ago)** inicia con **miniretiro / reflexión.**
 13. **Presupuesto vigente = Doc de Asesores v10** (cuota RD$3,000). El xlsx de febrero (2,500/1,500) quedó obsoleto.
