@@ -50,7 +50,7 @@
     },
     "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
     "participantes_objetivo":        { "valor": 53, "estado": "propuesta", "fuente": "derivado (100 − 47 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
-    "meta_recaudacion_total":        { "valor": 575881, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
+    "meta_recaudacion_total":        { "valor": 606881, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + convivencia + ensayo con almuerzo + bizcocho post-ETC + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
   "recaudacion": {
@@ -74,7 +74,7 @@
   ],
 
   "asesores_externos": {
-    "cocina":          { "valor": ["Mary \"Peta\" Morales", "Johanny García"], "estado": "confirmado", "fuente": "director" },
+    "cocina":          { "valor": ["Mary \"Petra\" Morales", "Johanny García"], "estado": "confirmado", "fuente": "director" },
     "comunidad_sd":    { "valor": ["Marleny", "Sandrita"], "estado": "confirmado", "fuente": "director", "nota": "2 representantes (asesores) de la comunidad de Santo Domingo." },
     "comunidad_la_vega": { "valor": ["Leticia González"], "estado": "confirmado", "fuente": "director", "nota": "1 representante (asesor): Leticia González." }
   },
@@ -99,7 +99,7 @@
     "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
     "Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).",
     "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
-    "Asesoras de cocina: Mary \"Peta\" Morales y Johanny García.",
+    "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
     "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
     "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
     "Piso de personas: completar 100 en la casa de retiro.",

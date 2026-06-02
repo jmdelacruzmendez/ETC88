@@ -9,7 +9,7 @@
 **La cocina está en función del ETC, no el ETC en función de la cocina.** Sencillez, humildad y servicio. Los motivos y comidas no compiten con el retiro: lo sostienen.
 
 ## 2. Estructura
-- **Coords:** Paloma + Jhonnito. **Asesoras:** Mary "Peta" Morales + Johanny García.
+- **Coords:** Paloma + Jhonnito. **Asesoras:** Mary "Petra" Morales + Johanny García.
 - **Correcaminos:** rol vehicular (compras/diligencias durante el retiro) — se identifica después de cerrar el menú.
 - Dormitorio de cocina **separado** del resto (se recomienda).
 

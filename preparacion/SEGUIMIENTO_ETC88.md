@@ -28,7 +28,7 @@
 | 2-jun | **Recaudación y Donaciones = 1 equipo** | Co-Dir |
 | 2-jun | **Guagua = equipo de transporte** (no tarea) | Co-Dir |
 | 2-jun | Equipo **Intersección (espiritual)** = nuevo auxiliar | Co-Dir |
-| 2-jun | **Peta + Johanny** confirmadas (asesoras cocina) | Co-Dir |
+| 2-jun | **Petra + Johanny** confirmadas (asesoras cocina) | Co-Dir |
 | 2-jun | **Paul + Sor = transversales** (todo el proceso) | Co-Dir |
 | 2-jun | **Ricaira / Mirna / Fabianlly / Kirina NO están** | Co-Dir |
 | 2-jun | **Reunión coords = jue 4-jun virtual** (Corpus) | Coords |

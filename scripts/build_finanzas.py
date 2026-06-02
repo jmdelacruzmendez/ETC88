@@ -82,7 +82,10 @@ costo_items = [
  ('Materiales y Litúrgico (itemizado)', 80000, 88500, 95000, 'Peces + Biblias + Banderín + Rosarios + Cofre palancas + Vino + Ofrenda confesores'),
  ('Guías · Materiales del PG (libretas, sobres, alambre…)', 14000, 17000, 20000, 'Libretas para participantes EN ESTE rubro'),
  ('Música · Impresión cancionero + cables/respaldo', 3000, 4500, 6000, 'La casa tiene sonido; solo respaldo'),
- ('Formaciones (5 sesiones · refrigerio + local)', 13000, 16315, 20000, ''),
+ ('Formaciones F1–F5 (5 sesiones · refrigerio + local)', 13000, 16315, 20000, ''),
+ ('Convivencia del equipo (22-ago · día completo)', 8000, 12000, 18000, 'Miniretiro; confirmar si incluye almuerzo del equipo y local'),
+ ('Ensayo General (23-ago · INCLUYE el almuerzo del equipo)', 12000, 16000, 20000, 'Almuerzo ~52 personas + refrigerio + local'),
+ ('Bienvenida post-ETC (9-sep · bizcocho)', 2000, 3000, 4500, 'Bizcocho de bienvenida de los nuevos (1ra reunión post-retiro)'),
  ('Camisetas del equipo (~56 × est.)', 19600, 22400, 28000, 'Tallas PARCIALES (ver pestaña Camisetas); faltan invitados pendientes + Paul, Frank y la Sor. Mockup tras el Design System.'),
  ('Avanzada jueves 3-sep (porción casa + 3 comidas del equipo que adelanta)', 15000, 20000, 24000, 'CONFIRMAR con la casa la tarifa de noche/día extra; depende de cuántos adelantan (cocina). Desayuno + almuerzo + cena de ese día.'),
  ('Imprevistos 5%', 22000, 23900, 25000, ''),
@@ -291,9 +294,10 @@ form = [
  ('F4 · Conociendo el terreno', '19-jul', 1500, 0, 1500, 3000),
  ('F5 · Listos para zarpar', '16-ago', 2000, 0, 2000, 4000),
  ('Reunión coords (jue 4-jun virtual)', '4-jun', 0, 0, 0, 0),
- ('Convivencia (miniretiro)', '22-ago', 3000, 2000, 1500, 6500),
- ('Ensayo General', '23-ago', 2000, 0, 1000, 3000),
+ ('Convivencia (miniretiro · día completo)', '22-ago', 6000, 2000, 4000, 12000),
+ ('Ensayo General (incluye almuerzo del equipo)', '23-ago', 15000, 0, 1000, 16000),
  ('Reunión final', '30-ago', 1500, 0, 500, 2000),
+ ('Bienvenida post-ETC (bizcocho)', '9-sep', 3000, 0, 0, 3000),
 ]
 r = 4
 total = 0

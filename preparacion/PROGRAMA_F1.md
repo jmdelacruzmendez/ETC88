@@ -42,7 +42,7 @@
 #### COCINA
 | Paso | Quién | Contenido |
 |---|---|---|
-| 1 | **Coords (Paloma + Jhonnito) se presentan** | + asesoras Peta + Johanny · **presentación del equipo de cocina** al resto de la tripulación |
+| 1 | **Coords (Paloma + Jhonnito) se presentan** | + asesoras Petra + Johanny · **presentación del equipo de cocina** al resto de la tripulación |
 | 2 | Coords | **Fecha y disponibilidad de reuniones** del equipo de cocina |
 | 3 | Equipo | **Construyen / revisan el menú** (con el insight de alergias del tablero: mariscos, piña, gastritis, diabetes, presión) |
 | 4 | Coords | **Temáticas / motivos** y **ambientación** de la **cocina y del comedor** ligados a la expedición |

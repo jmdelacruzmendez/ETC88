@@ -29,7 +29,7 @@
 ## C. PENDIENTES / puntuales (con dueño)
 **🔴 Bloqueantes (esta semana):**
 - Definir **tema espiritual** (raíz) — Co-Dir + Sor/Paul.
-- **Confirmar asesoras de cocina** (Peta + Johanny): en tu enumeración de hoy no aparecieron — ¿siguen?
+- **Confirmar asesoras de cocina** (Petra + Johanny): en tu enumeración de hoy no aparecieron — ¿siguen?
 - **La Vega: 1 o 2** asesores (y quién el 2º).
 - Asignar **6 roles vacantes:** Financiero, RRSS, Salud, Materiales, Transporte, Foto/Video.
 

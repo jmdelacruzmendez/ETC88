@@ -37,7 +37,7 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 > José Ángel Tusen Russo · Daylin · Dorian Elina Rodriguez Belliard · Ismarie Sthepanie Constanzo Ramos · Leober Carrion Soriano · Mary Carmen Ramírez Vásquez
 
 **Asesores Espirituales (transversales):** Padre Paul Ramírez · Sor Angelina Lebrón
-**Asesoras de Cocina:** Johanny García · Mary "Peta" Morales
+**Asesoras de Cocina:** Johanny García · Mary "Petra" Morales
 **Asesores de Comunidad:** Leticia González · Marleny · Sandrita
 
 **Equipos auxiliares:** Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)

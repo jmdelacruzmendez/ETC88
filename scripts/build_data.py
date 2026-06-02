@@ -246,7 +246,7 @@ PLACEHOLDERS_TRANSVERSAL = [
 ]
 # Asesores ampliados (en el retiro pero NO operativos en formación) — confirmados 2-jun
 PLACEHOLDERS_NO_OP = [
-    ('Mary "Peta" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
+    ('Mary "Petra" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Johanny García', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Sandrita', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
     ('Marleny', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),

@@ -54,7 +54,7 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 ### Bloque 1 · Equipo cerrado + punto de partida financiero (8 min · JM + JC)
 **Quién es quién hoy (números reales):**
 - 2 directores · 3 asesores del retiro (Laura, Tomás, Frank — Frank además lleva el **Banderín**) · **14 guías** · **20 cocina + 1 vacante** (varón, candidato Randolph) · 6 música.
-- Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Peta" + Johanny**. Asesores de comunidad: **Marleny + Sandrita (Santo Domingo) · Leticia González (La Vega)** — confirmados.
+- Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Petra" + Johanny**. Asesores de comunidad: **Marleny + Sandrita (Santo Domingo) · Leticia González (La Vega)** — confirmados.
 - **Piso de personas: completar 100 en la casa de retiro** (≈47 operativos + ~53 participantes).
 - Backups de guías (**no son parte del equipo per se**): Rodolfo, Scarlett, Kamila.
 - Equipos auxiliares (existen, se asignan responsables antes de F1): **Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)**.

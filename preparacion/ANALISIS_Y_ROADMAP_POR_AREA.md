@@ -6,7 +6,7 @@
 
 ---
 
-## COCINA (21) — Coords. Paloma + Jhonnito · Asesoras: Peta + Johanny
+## COCINA (21) — Coords. Paloma + Jhonnito · Asesoras: Petra + Johanny
 **Recomendaciones:** que coords miren las **alergias/condiciones** antes de cerrar el menú; bendiciones breves ligadas al tema; Lavatorio en la cena del sábado.
 **Oportunidades:** presupuesto comparativo ya hecho (ahorro potencial RD$64K); donaciones en especie (arroz, habichuelas, aceite); compras por mayor (MERCADOM/El Suplidor).
 **Brechas:** equipo muy verde (13/18 con 0-1 servicio) y predominio femenino → reforzar veteranía/varón (cupo por decidir); 3 sin formulario (Olanlly + las que se confirmen).

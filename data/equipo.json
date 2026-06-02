@@ -17,7 +17,7 @@
       "acreedor": "Consejo Eteciano SPM"
     },
     "cuota_participante": 3000,
-    "meta_recaudacion_total": 575881,
+    "meta_recaudacion_total": 606881,
     "meta_recaudacion_estado": "confirmado",
     "cuota_equipo_propuesta": {
       "total_rango": "1,500 – 2,000",
@@ -142,10 +142,10 @@
         "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
       },
       "meta_recaudacion_total": {
-        "valor": 575881,
+        "valor": 606881,
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
+        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + convivencia + ensayo con almuerzo + bizcocho post-ETC + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
       }
     },
     "recaudacion": {
@@ -243,7 +243,7 @@
     "asesores_externos": {
       "cocina": {
         "valor": [
-          "Mary \"Peta\" Morales",
+          "Mary \"Petra\" Morales",
           "Johanny García"
         ],
         "estado": "confirmado",
@@ -303,7 +303,7 @@
       "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
       "Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).",
       "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
-      "Asesoras de cocina: Mary \"Peta\" Morales y Johanny García.",
+      "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
       "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
       "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
       "Piso de personas: completar 100 en la casa de retiro.",
@@ -2130,8 +2130,8 @@
       "transversal": false
     },
     {
-      "id": "mary-peta-morales",
-      "nombre": "Mary \"Peta\" Morales",
+      "id": "mary-petra-morales",
+      "nombre": "Mary \"Petra\" Morales",
       "sexo": "F",
       "edad": null,
       "cumple_mes": null,
