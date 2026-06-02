@@ -16,10 +16,12 @@
 |---|---|---|---|
 | Oración inicial | 5 | Paul/Sor | Unción de inicio del proceso |
 | **1. Presentación de Directores** | 10 | JC + JM | Quiénes son, cómo dirigirán, el corazón del 88 |
-| **2. Presentación de la TEMÁTICA** | 15 | JC + JM | Raíz espiritual + lema + cita + la metáfora (expedición/búsqueda de tesoro) · *"No fuimos a buscarlo: Él nos esperaba"* |
+| **2. Presentación de la TEMÁTICA** | 15 | JC + JM | Raíz espiritual + lema + cita + la metáfora **[PROPUESTA]** (expedición/búsqueda de tesoro) · lema **[PROPUESTA]** *"No fuimos a buscarlo: Él nos esperaba"* |
 | **3. Entrega de la CARPETA (Guía ETC 88)** | 10 | Co-Dir | Se reparte la Guía · recorrido rápido: equipo, calendario, reglas, responsabilidades |
 | **4. Reglas como equipo + responsabilidades generales** | 15 | Laura + Tomás | Las reglas nuestras · máx. 3 ausencias · Ensayo obligatorio · "un solo equipo, diferentes funciones" · ser descriptivos y dar ejemplo |
 
+> ⚠ **Dependencia antes del 14-jun:** el **hilo espiritual [POR DEFINIR]** y la **temática/lema [PROPUESTA]** los cierra el director (con Paul/Sor). Si no están cerrados, F1 los presenta como **dirección de trabajo**, no como decididos. El branding visual se trabaja aparte con Claude Design.
+>
 > Al terminar el plenario, **se dividen en equipos** (esto ya se socializó en la reunión de coords del 4-jun).
 
 ---
@@ -84,7 +86,7 @@
 - Guías: parejas formadas + colores elegidos + saben cómo preparar testimonio.
 - Cocina: menú en borrador + fechas de reunión.
 - Música: integrada a guías para testimonios.
-- Cada coord entregó su presupuesto → Co-Dir arma v11.
+- Cada coord entregó su presupuesto → Co-Dir arma la siguiente versión del presupuesto (con los números reales de cada área).
 
 ---
 
