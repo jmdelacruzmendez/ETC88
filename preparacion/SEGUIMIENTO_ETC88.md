@@ -69,6 +69,8 @@
 - [ ] Guía 88 + Horario 88 (adaptar de LXXXV)
 
 ### 🟡 Etapa 1 (→ 30-jun)
+- [ ] **Lugar/salón de las 5 formaciones** (sede fija/rotativa) — Co-Dir — deadline 5-jun (del Doc de Asesores)
+- [ ] **Lugar para reuniones de Dirección** (recurrente)
 - [ ] Cartas a donantes (Recaudación)
 - [ ] 3 cotizaciones de transporte (Guagua)
 - [ ] Plan de rifa Profondo #1
@@ -85,6 +87,28 @@
 - [ ] Higüey: confirmar gatos · no fumigar Baygon · limpieza polvo previa
 - [ ] Botiquín: SIN penicilina/ibuprofeno/AINEs/neo-melubrina/metoclopramida
 - [ ] Botiquín: CON paracetamol + inhalador + antialérgico
+
+### 📋 Detalles extraídos del Doc de Asesores aún no integrados (relevantes)
+- [ ] **Lugar de las formaciones** (sede fija/rotativa/mixta) — deadline 5-jun
+- [ ] **Visita de reconocimiento a la casa** (mapa de espacios, dormitorios) — antes 1-ago
+- [ ] **Contrato/factura formal** de Samuel Montilla (casa)
+- [ ] **Confesores** sábado 9pm (≥2-3 sacerdotes) — gestiona Paul
+- [ ] **Coordinación con párroco de Higüey** (respaldo)
+- [ ] **Plan de emergencia médica** (hospital Higüey + ruta + responsable por turno)
+- [ ] **Permisos firmados** para participantes menores de edad
+- [ ] **Carta pre-retiro** a participantes
+- [ ] **Camisetas del equipo** — decisión de viabilidad (19-jul)
+- [ ] **RRSS:** opción A/B/C + calendario editorial (arranca 30-may)
+- [ ] **Política de fotos/video** + consentimiento de participantes
+- [ ] **Protocolo de celulares** durante el retiro
+- [ ] **Acta del retiro** (memoria operativa y espiritual)
+- [ ] **Encuesta de evaluación** a participantes (a la semana)
+- [ ] **Lugar de reuniones dominicales** (4º día) post-retiro
+- [ ] **Anexo A de los Estatutos** (conseguir/derivar al Consejo)
+- [ ] **Método de pago a proveedores** + trazabilidad de comprobantes
+- [ ] **Biblias, peces, materiales** (cotizar local Higüey)
+- [ ] **Rúbrica de evaluación de servidores** (existe del ETC 79)
+- [ ] **Bienvenida nuevos etecianos** 9-sep (cocina: baile + bizcocho)
 
 ## 5. PREGUNTAS abiertas (para resolver)
 

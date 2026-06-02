@@ -56,6 +56,20 @@ Henky Carrión · Emily Lorenzo · Madallyn Lorenzo · Luis Farid · Luis José 
 
 ---
 
+## 🎯 Candidatos para EQUIPOS AUXILIARES (de esta cantera)
+Identificados para **Recaudación-Donaciones · Guagua · Profondo · Intersección**:
+
+| Equipo auxiliar | Candidatos sugeridos (fuera o dentro del equipo) | Por qué |
+|---|---|---|
+| **Recaudación y Donaciones** | Roberto Figueroa (ya en cocina; propuso "donaciones de etecianos viejos") · Guido (donaciones de empresas) · Franklin (rifa de viaje) · Paloma (merch) · **no-misioneros** (Brissa, Carla Uribe, Lisset, Ramón Leonardo, Ángel Radesky) como vendedores/padrinos · diáspora | tienen red, contactos o ya propusieron ideas |
+| **Profondo (rifa)** | Mismo núcleo de Recaudación + coords de cocina para logística | la rifa es transversal |
+| **Guagua (transporte)** | Etecianos con vehículo fuera del equipo operativo · Kedward Acevedo (PC, logística) · gente de "no se estiman" de PC/SD para tramos | rol externo, no pernocta |
+| **Intersección (espiritual)** | Liderado por Paul + Sor · sumar etecianos de oración (no-misioneros que quieran apoyar orando) · Victoria pidió "orar por JC" | acompañamiento espiritual |
+
+> Nota: muchos de **Punta Cana** y de "no se estiman" sirven mejor como **apoyo externo** (venta de rifa, padrinos, oración) que como equipo operativo, por la logística de preparación.
+
+---
+
 ## Cómo usar esta cantera (clasificación)
 | Categoría | Para qué sirve | Quién decide |
 |---|---|---|
