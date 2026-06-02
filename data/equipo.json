@@ -17,8 +17,8 @@
       "acreedor": "Consejo Eteciano SPM"
     },
     "cuota_participante": 3000,
-    "meta_recaudacion_total": 260000,
-    "meta_recaudacion_estado": "propuesta",
+    "meta_recaudacion_total": 533481,
+    "meta_recaudacion_estado": "confirmado",
     "cuota_equipo_propuesta": {
       "total_rango": "1,500 – 2,000",
       "mensual": 500,
@@ -129,17 +129,23 @@
         "fuente": "director (planteado, sin cerrar)",
         "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
       },
-      "participantes_estimado": {
-        "valor": 48,
-        "estado": "pendiente",
-        "fuente": "estimación Claude",
-        "nota": "Falta confirmar el número final de participantes; afecta casa, peces, biblias y comida."
+      "personas_casa_piso": {
+        "valor": 100,
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Piso fijado: completar 100 personas en la casa de retiro."
+      },
+      "participantes_objetivo": {
+        "valor": 53,
+        "estado": "propuesta",
+        "fuente": "derivado (100 − 47 operativos)",
+        "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
       },
       "meta_recaudacion_total": {
-        "valor": 260000,
-        "estado": "propuesta",
-        "fuente": "estimación Claude",
-        "nota": "El director pidió una 'meta más agresiva' sin fijar monto. Esta cifra es propuesta a validar."
+        "valor": 533481,
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
       }
     },
     "recaudacion": {
@@ -149,23 +155,17 @@
         "fuente": "director",
         "nota": "Profondo #1 = rifa, primera actividad, por recomendación del equipo."
       },
-      "profondo1_rifa_neta": {
-        "valor": 130000,
-        "estado": "propuesta",
-        "fuente": "estimación Claude",
-        "nota": "Meta neta de la rifa a validar."
+      "modelo": {
+        "valor": "cuotas + rifa y/o venta de comida + donaciones",
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + rifa y/o venta de comida + donaciones. La rifa, la venta de comida y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)."
       },
-      "profondo2_comida_garaje": {
-        "valor": 50000,
-        "estado": "propuesta",
-        "fuente": "estimación Claude",
-        "nota": "Benchmark ETC 79 ≈ $50K (venta de comida / garaje)."
-      },
-      "donaciones_empresas": {
-        "valor": 50000,
-        "estado": "propuesta",
-        "fuente": "estimación Claude",
-        "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores (delegable)."
+      "donaciones_responsable": {
+        "valor": "Directores (delegable)",
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores."
       }
     },
     "marca": {
@@ -251,20 +251,20 @@
       },
       "comunidad_sd": {
         "valor": [
-          "Sandrita",
-          "Marleny"
+          "Marleny",
+          "Sandrita"
         ],
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "2 representantes de la comunidad de Santo Domingo."
+        "nota": "2 representantes (asesores) de la comunidad de Santo Domingo."
       },
       "comunidad_la_vega": {
         "valor": [
           "Leticia González"
         ],
-        "estado": "pendiente",
+        "estado": "confirmado",
         "fuente": "director",
-        "nota": "Falta definir si va 1 o 2 representantes de La Vega."
+        "nota": "1 representante (asesor): Leticia González."
       }
     },
     "calendario_hitos": {
@@ -305,13 +305,17 @@
       "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
       "Asesoras de cocina: Mary \"Peta\" Morales y Johanny García.",
       "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
-      "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual)."
+      "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
+      "Piso de personas: completar 100 en la casa de retiro.",
+      "La meta de recaudación = el costo total del retiro (se cubre con cuotas + rifa/venta de comida + donaciones).",
+      "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
+      "La Vega: 1 asesor de comunidad, Leticia González.",
+      "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."
     ],
     "pendientes": [
       "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
-      "Confirmar el número final de participantes.",
+      "Confirmar el conteo final de participantes para completar 100 en la casa.",
       "Completar la vacante de cocina (varón — candidato Randolph).",
-      "Definir si van 1 o 2 representantes de La Vega.",
       "Definir los responsables de cada equipo auxiliar.",
       "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
       "Confirmar la exención de la casa con el Padre Paul.",
@@ -1335,8 +1339,8 @@
       "transversal": false
     },
     {
-      "id": "fabelle-maciel-fabian-bello",
-      "nombre": "Fabelle maciel fabian bello",
+      "id": "fabelly-maciel-fabian-bello",
+      "nombre": "Fabelly Maciel Fabian Bello",
       "sexo": "F",
       "edad": 34,
       "cumple_mes": 8,
@@ -1370,8 +1374,8 @@
       "transversal": false
     },
     {
-      "id": "guido-mardonado",
-      "nombre": "Guido Mardonado",
+      "id": "guido-maldonado",
+      "nombre": "Guido Maldonado",
       "sexo": "M",
       "edad": 29,
       "cumple_mes": 11,
@@ -2529,7 +2533,7 @@
     {
       "n": 5,
       "bandera": "Viaje julio vs Profondo (31-jul a 2-ago)",
-      "persona": "Fabelle (revisar lista v2)",
+      "persona": "Fabelly (revisar lista v2)",
       "accion": "Confirmar agenda ASAP",
       "resp": "Directores"
     },
@@ -2571,7 +2575,7 @@
     {
       "n": 11,
       "bandera": "Memoria de fricciones pasadas",
-      "persona": "Luisa, Franklin, Fabelle, Juan Manuel",
+      "persona": "Luisa, Franklin, Fabelly, Juan Manuel",
       "accion": "Trabajar alianza interna en Profondo #1",
       "resp": "Directores"
     },
@@ -2605,8 +2609,8 @@
     },
     {
       "n": 16,
-      "bandera": "Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelle por revisar",
-      "persona": "JC, JM, Paloma, Fabelle",
+      "bandera": "Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelly en Cocina",
+      "persona": "JC, JM, Paloma, Fabelly",
       "accion": "Confirmar distribución",
       "resp": "Directores"
     },
@@ -2717,15 +2721,15 @@
     },
     {
       "n": 32,
-      "bandera": "Fabelle = Fabelly (reconciliado en Cocina)",
-      "persona": "Fabelle Maciel Fabian Bello",
-      "accion": "Validar nombre en lista oficial",
+      "bandera": "Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)",
+      "persona": "Fabelly Maciel Fabian Bello",
+      "accion": "OK · nombre validado",
       "resp": "Directores"
     },
     {
       "n": 33,
       "bandera": "Familia De la Cruz Méndez (4 personas) — distribuida",
-      "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelle (Cocina)",
+      "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)",
       "accion": "OK distribución; 3 en cocina/dirección, 1 en cocina",
       "resp": "Directores"
     }
@@ -2817,7 +2821,7 @@
       ]
     },
     {
-      "inviter": "Guido Mardonado",
+      "inviter": "Guido Maldonado",
       "invitados": [
         {
           "nombre": "Eurys Caraballo",

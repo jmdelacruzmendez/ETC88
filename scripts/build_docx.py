@@ -215,16 +215,21 @@ def build_asesores():
     pr.add_run(flag(cq) + f"${_v(cq)['total_rango']} total · ${_v(cq)['mensual']}/mes · cubre {_v(cq)['cubre']}")
     pr.add_run(f" — {cq['nota']}").italic = True
     fin_line('Meta de recaudación', ef['meta_recaudacion_total'])
-    fin_line('Participantes (estimado)', ef['participantes_estimado'], fmt=lambda v: str(v))
+    fin_line('Personas en la casa (piso)', ef['personas_casa_piso'], fmt=lambda v: str(v))
+    fin_line('Participantes (objetivo)', ef['participantes_objetivo'], fmt=lambda v: str(v))
 
     # 4. Recaudación
     doc.add_heading('4. Recaudación', level=1)
     er = EST['recaudacion']
-    for key, label in [('profondo1_rifa_neta', 'Rifa (Profondo #1, neta)'),
-                       ('profondo2_comida_garaje', 'Profondo #2 (comida / garaje)'),
-                       ('donaciones_empresas', 'Donaciones empresas/particulares')]:
-        fin_line(label, er[key])
-    doc.add_paragraph('La primera actividad es una rifa (confirmado, por recomendación del equipo).',
+    mod = er['modelo']
+    pm = doc.add_paragraph(style='List Bullet')
+    pm.add_run('Modelo: ').bold = True
+    pm.add_run(_v(mod))
+    pm.add_run(f" — {mod['nota']}").italic = True
+    doc.add_paragraph('Rifa, venta de comida y donaciones: montos variables (lo que se recaude); '
+                      'cubren la brecha = costo − cuotas.', style='List Bullet')
+    doc.add_paragraph('La primera actividad es una rifa (confirmado). Las donaciones a '
+                      'empresas/particulares son responsabilidad de los Directores (delegable).',
                       style='List Bullet')
 
     # 5. Equipos auxiliares

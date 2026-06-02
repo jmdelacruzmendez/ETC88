@@ -54,7 +54,8 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 ### Bloque 1 · Equipo cerrado + punto de partida financiero (8 min · JM + JC)
 **Quién es quién hoy (números reales):**
 - 2 directores · 3 asesores del retiro (Laura, Tomás, Frank — Frank además lleva el **Banderín**) · **14 guías** · **20 cocina + 1 vacante** (varón, candidato Randolph) · 6 música.
-- Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Peta" + Johanny**. Asesores de comunidad: **Sandrita, Marleny (SD) + Leticia (La Vega)** — *[POR DEFINIR] si La Vega manda 1 o 2*.
+- Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Peta" + Johanny**. Asesores de comunidad: **Marleny + Sandrita (Santo Domingo) · Leticia González (La Vega)** — confirmados.
+- **Piso de personas: completar 100 en la casa de retiro** (≈47 operativos + ~53 participantes).
 - Backups de guías (**no son parte del equipo per se**): Rodolfo, Scarlett, Kamila.
 - Equipos auxiliares (existen, se asignan responsables antes de F1): **Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)**.
 
@@ -63,6 +64,7 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 - **Casa por persona:** $2,300 sin exención · **$2,000 con exención** (vía RNC de la parroquia del Padre Paul) — *gestionar la exención es [POR DEFINIR]*.
 - **Cuota del participante: $3,000** (confirmado).
 - **Aporte del equipo: [PROPUESTA] $500/mes (total $1,500–2,000), sin cerrar.** Se mostrará el costo del retiro **primero**, para que se entienda la necesidad de la rifa y las donaciones.
+- **La meta de recaudación = el costo total del retiro** (≈ $533K estimado). Se cubre con: cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + **rifa y/o venta de comida + donaciones** (montos variables, lo que se recaude).
 
 ### Bloque 2 · Raíz espiritual → temática → mensaje único (9 min · JC, apoyo Paul/Sor)
 - Cómo se construyó: diagnóstico del formulario + prioridad de la Co-Dirección.
@@ -108,7 +110,7 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 - **Donaciones a empresas/particulares = responsabilidad de los Directores** (delegable a Recaudación).
 - **[POR DEFINIR] responsables de cada equipo auxiliar** (Co-Dir los nombra antes de F1).
 - **[POR DEFINIR] fecha límite para cotizar:** transporte (3 empresas), biblias y peces. *Fijarla hoy.*
-- *Metas de recaudación: se manejan como [PROPUESTA] hasta tener el costo cerrado.*
+- *La meta = el costo total; la rifa, la venta de comida y las donaciones cubren la brecha (costo − cuotas), con montos variables.*
 
 ### Bloque 7 · Piso abierto / parqueo (4 min · Frank)
 - Cada coord enuncia **1 acuerdo** que se lleva + **1 duda**. Las dudas profundas → parqueo (respuesta el mismo día por chat).
@@ -124,7 +126,6 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 | Hilo espiritual / raíz del retiro | [POR DEFINIR] | Co-Dir + Paul/Sor | antes de la reunión |
 | Monto final de la cuota del equipo | [PROPUESTA] | Co-Dir | después de mostrar costos (F1) |
 | Responsables de los 4 equipos auxiliares | [POR DEFINIR] | Co-Dir | antes de F1 |
-| La Vega: 1 o 2 representantes | [POR DEFINIR] | Co-Dir | esta semana |
 | Vacante de cocina (varón — Randolph) | [POR DEFINIR] | Co-Dir | esta semana |
 | Fecha límite para cotizar transporte/biblias/peces | [POR DEFINIR] | Co-Dir | **fijarla en la reunión** |
 | Gestión de la exención de la casa | [POR DEFINIR] | Co-Dir + Padre Paul | en curso |

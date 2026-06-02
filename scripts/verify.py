@@ -122,7 +122,7 @@ try:
         if f"{val:,}" not in txt_as:
             errs.append(f"falta cifra confirmada {label}={val:,} en Doc Asesores")
     # Cifras inventadas viejas prohibidas en cualquier salida compartible
-    BAD = ['1,250', '× $5,000', '5,000 mensual', '$5,000 mensual']
+    BAD = ['1,250', '× $5,000', '5,000 mensual', '$5,000 mensual', '260,000', '260000']
     pool = txt_as + docx_text(f'{REPO}/Carpeta_F1_ETC88.docx') \
         + xlsx_text(f'{REPO}/Finanzas_ETC88.xlsx')
     for b in BAD:
@@ -137,8 +137,9 @@ try:
     txt_as = docx_text(f'{REPO}/Documento_Asesores_ETC88.docx')
     fin_txt = xlsx_text(f'{REPO}/Finanzas_ETC88.xlsx')
     errs = []
-    # En el Doc de Asesores, cuota de equipo y meta deben llevar [PROPUESTA]
-    for needle in ['Cuota del equipo', 'Meta de recaudación']:
+    # En el Doc de Asesores, la cuota de equipo debe llevar [PROPUESTA]
+    # (la meta de recaudación ya NO es propuesta: = costo total, confirmado)
+    for needle in ['Cuota del equipo']:
         line = next((l for l in txt_as.split('\n') if needle in l), '')
         if '[PROPUESTA]' not in line:
             errs.append(f"'{needle}' sin [PROPUESTA] en Doc Asesores")

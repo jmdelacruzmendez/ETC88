@@ -285,11 +285,16 @@ for name, area, rol, sexo in PLACEHOLDERS_TRANSVERSAL:
     p['transversal'] = True  # están en todo el proceso, no solo retiro
     equipo.append(p)
 
-# Fix typo del apellido de Leober (Soriank -> Soriano)
+# Correcciones de nombre confirmadas por el director (la clave es el nombre del formulario).
+RENAMES = {
+    'Leober Carrion Soriank': 'Leober Carrion Soriano',
+    'Guido Mardonado': 'Guido Maldonado',
+    'Fabelle maciel fabian bello': 'Fabelly Maciel Fabian Bello',
+}
 for p in equipo:
-    if p['nombre'] == 'Leober Carrion Soriank':
-        p['nombre'] = 'Leober Carrion Soriano'
-        p['id'] = 'leober-carrion-soriano'
+    if p['nombre'] in RENAMES:
+        p['nombre'] = RENAMES[p['nombre']]
+        p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
 
 ROL_ORDER = {
     'Director':1, 'Asesora':2, 'Asesor':2, 'Asesor (laico)':2,
@@ -333,18 +338,18 @@ banderas = [
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
     {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'Jordelis Mateo', 'accion':'Mensaje virtual + saludo en F4', 'resp':'Directores'},
     {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
-    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'Fabelle (revisar lista v2)', 'accion':'Confirmar agenda ASAP', 'resp':'Directores'},
+    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'Fabelly (revisar lista v2)', 'accion':'Confirmar agenda ASAP', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'Jordelis Mateo', 'accion':'No asignar carga física pesada', 'resp':'Coord. Cocina'},
     {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia + Mary Carmen', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía / Coord. Música'},
     {'n':9, 'bandera':'Sin claridad de rol', 'persona':'Wirna Miguelina Stapleton Pilier', 'accion':'Conversación 1:1 con Directores antes de F1', 'resp':'Directores'},
     {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
-    {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Fabelle, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
+    {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Fabelly, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
     {'n':12, 'bandera':'Pareja Dorian↔José Ángel — ambos en Música', 'persona':'Dorian, José Ángel', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
     {'n':13, 'bandera':'Noviazgo Kelvin↔Brianelis — ambos en Cocina', 'persona':'Kelvin, Brianelis', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
     {'n':14, 'bandera':'Noviazgo Juan Manuel↔Yelaxni — áreas distintas ✓', 'persona':'Juan Manuel (Dir), Yelaxni (Guía)', 'accion':'OK', 'resp':'—'},
     {'n':15, 'bandera':'Noviazgo Oliver↔Dayrelins — áreas distintas ✓', 'persona':'Oliver (Guía), Dayrelins (Cocina)', 'accion':'OK', 'resp':'—'},
-    {'n':16, 'bandera':'Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelle por revisar', 'persona':'JC, JM, Paloma, Fabelle', 'accion':'Confirmar distribución', 'resp':'Directores'},
+    {'n':16, 'bandera':'Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelly en Cocina', 'persona':'JC, JM, Paloma, Fabelly', 'accion':'Confirmar distribución', 'resp':'Directores'},
     {'n':17, 'bandera':'Mariscos prohibidos como plato principal', 'persona':'Priscilla, Ivanna, Jonathan, Laura (4 alérgicas)', 'accion':'Avisar a Cocina', 'resp':'Coord. Cocina'},
     {'n':18, 'bandera':'Evitar piña en menú', 'persona':'Wilka, Candy, José Ángel (3 alérgicos)', 'accion':'No piña en jugos, postres, marinadas', 'resp':'Coord. Cocina'},
     {'n':19, 'bandera':'Alternativa sin huevo en desayunos', 'persona':'José Ángel', 'accion':'Avisar Cocina', 'resp':'Coord. Cocina'},
@@ -360,8 +365,8 @@ banderas = [
     {'n':29, 'bandera':'Pregunta "Oremos por JC"', 'persona':'Victoria Lorenzo Rivera', 'accion':'Acompañamiento espiritual a Jean Carlo', 'resp':'Asesores'},
     {'n':30, 'bandera':'Wirna: "No se dejen humillar"', 'persona':'Wirna Stapleton', 'accion':'Conversación 1:1', 'resp':'Directores'},
     {'n':31, 'bandera':'4 tripulantes sin formulario', 'persona':'Daylin (Música), Olanlly + Roselyn + Pamela (Cocina)', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Música / Coord. Cocina'},
-    {'n':32, 'bandera':'Fabelle = Fabelly (reconciliado en Cocina)', 'persona':'Fabelle Maciel Fabian Bello', 'accion':'Validar nombre en lista oficial', 'resp':'Directores'},
-    {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelle (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
+    {'n':32, 'bandera':'Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)', 'persona':'Fabelly Maciel Fabian Bello', 'accion':'OK · nombre validado', 'resp':'Directores'},
+    {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
 ]
 
 invitados_list = []

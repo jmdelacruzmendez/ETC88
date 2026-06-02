@@ -91,14 +91,15 @@ cq = ef['cuota_equipo']
 bullet(f"Cuota del equipo: {tag(cq)}${_v(cq)['total_rango']} total · ${_v(cq)['mensual']}/mes · "
        f"cubre {_v(cq)['cubre']} — {cq['nota']}")
 fin('Meta de recaudación', ef['meta_recaudacion_total'])
-fin('Participantes (estimado)', ef['participantes_estimado'], fmt=lambda v: str(v))
+fin('Personas en la casa (piso)', ef['personas_casa_piso'], fmt=lambda v: str(v))
+fin('Participantes (objetivo)', ef['participantes_objetivo'], fmt=lambda v: str(v))
 
 head('4. Recaudación')
 er = EST['recaudacion']
-fin('Rifa (Profondo #1, neta)', er['profondo1_rifa_neta'])
-fin('Profondo #2 (comida / garaje)', er['profondo2_comida_garaje'])
-fin('Donaciones empresas/particulares', er['donaciones_empresas'])
-bullet('La primera actividad es una rifa (confirmado, por recomendación del equipo).')
+mod = er['modelo']
+bullet(f"Modelo: {_v(mod)} — {mod['nota']}")
+bullet('Rifa, venta de comida y donaciones: montos variables (lo que se recaude); cubren la brecha = costo − cuotas.')
+bullet('La primera actividad es una rifa (confirmado). Donaciones a empresas/particulares = responsabilidad de los Directores (delegable).')
 
 head('5. Equipos auxiliares')
 for a in D['equipos_auxiliares']:
@@ -188,10 +189,10 @@ frow('Casa por persona (con exención)', ef['casa_por_persona_con_exencion'])
 frow('Deuda inicial al Consejo', ef['deuda_inicial'])
 frow('Cuota de participante', ef['cuota_participante'])
 w.writerow(['Cuota del equipo', f"{_v(cq)['total_rango']} ({_v(cq)['mensual']}/mes)", 'PROPUESTA', cq['nota']])
-frow('Meta de recaudación', ef['meta_recaudacion_total'])
-frow('Rifa (Profondo #1, neta)', er['profondo1_rifa_neta'])
-frow('Profondo #2 (comida/garaje)', er['profondo2_comida_garaje'])
-frow('Donaciones empresas/particulares', er['donaciones_empresas'])
+frow('Meta de recaudación (= costo total)', ef['meta_recaudacion_total'])
+frow('Personas en la casa (piso)', ef['personas_casa_piso'])
+frow('Participantes (objetivo)', ef['participantes_objetivo'])
+w.writerow(['Rifa / venta de comida / donaciones', 'variable', 'VARIABLE', 'Cubren la brecha (costo − cuotas); lo que se recaude. Rifa = primera actividad.'])
 w.writerow([])
 w.writerow(['NOTA: el presupuesto itemizado completo (12 pestañas) está en Finanzas_ETC88.xlsx (repo).', '', '', ''])
 open('/tmp/drive_finanzas.csv', 'w', encoding='utf-8').write(buf.getvalue())

@@ -48,15 +48,15 @@
       "fuente": "director (planteado, sin cerrar)",
       "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
     },
-    "participantes_estimado":        { "valor": 48, "estado": "pendiente", "fuente": "estimación Claude", "nota": "Falta confirmar el número final de participantes; afecta casa, peces, biblias y comida." },
-    "meta_recaudacion_total":        { "valor": 260000, "estado": "propuesta", "fuente": "estimación Claude", "nota": "El director pidió una 'meta más agresiva' sin fijar monto. Esta cifra es propuesta a validar." }
+    "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
+    "participantes_objetivo":        { "valor": 53, "estado": "propuesta", "fuente": "derivado (100 − 47 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
+    "meta_recaudacion_total":        { "valor": 533481, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
   "recaudacion": {
     "primera_actividad_es_rifa": { "valor": true, "estado": "confirmado", "fuente": "director", "nota": "Profondo #1 = rifa, primera actividad, por recomendación del equipo." },
-    "profondo1_rifa_neta":       { "valor": 130000, "estado": "propuesta", "fuente": "estimación Claude", "nota": "Meta neta de la rifa a validar." },
-    "profondo2_comida_garaje":   { "valor": 50000, "estado": "propuesta", "fuente": "estimación Claude", "nota": "Benchmark ETC 79 ≈ $50K (venta de comida / garaje)." },
-    "donaciones_empresas":       { "valor": 50000, "estado": "propuesta", "fuente": "estimación Claude", "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores (delegable)." }
+    "modelo":                    { "valor": "cuotas + rifa y/o venta de comida + donaciones", "estado": "confirmado", "fuente": "director", "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + rifa y/o venta de comida + donaciones. La rifa, la venta de comida y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)." },
+    "donaciones_responsable":    { "valor": "Directores (delegable)", "estado": "confirmado", "fuente": "director", "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores." }
   },
 
   "marca": {
@@ -75,8 +75,8 @@
 
   "asesores_externos": {
     "cocina":          { "valor": ["Mary \"Peta\" Morales", "Johanny García"], "estado": "confirmado", "fuente": "director" },
-    "comunidad_sd":    { "valor": ["Sandrita", "Marleny"], "estado": "confirmado", "fuente": "director", "nota": "2 representantes de la comunidad de Santo Domingo." },
-    "comunidad_la_vega": { "valor": ["Leticia González"], "estado": "pendiente", "fuente": "director", "nota": "Falta definir si va 1 o 2 representantes de La Vega." }
+    "comunidad_sd":    { "valor": ["Marleny", "Sandrita"], "estado": "confirmado", "fuente": "director", "nota": "2 representantes (asesores) de la comunidad de Santo Domingo." },
+    "comunidad_la_vega": { "valor": ["Leticia González"], "estado": "confirmado", "fuente": "director", "nota": "1 representante (asesor): Leticia González." }
   },
 
   "calendario_hitos": {
@@ -101,14 +101,18 @@
     "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
     "Asesoras de cocina: Mary \"Peta\" Morales y Johanny García.",
     "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
-    "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual)."
+    "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
+    "Piso de personas: completar 100 en la casa de retiro.",
+    "La meta de recaudación = el costo total del retiro (se cubre con cuotas + rifa/venta de comida + donaciones).",
+    "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
+    "La Vega: 1 asesor de comunidad, Leticia González.",
+    "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."
   ],
 
   "pendientes": [
     "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
-    "Confirmar el número final de participantes.",
+    "Confirmar el conteo final de participantes para completar 100 en la casa.",
     "Completar la vacante de cocina (varón — candidato Randolph).",
-    "Definir si van 1 o 2 representantes de La Vega.",
     "Definir los responsables de cada equipo auxiliar.",
     "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
     "Confirmar la exención de la casa con el Padre Paul.",
