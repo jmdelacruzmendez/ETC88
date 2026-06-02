@@ -13,7 +13,7 @@ Van de lo más profundo a lo más visible. Cada nivel **hereda** del anterior.
 | Nivel | Qué es | ¿Para quién? | Estado |
 |---|---|---|---|
 | **0 · Raíz espiritual** | La intención/mensaje del ETC: qué queremos que se descubra. | Equipo + participantes | 🔴 por definir esta semana |
-| **1 · Temática narrativa** | La metáfora que envuelve todo: **expedición / búsqueda de tesoro / aventura.** | Ambientación general | ✅ confirmada |
+| **1 · Temática narrativa** | La metáfora que envuelve todo: **[PROPUESTA] expedición / búsqueda de tesoro / aventura.** | Ambientación general | 🟡 propuesta (sin cerrar) |
 | **2 · Formación del equipo (F1–F5)** | El camino del **servidor** antes del retiro. | Equipo | 🟠 borrador (este doc) |
 | **3 · Testimonios del retiro (9)** | Los 9 testimonios canónicos del fin de semana. | Participantes | ✅ fijos (no se rediseñan, se ambientan) |
 

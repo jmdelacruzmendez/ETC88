@@ -45,20 +45,20 @@
 ### Etapa 2 · Construcción (15-jun → 19-jul) — 🟠
 | Quién | Qué |
 |---|---|
-| Co-Dir | Consolidar **presupuesto v11** (deadline F2 28-jun) · arranque cobro participantes (31-may) y equipo (28-jun) |
+| Co-Dir | Consolidar **el presupuesto** con los números de cada área (deadline F2 28-jun) · la **recaudación de cuotas inicia en F3 (5-jul)**; pago lump o por cuotas a elección del miembro |
 | Guías | F2 (28-jun) · F3 (5-jul) · **definir parejas color-coded** · empezar testimonios · **Lectura de Perfiles 1** (19-jul) |
 | Cocina | **Menú definitivo + lista de compras** (entregado en F1 · ajustado en F2) · compras anticipadas no perecederos · **identificar Correcaminos** |
 | Música | **Repertorio + setlist** · ensayos (mín. 3) · aprender canción de despedida + dinámicas |
 | Recaudación-Donaciones | Cartas a donantes · cierre preliminar de padrinos · campaña en RRSS |
 | Guagua | **3 cotizaciones formales** · plan de movilidad borrador |
-| Profondo | **Plan rifa Profondo #1** (meta RD$100K · ejecución 31-jul → 2-ago) · definir Profondo #2 (30-jun) |
+| Profondo | **Plan rifa Profondo #1** (ejecución 31-jul → 2-ago; monto VARIABLE — lo que se recaude; primera actividad por recomendación del equipo) · definir Profondo #2 |
 | Intersección | Oración por cada participante mencionado · acompañamiento del equipo |
 | Paul + Sor | Asesoría en testimonios · enlace litúrgico |
 
 ### Etapa 3 · Consolidación (20-jul → 30-ago) — 🟠
 | Quién | Qué |
 |---|---|
-| Co-Dir | **F4 19-jul** (perfiles 1) · **F5 16-ago** (perfiles 2 + 3er pago) · validación final del equipo |
+| Co-Dir | **F4 19-jul** (perfiles 1) · **F5 16-ago** (perfiles 2 + cierre de cobro) · validación final del equipo |
 | Guías | **Formación en Liturgia + Banderín** · ensayo de pequeños grupos · adaptar Guía 88 · cerrar parejas |
 | Cocina | Lista de compras finalizada · avanzada planificada · **Correcaminos confirmado** |
 | Música | **Cancionero impreso** · ensayar misa de clausura · canción de despedida memorizada |
@@ -84,10 +84,10 @@
 | F | Fecha | Eje | Entregables del equipo |
 |---|---|---|---|
 | **F1** | 14-jun | "El llamado a la expedición" — Identidad del servidor | Cada coord: **presupuesto de su área + materiales + 3 dudas** |
-| F2 | 28-jun | "Una sola tripulación" — Unidad y motivaciones | Presupuesto v11 consolidado · arranca cobro equipo · adaptación Guía/Horario 88 |
-| F3 | 5-jul | "El tesoro que buscamos" — El participante en el centro | Compras anticipadas · setlist música · cartas donantes enviadas |
-| F4 | 19-jul | "Conociendo el terreno" — Lectura de perfiles 1 | Borrador de pequeños grupos · 2do pago equipo · perfiles asignados |
-| F5 | 16-ago | "Listos para zarpar" — Envío y consagración | Perfiles 2 cerrados · 3er pago · cancionero impreso · materiales completos |
+| F2 | 28-jun | "Una sola tripulación" — Unidad y motivaciones | Presupuesto consolidado · adaptación Guía/Horario 88 *(se anuncia el modelo; la recaudación arranca en F3)* |
+| F3 | 5-jul | "El tesoro que buscamos" — El participante en el centro | **Arranque de la recaudación** (cuotas equipo + participantes; lump o cuotas, a elección) · compras anticipadas · setlist música · cartas donantes enviadas |
+| F4 | 19-jul | "Conociendo el terreno" — Lectura de perfiles 1 | Borrador de pequeños grupos · perfiles asignados · cobro en curso |
+| F5 | 16-ago | "Listos para zarpar" — Envío y consagración | Perfiles 2 cerrados · cobro al cierre · cancionero impreso · materiales completos |
 
 ---
 
@@ -122,7 +122,7 @@ SEPTIEMBRE ──────→  Avanzada · RETIRO · 4to día
 1. **Cierre del equipo** (3-jun) → bloquea invitaciones.
 2. **Raíz espiritual** (esta semana) → bloquea F1, branding, banderín, misa.
 3. **Reunión coords** (4-jun) → bloquea la unidad de mensaje en F1.
-4. **Presupuesto v11 por área** (F1) → bloquea cobranza.
+4. **Presupuesto consolidado por área** (F1) → bloquea cobranza (que arranca en F3).
 
 ---
 

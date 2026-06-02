@@ -13,7 +13,7 @@
 | Nivel | Qué define | Estado | Quién lo cierra |
 |---|---|---|---|
 | **0 · Raíz espiritual** | Mensaje único del 88 (lema + cita + intención) | 🔴 esta semana | Co-Dir + Paul + Sor |
-| **1 · Temática narrativa** | Metáfora: **expedición / búsqueda de tesoro / aventura** | ✅ confirmada | Co-Dir |
+| **1 · Temática narrativa** | Metáfora: **[PROPUESTA] expedición / búsqueda de tesoro / aventura** | 🟡 propuesta (sin cerrar) | Co-Dir + Claude Design |
 | **2 · Arco de formación del equipo (F1–F5)** | Camino del servidor antes del retiro | 🟠 borrador (este doc) | Co-Dir + AE |
 | **3 · 9 testimonios del retiro** | Canónicos · solo se ambientan con la temática | ✅ fijos | Guías |
 
@@ -68,10 +68,10 @@
 | Cuerpo del tema | 25 min | Motivaciones puras vs mezcladas · diferencias en la tripulación |
 | **Dinámica 1: "Compañero de cubierta"** | 30 min | En parejas (mezcladas comunidades/áreas): cada uno cuenta motivación profunda · el otro le devuelve qué escuchó · sin juicio |
 | **Dinámica 2: "Sanar el barco"** | 25 min | Momento de reconciliación · si hay fricciones pasadas, se ponen ante el grupo y se sanan (ojo con Luisa/Franklin/Fabelly/JM — banderas levantadas) |
-| **Operativo** | 20 min | Presupuesto v11 consolidado · arranca cobro · adaptación Guía/Horario 88 |
+| **Operativo** | 20 min | Presupuesto consolidado con los números reales de cada área · adaptación Guía/Horario 88 *(la recaudación arranca en F3, 5-jul; aquí solo se anuncia)* |
 | Avisos + oración | 10 min | |
 
-**Salida:** equipo integrado · fricciones tocadas · presupuesto v11.
+**Salida:** equipo integrado · fricciones tocadas · presupuesto consolidado.
 
 ---
 
@@ -100,7 +100,7 @@
 | Cuerpo del tema | 20 min | Rom 12,4-6 — *un cuerpo, muchos dones* · poner mis dones al servicio |
 | **Lectura de Perfiles 1** | 60 min | Cada guía recibe su lista preliminar de participantes · se leen perfiles · borrador de PG |
 | **Dinámica: "Conociendo el terreno"** | 20 min | Cruzar perfiles con **lazos del equipo** (no poner hermanos/pareja en mismo plenario) |
-| **Operativo** | 20 min | 2do pago equipo · cartas confirmación participantes · materiales en cierre |
+| **Operativo** | 20 min | Cobro en curso (arrancó en F3) · cartas confirmación participantes · materiales en cierre |
 | Avisos + oración | 10 min | |
 
 **Salida:** borrador de pequeños grupos · perfiles asignados.
@@ -117,7 +117,7 @@
 | **Lectura de Perfiles 2** | 50 min | Cierre de pequeños grupos · ajustes finales |
 | **Dinámica 1: "Carta al que soy"** | 20 min | Cada uno relee la carta que escribió en F1 · escribe respuesta del "yo de ahora" al "yo de junio" |
 | **Dinámica 2: Rito de envío** | 30 min | Co-Dir + Paul/Sor imponen manos · cada uno recibe un objeto símbolo de la expedición |
-| **Operativo** | 20 min | 3er pago · cancionero impreso · materiales completos |
+| **Operativo** | 20 min | Cobro al cierre · cancionero impreso · materiales completos |
 | Avisos + oración | 10 min | |
 
 **Salida:** equipo enviado · pequeños grupos cerrados · materiales listos.
