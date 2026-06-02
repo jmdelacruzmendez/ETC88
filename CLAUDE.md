@@ -40,8 +40,13 @@ python scripts/build_finanzas.py   # → Finanzas_ETC88.xlsx
 python scripts/build_excel.py      # → Equipo_ETC88.xlsx
 python scripts/build_guia.py       # → GUIA_ETC88.md (fuente de la Carpeta)
 python scripts/build_html.py       # → index.html (Tablero)
+python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```
+
+Para Drive: subir `/tmp/drive_asesores.txt` y `/tmp/drive_carpeta.txt` como `text/plain`
+(→ Google Doc limpio) y `/tmp/drive_equipo.csv` + `/tmp/drive_finanzas.csv` como `text/csv`
+(→ Google Sheet). build_drive.py ya evita lo que Google escapa (#, [], *, `N.` al inicio).
 
 ## Entregables OFICIALES (lo único que va a Drive, consolidado)
 - **2 documentos** (`.docx`): `Documento_Asesores_ETC88.docx`, `Carpeta_F1_ETC88.docx`.
