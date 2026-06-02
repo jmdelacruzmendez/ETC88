@@ -74,7 +74,7 @@
 ## EQUIPOS AUXILIARES (por formular)
 | Equipo | Qué prepara | Apoyo | Socialización |
 |---|---|---|---|
-| **Donaciones** | Cartas + lista de fuentes + meta | Cocina + Roberto + no-misioneros | En la reunión de coords + F1 |
+| **Donaciones** | Cartas + lista de fuentes + meta | Recaudación (responsable por nombrar — Co-Dir decide) + no-misioneros | En la reunión de coords + F1 |
 | **Guagua** | Cotizaciones (3 empresas) + plan movilidad | Producción | Definir antes 30-jun |
 | **Actividad Profondo** | Profondo #1 (rifa) + Profondo #2 (definir) | Todo el equipo | F1 (rifa) / form 14-20 jun |
 

@@ -232,6 +232,68 @@ try:
 except Exception as e:
     check('8. Frescura', False, str(e))
 
+# ------- 9. Sin asignación-persona-rol sin respaldo de estado.json ----------
+# Detecta patrones "[nombre propio] + palabra de rol" en docs de trabajo
+# que NO están respaldados como confirmado en estado.json.
+# Lista blanca de asignaciones CONFIRMADAS (fuente: estado.json equipos/asesores).
+CONFIRMED_ROLE_PAIRS = {
+    # (fragmento_nombre, keyword) — lo que SÍ puede aparecer
+    ('Juan Manuel', 'director'), ('Jean Carlo', 'director'),
+    ('Juan Manuel', 'Co-Dir'), ('Jean Carlo', 'Co-Dir'),
+    ('Laura', 'asesora'), ('Tomás', 'asesor'), ('Frank', 'asesor'),
+    ('Frank', 'Banderín'), ('Frank', 'banderín'),
+    ('Priscilla', 'coord'), ('Camila', 'coord'),
+    ('Paloma', 'coord'), ('Jhonnito', 'coord'),
+    ('José Ángel', 'Música'), ('José Tusen', 'Música'),
+    ('Paul', 'asesor'), ('Paul', 'transversal'),
+    ('Sor Angelina', 'transversal'), ('Sor', 'transversal'),
+    ('Leticia', 'asesor'), ('Marleny', 'asesor'), ('Sandrita', 'asesor'),
+    ('Tomás', 'timekeeper'), ('Laura', 'Acta'),
+    ('Samuel Montilla', 'administración'), ('Samuel Montilla', 'casa'),
+}
+# Nombres que NO deben aparecer con palabras de rol sin [POR DEFINIR] / [PROPUESTA]
+ROLE_WORDS = re.compile(
+    r'\b(l[ií]der|lidera|responsable|encargado|encargada|coordina|dirige|gestiona)\b', re.I
+)
+FLAG_NAMES = ['Roberto Figueroa', 'Guido Maldonado', 'Guido', 'Randolph',
+              'Franklin', 'Kedward']
+try:
+    errs = []
+    prep_files = [os.path.join(REPO, 'preparacion', f)
+                  for f in os.listdir(os.path.join(REPO, 'preparacion'))
+                  if f.endswith('.md') and f != 'TRAZABILIDAD.md']
+    for fpath in prep_files:
+        try:
+            content = open(fpath, encoding='utf-8').read()
+        except Exception:
+            continue
+        for name in FLAG_NAMES:
+            for m in re.finditer(re.escape(name), content):
+                # ventana de ±120 chars alrededor del nombre
+                start = max(0, m.start() - 120)
+                end = min(len(content), m.end() + 120)
+                window = content[start:end]
+                if ROLE_WORDS.search(window):
+                    # ¿Está etiquetado como [POR DEFINIR] o [PROPUESTA]?
+                    if '[POR DEFINIR]' not in window and '[PROPUESTA]' not in window:
+                        # ¿Es un par confirmado?
+                        confirmed = any(
+                            n in window and k in window
+                            for n, k in CONFIRMED_ROLE_PAIRS
+                            if n in name or name in n
+                        )
+                        if not confirmed:
+                            lineno = content[:m.start()].count('\n') + 1
+                            fname = os.path.basename(fpath)
+                            errs.append(
+                                f"{fname}:{lineno}: '{name}' + rol sin [POR DEFINIR]/[PROPUESTA]"
+                            )
+                            break
+    check('9. Sin asignación-persona-rol sin respaldo (formulario ≠ rol)',
+          not errs, '; '.join(errs))
+except Exception as e:
+    check('9. Sin asignación-persona-rol sin respaldo', False, str(e))
+
 # ---------------------------------------------------- resumen ----------------
 print()
 print('=' * 66)

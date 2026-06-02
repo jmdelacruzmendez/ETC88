@@ -97,7 +97,7 @@
 ## B. Por ZONA — quién toca puerta y dónde
 
 ### B.1. SPM — base eteciana
-**Quién:** Co-Dir + equipo de Recaudación (responsable por nombrar). *Roberto Figueroa propuso en el formulario (col 18) "donaciones de etecianos viejos" y Guido "solicitudes a empresas" — son aportes de idea, no decide que ellos lideren.*
+**Quién:** Co-Dir + equipo de Recaudación (responsable **[POR DEFINIR]** — Co-Dir decide). *Nota: Roberto Figueroa y Guido aportaron ideas en el formulario (col 18); una idea en un formulario no equivale a nombramiento de ningún rol.*
 **Parroquia base:** **San José Obrero** (misas etecianas, local de reuniones).
 **Foco de donaciones:**
 - Padre Paul (arroz/habichuelas/aceite/vino/formas/rosarios — modelo del 78).
@@ -134,7 +134,7 @@
 3. **Donante recurrente** — el Padre Paul es la fuente más consistente (arroz/habichuelas/aceite del 78); mantenerlo como ancla.
 4. **Atajos del 78 a replicar** — Iberia (lácteos), Print Mate (impresiones), Multibox (cofre de palancas), Cactus (papelería) — son proveedores con relación previa, **gestiona descuento/donación primero ahí**.
 5. **Donaciones de etecianos con experiencia previa** — el 78 destinó esta fuente específicamente a la **ofrenda de confesores** ($8K). Replicar con la cantera de no-misioneros.
-6. **Asignación de responsables por zona** — Co-Dir cubre SPM (con apoyo de Roberto); los 7 etecianos de PC cubren Punta Cana; cocina cubre Higüey.
+6. **Asignación de responsables por zona** — Co-Dir cubre SPM (con equipo de Recaudación, responsable **[POR DEFINIR]**); los 7 etecianos de PC son presencia natural en Punta Cana (ninguno queda asignado a liderar sin confirmación del director); cocina cubre Higüey.
 
 ## D. Decisiones para Co-Dir
 - ¿Confirman a quién contactar primero por cada partida (lista priorizada por mayor donación esperada vs menor esfuerzo)?

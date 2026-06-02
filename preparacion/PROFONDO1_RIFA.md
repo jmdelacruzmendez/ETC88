@@ -84,14 +84,13 @@ Buscar **donado** (no comprado). Opciones por atractivo/facilidad:
 **Fecha de tenerlo LISTO (plan + premio):** **14-jun (F1)**. **Talonarios:** 28-jun. **Ejecución:** 5-jul → 2-ago.
 
 ## 9. Quién forma este equipo (de la cantera)
-- **Líder:** Roberto Figueroa (propuso "donaciones de etecianos viejos") + un coord de cocina.
-- **Apoyo con redes/empresas:** Guido (donaciones empresas), Franklin (rifa viaje).
+- **Líder:** **[POR DEFINIR]** — Co-Dir nombra antes de F1. Nadie del formulario queda asignado por haber propuesto una idea; formulario col 18 captura *ideas*, no voluntarios para liderar.
+- **Ideas que pueden integrarse como complementos** (fuente: formulario col 18, no asignación): Franklin ("rifa de viaje internacional"), Guido ("donaciones de empresas"), Paloma ("merch eteciana") — si los directores les asignan ese rol, se registra como `confirmado` en `estado.json`.
 - **Diáspora / fuera del equipo (cantera):** no-misioneros y "no se estiman" sirven como **vendedores externos y padrinos** (Brissa, Carla, Lisset, Ramón, etc.) + etecianos en el exterior.
-- **Merch complementario:** Paloma (propuso merch eteciana).
 
 ---
 
 ## Decisión para Co-Dir
 1. ¿Premio **donado** (recomendado) o efectivo?
 2. ¿Confirmamos meta **RD$100K** y precio **RD$100/boleto** (1,200 boletos)?
-3. ¿Quién **lidera** el equipo de Recaudación-Donaciones/Profondo? (sugiero Roberto + 1 coord).
+3. ¿Quién **lidera** el equipo de Recaudación-Donaciones/Profondo? **[POR DEFINIR — Co-Dir decide]**.

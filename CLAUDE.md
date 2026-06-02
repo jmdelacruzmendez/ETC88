@@ -58,6 +58,13 @@ Para Drive: subir `/tmp/drive_asesores.txt` y `/tmp/drive_carpeta.txt` como `tex
 
 Todo lo demás (`preparacion/`) es **DOCUMENTO DE TRABAJO**, no entregable.
 
+## Las 5 reglas (continuación) — Regla #6
+6. **Nunca inferir rol desde formulario.** Una respuesta de formulario (p. ej. col 18 "¿qué
+   actividad propondrías?") captura *ideas*, no voluntarios para liderar. Nunca escribir
+   "X lidera / es responsable / encargado de Y" a partir de una propuesta de formulario o
+   una sugerencia de idea. Solo el director confirma roles operativos; sin confirmación,
+   siempre `[POR DEFINIR]` + nota "(Co-Dir decide)".
+
 ## Decisiones que son del director (NO inventar — quedan `propuesta`/`pendiente`)
 Lema del retiro · hilo espiritual · reglas estéticas/branding (van a Claude Design) ·
 monto final de la cuota del equipo · número final de participantes · varón de cocina ·

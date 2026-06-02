@@ -187,6 +187,97 @@ Subasta silenciosa · talleres virtuales · mini-retiro virtual · concierto. Bu
 
 ---
 
+## H-0. Modelación de logística · inversión · tiempo · esfuerzo — *[PROPUESTA]*
+
+> **Para qué sirve esto:** antes de elegir qué profondos ejecutar, el Co-Dir puede ver cuánto le cuesta *operativamente* a su equipo cada idea — no solo en plata, sino en horas de personas. El modelo usa supuestos prudentes basados en una comunidad eteciana de ~150–250 personas + redes.
+
+### H-0.1. Tabla de inversión y esfuerzo del equipo (top 7 ideas)
+
+| Profondo | Inversión ($) estimada | Personas del equipo necesarias | Horas totales del equipo | Semanas de prep | Ingreso neto est. (RD$) | Ratio neto/hora-equipo |
+|---|---:|:---:|:---:|:---:|---|---:|
+| **Apadrina un pez/biblia** | ~1,500 (promo) | 2–3 | ~10 h total | 1–2 | ~58,000 (si se cubren todos) | **~5,800 RD$/h** |
+| **Garaje virtual (IG)** | ~2,000 (datos, impresión, recogida) | 4–5 | ~40 h (repartidas en 4 sem) | 4 | 15,000–50,000 | ~800–1,250 RD$/h |
+| **Post-misa (brownies + café)** | ~1,500–2,500 por misa (insumos) | 3–5 | ~8 h por misa | ½ sem | 2,000–5,000 por misa | ~400–500 RD$/h |
+| **Cuestación dominical** | ~500 (alcancías + tarjetas) | 1–2 | ~2 h por misa | 0 (sin prep) | 3,000–8,000 por misa | **~1,500–4,000 RD$/h** |
+| **Softball benéfico** | ~1,000 (venta en gradas: insumos) | 3–4 | ~12 h (1 jornada) | 1 sem | 8,000–20,000 | ~700–1,700 RD$/h |
+| **Venta por encargo** | ~3,000–6,000 (ingredientes) | 4–6 (cocina) | ~20 h por ronda | 1 sem | 5,000–15,000 | ~250–750 RD$/h |
+| **Subasta silenciosa** | ~500 (difusión) | 2–3 | ~15 h (conseguir donaciones + plataforma) | 2 sem | 10,000–30,000 | ~670–2,000 RD$/h |
+
+> **Ratio neto/hora-equipo** = cuántos pesos netos genera cada hora de trabajo del equipo. A mayor ratio, más eficiente el uso del esfuerzo. Este dato ayuda a priorizar cuando el equipo tiene tiempo limitado.
+
+---
+
+### H-0.2. Desglose logístico de las 4 ideas principales
+
+#### Apadrina un pez / biblia — el de mayor retorno-esfuerzo
+| Fase | Qué se hace | Quién | Horas |
+|---|---|---|:--:|
+| Prep (sem 1) | Crear matriz nominal (nombre padrino → nombre participante → ítem) + texto de invitación | 1 persona | 3 h |
+| Lanzamiento | Publicar en grupos etecianos (WhatsApp + IG) con foto del pez/biblia | 1 persona | 1 h |
+| Gestión | Recibir confirmaciones, registrar pagos, actualizar matriz | 1 persona | 4 h (distribuidas) |
+| Cierre | Enviar confirmación a padrinos + imprimir nominaciones | 1 persona | 2 h |
+| **TOTAL** | | **2–3 personas** | **~10 h** |
+
+**Inversión fija:** ~RD$1,500 (diseño promo + impresión). **Ingreso si se cubren todos:** ~RD$58,000 (34 peces × $715 + 48 biblias × $500). Si solo se apadrina el 60%: ~RD$34,800.
+
+**Logística clave:** necesita la lista final de participantes (disponible en F4/F5, ago) para nominar. Se puede pre-vender antes ("tu nombre en el pez/biblia de tu participante apadrinado") sin tener la lista.
+
+---
+
+#### Garaje virtual (Instagram) — el de mayor alcance
+| Fase | Qué se hace | Quién | Horas |
+|---|---|---|:--:|
+| Setup (sem 0) | Crear cuenta IG, foto de perfil, bio, highlight de precios | 1 community manager | 3 h |
+| Recolección piezas | Recoger 40–80 piezas de calidad (ropa, deco, libros) de equipo + cantera | 2 recolectores | 8 h |
+| Fotos/publicaciones | Fotografiar + editar + publicar 2–3 piezas/día (4 semanas) | 1 fotógrafo + 1 cm | 16 h |
+| Gestión ventas | Responder DMs, registrar reservas, confirmar transferencias | 1 community manager | 8 h |
+| Recogidas (×2) | 1 punto SPM + 1 punto PC, 1 sábado c/u | 2 personas × 2 eventos | 8 h |
+| **TOTAL** | | **4–5 personas** | **~43 h** |
+
+**Inversión fija:** ~RD$2,000 (impresión etiquetas, viáticos recogida, fondo de seguridad). **Riesgo principal:** piezas de baja calidad reducen confianza → filtrar al recoger.
+
+---
+
+#### Post-misa (brownies + café) — el de menor fricción logística
+| Fase | Qué se hace | Quién | Horas |
+|---|---|---|:--:|
+| Prep (tarde del sábado) | Hornear brownies/bizcocho, preparar café | 2–3 voluntarios (cocina) | 4 h |
+| Montaje (domingo AM) | Armar mesita en atrio + cartel de precio | 1–2 personas | 1 h |
+| Venta | Atender durante y después de la misa (~1.5 h) | 2 personas | 2 h |
+| Desmontaje + cierre | Recoger, contar y registrar lo recaudado | 1 persona | 1 h |
+| **TOTAL por misa** | | **3–5 personas** | **~8 h** |
+
+**Inversión fija:** ~RD$1,500–2,500 en insumos (recuperable con margen 2×–3×). **Escalable:** 12-jul (prueba con ½ producción) → 9-ago (volumen mayor aprendido del 1er evento). Multiplica por 2–3 misas = 24 h de equipo total.
+
+---
+
+#### Softball benéfico — la de mayor visibilidad comunitaria
+| Fase | Qué se hace | Quién | Horas |
+|---|---|---|:--:|
+| Coord con la liga | Acordar 1 jornada "Profondo 88" dentro del calendario de la liga | 1 coord | 2 h |
+| Logística de venta | Conseguir insumos (palomitas, refrescos, empanadas, agua) | 1 persona | 2 h |
+| Montaje y venta | Armar el puesto en las gradas durante la jornada (~4 h) | 3–4 personas | 4 h |
+| Cierre + conteo | Contar, registrar y reportar a Co-Dir | 1 persona | 2 h |
+| **TOTAL** | | **3–4 personas** | **~10–12 h** |
+
+**Inversión fija:** ~RD$1,000 en insumos (con margen 3×–4×). **Dependencia:** la liga ya juega — el equipo solo monta la venta. Si la liga no tiene fecha en jul/ago, el profondo se cae → confirmar calendario de la liga en F1.
+
+---
+
+### H-0.3. Síntesis de decisión para el director
+
+| Criterio | Mejor opción |
+|---|---|
+| Máximo retorno por hora de equipo | Apadrina un pez/biblia (~5,800 RD$/h) + Cuestación dominical (~2,000 RD$/h) |
+| Mayor ingreso absoluto | Garaje virtual ($15–50K) + Rifa (Profondo #1, ~$117K) |
+| Menor fricción para arrancar | Post-misa + Cuestación (sin pre-requisitos) |
+| Mayor cohesión comunitaria | Softball benéfico + Garaje virtual (involucra a toda la comunidad) |
+| Mejor para equipo pequeño (< 5 voluntarios) | Apadrina + Post-misa + Cuestación (≤ 20 h totales) |
+
+> **Regla de decisión:** si el equipo de Recaudación tiene **≤ 5 personas y ≤ 30 h disponibles por mes**, elige **Apadrina + Post-misa + Cuestación**. Si puede tener **6–10 personas o un sub-equipo dedicado**, agrega el **Garaje virtual**. El Softball no le cuesta casi nada si la liga ya tiene fecha.
+
+---
+
 ## H. Decisiones para Co-Dir
 - ¿Cuáles 3–4 profondos pequeños ejecutar (no todas)?
 - ¿Quién lidera el equipo de Recaudación-Donaciones / Profondo? (siguen `[POR DEFINIR]`).
