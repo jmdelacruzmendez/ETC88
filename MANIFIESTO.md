@@ -1,12 +1,12 @@
 # Manifiesto de la Tripulación — ETC LXXXVIII
 
-**Versión:** v4-2026-06-02 · **Equipo operativo:** 45 · **Ampliados (solo retiro):** 9 · **Total en retiro:** 54 · **Fecha:** 2026-06-02
+**Versión:** v4-2026-06-02 · **Equipo operativo:** 46 · **Ampliados (solo retiro):** 8 · **Total en retiro:** 54 · **Fecha:** 2026-06-02
 
 > *Cambios v4:* Fabelle = Fabelly → Cocina · Chantal → Cocina · 3 nuevas Cocina (Olanlly, Roselyn, Pamela) · Daylin Música pendiente form · **Nuevo bloque "ampliados":** Johany + Petra (asesoras cocina), Frank Morales (asesor laico), Paul + Sor Angelina (espirituales), 2 SD + 2 La Vega (diocesanos) · **3 equipos auxiliares** por formular: Donaciones, Guagua, Actividad Profondo.
 
 ## Manifiesto general
 
-- **Total:** 45 (41 con formulario, 4 pendientes)
+- **Total:** 46 (41 con formulario, 5 pendientes)
 - **Sexo:** F = 25 (61%) · M = 16 (39%)
 - **Comunidad:** Belén = 6 (15%) · Betania = 35 (85%)
 - **Veteranía:** rookies (0) = 9 · biz (1) = 8 · intermedios (2-4) = 15 · veteranos (5+) = 9
@@ -29,7 +29,9 @@
 - **Jean Carlo De la Cruz Mendez** — ETC 52 · 10 sv. · M · Betania · 35a
 - **Juan Manuel de la Cruz Méndez** — ETC 55 · 3 sv. · M · Betania · 33a
 
-## Asesores (2)
+## Asesores (3)
+
+_Pendientes formulario:_ **Frank Morales**
 
 | Dimensión | Distribución |
 |---|---|
@@ -42,6 +44,7 @@
 
 **Tripulantes:**
 
+- **Frank Morales** — ⚠ sin form · M
 - **Laura Fernández** — ETC 62 · 8 sv. · F · Betania · 30a
 - **Tomás Lorenzo** — ETC 70 · 5 sv. · M · Betania · 29a
 
@@ -195,7 +198,7 @@ Con base en las proporciones actuales del equipo de Cocina:
 | Equipo | n | F/M | Belén/Betania | Rookies+biz / Vet+ | Edad avg |
 |---|---|---|---|---|---|
 | Directores | 2 (2+0) | 0/2 | 0/2 | 0/2 | 34.0 |
-| Asesores | 2 (2+0) | 1/1 | 0/2 | 0/2 | 29.5 |
+| Asesores | 3 (2+1) | 1/1 | 0/2 | 0/2 | 29.5 |
 | Guías | 14 (14+0) | 9/5 | 0/14 | 2/12 | 26.0 |
 | Cocina | 21 (18+3) | 12/6 | 6/12 | 13/5 | 28.5 |
 | Música | 6 (5+1) | 3/2 | 0/5 | 2/3 | 23.0 |
@@ -206,7 +209,6 @@ Suman al equipo solo en el retiro · no participan de la formación semanal.
 
 | Nombre | Rol | Estado |
 |---|---|---|
-| Frank Morales | Asesor (laico) | ⚠ sin form |
 | Johany | Asesora Cocina | ⚠ sin form |
 | Petra | Asesora Cocina | ⚠ sin form |
 | Paul | Asesor Espiritual | ⚠ sin form |

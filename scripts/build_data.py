@@ -223,12 +223,12 @@ PLACEHOLDERS_OP = [
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
+    ('Frank Morales', 'asesores', 'Asesor', 'M'),  # asesor operativo como Laura y Tomás
 ]
 # Asesores ampliados (en el retiro pero NO operativos)
 PLACEHOLDERS_NO_OP = [
     ('Johany', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Petra', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Frank Morales', 'asesores', 'Asesor (laico)', 'M'),
     ('Paul', 'asesores_espirituales', 'Asesor Espiritual', 'M'),
     ('Sor Angelina', 'asesores_espirituales', 'Asesora Espiritual', 'F'),
     ('Rep. Diocesano SD #1', 'asesores_diocesanos', 'Asesor SD', '?'),
