@@ -36,7 +36,7 @@ Dianna Constanzo · Gianna Gerónimo · Glorimar de la Cruz · Ivonne Vásquez �
 ## Resumen
 - **~26 prospectos** identificados (13 con invitador + 13 del borrador).
 - Faltan **~19–24** para llegar a la base de 48.
-- **Acción:** cada misionero activa sus invitaciones desde el **31-may** (arranque del cronograma).
+- **Acción:** cada misionero activa sus invitaciones cuanto antes (el cronograma las ubicaba a fines de mayo).
 
 ## Para la perfilación temprana (lo que sigue)
 Para cada participante conviene capturar temprano (como el *Perfil del Participante* de los ETC 79/85):

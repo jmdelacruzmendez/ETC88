@@ -332,7 +332,7 @@ calendario = [
     {'fecha': '2026-07-26', 'titulo': 'Día del Padre', 'tipo': 'externo', 'sin_formacion': True},
     {'fecha': '2026-07-31', 'titulo': 'Profondo #1 (31-jul → 2-ago)', 'tipo': 'profondo', 'fin': '2026-08-02'},
     {'fecha': '2026-08-09', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
-    {'fecha': '2026-08-16', 'titulo': 'F5 — Quinta Formación (lectura de perfiles 2 + 3er pago)', 'tipo': 'formacion'},
+    {'fecha': '2026-08-16', 'titulo': 'F5 — Quinta Formación (lectura de perfiles 2 + cobro al cierre)', 'tipo': 'formacion'},
     {'fecha': '2026-08-22', 'titulo': 'Convivencia del Equipo (inicia con miniretiro/reflexión · día completo)', 'tipo': 'convivencia'},
     {'fecha': '2026-08-23', 'titulo': 'Ensayo General del ETC 88 (obligatorio)', 'tipo': 'ensayo'},
     {'fecha': '2026-08-30', 'titulo': 'Reunión final · deadline pagos equipo + padrinos', 'tipo': 'pre_retiro'},

@@ -35,7 +35,7 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 ## B. Formación (5 sesiones)
 | Item | Prep | Dueño | Fecha |
 |---|---|---|---|
-| **Tema espiritual del retiro (lema + cita)** | 🤝 | Co-Dir + AE + Consejo | 🔴 31-may |
+| **Tema espiritual del retiro (lema + cita)** | 🤝 | Co-Dir + AE + Consejo | 🔴 esta semana |
 | Plan formativo: 5 líneas (de 20) + ponentes | 🤝✏️ | Co-Dir | 🟠 7-jun |
 | Mapa tema × formación (F1–F5) | ✏️ | Co-Dir + AE | 🟠 5-jun |
 | Material F1 (sentido + temática + presupuesto) | ✏️ | Co-Dir | 🟠 13-jun |
@@ -54,8 +54,8 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 ## D. Finanzas
 | Item | Prep | Dueño | Fecha |
 |---|---|---|---|
-| Presupuesto v11 por área (consolidar) | 🔢✏️ | RF + Co-Dir | 🟡 28-jun |
-| Plan Profondo #1 (rifa, meta RD$100K) | ✏️🔢 | Co-Dir + RF | 🟠 14-jun |
+| Presupuesto por área (consolidar) | 🔢✏️ | RF + Co-Dir | 🟡 28-jun |
+| Plan Profondo #1 (rifa, monto VARIABLE) | ✏️🔢 | Co-Dir + RF | 🟠 14-jun |
 | **Profondo #2 (actividad + meta)** | 🤝 | Co-Dir | 🔴 30-jun |
 | Plan padrinos (pitch, carta, recibo, lista) | ✏️ | Co-Dir | 🟡 30-jun |
 | Tracking de pagos por persona | ✏️ | RF | 🟡 28-jun |
@@ -130,7 +130,7 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 ---
 
 ## Resumen de bloqueantes 🔴 (lo que frena todo)
-1. **Tema espiritual del retiro** (lema + cita) — 31-may → destraba invitación, RRSS, banderín, misa.
+1. **Tema espiritual del retiro** (lema + cita) — esta semana → destraba invitación, RRSS, banderín, misa.
 2. **Cierre nominal del equipo** (7 por decidir + cupo varón + 6 roles vacantes).
 3. **Profondo #2** (actividad + meta) — 30-jun → cierra el presupuesto.
 

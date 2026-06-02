@@ -66,8 +66,8 @@
 |---|---|
 | **Reunión de Coordinadores (socialización)** | **4-jun (virtual) o 7-jun (pre-misa)** |
 | Cierre nominal del equipo + 6 roles | ASAP |
-| Tema espiritual (lema + cita) | 🔴 31-may |
-| Consolidar presupuesto v11 (por área) | 28-jun (F2) |
+| Tema espiritual (lema + cita) | 🔴 esta semana |
+| Consolidar presupuesto por área | 28-jun (F2) |
 
 ---
 
@@ -84,6 +84,6 @@
 Para **cada área**, el ciclo es el mismo:
 1. **Socialización** (reunión de coords 4/7-jun) → unificar mensaje.
 2. **Fecha límite menú + presupuesto** → **14-jun (F1)** cada coord entrega.
-3. **Presupuesto de su actividad** → se consolida en v11 (28-jun).
+3. **Presupuesto de su actividad** → se consolida (28-jun).
 4. **Apoyo del equipo** → quién ayuda a cada área (cocina↔donaciones, música↔todas, guías↔perfiles).
 5. **Ejecución** → compras, ensayos, lectura de perfiles, avanzada.

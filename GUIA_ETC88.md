@@ -58,7 +58,7 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 | 26-jul | Día del Padre *(sin formación)* |
 | 31-jul | Profondo #1 (31-jul → 2-ago) |
 | 9-ago | Misa Eteciana *(sin formación)* |
-| 16-ago | F5 — Quinta Formación (lectura de perfiles 2 + 3er pago) |
+| 16-ago | F5 — Quinta Formación (lectura de perfiles 2 + cobro al cierre) |
 | 22-ago | Convivencia del Equipo (inicia con miniretiro/reflexión · día completo) |
 | 23-ago | Ensayo General del ETC 88 (obligatorio) |
 | 30-ago | Reunión final · deadline pagos equipo + padrinos |
