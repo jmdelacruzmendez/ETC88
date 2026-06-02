@@ -97,7 +97,7 @@
 ## B. Por ZONA — quién toca puerta y dónde
 
 ### B.1. SPM — base eteciana
-**Quién:** Co-Dir + Recaudación + Roberto Figueroa.
+**Quién:** Co-Dir + equipo de Recaudación (responsable por nombrar). *Roberto Figueroa propuso en el formulario (col 18) "donaciones de etecianos viejos" y Guido "solicitudes a empresas" — son aportes de idea, no decide que ellos lideren.*
 **Parroquia base:** **San José Obrero** (misas etecianas, local de reuniones).
 **Foco de donaciones:**
 - Padre Paul (arroz/habichuelas/aceite/vino/formas/rosarios — modelo del 78).

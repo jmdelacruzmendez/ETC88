@@ -182,6 +182,7 @@ for row in range(2, ws.max_row + 1):
         'miedos': ws.cell(row=row, column=9).value,
         'tema_dios': ws.cell(row=row, column=10).value,
         'invita': ws.cell(row=row, column=11).value,
+        'idea_recaudacion': ws.cell(row=row, column=18).value,
         'alergias': ws.cell(row=row, column=19).value,
         'condiciones': ws.cell(row=row, column=20).value,
         'medicamentos': ws.cell(row=row, column=21).value,
@@ -382,23 +383,40 @@ for p in equipo:
     if p.get('invita') == 'Sí' and p['invitados']:
         invitados_list.append({'inviter': p['nombre'], 'invitados': p['invitados']})
 
+# Recaudación DERIVADA del formulario (col 18) — cada idea trazable a su autor.
+_CATS = [
+    ('Rifa', ['rifa']),
+    ('Venta de comida', ['comida', 'dulce', 'bizcocho', 'brownie']),
+    ('Bazar / venta de garaje', ['garaje', 'bazar', 'feria']),
+    ('Noche de talento / karaoke / película', ['karaoke', 'talento', 'pelicula', 'película', 'show']),
+    ('Excursión / día-pass / tómbola', ['tómbola', 'tombola', 'excursi', 'daypass', 'day pass', 'gira']),
+    ('Actividad deportiva / rally / 5K', ['deportiv', 'rally', 'carrera', '5k']),
+    ('Lavado de autos', ['lavado']),
+    ('Donaciones (etecianos / empresas)', ['donaci', 'solicitud', 'empresa']),
+    ('Merch eteciana', ['merch']),
+    ('Rifa/viaje (boletos, avión)', ['viaje', 'boleto', 'avión', 'avion']),
+    ('Taller / charlas', ['taller', 'charla']),
+]
+_ideas = [{'persona': p['nombre'].replace(' (sin formulario)', ''), 'idea': str(p['idea_recaudacion']).strip()}
+          for p in equipo if p.get('idea_recaudacion') and str(p['idea_recaudacion']).strip()
+          and str(p['idea_recaudacion']).strip().lower() not in ('aún no lo sé', 'no se me ocurre nada en este momento')]
+_conteo = Counter()
+for it in _ideas:
+    t = it['idea'].lower()
+    for label, kws in _CATS:
+        if any(k in t for k in kws):
+            _conteo[label] += 1
+def _idea_de(nombre_part):
+    for it in _ideas:
+        if nombre_part in it['persona']:
+            return it['idea']
+    return ''
 recaudacion = {
-    'top': [
-        {'propuesta':'Rifa', 'menciones':23},
-        {'propuesta':'Venta de comida', 'menciones':10},
-        {'propuesta':'Bazar / venta de garaje', 'menciones':4},
-        {'propuesta':'Noche de talento / karaoke / película', 'menciones':4},
-        {'propuesta':'Lavado de autos', 'menciones':2},
-        {'propuesta':'Rally / actividad deportiva', 'menciones':2},
-        {'propuesta':'Carrera 5K + coffee party (Chantal)', 'menciones':1},
-        {'propuesta':'Excursión / día-pass / tómbola', 'menciones':3},
-        {'propuesta':'Donaciones empresas (Guido)', 'menciones':1},
-        {'propuesta':'Donaciones etecianos viejos (Roberto)', 'menciones':1},
-        {'propuesta':'Merch eteciana (Paloma)', 'menciones':1},
-        {'propuesta':'Rifa de viaje internacional (Franklin)', 'menciones':1},
-    ],
-    'cita_franklin':'Tomar en cuenta el tiempo de preparación para recaudar fondos.',
-    'cita_jordelis':'Tómbolas con PRECIOS ASEQUIBLES para darle más oportunidad a quienes siempre nos apoyan.'
+    'top': [{'propuesta': k, 'menciones': v} for k, v in _conteo.most_common()],
+    'ideas': _ideas,  # crudo, cada respuesta con su autor (trazabilidad de hechos)
+    'fuente': 'Formulario col 18 "¿Qué tipo de actividad de recaudación propondrías?"',
+    'cita_franklin': _idea_de('Franklin') or '',
+    'cita_jordelis': _idea_de('Jordelis') or '',
 }
 
 # ===== Fuente única de hechos NO-roster: data/estado.json =====

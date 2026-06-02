@@ -209,8 +209,9 @@
         "estado_equipo": "confirmado",
         "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
         "responsable": {
-          "valor": "Co-Dir + Coords de cocina + Roberto",
-          "estado": "propuesta"
+          "valor": "Por nombrar (Co-Dir decide)",
+          "estado": "pendiente",
+          "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables."
         },
         "miembros": []
       },
@@ -615,8 +616,8 @@
       "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
       "estado": "Por formular",
       "miembros": [],
-      "responsable_sugerido": "Co-Dir + Coords de cocina + Roberto",
-      "responsable_estado": "propuesta"
+      "responsable_sugerido": "Por nombrar (Co-Dir decide)",
+      "responsable_estado": "pendiente"
     },
     {
       "nombre": "Guagua (Transporte)",
@@ -678,6 +679,7 @@
       "miedos": "Ninguno ",
       "tema_dios": "No",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno",
@@ -713,6 +715,7 @@
       "miedos": "Que el equipo no se integre o no disfrute y se entregue al participante",
       "tema_dios": "Sembrar",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa. Taller",
       "alergias": "N.A",
       "condiciones": "N.A",
       "medicamentos": "N.A",
@@ -748,6 +751,7 @@
       "miedos": "N/A",
       "tema_dios": "Compromiso y entrega a Sus cosas",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Una rifa, si se prepara con tiempo y se da la correcta promoción puede funcionar muy bien.",
       "alergias": "Mariscos.",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -783,6 +787,7 @@
       "miedos": "No poder estar lo suficientemente presente ",
       "tema_dios": "Confianza, obediencia y humildad",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa",
       "alergias": "Ibuprofeno ",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -818,6 +823,7 @@
       "miedos": null,
       "tema_dios": null,
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -853,6 +859,7 @@
       "miedos": null,
       "tema_dios": "El propósito",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa y/o venta de comida",
       "alergias": "Mariscos",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguna",
@@ -888,6 +895,7 @@
       "miedos": null,
       "tema_dios": null,
       "invita": "Todavía no sé",
+      "idea_recaudacion": "rifa, venta de comida",
       "alergias": "ninguna",
       "condiciones": "ninguna",
       "medicamentos": "ninguno",
@@ -923,6 +931,7 @@
       "miedos": null,
       "tema_dios": "La paciencia ",
       "invita": "Sí",
+      "idea_recaudacion": "Venta de comida",
       "alergias": "Alérgico al polvo, polen y olores fuertes ",
       "condiciones": "Asmático ",
       "medicamentos": "Frenaler forte (loratadina)",
@@ -964,6 +973,7 @@
       "miedos": "Que el retiro se vea afectado o que los participantes se enteren de NO regularidades en caso de haber fricción o malentendidos en el equipo.",
       "tema_dios": "Sí",
       "invita": "Sí",
+      "idea_recaudacion": "1. Viaje al interior del país\n2. Rifa de boletos de avión para dos (O viaje todo incluido para una persona) a Colombia.\n3. Noche bailable",
       "alergias": "Jabón de cuaba",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -1010,6 +1020,7 @@
       "miedos": "Ninguno! Con Dios ",
       "tema_dios": "Si, mi paciencia, mi fe y esperar sus tiempos ",
       "invita": "Sí",
+      "idea_recaudacion": "Venta de garaje todo al mismo precio ",
       "alergias": "Mariscos ",
       "condiciones": "Asthma",
       "medicamentos": "Antialérgicos ",
@@ -1051,6 +1062,7 @@
       "miedos": null,
       "tema_dios": "La confirmación de que el es quien trabaja los procesos ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": null,
       "alergias": "Al medicamento (Metrocopramida) ",
       "condiciones": "Operación de la columna reciente (Escolisis) ",
       "medicamentos": "Antiinflamatorio oh relajantes musculares y omeprazol ",
@@ -1086,6 +1098,7 @@
       "miedos": "Tenía pensado no asumir ninguna responsabilidad en la comunidad para dedicarme mas a mis estudios para aprobar el examen de la especialidad.",
       "tema_dios": "Siento que Dios me está haciendo entender que sus tiempos son perfectos y que debo confiar plenamente en él a pesar de no saber o entender claramente su voluntad en mis hondos deseos y sueños.",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Una rifa, entiendo que menor esfuerzo y se obtienen más resultados.",
       "alergias": "Mariscos",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguna",
@@ -1121,6 +1134,7 @@
       "miedos": ".",
       "tema_dios": "De momento ninguno ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguna ",
@@ -1156,6 +1170,7 @@
       "miedos": "Un equipo sin compromiso y una entrega a medias ",
       "tema_dios": "Si, permanencia en la fe; servicio desde el silencio ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas",
       "alergias": "Si, medicamento penicilina. En general a polvo y olores fuertes. ",
       "condiciones": "Diabetes* y tiroides",
       "medicamentos": "Jarinu (diabetes) y Synox (tiroides) ",
@@ -1191,6 +1206,7 @@
       "miedos": "No estar a la altura ",
       "tema_dios": "    Severidad conmigo mismo. ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Aún no lo sé ",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
@@ -1226,6 +1242,7 @@
       "miedos": "Con quien me pondrán a trabajar 🦦",
       "tema_dios": "No",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa de nuevo, taller/ charlas con invitados especiales ",
       "alergias": "Colorantes conservantes polvo y olores fuertes y detergentes fuertes ",
       "condiciones": "Atopica",
       "medicamentos": "Antialérgico ",
@@ -1261,6 +1278,7 @@
       "miedos": "Sentir que seré una carga para el equipo por las posibles veces que necesitaré una ride. ",
       "tema_dios": "Si, desligar mis emociones de mi fe. ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Una excursión \n",
       "alergias": "Canela y Piña ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
@@ -1296,6 +1314,7 @@
       "miedos": null,
       "tema_dios": "Si",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "La rifa funcionó bastante. ",
       "alergias": "Ninguna ",
       "condiciones": "Asma",
       "medicamentos": "Ninguno ",
@@ -1331,6 +1350,7 @@
       "miedos": "Por ahora ninguno ",
       "tema_dios": "Fortaleza ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas y Ventas de comidas ",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno",
@@ -1366,6 +1386,7 @@
       "miedos": "Miedo a no poder coordinar todo lo necesario ",
       "tema_dios": "Aún no lo tengo claro ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Merch eteciana. Se tendría que evaluar costo/beneficio ",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -1401,6 +1422,7 @@
       "miedos": "No hablo mucho, es decir no me gusta hablar con tantas personas mirándome ",
       "tema_dios": "Mi vida espiritual, en estos últimos años me acercado a Dios como nunca creí hacerlo, y actualmente siento que me está probando que tanto es mi devoción para seguirlo o que tan grande es mi fe.",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Sinceramente no sé me ocurre una actividad, que sea un éxito seguro ",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno ",
@@ -1436,6 +1458,7 @@
       "miedos": "ninguno ",
       "tema_dios": "creo que en hacerme entender que si tengo la capacidad de muchas cosas ",
       "invita": "Sí",
+      "idea_recaudacion": "noche de karaoke, venta de comida o dulces",
       "alergias": "ninguna",
       "condiciones": "ninguna ",
       "medicamentos": "ninguno",
@@ -1482,6 +1505,7 @@
       "miedos": "Un poco de miedo y ansiosa ",
       "tema_dios": "Tener más paciencia y confiar más en el ",
       "invita": "Sí",
+      "idea_recaudacion": "Ventas de comida, lavado de vehículos, feria o bazar ",
       "alergias": "Ninguna",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguna ",
@@ -1523,6 +1547,7 @@
       "miedos": "Quizás miedo a lo nuevo",
       "tema_dios": "Sip una situación en específico, falta de sinergia familiar",
       "invita": "Sí",
+      "idea_recaudacion": "Hace mucho que no veo a las pastorales haciendo Talento Shows. ( Tengo propuestas buenas sobre eso) Seria volver a intentar cuando en la diócesis hay tantísimo talento viejo y emergiendo ",
       "alergias": "Alergia a la piña! Si es de verdad",
       "condiciones": "Gastritis severa ",
       "medicamentos": "Unos cuentos por el proceso de la gastritis ",
@@ -1569,6 +1594,7 @@
       "miedos": "Tiempo ",
       "tema_dios": "ahora mismo no lo reconozco ",
       "invita": "Sí",
+      "idea_recaudacion": "Las rifas, realmente he podido ver que son muy buena opción. Actualmente están muy de moda las carreras, tipo un 5k-10k (no sé qué tan viable es preparar eso perooo, también he visto que hacen tipo carreras y luego coffee party para actividades de recaudación por alguna causa). ",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguna ",
@@ -1610,6 +1636,7 @@
       "miedos": "Está el miedito de no ser suficiente, ya todos los años no son iguales.",
       "tema_dios": "La seguridad ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa 💯 ",
       "alergias": "Aines ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguna ",
@@ -1645,6 +1672,7 @@
       "miedos": "Que tenga compañeros vago ",
       "tema_dios": "Servicio ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Una rifa ",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna \n",
       "medicamentos": "Ninguno ",
@@ -1680,6 +1708,7 @@
       "miedos": "Ninguno",
       "tema_dios": "Persistencia y paciencia",
       "invita": "Sí",
+      "idea_recaudacion": "Rifa y enviar solicitudes de donacion a empresas",
       "alergias": "No",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -1721,6 +1750,7 @@
       "miedos": "Miedo tal vez a no saber confrontar alguna situación con algún participante o miembro del equipo. ",
       "tema_dios": "Si, aceptar sus planes y dejar que Dios sea Dios en mi vida. ",
       "invita": "Sí",
+      "idea_recaudacion": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan. ",
       "alergias": "Ninguna",
       "condiciones": "Actualmente en POSTOPERATORIO. ",
       "medicamentos": "N/A",
@@ -1762,6 +1792,7 @@
       "miedos": "Vergüenza y fatiga emocional",
       "tema_dios": "La constancia con las cosas de la Iglesia.",
       "invita": "Sí",
+      "idea_recaudacion": "Bazar de ropas, joyas y accesorios, venta de comida o apoyar un negocio local sirviendo y dividiendo las ganancias de ese día con un por ciento.",
       "alergias": "Ninguna",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno",
@@ -1803,6 +1834,7 @@
       "miedos": "Miedo escénico ",
       "tema_dios": "Aprender a perdonar ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Se podría intentar una noche de talento, tipo karaoke ",
       "alergias": null,
       "condiciones": null,
       "medicamentos": "Pastillas de la presión ",
@@ -1908,6 +1940,7 @@
       "miedos": "No dar lo mejor de mí, no poder tener la capacidad de dejar de lado las cosas que nos hacen humanos y nos impiden un encuentro pleno con cristo y no cumplir con las expectativas que me autoexijo a la hora de dar un sí ",
       "tema_dios": null,
       "invita": "Todavía no sé",
+      "idea_recaudacion": null,
       "alergias": "Ninguna ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
@@ -1943,6 +1976,7 @@
       "miedos": "Que soy muy tímida ",
       "tema_dios": null,
       "invita": "No",
+      "idea_recaudacion": null,
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -1978,6 +2012,7 @@
       "miedos": "Unión familiar ",
       "tema_dios": "Reflejar el rostro de Jesús  desde el ejemplo ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Donaciones de etecianos viejos ",
       "alergias": "Ninguna ",
       "condiciones": "Ninguna",
       "medicamentos": "Nimguno",
@@ -2013,6 +2048,7 @@
       "miedos": "Ninguno",
       "tema_dios": "Mi consistencia en la fe",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas y lavado de autos",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguna",
@@ -2048,6 +2084,7 @@
       "miedos": null,
       "tema_dios": "La vida en comunidad  ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa ",
       "alergias": "No ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
@@ -2083,6 +2120,7 @@
       "miedos": "Ningunos",
       "tema_dios": "La perseverancia.",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Venta de comida.",
       "alergias": "Alimentaria:\nHuevo\nPiña\nAmbientales:\nBaygon (Liquidos de fumigacion).\n",
       "condiciones": "Ninguna",
       "medicamentos": "Normalmente cargo con mis medicamentos",
@@ -2153,6 +2191,7 @@
       "miedos": "Ninguno",
       "tema_dios": "Ser más misericordiosa, ver a los demás con los ojos de Dios",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Pienso que la rifa funcionó muy bien.",
       "alergias": "Polvo, gatos, etc.. (pero no se preocupen tengo siempre tengo antialérgico)",
       "condiciones": "Migraña",
       "medicamentos": "Antialérgicos, antimigrañosos",
@@ -2188,6 +2227,7 @@
       "miedos": "Ansiedad al futuro, a no ser suficiente o no escuchar la voz de Dios que me llama y por ende no cumplir con lo que Él ha soñado para mi, tanto espiritualmente como en mi área profesional. ",
       "tema_dios": "Si, la confianza y la falta de voluntad/pereza. ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Actividad deportiva. \nNoche de películas. \nAunque no soy muy pro de las que se necesita vender boletos, hay que admitir que la última (rifa de PC) dio buenos resultados. ",
       "alergias": "Neo-Melubrina (metamizol sódico) ",
       "condiciones": "Ninguna. ",
       "medicamentos": "Analgésicos y triptanes. ",
@@ -2223,6 +2263,7 @@
       "miedos": "Un poco a liderar o contacto directo con los participantes (por ejemplo: Guia)",
       "tema_dios": "Si, volver a conectar conmigo como algunas vez lo fue. ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "No se me ocurre nada en este momento",
       "alergias": "Ninguna",
       "condiciones": "Ninguna",
       "medicamentos": "Ninguno",
@@ -2258,6 +2299,7 @@
       "miedos": "Miedo escénico y a salir de mi zona de comfort ",
       "tema_dios": "Creo que no ",
       "invita": "Todavía no sé",
+      "idea_recaudacion": "Algún rally o actividad de comida ",
       "alergias": "Ninguna ",
       "condiciones": "Postquirurgica de la una corrección de escoliosis ",
       "medicamentos": "Ninguna",
@@ -3147,55 +3189,198 @@
     "top": [
       {
         "propuesta": "Rifa",
-        "menciones": 23
+        "menciones": 22
       },
       {
         "propuesta": "Venta de comida",
-        "menciones": 10
-      },
-      {
-        "propuesta": "Bazar / venta de garaje",
-        "menciones": 4
+        "menciones": 9
       },
       {
         "propuesta": "Noche de talento / karaoke / película",
         "menciones": 4
       },
       {
+        "propuesta": "Bazar / venta de garaje",
+        "menciones": 3
+      },
+      {
+        "propuesta": "Actividad deportiva / rally / 5K",
+        "menciones": 3
+      },
+      {
+        "propuesta": "Taller / charlas",
+        "menciones": 2
+      },
+      {
+        "propuesta": "Rifa/viaje (boletos, avión)",
+        "menciones": 2
+      },
+      {
+        "propuesta": "Excursión / día-pass / tómbola",
+        "menciones": 2
+      },
+      {
         "propuesta": "Lavado de autos",
         "menciones": 2
       },
       {
-        "propuesta": "Rally / actividad deportiva",
+        "propuesta": "Donaciones (etecianos / empresas)",
         "menciones": 2
       },
       {
-        "propuesta": "Carrera 5K + coffee party (Chantal)",
-        "menciones": 1
-      },
-      {
-        "propuesta": "Excursión / día-pass / tómbola",
-        "menciones": 3
-      },
-      {
-        "propuesta": "Donaciones empresas (Guido)",
-        "menciones": 1
-      },
-      {
-        "propuesta": "Donaciones etecianos viejos (Roberto)",
-        "menciones": 1
-      },
-      {
-        "propuesta": "Merch eteciana (Paloma)",
-        "menciones": 1
-      },
-      {
-        "propuesta": "Rifa de viaje internacional (Franklin)",
+        "propuesta": "Merch eteciana",
         "menciones": 1
       }
     ],
-    "cita_franklin": "Tomar en cuenta el tiempo de preparación para recaudar fondos.",
-    "cita_jordelis": "Tómbolas con PRECIOS ASEQUIBLES para darle más oportunidad a quienes siempre nos apoyan."
+    "ideas": [
+      {
+        "persona": "Jean Carlo De la Cruz Mendez",
+        "idea": "Rifas"
+      },
+      {
+        "persona": "Juan Manuel de la Cruz Méndez",
+        "idea": "Rifa. Taller"
+      },
+      {
+        "persona": "Laura Fernández",
+        "idea": "Una rifa, si se prepara con tiempo y se da la correcta promoción puede funcionar muy bien."
+      },
+      {
+        "persona": "Tomás Lorenzo",
+        "idea": "Rifa"
+      },
+      {
+        "persona": "Camila Fernández Hazim",
+        "idea": "Rifa"
+      },
+      {
+        "persona": "Priscilla Hidalgo Pou",
+        "idea": "Rifa y/o venta de comida"
+      },
+      {
+        "persona": "Darianny Rodriguez Belliard",
+        "idea": "rifa, venta de comida"
+      },
+      {
+        "persona": "Fernando Cordero",
+        "idea": "Venta de comida"
+      },
+      {
+        "persona": "Franklin De Jesús Silverio Delgadillo",
+        "idea": "1. Viaje al interior del país\n2. Rifa de boletos de avión para dos (O viaje todo incluido para una persona) a Colombia.\n3. Noche bailable"
+      },
+      {
+        "persona": "Ivanna Marien Mercedes Sosa",
+        "idea": "Venta de garaje todo al mismo precio"
+      },
+      {
+        "persona": "Jonathan Andres Medina Mota",
+        "idea": "Una rifa, entiendo que menor esfuerzo y se obtienen más resultados."
+      },
+      {
+        "persona": "Juan Pablo Argüello Alzate",
+        "idea": "Rifas"
+      },
+      {
+        "persona": "Luisa Maria Fiorentino Brugal",
+        "idea": "Rifas"
+      },
+      {
+        "persona": "Victoria Lorenzo Rivera",
+        "idea": "Rifa de nuevo, taller/ charlas con invitados especiales"
+      },
+      {
+        "persona": "Wilka María Reyes Mota",
+        "idea": "Una excursión"
+      },
+      {
+        "persona": "Yelaxni Mota",
+        "idea": "La rifa funcionó bastante."
+      },
+      {
+        "persona": "Johnnito Richiez Brugal",
+        "idea": "Rifas y Ventas de comidas"
+      },
+      {
+        "persona": "Paloma Mendez",
+        "idea": "Merch eteciana. Se tendría que evaluar costo/beneficio"
+      },
+      {
+        "persona": "Adrián Francisco Santana Puente",
+        "idea": "Sinceramente no sé me ocurre una actividad, que sea un éxito seguro"
+      },
+      {
+        "persona": "Ambar Liz Jáquez Lebrón",
+        "idea": "noche de karaoke, venta de comida o dulces"
+      },
+      {
+        "persona": "Brianelis Abreu Calderón",
+        "idea": "Ventas de comida, lavado de vehículos, feria o bazar"
+      },
+      {
+        "persona": "Candy Elizabeth Gatwood Ramos",
+        "idea": "Hace mucho que no veo a las pastorales haciendo Talento Shows. ( Tengo propuestas buenas sobre eso) Seria volver a intentar cuando en la diócesis hay tantísimo talento viejo y emergiendo"
+      },
+      {
+        "persona": "Chantal Melissa Carpio Jiménez",
+        "idea": "Las rifas, realmente he podido ver que son muy buena opción. Actualmente están muy de moda las carreras, tipo un 5k-10k (no sé qué tan viable es preparar eso perooo, también he visto que hacen tipo carreras y luego coffee party para actividades de recaudación por alguna causa)."
+      },
+      {
+        "persona": "Dayrelins Jazmin Santana Salas",
+        "idea": "Rifa 💯"
+      },
+      {
+        "persona": "Fabelly Maciel Fabian Bello",
+        "idea": "Una rifa"
+      },
+      {
+        "persona": "Guido Maldonado",
+        "idea": "Rifa y enviar solicitudes de donacion a empresas"
+      },
+      {
+        "persona": "Jordelis Mateo",
+        "idea": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan."
+      },
+      {
+        "persona": "Kelvin Alexis Ventura Santana",
+        "idea": "Bazar de ropas, joyas y accesorios, venta de comida o apoyar un negocio local sirviendo y dividiendo las ganancias de ese día con un por ciento."
+      },
+      {
+        "persona": "Maria del Carmen Mejías Mateo",
+        "idea": "Se podría intentar una noche de talento, tipo karaoke"
+      },
+      {
+        "persona": "Roberto Figueroa",
+        "idea": "Donaciones de etecianos viejos"
+      },
+      {
+        "persona": "Tommy Nova Nolasco",
+        "idea": "Rifas y lavado de autos"
+      },
+      {
+        "persona": "Wirna Miguelina Stapleton Pilier",
+        "idea": "Rifa"
+      },
+      {
+        "persona": "José Ángel Tusen Russo",
+        "idea": "Venta de comida."
+      },
+      {
+        "persona": "Dorian Elina Rodriguez Belliard",
+        "idea": "Pienso que la rifa funcionó muy bien."
+      },
+      {
+        "persona": "Ismarie Sthepanie Constanzo Ramos",
+        "idea": "Actividad deportiva. \nNoche de películas. \nAunque no soy muy pro de las que se necesita vender boletos, hay que admitir que la última (rifa de PC) dio buenos resultados."
+      },
+      {
+        "persona": "Mary Carmen Ramírez Vásquez",
+        "idea": "Algún rally o actividad de comida"
+      }
+    ],
+    "fuente": "Formulario col 18 \"¿Qué tipo de actividad de recaudación propondrías?\"",
+    "cita_franklin": "1. Viaje al interior del país\n2. Rifa de boletos de avión para dos (O viaje todo incluido para una persona) a Colombia.\n3. Noche bailable",
+    "cita_jordelis": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan."
   },
   "salud": {
     "alergias_alimentarias": {

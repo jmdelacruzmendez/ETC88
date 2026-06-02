@@ -71,7 +71,7 @@
   },
 
   "equipos_auxiliares": [
-    { "nombre": "Recaudación y Donaciones", "estado_equipo": "confirmado", "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).", "responsable": { "valor": "Co-Dir + Coords de cocina + Roberto", "estado": "propuesta" }, "miembros": [] },
+    { "nombre": "Recaudación y Donaciones", "estado_equipo": "confirmado", "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables." }, "miembros": [] },
     { "nombre": "Guagua (Transporte)", "estado_equipo": "confirmado", "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).", "responsable": { "valor": "Producción", "estado": "propuesta" }, "miembros": [] },
     { "nombre": "Actividad Profondo", "estado_equipo": "confirmado", "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.", "responsable": { "valor": "Directores", "estado": "propuesta" }, "miembros": [] },
     { "nombre": "Intersección (espiritual)", "estado_equipo": "confirmado", "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.", "responsable": { "valor": "Asesores Espirituales (Padre Paul + Sor Angelina)", "estado": "confirmado" }, "miembros": ["Padre Paul Ramírez", "Sor Angelina Lebrón"] }

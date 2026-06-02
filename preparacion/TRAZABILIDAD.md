@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 38 confirmados · 16 propuestas · 5 pendientes (en estado.json).
+**Resumen:** 38 confirmados · 15 propuestas · 6 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 47 · vacantes 1 · backups 3.
@@ -58,7 +58,6 @@
 | `finanzas.participantes_objetivo` | 53 | derivado (100 − 47 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
 | `marca.lema_retiro` | No fuimos a buscarlo: Él nos esperaba | propuesta Claude | Lema específico del ETC 88 SIN confirmar. |
 | `marca.tematica` | expedición / búsqueda de tesoro | propuesta Claude | Dirección temática a confirmar. El branding se reconstruye desde 0 con… |
-| `equipos_auxiliares[0].responsable` | Co-Dir + Coords de cocina + Roberto | — |  |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
 | `equipos_auxiliares[2].responsable` | Directores | — |  |
 | `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |
@@ -75,6 +74,7 @@
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
 | `marca.branding_reglas_esteticas` | None | — | Las reglas estéticas NO están definidas. Se trabajan con Claude Design… |
+| `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
 | `calendario_hitos.fecha_limite_cotizar_transporte` | None | director | El director pidió fijar una fecha límite para cotizar transporte, bibl… |
 | `calendario_hitos.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
 | `calendario_hitos.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
