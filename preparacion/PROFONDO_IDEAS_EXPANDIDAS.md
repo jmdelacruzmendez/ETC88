@@ -76,9 +76,8 @@
 
 ### D.1. San José Obrero (SPM) — *parroquia base*
 - Misas etecianas (12-jul, 9-ago, siguientes) = puntos de venta naturales.
-- **Lavado de autos** un domingo después de misa (aporte voluntario).
-- **Bingo eteciano** simple en el salón parroquial (1 tarde, cartones RD$100, premios donados).
 - Espacio para anunciar el garaje virtual + recogida.
+- *(Descartados por el director: lavado de autos y bingo.)*
 
 ### D.2. Nuestra Señora del Pilar (Punta Cana) — *primera activación*
 **Por qué:** nunca se ha activado, hay **7 etecianos del 88 que viven en PC** (Candy, Dorian, Ivanna, Jordelis, José Tusen, Tommy, Yelaxni) — base natural para liderarlo allá.
@@ -104,11 +103,11 @@
 7. **Rifa relámpago** entre profondos pequeños — 1 premio donado por semana (RD$50/boleto).
 
 **Medianas (1–2 jornadas + algo más de prep):**
-8. **Bingo eteciano** (atrio parroquial) — cartones RD$100, premios donados, 1 tarde.
-9. **Lavado de autos** después de misa SPM o PC — domingo, aporte voluntario.
-10. **Noche de talento/karaoke** — cuota baja (RD$200), comida + bebida con margen.
-11. **Trívia bíblica/eteciana** — virtual o presencial; bajo costo, alto engagement.
-12. **Subasta silenciosa de experiencias** — etecianos donan cena, tour PC, taller; se subasta online por 5 días.
+8. **Noche de talento/karaoke** — cuota baja (RD$200), comida + bebida con margen.
+9. **Trivia bíblica/eteciana** — virtual o presencial; bajo costo, alto engagement.
+10. **Subasta silenciosa de experiencias** — etecianos donan cena, tour PC, taller; se subasta online por 5 días.
+
+> *Descartados por el director: lavado de autos y bingo.*
 
 **Que requieren más preparación (solo si hay equipo):**
 13. **Talleres virtuales pagos** — sesión de 60–90 min, RD$300–500, abierto a comunidad:
@@ -120,6 +119,47 @@
 14. **Mini-retiro virtual** de 1 día sábado — RD$500, abierto a comunidad eteciana amplia.
 15. **Concierto eteciano** — músicos del 88 + músicos invitados, en parroquia, cuota voluntaria.
 16. **Día del padre/madre eteciano** (jul/oct) — detalle vendible con dedicatoria.
+
+---
+
+## ★ DIMENSIONAMIENTO Y RECOMENDACIÓN (lo que pediste)
+
+> **Esfuerzo:** 🟢 bajo (≤ medio día + 1–2 personas) · 🟡 medio (1 jornada + 3–4 personas o algo recurrente) · 🔴 alto (evento/sub-equipo dedicado).
+> **Ingreso neto estimado = [ESCENARIO]:** mi dimensión con supuestos prudentes para una comunidad eteciana de ~150–250 personas + redes. **A validar con el alcance real del equipo.** Sin lavado de autos ni bingo.
+
+| Profondo | Esf. | Prep | Ingreso neto est. (RD$) [ESCENARIO] | Apoyo comunidad | Mejor momento |
+|---|:--:|---|---|---|---|
+| **Apadrina un pez / biblia** | 🟢 | promo + matriz nominal | **~58,000** (cubre peces $34,320 + biblias $24,000 si se apadrinan todos) | alta (padrinos) | F1→retiro |
+| **Garaje virtual (IG)** | 🟡 | crear IG + fotos + logística recogida | **15,000–50,000** | alta (donan piezas + compran) | jul–ago (4 semanas) |
+| **Venta de comida por encargo** | 🟡 | menú + pre-venta + cocinar | **5,000–15,000 por ronda** (×2–3 rondas) | media (cocina + familias) | jul, ago |
+| **Post-misa (brownies + café)** | 🟢 | hornear + montar mesita | **2,000–5,000 por misa** (×2–3) | media | 12-jul, 9-ago |
+| **Cuestación dominical** | 🟢 | alcancía + tarjeta | **3,000–8,000 por misa** | alta | cada misa eteciana |
+| **Softball benéfico** | 🟡 | 1 coord + venta en gradas | **8,000–20,000** | alta (la liga ya juega) | jul/ago (1 jornada) |
+| **Apadrina una hora de oración** | 🟢 | armar cadena + promo | **2,000–6,000** + valor espiritual | alta | jul–ago |
+| **Misa con intención** | 🟢 | coordinar con Padre Paul | **1,000–3,000** | alta | cualquier misa |
+| **Tarjetas de palanca personalizadas** | 🟡 | diseñador + impresión | **2,000–6,000** | baja | jul–ago |
+| **Subasta silenciosa de experiencias** | 🟡 | conseguir 6–10 experiencias donadas | **10,000–30,000** | alta (donantes con oficio) | 1 semana online |
+| **Noche de talento / karaoke** | 🔴 | local + sonido + comida | **8,000–20,000** | media | 1 noche jul/ago |
+| **Trivia bíblica/eteciana** | 🟡 | preguntas + plataforma | **3,000–8,000** | media | virtual, 1 noche |
+| **Taller virtual pago** | 🔴 | facilitador + difusión | **5,000–15,000 por taller** | media (abre a comunidad) | jul–ago (si hay sub-equipo) |
+| **Mini-retiro virtual (1 día)** | 🔴 | programa + facilitadores | **10,000–25,000** | alta | 1 sábado ago |
+| **Concierto eteciano** | 🔴 | músicos + local + logística | **10,000–30,000** | alta | 1 fecha ago |
+| **Rifa relámpago semanal** | 🟢 | 1 premio donado/sem | **2,000–5,000/sem** | media | ⚠ **riesgo: canibaliza la rifa grande (Profondo #1). Evitar o espaciar.** |
+
+### Recomendación — portafolio de carga ligera y alto retorno
+**Prende estos 4 (suman mucho con poco esfuerzo), además de la rifa (Profondo #1) como ancla:**
+1. 🥇 **Apadrina un pez/biblia** — el de mejor retorno-esfuerzo: con solo promoción + una matriz nominal cubre **~RD$58K** del costo de materiales. Además es tangible y muy eteciano (tu nombre en el pez/biblia de un participante).
+2. 🥈 **Garaje virtual (Instagram)** — el mejor "ganador" independiente (RD$15–50K), involucra a TODA la comunidad (donan piezas, modelan, compran) y abre a externos. Esfuerzo medio pero **repartido en 4 semanas**.
+3. 🥉 **Post-misa + cuestación dominical** — casi sin carga, **aprovecha que la gente ya está reunida** en las misas (12-jul, 9-ago). Acumulado **RD$10–25K** y siembra cultura de aporte.
+4. **Softball benéfico** — la liga ya juega; el equipo solo monta la venta. **RD$8–20K** + cohesión de la comunidad antes del retiro.
+
+> **Combinados (escenario prudente): ~RD$95K–135K**, ≈ **30–40% de la brecha** (~RD$330K) **sin contar la rifa grande ni las donaciones**. Eso destraba el saldo negativo de jun/jul del flujo de caja.
+
+### Solo si hay un sub-equipo dedicado (no apilar)
+Subasta silenciosa · talleres virtuales · mini-retiro virtual · concierto. Buen potencial (RD$10–30K c/u) pero **🔴 alta preparación** — meterlos solo si Recaudación tiene gente extra, para no recargar al equipo que prepara el retiro.
+
+### Regla de oro del portafolio
+**Máximo 3–4 profondos pequeños activos a la vez** + la rifa. Más que eso satura al equipo y compite por la misma audiencia (la comunidad eteciana). Mejor **pocos, bien hechos y recurrentes** que muchos a medias.
 
 ---
 
