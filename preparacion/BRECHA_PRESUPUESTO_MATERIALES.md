@@ -29,7 +29,6 @@ Marco si se ven en el presupuesto 88 y el precio de referencia del **ETC 79**.
 | **Biblias** (×participantes) | entrega sábado | 🟡 en "Misceláneos" | $450–715 c/u (40 = $18,000) |
 | **Peces** (×participantes) | Eucaristía clausura | 🟡 en "Misceláneos" | $715 c/u (40 = **$28,600**) |
 | **Alambre** (dinámica de la fe) | sábado AM | ❓ no se ve | $120 rollo |
-| **Tela negra / antifaces** (Bayuyo) | viernes noche | 🔴 **NO aparece** | — (faltó en 79 también) |
 | **Rosarios** (oración a María) | sábado AM | 🔴 **NO aparece** | — (tu ejemplo ✓) |
 | **Banderín** (tela, asta, deco) | sábado noche | 🔴 **NO aparece** como línea | — |
 | **Cofre de palancas + monedas choco** | entrega palancas | ❓ no se ve | $935 cofre + monedas |
@@ -54,7 +53,10 @@ El **banderín** es obligatorio (sábado noche) y **no tiene línea** en el pres
 - Pintura/aplicaciones/bordado (según diseño de expedición)
 - Estimado a cotizar: ~RD$3,000–6,000.
 
-## 4. Cocina — detalle existe pero hay que confirmar
+## 4. Cocina — la casa INCLUYE gas y limpieza (confirmado)
+> Se eliminan del presupuesto la limpieza (~9,600) y el gasoil de planta (~3,600) = ahorro ~13,000.
+
+## 4b. Cocina — detalle
 El presupuesto 88 tiene Cocina/Mercado ($62,410) + Correcamino ($9,756). El **detalle de la canasta** sí está en el xlsx (comparativo ETC86). Pero faltan confirmar:
 - **Gas** (¿lo incluye la casa o se compra?).
 - **Decoración/motivos del comedor** (desayuno/almuerzo/cena) — ¿en cocina o en guías?
