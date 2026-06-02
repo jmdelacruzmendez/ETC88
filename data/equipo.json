@@ -3,9 +3,34 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "constelacion": 49,
-    "version": "v1-2026-06-02",
-    "total_equipo_v1": 39
+    "version": "v4-2026-06-02",
+    "total_equipo": 54,
+    "operativos": 45,
+    "no_operativos": 9
   },
+  "equipos_auxiliares": [
+    {
+      "nombre": "Donaciones",
+      "descripcion": "Levantamiento de fondos y aportes en especie. Puede incluir gente fuera del equipo operativo.",
+      "estado": "Por formular",
+      "miembros": [],
+      "responsable_sugerido": "Coords cocina + Roberto"
+    },
+    {
+      "nombre": "Guagua",
+      "descripcion": "Coordinación de transporte para todos los traslados (formaciones, retiro, avanzada).",
+      "estado": "Por formular",
+      "miembros": [],
+      "responsable_sugerido": "Producción"
+    },
+    {
+      "nombre": "Actividad Profondo",
+      "descripcion": "Diseño y ejecución de la actividad principal del Profondo (31-jul al 2-ago). Puede integrar gente fuera del equipo.",
+      "estado": "Por formular",
+      "miembros": [],
+      "responsable_sugerido": "Directores"
+    }
+  ],
   "marca": {
     "lema": "Siempre amigos",
     "cita": "Jn 15:15",
@@ -26,6 +51,7 @@
       "etc_anio_propio": 2012,
       "etcs_servidos": 10,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "directores",
       "rol": "Director",
       "talla": "XXL",
@@ -41,7 +67,9 @@
       "palabra": "Emocionado",
       "dudas": null,
       "algo_directores": "No",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "juan-manuel-de-la-cruz-m-ndez",
@@ -55,6 +83,7 @@
       "etc_anio_propio": 2013,
       "etcs_servidos": 3,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "directores",
       "rol": "Director",
       "talla": "XL",
@@ -70,7 +99,9 @@
       "palabra": "Ilusión",
       "dudas": "N.A",
       "algo_directores": "Buena pregunta",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "laura-fern-ndez",
@@ -84,6 +115,7 @@
       "etc_anio_propio": null,
       "etcs_servidos": 8,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "asesores",
       "rol": "Asesora",
       "talla": "S",
@@ -99,7 +131,9 @@
       "palabra": "Compromiso",
       "dudas": "N/A",
       "algo_directores": "No",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "tom-s-lorenzo",
@@ -113,6 +147,7 @@
       "etc_anio_propio": null,
       "etcs_servidos": 5,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "asesores",
       "rol": "Asesor",
       "talla": "S",
@@ -128,7 +163,9 @@
       "palabra": "Emoción y nostalgia ",
       "dudas": "Si tuvieran el poder de dejar el mensaje de este etc en el corazón de todos en una sola palabra cuál sería?",
       "algo_directores": "Gracias por el regalo de la amistad",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "camila-fern-ndez-hazim",
@@ -142,8 +179,9 @@
       "etc_anio_propio": 2017,
       "etcs_servidos": 2,
       "residencia": "Santo Domingo",
+      "comunidad": "Betania",
       "area": "guias",
-      "rol": "Coord. Guías",
+      "rol": "Coord. Guía",
       "talla": "M",
       "telefono": "18099615497",
       "que_espera": "Poder acercarme a mis hermanos de comunidad y poder dar de gratis lo que gratis se le ha dado",
@@ -157,7 +195,41 @@
       "palabra": "Servicio",
       "dudas": "Ninguna al momento",
       "algo_directores": "No",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "priscilla-hidalgo-pou",
+      "nombre": "Priscilla Hidalgo Pou",
+      "sexo": "F",
+      "edad": 33,
+      "cumple_mes": 7,
+      "cumple_dia": 16,
+      "cumple_anio": 1992,
+      "etc_propio": 51,
+      "etc_anio_propio": 2011,
+      "etcs_servidos": 12,
+      "residencia": "Santo Domingo",
+      "comunidad": "Betania",
+      "area": "guias",
+      "rol": "Coord. Guía",
+      "talla": "M",
+      "telefono": "18294783840",
+      "que_espera": "Servir con intención",
+      "miedos": null,
+      "tema_dios": "El propósito",
+      "invita": "Todavía no sé",
+      "alergias": "Mariscos",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguna",
+      "contacto_emergencia": "Betty Pou- 829-972-4886",
+      "palabra": "Intención",
+      "dudas": null,
+      "algo_directores": "Lo preguntaro todo🇲🇽",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "darianny-rodriguez-belliard",
@@ -171,6 +243,7 @@
       "etc_anio_propio": null,
       "etcs_servidos": 2,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "M",
@@ -186,7 +259,47 @@
       "palabra": "inesperado ",
       "dudas": null,
       "algo_directores": null,
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "fernando-cordero",
+      "nombre": "Fernando Cordero",
+      "sexo": "M",
+      "edad": 23,
+      "cumple_mes": 12,
+      "cumple_dia": 20,
+      "cumple_anio": 2002,
+      "etc_propio": 78,
+      "etc_anio_propio": 2022,
+      "etcs_servidos": 3,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "guias",
+      "rol": "Guía",
+      "talla": "S",
+      "telefono": "18096398714",
+      "que_espera": "Sentir la presencia de Dios y que los participantes puedan encontrarse con eld",
+      "miedos": null,
+      "tema_dios": "La paciencia ",
+      "invita": "Sí",
+      "alergias": "Alérgico al polvo, polen y olores fuertes ",
+      "condiciones": "Asmático ",
+      "medicamentos": "Frenaler forte (loratadina)",
+      "contacto_emergencia": "María Astacio Frías (Madre) 809-402-7121",
+      "palabra": "Agrado",
+      "dudas": "Por ahora no",
+      "algo_directores": null,
+      "invitados": [
+        {
+          "nombre": "Nicole Benítez",
+          "edad": "25.0",
+          "relacion": "Amigo"
+        }
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "franklin-de-jes-s-silverio-delgadillo",
@@ -200,6 +313,7 @@
       "etc_anio_propio": 2018,
       "etcs_servidos": 4,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "M",
@@ -226,7 +340,47 @@
           "edad": "18.0",
           "relacion": "Familiar"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "ivanna-marien-mercedes-sosa",
+      "nombre": "Ivanna Marien Mercedes Sosa",
+      "sexo": "F",
+      "edad": 30,
+      "cumple_mes": 11,
+      "cumple_dia": 9,
+      "cumple_anio": 1995,
+      "etc_propio": 74,
+      "etc_anio_propio": 2018,
+      "etcs_servidos": 2,
+      "residencia": "Punta Cana",
+      "comunidad": "Betania",
+      "area": "guias",
+      "rol": "Guía",
+      "talla": "S",
+      "telefono": "82999467310",
+      "que_espera": "Servir y que realmente los participantes nos vean como ejemplo de fe católica y quieran seguir este camino ",
+      "miedos": "Ninguno! Con Dios ",
+      "tema_dios": "Si, mi paciencia, mi fe y esperar sus tiempos ",
+      "invita": "Sí",
+      "alergias": "Mariscos ",
+      "condiciones": "Asthma",
+      "medicamentos": "Antialérgicos ",
+      "contacto_emergencia": "Wenddy Sosa-Madre-809-704-0420",
+      "palabra": "Amor",
+      "dudas": "Surgirán en el transcurso ",
+      "algo_directores": "Hasta ahora nada ",
+      "invitados": [
+        {
+          "nombre": "Priscila María Matos Mercedes",
+          "edad": "27.0",
+          "relacion": "Familiar"
+        }
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "jhonnalia-franchesca-silvestre-guzm-n",
@@ -240,6 +394,7 @@
       "etc_anio_propio": 2019,
       "etcs_servidos": 3,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "L",
@@ -255,7 +410,9 @@
       "palabra": "Disposición ",
       "dudas": null,
       "algo_directores": "Necesito ayuda para movilizar mis cosas (Jejeje) ",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "jonathan-andres-medina-mota",
@@ -269,6 +426,7 @@
       "etc_anio_propio": 2015,
       "etcs_servidos": 5,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "L",
@@ -284,7 +442,9 @@
       "palabra": "Compromiso",
       "dudas": "Ninguna ",
       "algo_directores": "Ninguna",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "juan-pablo-arg-ello-alzate",
@@ -298,6 +458,7 @@
       "etc_anio_propio": 2022,
       "etcs_servidos": 4,
       "residencia": "Santo Domingo",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "L",
@@ -313,36 +474,9 @@
       "palabra": ".",
       "dudas": "Ninguna",
       "algo_directores": "De momento nada ",
-      "invitados": []
-    },
-    {
-      "id": "leober-carrion-soriank",
-      "nombre": "Leober Carrion Soriank",
-      "sexo": "M",
-      "edad": 21,
-      "cumple_mes": 10,
-      "cumple_dia": 4,
-      "cumple_anio": 2004,
-      "etc_propio": 79,
-      "etc_anio_propio": 2023,
-      "etcs_servidos": 1,
-      "residencia": "SPM",
-      "area": "guias",
-      "rol": "Guía",
-      "talla": "M",
-      "telefono": "18294401305",
-      "que_espera": "Seguir viendo a Dios en cada uno del equipo y participantes ",
-      "miedos": "Un poco a liderar o contacto directo con los participantes (por ejemplo: Guia)",
-      "tema_dios": "Si, volver a conectar conmigo como algunas vez lo fue. ",
-      "invita": "Todavía no sé",
-      "alergias": "Ninguna",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguno",
-      "contacto_emergencia": "Aneurys Soriano- Madre- 8294301304",
-      "palabra": "Oportunidad ",
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "luisa-maria-fiorentino-brugal",
@@ -356,6 +490,7 @@
       "etc_anio_propio": 2017,
       "etcs_servidos": 4,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "L",
@@ -371,7 +506,9 @@
       "palabra": "Apertura ",
       "dudas": "N.A. ",
       "algo_directores": "No por el momento. ",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "oliver-rafael-de-le-n-ram-rez",
@@ -385,6 +522,7 @@
       "etc_anio_propio": 2019,
       "etcs_servidos": 4,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "M",
@@ -400,36 +538,9 @@
       "palabra": "No me sueltes, Señor ",
       "dudas": "Aún Nada ",
       "algo_directores": "N/a",
-      "invitados": []
-    },
-    {
-      "id": "priscilla-hidalgo-pou",
-      "nombre": "Priscilla Hidalgo Pou",
-      "sexo": "F",
-      "edad": 33,
-      "cumple_mes": 7,
-      "cumple_dia": 16,
-      "cumple_anio": 1992,
-      "etc_propio": 51,
-      "etc_anio_propio": 2011,
-      "etcs_servidos": 12,
-      "residencia": "Santo Domingo",
-      "area": "guias",
-      "rol": "Coord. Guías",
-      "talla": "M",
-      "telefono": "18294783840",
-      "que_espera": "Servir con intención",
-      "miedos": null,
-      "tema_dios": "El propósito",
-      "invita": "Todavía no sé",
-      "alergias": "Mariscos",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguna",
-      "contacto_emergencia": "Betty Pou- 829-972-4886",
-      "palabra": "Intención",
-      "dudas": null,
-      "algo_directores": "Lo preguntaro todo🇲🇽",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "victoria-lorenzo-rivera",
@@ -443,6 +554,7 @@
       "etc_anio_propio": 2018,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "S",
@@ -458,36 +570,41 @@
       "palabra": "Receptiva ",
       "dudas": "Ya quiero ver el tema ese día ",
       "algo_directores": "Oremos por JC 🙏🏽",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
-      "id": "wirna-miguelina-stapleton-pilier",
-      "nombre": "Wirna Miguelina Stapleton Pilier",
+      "id": "wilka-mar-a-reyes-mota",
+      "nombre": "Wilka María Reyes Mota",
       "sexo": "F",
-      "edad": 32,
+      "edad": 20,
       "cumple_mes": 9,
-      "cumple_dia": 29,
-      "cumple_anio": 1993,
-      "etc_propio": 66,
-      "etc_anio_propio": null,
+      "cumple_dia": 8,
+      "cumple_anio": 2005,
+      "etc_propio": 79,
+      "etc_anio_propio": 2023,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "M",
-      "telefono": "82980199270",
-      "que_espera": "Un etc de servidores ",
-      "miedos": null,
-      "tema_dios": "La vida en comunidad  ",
+      "telefono": "18298618355",
+      "que_espera": "ETC. Encontrarme con Cristo, dejarme guiar y darme. ",
+      "miedos": "Sentir que seré una carga para el equipo por las posibles veces que necesitaré una ride. ",
+      "tema_dios": "Si, desligar mis emociones de mi fe. ",
       "invita": "Todavía no sé",
-      "alergias": "No ",
+      "alergias": "Canela y Piña ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
-      "contacto_emergencia": "Juan M Stapleton papa 8097107944",
-      "palabra": "Coherencia ",
-      "dudas": "Que voy hacer ",
-      "algo_directores": "No se dejen humillar ",
-      "invitados": []
+      "contacto_emergencia": "Wirmel Reyes 829 639 3113",
+      "palabra": "Agradecimiento ",
+      "dudas": "Nada por ahora ",
+      "algo_directores": "Nada 🫶🏼",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "yelaxni-mota",
@@ -501,6 +618,7 @@
       "etc_anio_propio": null,
       "etcs_servidos": 2,
       "residencia": "Punta Cana",
+      "comunidad": "Betania",
       "area": "guias",
       "rol": "Guía",
       "talla": "M",
@@ -516,7 +634,73 @@
       "palabra": "Feliz ",
       "dudas": null,
       "algo_directores": null,
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "johnnito-richiez-brugal",
+      "nombre": "Johnnito Richiez Brugal",
+      "sexo": "M",
+      "edad": 41,
+      "cumple_mes": 10,
+      "cumple_dia": 23,
+      "cumple_anio": 1984,
+      "etc_propio": 35,
+      "etc_anio_propio": 2005,
+      "etcs_servidos": 11,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Coord. Cocina",
+      "talla": "XL",
+      "telefono": "82926441760",
+      "que_espera": "Nuevas experiencias de Fe y Servicio a Dios",
+      "miedos": "Por ahora ninguno ",
+      "tema_dios": "Fortaleza ",
+      "invita": "Todavía no sé",
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna ",
+      "medicamentos": "Ninguno",
+      "contacto_emergencia": "María Teresa Brugal (Madre) 809-529-2626",
+      "palabra": "Compromiso",
+      "dudas": "Por ahora no",
+      "algo_directores": "Por ahora no",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "paloma-mendez",
+      "nombre": "Paloma Mendez",
+      "sexo": "F",
+      "edad": 35,
+      "cumple_mes": 6,
+      "cumple_dia": 27,
+      "cumple_anio": 1990,
+      "etc_propio": 45,
+      "etc_anio_propio": null,
+      "etcs_servidos": 5,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Coord. Cocina",
+      "talla": "M",
+      "telefono": "80986076300",
+      "que_espera": "Servicio ",
+      "miedos": "Miedo a no poder coordinar todo lo necesario ",
+      "tema_dios": "Aún no lo tengo claro ",
+      "invita": "Todavía no sé",
+      "alergias": "Ninguna",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno",
+      "contacto_emergencia": "Magnolia Méndez. Hermana. 8093996932",
+      "palabra": "Disposición ",
+      "dudas": "Organizacion de tiempo ",
+      "algo_directores": "Por ahora no se me ocurry",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "adri-n-francisco-santana-puente",
@@ -530,6 +714,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
@@ -545,7 +730,9 @@
       "palabra": "Esperanza",
       "dudas": "Hasta ahora ninguna ",
       "algo_directores": "No se me ocurre nada",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "ambar-liz-j-quez-lebr-n",
@@ -559,6 +746,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "S",
@@ -585,7 +773,9 @@
           "edad": "18.0",
           "relacion": "Amigo"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "brianelis-abreu-calder-n",
@@ -599,6 +789,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "S",
@@ -620,7 +811,9 @@
           "edad": "21.0",
           "relacion": "Amigo"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "candy-elizabeth-gatwood-ramos",
@@ -634,6 +827,7 @@
       "etc_anio_propio": 2012,
       "etcs_servidos": 0,
       "residencia": "Punta Cana",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "L",
@@ -660,7 +854,9 @@
           "edad": "33.0",
           "relacion": "Amigo"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "chantal-melissa-carpio-jim-nez",
@@ -674,6 +870,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "Higüey / SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "S",
@@ -695,7 +892,9 @@
           "edad": "25.0",
           "relacion": "Otro"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "dayrelins-jazmin-santana-salas",
@@ -709,8 +908,9 @@
       "etc_anio_propio": 2023,
       "etcs_servidos": 2,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
-      "rol": "Coord. Cocina (posible)",
+      "rol": "Cocina",
       "talla": "M",
       "telefono": "8094264150",
       "que_espera": "Vivir, servir y disfrutar. ",
@@ -724,7 +924,41 @@
       "palabra": "Responsabilidad ",
       "dudas": null,
       "algo_directores": null,
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "fabelle-maciel-fabian-bello",
+      "nombre": "Fabelle maciel fabian bello",
+      "sexo": "F",
+      "edad": 34,
+      "cumple_mes": 8,
+      "cumple_dia": 11,
+      "cumple_anio": 1991,
+      "etc_propio": 74,
+      "etc_anio_propio": 2018,
+      "etcs_servidos": 0,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "S",
+      "telefono": "18292859257",
+      "que_espera": "Tener una experiencia de servicio que me acerque mas a Dios ",
+      "miedos": "Que tenga compañeros vago ",
+      "tema_dios": "Servicio ",
+      "invita": "Todavía no sé",
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna \n",
+      "medicamentos": "Ninguno ",
+      "contacto_emergencia": "Fabianlly fabian, hermana 8299410506",
+      "palabra": "Amor ",
+      "dudas": "No\n\n",
+      "algo_directores": "Yo tengo un viaje programado para el mes de julio ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "guido-mardonado",
@@ -738,6 +972,7 @@
       "etc_anio_propio": null,
       "etcs_servidos": 0,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "L",
@@ -759,71 +994,9 @@
           "edad": "22.0",
           "relacion": "Amigo"
         }
-      ]
-    },
-    {
-      "id": "ivanna-marien-mercedes-sosa",
-      "nombre": "Ivanna Marien Mercedes Sosa",
-      "sexo": "F",
-      "edad": 30,
-      "cumple_mes": 11,
-      "cumple_dia": 9,
-      "cumple_anio": 1995,
-      "etc_propio": 74,
-      "etc_anio_propio": 2018,
-      "etcs_servidos": 2,
-      "residencia": "Punta Cana",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "S",
-      "telefono": "82999467310",
-      "que_espera": "Servir y que realmente los participantes nos vean como ejemplo de fe católica y quieran seguir este camino ",
-      "miedos": "Ninguno! Con Dios ",
-      "tema_dios": "Si, mi paciencia, mi fe y esperar sus tiempos ",
-      "invita": "Sí",
-      "alergias": "Mariscos ",
-      "condiciones": "Asthma",
-      "medicamentos": "Antialérgicos ",
-      "contacto_emergencia": "Wenddy Sosa-Madre-809-704-0420",
-      "palabra": "Amor",
-      "dudas": "Surgirán en el transcurso ",
-      "algo_directores": "Hasta ahora nada ",
-      "invitados": [
-        {
-          "nombre": "Priscila María Matos Mercedes",
-          "edad": "27.0",
-          "relacion": "Familiar"
-        }
-      ]
-    },
-    {
-      "id": "johnnito-richiez-brugal",
-      "nombre": "Johnnito Richiez Brugal",
-      "sexo": "M",
-      "edad": 41,
-      "cumple_mes": 10,
-      "cumple_dia": 23,
-      "cumple_anio": 1984,
-      "etc_propio": 35,
-      "etc_anio_propio": 2005,
-      "etcs_servidos": 11,
-      "residencia": "SPM",
-      "area": "cocina",
-      "rol": "Coord. Cocina",
-      "talla": "XL",
-      "telefono": "82926441760",
-      "que_espera": "Nuevas experiencias de Fe y Servicio a Dios",
-      "miedos": "Por ahora ninguno ",
-      "tema_dios": "Fortaleza ",
-      "invita": "Todavía no sé",
-      "alergias": "Ninguna ",
-      "condiciones": "Ninguna ",
-      "medicamentos": "Ninguno",
-      "contacto_emergencia": "María Teresa Brugal (Madre) 809-529-2626",
-      "palabra": "Compromiso",
-      "dudas": "Por ahora no",
-      "algo_directores": "Por ahora no",
-      "invitados": []
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "jordelis-mateo",
@@ -837,6 +1010,7 @@
       "etc_anio_propio": 2023,
       "etcs_servidos": 2,
       "residencia": "Punta Cana",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
@@ -858,7 +1032,9 @@
           "edad": "23.0",
           "relacion": "Familiar"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "kelvin-alexis-ventura-santana",
@@ -872,6 +1048,7 @@
       "etc_anio_propio": 2024,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
@@ -893,7 +1070,9 @@
           "edad": "24 años",
           "relacion": "Amigo"
         }
-      ]
+      ],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "maria-del-carmen-mej-as-mateo",
@@ -907,6 +1086,7 @@
       "etc_anio_propio": 2016,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
@@ -922,36 +1102,73 @@
       "palabra": "Disponibilidad ",
       "dudas": "Por el momento ninguna",
       "algo_directores": null,
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
-      "id": "paloma-mendez",
-      "nombre": "Paloma Mendez",
+      "id": "olanlly-sin-formulario",
+      "nombre": "Olanlly (sin formulario)",
       "sexo": "F",
-      "edad": 35,
-      "cumple_mes": 6,
-      "cumple_dia": 27,
-      "cumple_anio": 1990,
-      "etc_propio": 45,
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
       "etc_anio_propio": null,
-      "etcs_servidos": 5,
-      "residencia": "SPM",
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
       "area": "cocina",
-      "rol": "Coord. Cocina",
-      "talla": "M",
-      "telefono": "80986076300",
-      "que_espera": "Servicio ",
-      "miedos": "Miedo a no poder coordinar todo lo necesario ",
-      "tema_dios": "Aún no lo tengo claro ",
-      "invita": "Todavía no sé",
-      "alergias": "Ninguna",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguno",
-      "contacto_emergencia": "Magnolia Méndez. Hermana. 8093996932",
-      "palabra": "Disposición ",
-      "dudas": "Organizacion de tiempo ",
-      "algo_directores": "Por ahora no se me ocurry",
-      "invitados": []
+      "rol": "Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true
+    },
+    {
+      "id": "pamela-sin-formulario",
+      "nombre": "Pamela (sin formulario)",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true
     },
     {
       "id": "risaira-santana-rosario",
@@ -965,6 +1182,7 @@
       "etc_anio_propio": 2024,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
@@ -980,7 +1198,9 @@
       "palabra": "Aceptación ",
       "dudas": "Ninguna hasta ahora ",
       "algo_directores": "Por ahora nada ",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "risairi-santana-rosario",
@@ -994,6 +1214,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "S",
@@ -1009,7 +1230,73 @@
       "palabra": "Desprendimiento",
       "dudas": "No",
       "algo_directores": "No",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "roberto-figueroa",
+      "nombre": "Roberto Figueroa",
+      "sexo": "M",
+      "edad": 45,
+      "cumple_mes": 5,
+      "cumple_dia": 12,
+      "cumple_anio": 1981,
+      "etc_propio": 55,
+      "etc_anio_propio": null,
+      "etcs_servidos": 3,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "L",
+      "telefono": "18097171329",
+      "que_espera": "Renovar mi etc y por seguir formándome y compartir mi decesos de estar a los pies del Señor y poder mantenerme en su camino ",
+      "miedos": "Unión familiar ",
+      "tema_dios": "Reflejar el rostro de Jesús  desde el ejemplo ",
+      "invita": "Todavía no sé",
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna",
+      "medicamentos": "Nimguno",
+      "contacto_emergencia": "Josseline Aimee Cruz 809 714 1120",
+      "palabra": "Disposición ",
+      "dudas": "Ninguna ",
+      "algo_directores": "Nada por el momento ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "roselyn-sin-formulario",
+      "nombre": "Roselyn (sin formulario)",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true
     },
     {
       "id": "tommy-nova-nolasco",
@@ -1023,6 +1310,7 @@
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
       "residencia": "Punta Cana",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "XL",
@@ -1038,129 +1326,41 @@
       "palabra": "Entusiasmo ",
       "dudas": "Nada que comentar ",
       "algo_directores": "Nada por el momento ",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
-      "id": "wilka-mar-a-reyes-mota",
-      "nombre": "Wilka María Reyes Mota",
+      "id": "wirna-miguelina-stapleton-pilier",
+      "nombre": "Wirna Miguelina Stapleton Pilier",
       "sexo": "F",
-      "edad": 20,
+      "edad": 32,
       "cumple_mes": 9,
-      "cumple_dia": 8,
-      "cumple_anio": 2005,
-      "etc_propio": 79,
-      "etc_anio_propio": 2023,
+      "cumple_dia": 29,
+      "cumple_anio": 1993,
+      "etc_propio": 66,
+      "etc_anio_propio": null,
       "etcs_servidos": 1,
       "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
-      "telefono": "18298618355",
-      "que_espera": "ETC. Encontrarme con Cristo, dejarme guiar y darme. ",
-      "miedos": "Sentir que seré una carga para el equipo por las posibles veces que necesitaré una ride. ",
-      "tema_dios": "Si, desligar mis emociones de mi fe. ",
+      "telefono": "82980199270",
+      "que_espera": "Un etc de servidores ",
+      "miedos": null,
+      "tema_dios": "La vida en comunidad  ",
       "invita": "Todavía no sé",
-      "alergias": "Canela y Piña ",
+      "alergias": "No ",
       "condiciones": "Ninguna ",
       "medicamentos": "Ninguno ",
-      "contacto_emergencia": "Wirmel Reyes 829 639 3113",
-      "palabra": "Agradecimiento ",
-      "dudas": "Nada por ahora ",
-      "algo_directores": "Nada 🫶🏼",
-      "invitados": []
-    },
-    {
-      "id": "dorian-elina-rodriguez-belliard",
-      "nombre": "Dorian Elina Rodriguez Belliard",
-      "sexo": "F",
-      "edad": 21,
-      "cumple_mes": 3,
-      "cumple_dia": 21,
-      "cumple_anio": 1998,
-      "etc_propio": 62,
-      "etc_anio_propio": 2015,
-      "etcs_servidos": 9,
-      "residencia": "Punta Cana",
-      "area": "musica",
-      "rol": "Música",
-      "talla": "M",
-      "telefono": "82998609950",
-      "que_espera": "Espero vivir y recordar el amor de cada uno de mis amigos de comunidad y el gran sacrificio detrás de cada pequeño detalle del retiro.",
-      "miedos": "Ninguno",
-      "tema_dios": "Ser más misericordiosa, ver a los demás con los ojos de Dios",
-      "invita": "Todavía no sé",
-      "alergias": "Polvo, gatos, etc.. (pero no se preocupen tengo siempre tengo antialérgico)",
-      "condiciones": "Migraña",
-      "medicamentos": "Antialérgicos, antimigrañosos",
-      "contacto_emergencia": "8493521430 Jose Tusen ",
-      "palabra": "Servicio",
-      "dudas": "Ninguna",
-      "algo_directores": "No 🤭",
-      "invitados": []
-    },
-    {
-      "id": "fernando-cordero",
-      "nombre": "Fernando Cordero",
-      "sexo": "M",
-      "edad": 23,
-      "cumple_mes": 12,
-      "cumple_dia": 20,
-      "cumple_anio": 2002,
-      "etc_propio": 78,
-      "etc_anio_propio": 2022,
-      "etcs_servidos": 3,
-      "residencia": "SPM",
-      "area": "musica",
-      "rol": "Música",
-      "talla": "S",
-      "telefono": "18096398714",
-      "que_espera": "Sentir la presencia de Dios y que los participantes puedan encontrarse con eld",
-      "miedos": null,
-      "tema_dios": "La paciencia ",
-      "invita": "Sí",
-      "alergias": "Alérgico al polvo, polen y olores fuertes ",
-      "condiciones": "Asmático ",
-      "medicamentos": "Frenaler forte (loratadina)",
-      "contacto_emergencia": "María Astacio Frías (Madre) 809-402-7121",
-      "palabra": "Agrado",
-      "dudas": "Por ahora no",
-      "algo_directores": null,
-      "invitados": [
-        {
-          "nombre": "Nicole Benítez",
-          "edad": "25.0",
-          "relacion": "Amigo"
-        }
-      ]
-    },
-    {
-      "id": "ismarie-sthepanie-constanzo-ramos",
-      "nombre": "Ismarie Sthepanie Constanzo Ramos",
-      "sexo": "F",
-      "edad": 20,
-      "cumple_mes": 6,
-      "cumple_dia": 14,
-      "cumple_anio": 2005,
-      "etc_propio": 83,
-      "etc_anio_propio": 2024,
-      "etcs_servidos": 1,
-      "residencia": "El Seibo / SPM",
-      "area": "musica",
-      "rol": "Música",
-      "talla": "M",
-      "telefono": "18493865474",
-      "que_espera": "Dejarme usar genuinamente por Dios para poder servir enteramente, revivir mi retiro y dar lo que deba de mí para que así como yo viví el mío, otros puedan hacerlo a través de mí y del equipo. \nIntegrarme también con el equipo/hermanos de comunidad. ",
-      "miedos": "Ansiedad al futuro, a no ser suficiente o no escuchar la voz de Dios que me llama y por ende no cumplir con lo que Él ha soñado para mi, tanto espiritualmente como en mi área profesional. ",
-      "tema_dios": "Si, la confianza y la falta de voluntad/pereza. ",
-      "invita": "Todavía no sé",
-      "alergias": "Neo-Melubrina (metamizol sódico) ",
-      "condiciones": "Ninguna. ",
-      "medicamentos": "Analgésicos y triptanes. ",
-      "contacto_emergencia": "Digna Ramos (madre) 829-705-2966\nEnrique Constanzo (Padre) 809-815-6852 ",
-      "palabra": "Amor. ",
-      "dudas": "Ninguna por el momento. ",
-      "algo_directores": "Hasta ahora ninguna. ",
-      "invitados": []
+      "contacto_emergencia": "Juan M Stapleton papa 8097107944",
+      "palabra": "Coherencia ",
+      "dudas": "Que voy hacer ",
+      "algo_directores": "No se dejen humillar ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
       "id": "jos-ngel-tusen-russo",
@@ -1174,6 +1374,7 @@
       "etc_anio_propio": 2017,
       "etcs_servidos": 8,
       "residencia": "Punta Cana",
+      "comunidad": "Betania",
       "area": "musica",
       "rol": "Coord. Música",
       "talla": "L",
@@ -1189,62 +1390,459 @@
       "palabra": "Si el amor se acaba, se acaba el servicio.",
       "dudas": "N/A",
       "algo_directores": "N/A",
-      "invitados": []
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
     },
     {
-      "id": "fabelle-maciel-fabian-bello",
-      "nombre": "Fabelle maciel fabian bello",
+      "id": "daylin-sin-formulario",
+      "nombre": "Daylin (sin formulario)",
       "sexo": "F",
-      "edad": 34,
-      "cumple_mes": 8,
-      "cumple_dia": 11,
-      "cumple_anio": 1991,
-      "etc_propio": 74,
-      "etc_anio_propio": 2018,
-      "etcs_servidos": 0,
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "musica",
+      "rol": "Música",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true
+    },
+    {
+      "id": "dorian-elina-rodriguez-belliard",
+      "nombre": "Dorian Elina Rodriguez Belliard",
+      "sexo": "F",
+      "edad": 21,
+      "cumple_mes": 3,
+      "cumple_dia": 21,
+      "cumple_anio": 1998,
+      "etc_propio": 62,
+      "etc_anio_propio": 2015,
+      "etcs_servidos": 9,
+      "residencia": "Punta Cana",
+      "comunidad": "Betania",
+      "area": "musica",
+      "rol": "Música",
+      "talla": "M",
+      "telefono": "82998609950",
+      "que_espera": "Espero vivir y recordar el amor de cada uno de mis amigos de comunidad y el gran sacrificio detrás de cada pequeño detalle del retiro.",
+      "miedos": "Ninguno",
+      "tema_dios": "Ser más misericordiosa, ver a los demás con los ojos de Dios",
+      "invita": "Todavía no sé",
+      "alergias": "Polvo, gatos, etc.. (pero no se preocupen tengo siempre tengo antialérgico)",
+      "condiciones": "Migraña",
+      "medicamentos": "Antialérgicos, antimigrañosos",
+      "contacto_emergencia": "8493521430 Jose Tusen ",
+      "palabra": "Servicio",
+      "dudas": "Ninguna",
+      "algo_directores": "No 🤭",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "ismarie-sthepanie-constanzo-ramos",
+      "nombre": "Ismarie Sthepanie Constanzo Ramos",
+      "sexo": "F",
+      "edad": 20,
+      "cumple_mes": 6,
+      "cumple_dia": 14,
+      "cumple_anio": 2005,
+      "etc_propio": 83,
+      "etc_anio_propio": 2024,
+      "etcs_servidos": 1,
+      "residencia": "El Seibo / SPM",
+      "comunidad": "Betania",
+      "area": "musica",
+      "rol": "Música",
+      "talla": "M",
+      "telefono": "18493865474",
+      "que_espera": "Dejarme usar genuinamente por Dios para poder servir enteramente, revivir mi retiro y dar lo que deba de mí para que así como yo viví el mío, otros puedan hacerlo a través de mí y del equipo. \nIntegrarme también con el equipo/hermanos de comunidad. ",
+      "miedos": "Ansiedad al futuro, a no ser suficiente o no escuchar la voz de Dios que me llama y por ende no cumplir con lo que Él ha soñado para mi, tanto espiritualmente como en mi área profesional. ",
+      "tema_dios": "Si, la confianza y la falta de voluntad/pereza. ",
+      "invita": "Todavía no sé",
+      "alergias": "Neo-Melubrina (metamizol sódico) ",
+      "condiciones": "Ninguna. ",
+      "medicamentos": "Analgésicos y triptanes. ",
+      "contacto_emergencia": "Digna Ramos (madre) 829-705-2966\nEnrique Constanzo (Padre) 809-815-6852 ",
+      "palabra": "Amor. ",
+      "dudas": "Ninguna por el momento. ",
+      "algo_directores": "Hasta ahora ninguna. ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "leober-carrion-soriank",
+      "nombre": "Leober Carrion Soriank",
+      "sexo": "M",
+      "edad": 21,
+      "cumple_mes": 10,
+      "cumple_dia": 4,
+      "cumple_anio": 2004,
+      "etc_propio": 79,
+      "etc_anio_propio": 2023,
+      "etcs_servidos": 1,
       "residencia": "SPM",
-      "area": "por_asignar",
-      "rol": "Por asignar",
-      "talla": "S",
-      "telefono": "18292859257",
-      "que_espera": "Tener una experiencia de servicio que me acerque mas a Dios ",
-      "miedos": "Que tenga compañeros vago ",
-      "tema_dios": "Servicio ",
+      "comunidad": "Betania",
+      "area": "musica",
+      "rol": "Música",
+      "talla": "M",
+      "telefono": "18294401305",
+      "que_espera": "Seguir viendo a Dios en cada uno del equipo y participantes ",
+      "miedos": "Un poco a liderar o contacto directo con los participantes (por ejemplo: Guia)",
+      "tema_dios": "Si, volver a conectar conmigo como algunas vez lo fue. ",
+      "invita": "Todavía no sé",
+      "alergias": "Ninguna",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno",
+      "contacto_emergencia": "Aneurys Soriano- Madre- 8294301304",
+      "palabra": "Oportunidad ",
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "mary-carmen-ram-rez-v-squez",
+      "nombre": "Mary Carmen Ramírez Vásquez",
+      "sexo": "F",
+      "edad": 27,
+      "cumple_mes": 8,
+      "cumple_dia": 29,
+      "cumple_anio": 1998,
+      "etc_propio": 73,
+      "etc_anio_propio": 2018,
+      "etcs_servidos": 2,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "musica",
+      "rol": "Música",
+      "talla": "M",
+      "telefono": "18296937582",
+      "que_espera": "Poder dar un poco de lo que tengo a los demás ",
+      "miedos": "Miedo escénico y a salir de mi zona de comfort ",
+      "tema_dios": "Creo que no ",
       "invita": "Todavía no sé",
       "alergias": "Ninguna ",
-      "condiciones": "Ninguna \n",
-      "medicamentos": "Ninguno ",
-      "contacto_emergencia": "Fabianlly fabian, hermana 8299410506",
-      "palabra": "Amor ",
-      "dudas": "No\n\n",
-      "algo_directores": "Yo tengo un viaje programado para el mes de julio ",
-      "invitados": []
+      "condiciones": "Postquirurgica de la una corrección de escoliosis ",
+      "medicamentos": "Ninguna",
+      "contacto_emergencia": "Carmen Vasquez (madre) 829-313-3130, Haniel González (novio) 809-929-2042",
+      "palabra": "Seguridad",
+      "dudas": null,
+      "algo_directores": "No",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true
+    },
+    {
+      "id": "frank-morales",
+      "nombre": "Frank Morales",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores",
+      "rol": "Asesor (laico)",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "johany",
+      "nombre": "Johany",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_cocina",
+      "rol": "Asesora Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "petra",
+      "nombre": "Petra",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_cocina",
+      "rol": "Asesora Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "paul",
+      "nombre": "Paul",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_espirituales",
+      "rol": "Asesor Espiritual",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "sor-angelina",
+      "nombre": "Sor Angelina",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_espirituales",
+      "rol": "Asesora Espiritual",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "rep-diocesano-lv-1",
+      "nombre": "Rep. Diocesano LV #1",
+      "sexo": "?",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_diocesanos",
+      "rol": "Asesor La Vega",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "rep-diocesano-sd-1",
+      "nombre": "Rep. Diocesano SD #1",
+      "sexo": "?",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_diocesanos",
+      "rol": "Asesor SD",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "rep-diocesano-sd-2",
+      "nombre": "Rep. Diocesano SD #2",
+      "sexo": "?",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_diocesanos",
+      "rol": "Asesor SD",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "rep-diocesano-lv-2",
+      "nombre": "Rep. Diocesano LV #2",
+      "sexo": "?",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_diocesanos",
+      "rol": "Asesor La Vega (opcional)",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
     }
   ],
-  "areas": {
-    "directores": [
-      "Jean Carlo De la Cruz Mendez",
-      "Juan Manuel de la Cruz Méndez"
-    ],
-    "asesores": [
-      "Laura Fernández",
-      "Tomás Lorenzo"
-    ],
-    "cocina_coords": [
-      "Paloma Mendez",
-      "Johnnito Richiez Brugal"
-    ],
-    "cocina_coord_posible": [
-      "Dayrelins Jazmin Santana Salas"
-    ],
-    "musica_coord": [
-      "José Ángel Tusen Russo"
-    ],
-    "guias_coords": [
-      "Priscilla Hidalgo Pou",
-      "Camila Fernández Hazim"
-    ]
-  },
   "calendario": [
     {
       "fecha": "2026-06-07",
@@ -1329,72 +1927,6 @@
       "fin": "2026-09-06"
     }
   ],
-  "relaciones": {
-    "matrimonios": [
-      [
-        "Dorian Elina Rodriguez Belliard",
-        "José Ángel Tusen Russo"
-      ]
-    ],
-    "noviazgos": [
-      [
-        "Kelvin Alexis Ventura Santana",
-        "Brianelis Abreu Calderón"
-      ],
-      [
-        "Juan Manuel de la Cruz Méndez",
-        "Yelaxni Mota"
-      ],
-      [
-        "Oliver Rafael De León Ramírez",
-        "Dayrelins Jazmin Santana Salas"
-      ]
-    ],
-    "familias": [
-      {
-        "nombre": "De la Cruz Méndez (extendida)",
-        "miembros": [
-          "Jean Carlo De la Cruz Mendez",
-          "Juan Manuel de la Cruz Méndez",
-          "Paloma Mendez",
-          "Fabelle maciel fabian bello"
-        ],
-        "tipo": "Hermanos + prima (Paloma) + cuñada (Fabelle vía Fabelly, esposa de JC)"
-      },
-      {
-        "nombre": "Lorenzo",
-        "miembros": [
-          "Tomás Lorenzo",
-          "Victoria Lorenzo Rivera"
-        ],
-        "tipo": "Hermanos"
-      },
-      {
-        "nombre": "Fernández",
-        "miembros": [
-          "Camila Fernández Hazim",
-          "Laura Fernández"
-        ],
-        "tipo": "Hermanas"
-      },
-      {
-        "nombre": "Santana Rosario",
-        "miembros": [
-          "Risaira Santana Rosario",
-          "Risairi Santana Rosario"
-        ],
-        "tipo": "Hermanas"
-      },
-      {
-        "nombre": "Rodríguez Belliard",
-        "miembros": [
-          "Dorian Elina Rodriguez Belliard",
-          "Darianny Rodriguez Belliard"
-        ],
-        "tipo": "Hermanas"
-      }
-    ]
-  },
   "banderas": [
     {
       "n": 1,
@@ -1427,7 +1959,7 @@
     {
       "n": 5,
       "bandera": "Viaje julio vs Profondo (31-jul a 2-ago)",
-      "persona": "Fabelle maciel fabian bello",
+      "persona": "Fabelle (revisar lista v2)",
       "accion": "Confirmar agenda ASAP",
       "resp": "Directores"
     },
@@ -1436,7 +1968,7 @@
       "bandera": "Necesita rides",
       "persona": "Wilka María Reyes Mota",
       "accion": "Asignar buddy con auto desde F1",
-      "resp": "Coord. Cocina"
+      "resp": "Coord. Guía"
     },
     {
       "n": 7,
@@ -1448,9 +1980,9 @@
     {
       "n": 8,
       "bandera": "Cirugía reciente columna (escoliosis)",
-      "persona": "Jhonnalia Franchesca Silvestre Guzmán",
+      "persona": "Jhonnalia + Mary Carmen",
       "accion": "No esfuerzo físico + ayuda para movilizar cosas",
-      "resp": "Coord. Guías"
+      "resp": "Coord. Guía / Coord. Música"
     },
     {
       "n": 9,
@@ -1462,7 +1994,7 @@
     {
       "n": 10,
       "bandera": "Timidez declarada — roles tras bastidores",
-      "persona": "Adrián, Risairi, Mary Carmen (excluida)",
+      "persona": "Adrián, Risairi, Mary Carmen",
       "accion": "No exposición pública obligada",
       "resp": "Coordinadores"
     },
@@ -1475,37 +2007,37 @@
     },
     {
       "n": 12,
-      "bandera": "Pareja Dorian↔José Ángel — asignar áreas distintas",
+      "bandera": "Pareja Dorian↔José Ángel — ambos en Música",
       "persona": "Dorian, José Ángel",
-      "accion": "Áreas o equipos diferentes",
+      "accion": "Reconsiderar: están en la misma área",
       "resp": "Directores"
     },
     {
       "n": 13,
-      "bandera": "Noviazgo Kelvin↔Brianelis — áreas distintas",
+      "bandera": "Noviazgo Kelvin↔Brianelis — ambos en Cocina",
       "persona": "Kelvin, Brianelis",
-      "accion": "Áreas diferentes",
+      "accion": "Reconsiderar: están en la misma área",
       "resp": "Directores"
     },
     {
       "n": 14,
-      "bandera": "Noviazgo Juan Manuel↔Yelaxni — áreas distintas",
-      "persona": "Juan Manuel, Yelaxni",
-      "accion": "Áreas diferentes",
-      "resp": "Directores"
+      "bandera": "Noviazgo Juan Manuel↔Yelaxni — áreas distintas ✓",
+      "persona": "Juan Manuel (Dir), Yelaxni (Guía)",
+      "accion": "OK",
+      "resp": "—"
     },
     {
       "n": 15,
-      "bandera": "Noviazgo Oliver↔Dayrelins — áreas distintas",
-      "persona": "Oliver, Dayrelins",
-      "accion": "Áreas diferentes",
-      "resp": "Directores"
+      "bandera": "Noviazgo Oliver↔Dayrelins — áreas distintas ✓",
+      "persona": "Oliver (Guía), Dayrelins (Cocina)",
+      "accion": "OK",
+      "resp": "—"
     },
     {
       "n": 16,
-      "bandera": "Familia De la Cruz Méndez (4 personas) — distribuir",
+      "bandera": "Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelle por revisar",
       "persona": "JC, JM, Paloma, Fabelle",
-      "accion": "Distribuir en áreas distintas",
+      "accion": "Confirmar distribución",
       "resp": "Directores"
     },
     {
@@ -1605,9 +2137,65 @@
       "persona": "Wirna Stapleton",
       "accion": "Conversación 1:1",
       "resp": "Directores"
+    },
+    {
+      "n": 31,
+      "bandera": "4 tripulantes sin formulario",
+      "persona": "Daylin (Música), Olanlly + Roselyn + Pamela (Cocina)",
+      "accion": "Enviar formulario antes de F1 (14-jun)",
+      "resp": "Coord. Música / Coord. Cocina"
+    },
+    {
+      "n": 32,
+      "bandera": "Fabelle = Fabelly (reconciliado en Cocina)",
+      "persona": "Fabelle Maciel Fabian Bello",
+      "accion": "Validar nombre en lista oficial",
+      "resp": "Directores"
+    },
+    {
+      "n": 33,
+      "bandera": "Familia De la Cruz Méndez (4 personas) — distribuida",
+      "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelle (Cocina)",
+      "accion": "OK distribución; 3 en cocina/dirección, 1 en cocina",
+      "resp": "Directores"
     }
   ],
   "invitados": [
+    {
+      "inviter": "Fernando Cordero",
+      "invitados": [
+        {
+          "nombre": "Nicole Benítez",
+          "edad": "25.0",
+          "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Franklin De Jesús Silverio Delgadillo",
+      "invitados": [
+        {
+          "nombre": "Luis Miguel Sandoval",
+          "edad": "25.0",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Marianne Castro",
+          "edad": "18.0",
+          "relacion": "Familiar"
+        }
+      ]
+    },
+    {
+      "inviter": "Ivanna Marien Mercedes Sosa",
+      "invitados": [
+        {
+          "nombre": "Priscila María Matos Mercedes",
+          "edad": "27.0",
+          "relacion": "Familiar"
+        }
+      ]
+    },
     {
       "inviter": "Ambar Liz Jáquez Lebrón",
       "invitados": [
@@ -1659,47 +2247,12 @@
       ]
     },
     {
-      "inviter": "Fernando Cordero",
-      "invitados": [
-        {
-          "nombre": "Nicole Benítez",
-          "edad": "25.0",
-          "relacion": "Amigo"
-        }
-      ]
-    },
-    {
-      "inviter": "Franklin De Jesús Silverio Delgadillo",
-      "invitados": [
-        {
-          "nombre": "Luis Miguel Sandoval",
-          "edad": "25.0",
-          "relacion": "Amigo"
-        },
-        {
-          "nombre": "Marianne Castro",
-          "edad": "18.0",
-          "relacion": "Familiar"
-        }
-      ]
-    },
-    {
       "inviter": "Guido Mardonado",
       "invitados": [
         {
           "nombre": "Eurys Caraballo",
           "edad": "22.0",
           "relacion": "Amigo"
-        }
-      ]
-    },
-    {
-      "inviter": "Ivanna Marien Mercedes Sosa",
-      "invitados": [
-        {
-          "nombre": "Priscila María Matos Mercedes",
-          "edad": "27.0",
-          "relacion": "Familiar"
         }
       ]
     },
@@ -1836,7 +2389,7 @@
         "Jhonnalia Franchesca Silvestre Guzmán"
       ],
       "Postquirúrgica escoliosis": [
-        "Mary Carmen Ramírez Vásquez (excluida)"
+        "Mary Carmen Ramírez Vásquez"
       ],
       "Pastillas presión": [
         "Maria del Carmen Mejías Mateo"

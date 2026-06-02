@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Build ETC88 data JSON from form responses + user corrections."""
-import openpyxl
-import json
-import re
-from datetime import datetime
+"""Apply v2 changes: new area structure, re-include Mary Carmen + Roberto,
+add Daylin + vacantes, add comunidad field, remove Lazos."""
+import openpyxl, json, re
 
 XLSX = '/root/.claude/uploads/2da4a2cd-be63-4d49-b615-cf5c7554c95e/93ed3347-Respuestas__Formulario_preformacio_n_ETC_88.xlsx'
 
@@ -12,10 +10,7 @@ MONTHS = {'enero':1,'ene':1,'febrero':2,'feb':2,'marzo':3,'mar':3,'abril':4,'abr
           'septiembre':9,'sept':9,'sep':9,'octubre':10,'oct':10,'noviembre':11,'nov':11,
           'diciembre':12,'dic':12}
 
-# Manual data — corrections + assignments per user input
-EXCLUDE = {'Mary Carmen Ramírez Vásquez', 'Roberto Figueroa'}
-
-GENDER = {  # F unless listed
+GENDER = {
     'Jean Carlo De la Cruz Mendez':'M', 'Kelvin Alexis Ventura Santana':'M',
     'Juan Pablo Argüello Alzate':'M', 'Fernando Cordero':'M',
     'Oliver Rafael De León Ramírez':'M', 'Adrián Francisco Santana Puente':'M',
@@ -26,7 +21,6 @@ GENDER = {  # F unless listed
     'Guido Mardonado':'M', 'Tomás Lorenzo':'M',
 }
 
-# Residence overrides (defaults to SPM)
 RESIDENCIA = {
     'Candy Elizabeth Gatwood Ramos':'Punta Cana',
     'Dorian Elina Rodriguez Belliard':'Punta Cana',
@@ -42,7 +36,8 @@ RESIDENCIA = {
     'Chantal Melissa Carpio Jiménez':'Higüey / SPM',
 }
 
-# Area assignments (per Borrador 11-abr + user updates)
+# v3 area assignments per xlsx ETC_88_1 manifest (2026-06-02)
+# Fabelle = Fabelly → cocina; Chantal → cocina; Olanlly/Roselyn/Pamela = new cocina; total 45
 AREA = {
     # Directores
     'Jean Carlo De la Cruz Mendez':       ('directores', 'Director'),
@@ -50,47 +45,50 @@ AREA = {
     # Asesores
     'Laura Fernández':                     ('asesores', 'Asesora'),
     'Tomás Lorenzo':                       ('asesores', 'Asesor'),
-    # Guías coords
-    'Priscilla Hidalgo Pou':              ('guias', 'Coord. Guías'),
-    'Camila Fernández Hazim':             ('guias', 'Coord. Guías'),
-    # Guías
-    'Jonathan Andres Medina Mota':        ('guias', 'Guía'),
-    'Luisa Maria Fiorentino Brugal':      ('guias', 'Guía'),
-    'Juan Pablo Argüello Alzate':         ('guias', 'Guía'),
+    # Guías (14, Priscilla + Camila coords)
+    'Priscilla Hidalgo Pou':              ('guias', 'Coord. Guía'),
+    'Camila Fernández Hazim':             ('guias', 'Coord. Guía'),
     'Yelaxni Mota':                        ('guias', 'Guía'),
-    'Oliver Rafael De León Ramírez':      ('guias', 'Guía'),
+    'Ivanna Marien Mercedes Sosa':         ('guias', 'Guía'),
+    'Juan Pablo Argüello Alzate':         ('guias', 'Guía'),
     'Victoria Lorenzo Rivera':            ('guias', 'Guía'),
-    'Wirna Miguelina Stapleton Pilier':   ('guias', 'Guía'),
-    'Leober Carrion Soriank':             ('guias', 'Guía'),
-    'Franklin De Jesús Silverio Delgadillo':('guias','Guía'),
+    'Fernando Cordero':                   ('guias', 'Guía'),
+    'Jonathan Andres Medina Mota':        ('guias', 'Guía'),
+    'Oliver Rafael De León Ramírez':      ('guias', 'Guía'),
+    'Wilka María Reyes Mota':              ('guias', 'Guía'),
+    'Luisa Maria Fiorentino Brugal':      ('guias', 'Guía'),
     'Darianny Rodriguez Belliard':        ('guias', 'Guía'),
     'Jhonnalia Franchesca Silvestre Guzmán':('guias','Guía'),
-    # Cocina coords
-    'Paloma Mendez':                       ('cocina', 'Coord. Cocina'),
-    'Johnnito Richiez Brugal':             ('cocina', 'Coord. Cocina'),
-    'Dayrelins Jazmin Santana Salas':      ('cocina', 'Coord. Cocina (posible)'),
-    # Cocina
-    'Adrián Francisco Santana Puente':     ('cocina', 'Cocina'),
-    'Ambar Liz Jáquez Lebrón':             ('cocina', 'Cocina'),
-    'Brianelis Abreu Calderón':            ('cocina', 'Cocina'),
-    'Candy Elizabeth Gatwood Ramos':       ('cocina', 'Cocina'),
-    'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
-    'Kelvin Alexis Ventura Santana':       ('cocina', 'Cocina'),
-    'Risaira Santana Rosario':             ('cocina', 'Cocina'),
-    'Risairi Santana Rosario':             ('cocina', 'Cocina'),
-    'Tommy Nova Nolasco':                  ('cocina', 'Cocina'),
-    'Wilka María Reyes Mota':              ('cocina', 'Cocina'),
-    'Guido Mardonado':                     ('cocina', 'Cocina'),
-    'Maria del Carmen Mejías Mateo':       ('cocina', 'Cocina'),
-    'Jordelis Mateo':                      ('cocina', 'Cocina'),
-    'Ivanna Marien Mercedes Sosa':         ('cocina', 'Cocina'),
-    # Música
+    'Franklin De Jesús Silverio Delgadillo':('guias','Guía'),
+    # Música (6, José coord)
     'José Ángel Tusen Russo':              ('musica', 'Coord. Música'),
     'Dorian Elina Rodriguez Belliard':     ('musica', 'Música'),
-    'Fernando Cordero':                    ('musica', 'Música'),
     'Ismarie Sthepanie Constanzo Ramos':   ('musica', 'Música'),
-    # Por asignar
-    'Fabelle maciel fabian bello':         ('por_asignar', 'Por asignar'),
+    'Leober Carrion Soriank':              ('musica', 'Música'),
+    'Mary Carmen Ramírez Vásquez':         ('musica', 'Música'),
+    'Daylin (sin formulario)':             ('musica', 'Música'),
+    # Cocina (21 = 2 coords + 19, todas filas del xlsx)
+    'Paloma Mendez':                       ('cocina', 'Coord. Cocina'),
+    'Johnnito Richiez Brugal':             ('cocina', 'Coord. Cocina'),
+    'Dayrelins Jazmin Santana Salas':      ('cocina', 'Cocina'),
+    'Fabelle maciel fabian bello':         ('cocina', 'Cocina'),  # = Fabelly per user
+    'Wirna Miguelina Stapleton Pilier':    ('cocina', 'Cocina'),
+    'Jordelis Mateo':                      ('cocina', 'Cocina'),
+    'Candy Elizabeth Gatwood Ramos':       ('cocina', 'Cocina'),
+    'Kelvin Alexis Ventura Santana':       ('cocina', 'Cocina'),
+    'Olanlly (sin formulario)':            ('cocina', 'Cocina'),  # NEW
+    'Ambar Liz Jáquez Lebrón':             ('cocina', 'Cocina'),
+    'Brianelis Abreu Calderón':            ('cocina', 'Cocina'),
+    'Tommy Nova Nolasco':                  ('cocina', 'Cocina'),
+    'Maria del Carmen Mejías Mateo':       ('cocina', 'Cocina'),
+    'Risaira Santana Rosario':             ('cocina', 'Cocina'),
+    'Adrián Francisco Santana Puente':     ('cocina', 'Cocina'),
+    'Risairi Santana Rosario':             ('cocina', 'Cocina'),
+    'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
+    'Roberto Figueroa':                    ('cocina', 'Cocina'),
+    'Guido Mardonado':                     ('cocina', 'Cocina'),
+    'Roselyn (sin formulario)':            ('cocina', 'Cocina'),  # NEW
+    'Pamela (sin formulario)':             ('cocina', 'Cocina'),  # NEW
 }
 
 def parse_bday(s):
@@ -104,47 +102,35 @@ def parse_bday(s):
     m = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', s)
     if m:
         a, b, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
-        return ((b, a), y) if a <= 12 and b <= 12 else ((b, a), y) if a > 12 else ((a, b), y)
-    m = re.search(r'(\d{1,2})de\s*([a-zé]+)\s*(\d{4})?', s)
-    if m:
-        d, mo, y = int(m.group(1)), MONTHS.get(m.group(2)), m.group(3)
-        if mo: return ((mo, d), int(y) if y else None)
-    m = re.search(r'(\d{1,2})\s*(\d{1,2})\s*([a-zé]+)\s*(\d{4})', s)
-    if m:
-        d, mo_w, y = int(m.group(2)), m.group(3), m.group(4)
-        mo = MONTHS.get(mo_w)
-        if mo: return ((mo, d), int(y))
+        return ((b, a), y)
     return (None, None)
 
 def parse_etcs_servidos(s):
-    """Returns int or None."""
     if s is None: return None
     s = str(s).strip().lower()
     if s in ['en ninguno','ninguno','ningunos','primera vez','en 0','en ningunos']: return 0
     m = re.match(r'^(\d+)', s)
     if m: return int(m.group(1))
-    if 'desde el 2012' in s or 'desde 2012' in s: return 12  # Priscilla
+    if 'desde el 2012' in s or 'desde 2012' in s: return 12
     if '10 a 12' in s or '10-12' in s: return 11
     if '5 o 6' in s or '5-6' in s: return 6
-    if '8' in s and '2018' in s: return 8  # José Ángel
-    if 'una cocina dos guías' in s: return 3  # Jhonnalia
+    if '8' in s and '2018' in s: return 8
+    if 'una cocina dos guías' in s: return 3
     if 'en 1' in s or '1 solo' in s: return 1
     return None
 
 def parse_etc_propio(s):
     if not s: return (None, None)
     s = str(s).strip()
-    m = re.search(r'(?:etc\s*)?#?(\d{2,3})', s, re.I)
+    m = re.search(r'#?(\d{2,3})', s)
     num = int(m.group(1)) if m else None
-    if num and num > 100:  # like 522012 = ETC 52 año 2012
+    if num and num > 100:
         sn = str(num)
         if len(sn) == 6:
             num = int(sn[:2])
-            year = int(sn[2:])
-            return (num, year)
+            return (num, int(sn[2:]))
     m_y = re.search(r'(20\d{2})', s)
-    year = int(m_y.group(1)) if m_y else None
-    return (num, year)
+    return (num, int(m_y.group(1)) if m_y else None)
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
 ws = wb['Form Responses 1']
@@ -154,14 +140,12 @@ for row in range(2, ws.max_row + 1):
     name = ws.cell(row=row, column=2).value
     if not name: continue
     name = name.strip()
-    if name in EXCLUDE: continue
 
     bday, byear = parse_bday(ws.cell(row=row, column=3).value)
     etc_num, etc_year = parse_etc_propio(ws.cell(row=row, column=7).value)
     etcs_servidos = parse_etcs_servidos(ws.cell(row=row, column=6).value)
     area, rol = AREA.get(name, ('por_asignar', 'Por asignar'))
 
-    # edad: extract from raw
     edad_raw = str(ws.cell(row=row, column=3).value or '')
     m_edad = re.search(r'(\d{2,3})\s*(?:años|-|—)', edad_raw)
     edad = int(m_edad.group(1)) if m_edad else None
@@ -169,7 +153,9 @@ for row in range(2, ws.max_row + 1):
         m_edad = re.match(r'^\s*(\d{2})\s', edad_raw)
         if m_edad: edad = int(m_edad.group(1))
 
-    person = {
+    comunidad = 'Belén' if etc_num == 85 else 'Betania'
+
+    p = {
         'id': re.sub(r'[^a-z0-9]+','-', name.lower()).strip('-'),
         'nombre': name,
         'sexo': GENDER.get(name, 'F'),
@@ -181,8 +167,8 @@ for row in range(2, ws.max_row + 1):
         'etc_anio_propio': etc_year,
         'etcs_servidos': etcs_servidos,
         'residencia': RESIDENCIA.get(name, 'SPM'),
-        'area': area,
-        'rol': rol,
+        'comunidad': comunidad,
+        'area': area, 'rol': rol,
         'talla': ws.cell(row=row, column=5).value,
         'telefono': re.sub(r'\D', '', str(ws.cell(row=row, column=4).value or '')) or None,
         'que_espera': ws.cell(row=row, column=8).value,
@@ -197,22 +183,100 @@ for row in range(2, ws.max_row + 1):
         'dudas': ws.cell(row=row, column=24).value,
         'algo_directores': ws.cell(row=row, column=25).value,
         'invitados': [],
+        'sin_formulario': False,
     }
-    # Invitados
     inv1 = {'nombre': ws.cell(row=row, column=12).value, 'edad': ws.cell(row=row, column=13).value, 'relacion': ws.cell(row=row, column=14).value}
     inv2 = {'nombre': ws.cell(row=row, column=15).value, 'edad': ws.cell(row=row, column=16).value, 'relacion': ws.cell(row=row, column=17).value}
     for inv in [inv1, inv2]:
         if inv['nombre'] and str(inv['nombre']).strip().lower() not in ['n/a','na','-']:
-            person['invitados'].append({k: str(v).strip() if v else None for k, v in inv.items()})
+            p['invitados'].append({k: str(v).strip() if v else None for k, v in inv.items()})
+    equipo.append(p)
 
-    equipo.append(person)
+# Manual fixes
+FIXES = {
+    'Victoria Lorenzo Rivera': {'edad': 27, 'cumple_mes': 9, 'cumple_dia': 21, 'cumple_anio': 1998},
+    'Jhonnalia Franchesca Silvestre Guzmán': {'cumple_mes': 10, 'cumple_dia': 20, 'cumple_anio': 1999, 'edad': 26},
+    'Paloma Mendez': {'cumple_mes': 6, 'cumple_dia': 27, 'cumple_anio': 1990, 'edad': 35},
+    'Jordelis Mateo': {'edad': 26},
+    'José Ángel Tusen Russo': {'edad': 26},
+    'Wirna Miguelina Stapleton Pilier': {'edad': 32},
+    'Darianny Rodriguez Belliard': {'edad': 24},
+    'Jean Carlo De la Cruz Mendez': {'etc_propio': 52, 'etc_anio_propio': 2012},
+    'Priscilla Hidalgo Pou': {'etc_propio': 51, 'etc_anio_propio': 2011},
+    'Ivanna Marien Mercedes Sosa': {'etc_propio': 74, 'etc_anio_propio': 2018},
+    'Mary Carmen Ramírez Vásquez': {'etc_propio': 73, 'etc_anio_propio': 2018, 'etcs_servidos': 2},
+    'Roberto Figueroa': {'etc_propio': 55, 'etc_anio_propio': None, 'etcs_servidos': 3},
+}
+for p in equipo:
+    nm = p['nombre']
+    if nm in FIXES:
+        for k, v in FIXES[nm].items(): p[k] = v
+    # Re-compute comunidad after ETC fix
+    p['comunidad'] = 'Belén' if p['etc_propio'] == 85 else 'Betania'
 
-print(f"Parsed {len(equipo)} personas (esperado 39)")
+# Mark existing equipo as operativo=True
+for p in equipo: p['operativo'] = True
 
-# Sort by nombre
-equipo.sort(key=lambda p: p['nombre'])
+# Placeholders for people in xlsx without form response (operativos)
+PLACEHOLDERS_OP = [
+    ('Daylin (sin formulario)', 'musica', 'Música', 'F'),
+    ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
+    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),
+    ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
+]
+# Asesores ampliados (en el retiro pero NO operativos)
+PLACEHOLDERS_NO_OP = [
+    ('Johany', 'asesores_cocina', 'Asesora Cocina', 'F'),
+    ('Petra', 'asesores_cocina', 'Asesora Cocina', 'F'),
+    ('Frank Morales', 'asesores', 'Asesor (laico)', 'M'),
+    ('Paul', 'asesores_espirituales', 'Asesor Espiritual', 'M'),
+    ('Sor Angelina', 'asesores_espirituales', 'Asesora Espiritual', 'F'),
+    ('Rep. Diocesano SD #1', 'asesores_diocesanos', 'Asesor SD', '?'),
+    ('Rep. Diocesano SD #2', 'asesores_diocesanos', 'Asesor SD', '?'),
+    ('Rep. Diocesano LV #1', 'asesores_diocesanos', 'Asesor La Vega', '?'),
+    ('Rep. Diocesano LV #2', 'asesores_diocesanos', 'Asesor La Vega (opcional)', '?'),
+]
 
-# Calendar events from NEW ICS
+def make_placeholder(name, area, rol, sexo, operativo):
+    return {
+        'id': re.sub(r'[^a-z0-9]+','-', name.lower()).strip('-'),
+        'nombre': name,
+        'sexo': sexo, 'edad': None,
+        'cumple_mes': None, 'cumple_dia': None, 'cumple_anio': None,
+        'etc_propio': None, 'etc_anio_propio': None, 'etcs_servidos': None,
+        'residencia': '—', 'comunidad': 'Por confirmar',
+        'area': area, 'rol': rol,
+        'talla': None, 'telefono': None,
+        'que_espera': None, 'miedos': None, 'tema_dios': None, 'invita': None,
+        'alergias': None, 'condiciones': None, 'medicamentos': None,
+        'contacto_emergencia': None, 'palabra': None, 'dudas': None, 'algo_directores': None,
+        'invitados': [],
+        'sin_formulario': True,
+        'operativo': operativo,
+    }
+
+for name, area, rol, sexo in PLACEHOLDERS_OP:
+    equipo.append(make_placeholder(name, area, rol, sexo, True))
+for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
+    equipo.append(make_placeholder(name, area, rol, sexo, False))
+
+ROL_ORDER = {
+    'Director':1, 'Asesora':2, 'Asesor':2, 'Asesor (laico)':2,
+    'Coord. Guía':3, 'Guía':4,
+    'Coord. Cocina':5, 'Cocina':6,
+    'Coord. Música':7, 'Música':8,
+    'Asesora Cocina':10, 'Asesor Espiritual':11, 'Asesora Espiritual':11,
+    'Asesor SD':12, 'Asesor La Vega':12, 'Asesor La Vega (opcional)':13,
+}
+equipo.sort(key=lambda p: (0 if p.get('operativo') else 1, ROL_ORDER.get(p['rol'], 99), p['nombre']))
+
+print(f"Total tripulantes: {len(equipo)}")
+from collections import Counter
+print('Por área:', dict(Counter(p['area'] for p in equipo)))
+print('Por rol:', dict(Counter(p['rol'] for p in equipo)))
+print('Comunidades:', dict(Counter(p['comunidad'] for p in equipo)))
+
+# Calendar / banderas (unchanged from v1)
 calendario = [
     {'fecha': '2026-06-07', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
     {'fecha': '2026-06-14', 'titulo': 'F1 — Primera Formación', 'tipo': 'formacion'},
@@ -231,39 +295,23 @@ calendario = [
     {'fecha': '2026-09-04', 'titulo': 'ETC 88 (4 → 6 sep)', 'tipo': 'retiro', 'fin': '2026-09-06'},
 ]
 
-relaciones = {
-    'matrimonios': [['Dorian Elina Rodriguez Belliard', 'José Ángel Tusen Russo']],
-    'noviazgos': [
-        ['Kelvin Alexis Ventura Santana', 'Brianelis Abreu Calderón'],
-        ['Juan Manuel de la Cruz Méndez', 'Yelaxni Mota'],
-        ['Oliver Rafael De León Ramírez', 'Dayrelins Jazmin Santana Salas'],
-    ],
-    'familias': [
-        {'nombre':'De la Cruz Méndez (extendida)', 'miembros':['Jean Carlo De la Cruz Mendez','Juan Manuel de la Cruz Méndez','Paloma Mendez','Fabelle maciel fabian bello'], 'tipo':'Hermanos + prima (Paloma) + cuñada (Fabelle vía Fabelly, esposa de JC)'},
-        {'nombre':'Lorenzo','miembros':['Tomás Lorenzo','Victoria Lorenzo Rivera'],'tipo':'Hermanos'},
-        {'nombre':'Fernández','miembros':['Camila Fernández Hazim','Laura Fernández'],'tipo':'Hermanas'},
-        {'nombre':'Santana Rosario','miembros':['Risaira Santana Rosario','Risairi Santana Rosario'],'tipo':'Hermanas'},
-        {'nombre':'Rodríguez Belliard','miembros':['Dorian Elina Rodriguez Belliard','Darianny Rodriguez Belliard'],'tipo':'Hermanas'},
-    ],
-}
-
 banderas = [
     {'n':1, 'bandera':'Cumple en F1', 'persona':'Ismarie Sthepanie Constanzo Ramos', 'accion':'Preparar momento corto en F1', 'resp':'Directores'},
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
     {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'Jordelis Mateo', 'accion':'Mensaje virtual + saludo en F4', 'resp':'Directores'},
     {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
-    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'Fabelle maciel fabian bello', 'accion':'Confirmar agenda ASAP', 'resp':'Directores'},
-    {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Cocina'},
+    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'Fabelle (revisar lista v2)', 'accion':'Confirmar agenda ASAP', 'resp':'Directores'},
+    {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'Jordelis Mateo', 'accion':'No asignar carga física pesada', 'resp':'Coord. Cocina'},
-    {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia Franchesca Silvestre Guzmán', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guías'},
+    {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia + Mary Carmen', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía / Coord. Música'},
     {'n':9, 'bandera':'Sin claridad de rol', 'persona':'Wirna Miguelina Stapleton Pilier', 'accion':'Conversación 1:1 con Directores antes de F1', 'resp':'Directores'},
-    {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen (excluida)', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
+    {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
     {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Fabelle, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
-    {'n':12, 'bandera':'Pareja Dorian↔José Ángel — asignar áreas distintas', 'persona':'Dorian, José Ángel', 'accion':'Áreas o equipos diferentes', 'resp':'Directores'},
-    {'n':13, 'bandera':'Noviazgo Kelvin↔Brianelis — áreas distintas', 'persona':'Kelvin, Brianelis', 'accion':'Áreas diferentes', 'resp':'Directores'},
-    {'n':14, 'bandera':'Noviazgo Juan Manuel↔Yelaxni — áreas distintas', 'persona':'Juan Manuel, Yelaxni', 'accion':'Áreas diferentes', 'resp':'Directores'},
-    {'n':15, 'bandera':'Noviazgo Oliver↔Dayrelins — áreas distintas', 'persona':'Oliver, Dayrelins', 'accion':'Áreas diferentes', 'resp':'Directores'},
-    {'n':16, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuir', 'persona':'JC, JM, Paloma, Fabelle', 'accion':'Distribuir en áreas distintas', 'resp':'Directores'},
+    {'n':12, 'bandera':'Pareja Dorian↔José Ángel — ambos en Música', 'persona':'Dorian, José Ángel', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
+    {'n':13, 'bandera':'Noviazgo Kelvin↔Brianelis — ambos en Cocina', 'persona':'Kelvin, Brianelis', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
+    {'n':14, 'bandera':'Noviazgo Juan Manuel↔Yelaxni — áreas distintas ✓', 'persona':'Juan Manuel (Dir), Yelaxni (Guía)', 'accion':'OK', 'resp':'—'},
+    {'n':15, 'bandera':'Noviazgo Oliver↔Dayrelins — áreas distintas ✓', 'persona':'Oliver (Guía), Dayrelins (Cocina)', 'accion':'OK', 'resp':'—'},
+    {'n':16, 'bandera':'Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelle por revisar', 'persona':'JC, JM, Paloma, Fabelle', 'accion':'Confirmar distribución', 'resp':'Directores'},
     {'n':17, 'bandera':'Mariscos prohibidos como plato principal', 'persona':'Priscilla, Ivanna, Jonathan, Laura (4 alérgicas)', 'accion':'Avisar a Cocina', 'resp':'Coord. Cocina'},
     {'n':18, 'bandera':'Evitar piña en menú', 'persona':'Wilka, Candy, José Ángel (3 alérgicos)', 'accion':'No piña en jugos, postres, marinadas', 'resp':'Coord. Cocina'},
     {'n':19, 'bandera':'Alternativa sin huevo en desayunos', 'persona':'José Ángel', 'accion':'Avisar Cocina', 'resp':'Coord. Cocina'},
@@ -278,11 +326,14 @@ banderas = [
     {'n':28, 'bandera':'Pedir contacto de emergencia a Jonathan', 'persona':'Jonathan Andres Medina Mota', 'accion':'Solicitar dato', 'resp':'Directores'},
     {'n':29, 'bandera':'Pregunta "Oremos por JC"', 'persona':'Victoria Lorenzo Rivera', 'accion':'Acompañamiento espiritual a Jean Carlo', 'resp':'Asesores'},
     {'n':30, 'bandera':'Wirna: "No se dejen humillar"', 'persona':'Wirna Stapleton', 'accion':'Conversación 1:1', 'resp':'Directores'},
+    {'n':31, 'bandera':'4 tripulantes sin formulario', 'persona':'Daylin (Música), Olanlly + Roselyn + Pamela (Cocina)', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Música / Coord. Cocina'},
+    {'n':32, 'bandera':'Fabelle = Fabelly (reconciliado en Cocina)', 'persona':'Fabelle Maciel Fabian Bello', 'accion':'Validar nombre en lista oficial', 'resp':'Directores'},
+    {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelle (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
 ]
 
 invitados_list = []
 for p in equipo:
-    if p['invita'] == 'Sí' and p['invitados']:
+    if p.get('invita') == 'Sí' and p['invitados']:
         invitados_list.append({'inviter': p['nombre'], 'invitados': p['invitados']})
 
 recaudacion = {
@@ -304,8 +355,15 @@ recaudacion = {
     'cita_jordelis':'Tómbolas con PRECIOS ASEQUIBLES para darle más oportunidad a quienes siempre nos apoyan.'
 }
 
+equipos_auxiliares = [
+    {'nombre':'Donaciones', 'descripcion':'Levantamiento de fondos y aportes en especie. Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
+    {'nombre':'Guagua', 'descripcion':'Coordinación de transporte para todos los traslados (formaciones, retiro, avanzada).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Producción'},
+    {'nombre':'Actividad Profondo', 'descripcion':'Diseño y ejecución de la actividad principal del Profondo (31-jul al 2-ago). Puede integrar gente fuera del equipo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
+]
+
 data = {
-    'meta': {'numero':88, 'romano':'LXXXVIII', 'constelacion':49, 'version':'v1-2026-06-02', 'total_equipo_v1':len(equipo)},
+    'meta': {'numero':88, 'romano':'LXXXVIII', 'constelacion':49, 'version':'v4-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'equipos_auxiliares': equipos_auxiliares,
     'marca': {
         'lema':'Siempre amigos',
         'cita':'Jn 15:15',
@@ -314,16 +372,7 @@ data = {
         'sub':'Tripulación para una expedición',
     },
     'equipo': equipo,
-    'areas': {
-        'directores':['Jean Carlo De la Cruz Mendez','Juan Manuel de la Cruz Méndez'],
-        'asesores':['Laura Fernández','Tomás Lorenzo'],
-        'cocina_coords':['Paloma Mendez','Johnnito Richiez Brugal'],
-        'cocina_coord_posible':['Dayrelins Jazmin Santana Salas'],
-        'musica_coord':['José Ángel Tusen Russo'],
-        'guias_coords':['Priscilla Hidalgo Pou','Camila Fernández Hazim'],
-    },
     'calendario': calendario,
-    'relaciones': relaciones,
     'banderas': banderas,
     'invitados': invitados_list,
     'recaudacion': recaudacion,
@@ -347,7 +396,7 @@ data = {
             'Gastritis severa':['Candy Elizabeth Gatwood Ramos'],
             'Migraña':['Dorian Elina Rodriguez Belliard','Ismarie Sthepanie Constanzo Ramos'],
             'Postoperatoria reciente':['Jordelis Mateo','Jhonnalia Franchesca Silvestre Guzmán'],
-            'Postquirúrgica escoliosis':['Mary Carmen Ramírez Vásquez (excluida)'],
+            'Postquirúrgica escoliosis':['Mary Carmen Ramírez Vásquez'],
             'Pastillas presión':['Maria del Carmen Mejías Mateo'],
         },
         'ambiente_higuey': [
@@ -363,4 +412,6 @@ data = {
 
 with open('/tmp/etc88_data.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
-print(f"Wrote /tmp/etc88_data.json ({len(equipo)} personas)")
+with open('/tmp/etc88_data_min.json', 'w') as f:
+    json.dump(data, f, ensure_ascii=False, separators=(',',':'))
+print(f"Wrote {len(equipo)} tripulantes")
