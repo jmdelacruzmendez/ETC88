@@ -83,6 +83,8 @@ costo_items = [
  ('Guías · Materiales del PG (libretas, sobres, alambre…)', 14000, 17000, 20000, 'Libretas para participantes EN ESTE rubro'),
  ('Música · Impresión cancionero + cables/respaldo', 3000, 4500, 6000, 'La casa tiene sonido; solo respaldo'),
  ('Formaciones (5 sesiones · refrigerio + local)', 13000, 16315, 20000, ''),
+ ('Camisetas del equipo (~56 × est.)', 19600, 22400, 28000, 'Tallas PARCIALES (ver pestaña Camisetas); faltan invitados pendientes + Paul, Frank y la Sor. Mockup tras el Design System.'),
+ ('Avanzada jueves 3-sep (porción casa + 3 comidas del equipo que adelanta)', 15000, 20000, 24000, 'CONFIRMAR con la casa la tarifa de noche/día extra; depende de cuántos adelantan (cocina). Desayuno + almuerzo + cena de ese día.'),
  ('Imprevistos 5%', 22000, 23900, 25000, ''),
 ]
 tot_min = sum(x[1] for x in costo_items); tot_base = sum(x[2] for x in costo_items); tot_max = sum(x[3] for x in costo_items)
@@ -351,6 +353,28 @@ for p in op:
     row(ws, r, (nm, p['area'], CUOTA_MES, CUOTA_MES, CUOTA_MES, CUOTA_MES, TOT_PP, '[PROPUESTA] sin cerrar'))
     r += 1
 row(ws, r+1, ('TOTAL OBJETIVO (propuesta)','', len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*TOT_PP, P), total_row=True)
+
+# ============ Hoja: CAMISETAS / TALLAS ============
+from collections import Counter
+ws = wb.create_sheet('Camisetas')
+title(ws, 'CAMISETAS DEL EQUIPO · tallas (parcial) — mockup tras el Design System', AMBAR)
+team = [p for p in d['equipo'] if not p.get('vacante') and not p.get('backup')]
+con_talla = [p for p in team if p.get('talla')]
+sin_talla = [p for p in team if not p.get('talla')]
+dist = Counter(p['talla'] for p in con_talla)
+header(ws, 3, [('Talla', 14), ('Cantidad', 12), ('Notas', 40)], AMBAR)
+r = 4
+orden = ['S', 'M', 'L', 'XL', 'XXL']
+for size in orden + [s for s in dist if s not in orden]:
+    if dist.get(size):
+        row(ws, r, (size, dist[size], '')); r += 1
+row(ws, r, ('CON talla', len(con_talla), f'de {len(team)} del equipo'), total_row=True); r += 1
+row(ws, r, ('FALTAN talla', len(sin_talla), 'pedir antes de imprimir'), total_row=True); r += 2
+ws.cell(row=r, column=1, value='A QUIÉNES FALTA LA TALLA:').font = Font(bold=True, size=11, color=TIERRA); r += 1
+header(ws, r, [('Nombre', 30), ('Área', 18), ('Motivo', 26)], TIERRA); r += 1
+for p in sorted(sin_talla, key=lambda x: (x['area'], x['nombre'])):
+    motivo = 'sin formulario' if p.get('sin_formulario') else 'ampliado/transversal'
+    row(ws, r, (p['nombre'].replace(' (sin formulario)', ''), p['area'], motivo)); r += 1
 
 # ============ Hoja 12: Cómo usar ============
 ws = wb.create_sheet('Cómo usar')

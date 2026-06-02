@@ -50,7 +50,7 @@
     },
     "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
     "participantes_objetivo":        { "valor": 53, "estado": "propuesta", "fuente": "derivado (100 − 47 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
-    "meta_recaudacion_total":        { "valor": 533481, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
+    "meta_recaudacion_total":        { "valor": 575881, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas + costos del retiro + camisetas + avanzada del jueves + deuda $23,600). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
   "recaudacion": {
@@ -117,6 +117,9 @@
     "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
     "Confirmar la exención de la casa con el Padre Paul.",
     "Fijar fecha límite para cotizar transporte, biblias y peces.",
-    "Cotizar transporte (3 empresas) y el banderín."
+    "Cotizar transporte (3 empresas) y el banderín.",
+    "Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).",
+    "Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.",
+    "Completar las tallas de camiseta que faltan (invitados pendientes + Paul, Frank y la Sor); el mockup va tras el Design System."
   ]
 }
