@@ -291,10 +291,17 @@ RENAMES = {
     'Guido Mardonado': 'Guido Maldonado',
     'Fabelle maciel fabian bello': 'Fabelly Maciel Fabian Bello',
 }
+# Apellidos mal escritos que también aparecen en campos de texto (p. ej. contacto de emergencia del mismo familiar).
+SURNAME_FIX = {'Mardonado': 'Maldonado'}
 for p in equipo:
     if p['nombre'] in RENAMES:
         p['nombre'] = RENAMES[p['nombre']]
         p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
+    ce = p.get('contacto_emergencia')
+    if ce:
+        for bad, good in SURNAME_FIX.items():
+            if bad in ce:
+                p['contacto_emergencia'] = ce.replace(bad, good)
 
 ROL_ORDER = {
     'Director':1, 'Asesora':2, 'Asesor':2, 'Asesor (laico)':2,
