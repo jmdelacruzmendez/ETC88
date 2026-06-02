@@ -36,3 +36,18 @@ Eres mi director de arte. Vamos a construir desde cero la **identidad visual del
 - Mantén la sobriedad de un retiro católico; nada estridente.
 
 《Pega aquí, cuando lo tengas decidido: el hilo espiritual / raíz del retiro, y el lema del retiro si ya lo cerraste.》
+
+---
+
+## Respuestas a las preguntas de alineación (si Claude Design las hace)
+1. **Datos reales — corrige TODO.** No es Chile: es **San Pedro de Macorís, R.D.**; el retiro es en **Higüey** (Casa de Retiro La Ceiba del Salado); fechas **4–6 sep 2026**. Borra cualquier "Chile / Cajón del Maipo / etc88.cl" — son del template, no de este proyecto.
+2. **Tema — lo decide el director, NO está cerrado.** Muestra las 3 exploraciones lado a lado + una recomendación. Candidata: "expedición / búsqueda de tesoro", pero quiero alternativas que encajen con "Siempre amigos" y el servicio.
+3. **Sobriedad — metafórico y sobrio, NO literal.** Nada de mapa pirata / cofre de juguete. La "expedición" = la travesía espiritual; el "tesoro" = el encuentro con Cristo.
+4. **Qué primero:** (a) núcleo del Design System (paleta + tipografía + logo/wordmark + tratamiento del pez), luego (b) portada + 1 página interior de la Carpeta (entregable de F1, 14-jun).
+5. **Lema del retiro — lo decide el director.** Fijo: el eteciano "Siempre amigos" (Jn 15:15). El propio del 88 aún no se cierra; propón 2–3 opciones.
+6. **Hilo espiritual / raíz — lo define el director** (con los asesores espirituales). No lo inventes; déjalo como variable.
+7. **Tipografía — abierta.** Cinzel + Barlow Condensed era de una versión anterior; reconstruimos desde 0. Propón 2–3 parejas y el director elige.
+8. **Tintas — diseña para 1–2 tintas** (impresión barata), con un acento a todo color para el pez. El # se confirma con la imprenta.
+9. **El pez (IXθYC / ΙΧΘΥΣ) — consérvalo:** conecta con la entrega de los peces en la clausura y es símbolo eteciano/cristiano. Refínalo; confirma con el director si hay un logo oficial de la asociación.
+10. **Conteos — NO los pongas en las piezas.** El # cambia (piso = 100 personas en la casa, ≈47 equipo + ~53 participantes). Viven en la hoja del equipo, no en el branding.
+11. **Contexto:** público joven-adulto católico; "una sola tripulación, funciones distintas"; momento fuerte = Lavatorio de los pies (Juan 13), servicio y humildad. Piezas: Carpeta, Banderín, carnets, portada del cancionero, plantillas de WhatsApp, motivo de los peces.
