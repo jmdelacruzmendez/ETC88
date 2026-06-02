@@ -280,7 +280,7 @@ print('Comunidades:', dict(Counter(p['comunidad'] for p in equipo)))
 # Calendar / banderas (unchanged from v1)
 calendario = [
     {'fecha': '2026-06-07', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
-    {'fecha': '2026-06-10', 'titulo': 'Reunión de Coordinadores (socialización pre-F1)', 'tipo': 'coordinacion'},
+    {'fecha': '2026-06-04', 'titulo': 'Reunión de Coordinadores — jue 4-jun (Corpus Christi, virtual) o dom 7-jun (pre-misa)', 'tipo': 'coordinacion'},
     {'fecha': '2026-06-14', 'titulo': 'F1 — Primera Formación (presupuesto, sentido, temática)', 'tipo': 'formacion'},
     {'fecha': '2026-06-21', 'titulo': 'Clausura ETC 87 — La Vega', 'tipo': 'externo', 'sin_formacion': True},
     {'fecha': '2026-06-28', 'titulo': 'F2 — Segunda Formación', 'tipo': 'formacion'},
