@@ -1,112 +1,145 @@
 > **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
 
-# Reunión de Coordinadores — jue 4-jun (Corpus Christi · virtual)
-### Temas a repasar · 60 min · Pre-lectura 48 h antes
+# Guión desarrollado — Reunión de Coordinadores ETC 88
+### Jueves 4-jun (Corpus Christi) · VIRTUAL · ~60 min · pre-lectura 48 h antes
 
-> **Confirmado:** virtual, jueves de Corpus. Convocados: Co-Dir (JM + JC) + Laura + Tomás + Frank + **Priscilla** (Guías) + **Camila** (Guías) + **Paloma** + **Jhonnito** (Cocina) + **José Tusen** (Música).
-> **Paul + Sor Angelina:** invitados (transversales, su presencia da peso espiritual a la socialización).
-> **Pre-lectura enviada el martes 2-jun:** roster por área · etapas/prioridades · arco de formaciones · este guión.
-
----
-
-## Objetivo de la reunión (1 frase)
-Que los coordinadores se vayan con **un solo mensaje, una sola dimensión, y sus entregables claros para F1**.
+> **Confirmado:** virtual, jueves 4-jun. **Convocados:** Co-Dir (Juan Manuel + Jean Carlo) · Asesores Laura · Tomás · Frank · Coords **Priscilla + Camila** (Guías) · **Paloma + Jhonnito** (Cocina) · **José Ángel Tusen** (Música). **Invitados (transversales):** Padre Paul + Sor Angelina.
+> **Timekeeper:** Tomás. **Acta:** Laura (al documento de seguimiento). **Cámara ON.**
 
 ---
 
-## Temas a repasar (en este orden)
+## Objetivo (1 frase)
+Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual, y sus entregables claros para F1 (14-jun)** — sin que la prisa corte las preguntas.
 
-### 1. Equipo cerrado (5 min · JM + JC)
-- Anuncio: **equipo cerrado al miércoles 3-jun**, invitaciones enviadas.
-- **Quién es quién** en este momento (números): 2 dir · 3 asesores retiro · 14 guías · 21 cocina · 6 música · 2 transversales (Paul + Sor) · 2 asesoras cocina (Peta + Johanny) · 3 asesores comunidad (Sandrita + Marleny + Leticia).
-- Backups guías (Rodolfo · Scarlett · Kamila) · 1 vacante cocina (varón, candidato Randolph).
-- Equipos auxiliares: **Recaudación y Donaciones · Guagua · Profondo · Intersección.**
+## Antes de la reunión (lo que la Co-Dirección cierra o decide cómo presentar)
+- **Equipo cerrado al miércoles 3-jun** (invitaciones enviadas).
+- **Hilo espiritual / raíz del retiro — [POR DEFINIR].** Decidir si llega *cerrado* o se presenta como *propuesta a validar con Paul/Sor*. **Es decisión de los directores; no se improvisa en la reunión.**
+- **Cómo se nombra la cuota del equipo:** se presenta como **[PROPUESTA]** ($500/mes · total $1,500–2,000), **después** de mostrar los costos. No se anuncia como decidida.
+- Enviar la **pre-lectura el martes 2-jun** (paquete abajo) + link de la reunión.
 
-### 1b. Punto de partida financiero (3 min · JM)
-- **Arrancamos en negativo: el equipo debe $23,600 al Consejo Eteciano.**
-- Es el **10% de reserva de la Casa de Retiro** que Juan Manuel pagó de su bolsillo y que ya le fue devuelto — por lo tanto es **la primera deuda a cubrir** con la recaudación.
-- **Costo casa por persona:** $2,300 sin exención · **$2,000 con exención** (vía RNC de la parroquia del Padre Paul).
-
-### 2. Raíz espiritual (10 min · JM + JC con apoyo Paul/Sor)
-- Cómo se construyó: **diagnóstico del formulario** (5 clústeres) + **prioridad de los directores**.
-- El **hilo elegido** (a confirmar esta semana antes de la reunión).
-- Cómo desemboca en la **temática** (expedición / búsqueda de tesoro / aventura) y en el **branding** (que se reconstruye desde 0).
-- **Mensaje único** que cada coord baja a su equipo.
-
-### 3. Responsabilidades del coordinador (10 min · Laura)
-- **Ser descriptivo**: qué/cómo/cuándo/con qué; nada vago; por escrito.
-- **Dar ejemplo**: puntualidad, asistencia (máx. 3 ausencias; Ensayo obligatorio), necesidades propias de último.
-- **Mismo mensaje / misma dimensión**: el coord **transmite, no reinterpreta**.
-- *"La cocina en función del ETC, no el ETC en función de la cocina."*
-- Cuando se dividen (guías ↔ guías, cocina ↔ cocina): adaptan tareas técnicas, **no** el mensaje.
-
-### 4. Información del tablero — qué hay y cómo se usa (8 min · Tomás)
-- **Tablero en vivo** conectado al **Sheet del equipo** (fuente de verdad).
-- Por área: **alergias/condiciones (cocina)** · **lazos (guías)** · **contacto + cumple (todos)** · **experiencia previa de servicio** · **banderas operativas**.
-- Cada dato tiene **dueño y uso**.
-- **Documento de seguimiento** vivo: decisiones, acciones, pendientes — todos lo van actualizando.
-
-### 5. Arco de formaciones F1–F5 (8 min · JM)
-- Lo que viene en F1 (14-jun): "El llamado a la expedición" + **carta al que fui** + cada coord entrega presupuesto/materiales/dudas.
-- F2 (28-jun) "Una sola tripulación" · F3 (5-jul) "El tesoro que buscamos" · F4 (19-jul) "Conociendo el terreno" + perfiles 1 · F5 (16-ago) "Listos para zarpar" + perfiles 2.
-- **Convivencia 22-ago inicia con miniretiro/reflexión.** Ensayo 23-ago obligatorio.
-- Paul + Sor: dónde entran (F2 unidad, F4-F5 envío, retiro completo).
-
-### 6. Roadmap por área — quién entrega qué y cuándo (10 min · cada coord)
-
-#### Guías (Priscilla + Camila) — 2½ min
-- Presupuesto + materiales PG en **F1 (14-jun)** — incluir **libretas (cuadernos para participantes)** en el presupuesto de Guías.
-- Definir 7 parejas color-coded · **cada pareja se coordina y ensaya entre ellos** antes de cada reunión · empezar testimonios (F2).
-- En **cada reunión del equipo:** ensayar al menos **un Pequeño Grupo** y **repasar el programa y horario desde el principio** (vital).
-- **Formación en Liturgia** (con coords + encargados) y **planificación del Banderín** (Frank lo lleva) — agendar en su roadmap.
-- Perfiles 1 (19-jul) y 2 (16-ago).
-- **Mensaje de Paul a Guías:** enfocados en el participante · aprenderse el programa y horario · pareja coordinada y ensayada.
-
-#### Cocina (Paloma + Jhonnito) — 2½ min
-- Presupuesto + lista de compras en **F1 (14-jun)**.
-- **Menú definitivo** considerando insights de alergias del tablero (mariscos, piña, gastritis, diabetes, presión).
-- Funciones del equipo (recordatorio): **preparar + servir** los alimentos · **ambientación de cocina y comedor** · **bendiciones breves** · **lleva el Lavatorio de los Pies** del sábado (Juan 13) · **presentación del equipo** al resto de la tripulación.
-- Compras anticipadas no perecederos (jul) · **identificar Correcaminos** (después del menú).
-- Avanzada 3-sep · Bienvenida 9-sep (baile + bizcocho).
-- **Mensaje de Paul a Cocina:** corazón en **ENTREGA Y SACRIFICIO** · ancla **Juan 13** (lavatorio de los pies).
-
-#### Música (José Tusen) — 2½ min
-- Presupuesto en **F1 (14-jun)** (la casa tiene sonido → solo respaldo).
-- Repertorio + setlist · ensayos mínimo 3.
-- **Aprender canción de despedida + dinámicas** + cancionero impreso para los 3 días.
-- Bayuyo · oración a María · música al despertar · misa de clausura.
-- **Mensaje de Paul a Música:** Música es **animación espiritual** del retiro — su rol es **elevar la atmósfera espiritual**, no solo lo musical/técnico.
-
-#### Auxiliares (referencia, no se asignan hoy) — 2½ min
-- **Recaudación y Donaciones** · **Guagua** · **Profondo** · **Intersección** (Paul + Sor + etecianos de oración).
-- Co-Dir nombra responsable de cada uno antes de F1.
-
-### 7. Compromisos y dudas restantes (6 min · Frank · "piso abierto")
-- Cada coord enuncia **1 acuerdo** + **1 duda** que se lleva.
-- Dudas profundas → **parqueo** (se responde por chat el mismo día).
-
-### 8. Cierre + oración (3 min · Frank o Paul/Sor)
+## Pre-lectura (enviar 48 h antes · martes 2-jun)
+- Roster de su área (hoja Equipo) · Calendario 2026 + hitos del coordinador.
+- Plantilla de presupuesto por área (para llenar y traer a F1).
+- Este guión + el resumen de finanzas.
+> Mensaje al enviarlo: *"Vengan habiéndolo leído; la reunión es para alinear y resolver dudas, no para leer. Quien no leyó se pone al día solo."*
 
 ---
 
-## Checklist técnico de la reunión virtual
+## Agenda cronometrada (60 min)
 
-- [ ] Plataforma confirmada (Zoom/Meet) + link enviado el martes 2-jun.
-- [ ] Pre-lectura enviada **martes 2-jun** (paquete listo en `preparacion/`).
-- [ ] Cámara ON (acuerdo del grupo).
-- [ ] Timekeeper: **Tomás**.
-- [ ] Notas/acta: **Laura** (se guardan en el documento de seguimiento).
-- [ ] Acuerdos publicados el mismo día en el grupo de WhatsApp.
+| # | Bloque | Lidera | Min |
+|---|---|---|:--:|
+| 0 | Apertura + oración + reglas de tiempo | Frank / Co-Dir | 4 |
+| 1 | Equipo cerrado + punto de partida financiero | JM + JC | 8 |
+| 2 | Raíz espiritual → temática → mensaje único | JC (apoyo Paul/Sor) | 9 |
+| 3 | Responsabilidades del coordinador (estándar) | Laura | 8 |
+| 4 | El tablero: qué hay y cómo se usa por área | Tomás | 7 |
+| 5 | Roadmap por área + qué trae cada coord a F1 | Cada coord | 12 |
+| 6 | Auxiliares, recaudación y fechas límite | JM | 5 |
+| 7 | Piso abierto / parqueo (solo dudas) | Frank | 4 |
+| 8 | Cierre + compromisos + oración | Co-Dir / Paul | 3 |
+| | **Total** | | **60** |
+
+> **Regla del parqueo:** la duda profunda o muy específica de un área se anota y se responde el mismo día por chat — así una pregunta no descarrila a los demás. Ventana de preguntas corta al final de cada bloque.
 
 ---
 
-## Tareas que SALEN de esta reunión
+## Desarrollo por bloque (qué se dice)
 
+### Bloque 0 · Apertura (4 min · Frank/Co-Dir)
+- Oración breve (Frank o Paul/Sor).
+- Propósito en 1 frase: *"Salimos con una sola versión de cada cosa."*
+- Reglas: cámara ON, un tema a la vez, dudas en la ventana de cada bloque, lo demás al parqueo. Tomás controla el reloj.
+
+### Bloque 1 · Equipo cerrado + punto de partida financiero (8 min · JM + JC)
+**Quién es quién hoy (números reales):**
+- 2 directores · 3 asesores del retiro (Laura, Tomás, Frank — Frank además lleva el **Banderín**) · **14 guías** · **20 cocina + 1 vacante** (varón, candidato Randolph) · 6 música.
+- Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Peta" + Johanny**. Asesores de comunidad: **Sandrita, Marleny (SD) + Leticia (La Vega)** — *[POR DEFINIR] si La Vega manda 1 o 2*.
+- Backups de guías (**no son parte del equipo per se**): Rodolfo, Scarlett, Kamila.
+- Equipos auxiliares (existen, se asignan responsables antes de F1): **Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)**.
+
+**Punto de partida financiero (lo dice JM, claro y sin dramatismo):**
+- **Arrancamos en negativo: el equipo debe $23,600 al Consejo Eteciano** (10% de reserva de la casa que JM adelantó y ya le fue devuelto). Es la **primera** obligación a cubrir.
+- **Casa por persona:** $2,300 sin exención · **$2,000 con exención** (vía RNC de la parroquia del Padre Paul) — *gestionar la exención es [POR DEFINIR]*.
+- **Cuota del participante: $3,000** (confirmado).
+- **Aporte del equipo: [PROPUESTA] $500/mes (total $1,500–2,000), sin cerrar.** Se mostrará el costo del retiro **primero**, para que se entienda la necesidad de la rifa y las donaciones.
+
+### Bloque 2 · Raíz espiritual → temática → mensaje único (9 min · JC, apoyo Paul/Sor)
+- Cómo se construyó: diagnóstico del formulario + prioridad de la Co-Dirección.
+- **Hilo espiritual: [POR DEFINIR]** — se presenta como está hoy (cerrado o propuesta). **No se inventa en vivo.**
+- Cómo desemboca en la **temática [PROPUESTA] (expedición / búsqueda de tesoro)** y en el **branding, que se reconstruye desde 0 con Claude Design** (no hay reglas estéticas decididas todavía).
+- **Mensaje único:** qué frase/idea baja cada coord a su equipo (la misma para los tres). *"Misma seriedad espiritual en cocina, guías y música."*
+
+### Bloque 3 · Responsabilidades del coordinador (8 min · Laura)
+- **Ser descriptivo:** cada miembro sabe su asignación concreta (qué / cómo / cuándo / con qué), por escrito; horarios y materiales claros.
+- **Dar ejemplo:** puntualidad, asistencia (**máx. 3 ausencias; Ensayo General obligatorio**), poner las necesidades propias de último (*el ETC es del participante*).
+- **Transmitir, no reinterpretar:** el coordinador baja el **mismo mensaje y la misma dimensión**; cuando se dividen por área, adaptan tareas técnicas, **no** el mensaje.
+- *"La cocina está en función del ETC, no el ETC en función de la cocina."*
+
+### Bloque 4 · El tablero: qué hay y cómo se usa (7 min · Tomás)
+- **Tablero + hoja Equipo = fuente de verdad.** Cada dato tiene **dueño y uso**:
+  - **Cocina:** alergias / condiciones (mariscos, piña, gastritis, diabetes, presión) **antes** de cerrar el menú.
+  - **Guías:** lazos / parejas (que ningún participante caiga en el plenario de su hermano/pareja) y emparejar **quien ya ha servido con quien es nuevo**.
+  - **Todos:** contacto para seguimiento, cumpleaños para clima, experiencia previa de servicio, banderas operativas.
+- Lo que cada coord detecte vuelve a Co-Dir como **bandera**. El **documento de seguimiento** es vivo: decisiones, acciones, pendientes.
+
+### Bloque 5 · Roadmap por área + entregable a F1 (12 min · cada coord ~3 min)
+
+**Guías (Priscilla + Camila).**
+- A **F1 (14-jun):** presupuesto + materiales del PG — **incluir las libretas (cuadernos de los participantes) en el presupuesto de Guías** (no en cocina ni materiales generales).
+- Definir **7 parejas color-coded**; **cada pareja se coordina y ensaya entre ellos**.
+- En **cada reunión del equipo:** ensayar **al menos un Pequeño Grupo** y **repasar programa y horario desde el principio** (vital).
+- Agendar **formación en Liturgia** y **planificación del Banderín** (lo lleva Frank). Perfiles 1 (19-jul) y 2 (16-ago).
+- *Mensaje de Paul a Guías:* enfocados en el participante · aprenderse el programa y horario · pareja coordinada y ensayada.
+
+**Cocina (Paloma + Jhonnito).**
+- A **F1 (14-jun):** presupuesto + lista de compras.
+- **Menú** respetando las alergias del tablero. Funciones del equipo: **preparar + servir** · **ambientar cocina y comedor** · **bendiciones breves** · **lleva el Lavatorio de los Pies del sábado (Juan 13)** · **presentación del equipo** al resto.
+- Compras anticipadas de no perecederos (jul) · **identificar el Correcaminos** (después del menú). Avanzada 3-sep · Bienvenida 9-sep.
+- *Mensaje de Paul a Cocina:* el corazón es **entrega y sacrificio**; ancla **Juan 13**.
+
+**Música (José Ángel Tusen).**
+- A **F1 (14-jun):** presupuesto (la casa tiene sonido → solo respaldo) + cancionero impreso para los 3 días.
+- Repertorio + setlist · **mínimo 3 ensayos** · **aprender la canción de despedida** + dinámicas · Bayuyo · oración a María · música al despertar · misa de clausura.
+- *Mensaje de Paul a Música:* es **animación espiritual**, no solo lo técnico; eleva la atmósfera del retiro.
+
+### Bloque 6 · Auxiliares, recaudación y fechas límite (5 min · JM)
+- **Profondo #1 = RIFA** (confirmado, primera actividad, por recomendación del equipo). Profondo #2 = venta de comida / garaje.
+- **Donaciones a empresas/particulares = responsabilidad de los Directores** (delegable a Recaudación).
+- **[POR DEFINIR] responsables de cada equipo auxiliar** (Co-Dir los nombra antes de F1).
+- **[POR DEFINIR] fecha límite para cotizar:** transporte (3 empresas), biblias y peces. *Fijarla hoy.*
+- *Metas de recaudación: se manejan como [PROPUESTA] hasta tener el costo cerrado.*
+
+### Bloque 7 · Piso abierto / parqueo (4 min · Frank)
+- Cada coord enuncia **1 acuerdo** que se lleva + **1 duda**. Las dudas profundas → parqueo (respuesta el mismo día por chat).
+
+### Bloque 8 · Cierre (3 min · Co-Dir / Paul)
+- Repaso de compromisos (quién / qué / cuándo). Oración final.
+
+---
+
+## Decisiones a cerrar (con dueño)
+| Decisión | Estado | Dueño | Cuándo |
+|---|---|---|---|
+| Hilo espiritual / raíz del retiro | [POR DEFINIR] | Co-Dir + Paul/Sor | antes de la reunión |
+| Monto final de la cuota del equipo | [PROPUESTA] | Co-Dir | después de mostrar costos (F1) |
+| Responsables de los 4 equipos auxiliares | [POR DEFINIR] | Co-Dir | antes de F1 |
+| La Vega: 1 o 2 representantes | [POR DEFINIR] | Co-Dir | esta semana |
+| Vacante de cocina (varón — Randolph) | [POR DEFINIR] | Co-Dir | esta semana |
+| Fecha límite para cotizar transporte/biblias/peces | [POR DEFINIR] | Co-Dir | **fijarla en la reunión** |
+| Gestión de la exención de la casa | [POR DEFINIR] | Co-Dir + Padre Paul | en curso |
+
+## Tareas que salen (para F1, 14-jun)
 | Tarea | Quién | Cuándo |
 |---|---|---|
-| Presupuesto + materiales + 3 dudas | Cada coord | **F1 14-jun** |
-| Bajar mensaje único a cada equipo | Cada coord | Antes de F1 |
-| Confirmar invitaciones aceptadas | Cada coord | Esta semana |
-| Acta de la reunión publicada | Laura | mismo día |
-| Asignar responsables de auxiliares | Co-Dir | antes F1 |
-| Cerrar raíz espiritual definitiva | Co-Dir + Paul/Sor | esta semana |
+| Presupuesto + lista de materiales + 3 dudas/brechas del área | Cada coord | **F1 14-jun** |
+| Bajar el mensaje único a su equipo | Cada coord | antes de F1 |
+| Confirmar invitaciones aceptadas + completar datos de los "sin formulario" | Cada coord | esta semana |
+| Acta de la reunión publicada en el grupo | Laura | mismo día |
+| Asignar responsables de auxiliares + fechas límite | Co-Dir | antes de F1 |
+
+## Checklist técnico de la reunión virtual
+- [ ] Plataforma (Zoom/Meet) + link enviados el martes 2-jun.
+- [ ] Pre-lectura enviada el martes 2-jun.
+- [ ] Cámara ON (acuerdo del grupo). Timekeeper: Tomás. Acta: Laura.
+- [ ] Acuerdos publicados el mismo día en el WhatsApp del equipo.

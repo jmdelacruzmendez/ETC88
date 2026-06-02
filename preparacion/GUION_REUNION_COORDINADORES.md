@@ -57,7 +57,7 @@ La tensión es real: poco tiempo, pero las dudas no se cortan. Se resuelve con *
 
 **Bloque 2 · Informaciones: uso por área (Co-Dir).** Sobre la tabla pre-leída, solo los puntos de acción:
 - Cocina **debe** mirar **alergias/condiciones** antes del menú (mariscos, piña, gastritis, diabetes).
-- Guías cuidan **lazos/parejas** y emparejan veterano + nuevo.
+- Guías cuidan **lazos/parejas** y emparejan a **quien ya ha servido con quien es nuevo**.
 - Todos usan **contacto** para seguimiento y **cumpleaños** para clima.
 - Cada dato tiene **dueño y uso**; lo que cada coord detecte vuelve a Co-Dir como **bandera**.
 - *Q&A del bloque.*
