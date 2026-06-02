@@ -65,7 +65,7 @@ El presupuesto 88 tiene Cocina/Mercado ($62,410) + Correcamino ($9,756). El **de
 
 ## 5. Recomendación
 1. **Itemizar el presupuesto 88 por área** (esto es lo que cada coord entrega en F1): "Guías Materiales" y "Misceláneos" se abren en líneas como las del 79.
-2. **Agregar las líneas faltantes:** rosarios, antifaces (tela negra), banderín, alambre, cofre+monedas, carnets, ofrenda confesores, palangana/toallas Lavatorio, lodo.
+2. **Agregar las líneas faltantes:** rosarios, banderín, alambre, cofre+monedas, carnets, ofrenda confesores, palangana/toallas Lavatorio, lodo.
 3. **Recalcular la brecha real** con estas líneas → casi seguro **sube el costo**, lo que refuerza una **meta de recaudación más agresiva**.
 4. Usar el **ETC 79 como plantilla** de itemización (ya tiene cantidades y precios).
 
