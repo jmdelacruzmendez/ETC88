@@ -382,14 +382,23 @@ recaudacion = {
 }
 
 equipos_auxiliares = [
-    {'nombre':'Recaudación y Donaciones', 'descripcion':'Levantamiento de fondos + aportes en especie. Un solo equipo. Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
+    {'nombre':'Recaudación y Donaciones', 'descripcion':'Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Co-Dir + Coords cocina + Roberto'},
     {'nombre':'Guagua (Transporte)', 'descripcion':'Coordinación de transporte para formaciones, retiro, avanzada. Equipo externo (no pernocta en la casa).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Producción'},
-    {'nombre':'Actividad Profondo', 'descripcion':'Diseño y ejecución de la actividad principal del Profondo (31-jul al 2-ago). Puede integrar gente fuera del equipo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
-    {'nombre':'Intersección (espiritual)', 'descripcion':'Equipo espiritual transversal del retiro: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.', 'estado':'Por formular', 'miembros':['Padre Paul Ramírez', 'Sor Angelina Lebrón'], 'responsable_sugerido':'Asesores Espirituales'},
+    {'nombre':'Actividad Profondo', 'descripcion':'Profondo #1 = RIFA (meta neta agresiva RD$130K). Profondo #2 = venta de comida/garaje (~RD$50K).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
+    {'nombre':'Intersección (espiritual)', 'descripcion':'Equipo espiritual transversal: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.', 'estado':'Por formular', 'miembros':['Padre Paul Ramírez', 'Sor Angelina Lebrón'], 'responsable_sugerido':'Asesores Espirituales'},
 ]
+finanzas = {
+    'casa_por_persona_sin_exencion': 2300,
+    'casa_por_persona_con_exencion': 2000,
+    'exencion_nota': 'Con exención = compra vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona.',
+    'deuda_inicial': {'monto': 23600, 'descripcion': '10% reserva casa (5-mar) pagado por Juan Manuel; ya le fue devuelto. El equipo arranca debiendo este monto al Consejo.', 'acreedor': 'Consejo Eteciano SPM'},
+    'meta_recaudacion_total': 260000,
+    'pago_mensual_equipo_recomendado': {'monto_mensual': 1250, 'meses': 4, 'total_por_persona': 5000},
+}
 
 data = {
-    'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v7-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v8-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'finanzas': finanzas,
     'equipos_auxiliares': equipos_auxiliares,
     'marca': {
         'lema':'Siempre amigos',

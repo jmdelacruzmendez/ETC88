@@ -13,6 +13,14 @@
 - **Correcaminos:** rol vehicular (compras/diligencias durante el retiro) — se identifica después de cerrar el menú.
 - Dormitorio de cocina **separado** del resto (se recomienda).
 
+## 2b. Funciones del equipo de Cocina (lo que cubre)
+Cocina **no solo prepara la comida**. Su función incluye:
+- **Preparar los alimentos** + **servirlos a los participantes** durante el retiro.
+- **Ambientación de la cocina y del comedor** (motivos por tiempo de comida, ligados a la temática).
+- **Lavatorio de los Pies** del sábado en la noche: cocina **lo lleva** — palangana, toallas, agua, montaje y acompañamiento del momento.
+- **Presentación del equipo** de cocina al resto de la tripulación (que se conozcan; cocina no es invisible).
+- Bendiciones breves antes de cada tiempo de comida.
+
 ## 3. Llegada y montaje
 - **Avanzada: jueves/viernes** (la cocina llega antes — 3-sep avanzada · viernes 10am montaje).
 - Ponerse al tanto del manejo de cocina de la casa · presentación del comedor · preparar la cena del viernes.
@@ -25,7 +33,8 @@
 | Domingo | Desayuno · almuerzo |
 
 - **Bendiciones breves** ligadas al tema del día (sin sociodramas).
-- **Cena del sábado = Lavatorio de los pies** (momento fuerte): preparar palangana, toallas, agua.
+- **Cena del sábado = Lavatorio de los pies** (momento fuerte que **lleva cocina**): preparar palangana, toallas, agua; cuidar el ambiente del comedor durante el rito.
+- **Servicio a la mesa:** cocina sirve los alimentos a los participantes en cada tiempo (no es autoservicio).
 
 ## 5. Menú — reglas y alergias (del tablero)
 Construir el menú **respetando**:
@@ -35,15 +44,22 @@ Construir el menú **respetando**:
 - **Canela** (1), **gastritis severa** (Candy) — no irritante, **diabetes** (Luisa) — bajo azúcar/horarios, **presión** (María del Carmen) — bajo sodio.
 - **Sin Baygon** en zona de comida (José Ángel) y ojo **gatos** (Dorian).
 
-## 6. Motivos y decoración del comedor
+## 6. Motivos y decoración del comedor (y de la cocina)
 - Cada tiempo de comida lleva un **motivo** ligado a la temática (expedición/tesoro).
 - Sencillo, hecho por el equipo, alegre.
+- **Ambientación de la cocina** también: el espacio de trabajo refleja el espíritu del retiro.
+
+## 6b. Mensaje de Paul para el equipo de Cocina
+El corazón de cocina es **ENTREGA Y SACRIFICIO**. La cocina sirve desde la sombra para que el participante encuentre a Cristo en la mesa, en el descanso, y sobre todo en el **Lavatorio**.
+
+> **Ancla bíblica del equipo de cocina:** **Juan 13** — *el lavatorio de los pies*. *"Si yo, el Maestro y el Señor, les he lavado los pies, ustedes también deben lavarse los pies unos a otros"* (Jn 13,14). Esa es la actitud: servir agachados, sin esperar nada, con el delantal puesto.
 
 ## 7. Presupuesto y donaciones
 - Cocina entrega su **presupuesto + lista de compras en F1**.
 - Buscar **donaciones en especie** (arroz, habichuelas, aceite — el 79 los consiguió donados).
 - Compras por mayor (MERCADOM, El Suplidor) = 15–25% menos.
 - Confirmar con la casa: **¿gas incluido? ¿se paga señora de cocina local?**
+- **Contexto financiero del 88:** la **Casa de Retiro** cuesta **$2,300/persona sin exención** y **$2,000/persona con exención** (vía RNC de la parroquia del Padre Paul). El equipo arranca debiendo **$23,600** al Consejo Eteciano (10% de reserva de la casa que JM adelantó de su bolsillo y que ya le fue devuelto).
 
 ## 8. Reglas del cocinero (10, resumen)
 Trabajo humilde · asistir a reuniones · hacer lo asignado · motivos del comedor · **cena con Lavatorio** · presupuesto y donaciones · menú · oración de bendición · nunca poner intereses propios por encima del participante.

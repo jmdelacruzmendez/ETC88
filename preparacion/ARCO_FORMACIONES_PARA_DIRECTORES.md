@@ -43,11 +43,16 @@
 | **Dinámica 1: "Memoria del propio ETC"** | 25 min | En silencio cada uno recuerda quién lo sirvió en su retiro · 3-4 comparten en plenario |
 | Cuerpo del tema | 25 min | *"También a mí me lavaron los pies"* (Jn 13,14-15) — sirvo porque fui servido |
 | **Dinámica 2: "Carta al que fui"** | 25 min | Cada servidor escribe carta breve al sí-mismo que llegó al retiro como retirante (se guarda, se relee al final del 88) |
-| **Operativo:** presupuestos | 20 min | Cada coord presenta su presupuesto + materiales · Co-Dir consolida |
+| **Operativo:** presupuestos | 20 min | Cada coord presenta su presupuesto + materiales · Co-Dir consolida · **recordar:** las **libretas (cuadernos para participantes) van en el presupuesto de Guías** · **arrancamos en negativo: $23,600 al Consejo Eteciano** (10% de reserva de la casa que JM adelantó) |
 | Avisos + oración final | 15 min | Calendario · próximos pasos · oración |
 
 **Materiales:** hojas, sobres (para sellar la carta), bolígrafos.
 **Salida:** todos saben la raíz · todos tienen su rol claro · cada coord entregó presupuesto.
+
+**Mensajes de Paul por equipo (a bajar en los breakouts):**
+- **Guías:** enfocados en el PARTICIPANTE · aprenderse programa y horario (vital) · pareja coordinada y ensayada.
+- **Cocina:** corazón en **ENTREGA Y SACRIFICIO** · ancla en **Juan 13** (lavatorio de los pies) · cocina **lleva el Lavatorio** del sábado.
+- **Música:** **animación espiritual** del retiro — elevar la atmósfera espiritual, no solo lo musical/técnico.
 
 ---
 
@@ -127,9 +132,9 @@
 ## Ensayo General (23-ago) — OBLIGATORIO
 - Se ensaya el **retiro completo** desde la llegada del viernes hasta el domingo
 - Cada miembro practica su rol específico
-- Cocina ensaya tiempos de comedor
-- Guías ensayan sus pequeños grupos
-- Música ensaya cada momento
+- **Cocina** ensaya tiempos de comedor + **servicio de alimentos** + **ambientación** + **montaje del Lavatorio de los Pies** (sábado)
+- **Guías** ensayan sus pequeños grupos (recordar: **en cada reunión del equipo se ensaya al menos un PG**, no solo aquí) y **repasan programa + horario** desde el principio
+- **Música** ensaya cada momento — su rol es **animación espiritual** del retiro
 
 ---
 

@@ -2,7 +2,7 @@
 ### domingo 14-jun-2026 · estructura según los asesores
 
 > **Pre-requisito:** tener lista la **Guía del ETC 88** ("la carpeta"): equipo + calendario + reglas + responsabilidades + lema. Es lo que se entrega hoy.
-> **Recomendación sobre el tema inicial:** el "Identidad del servidor / Carta al que fui" que teníamos para F1 → **se muda a F2** (que va de identidad y unidad). En F1 dejamos solo una versión corta dentro de la presentación de la temática + el modelaje de testimonios. Así F1 respira para presentación + carpeta + breakouts (como pidieron los asesores).
+> **Recomendación sobre el tema inicial:** el "Identidad del servidor / Carta al que fui" que teníamos para F1 → **se muda a F2** (que va de identidad y unidad). En F1 dejamos solo una versión corta dentro de la presentación de la temática + el ejemplo del formato de testimonio. Así F1 respira para presentación + carpeta + breakouts (como pidieron los asesores).
 
 ---
 
@@ -29,22 +29,29 @@
 
 | Paso | Quién | Contenido |
 |---|---|---|
-| 1 | **Coords (Priscilla + Camila) se presentan primero** | dan el ejemplo del estándar |
+| 1 | **Coords (Priscilla + Camila) se presentan primero** | abren el espacio |
 | 2 | Se presentan **las parejas de guías** | cada pareja se conoce |
 | 3 | **Música se presenta** | y se explica cómo se integra a los testimonios |
-| 4 | Coords | **Cuándo se reúnen como equipo** (fechas + lugar) |
-| 5 | Cada pareja | **Eligen el color** de su pareja (color-coded) |
-| 6 | Coords + asesores | **Cómo preparar un testimonio** — *descriptivo* (que los chicos entiendan paso a paso) + *dar ejemplo*: **arrancan los "viejos"/veteranos** dando su testimonio como modelo para que los demás aprendan |
+| 4 | Coords | **Cuándo se reúnen como equipo** (fechas + lugar) — recordar que en **cada reunión se ensaya al menos un Pequeño Grupo (PG)** y se **repasa el programa y horario desde el principio** |
+| 5 | Cada pareja | **Eligen el color** de su pareja (color-coded) · acuerdan **coordinarse y ensayar de antemano** entre ellos |
+| 6 | Coords + asesores | **Cómo preparar un testimonio** — *descriptivo* (paso a paso): **quienes ya han dado testimonio antes pueden compartir primero** para que el formato se entienda con fluidez |
+| 7 | Coords | **Recordar:** las **libretas (cuadernos para participantes) van en el presupuesto de Guías** — no en cocina ni en materiales generales |
 
 #### COCINA
 | Paso | Quién | Contenido |
 |---|---|---|
-| 1 | **Coords (Paloma + Jhonnito) se presentan** | + asesoras Peta + Johanny |
+| 1 | **Coords (Paloma + Jhonnito) se presentan** | + asesoras Peta + Johanny · **presentación del equipo de cocina** al resto de la tripulación |
 | 2 | Coords | **Fecha y disponibilidad de reuniones** del equipo de cocina |
 | 3 | Equipo | **Construyen / revisan el menú** (con el insight de alergias del tablero: mariscos, piña, gastritis, diabetes, presión) |
-| 4 | Coords | **Temáticas / motivos** del comedor ligados a la expedición |
+| 4 | Coords | **Temáticas / motivos** y **ambientación** de la **cocina y del comedor** ligados a la expedición |
+| 5 | Coords | Repasar funciones: **preparar + servir** los alimentos · **bendiciones breves** · **cocina lleva el Lavatorio de los Pies** del sábado (Juan 13) — palangana, toallas, agua, montaje |
+| 6 | Coords + Paul | **Mensaje de Paul a Cocina:** enfoque en **ENTREGA Y SACRIFICIO**, con **Juan 13** (lavatorio de los pies) como ancla de la función |
 
 > *Nota:* el **Correcaminos** se identifica más adelante (después de cerrar el menú).
+
+> **Mensaje de Paul a Música:** Música es **animación espiritual** del retiro — su rol es **elevar la atmósfera espiritual**, no solo lo musical/técnico.
+>
+> **Mensaje de Paul a Guías:** **enfocados en el PARTICIPANTE** · **aprenderse el programa y horario** (vital) · **pareja de guías: coordinarse de antemano y ensayar** para que se note la fluidez al conducir el PG.
 
 ---
 
@@ -81,4 +88,4 @@
 
 ## Decisión para Co-Dir
 - ¿Confirmas **mudar "Identidad del servidor / Carta al que fui" a F2**, o lo combinamos en F1 (versión corta) como cierre reflexivo?
-- Mi recomendación: **mudarlo a F2** (F1 ya queda llena con presentación + carpeta + breakouts). En F1 los veteranos modelan el testimonio, que ya siembra la identidad.
+- Mi recomendación: **mudarlo a F2** (F1 ya queda llena con presentación + carpeta + breakouts). En F1 quienes ya han dado testimonio antes comparten primero como ejemplo del formato, y eso ya siembra la identidad.

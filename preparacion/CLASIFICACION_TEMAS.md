@@ -25,7 +25,7 @@ Agrupé lo que escribieron en *"qué esperas", "miedos", "tema que Dios trabaja"
 | Clúster (voz del equipo) | Aparece en | Implica para el tema |
 |---|---|---|
 | **Unidad / vida en comunidad** | Juan Manuel, Brianelis, Jhonnalia, Wirna… | El ETC como "una sola tripulación" |
-| **Entrega / servicio desde la humildad** | Luisa, Oliver, Paloma, Adrián… | "El ETC es del participante, no del guía" |
+| **Entrega / servicio desde la humildad** | Luisa, Oliver, Paloma, Adrián… | "El ETC es del participante, no del guía" · ancla **Juan 13 — lavatorio de los pies** (especialmente para Cocina: **ENTREGA Y SACRIFICIO**) |
 | **Confianza / esperar los tiempos de Dios** | Jonathan, Ivanna, Kelvin, Dayrelins… | Dejar que Dios dirija la expedición |
 | **Compromiso / constancia en la fe** | la "palabra" más repetida; Tommy, Kelvin… | Perseverar después del retiro (4º día) |
 | **Miedo a no ser suficiente / a fricciones** | Oliver, Ismarie, Risaira, Franklin… | Sanar y blindar el ambiente del equipo |
@@ -107,3 +107,9 @@ No se rediseñan; se les pone la "piel" de la temática:
 1. De los **5 clústeres**, ¿cuál es **el hilo central** (o la prioridad de los directores)?
 2. ¿Confirmas el **arco F1–F5** o mueves ejes?
 3. ¿Sumo a **Sor Angelina / Paul** a un bloque específico (ej. F3 o la consagración de F5)?
+
+---
+
+### Nota operativa (no temática — pero relevante)
+- **Punto de partida financiero del 88:** el equipo arranca debiendo **$23,600** al Consejo Eteciano (10% de reserva de la Casa de Retiro que Juan Manuel adelantó de su bolsillo y que ya le fue devuelto). Primera deuda a cubrir con la recaudación.
+- **Casa de Retiro:** $2,300/persona sin exención · **$2,000/persona con exención** (vía RNC de la parroquia del Padre Paul).

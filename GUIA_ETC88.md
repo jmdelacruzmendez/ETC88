@@ -4,6 +4,7 @@
 > **Lema (provisional — a confirmar esta semana):** *“No fuimos a buscarlo: Él nos esperaba”* · **Mt 13,44**
 > **Temática:** expedición · búsqueda de tesoro · aventura
 > **Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey
+> **Costo casa por persona:** $2,300 sin exención · **$2,000 con exención** (vía RNC de la parroquia del Padre Paul).
 > **Co-Dirección:** Juan Manuel de la Cruz · Jean Carlo de la Cruz
 
 *Esta es tu carpeta. Tráela a cada formación. Aquí está quiénes somos, el equipo, el calendario, las reglas y cómo nos preparamos.*
@@ -97,14 +98,14 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 
 **Guías:** trabajo cara a cara con el participante · preparan y dan testimonio · libretas y decoración del PG · se aprenden el horario · palanca a cada participante · confidencialidad · ejemplo de vida sacramental.
 
-**Cocina:** unidad y armonía · sencillez en comidas y motivos · presupuesto y donaciones · menú · bendiciones breves ligadas al tema · **Lavatorio** en la cena del sábado · ejemplo en el servicio.
+**Cocina:** unidad y armonía · sencillez en comidas y motivos · presupuesto y donaciones · menú · **preparar y servir los alimentos** · **ambientación de cocina y comedor** · bendiciones breves ligadas al tema · **lleva el Lavatorio de los Pies** en la cena del sábado · presentación del equipo · ejemplo en el servicio desde la sombra. **Ancla:** Juan 13 — *entrega y sacrificio*.
 
-**Música:** amenizan los 3 días · cancionero · **oración Sal y Luz «Bayuyo»** (antifaces) · música al despertar · cantos de la misa de clausura · oración a María del sábado · **canción de despedida** · apoyo a todas las áreas desde el jueves previo.
+**Música:** **animación espiritual** del retiro — su rol es elevar la atmósfera espiritual, no solo lo musical/técnico · amenizan los 3 días · cancionero · **oración Sal y Luz «Bayuyo»** (antifaces) · música al despertar · cantos de la misa de clausura · oración a María del sábado · **canción de despedida** · apoyo a todas las áreas desde el jueves previo.
 
 ---
 ## 6. Cómo preparar un testimonio
 
-*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Los veteranos dan el ejemplo primero.*
+*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Quienes ya han dado testimonio antes pueden compartir primero, para que el formato se entienda con fluidez.*
 
 1. Empieza con un **bosquejo** de ideas generales.
 2. **Simple:** una idea central, lenguaje claro y llano.
