@@ -312,6 +312,30 @@ tr:hover { background: var(--pergamino-claro); }
   </div>
 </nav>
 
+<!-- Barra de fuente de datos -->
+<div class="bg-pergamino-claro border-b border-rule">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center gap-2 text-xs flex-wrap">
+    <span :class="dataSourceClass()" style="font-size: 14px; line-height: 1;">●</span>
+    <span class="f-cond uppercase tracking-widest" :class="dataSourceClass()" x-text="dataSourceLabel()"></span>
+    <span class="text-muted" x-show="lastSync" x-text="'· sync ' + lastSync"></span>
+    <button class="btn-action" @click="sheetUrl ? loadFromSheet(sheetUrl) : (showSettings = true)" style="background: var(--mar); padding: 3px 8px;" x-show="dataSource !== 'local' || sheetUrl">↻ Recargar</button>
+    <button class="ml-auto btn-action" @click="showSettings = !showSettings" style="background: var(--cuero); padding: 3px 8px;">⚙ Datos</button>
+  </div>
+  <div x-show="showSettings" x-transition class="max-w-6xl mx-auto px-4 md:px-6 pb-4">
+    <div class="bg-vela border border-rule p-4 text-sm">
+      <p class="mb-1"><strong>Conectar Google Sheet en vivo.</strong> Pegá la URL <em>CSV publicada</em> de la pestaña <em>Equipo</em>. Se guarda solo en este navegador.</p>
+      <p class="text-xs text-muted mb-3">En Google Sheets: <em>Archivo → Compartir → Publicar en la web → </em> elegí la hoja "Equipo" y formato <em>CSV</em> → copiá el enlace y pegalo acá.</p>
+      <div class="flex flex-wrap gap-2">
+        <input type="text" x-model="sheetUrlInput" placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?gid=0&single=true&output=csv" class="flex-1 min-w-[260px]">
+        <button class="btn-action btn-wa" @click="saveSheetUrl()">Guardar y cargar</button>
+        <button class="btn-action" @click="sheetUrlInput=''; saveSheetUrl()" style="background: var(--muted);">Usar copia local</button>
+      </div>
+      <p class="text-xs mt-2 text-tierra" x-show="dataSource==='error'">⚠ No se pudo leer la hoja. Verificá que esté <strong>publicada como CSV</strong> y que el enlace termine en <code>output=csv</code>. Mientras tanto se muestra la copia local.</p>
+      <p class="text-xs mt-2 text-safari" x-show="dataSource==='live'">✓ Leyendo de la hoja en vivo. Editás en Google Sheets y al recargar la página (o con ↻) se actualiza.</p>
+    </div>
+  </div>
+</div>
+
 <main class="max-w-6xl mx-auto px-4 md:px-6 py-8">
 
 <!-- TAB: Tripulación -->
@@ -335,7 +359,7 @@ tr:hover { background: var(--pergamino-claro); }
     <input type="search" x-model="search" placeholder="Buscar nombre…" class="flex-1 min-w-[200px]">
     <select x-model="filterOperativo">
       <option value="">Operativos + presentes</option>
-      <option value="op">Solo operativos (45)</option>
+      <option value="op">Solo operativos</option>
       <option value="no_op">Solo presentes no-op</option>
     </select>
     <select x-model="filterArea">
@@ -816,9 +840,53 @@ tr:hover { background: var(--pergamino-claro); }
 <script>
 const DATA = __DATA_JSON__;
 
+// ============================================================
+// FUENTE DE DATOS EN VIVO (Google Sheet)
+// Pegá la URL CSV publicada de la pestaña "Equipo" desde el botón
+// "⚙ Datos" del tablero (se guarda en este navegador). O dejala fija acá:
+// Google Sheets → Archivo → Compartir → Publicar en la web →
+// hoja "Equipo", formato CSV → copiar enlace.
+// ============================================================
+const SHEET_CSV_URL_DEFAULT = '';
+const AREA_ORDER = { directores:1, asesores:2, guias:3, cocina:4, musica:5, asesores_cocina:6, asesores_espirituales:7, asesores_diocesanos:8 };
+const MESES_ABBR = { ene:1, feb:2, mar:3, abr:4, may:5, jun:6, jul:7, ago:8, sep:9, oct:10, nov:11, dic:12 };
+
+function gName(n) { return (n || '').replace(' (sin formulario)', ''); }
+function normName(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/\\s+/g, ' ').trim(); }
+function parseCumpleStr(s) {
+  const m = (s || '').match(/(\\d{1,2})\\s*[-\\/ ]\\s*([a-záéíóú]+)/i);
+  if (!m) return {};
+  const mo = MESES_ABBR[m[2].toLowerCase().slice(0, 3)];
+  return mo ? { cumple_mes: mo, cumple_dia: parseInt(m[1]) } : {};
+}
+function parseCSV(text) {
+  const rows = []; let row = [], field = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (q) {
+      if (ch === '"') { if (text[i+1] === '"') { field += '"'; i++; } else q = false; }
+      else field += ch;
+    } else {
+      if (ch === '"') q = true;
+      else if (ch === ',') { row.push(field); field = ''; }
+      else if (ch === '\\n') { row.push(field); rows.push(row); row = []; field = ''; }
+      else if (ch === '\\r') { /* skip */ }
+      else field += ch;
+    }
+  }
+  if (field.length || row.length) { row.push(field); rows.push(row); }
+  return rows;
+}
+
 function app() {
   return {
     data: DATA,
+    baseEquipo: null,
+    dataSource: 'local',
+    sheetUrl: '',
+    sheetUrlInput: '',
+    showSettings: false,
+    lastSync: '',
     activeTab: 'tripulacion',
     tabs: [
       {id:'tripulacion', label:'Tripulación'},
@@ -899,7 +967,7 @@ function app() {
       return m[area] || area;
     },
 
-    isCoord(p) { return p.rol && p.rol.toLowerCase().includes('coord'); },
+    isCoord(p) { return p.es_coord === true || (p.rol && p.rol.toLowerCase().includes('coord')); },
 
     comunidadClass(c) {
       if (c === 'Belén') return 'parche-belen';
@@ -1049,7 +1117,7 @@ function app() {
               fecha: p.cumple_dia,
               fechaTxt: String(p.cumple_dia).padStart(2,'0') + '-' + mesesNombres[mz.m-1],
               eventoClass: '',
-              contenido: '<span class="cumple-chip">🎂</span> <span class="f-script text-lg" style="color:' + teamColor + ';">' + this.cleanName(p.nombre) + '</span> · <span class="text-muted text-xs">cumple ' + ((new Date().getFullYear()) - p.cumple_anio) + ' · <span class="team-badge team-badge-' + p.area + '" style="font-size:9px; padding: 1px 6px;">' + this.teamLabel(p.area) + '</span></span>'
+              contenido: '<span class="cumple-chip">🎂</span> <span class="f-script text-lg" style="color:' + teamColor + ';">' + this.cleanName(p.nombre) + '</span> · <span class="text-muted text-xs">' + (p.cumple_anio ? 'cumple ' + ((new Date().getFullYear()) - p.cumple_anio) + ' · ' : '') + '<span class="team-badge team-badge-' + p.area + '" style="font-size:9px; padding: 1px 6px;">' + this.teamLabel(p.area) + '</span></span>'
             });
           }
         });
@@ -1060,6 +1128,14 @@ function app() {
 
     openModal(p) { this.selected = p; },
 
+    mkChart(id, cfg) {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const ex = Chart.getChart(el);
+      if (ex) ex.destroy();
+      return new Chart(el, cfg);
+    },
+
     initCharts() {
       if (this.chartsInit) return;
       this.chartsInit = true;
@@ -1069,7 +1145,7 @@ function app() {
 
       const resCount = {};
       this.data.equipo.forEach(p => { if (p.residencia && p.residencia !== '—') resCount[p.residencia] = (resCount[p.residencia] || 0) + 1; });
-      new Chart(document.getElementById('chart-residencia'), {
+      this.mkChart('chart-residencia', {
         type: 'doughnut',
         data: { labels: Object.keys(resCount), datasets: [{ data: Object.values(resCount), backgroundColor: palette, borderColor: '#F7EFD9', borderWidth: 2 }] },
         options: { plugins: { legend: { position: 'right', labels: { font: { family: fontFamily, size: 11 } } } } }
@@ -1083,7 +1159,7 @@ function app() {
         else if (p.etcs_servidos >= 2 && p.etcs_servidos <= 4) m24++;
         else v5++;
       });
-      new Chart(document.getElementById('chart-veterania'), {
+      this.mkChart('chart-veterania', {
         type: 'bar',
         data: { labels: ['0 (rookies)','1','2-4','5+'], datasets: [{ data: [rook,m1,m24,v5], backgroundColor: [colors.cuero, colors.safari, colors.mar, colors.tierra] }] },
         options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { font: { family: fontFamily } } }, x: { ticks: { font: { family: fontFamily } } } } }
@@ -1092,7 +1168,7 @@ function app() {
       const ages = this.data.equipo.filter(p => p.edad).map(p => p.edad);
       const bins = [[18,21,'18-21'],[22,25,'22-25'],[26,29,'26-29'],[30,34,'30-34'],[35,99,'35+']];
       const ageCount = bins.map(([lo,hi,l]) => ages.filter(a => a>=lo && a<=hi).length);
-      new Chart(document.getElementById('chart-edad'), {
+      this.mkChart('chart-edad', {
         type: 'bar',
         data: { labels: bins.map(b => b[2]), datasets: [{ data: ageCount, backgroundColor: colors.ambar }] },
         options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { font: { family: fontFamily } } }, x: { ticks: { font: { family: fontFamily } } } } }
@@ -1103,7 +1179,7 @@ function app() {
       const areaColors = { directores: colors.tierra, asesores: colors.cuero, guias: colors.mar, cocina: colors.safari, musica: colors.ambar };
       const areaLabels = { directores:'Directores', asesores:'Asesores', guias:'Guías', cocina:'Cocina', musica:'Música' };
       const keys = Object.keys(areaCount);
-      new Chart(document.getElementById('chart-area'), {
+      this.mkChart('chart-area', {
         type: 'bar',
         data: { labels: keys.map(k => areaLabels[k] || k), datasets: [{ data: keys.map(k => areaCount[k]), backgroundColor: keys.map(k => areaColors[k] || colors.muted) }] },
         options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { font: { family: fontFamily }, stepSize: 1 } }, y: { ticks: { font: { family: fontFamily } } } } }
@@ -1117,7 +1193,7 @@ function app() {
         else if (p.comunidad === 'Betania') etcMap[p.etc_propio].betania++;
       });
       const sortedEtcs = Object.keys(etcMap).map(Number).sort((a,b) => a-b);
-      new Chart(document.getElementById('chart-etc-origen'), {
+      this.mkChart('chart-etc-origen', {
         type: 'bar',
         data: {
           labels: sortedEtcs.map(n => 'ETC ' + n),
@@ -1130,10 +1206,123 @@ function app() {
       });
     },
 
+    // ===== Fuente de datos en vivo =====
+    dataSourceClass() { return this.dataSource === 'live' ? 'text-safari' : this.dataSource === 'error' ? 'text-tierra' : 'text-muted'; },
+    dataSourceLabel() {
+      if (this.dataSource === 'live') return 'Hoja en vivo';
+      if (this.dataSource === 'error') return 'Error de hoja — usando copia local';
+      return 'Copia local';
+    },
+
+    useLocalData() {
+      this.data.equipo = JSON.parse(JSON.stringify(this.baseEquipo));
+      this.recomputeMeta();
+      this.dataSource = 'local';
+      this.refreshCharts();
+    },
+
+    saveSheetUrl() {
+      this.sheetUrl = (this.sheetUrlInput || '').trim();
+      if (this.sheetUrl) localStorage.setItem('etc88_sheet_url', this.sheetUrl);
+      else localStorage.removeItem('etc88_sheet_url');
+      this.showSettings = false;
+      this.loadFromSheet(this.sheetUrl);
+    },
+
+    async loadFromSheet(url) {
+      if (!url) { this.useLocalData(); return; }
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 12000);
+        const res = await fetch(url, { signal: ctrl.signal, redirect: 'follow' });
+        clearTimeout(timer);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        this.applySheetText(text);
+        this.dataSource = 'live';
+        this.lastSync = new Date().toLocaleTimeString('es-DO', { hour: '2-digit', minute: '2-digit' });
+        this.refreshCharts();
+      } catch (e) {
+        console.warn('No se pudo leer la hoja en vivo:', e.message);
+        this.dataSource = 'error';
+      }
+    },
+
+    applySheetText(text) {
+      const rows = parseCSV(text);
+      const hi = rows.findIndex(r => r.map(x => (x || '').trim().toLowerCase()).includes('nombre'));
+      if (hi < 0) throw new Error('No encontré la fila de encabezados (columna "Nombre")');
+      const headers = rows[hi].map(h => (h || '').trim().toLowerCase());
+      const col = {}; headers.forEach((h, i) => { if (!(h in col)) col[h] = i; });
+      const val = (r, name) => { const i = col[name]; return i != null ? (r[i] || '').trim() : ''; };
+      const dataRows = rows.slice(hi + 1).filter(r => r.some(c => (c || '').trim() !== ''));
+
+      const baseByName = {};
+      this.baseEquipo.forEach(p => { baseByName[normName(gName(p.nombre))] = p; });
+
+      const out = [];
+      dataRows.forEach((r, idx) => {
+        const nm = val(r, 'nombre');
+        if (!nm) return;
+        const base = baseByName[normName(nm)] || {};
+        const p = Object.assign({}, base);
+        p.id = base.id || ('sheet-' + idx);
+        p.nombre = base.nombre || nm;
+        p.sexo = val(r, 'sexo') || base.sexo || '?';
+        p.edad = parseInt(val(r, 'edad')) || base.edad || null;
+        p.area = (val(r, 'área') || val(r, 'area') || base.area || 'por_asignar').trim();
+        p.rol = val(r, 'rol') || base.rol || '';
+        p.es_coord = /^s/i.test(val(r, 'coordinador'));
+        p.operativo = /^s/i.test(val(r, 'operativo'));
+        p.comunidad = val(r, 'comunidad') || base.comunidad || 'Por confirmar';
+        p.residencia = val(r, 'residencia') || base.residencia || '—';
+        p.etc_propio = parseInt(val(r, 'etc propio')) || base.etc_propio || null;
+        p.etc_anio_propio = parseInt(val(r, 'año etc')) || base.etc_anio_propio || null;
+        const sv = val(r, 'etcs servidos');
+        p.etcs_servidos = sv === '' ? (base.etcs_servidos != null ? base.etcs_servidos : null) : parseInt(sv);
+        if (isNaN(p.etcs_servidos)) p.etcs_servidos = null;
+        const cp = parseCumpleStr(val(r, 'cumpleaños'));
+        if (cp.cumple_mes) { p.cumple_mes = cp.cumple_mes; p.cumple_dia = cp.cumple_dia; }
+        const tel = val(r, 'teléfono').replace(/[^0-9]/g, '');
+        if (tel) p.telefono = tel;
+        const talla = val(r, 'talla'); if (talla) p.talla = talla;
+        p.sin_formulario = /^s/i.test(val(r, 'sin formulario'));
+        out.push(p);
+      });
+      if (!out.length) throw new Error('La hoja no tiene filas de datos');
+      this.sortEquipo(out);
+      this.data.equipo = out;
+      this.recomputeMeta();
+    },
+
+    sortEquipo(arr) {
+      arr.sort((a, b) => {
+        const op = (a.operativo ? 0 : 1) - (b.operativo ? 0 : 1); if (op) return op;
+        const ar = (AREA_ORDER[a.area] || 9) - (AREA_ORDER[b.area] || 9); if (ar) return ar;
+        const co = ((a.es_coord || /coord/i.test(a.rol || '')) ? 0 : 1) - ((b.es_coord || /coord/i.test(b.rol || '')) ? 0 : 1); if (co) return co;
+        return gName(a.nombre).localeCompare(gName(b.nombre), 'es');
+      });
+    },
+
+    recomputeMeta() {
+      this.data.meta.operativos = this.data.equipo.filter(p => p.operativo).length;
+      this.data.meta.no_operativos = this.data.equipo.filter(p => !p.operativo).length;
+      this.data.meta.total_equipo = this.data.equipo.length;
+    },
+
+    refreshCharts() {
+      this.chartsInit = false;
+      if (this.activeTab === 'bitacora') this.$nextTick(() => this.initCharts());
+    },
+
     init() {
+      this.baseEquipo = JSON.parse(JSON.stringify(DATA.equipo));
+      this.sheetUrl = localStorage.getItem('etc88_sheet_url') || SHEET_CSV_URL_DEFAULT;
+      this.sheetUrlInput = this.sheetUrl;
       this.$watch('activeTab', val => {
         if (val === 'bitacora') this.$nextTick(() => this.initCharts());
       });
+      if (this.sheetUrl) this.loadFromSheet(this.sheetUrl);
     }
   };
 }
