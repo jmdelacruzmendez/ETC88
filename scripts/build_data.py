@@ -393,7 +393,7 @@ finanzas = {
     'exencion_nota': 'Con exención = compra vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona.',
     'deuda_inicial': {'monto': 23600, 'descripcion': '10% reserva casa (5-mar) pagado por Juan Manuel; ya le fue devuelto. El equipo arranca debiendo este monto al Consejo.', 'acreedor': 'Consejo Eteciano SPM'},
     'meta_recaudacion_total': 260000,
-    'pago_mensual_equipo_recomendado': {'monto_mensual': 1250, 'meses': 4, 'total_por_persona': 5000},
+    'cuota_equipo_propuesta': {'estado': 'PROPUESTA a confirmar (no decidido)', 'total_rango': '1,500 - 2,000', 'monto_mensual': 500, 'cubre': 'comida del Ensayo General + participación en el retiro', 'nota': 'Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa.'},
 }
 
 data = {
