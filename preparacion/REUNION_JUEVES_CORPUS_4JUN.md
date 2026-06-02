@@ -110,6 +110,7 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 - **Donaciones a empresas/particulares = responsabilidad de los Directores** (delegable a Recaudación).
 - **[POR DEFINIR] responsables de cada equipo auxiliar** (Co-Dir los nombra antes de F1).
 - **[POR DEFINIR] fecha límite para cotizar:** transporte (3 empresas), biblias y peces. *Fijarla hoy.*
+- **[POR DEFINIR] Visiteo de coordinadores a la casa de retiro** (gap señalado en el Informe Final ETC 85). Co-Dir contacta a **Samuel Montilla** esta semana para proponer 2–3 fechas. Ventana sugerida: **sábado entre F2 (28-jun) y F4 (19-jul)**. En esta reunión se confirma disponibilidad de los coords.
 - *La meta = el costo total; la rifa, la venta de comida y las donaciones cubren la brecha (costo − cuotas), con montos variables.*
 
 ### Bloque 7 · Piso abierto / parqueo (4 min · Frank)
@@ -128,6 +129,7 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 | Responsables de los 4 equipos auxiliares | [POR DEFINIR] | Co-Dir | antes de F1 |
 | Vacante de cocina (varón — Randolph) | [POR DEFINIR] | Co-Dir | esta semana |
 | Fecha límite para cotizar transporte/biblias/peces | [POR DEFINIR] | Co-Dir | **fijarla en la reunión** |
+| Fecha del **visiteo a la casa** (pre-coord con Samuel Montilla) | [POR DEFINIR] | Co-Dir | esta semana (gap del Informe 85) |
 | Gestión de la exención de la casa | [POR DEFINIR] | Co-Dir + Padre Paul | en curso |
 
 ## Tareas que salen (para F1, 14-jun)

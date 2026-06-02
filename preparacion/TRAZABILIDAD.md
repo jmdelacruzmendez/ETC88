@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 31 confirmados · 7 propuestas · 3 pendientes (en estado.json).
+**Resumen:** 38 confirmados · 16 propuestas · 5 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 47 · vacantes 1 · backups 3.
@@ -43,6 +43,13 @@
 | `calendario_hitos.ensayo_general` | 23-ago · asistencia obligatoria | director |  |
 | `calendario_hitos.inicio_recaudacion` | F3 · primera formación de julio (5-jul) | director | La recaudación de cuotas inicia en la 1ra formación de julio. El miemb… |
 | `calendario_hitos.profondo1_fechas` | 31-jul → 2-ago | calendario | Rifa (Profondo #1); el neto entra a inicios de agosto. |
+| `historial.etcs_disponibles_en_drive` | ["ETC 78", "ETC 79", "ETC 85", "ETC 88"] | exploración Drive read-only 2026-06-02 | Carpeta padre Drive contiene 78, 79, 85, 88. NO existe carpeta del ETC… |
+| `historial.etc_83_disponible` | False | exploración Drive 2026-06-02 | No se invente contenido del 83: no hay fuente. |
+| `historial.informe_final_85` | Informe Final ETC 85.pdf — leído en Drive | Drive: ETC 85 / Informe Final ETC 85.pdf | Roster 85 + puntos positivos + aspectos a mejorar + medidas financiera… |
+| `historial.drive_88_carpetas_vacias` | ["Operaciones", "Finanzas"] | exploración Drive 2026-06-02 | Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pa… |
+| `mapa_donaciones_por_rubro.zonas.spm` | San Pedro de Macorís — parroquia San José Obrero + comercios… | director |  |
+| `mapa_donaciones_por_rubro.zonas.higuey` | Higüey — cerca de la casa, proveedores locales (insumos pesa… | ubicación de la casa |  |
+| `mapa_donaciones_por_rubro.zonas.pc` | Punta Cana — parroquia Nuestra Señora del Pilar + hoteles pa… | director |  |
 
 ## 🟡 Propuestas (sin cerrar — se muestran [PROPUESTA]; OJO con la fuente)
 | Campo | Valor | Fuente | Nota |
@@ -54,6 +61,15 @@
 | `equipos_auxiliares[0].responsable` | Co-Dir + Coords de cocina + Roberto | — |  |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
 | `equipos_auxiliares[2].responsable` | Directores | — |  |
+| `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |
+| `gaps_post_informe_85.oracion_grupal_obligatoria` | Participación obligatoria de TODOS los equipos (guías y ases… | Informe 85, aspecto a mejorar | Agregar a las reglas como equipo en F1. |
+| `gaps_post_informe_85.confirmar_n_etc_con_consejo` | Confirmar el # del ETC con concilio/consejo TEMPRANO; cambio… | Informe 85 | Relevante a 'completar 100 en la casa'. |
+| `gaps_post_informe_85.responsabilidades_asesores_estandarizadas` | Estandarizar y documentar las responsabilidades de los aseso… | Informe 85 | Producir doc breve por tipo de asesor antes de F2. |
+| `gaps_post_informe_85.escenario_cocina_con_donaciones` | Modelar la canasta de cocina con un escenario 'con donacione… | ETC 78 Costo ETC Participantes + Presupuesto General Agosto 7 | Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite … |
+| `gaps_post_informe_85.visiteo_casa_obligatorio` | Hacer obligatorio el visiteo a la casa de retiro previo (ref… | Informe 85 | Coordina con Samuel Montilla antes de fijar fecha. |
+| `gaps_post_informe_85.oficina_separada_pg` | La oficina debe estar separada de los pequeños grupos y orga… | Informe 85 | A tener en cuenta en el visiteo a la casa. |
+| `gaps_post_informe_85.cocina_no_abrumar_palancas` | La cocina no abruma a los participantes durante el proceso d… | Informe 85 | Recordatorio para el Ensayo General. |
+| `gaps_post_informe_85.luces_apagadas_cena_sabado` | Evaluar mantener las luces apagadas en la cena del sábado pa… | Informe 85 | Decisión de Co-Dir + asesores espirituales. |
 
 ## 🔴 Pendientes (faltan — se muestran [POR DEFINIR])
 | Campo | Valor | Fuente | Nota |
@@ -61,6 +77,8 @@
 | `marca.branding_reglas_esteticas` | None | — | Las reglas estéticas NO están definidas. Se trabajan con Claude Design… |
 | `calendario_hitos.fecha_limite_cotizar_transporte` | None | director | El director pidió fijar una fecha límite para cotizar transporte, bibl… |
 | `calendario_hitos.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
+| `calendario_hitos.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
+| `gaps_post_informe_85.responsable_financiero` | None | Informe 85 | Nombrar 1-2 personas responsables de control de pagos y reportes de ga… |
 
 ## Decisiones confirmadas (lista del director)
 - Retiro ETC 88: 4–6 de septiembre de 2026, Casa de Retiro La Ceiba del Salado, Higüey.

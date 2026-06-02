@@ -348,6 +348,229 @@
         "estado": "pendiente",
         "fuente": "director",
         "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después."
+      },
+      "visiteo_coordinadores_casa": {
+        "valor": null,
+        "estado": "pendiente",
+        "fuente": "director",
+        "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana [PROPUESTA] entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día."
+      }
+    },
+    "historial": {
+      "etcs_disponibles_en_drive": {
+        "valor": [
+          "ETC 78",
+          "ETC 79",
+          "ETC 85",
+          "ETC 88"
+        ],
+        "estado": "confirmado",
+        "fuente": "exploración Drive read-only 2026-06-02",
+        "nota": "Carpeta padre Drive contiene 78, 79, 85, 88. NO existe carpeta del ETC 83 (búsqueda por título '83/LXXXIII' y full-text 'ETC 83' = cero matches en el ámbito)."
+      },
+      "etc_83_disponible": {
+        "valor": false,
+        "estado": "confirmado",
+        "fuente": "exploración Drive 2026-06-02",
+        "nota": "No se invente contenido del 83: no hay fuente."
+      },
+      "informe_final_85": {
+        "valor": "Informe Final ETC 85.pdf — leído en Drive",
+        "estado": "confirmado",
+        "fuente": "Drive: ETC 85 / Informe Final ETC 85.pdf",
+        "nota": "Roster 85 + puntos positivos + aspectos a mejorar + medidas financieras. Base de las recomendaciones de gaps del 88."
+      },
+      "drive_88_carpetas_vacias": {
+        "valor": [
+          "Operaciones",
+          "Finanzas"
+        ],
+        "estado": "confirmado",
+        "fuente": "exploración Drive 2026-06-02",
+        "nota": "Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pasados las tienen llenas)."
+      }
+    },
+    "gaps_post_informe_85": {
+      "_nota": "Recomendaciones tomadas del Informe Final ETC 85. Cada una es [PROPUESTA] / [POR DEFINIR] hasta que el director la apruebe.",
+      "responsable_financiero": {
+        "valor": null,
+        "estado": "pendiente",
+        "fuente": "Informe 85",
+        "nota": "Nombrar 1-2 personas responsables de control de pagos y reportes de gastos (medida financiera #3 del Informe 85)."
+      },
+      "informe_post_retiro": {
+        "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.",
+        "estado": "propuesta",
+        "fuente": "Informe 85, medida #5",
+        "nota": "Compromiso para post-retiro (14-sep en adelante)."
+      },
+      "oracion_grupal_obligatoria": {
+        "valor": "Participación obligatoria de TODOS los equipos (guías y asesores incluidos) en momentos grupales de oración.",
+        "estado": "propuesta",
+        "fuente": "Informe 85, aspecto a mejorar",
+        "nota": "Agregar a las reglas como equipo en F1."
+      },
+      "confirmar_n_etc_con_consejo": {
+        "valor": "Confirmar el # del ETC con concilio/consejo TEMPRANO; cambios tardíos en otras comunidades causaron retrabajos de cocina en el 85.",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "Relevante a 'completar 100 en la casa'."
+      },
+      "responsabilidades_asesores_estandarizadas": {
+        "valor": "Estandarizar y documentar las responsabilidades de los asesores (cocina y generales).",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "Producir doc breve por tipo de asesor antes de F2."
+      },
+      "escenario_cocina_con_donaciones": {
+        "valor": "Modelar la canasta de cocina con un escenario 'con donaciones' (en 78: comida cayó ~70%, de \\$1,590 a \\$461/persona; en 78 el 51% del presupuesto total fue donado).",
+        "estado": "propuesta",
+        "fuente": "ETC 78 Costo ETC Participantes + Presupuesto General Agosto 7",
+        "nota": "Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite del Padre Paul; lácteos; res; pollo)."
+      },
+      "visiteo_casa_obligatorio": {
+        "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar calendario_hitos.visiteo_coordinadores_casa).",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "Coordina con Samuel Montilla antes de fijar fecha."
+      },
+      "oficina_separada_pg": {
+        "valor": "La oficina debe estar separada de los pequeños grupos y organizarse para uso eficiente.",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "A tener en cuenta en el visiteo a la casa."
+      },
+      "cocina_no_abrumar_palancas": {
+        "valor": "La cocina no abruma a los participantes durante el proceso de palancas (controlar abrazos).",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "Recordatorio para el Ensayo General."
+      },
+      "luces_apagadas_cena_sabado": {
+        "valor": "Evaluar mantener las luces apagadas en la cena del sábado para preservar la solemnidad.",
+        "estado": "propuesta",
+        "fuente": "Informe 85",
+        "nota": "Decisión de Co-Dir + asesores espirituales."
+      }
+    },
+    "mapa_donaciones_por_rubro": {
+      "_nota": "Mapa de donaciones por partida del presupuesto y por zona. Cada empresa/contacto = [PROPUESTA] salvo lo que el director confirme. NUNCA hardcodear contactos sin fuente. Sectores derivados del cruce con ETC 78/79 (donde se ve qué se donó).",
+      "zonas": {
+        "spm": {
+          "valor": "San Pedro de Macorís — parroquia San José Obrero + comercios locales",
+          "estado": "confirmado",
+          "fuente": "director"
+        },
+        "higuey": {
+          "valor": "Higüey — cerca de la casa, proveedores locales (insumos pesados/frescos)",
+          "estado": "confirmado",
+          "fuente": "ubicación de la casa"
+        },
+        "pc": {
+          "valor": "Punta Cana — parroquia Nuestra Señora del Pilar + hoteles para premios/estadías + comercios PC",
+          "estado": "confirmado",
+          "fuente": "director"
+        }
+      },
+      "rubros": {
+        "_nota": "Cada rubro lista (a) sectores que típicamente donan, (b) candidatos del 79 confirmados, (c) propuestas sin confirmar. Lo confirmado = lo que el director o el doc fuente diga; lo demás es [PROPUESTA].",
+        "casa_y_reserva": {
+          "donantes_confirmados": [
+            "Parroquia del Padre Paul (RNC para exención)"
+          ],
+          "sectores_propuesta": [
+            "Parroquia local SPM"
+          ]
+        },
+        "cocina_canasta": {
+          "donantes_confirmados": [
+            "Padre Paul (arroz/habichuelas/aceite — ETC 79)"
+          ],
+          "sectores_propuesta": [
+            "MERCADOM",
+            "El Suplidor",
+            "Iberia (lácteos · ETC 78)",
+            "Pricemart",
+            "agricultores SPM/PC",
+            "carnicerías SPM"
+          ]
+        },
+        "transporte": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Metro Servicios SPM",
+            "Transportando RD",
+            "DominicanBus",
+            "empresas con guaguas en SPM/Higüey/PC"
+          ]
+        },
+        "materiales_liturgico": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Cofradía/parroquia (peces)",
+            "SDQLee",
+            "Cuesta Libros",
+            "librerías católicas",
+            "Multibox (cajas/cofre palancas — usado en 78)"
+          ]
+        },
+        "biblias": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "SDQLee",
+            "Cuesta",
+            "Librería Paulinas",
+            "Verbo Divino"
+          ]
+        },
+        "vino_y_formas": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Parroquia del Padre Paul (donación litúrgica directa)"
+          ]
+        },
+        "banderin": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Talleres de costura SPM",
+            "serigrafía SPM",
+            "imprentas SPM"
+          ]
+        },
+        "camisetas": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Serigrafía SPM (Print Mate — usado en 78)",
+            "imprentas SPM"
+          ]
+        },
+        "guias_pg": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Cactus (libretas/papelería — usado en 78)",
+            "Print Mate (impresiones — usado en 78)"
+          ]
+        },
+        "musica": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "La casa tiene sonido (no aplica donación grande)"
+          ]
+        },
+        "rifa_premio": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Comercios SPM (electrodomésticos)",
+            "supermercados SPM/PC (gift cards)",
+            "hoteles Punta Cana (noche por publicidad)"
+          ]
+        },
+        "imprevistos": {
+          "donantes_confirmados": [],
+          "sectores_propuesta": [
+            "Donaciones en efectivo de etecianos con experiencia previa (modelo del 78)"
+          ]
+        }
       }
     },
     "decisiones_confirmadas": [
