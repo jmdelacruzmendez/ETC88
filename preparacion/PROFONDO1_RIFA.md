@@ -5,19 +5,17 @@
 
 > La rifa fue la **recomendación #1 del equipo** (23 menciones en el formulario). Este es el plan integral: distribución, alcance, recaudación, costo-beneficio, buenas prácticas, benchmarking y roadmap.
 
-## Meta — AGRESIVA (revisada)
-El presupuesto real subirá al itemizar los materiales faltantes (rosarios, antifaces, banderín…), así que la meta sube:
-- **Rifa (Profondo #1): RD$ 130,000 neto** (antes 100K) — escenario agresivo.
-- **+ Donaciones a empresas/particulares: RD$ 40–60K** → **responsabilidad de los Directores** (delegable a Recaudación, según el presupuesto).
-- **+ Venta de comida / garaje (Profondo #2): RD$ 50K** (el ETC 79 levantó ~$50K solo en venta de garaje).
-- **Objetivo combinado de recaudación: RD$ 220–240K** (vs ~325K de brecha → el resto con cuotas y exención).
+## Cómo encaja en el modelo (la rifa = palanca #1)
+El costo total del retiro (≈ **RD$583,281**) se cubre con **cuotas + rifa + venta de comida + donaciones**. La parte variable (rifa + comida + donaciones) debe cubrir la **brecha ≈ RD$330,281**. Los montos de rifa/comida/donaciones son **VARIABLES — lo que se recaude** (decisión del director); aquí planificamos la rifa como la **palanca #1**.
+- **Rifa (Profondo #1):** objetivo de trabajo **≈ RD$117K neto** *[ESCENARIO]* (1,200 boletos × RD$100, premio donado). El monto real es lo que se recaude.
+- **Venta de comida (Profondo #2)** y **donaciones** (responsabilidad de los Directores, delegable a Recaudación) completan la brecha.
 
-> Benchmark ETC 79: donaciones **$86K** + venta de garaje **$50K** + venta de comida. Es alcanzable ser más agresivos.
+> Benchmark ETC 79: donaciones + venta de garaje (~$50K) + venta de comida. Sirve de **referencia, no de meta fija**.
 
 ---
 
 ## 1. Meta y matemática (costo-beneficio)
-**Meta: RD$ 100,000 NETO** (escenario base del presupuesto; mín. aceptable 70K, óptimo 130K).
+**Objetivo de trabajo: ≈ RD$ 117,000 NETO** *[ESCENARIO]* (escenario A recomendado; rango 78K–122K según boletos/precio). El monto real es lo que se recaude.
 
 | Escenario | Boletos | Precio | Bruto | Premio | Impresión | **Neto** |
 |---|---|---|---|---|---|---|
@@ -53,7 +51,7 @@ Buscar **donado** (no comprado). Opciones por atractivo/facilidad:
 
 ## 5. Costo-beneficio
 - **Costo:** impresión de talonarios (~RD$2-3K) + premio (idealmente RD$0 si donado).
-- **Beneficio:** RD$100K+ neto = **~24% del presupuesto total** del retiro (RD$502K).
+- **Beneficio:** ~RD$117K neto ≈ **~20% del costo total** del retiro (~RD$583K) y **~35% de la brecha** (~RD$330K).
 - **ROI:** altísimo si el premio es donado.
 - **Riesgo:** boletos sin vender → mitigar con 2 cierres y seguimiento por coord.
 

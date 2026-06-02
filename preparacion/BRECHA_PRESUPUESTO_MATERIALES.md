@@ -4,7 +4,9 @@
 ### Cruce: lo que la GUÍA exige vs lo que el presupuesto ETC 88 contempla
 
 > Verificado contra el **presupuesto detallado del ETC 79** (ítem por ítem) y la **guía canónica** (momentos del retiro).
-> **Hallazgo principal:** el presupuesto ETC 88 (v2) está a **nivel de CATEGORÍA**, no itemizado. Tiene los montos pero **no el desglose**, y por eso **no se ve** si cubre cosas que la guía exige (rosarios, antifaces, banderín…).
+> **Hallazgo principal (original):** el presupuesto ETC 88 (v2) estaba a **nivel de CATEGORÍA**, no itemizado, y por eso no se veía si cubría cosas que la guía exige (rosarios, banderín…).
+
+> ✅ **RESUELTO (estado actual):** este análisis ya se aplicó. La hoja **Finanzas_ETC88.xlsx** está **itemizada** (pestaña *Materiales-Litúrgico*) e incluye todas las líneas que faltaban: **peces, biblias, banderín, rosarios, alambre, cofre de palancas + monedas, carnets/porta-ID, ofrenda a confesores, palangana + toallas (Lavatorio), lodo, vino/formas, papelógrafo, cartulinas**, etc. **Antifaces: NO se incluyen** (la temática no está decidida; sí el banderín). Lo de abajo queda como registro del cruce original.
 
 ---
 
