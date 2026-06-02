@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "fuente": "Borrador de Equipo ETC 88 (Abril) — Google Drive (doc inicial del director)",
+    "leido": "2026-06-02",
+    "nota": "Listado INICIAL preliminar de abril. El equipo FINAL vive en data/equipo.json; esto es el POOL/cantera para llenar cupos, equipos auxiliares y padrinos. Nombres tal cual el borrador (pueden tener typos/variantes). build_cantera.py diferencia quién quedó en el equipo final.",
+    "etc_pasados": "Las etiquetas de experiencia (ETC 78/79/85) provienen del cruce con los rosters de retiros anteriores (ver CANTERA_FUERA_DEL_EQUIPO.md)."
+  },
+  "guias": [
+    "Jonathan Medina", "Jose Tusen", "Kamila Todd", "Laura Fernandez", "Luisa Fiorentino",
+    "Priscilla Hidalgo", "Tomas Lorenzo", "Scarlett Nivar", "Juan Pablo", "Camila Fernandez",
+    "Yelaxni Mota", "Oliver de León", "Maria Astacio", "Victoria Lorenzo", "Wirna Stapleton",
+    "Miriel Mercedes", "Emily de la Rosa", "Vanessa Acosta", "Carlos Rosario", "Leober Carrion",
+    "Franklin Silverio", "Darianny Rodriguez", "Samuel Humphreys", "Daylin Ramalde|PC",
+    "Aime Santana|PC", "Kedward Acevedo|PC", "Jhonalia Silvestre"
+  ],
+  "cocina": [
+    "Adrian Santana", "Ambar Liz", "Brianelis Abreu", "Candy Gatwood|PC", "Chantal Carpio",
+    "Coraima Martinez", "Cristopher Jimenez", "Daylan Rambalde", "Dayrelins", "Kelvin Ventura",
+    "Olanlly Ortiz", "Pamela Colon", "Randol Joseph", "Risaira Santana", "Risairi Santana",
+    "Tomy Nova", "Wilka Reyes", "Zahir Valoy", "Enmanuel Mieses", "Neyrelis Santana",
+    "Roselyn Quiroz", "Ganely", "Nelson Morales", "Inomar Mercedes", "Guido Maldonado",
+    "Isaura Martinez", "Avril Geronimo", "Eduardo Candelario", "Emilio Reyes", "Fabianlly",
+    "Fabelly", "Jhonnito Richiez", "Kirina Humpreys", "Leandro Fernandez", "Lucero Blanco",
+    "Maria del Carmen", "Merkin Jean", "Nestor Vidal", "Paloma", "Rissel Santana",
+    "Rosanna Matos", "Vielimi Mena", "Yileivi Mena", "Daniel Santana|SD", "Jordelis Mateo|PC",
+    "Ivanna Mercedes|PC", "Mirna Stapleton|PC", "Ricaira Santana"
+  ],
+  "musica": [
+    "Belkys", "Dorian Rodriguez", "Fernando Cordero", "Ismarie Constanzo"
+  ],
+  "participantes": [
+    "Dianna Constanzo", "Gianna Geronimo", "Glorimar de la Cruz", "Ivonne Vasquez",
+    "Joemely Smith", "Karen Berroa", "Laura Almeida", "Marlin Rosario", "Lied Pascual",
+    "Luis Miguel Sandoval", "Marianne Beltre", "Ronny del Rosario", "Steven Perez",
+    "Yarlenys Peralta", "Yohn Figueroa", "Francis David", "Edwin Regalado"
+  ],
+  "no_misioneros": [
+    "Brissa Rodriguez", "Carla Uribe", "Johanna Ortiz", "Lisset Rosario", "Mary Carmen Ramirez",
+    "Raiza Zapata", "Maria Lucia Uribe", "Ramon Leonardo", "Angel Radesky", "Jose Cordero",
+    "Ivan Mateo", "Diorlin Medina"
+  ],
+  "no_se_estiman": [
+    "Henky Carrion", "Emily Lorenzo", "Madallyn Lorenzo", "Luis Farid", "Luis Jose Ramirez",
+    "Manuel de la Cruz", "Maritza Medina", "Roberto Figueroa", "Gabriela Crescencio",
+    "Hansel Taveras|SD", "Javier Almeida|SD", "Maria Chacon|PC", "Rafael Mir|SD",
+    "Sophia Garcia|SD", "Fernando Castillo|PC", "Yanely Mendoza|PC", "Yulainy Palacio|PC",
+    "Yokairy Mercedes|SB", "Camila Acta|SD", "Reynaldo Rivera|PC", "Joan Felix|PC",
+    "Dionis Sosa|PC", "Katherine Nolasco|PC"
+  ],
+  "experiencia_etc": {
+    "_nota": "Etiquetas de experiencia verificadas en rosters de ETCs anteriores (CANTERA).",
+    "Maria Astacio": "cocina ETC 78, 79 y 85",
+    "Nestor Vidal": "cocina ETC 85",
+    "Leandro Fernandez": "cocina ETC 85",
+    "Samuel Humphreys": "cocina ETC 78, sirvió 79",
+    "Emilio Reyes": "sirvió ETC 79",
+    "Eduardo Candelario": "guía ETC 78 y 79",
+    "Kedward Acevedo": "Director de Cocina ETC 85 (esposo de Jordelis) — perfil de liderazgo",
+    "Scarlett Nivar": "guía 78/79, coord. guías 85 (hoy backup del 88)",
+    "Rodolfo Telemaco": "guía 78/79 (hoy backup del 88)"
+  }
+}
