@@ -248,6 +248,40 @@
         ]
       }
     ],
+    "comunidades_y_parroquias": {
+      "parroquia_spm": {
+        "valor": "San José Obrero (SPM)",
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Parroquia de referencia en SPM (misas etecianas y posibles actividades post-misa)."
+      },
+      "parroquia_pc": {
+        "valor": "Nuestra Señora del Pilar (Punta Cana)",
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Parroquia en PC con representación del 88 en el equipo; aún no se han realizado actividades allí — oportunidad para potenciar."
+      },
+      "etecianos_pc_en_88": {
+        "valor": [
+          "Candy Elizabeth Gatwood Ramos",
+          "Dorian Elina Rodriguez Belliard",
+          "Ivanna Marien Mercedes Sosa",
+          "Jordelis Mateo",
+          "José Ángel Tusen Russo",
+          "Tommy Nova Nolasco",
+          "Yelaxni Mota"
+        ],
+        "estado": "confirmado",
+        "fuente": "data/equipo.json (residencia=Punta Cana)",
+        "nota": "Etecianos del 88 residentes en Punta Cana — base natural para activar la parroquia del Pilar."
+      },
+      "liga_softball_etecianos": {
+        "valor": "Equipo/liga de softball de etecianos que ya se reúne y juega",
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Actividad existente de la comunidad eteciana — potenciable para profondos pequeños (juego benéfico, vender palomitas/entradas, aporte simbólico de los jugadores)."
+      }
+    },
     "asesores_externos": {
       "cocina": {
         "valor": [

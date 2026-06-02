@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 27 confirmados · 7 propuestas · 3 pendientes (en estado.json).
+**Resumen:** 31 confirmados · 7 propuestas · 3 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 47 · vacantes 1 · backups 3.
@@ -31,6 +31,10 @@
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
 | `equipos_auxiliares[3].responsable` | Asesores Espirituales (Padre Paul + Sor Angelina) | — |  |
+| `comunidades_y_parroquias.parroquia_spm` | San José Obrero (SPM) | director | Parroquia de referencia en SPM (misas etecianas y posibles actividades… |
+| `comunidades_y_parroquias.parroquia_pc` | Nuestra Señora del Pilar (Punta Cana) | director | Parroquia en PC con representación del 88 en el equipo; aún no se han … |
+| `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |
+| `comunidades_y_parroquias.liga_softball_etecianos` | Equipo/liga de softball de etecianos que ya se reúne y juega | director | Actividad existente de la comunidad eteciana — potenciable para profon… |
 | `asesores_externos.cocina` | ["Mary \"Petra\" Morales", "Johanny García"] | director |  |
 | `asesores_externos.comunidad_sd` | ["Marleny", "Sandrita"] | director | 2 representantes (asesores) de la comunidad de Santo Domingo. |
 | `asesores_externos.comunidad_la_vega` | ["Leticia González"] | director | 1 representante (asesor): Leticia González. |
