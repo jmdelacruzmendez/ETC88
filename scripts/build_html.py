@@ -408,10 +408,12 @@ tr:hover { background: var(--pergamino-claro); }
             <div class="flex flex-wrap gap-1 mt-1 items-center">
               <span class="team-badge" :class="'team-badge-' + p.area" x-text="teamLabel(p.area)"></span>
               <span class="coord-mark" x-show="isCoord(p)" title="Coordinador">★</span>
-              <span x-show="p.sin_formulario" class="parche parche-warn">Sin formulario</span>
-              <span x-show="!p.operativo" class="parche" style="background: rgba(122,100,64,0.18); color: var(--muted);">Solo retiro</span>
+              <span x-show="p.sin_formulario && !p.vacante" class="parche parche-warn">Sin formulario</span>
+              <span x-show="p.backup" class="parche" style="background: rgba(27,58,82,0.15); color: var(--mar);">Backup</span>
+              <span x-show="p.vacante" class="parche parche-warn">Vacante</span>
+              <span x-show="!p.operativo && !p.backup && !p.vacante" class="parche" style="background: rgba(122,100,64,0.18); color: var(--muted);">Solo retiro</span>
             </div>
-            <div class="text-xs text-muted mt-1 f-mono" x-show="!p.sin_formulario" x-text="p.sexo + ' · ' + (p.edad ? p.edad + 'a' : '?') + ' · ' + p.rol"></div>
+            <div class="text-xs text-muted mt-1 f-mono" x-show="!p.sin_formulario || p.vacante" x-text="p.sexo + ' · ' + (p.edad ? p.edad + 'a' : '?') + ' · ' + p.rol"></div>
           </div>
           <div class="cartucho" :class="cartuchoEtcsClass(p)" x-show="p.etcs_servidos !== null && p.etcs_servidos !== undefined">
             <div class="text-center leading-none">
@@ -908,7 +910,10 @@ function app() {
     chartsInit: false,
 
     get noOperativos() {
-      return this.data.equipo.filter(p => !p.operativo);
+      return this.data.equipo.filter(p => !p.operativo && !p.backup && !p.vacante);
+    },
+    get backupsList() {
+      return this.data.equipo.filter(p => p.backup);
     },
 
     get filteredEquipo() {
@@ -1021,7 +1026,7 @@ function app() {
         { area: 'musica', label: 'Música', color: 'var(--team-musica)' },
       ];
       return areas.map(a => {
-        const all = this.data.equipo.filter(p => p.area === a.area);
+        const all = this.data.equipo.filter(p => p.area === a.area && p.operativo);
         const conf = all.filter(p => !p.sin_formulario);
         const n = all.length;
         const nc = conf.length;

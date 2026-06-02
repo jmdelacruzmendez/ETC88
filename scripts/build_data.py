@@ -87,8 +87,8 @@ AREA = {
     'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
     'Roberto Figueroa':                    ('cocina', 'Cocina'),
     'Guido Mardonado':                     ('cocina', 'Cocina'),
-    'Roselyn (sin formulario)':            ('cocina', 'Cocina'),  # NEW
     'Pamela (sin formulario)':             ('cocina', 'Cocina'),  # NEW
+    # Roselyn fuera (2-jun): su cupo pasa a un varón, candidato Randolph → 1 vacante abierta
 }
 
 def parse_bday(s):
@@ -215,15 +215,21 @@ for p in equipo:
     p['comunidad'] = 'Belén' if p['etc_propio'] == 85 else 'Betania'
 
 # Mark existing equipo as operativo=True
-for p in equipo: p['operativo'] = True
+for p in equipo:
+    p['operativo'] = True
+    p['backup'] = False
+    p['vacante'] = False
 
 # Placeholders for people in xlsx without form response (operativos)
 PLACEHOLDERS_OP = [
     ('Daylin (sin formulario)', 'musica', 'Música', 'F'),
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
-    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
+    ('Vacante Cocina (varón — candidato Randolph)', 'cocina', 'Vacante', '?'),  # Roselyn salió 2-jun
+    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup
+    ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup
+    ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup
 ]
 # Asesores ampliados (en el retiro pero NO operativos) — nombres del Doc de Asesores 17-may
 PLACEHOLDERS_NO_OP = [
@@ -254,12 +260,22 @@ def make_placeholder(name, area, rol, sexo, operativo):
         'invitados': [],
         'sin_formulario': True,
         'operativo': operativo,
+        'backup': rol == 'Backup Guía',
+        'vacante': rol == 'Vacante',
     }
 
 for name, area, rol, sexo in PLACEHOLDERS_OP:
-    equipo.append(make_placeholder(name, area, rol, sexo, True))
+    # backups y vacante NO son titulares operativos
+    is_op = rol not in ('Backup Guía', 'Vacante')
+    equipo.append(make_placeholder(name, area, rol, sexo, is_op))
 for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
     equipo.append(make_placeholder(name, area, rol, sexo, False))
+
+# Fix typo del apellido de Leober (Soriank -> Soriano)
+for p in equipo:
+    if p['nombre'] == 'Leober Carrion Soriank':
+        p['nombre'] = 'Leober Carrion Soriano'
+        p['id'] = 'leober-carrion-soriano'
 
 ROL_ORDER = {
     'Director':1, 'Asesora':2, 'Asesor':2, 'Asesor (laico)':2,
@@ -291,7 +307,7 @@ calendario = [
     {'fecha': '2026-07-31', 'titulo': 'Profondo #1 (31-jul → 2-ago)', 'tipo': 'profondo', 'fin': '2026-08-02'},
     {'fecha': '2026-08-09', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
     {'fecha': '2026-08-16', 'titulo': 'F5 — Quinta Formación (lectura de perfiles 2 + 3er pago)', 'tipo': 'formacion'},
-    {'fecha': '2026-08-22', 'titulo': 'Convivencia del Equipo (día completo)', 'tipo': 'convivencia'},
+    {'fecha': '2026-08-22', 'titulo': 'Convivencia del Equipo (inicia con miniretiro/reflexión · día completo)', 'tipo': 'convivencia'},
     {'fecha': '2026-08-23', 'titulo': 'Ensayo General del ETC 88 (obligatorio)', 'tipo': 'ensayo'},
     {'fecha': '2026-08-30', 'titulo': 'Reunión final · deadline pagos equipo + padrinos', 'tipo': 'pre_retiro'},
     {'fecha': '2026-09-03', 'titulo': 'Avanzada del Equipo de Cocina', 'tipo': 'avanzada'},
@@ -359,13 +375,13 @@ recaudacion = {
 }
 
 equipos_auxiliares = [
-    {'nombre':'Donaciones', 'descripcion':'Levantamiento de fondos y aportes en especie. Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
-    {'nombre':'Guagua', 'descripcion':'Coordinación de transporte para todos los traslados (formaciones, retiro, avanzada).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Producción'},
+    {'nombre':'Recaudación y Donaciones', 'descripcion':'Un solo equipo: levantamiento de fondos + aportes en especie (arroz, habichuelas, aceite, no perecederos). Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
     {'nombre':'Actividad Profondo', 'descripcion':'Diseño y ejecución de la actividad principal del Profondo (31-jul al 2-ago). Puede integrar gente fuera del equipo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
 ]
+# Nota: transporte/guagua se maneja como tarea operativa (Resp. Transporte), no como equipo auxiliar.
 
 data = {
-    'meta': {'numero':88, 'romano':'LXXXVIII', 'constelacion':49, 'version':'v5-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v6-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
     'equipos_auxiliares': equipos_auxiliares,
     'marca': {
         'lema':'Siempre amigos',

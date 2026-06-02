@@ -2,26 +2,18 @@
   "meta": {
     "numero": 88,
     "romano": "LXXXVIII",
-    "constelacion": 49,
-    "version": "v5-2026-06-02",
-    "total_equipo": 55,
-    "operativos": 46,
-    "no_operativos": 9
+    "version": "v6-2026-06-02",
+    "total_equipo": 58,
+    "operativos": 45,
+    "no_operativos": 13
   },
   "equipos_auxiliares": [
     {
-      "nombre": "Donaciones",
-      "descripcion": "Levantamiento de fondos y aportes en especie. Puede incluir gente fuera del equipo operativo.",
+      "nombre": "Recaudación y Donaciones",
+      "descripcion": "Un solo equipo: levantamiento de fondos + aportes en especie (arroz, habichuelas, aceite, no perecederos). Puede incluir gente fuera del equipo operativo.",
       "estado": "Por formular",
       "miembros": [],
       "responsable_sugerido": "Coords cocina + Roberto"
-    },
-    {
-      "nombre": "Guagua",
-      "descripcion": "Coordinación de transporte para todos los traslados (formaciones, retiro, avanzada).",
-      "estado": "Por formular",
-      "miembros": [],
-      "responsable_sugerido": "Producción"
     },
     {
       "nombre": "Actividad Profondo",
@@ -69,7 +61,9 @@
       "algo_directores": "No",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "juan-manuel-de-la-cruz-m-ndez",
@@ -101,7 +95,9 @@
       "algo_directores": "Buena pregunta",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "laura-fern-ndez",
@@ -133,7 +129,9 @@
       "algo_directores": "No",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "tom-s-lorenzo",
@@ -165,7 +163,9 @@
       "algo_directores": "Gracias por el regalo de la amistad",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "camila-fern-ndez-hazim",
@@ -197,7 +197,9 @@
       "algo_directores": "No",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "priscilla-hidalgo-pou",
@@ -229,7 +231,9 @@
       "algo_directores": "Lo preguntaro todo🇲🇽",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "darianny-rodriguez-belliard",
@@ -261,7 +265,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "fernando-cordero",
@@ -299,7 +305,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "franklin-de-jes-s-silverio-delgadillo",
@@ -342,7 +350,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "ivanna-marien-mercedes-sosa",
@@ -380,7 +390,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "jhonnalia-franchesca-silvestre-guzm-n",
@@ -412,7 +424,9 @@
       "algo_directores": "Necesito ayuda para movilizar mis cosas (Jejeje) ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "jonathan-andres-medina-mota",
@@ -444,7 +458,9 @@
       "algo_directores": "Ninguna",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "juan-pablo-arg-ello-alzate",
@@ -476,7 +492,9 @@
       "algo_directores": "De momento nada ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "luisa-maria-fiorentino-brugal",
@@ -508,7 +526,9 @@
       "algo_directores": "No por el momento. ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "oliver-rafael-de-le-n-ram-rez",
@@ -540,7 +560,9 @@
       "algo_directores": "N/a",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "victoria-lorenzo-rivera",
@@ -572,7 +594,9 @@
       "algo_directores": "Oremos por JC 🙏🏽",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "wilka-mar-a-reyes-mota",
@@ -604,7 +628,9 @@
       "algo_directores": "Nada 🫶🏼",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "yelaxni-mota",
@@ -636,7 +662,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "johnnito-richiez-brugal",
@@ -668,7 +696,9 @@
       "algo_directores": "Por ahora no",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "paloma-mendez",
@@ -700,7 +730,9 @@
       "algo_directores": "Por ahora no se me ocurry",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "adri-n-francisco-santana-puente",
@@ -732,7 +764,9 @@
       "algo_directores": "No se me ocurre nada",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "ambar-liz-j-quez-lebr-n",
@@ -775,7 +809,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "brianelis-abreu-calder-n",
@@ -813,7 +849,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "candy-elizabeth-gatwood-ramos",
@@ -856,7 +894,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "chantal-melissa-carpio-jim-nez",
@@ -894,7 +934,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "dayrelins-jazmin-santana-salas",
@@ -926,7 +968,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "fabelle-maciel-fabian-bello",
@@ -958,7 +1002,9 @@
       "algo_directores": "Yo tengo un viaje programado para el mes de julio ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "guido-mardonado",
@@ -996,7 +1042,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "jordelis-mateo",
@@ -1034,7 +1082,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "kelvin-alexis-ventura-santana",
@@ -1072,7 +1122,9 @@
         }
       ],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "maria-del-carmen-mej-as-mateo",
@@ -1104,7 +1156,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "olanlly-sin-formulario",
@@ -1136,7 +1190,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "pamela-sin-formulario",
@@ -1168,7 +1224,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "risaira-santana-rosario",
@@ -1200,7 +1258,9 @@
       "algo_directores": "Por ahora nada ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "risairi-santana-rosario",
@@ -1232,7 +1292,9 @@
       "algo_directores": "No",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "roberto-figueroa",
@@ -1264,39 +1326,9 @@
       "algo_directores": "Nada por el momento ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
-    },
-    {
-      "id": "roselyn-sin-formulario",
-      "nombre": "Roselyn (sin formulario)",
-      "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "tommy-nova-nolasco",
@@ -1328,7 +1360,9 @@
       "algo_directores": "Nada por el momento ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "wirna-miguelina-stapleton-pilier",
@@ -1360,7 +1394,9 @@
       "algo_directores": "No se dejen humillar ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "jos-ngel-tusen-russo",
@@ -1392,7 +1428,9 @@
       "algo_directores": "N/A",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "daylin-sin-formulario",
@@ -1424,7 +1462,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "dorian-elina-rodriguez-belliard",
@@ -1456,7 +1496,9 @@
       "algo_directores": "No 🤭",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "ismarie-sthepanie-constanzo-ramos",
@@ -1488,11 +1530,13 @@
       "algo_directores": "Hasta ahora ninguna. ",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
-      "id": "leober-carrion-soriank",
-      "nombre": "Leober Carrion Soriank",
+      "id": "leober-carrion-soriano",
+      "nombre": "Leober Carrion Soriano",
       "sexo": "M",
       "edad": 21,
       "cumple_mes": 10,
@@ -1520,7 +1564,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "mary-carmen-ram-rez-v-squez",
@@ -1552,7 +1598,9 @@
       "algo_directores": "No",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "frank-morales",
@@ -1584,7 +1632,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": true
+      "operativo": true,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "johanny-garc-a",
@@ -1616,7 +1666,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "mary-peta-morales",
@@ -1648,7 +1700,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "padre-paul-ram-rez",
@@ -1680,7 +1734,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "sor-angelina-lebr-n",
@@ -1712,7 +1768,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "asesor-spm-por-definir",
@@ -1744,7 +1802,43 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
+    },
+    {
+      "id": "kamila-todd",
+      "nombre": "Kamila Todd",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "guias",
+      "rol": "Backup Guía",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false,
+      "backup": true,
+      "vacante": false
     },
     {
       "id": "leticia-gonz-lez",
@@ -1776,7 +1870,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "marleny",
@@ -1808,7 +1904,9 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
     },
     {
       "id": "rep-punta-cana-pendiente",
@@ -1840,7 +1938,43 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
+    },
+    {
+      "id": "rodolfo-tel-maco",
+      "nombre": "Rodolfo Telémaco",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "guias",
+      "rol": "Backup Guía",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false,
+      "backup": true,
+      "vacante": false
     },
     {
       "id": "sandrita",
@@ -1872,7 +2006,77 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": true,
-      "operativo": false
+      "operativo": false,
+      "backup": false,
+      "vacante": false
+    },
+    {
+      "id": "scarlett-nivar",
+      "nombre": "Scarlett Nivar",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "guias",
+      "rol": "Backup Guía",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false,
+      "backup": true,
+      "vacante": false
+    },
+    {
+      "id": "vacante-cocina-var-n-candidato-randolph",
+      "nombre": "Vacante Cocina (varón — candidato Randolph)",
+      "sexo": "?",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "cocina",
+      "rol": "Vacante",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false,
+      "backup": false,
+      "vacante": true
     }
   ],
   "calendario": [
@@ -1944,7 +2148,7 @@
     },
     {
       "fecha": "2026-08-22",
-      "titulo": "Convivencia del Equipo (día completo)",
+      "titulo": "Convivencia del Equipo (inicia con miniretiro/reflexión · día completo)",
       "tipo": "convivencia"
     },
     {
