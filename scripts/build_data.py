@@ -223,18 +223,19 @@ PLACEHOLDERS_OP = [
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
-    ('Frank Morales', 'asesores', 'Asesor', 'M'),  # asesor operativo como Laura y Tomás
+    ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
 ]
-# Asesores ampliados (en el retiro pero NO operativos)
+# Asesores ampliados (en el retiro pero NO operativos) — nombres del Doc de Asesores 17-may
 PLACEHOLDERS_NO_OP = [
-    ('Johany', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Petra', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Paul', 'asesores_espirituales', 'Asesor Espiritual', 'M'),
-    ('Sor Angelina', 'asesores_espirituales', 'Asesora Espiritual', 'F'),
-    ('Rep. Diocesano SD #1', 'asesores_diocesanos', 'Asesor SD', '?'),
-    ('Rep. Diocesano SD #2', 'asesores_diocesanos', 'Asesor SD', '?'),
-    ('Rep. Diocesano LV #1', 'asesores_diocesanos', 'Asesor La Vega', '?'),
-    ('Rep. Diocesano LV #2', 'asesores_diocesanos', 'Asesor La Vega (opcional)', '?'),
+    ('Mary "Peta" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
+    ('Johanny García', 'asesores_cocina', 'Asesora Cocina', 'F'),
+    ('Padre Paul Ramírez', 'asesores_espirituales', 'Asesor Espiritual', 'M'),
+    ('Sor Angelina Lebrón', 'asesores_espirituales', 'Asesora Espiritual', 'F'),
+    ('Sandrita', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
+    ('Marleny', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
+    ('Leticia González', 'asesores_diocesanos', 'Asesora Comunidad La Vega', 'F'),
+    ('Rep. Punta Cana (pendiente)', 'asesores_diocesanos', 'Asesor Comunidad PC', '?'),
+    ('Asesor SPM (por definir)', 'asesores_diocesanos', 'Asesor Comunidad SPM', '?'),
 ]
 
 def make_placeholder(name, area, rol, sexo, operativo):
@@ -279,7 +280,8 @@ print('Comunidades:', dict(Counter(p['comunidad'] for p in equipo)))
 # Calendar / banderas (unchanged from v1)
 calendario = [
     {'fecha': '2026-06-07', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
-    {'fecha': '2026-06-14', 'titulo': 'F1 — Primera Formación', 'tipo': 'formacion'},
+    {'fecha': '2026-06-10', 'titulo': 'Reunión de Coordinadores (socialización pre-F1)', 'tipo': 'coordinacion'},
+    {'fecha': '2026-06-14', 'titulo': 'F1 — Primera Formación (presupuesto, sentido, temática)', 'tipo': 'formacion'},
     {'fecha': '2026-06-21', 'titulo': 'Clausura ETC 87 — La Vega', 'tipo': 'externo', 'sin_formacion': True},
     {'fecha': '2026-06-28', 'titulo': 'F2 — Segunda Formación', 'tipo': 'formacion'},
     {'fecha': '2026-07-05', 'titulo': 'F3 — Tercera Formación', 'tipo': 'formacion'},
@@ -288,9 +290,10 @@ calendario = [
     {'fecha': '2026-07-26', 'titulo': 'Día del Padre', 'tipo': 'externo', 'sin_formacion': True},
     {'fecha': '2026-07-31', 'titulo': 'Profondo #1 (31-jul → 2-ago)', 'tipo': 'profondo', 'fin': '2026-08-02'},
     {'fecha': '2026-08-09', 'titulo': 'Misa Eteciana', 'tipo': 'misa', 'sin_formacion': True},
-    {'fecha': '2026-08-16', 'titulo': 'Convivencia / Retiro (media jornada)', 'tipo': 'convivencia'},
-    {'fecha': '2026-08-23', 'titulo': 'Ensayo General del ETC 88', 'tipo': 'ensayo'},
-    {'fecha': '2026-08-30', 'titulo': 'Conciliación y Planificación pre-ETC 88', 'tipo': 'pre_retiro'},
+    {'fecha': '2026-08-16', 'titulo': 'F5 — Quinta Formación (lectura de perfiles 2 + 3er pago)', 'tipo': 'formacion'},
+    {'fecha': '2026-08-22', 'titulo': 'Convivencia del Equipo (día completo)', 'tipo': 'convivencia'},
+    {'fecha': '2026-08-23', 'titulo': 'Ensayo General del ETC 88 (obligatorio)', 'tipo': 'ensayo'},
+    {'fecha': '2026-08-30', 'titulo': 'Reunión final · deadline pagos equipo + padrinos', 'tipo': 'pre_retiro'},
     {'fecha': '2026-09-03', 'titulo': 'Avanzada del Equipo de Cocina', 'tipo': 'avanzada'},
     {'fecha': '2026-09-04', 'titulo': 'ETC 88 (4 → 6 sep)', 'tipo': 'retiro', 'fin': '2026-09-06'},
 ]
@@ -362,7 +365,7 @@ equipos_auxiliares = [
 ]
 
 data = {
-    'meta': {'numero':88, 'romano':'LXXXVIII', 'constelacion':49, 'version':'v4-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'meta': {'numero':88, 'romano':'LXXXVIII', 'constelacion':49, 'version':'v5-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
     'equipos_auxiliares': equipos_auxiliares,
     'marca': {
         'lema':'Siempre amigos',

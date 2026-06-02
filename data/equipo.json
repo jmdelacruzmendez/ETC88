@@ -3,10 +3,10 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "constelacion": 49,
-    "version": "v4-2026-06-02",
-    "total_equipo": 54,
+    "version": "v5-2026-06-02",
+    "total_equipo": 55,
     "operativos": 46,
-    "no_operativos": 8
+    "no_operativos": 9
   },
   "equipos_auxiliares": [
     {
@@ -101,38 +101,6 @@
       "algo_directores": "Buena pregunta",
       "invitados": [],
       "sin_formulario": false,
-      "operativo": true
-    },
-    {
-      "id": "frank-morales",
-      "nombre": "Frank Morales",
-      "sexo": "M",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores",
-      "rol": "Asesor",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
       "operativo": true
     },
     {
@@ -1587,8 +1555,40 @@
       "operativo": true
     },
     {
-      "id": "johany",
-      "nombre": "Johany",
+      "id": "frank-morales",
+      "nombre": "Frank Morales",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores",
+      "rol": "Asesor + Banderín",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true
+    },
+    {
+      "id": "johanny-garc-a",
+      "nombre": "Johanny García",
       "sexo": "F",
       "edad": null,
       "cumple_mes": null,
@@ -1619,8 +1619,8 @@
       "operativo": false
     },
     {
-      "id": "petra",
-      "nombre": "Petra",
+      "id": "mary-peta-morales",
+      "nombre": "Mary \"Peta\" Morales",
       "sexo": "F",
       "edad": null,
       "cumple_mes": null,
@@ -1651,8 +1651,8 @@
       "operativo": false
     },
     {
-      "id": "paul",
-      "nombre": "Paul",
+      "id": "padre-paul-ram-rez",
+      "nombre": "Padre Paul Ramírez",
       "sexo": "M",
       "edad": null,
       "cumple_mes": null,
@@ -1683,8 +1683,8 @@
       "operativo": false
     },
     {
-      "id": "sor-angelina",
-      "nombre": "Sor Angelina",
+      "id": "sor-angelina-lebr-n",
+      "nombre": "Sor Angelina Lebrón",
       "sexo": "F",
       "edad": null,
       "cumple_mes": null,
@@ -1715,8 +1715,8 @@
       "operativo": false
     },
     {
-      "id": "rep-diocesano-lv-1",
-      "nombre": "Rep. Diocesano LV #1",
+      "id": "asesor-spm-por-definir",
+      "nombre": "Asesor SPM (por definir)",
       "sexo": "?",
       "edad": null,
       "cumple_mes": null,
@@ -1728,7 +1728,7 @@
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores_diocesanos",
-      "rol": "Asesor La Vega",
+      "rol": "Asesor Comunidad SPM",
       "talla": null,
       "telefono": null,
       "que_espera": null,
@@ -1747,9 +1747,9 @@
       "operativo": false
     },
     {
-      "id": "rep-diocesano-sd-1",
-      "nombre": "Rep. Diocesano SD #1",
-      "sexo": "?",
+      "id": "leticia-gonz-lez",
+      "nombre": "Leticia González",
+      "sexo": "F",
       "edad": null,
       "cumple_mes": null,
       "cumple_dia": null,
@@ -1760,7 +1760,7 @@
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores_diocesanos",
-      "rol": "Asesor SD",
+      "rol": "Asesora Comunidad La Vega",
       "talla": null,
       "telefono": null,
       "que_espera": null,
@@ -1779,9 +1779,9 @@
       "operativo": false
     },
     {
-      "id": "rep-diocesano-sd-2",
-      "nombre": "Rep. Diocesano SD #2",
-      "sexo": "?",
+      "id": "marleny",
+      "nombre": "Marleny",
+      "sexo": "F",
       "edad": null,
       "cumple_mes": null,
       "cumple_dia": null,
@@ -1792,7 +1792,7 @@
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores_diocesanos",
-      "rol": "Asesor SD",
+      "rol": "Asesora Comunidad SD",
       "talla": null,
       "telefono": null,
       "que_espera": null,
@@ -1811,8 +1811,8 @@
       "operativo": false
     },
     {
-      "id": "rep-diocesano-lv-2",
-      "nombre": "Rep. Diocesano LV #2",
+      "id": "rep-punta-cana-pendiente",
+      "nombre": "Rep. Punta Cana (pendiente)",
       "sexo": "?",
       "edad": null,
       "cumple_mes": null,
@@ -1824,7 +1824,39 @@
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores_diocesanos",
-      "rol": "Asesor La Vega (opcional)",
+      "rol": "Asesor Comunidad PC",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": false
+    },
+    {
+      "id": "sandrita",
+      "nombre": "Sandrita",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_diocesanos",
+      "rol": "Asesora Comunidad SD",
       "talla": null,
       "telefono": null,
       "que_espera": null,
@@ -1851,8 +1883,13 @@
       "sin_formacion": true
     },
     {
+      "fecha": "2026-06-10",
+      "titulo": "Reunión de Coordinadores (socialización pre-F1)",
+      "tipo": "coordinacion"
+    },
+    {
       "fecha": "2026-06-14",
-      "titulo": "F1 — Primera Formación",
+      "titulo": "F1 — Primera Formación (presupuesto, sentido, temática)",
       "tipo": "formacion"
     },
     {
@@ -1902,17 +1939,22 @@
     },
     {
       "fecha": "2026-08-16",
-      "titulo": "Convivencia / Retiro (media jornada)",
+      "titulo": "F5 — Quinta Formación (lectura de perfiles 2 + 3er pago)",
+      "tipo": "formacion"
+    },
+    {
+      "fecha": "2026-08-22",
+      "titulo": "Convivencia del Equipo (día completo)",
       "tipo": "convivencia"
     },
     {
       "fecha": "2026-08-23",
-      "titulo": "Ensayo General del ETC 88",
+      "titulo": "Ensayo General del ETC 88 (obligatorio)",
       "tipo": "ensayo"
     },
     {
       "fecha": "2026-08-30",
-      "titulo": "Conciliación y Planificación pre-ETC 88",
+      "titulo": "Reunión final · deadline pagos equipo + padrinos",
       "tipo": "pre_retiro"
     },
     {
