@@ -2,18 +2,25 @@
   "meta": {
     "numero": 88,
     "romano": "LXXXVIII",
-    "version": "v6-2026-06-02",
-    "total_equipo": 58,
-    "operativos": 45,
-    "no_operativos": 13
+    "version": "v7-2026-06-02",
+    "total_equipo": 56,
+    "operativos": 47,
+    "no_operativos": 9
   },
   "equipos_auxiliares": [
     {
       "nombre": "Recaudación y Donaciones",
-      "descripcion": "Un solo equipo: levantamiento de fondos + aportes en especie (arroz, habichuelas, aceite, no perecederos). Puede incluir gente fuera del equipo operativo.",
+      "descripcion": "Levantamiento de fondos + aportes en especie. Un solo equipo. Puede incluir gente fuera del equipo operativo.",
       "estado": "Por formular",
       "miembros": [],
       "responsable_sugerido": "Coords cocina + Roberto"
+    },
+    {
+      "nombre": "Guagua (Transporte)",
+      "descripcion": "Coordinación de transporte para formaciones, retiro, avanzada. Equipo externo (no pernocta en la casa).",
+      "estado": "Por formular",
+      "miembros": [],
+      "responsable_sugerido": "Producción"
     },
     {
       "nombre": "Actividad Profondo",
@@ -21,6 +28,16 @@
       "estado": "Por formular",
       "miembros": [],
       "responsable_sugerido": "Directores"
+    },
+    {
+      "nombre": "Intersección (espiritual)",
+      "descripcion": "Equipo espiritual transversal del retiro: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.",
+      "estado": "Por formular",
+      "miembros": [
+        "Padre Paul Ramírez",
+        "Sor Angelina Lebrón"
+      ],
+      "responsable_sugerido": "Asesores Espirituales"
     }
   ],
   "marca": {
@@ -63,7 +80,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "juan-manuel-de-la-cruz-m-ndez",
@@ -97,7 +115,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "laura-fern-ndez",
@@ -131,7 +150,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "tom-s-lorenzo",
@@ -165,7 +185,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "camila-fern-ndez-hazim",
@@ -199,7 +220,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "priscilla-hidalgo-pou",
@@ -233,7 +255,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "darianny-rodriguez-belliard",
@@ -267,7 +290,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "fernando-cordero",
@@ -307,7 +331,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "franklin-de-jes-s-silverio-delgadillo",
@@ -352,7 +377,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "ivanna-marien-mercedes-sosa",
@@ -392,7 +418,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "jhonnalia-franchesca-silvestre-guzm-n",
@@ -426,7 +453,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "jonathan-andres-medina-mota",
@@ -460,7 +488,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "juan-pablo-arg-ello-alzate",
@@ -494,7 +523,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "luisa-maria-fiorentino-brugal",
@@ -528,7 +558,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "oliver-rafael-de-le-n-ram-rez",
@@ -562,7 +593,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "victoria-lorenzo-rivera",
@@ -596,7 +628,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "wilka-mar-a-reyes-mota",
@@ -630,7 +663,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "yelaxni-mota",
@@ -664,7 +698,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "johnnito-richiez-brugal",
@@ -698,7 +733,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "paloma-mendez",
@@ -732,7 +768,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "adri-n-francisco-santana-puente",
@@ -766,7 +803,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "ambar-liz-j-quez-lebr-n",
@@ -811,7 +849,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "brianelis-abreu-calder-n",
@@ -851,7 +890,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "candy-elizabeth-gatwood-ramos",
@@ -896,7 +936,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "chantal-melissa-carpio-jim-nez",
@@ -936,7 +977,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "dayrelins-jazmin-santana-salas",
@@ -970,7 +1012,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "fabelle-maciel-fabian-bello",
@@ -1004,7 +1047,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "guido-mardonado",
@@ -1044,7 +1088,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "jordelis-mateo",
@@ -1084,7 +1129,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "kelvin-alexis-ventura-santana",
@@ -1124,7 +1170,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "maria-del-carmen-mej-as-mateo",
@@ -1158,7 +1205,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "olanlly-sin-formulario",
@@ -1192,7 +1240,8 @@
       "sin_formulario": true,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "pamela-sin-formulario",
@@ -1226,7 +1275,8 @@
       "sin_formulario": true,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "risaira-santana-rosario",
@@ -1260,7 +1310,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "risairi-santana-rosario",
@@ -1294,7 +1345,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "roberto-figueroa",
@@ -1328,7 +1380,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "tommy-nova-nolasco",
@@ -1362,7 +1415,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "wirna-miguelina-stapleton-pilier",
@@ -1396,7 +1450,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "jos-ngel-tusen-russo",
@@ -1430,7 +1485,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "daylin-sin-formulario",
@@ -1464,7 +1520,8 @@
       "sin_formulario": true,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "dorian-elina-rodriguez-belliard",
@@ -1498,7 +1555,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "ismarie-sthepanie-constanzo-ramos",
@@ -1532,7 +1590,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "leober-carrion-soriano",
@@ -1566,7 +1625,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "mary-carmen-ram-rez-v-squez",
@@ -1600,7 +1660,8 @@
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "frank-morales",
@@ -1634,7 +1695,78 @@
       "sin_formulario": true,
       "operativo": true,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
+    },
+    {
+      "id": "padre-paul-ram-rez",
+      "nombre": "Padre Paul Ramírez",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_espirituales",
+      "rol": "Asesor Espiritual transversal",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": true
+    },
+    {
+      "id": "sor-angelina-lebr-n",
+      "nombre": "Sor Angelina Lebrón",
+      "sexo": "F",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "asesores_espirituales",
+      "rol": "Asesora Espiritual transversal",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": true
     },
     {
       "id": "johanny-garc-a",
@@ -1668,7 +1800,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "mary-peta-morales",
@@ -1702,109 +1835,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false
-    },
-    {
-      "id": "padre-paul-ram-rez",
-      "nombre": "Padre Paul Ramírez",
-      "sexo": "M",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores_espirituales",
-      "rol": "Asesor Espiritual",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": false
-    },
-    {
-      "id": "sor-angelina-lebr-n",
-      "nombre": "Sor Angelina Lebrón",
-      "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores_espirituales",
-      "rol": "Asesora Espiritual",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": false
-    },
-    {
-      "id": "asesor-spm-por-definir",
-      "nombre": "Asesor SPM (por definir)",
-      "sexo": "?",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores_diocesanos",
-      "rol": "Asesor Comunidad SPM",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "kamila-todd",
@@ -1838,7 +1870,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": true,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "leticia-gonz-lez",
@@ -1872,7 +1905,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "marleny",
@@ -1906,41 +1940,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false
-    },
-    {
-      "id": "rep-punta-cana-pendiente",
-      "nombre": "Rep. Punta Cana (pendiente)",
-      "sexo": "?",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores_diocesanos",
-      "rol": "Asesor Comunidad PC",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "rodolfo-tel-maco",
@@ -1974,7 +1975,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": true,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "sandrita",
@@ -2008,7 +2010,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "scarlett-nivar",
@@ -2042,7 +2045,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": true,
-      "vacante": false
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "vacante-cocina-var-n-candidato-randolph",
@@ -2076,7 +2080,8 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": true
+      "vacante": true,
+      "transversal": false
     }
   ],
   "calendario": [

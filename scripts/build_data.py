@@ -219,6 +219,7 @@ for p in equipo:
     p['operativo'] = True
     p['backup'] = False
     p['vacante'] = False
+    p['transversal'] = False
 
 # Placeholders for people in xlsx without form response (operativos)
 PLACEHOLDERS_OP = [
@@ -231,17 +232,18 @@ PLACEHOLDERS_OP = [
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup
 ]
-# Asesores ampliados (en el retiro pero NO operativos) — nombres del Doc de Asesores 17-may
+# Asesores transversales: Paul y Sor Angelina están en TODO el proceso (no solo retiro)
+PLACEHOLDERS_TRANSVERSAL = [
+    ('Padre Paul Ramírez', 'asesores_espirituales', 'Asesor Espiritual transversal', 'M'),
+    ('Sor Angelina Lebrón', 'asesores_espirituales', 'Asesora Espiritual transversal', 'F'),
+]
+# Asesores ampliados (en el retiro pero NO operativos en formación) — confirmados 2-jun
 PLACEHOLDERS_NO_OP = [
     ('Mary "Peta" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Johanny García', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Padre Paul Ramírez', 'asesores_espirituales', 'Asesor Espiritual', 'M'),
-    ('Sor Angelina Lebrón', 'asesores_espirituales', 'Asesora Espiritual', 'F'),
     ('Sandrita', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
     ('Marleny', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
     ('Leticia González', 'asesores_diocesanos', 'Asesora Comunidad La Vega', 'F'),
-    ('Rep. Punta Cana (pendiente)', 'asesores_diocesanos', 'Asesor Comunidad PC', '?'),
-    ('Asesor SPM (por definir)', 'asesores_diocesanos', 'Asesor Comunidad SPM', '?'),
 ]
 
 def make_placeholder(name, area, rol, sexo, operativo):
@@ -262,6 +264,7 @@ def make_placeholder(name, area, rol, sexo, operativo):
         'operativo': operativo,
         'backup': rol == 'Backup Guía',
         'vacante': rol == 'Vacante',
+        'transversal': False,
     }
 
 for name, area, rol, sexo in PLACEHOLDERS_OP:
@@ -270,6 +273,10 @@ for name, area, rol, sexo in PLACEHOLDERS_OP:
     equipo.append(make_placeholder(name, area, rol, sexo, is_op))
 for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
     equipo.append(make_placeholder(name, area, rol, sexo, False))
+for name, area, rol, sexo in PLACEHOLDERS_TRANSVERSAL:
+    p = make_placeholder(name, area, rol, sexo, True)
+    p['transversal'] = True  # están en todo el proceso, no solo retiro
+    equipo.append(p)
 
 # Fix typo del apellido de Leober (Soriank -> Soriano)
 for p in equipo:
@@ -375,13 +382,14 @@ recaudacion = {
 }
 
 equipos_auxiliares = [
-    {'nombre':'Recaudación y Donaciones', 'descripcion':'Un solo equipo: levantamiento de fondos + aportes en especie (arroz, habichuelas, aceite, no perecederos). Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
+    {'nombre':'Recaudación y Donaciones', 'descripcion':'Levantamiento de fondos + aportes en especie. Un solo equipo. Puede incluir gente fuera del equipo operativo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Coords cocina + Roberto'},
+    {'nombre':'Guagua (Transporte)', 'descripcion':'Coordinación de transporte para formaciones, retiro, avanzada. Equipo externo (no pernocta en la casa).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Producción'},
     {'nombre':'Actividad Profondo', 'descripcion':'Diseño y ejecución de la actividad principal del Profondo (31-jul al 2-ago). Puede integrar gente fuera del equipo.', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
+    {'nombre':'Intersección (espiritual)', 'descripcion':'Equipo espiritual transversal del retiro: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.', 'estado':'Por formular', 'miembros':['Padre Paul Ramírez', 'Sor Angelina Lebrón'], 'responsable_sugerido':'Asesores Espirituales'},
 ]
-# Nota: transporte/guagua se maneja como tarea operativa (Resp. Transporte), no como equipo auxiliar.
 
 data = {
-    'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v6-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
+    'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v7-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
     'equipos_auxiliares': equipos_auxiliares,
     'marca': {
         'lema':'Siempre amigos',

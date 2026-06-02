@@ -57,7 +57,7 @@
 ## DIRECCIÓN + ASESORES — Co-Dir + Laura/Tomás/Frank
 **Recomendaciones:** distribuir tesorería, captación, asesoría de testimonios, compras, horario; orar antes de decisiones; "un solo equipo, diferentes funciones".
 **Oportunidades:** asesores con rol claro (financiero/cronograma/espiritual + Banderín).
-**Brechas:** 6 roles operativos vacantes (RF, RR, RS, RM, RT, FT); sin backup de Co-Dirección.
+**Brechas:** sin backup formal de Co-Dirección (se asume).
 **Integraciones:** la **reunión de coordinadores** (4 o 7-jun) es el mecanismo de unificación.
 
 | Hito de Dirección | Fecha |
