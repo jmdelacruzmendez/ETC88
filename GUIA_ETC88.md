@@ -1,10 +1,10 @@
 # GUÍA DEL ETC LXXXVIII
-## «Caminos de Vida» · San Pedro de Macorís
+## San Pedro de Macorís
 
-> **Lema (provisional — a confirmar esta semana):** *“No fuimos a buscarlo: Él nos esperaba”* · **Mt 13,44**
-> **Temática:** expedición · búsqueda de tesoro · aventura
+> **Lema eteciano:** *“Siempre amigos”* · **Jn 15:15**
+> **Lema del retiro:** [PROPUESTA] *“No fuimos a buscarlo: Él nos esperaba”* (sin confirmar — se cierra con Claude Design)
+> **Temática:** [PROPUESTA] expedición / búsqueda de tesoro (a confirmar)
 > **Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey
-> **Costo casa por persona:** $2,300 sin exención · **$2,000 con exención** (vía RNC de la parroquia del Padre Paul).
 > **Co-Dirección:** Juan Manuel de la Cruz · Jean Carlo de la Cruz
 
 *Esta es tu carpeta. Tráela a cada formación. Aquí está quiénes somos, el equipo, el calendario, las reglas y cómo nos preparamos.*
@@ -98,14 +98,14 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 
 **Guías:** trabajo cara a cara con el participante · preparan y dan testimonio · libretas y decoración del PG · se aprenden el horario · palanca a cada participante · confidencialidad · ejemplo de vida sacramental.
 
-**Cocina:** unidad y armonía · sencillez en comidas y motivos · presupuesto y donaciones · menú · **preparar y servir los alimentos** · **ambientación de cocina y comedor** · bendiciones breves ligadas al tema · **lleva el Lavatorio de los Pies** en la cena del sábado · presentación del equipo · ejemplo en el servicio desde la sombra. **Ancla:** Juan 13 — *entrega y sacrificio*.
+**Cocina:** unidad y armonía · sencillez en comidas y motivos · presupuesto y donaciones · menú · bendiciones breves ligadas al tema · **Lavatorio** en la cena del sábado · ejemplo en el servicio.
 
-**Música:** **animación espiritual** del retiro — su rol es elevar la atmósfera espiritual, no solo lo musical/técnico · amenizan los 3 días · cancionero · **oración Sal y Luz «Bayuyo»** (antifaces) · música al despertar · cantos de la misa de clausura · oración a María del sábado · **canción de despedida** · apoyo a todas las áreas desde el jueves previo.
+**Música:** amenizan los 3 días · cancionero · **oración Sal y Luz «Bayuyo»** (antifaces) · música al despertar · cantos de la misa de clausura · oración a María del sábado · **canción de despedida** · apoyo a todas las áreas desde el jueves previo.
 
 ---
 ## 6. Cómo preparar un testimonio
 
-*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Quienes ya han dado testimonio antes pueden compartir primero, para que el formato se entienda con fluidez.*
+*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Los que ya han servido dan el ejemplo primero.*
 
 1. Empieza con un **bosquejo** de ideas generales.
 2. **Simple:** una idea central, lenguaje claro y llano.
@@ -148,4 +148,4 @@ Confianza · Singularidad · Libertad para Aceptar · Libertad para Entregarse �
 - **Profondo:** actividad de recaudación de fondos del equipo.
 
 ---
-*Guía ETC LXXXVIII · v7-2026-06-02 · generada del Tablero de la Tripulación. El lema y el branding se confirman esta semana.*
+*Guía ETC LXXXVIII · v8-2026-06-02 · generada del Tablero de la Tripulación. El lema y el branding se confirman esta semana.*

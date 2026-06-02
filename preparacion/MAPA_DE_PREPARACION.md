@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Mapa de Preparación ETC 88 — todo lo que hay que preparar
 
 > Consolidado del **Documento de Asesores (38 workstreams)** + **Guía canónica LXXXV** + lo que ya construimos.

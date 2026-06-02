@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Análisis y Roadmap por Área — ETC 88
 
 > Une lo que pediste: **recomendaciones / oportunidades / brechas / integraciones por área** + el **roadmap de cada equipo** (fecha límite de menú y presupuesto, presupuesto de su actividad, apoyo del equipo y socialización para unificar).

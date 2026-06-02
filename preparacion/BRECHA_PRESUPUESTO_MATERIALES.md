@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Brecha de presupuesto — materiales del retiro
 ### Cruce: lo que la GUÍA exige vs lo que el presupuesto ETC 88 contempla
 

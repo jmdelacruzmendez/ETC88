@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Apply v2 changes: new area structure, re-include Mary Carmen + Roberto,
 add Daylin + vacantes, add comunidad field, remove Lazos."""
-import openpyxl, json, re
+import openpyxl, json, re, os
 
-XLSX = '/root/.claude/uploads/2da4a2cd-be63-4d49-b615-cf5c7554c95e/93ed3347-Respuestas__Formulario_preformacio_n_ETC_88.xlsx'
+REPO = '/home/user/ETC88'
+# El xlsx fuente puede estar en el dir efímero de uploads o en la copia durable del repo.
+# Se prefiere la copia del repo si la de uploads no existe (contenedor nuevo).
+_XLSX_CANDIDATES = [
+    '/root/.claude/uploads/2da4a2cd-be63-4d49-b615-cf5c7554c95e/93ed3347-Respuestas__Formulario_preformacio_n_ETC_88.xlsx',
+    f'{REPO}/data/fuente_formulario.xlsx',
+]
+XLSX = next((p for p in _XLSX_CANDIDATES if os.path.exists(p)), _XLSX_CANDIDATES[-1])
 
 MONTHS = {'enero':1,'ene':1,'febrero':2,'feb':2,'marzo':3,'mar':3,'abril':4,'abr':4,
           'mayo':5,'may':5,'junio':6,'jun':6,'julio':7,'jul':7,'agosto':8,'ago':8,
@@ -381,30 +388,60 @@ recaudacion = {
     'cita_jordelis':'Tómbolas con PRECIOS ASEQUIBLES para darle más oportunidad a quienes siempre nos apoyan.'
 }
 
-equipos_auxiliares = [
-    {'nombre':'Recaudación y Donaciones', 'descripcion':'Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Co-Dir + Coords cocina + Roberto'},
-    {'nombre':'Guagua (Transporte)', 'descripcion':'Coordinación de transporte para formaciones, retiro, avanzada. Equipo externo (no pernocta en la casa).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Producción'},
-    {'nombre':'Actividad Profondo', 'descripcion':'Profondo #1 = RIFA (meta neta agresiva RD$130K). Profondo #2 = venta de comida/garaje (~RD$50K).', 'estado':'Por formular', 'miembros':[], 'responsable_sugerido':'Directores'},
-    {'nombre':'Intersección (espiritual)', 'descripcion':'Equipo espiritual transversal: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.', 'estado':'Por formular', 'miembros':['Padre Paul Ramírez', 'Sor Angelina Lebrón'], 'responsable_sugerido':'Asesores Espirituales'},
-]
+# ===== Fuente única de hechos NO-roster: data/estado.json =====
+# build_data.py NO inventa cifras ni decisiones: las toma de estado.json (con sus
+# banderas confirmado/propuesta/pendiente). Los docs renderizan esas banderas.
+estado = json.load(open(f'{REPO}/data/estado.json'))
+
+def _v(node):
+    """Extrae .valor de un nodo {valor, estado, ...}; si no, devuelve el nodo tal cual."""
+    return node['valor'] if isinstance(node, dict) and 'valor' in node else node
+
+ef = estado['finanzas']
 finanzas = {
-    'casa_por_persona_sin_exencion': 2300,
-    'casa_por_persona_con_exencion': 2000,
-    'exencion_nota': 'Con exención = compra vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona.',
-    'deuda_inicial': {'monto': 23600, 'descripcion': '10% reserva casa (5-mar) pagado por Juan Manuel; ya le fue devuelto. El equipo arranca debiendo este monto al Consejo.', 'acreedor': 'Consejo Eteciano SPM'},
-    'meta_recaudacion_total': 260000,
-    'cuota_equipo_propuesta': {'estado': 'PROPUESTA a confirmar (no decidido)', 'total_rango': '1,500 - 2,000', 'monto_mensual': 500, 'cubre': 'comida del Ensayo General + participación en el retiro', 'nota': 'Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa.'},
+    'casa_por_persona_sin_exencion': _v(ef['casa_por_persona_sin_exencion']),
+    'casa_por_persona_con_exencion': _v(ef['casa_por_persona_con_exencion']),
+    'exencion_nota': ef['casa_por_persona_con_exencion'].get('nota', ''),
+    'deuda_inicial': {
+        'monto': _v(ef['deuda_inicial']),
+        'descripcion': ef['deuda_inicial'].get('nota', ''),
+        'acreedor': ef['deuda_inicial'].get('acreedor', ''),
+    },
+    'cuota_participante': _v(ef['cuota_participante']),
+    'meta_recaudacion_total': _v(ef['meta_recaudacion_total']),
+    'meta_recaudacion_estado': ef['meta_recaudacion_total']['estado'],
+    'cuota_equipo_propuesta': {
+        **_v(ef['cuota_equipo']),
+        'estado': ef['cuota_equipo']['estado'],
+        'nota': ef['cuota_equipo'].get('nota', ''),
+    },
 }
+
+equipos_auxiliares = [
+    {
+        'nombre': a['nombre'],
+        'descripcion': a['descripcion'],
+        'estado': 'Por formular',
+        'miembros': a.get('miembros', []),
+        'responsable_sugerido': a['responsable']['valor'],
+        'responsable_estado': a['responsable']['estado'],
+    }
+    for a in estado['equipos_auxiliares']
+]
 
 data = {
     'meta': {'numero':88, 'romano':'LXXXVIII', 'version':'v8-2026-06-02', 'total_equipo':len(equipo), 'operativos':sum(1 for p in equipo if p.get('operativo')), 'no_operativos':sum(1 for p in equipo if not p.get('operativo'))},
     'finanzas': finanzas,
+    'estado': estado,
     'equipos_auxiliares': equipos_auxiliares,
     'marca': {
-        'lema':'Siempre amigos',
-        'cita':'Jn 15:15',
-        'cita_texto':'Ya no os llamo siervos, os he llamado amigos',
-        'frase':'No fuimos a buscarlo: él nos estaba esperando',
+        'lema': _v(estado['marca']['lema_eteciano']),
+        'cita': estado['marca']['lema_eteciano'].get('cita'),
+        'cita_texto': estado['marca']['lema_eteciano'].get('cita_texto'),
+        'lema_retiro': _v(estado['marca']['lema_retiro']),
+        'lema_retiro_estado': estado['marca']['lema_retiro']['estado'],
+        'tematica': _v(estado['marca']['tematica']),
+        'tematica_estado': estado['marca']['tematica']['estado'],
         'sub':'Tripulación para una expedición',
     },
     'equipo': equipo,
@@ -450,4 +487,7 @@ with open('/tmp/etc88_data.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 with open('/tmp/etc88_data_min.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, separators=(',',':'))
-print(f"Wrote {len(equipo)} tripulantes")
+# Refresca la copia durable/committeada (roster + hechos de estado.json ensamblados).
+with open(f'{REPO}/data/equipo.json', 'w') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+print(f"Wrote {len(equipo)} tripulantes · data/equipo.json refrescado desde xlsx + estado.json")

@@ -16,6 +16,26 @@ MAR, TIERRA, SAFARI, AMBAR, CUERO = '1B3A52', 'B25028', '4A5D2E', 'C57920', '6B4
 thin = Side(style='thin', color='C9AE76')
 border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
+# ===== Cifras-decisión: SIEMPRE desde data/estado.json (no hardcodear inventos) =====
+import json, re as _re
+_estado = json.load(open('/home/user/ETC88/data/estado.json'))
+def _ev(n): return n['valor'] if isinstance(n, dict) and 'valor' in n else n
+_ef = _estado['finanzas']; _er = _estado['recaudacion']
+CASA_SIN  = _ev(_ef['casa_por_persona_sin_exencion'])   # 2300 confirmado
+CASA_CON  = _ev(_ef['casa_por_persona_con_exencion'])    # 2000 confirmado
+DEUDA     = _ev(_ef['deuda_inicial'])                    # 23600 confirmado
+CUOTA_PART= _ev(_ef['cuota_participante'])               # 3000 confirmado
+META      = _ev(_ef['meta_recaudacion_total'])           # propuesta
+_cuota    = _ev(_ef['cuota_equipo'])                     # propuesta (rango + mensual)
+CUOTA_MES = _cuota['mensual']
+_nums     = [int(x.replace(',','')) for x in _re.findall(r'[\d,]+', _cuota['total_rango'])]
+CUOTA_LOW, CUOTA_HIGH = (_nums[0], _nums[-1]) if len(_nums) >= 2 else (1500, 2000)
+RIFA      = _ev(_er['profondo1_rifa_neta'])              # propuesta
+PROF2     = _ev(_er['profondo2_comida_garaje'])          # propuesta
+DONAC     = _ev(_er['donaciones_empresas'])              # propuesta
+# Etiquetas de estado para render
+P = '[PROPUESTA] '   # prefijo obligatorio para cifras no confirmadas
+
 wb = openpyxl.Workbook()
 wb.remove(wb.active)
 
@@ -77,17 +97,23 @@ ws.cell(row=r, column=1, value='BRECHA Y RECAUDACIÓN').font = Font(bold=True, s
 r += 1
 header(ws, r, [('Concepto', 36), ('Monto', 14), ('Notas', 50)], TIERRA)
 r += 1
+COSTO_BASE = 518381  # estimado · suma de la hoja Resumen (precios a validar en F1)
+TOTAL_CUBRIR = COSTO_BASE + DEUDA
+cuota_eq_low, cuota_eq_high = 47 * CUOTA_LOW, 47 * CUOTA_HIGH
+cuota_eq_mid = (cuota_eq_low + cuota_eq_high) // 2
+cuotas_part = 48 * CUOTA_PART
+ingresos_mid = cuota_eq_mid + cuotas_part + RIFA + DONAC + PROF2
+faltante_mid = TOTAL_CUBRIR - ingresos_mid  # >0 = falta cubrir
 brecha = [
- ('(+) Costo estimado base', 518381, ''),
- ('(+) Deuda inicial al Consejo (10% casa)', 23600, 'Juan Manuel pagó 5-mar; ya devuelto. Arrancamos en NEGATIVO.'),
- ('(=) Total a cubrir', 541981, ''),
- ('(-) Cuotas equipo (47 × $5,000 mensual)', 235000, 'Propuesta: $1,250/mes × 4 meses · sinceriza costo'),
- ('(-) Cuotas participantes (48 × $3,000)', 144000, ''),
- ('(-) Rifa (Profondo #1 neto)', 130000, 'Premio donado idealmente'),
- ('(-) Donaciones empresas/particulares', 50000, 'Responsabilidad de Directores (delegable)'),
- ('(-) Profondo #2 (venta comida/garaje)', 50000, 'Benchmark ETC 79 = $50K garaje'),
- ('(-) Exención casa (ya descontada arriba)', 0, '$28,500 ahorro incluido en línea de casa'),
- ('(=) Sobrante / (Brecha)', 67019, 'Margen positivo si todo se cumple'),
+ ('(+) Costo estimado base', COSTO_BASE, 'Estimado · suma de la hoja Resumen'),
+ ('(+) Deuda inicial al Consejo (10% casa)', DEUDA, 'Juan Manuel pagó 5-mar; ya devuelto. Arrancamos en NEGATIVO.'),
+ ('(=) Total a cubrir', TOTAL_CUBRIR, ''),
+ (f'(-) Cuotas equipo (47 × ${CUOTA_LOW:,}–{CUOTA_HIGH:,})', cuota_eq_low, P + f'${CUOTA_MES}/mes · total ${CUOTA_LOW:,}–${CUOTA_HIGH:,}/persona · SIN CERRAR · rango agregado ${cuota_eq_low:,}–${cuota_eq_high:,}'),
+ (f'(-) Cuotas participantes (48 × ${CUOTA_PART:,})', cuotas_part, 'Confirmado: $3,000/participante'),
+ ('(-) Rifa (Profondo #1 neto)', RIFA, P + 'Meta a validar · premio donado idealmente'),
+ ('(-) Donaciones empresas/particulares', DONAC, P + 'Responsabilidad de Directores (delegable)'),
+ ('(-) Profondo #2 (venta comida/garaje)', PROF2, P + 'Benchmark ETC 79 = $50K garaje'),
+ ('(=) Faltante indicativo (cuota media)', faltante_mid, 'INDICATIVO · cambia con la cuota final y la recaudación. Positivo = aún falta cubrir. Por eso la meta debe ser agresiva.'),
 ]
 for b in brecha:
     row(ws, r, b)
@@ -295,15 +321,15 @@ row(ws, r+1, ('TOTAL', totM, totB, totMx, ''), total_row=True)
 
 # ============ Hoja 10: RECAUDACIÓN ============
 ws = wb.create_sheet('Recaudación')
-title(ws, 'RECAUDACIÓN — meta agresiva $260K', SAFARI)
+title(ws, f'RECAUDACIÓN · meta propuesta ${META:,} · [PROPUESTA] a validar', SAFARI)
 header(ws, 3, [('Fuente', 36), ('Meta (RD$)', 14), ('Estado', 16), ('Responsable', 22), ('Notas', 36)], SAFARI)
 rec = [
- ('Rifa (Profondo #1)', 130000, 'Por arrancar', 'Co-Dir + Recaudación', 'Premio donado · 1,200 boletos a $100 · cierre 2-ago'),
- ('Donaciones a empresas/particulares', 50000, 'Por gestionar', 'DIRECTORES (resp.)', 'Delegable a Recaudación'),
- ('Profondo #2 (venta de comida / garaje)', 50000, 'Por definir', 'Equipo completo', 'Benchmark ETC 79 = $50K garaje'),
- ('Exención casa (vía RNC parroquia Paul)', 28500, 'Por gestionar', 'Co-Dir + Padre Paul', 'Diferencia $300/p × 95 personas'),
- ('Aportes mensuales equipo (47 × $5K)', 235000, 'Por arrancar', 'Cada miembro', '$1,250/mes × 4 meses'),
- ('Cuotas participantes (48 × $3K)', 144000, 'Por cobrar', 'Cada misionero', 'Misionero gestiona su invitado'),
+ ('Rifa (Profondo #1)', RIFA, 'PROPUESTA', 'Co-Dir + Recaudación', P + 'Meta neta a validar · premio donado idealmente'),
+ ('Donaciones a empresas/particulares', DONAC, 'PROPUESTA', 'DIRECTORES (resp.)', P + 'Delegable a Recaudación'),
+ ('Profondo #2 (venta de comida / garaje)', PROF2, 'PROPUESTA', 'Equipo completo', P + 'Benchmark ETC 79 = $50K garaje'),
+ ('Exención casa (vía RNC parroquia Paul)', (CASA_SIN - CASA_CON) * 95, 'Por gestionar', 'Co-Dir + Padre Paul', f'Ahorro ${CASA_SIN - CASA_CON}/persona × ~95 (incluye 48 part. estimados)'),
+ (f'Aportes equipo (47 × ${CUOTA_LOW:,}–{CUOTA_HIGH:,})', cuota_eq_mid, 'PROPUESTA', 'Cada miembro', P + f'${CUOTA_MES}/mes · total ${CUOTA_LOW:,}–${CUOTA_HIGH:,}/persona · SIN CERRAR'),
+ (f'Cuotas participantes (48 × ${CUOTA_PART:,})', cuotas_part, 'Confirmado', 'Cada misionero', 'Misionero gestiona su invitado'),
 ]
 r = 4
 total = 0
@@ -315,18 +341,18 @@ row(ws, r+1, ('TOTAL RECAUDACIÓN OBJETIVO', total, '', '', ''), total_row=True)
 
 # ============ Hoja 11: PAGOS EQUIPO ============
 ws = wb.create_sheet('Pagos Equipo')
-title(ws, 'APORTES MENSUALES DEL EQUIPO · $1,250 × 4 meses', MAR)
+title(ws, f'[PROPUESTA] APORTES DEL EQUIPO · ${CUOTA_MES}/mes · total ${CUOTA_LOW:,}–${CUOTA_HIGH:,}/persona (SIN CERRAR)', MAR)
 header(ws, 3, [('Nombre', 30), ('Área', 16), ('Jun', 10), ('Jul', 10), ('Ago', 10), ('Sep', 10), ('Total', 12), ('Notas', 24)], MAR)
-import json
 d = json.load(open('/tmp/etc88_data.json'))
 op = [p for p in d['equipo'] if p.get('operativo') and not p.get('vacante')]
 op.sort(key=lambda p: (p['area'], p['nombre']))
+TOT_PP = CUOTA_MES * 4  # jun-sep
 r = 4
 for p in op:
     nm = p['nombre'].replace(' (sin formulario)','')
-    row(ws, r, (nm, p['area'], 1250, 1250, 1250, 1250, 5000, ''))
+    row(ws, r, (nm, p['area'], CUOTA_MES, CUOTA_MES, CUOTA_MES, CUOTA_MES, TOT_PP, '[PROPUESTA] sin cerrar'))
     r += 1
-row(ws, r+1, ('TOTAL OBJETIVO','', len(op)*1250, len(op)*1250, len(op)*1250, len(op)*1250, len(op)*5000, ''), total_row=True)
+row(ws, r+1, ('TOTAL OBJETIVO (propuesta)','', len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*CUOTA_MES, len(op)*TOT_PP, P), total_row=True)
 
 # ============ Hoja 12: Cómo usar ============
 ws = wb.create_sheet('Cómo usar')
@@ -339,18 +365,18 @@ notas = [
  ('2. Las pestañas por área (Casa, Cocina-Compras, Materiales, Guías, Música, Formaciones, Transporte)', False),
  ('   son lo que cada coordinador entrega y refina en F1 (14-jun). Precios son ESTIMADOS a validar.', False),
  ('3. Menú es estructura sin precios; cocina lo refina y de ahí salen las cantidades de Cocina-Compras.', False),
- ('4. Recaudación lleva la meta agresiva ($260K). Estado se actualiza semanalmente.', False),
- ('5. Pagos Equipo: aporte recomendado $1,250/mes × 4 meses por persona (sinceriza costos).', False),
+ ('4. Recaudación lleva la meta PROPUESTA (a validar). El estado se actualiza semanalmente.', False),
+ ('5. Pagos Equipo: cuota PROPUESTA de $500/mes (total $1,500–2,000/persona). SIN CERRAR — la decide la Dirección.', False),
  ('', False),
  ('CONTEXTO CRÍTICO:', True),
  ('• Arrancamos en NEGATIVO: $23,600 (10% reserva casa pagada por Juan Manuel ya devuelto al Consejo).', False),
  ('  Es la PRIMERA deuda a cubrir con la recaudación.', False),
  ('• La casa INCLUYE gas y limpieza (no se compra). Con exención: $2,000/p; sin exención: $2,300/p.', False),
  ('• Casa tiene sonido (música solo lleva respaldo).', False),
- ('• Equipo: 47 operativos + 48 participantes objetivo = 95 personas a la casa.', False),
+ ('• Equipo: 47 operativos + 48 participantes (estimado) = 95 personas a la casa.', False),
  ('', False),
  ('PENDIENTES PARA CERRAR EL PRESUPUESTO:', True),
- ('• Confirmar precio real de la casa 2026 (los $2,300 son del ETC 86) — llamar a Samuel Montilla.', False),
+ ('• Cerrar el monto final de la cuota del equipo (propuesta $500/mes, total $1,500–2,000).', False),
  ('• Gestionar exención con el Padre Paul (impacto $28,500).', False),
  ('• Cotizar transporte (3 empresas).', False),
  ('• Banderín: diseño + cotización (~$5K estimado).', False),

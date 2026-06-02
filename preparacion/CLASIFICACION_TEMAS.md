@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Clasificación de temas ETC 88 — y cómo se desagrega cada uno
 ### BORRADOR para trabajar esta semana (reaccionar / corregir)
 

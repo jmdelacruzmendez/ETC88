@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Qué hay que construir — ETC 88 vs. carpetas ETC 78 / 79 / 85
 
 > Comparé el contenido de las carpetas de Drive de los ETC anteriores con la del 88.

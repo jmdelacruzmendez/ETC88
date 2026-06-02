@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Programa — F1 · Primera Formación ETC 88
 ### domingo 14-jun-2026 · estructura según los asesores
 

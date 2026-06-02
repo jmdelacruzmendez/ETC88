@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Resumen maestro ETC 88 — decisiones · acciones · pendientes
 ### Corte: 2-jun-2026 (v6)
 

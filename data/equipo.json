@@ -10,18 +10,314 @@
   "finanzas": {
     "casa_por_persona_sin_exencion": 2300,
     "casa_por_persona_con_exencion": 2000,
-    "exencion_nota": "Con exención = compra vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona.",
+    "exencion_nota": "Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona.",
     "deuda_inicial": {
       "monto": 23600,
-      "descripcion": "10% reserva casa (5-mar) pagado por Juan Manuel; ya le fue devuelto. El equipo arranca debiendo este monto al Consejo.",
+      "descripcion": "10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue devuelto). El equipo arranca debiendo este monto.",
       "acreedor": "Consejo Eteciano SPM"
     },
+    "cuota_participante": 3000,
     "meta_recaudacion_total": 260000,
-    "pago_mensual_equipo_recomendado": {
-      "monto_mensual": 1250,
-      "meses": 4,
-      "total_por_persona": 5000
+    "meta_recaudacion_estado": "propuesta",
+    "cuota_equipo_propuesta": {
+      "total_rango": "1,500 – 2,000",
+      "mensual": 500,
+      "cubre": "comida del Ensayo General + participación en el retiro",
+      "estado": "propuesta",
+      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
     }
+  },
+  "estado": {
+    "_meta": {
+      "descripcion": "FUENTE ÚNICA de los hechos NO-roster del ETC 88 (finanzas, calendario, decisiones, metas, temática, equipos auxiliares). El roster de personas vive en data/equipo.json. Cada hecho lleva 'estado'. NADA se escribe como decidido en un documento compartible si no está 'confirmado'.",
+      "version": "2026-06-02",
+      "leyenda": {
+        "confirmado": "Dato/decisión que dio el director. Se puede mostrar como hecho.",
+        "propuesta": "Sugerencia (de Claude o planteada sin cerrar). Se muestra SIEMPRE con el prefijo [PROPUESTA].",
+        "pendiente": "Falta el dato o la decisión. Se muestra con [POR DEFINIR]."
+      }
+    },
+    "retiro": {
+      "numero": {
+        "valor": 88,
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "romano": {
+        "valor": "LXXXVIII",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "fechas": {
+        "valor": "4–6 de septiembre de 2026",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "lugar": {
+        "valor": "Casa de Retiro La Ceiba del Salado, Higüey",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "co_direccion": {
+        "valor": [
+          "Juan Manuel de la Cruz",
+          "Jean Carlo de la Cruz"
+        ],
+        "estado": "confirmado",
+        "fuente": "director"
+      }
+    },
+    "conteos_esperados": {
+      "_nota": "Derivados del roster confirmado (data/equipo.json) el 2-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
+      "total_equipo": 56,
+      "operativos": 47,
+      "operativos_titulares_por_area": {
+        "directores": 2,
+        "asesores": 3,
+        "asesores_espirituales": 2,
+        "guias": 14,
+        "cocina": 20,
+        "musica": 6
+      },
+      "vacantes": 1,
+      "backups": 3,
+      "asesores_cocina": 2,
+      "asesores_diocesanos": 3
+    },
+    "finanzas": {
+      "casa_por_persona_sin_exencion": {
+        "valor": 2300,
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "casa_por_persona_con_exencion": {
+        "valor": 2000,
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona."
+      },
+      "casa_incluye": {
+        "valor": "gas y limpieza",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "casa_tiene_sonido": {
+        "valor": true,
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Música solo lleva equipo de respaldo."
+      },
+      "deuda_inicial": {
+        "valor": 23600,
+        "estado": "confirmado",
+        "fuente": "director",
+        "acreedor": "Consejo Eteciano SPM",
+        "nota": "10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue devuelto). El equipo arranca debiendo este monto."
+      },
+      "cuota_participante": {
+        "valor": 3000,
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "cuota_equipo": {
+        "valor": {
+          "total_rango": "1,500 – 2,000",
+          "mensual": 500,
+          "cubre": "comida del Ensayo General + participación en el retiro"
+        },
+        "estado": "propuesta",
+        "fuente": "director (planteado, sin cerrar)",
+        "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
+      },
+      "participantes_estimado": {
+        "valor": 48,
+        "estado": "pendiente",
+        "fuente": "estimación Claude",
+        "nota": "Falta confirmar el número final de participantes; afecta casa, peces, biblias y comida."
+      },
+      "meta_recaudacion_total": {
+        "valor": 260000,
+        "estado": "propuesta",
+        "fuente": "estimación Claude",
+        "nota": "El director pidió una 'meta más agresiva' sin fijar monto. Esta cifra es propuesta a validar."
+      }
+    },
+    "recaudacion": {
+      "primera_actividad_es_rifa": {
+        "valor": true,
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "Profondo #1 = rifa, primera actividad, por recomendación del equipo."
+      },
+      "profondo1_rifa_neta": {
+        "valor": 130000,
+        "estado": "propuesta",
+        "fuente": "estimación Claude",
+        "nota": "Meta neta de la rifa a validar."
+      },
+      "profondo2_comida_garaje": {
+        "valor": 50000,
+        "estado": "propuesta",
+        "fuente": "estimación Claude",
+        "nota": "Benchmark ETC 79 ≈ $50K (venta de comida / garaje)."
+      },
+      "donaciones_empresas": {
+        "valor": 50000,
+        "estado": "propuesta",
+        "fuente": "estimación Claude",
+        "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores (delegable)."
+      }
+    },
+    "marca": {
+      "lema_eteciano": {
+        "valor": "Siempre amigos",
+        "estado": "confirmado",
+        "fuente": "asociación",
+        "cita": "Jn 15:15",
+        "cita_texto": "Ya no os llamo siervos, os he llamado amigos"
+      },
+      "lema_retiro": {
+        "valor": "No fuimos a buscarlo: Él nos esperaba",
+        "estado": "propuesta",
+        "fuente": "propuesta Claude",
+        "nota": "Lema específico del ETC 88 SIN confirmar."
+      },
+      "tematica": {
+        "valor": "expedición / búsqueda de tesoro",
+        "estado": "propuesta",
+        "fuente": "propuesta Claude",
+        "nota": "Dirección temática a confirmar. El branding se reconstruye desde 0 con Claude Design + input del director."
+      },
+      "branding_reglas_esteticas": {
+        "valor": null,
+        "estado": "pendiente",
+        "fuente": "—",
+        "nota": "Las reglas estéticas NO están definidas. Se trabajan con Claude Design. No inventar."
+      }
+    },
+    "equipos_auxiliares": [
+      {
+        "nombre": "Recaudación y Donaciones",
+        "estado_equipo": "confirmado",
+        "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
+        "responsable": {
+          "valor": "Co-Dir + Coords de cocina + Roberto",
+          "estado": "propuesta"
+        },
+        "miembros": []
+      },
+      {
+        "nombre": "Guagua (Transporte)",
+        "estado_equipo": "confirmado",
+        "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).",
+        "responsable": {
+          "valor": "Producción",
+          "estado": "propuesta"
+        },
+        "miembros": []
+      },
+      {
+        "nombre": "Actividad Profondo",
+        "estado_equipo": "confirmado",
+        "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.",
+        "responsable": {
+          "valor": "Directores",
+          "estado": "propuesta"
+        },
+        "miembros": []
+      },
+      {
+        "nombre": "Intersección (espiritual)",
+        "estado_equipo": "confirmado",
+        "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.",
+        "responsable": {
+          "valor": "Asesores Espirituales (Padre Paul + Sor Angelina)",
+          "estado": "confirmado"
+        },
+        "miembros": [
+          "Padre Paul Ramírez",
+          "Sor Angelina Lebrón"
+        ]
+      }
+    ],
+    "asesores_externos": {
+      "cocina": {
+        "valor": [
+          "Mary \"Peta\" Morales",
+          "Johanny García"
+        ],
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "comunidad_sd": {
+        "valor": [
+          "Sandrita",
+          "Marleny"
+        ],
+        "estado": "confirmado",
+        "fuente": "director",
+        "nota": "2 representantes de la comunidad de Santo Domingo."
+      },
+      "comunidad_la_vega": {
+        "valor": [
+          "Leticia González"
+        ],
+        "estado": "pendiente",
+        "fuente": "director",
+        "nota": "Falta definir si va 1 o 2 representantes de La Vega."
+      }
+    },
+    "calendario_hitos": {
+      "reunion_coordinadores": {
+        "valor": "jueves 4-jun (Corpus Christi, virtual)",
+        "estado": "confirmado",
+        "fuente": "coordinadores"
+      },
+      "convivencia": {
+        "valor": "22-ago · inicia con miniretiro / reflexión · día completo",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "ensayo_general": {
+        "valor": "23-ago · asistencia obligatoria",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "fecha_limite_cotizar_transporte": {
+        "valor": null,
+        "estado": "pendiente",
+        "fuente": "director",
+        "nota": "El director pidió fijar una fecha límite para cotizar transporte, biblias y peces. Falta definirla."
+      }
+    },
+    "decisiones_confirmadas": [
+      "Retiro ETC 88: 4–6 de septiembre de 2026, Casa de Retiro La Ceiba del Salado, Higüey.",
+      "Co-dirección: Juan Manuel de la Cruz y Jean Carlo de la Cruz.",
+      "Casa: $2,300/persona sin exención · $2,000/persona con exención (RNC parroquia del Padre Paul). Incluye gas y limpieza. Tiene sonido.",
+      "Deuda inicial: $23,600 al Consejo Eteciano (10% reserva que Juan Manuel adelantó y ya le fue devuelto).",
+      "Cuota de participante: $3,000.",
+      "Frank Morales es asesor (como Laura y Tomás) y además lleva el Banderín.",
+      "Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).",
+      "Apellido de Leober: Soriano.",
+      "Roselyn sale del equipo (2-jun); su cupo pasa a un varón.",
+      "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
+      "Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).",
+      "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
+      "Asesoras de cocina: Mary \"Peta\" Morales y Johanny García.",
+      "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
+      "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual)."
+    ],
+    "pendientes": [
+      "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
+      "Confirmar el número final de participantes.",
+      "Completar la vacante de cocina (varón — candidato Randolph).",
+      "Definir si van 1 o 2 representantes de La Vega.",
+      "Definir los responsables de cada equipo auxiliar.",
+      "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
+      "Confirmar la exención de la casa con el Padre Paul.",
+      "Fijar fecha límite para cotizar transporte, biblias y peces.",
+      "Cotizar transporte (3 empresas) y el banderín."
+    ]
   },
   "equipos_auxiliares": [
     {
@@ -29,38 +325,45 @@
       "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
       "estado": "Por formular",
       "miembros": [],
-      "responsable_sugerido": "Co-Dir + Coords cocina + Roberto"
+      "responsable_sugerido": "Co-Dir + Coords de cocina + Roberto",
+      "responsable_estado": "propuesta"
     },
     {
       "nombre": "Guagua (Transporte)",
-      "descripcion": "Coordinación de transporte para formaciones, retiro, avanzada. Equipo externo (no pernocta en la casa).",
+      "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).",
       "estado": "Por formular",
       "miembros": [],
-      "responsable_sugerido": "Producción"
+      "responsable_sugerido": "Producción",
+      "responsable_estado": "propuesta"
     },
     {
       "nombre": "Actividad Profondo",
-      "descripcion": "Profondo #1 = RIFA (meta neta agresiva RD$130K). Profondo #2 = venta de comida/garaje (~RD$50K).",
+      "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.",
       "estado": "Por formular",
       "miembros": [],
-      "responsable_sugerido": "Directores"
+      "responsable_sugerido": "Directores",
+      "responsable_estado": "propuesta"
     },
     {
       "nombre": "Intersección (espiritual)",
-      "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento. Liderado por los Asesores Espirituales (Paul + Sor Angelina) más etecianos de oración.",
+      "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.",
       "estado": "Por formular",
       "miembros": [
         "Padre Paul Ramírez",
         "Sor Angelina Lebrón"
       ],
-      "responsable_sugerido": "Asesores Espirituales"
+      "responsable_sugerido": "Asesores Espirituales (Padre Paul + Sor Angelina)",
+      "responsable_estado": "confirmado"
     }
   ],
   "marca": {
     "lema": "Siempre amigos",
     "cita": "Jn 15:15",
     "cita_texto": "Ya no os llamo siervos, os he llamado amigos",
-    "frase": "No fuimos a buscarlo: él nos estaba esperando",
+    "lema_retiro": "No fuimos a buscarlo: Él nos esperaba",
+    "lema_retiro_estado": "propuesta",
+    "tematica": "expedición / búsqueda de tesoro",
+    "tematica_estado": "propuesta",
     "sub": "Tripulación para una expedición"
   },
   "equipo": [

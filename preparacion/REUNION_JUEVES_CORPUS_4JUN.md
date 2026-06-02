@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Reunión de Coordinadores — jue 4-jun (Corpus Christi · virtual)
 ### Temas a repasar · 60 min · Pre-lectura 48 h antes
 

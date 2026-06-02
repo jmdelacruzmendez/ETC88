@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Qué necesito de ti (Co-Dir) para completar todo
 ### + tus pendientes · ETC 88 · 2-jun
 

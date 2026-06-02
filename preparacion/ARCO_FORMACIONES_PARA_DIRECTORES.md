@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Arco de Formaciones F1–F5 + Clasificación temática
 ### Documento PARA DIRECTORES (Juan Manuel + Jean Carlo) · borrador esta semana
 

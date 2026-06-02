@@ -226,7 +226,7 @@ th { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; let
 tr { border-bottom: 1px solid var(--pergamino-tibio); }
 tr:hover { background: var(--pergamino-claro); }
 
-.constelacion-bg {
+.starfield-bg {
   background-image:
     radial-gradient(1.2px 1.2px at 12% 18%, rgba(197,121,32,0.7) 50%, transparent 50%),
     radial-gradient(1.6px 1.6px at 28% 42%, rgba(197,121,32,0.5) 50%, transparent 50%),
@@ -276,7 +276,7 @@ tr:hover { background: var(--pergamino-claro); }
 <body x-data="app()" x-cloak>
 
 <header class="bg-mar-honda relative overflow-hidden">
-  <div class="constelacion-bg absolute inset-0 opacity-50"></div>
+  <div class="starfield-bg absolute inset-0 opacity-50"></div>
   <div class="relative max-w-6xl mx-auto px-6 py-8">
     <div class="flex items-center gap-4 mb-3">
       <svg viewBox="0 0 80 40" class="w-12 h-6" xmlns="http://www.w3.org/2000/svg">
@@ -290,7 +290,7 @@ tr:hover { background: var(--pergamino-claro); }
     </div>
     <h1 class="f-display text-3xl md:text-4xl" style="color: var(--vela);">Tablero de la Tripulación</h1>
     <div class="f-cond text-sm md:text-base mt-2" style="color: #E8CD88; letter-spacing: 0.18em; text-transform: uppercase;">
-      Constelación 49 · <span x-text="data.meta.operativos"></span> operativos + <span x-text="data.meta.no_operativos"></span> ampliados = <span x-text="data.meta.total_equipo"></span> en el retiro
+      <span x-text="data.meta.operativos"></span> operativos + <span x-text="data.meta.no_operativos"></span> ampliados = <span x-text="data.meta.total_equipo"></span> en el retiro
     </div>
     <p class="f-serif italic mt-3 max-w-2xl text-sm md:text-base" style="color: rgba(247,239,217,0.92);">
       "Ya no os llamo siervos, os he llamado amigos." <span class="f-mono text-xs ml-1" style="color: var(--ambar);">— Jn 15:15</span>
@@ -389,7 +389,7 @@ tr:hover { background: var(--pergamino-claro); }
       <option value="0">0 ETCs (rookies)</option>
       <option value="1">1 ETC</option>
       <option value="2-4">2-4 ETCs</option>
-      <option value="5+">5+ ETCs (veteranos)</option>
+      <option value="5+">5+ ETCs (experimentados)</option>
     </select>
   </div>
 

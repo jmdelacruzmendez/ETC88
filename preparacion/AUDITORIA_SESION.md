@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Auditoría de la sesión — qué se me pasó / quedó abierto / pude malentender
 
 > Revisión de toda la conversación. Honesto, incluyendo mis propios errores.

@@ -1,3 +1,5 @@
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Borrador interno de preparación. Los entregables oficiales son los 2 documentos + 2 hojas generados desde data/ (ver CLAUDE.md).
+
 # Etapas · Formaciones · Prioridades — ETC 88
 ### Dimensión completa del proceso · qué toca a cada etapa
 

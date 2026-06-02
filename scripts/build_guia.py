@@ -15,10 +15,14 @@ A = L.append
 
 # ---------- Portada ----------
 A("# GUÍA DEL ETC LXXXVIII")
-A("## «Caminos de Vida» · San Pedro de Macorís")
+A("## San Pedro de Macorís")
 A("")
-A("> **Lema (provisional — a confirmar esta semana):** *“No fuimos a buscarlo: Él nos esperaba”* · **Mt 13,44**")
-A("> **Temática:** expedición · búsqueda de tesoro · aventura")
+_m = d.get('marca', {})
+_lema_tag = '[PROPUESTA] ' if _m.get('lema_retiro_estado') == 'propuesta' else ''
+_tema_tag = '[PROPUESTA] ' if _m.get('tematica_estado') == 'propuesta' else ''
+A(f"> **Lema eteciano:** *“{_m.get('lema','Siempre amigos')}”* · **{_m.get('cita','Jn 15:15')}**")
+A(f"> **Lema del retiro:** {_lema_tag}*“{_m.get('lema_retiro','')}”* (sin confirmar — se cierra con Claude Design)")
+A(f"> **Temática:** {_tema_tag}{_m.get('tematica','')} (a confirmar)")
 A("> **Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey")
 A("> **Co-Dirección:** Juan Manuel de la Cruz · Jean Carlo de la Cruz")
 A("")
@@ -126,7 +130,7 @@ A("---")
 # ---------- 6. Cómo preparar un testimonio ----------
 A("## 6. Cómo preparar un testimonio")
 A("")
-A("*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Los veteranos dan el ejemplo primero.*")
+A("*Sé descriptivo: esto es para que cualquiera entienda cómo hacerlo. Los que ya han servido dan el ejemplo primero.*")
 A("")
 A("1. Empieza con un **bosquejo** de ideas generales.")
 A("2. **Simple:** una idea central, lenguaje claro y llano.")
