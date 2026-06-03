@@ -43,9 +43,12 @@ python scripts/build_guia.py       # → GUIA_ETC88.md (fuente de la Carpeta)
 python scripts/build_html.py       # → index.html (Tablero)
 python scripts/build_trazabilidad.py # → preparacion/TRAZABILIDAD.md (registro de fuentes)
 python scripts/build_cantera.py     # → Cantera_ETC88.xlsx (maqueta: padrinos + auxiliares)
+python scripts/build_captacion.py   # → /tmp/drive_captacion.csv (tracker de participantes, desde data/participantes.json)
 python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```
+
+**Atajo (bus factor #B4):** `bash scripts/run_all.sh` corre TODO el pipeline + `verify.py` de una sola vez. Cualquier asesor con **Python 3** (`pip install openpyxl python-docx`) + **Node** puede operarlo desde la raíz del repo. Debe terminar en **TODO PASS**; si imprime FALLOS, se corrige el **DATO** (en `data/estado.json` o `data/equipo.json`) — nunca el documento de salida — y se vuelve a correr.
 
 Para Drive: subir `/tmp/drive_asesores.txt` y `/tmp/drive_carpeta.txt` como `text/plain`
 (→ Google Doc limpio) y `/tmp/drive_equipo.csv` + `/tmp/drive_finanzas.csv` como `text/csv`
