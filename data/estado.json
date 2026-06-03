@@ -67,9 +67,10 @@
 
   "marca": {
     "lema_eteciano":            { "valor": "Siempre amigos", "estado": "confirmado", "fuente": "asociación", "cita": "Jn 15:15", "cita_texto": "Ya no os llamo siervos, os he llamado amigos" },
-    "lema_retiro":              { "valor": "No fuimos a buscarlo: Él nos esperaba", "estado": "propuesta", "fuente": "propuesta Claude", "nota": "Lema específico del ETC 88 SIN confirmar." },
-    "tematica":                 { "valor": "expedición / búsqueda de tesoro", "estado": "propuesta", "fuente": "propuesta Claude", "nota": "Dirección temática a confirmar. El branding se reconstruye desde 0 con Claude Design + input del director." },
-    "branding_reglas_esteticas":{ "valor": null, "estado": "pendiente", "fuente": "—", "nota": "Las reglas estéticas NO están definidas. Se trabajan con Claude Design. No inventar." }
+    "lema_retiro":              { "valor": "En busca del tesoro", "estado": "confirmado", "fuente": "director", "cita": "Mt 13:44", "nota": "Lema del retiro ETC 88 confirmado por el director. Referencia al tesoro escondido (Mt 13,44)." },
+    "hilo_espiritual":          { "valor": "El tesoro escondido (Mt 13,44): la expedición busca el tesoro —el encuentro con Cristo— y, al hallarlo, de pura alegría vale venderlo todo.", "estado": "confirmado", "fuente": "director", "cita": "Mt 13:44", "cita_texto": "El Reino de los cielos es como un tesoro escondido en un campo; el que lo encuentra, lleno de alegría, va, vende todo lo que tiene y compra ese campo." },
+    "tematica":                 { "valor": "expedición · en busca del tesoro", "estado": "confirmado", "fuente": "director", "cita": "Mt 13:44", "nota": "Temática confirmada: expedición/travesía hacia el tesoro escondido (Mt 13,44). Diseño = Dirección A (Expedición), se afina con Claude Design." },
+    "branding_reglas_esteticas":{ "valor": "Dirección A · Expedición (azul profundo + arena + coral · Cormorant Garamond + Inter · pez-brújula que apunta a la estrella polar). Sistema en design/DESIGN_SYSTEM_A.md.", "estado": "propuesta", "fuente": "Claude Design", "nota": "Dirección elegida por el director; paleta/tipografía/logo aún se afinan con Claude Design en función del contenido." }
   },
 
   "equipos_auxiliares": [

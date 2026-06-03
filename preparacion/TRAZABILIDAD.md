@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 39 confirmados · 15 propuestas · 8 pendientes (en estado.json).
+**Resumen:** 42 confirmados · 14 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
@@ -32,6 +32,9 @@
 | `recaudacion.modelo` | cuotas + rifa y/o venta de comida + donaciones | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
+| `marca.lema_retiro` | En busca del tesoro | director | Lema del retiro ETC 88 confirmado por el director. Referencia al tesor… |
+| `marca.hilo_espiritual` | El tesoro escondido (Mt 13,44): la expedición busca el tesor… | director |  |
+| `marca.tematica` | expedición · en busca del tesoro | director | Temática confirmada: expedición/travesía hacia el tesoro escondido (Mt… |
 | `comunidades_y_parroquias.parroquia_spm` | San José Obrero (SPM) | director | Parroquia de referencia en SPM (misas etecianas y posibles actividades… |
 | `comunidades_y_parroquias.parroquia_pc` | Nuestra Señora del Pilar (Punta Cana) | director | Parroquia en PC con representación del 88 en el equipo; aún no se han … |
 | `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |
@@ -57,8 +60,7 @@
 |---|---|---|---|
 | `finanzas.cuota_equipo` | {"total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "c… | director (planteado, sin cerrar) | NO está decidido. Mostrar primero los costos estimados del retiro para… |
 | `finanzas.participantes_objetivo` | 52 | derivado (100 − 48 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
-| `marca.lema_retiro` | No fuimos a buscarlo: Él nos esperaba | propuesta Claude | Lema específico del ETC 88 SIN confirmar. |
-| `marca.tematica` | expedición / búsqueda de tesoro | propuesta Claude | Dirección temática a confirmar. El branding se reconstruye desde 0 con… |
+| `marca.branding_reglas_esteticas` | Dirección A · Expedición (azul profundo + arena + coral · Co… | Claude Design | Dirección elegida por el director; paleta/tipografía/logo aún se afina… |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
 | `equipos_auxiliares[2].responsable` | Directores | — |  |
 | `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |
@@ -74,7 +76,6 @@
 ## 🔴 Pendientes (faltan — se muestran [POR DEFINIR])
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
-| `marca.branding_reglas_esteticas` | None | — | Las reglas estéticas NO están definidas. Se trabajan con Claude Design… |
 | `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
 | `equipos_auxiliares[3].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
 | `equipos_auxiliares[4].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |

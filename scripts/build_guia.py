@@ -21,8 +21,10 @@ _m = d.get('marca', {})
 _lema_tag = '[PROPUESTA] ' if _m.get('lema_retiro_estado') == 'propuesta' else ''
 _tema_tag = '[PROPUESTA] ' if _m.get('tematica_estado') == 'propuesta' else ''
 A(f"> **Lema eteciano:** *“{_m.get('lema','Siempre amigos')}”* · **{_m.get('cita','Jn 15:15')}**")
-A(f"> **Lema del retiro:** {_lema_tag}*“{_m.get('lema_retiro','')}”* (sin confirmar — se cierra con Claude Design)")
-A(f"> **Temática:** {_tema_tag}{_m.get('tematica','')} (a confirmar)")
+A(f"> **Lema del retiro:** {_lema_tag}*“{_m.get('lema_retiro','')}”*")
+A(f"> **Temática:** {_tema_tag}{_m.get('tematica','')}")
+if _m.get('hilo'):
+    A(f"> **Hilo espiritual:** {_m.get('hilo')} · **{_m.get('hilo_cita','Mt 13:44')}**")
 A("> **Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey")
 A("> **Co-Dirección:** Juan Manuel de la Cruz · Jean Carlo de la Cruz")
 A("")
