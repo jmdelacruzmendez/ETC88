@@ -12,6 +12,7 @@ MASTERS = {
     'plan_recaudacion': 'preparacion/PLAN_RECAUDACION.md',
     'seguimiento':      'preparacion/SEGUIMIENTO_ETC88.md',
     'roadmap':          'preparacion/ROADMAP_SISTEMA.md',
+    'reunion_coords':   'preparacion/REUNION_COORDS_4JUN.md',
 }
 
 def md_to_text(md):

@@ -1,29 +1,36 @@
-# Anexo de Cocina — ETC 88
+# Anexo de Cocina — ETC
 ### Anexo de la Carpeta · para el equipo de Cocina
 
-> No existía una guía aparte de cocina; este anexo la crea. Cubre **qué hace cocina, cuándo, el menú, los motivos y las reglas de oro**.
+> No existía una guía aparte de cocina; este anexo la crea. Cubre **qué hace cocina, cuándo, el menú, los motivos y la regla de oro**.
 
 ---
 
 ## 1. La regla de oro
-**La cocina está en función del ETC, no el ETC en función de la cocina.** Sencillez, humildad y servicio. Los motivos y comidas no compiten con el retiro: lo sostienen.
+**ENTREGA Y SACRIFICIO.** Cocina sirve desde la sombra para que el participante encuentre a Cristo en la mesa, en el descanso, y sobre todo en el **Lavatorio** del sábado en la noche. El ancla bíblica del equipo es **Juan 13** — *el lavatorio de los pies*. *"Si yo, el Maestro y el Señor, les he lavado los pies, ustedes también deben lavarse los pies unos a otros"* (Jn 13,14). Esa es la actitud: **servir agachados, sin esperar nada, con el delantal puesto**.
+
+> **Nota:** la cocina está en función del ETC, no el ETC en función de la cocina. Sencillez, humildad y servicio — los motivos y las comidas sostienen al retiro, no compiten con él.
 
 ## 2. Estructura
 - **Coords:** Paloma + Jhonnito. **Asesoras:** Mary "Petra" Morales + Johanny García.
 - **Correcaminos:** rol vehicular (compras/diligencias durante el retiro) — se identifica después de cerrar el menú.
 - Dormitorio de cocina **separado** del resto (se recomienda).
 
-## 2b. Funciones del equipo de Cocina (lo que cubre)
+## 2b. Funciones del equipo de Cocina
 Cocina **no solo prepara la comida**. Su función incluye:
 - **Preparar los alimentos** + **servirlos a los participantes** durante el retiro.
-- **Ambientación de la cocina y del comedor** (motivos por tiempo de comida, ligados a la temática).
+- **Ambientación de la cocina y del comedor** (motivos por tiempo de comida, ligados a la temática del retiro).
 - **Lavatorio de los Pies** del sábado en la noche: cocina **lo lleva** — palangana, toallas, agua, montaje y acompañamiento del momento.
 - **Presentación del equipo** de cocina al resto de la tripulación (que se conozcan; cocina no es invisible).
 - Bendiciones breves antes de cada tiempo de comida.
 
+> **El trabajo de cocina impacta el horario del ETC.** Una avanzada que llega tarde, un tiempo de comida que se atrasa, un montaje que no está listo — todo eso arrastra al resto del retiro. Por eso la puntualidad y la planificación de cocina son tan importantes como el menú mismo.
+
 ## 3. Llegada y montaje
-- **Avanzada: jueves/viernes** (la cocina llega antes — 3-sep avanzada · viernes 10am montaje).
-- Ponerse al tanto del manejo de cocina de la casa · presentación del comedor · preparar la cena del viernes.
+- **Avanzada** anticipada (la cocina llega antes que el resto del equipo).
+- Ponerse al tanto del manejo de cocina de la casa · presentación del comedor · preparar la primera cena.
+
+## 3b. Visita a la casa antes del retiro
+Es importante hacer una **visita previa a la casa** para conocer el espacio, los utensilios disponibles, la disposición del comedor y de la cocina, y coordinar con la administración. La visita se organiza junto con el equipo de Guías y el Co-Dir — cocina y guías se benefician igual de conocer el espacio antes — y se programa con suficiente anticipación al retiro.
 
 ## 4. Tiempos de comida (con la guía)
 | Día | Tiempos |
@@ -32,47 +39,44 @@ Cocina **no solo prepara la comida**. Su función incluye:
 | Sábado | Desayuno · refrigerio AM · almuerzo · refrigerio PM · **Cena con Lavatorio** · refrigerio noche |
 | Domingo | Desayuno · almuerzo |
 
-- **Bendiciones breves** ligadas al tema del día (sin sociodramas).
+- **Bendiciones breves** ligadas al tema del día — los sociodramas o gestos breves enriquecen el momento, no se prohíben.
 - **Cena del sábado = Lavatorio de los pies** (momento fuerte que **lleva cocina**): preparar palangana, toallas, agua; cuidar el ambiente del comedor durante el rito.
 - **Servicio a la mesa:** cocina sirve los alimentos a los participantes en cada tiempo (no es autoservicio).
 
-## 5. Menú — reglas y alergias (del tablero)
-Construir el menú **respetando**:
-- **Mariscos** (4 alérgicas) — no como plato principal.
-- **Piña** (3) — nada en jugos/postres/marinadas.
-- **Huevo** (1) — opción sin huevo en desayuno.
-- **Canela** (1), **gastritis severa** (Candy) — no irritante, **diabetes** (Luisa) — bajo azúcar/horarios, **presión** (María del Carmen) — bajo sodio.
-- **Sin Baygon** en zona de comida (José Ángel) y ojo **gatos** (Dorian).
+## 5. Menú — reglas y alergias
+Construir el menú **respetando** las alergias y condiciones del equipo y de los participantes — la lista vive en el tablero y se actualiza con cada nuevo miembro o participante. Como guía general: cuidar **mariscos, piña, huevo, canela, gastritis, diabetes** (bajo azúcar, horarios), **presión** (bajo sodio), restricciones por mascotas o por productos químicos en zona de comida. El menú definitivo se cierra cruzando la matriz de alergias y condiciones del tablero.
 
 ## 6. Motivos y decoración del comedor (y de la cocina)
-- Cada tiempo de comida lleva un **motivo** ligado a la temática (expedición/tesoro).
+- Cada tiempo de comida lleva un **motivo** ligado a la temática del retiro.
 - Sencillo, hecho por el equipo, alegre.
 - **Ambientación de la cocina** también: el espacio de trabajo refleja el espíritu del retiro.
+
+> **Nota sobre la temática:** la temática del retiro se conoce **después de la primera formación (F1)**. Hasta entonces, cocina prepara un **menú base sin tematización**; la ambientación con motivos temáticos se incorpora **después de F1**, una vez conocida la temática.
 
 ## 6b. Mensaje de Paul para el equipo de Cocina
 El corazón de cocina es **ENTREGA Y SACRIFICIO**. La cocina sirve desde la sombra para que el participante encuentre a Cristo en la mesa, en el descanso, y sobre todo en el **Lavatorio**.
 
-> **Ancla bíblica del equipo de cocina:** **Juan 13** — *el lavatorio de los pies*. *"Si yo, el Maestro y el Señor, les he lavado los pies, ustedes también deben lavarse los pies unos a otros"* (Jn 13,14). Esa es la actitud: servir agachados, sin esperar nada, con el delantal puesto.
+> **Ancla bíblica del equipo de cocina:** **Juan 13** — *el lavatorio de los pies*. *"Si yo, el Maestro y el Señor, les he lavado los pies, ustedes también deben lavarse los pies unos a otros"* (Jn 13,14).
 
-## 7. Presupuesto y donaciones
-- Cocina entrega su **presupuesto + lista de compras en F1**.
-- Buscar **donaciones en especie** (arroz, habichuelas, aceite — el 79 los consiguió donados).
-- Compras por mayor (MERCADOM, El Suplidor) = 15–25% menos.
-- Confirmar con la casa: **¿gas incluido? ¿se paga señora de cocina local?**
-- **Contexto financiero del 88:** la **Casa de Retiro** cuesta **$2,300/persona sin exención** y **$2,000/persona con exención** (vía RNC de la parroquia del Padre Paul). El equipo arranca debiendo **$23,600** al Consejo Eteciano (10% de reserva de la casa que JM adelantó de su bolsillo y que ya le fue devuelto).
+## 7. Menú y presupuesto
+- **Primero el borrador de menú**, después el presupuesto. El menú define qué se compra, en qué cantidad y con qué frecuencia.
+- El presupuesto cubre **no solo los ingredientes**, también los detalles: ambientación, ingredientes especiales, refrigerios, utensilios desechables, y todo lo que el menú requiera para ejecutarse.
+- Cocina entrega su **borrador de menú + presupuesto base en F1**.
+- Buscar **donaciones en especie** (arroz, habichuelas, aceite) cuando sea posible — bajan el costo significativamente.
+- Compras por mayor reducen el costo 15–25% vs minorista.
 
-## 8. Reglas del cocinero (10, resumen)
+## 8. Reglas del cocinero (resumen)
 Trabajo humilde · asistir a reuniones · hacer lo asignado · motivos del comedor · **cena con Lavatorio** · presupuesto y donaciones · menú · oración de bendición · nunca poner intereses propios por encima del participante.
 
 ## 9. Fechas clave de Cocina
-| Fecha | Hito |
+| Hito | Cuándo |
 |---|---|
-| F1 14-jun | Presupuesto + menú borrador |
-| F3 5-jul | Compras anticipadas (no perecederos) |
-| ago | Cerrar lista de compras + identificar Correcaminos |
-| **3-sep** | **Avanzada de cocina** (10am) |
-| 4-6 sep | Retiro |
-| **9-sep** | Bienvenida nuevos (baile + bizcocho) |
+| **F1** | Borrador de menú + presupuesto base (sin tematización todavía) |
+| **F3** | Compras anticipadas (no perecederos) |
+| **F5 / agosto** | Cerrar lista de compras + identificar Correcaminos |
+| **Avanzada** | Llegada anticipada de cocina (días antes del retiro) |
+| **Retiro** | Servicio completo |
+| **Bienvenida nuevos etecianos** | Después del retiro (cocina lleva el momento) |
 
 ---
 *Anexo de Cocina ETC 88 · borrador · se ajusta con Paloma + Jhonnito + asesoras.*

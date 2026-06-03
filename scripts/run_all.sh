@@ -17,6 +17,7 @@ python scripts/build_cantera.py
 python scripts/build_captacion.py
 python scripts/build_web.py
 python scripts/build_drive.py
+python scripts/build_trabajo.py
 echo "== Compuerta de verificación =="
 python scripts/verify.py
 echo "== Listo. Si dice TODO PASS, el sistema está coherente. =="

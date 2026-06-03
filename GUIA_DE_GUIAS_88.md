@@ -1,30 +1,28 @@
-# Guía de Guías — ETC 88
+# Guía de Guías — ETC
 ### Anexo de la Carpeta · para el equipo de Guías
 
-> **¿Por qué los guías necesitan su propia guía?** Porque son quienes están **cara a cara** con el participante en el pequeño grupo (PG). Aquí está **qué hacen, cuándo, con qué materiales**, y **por qué** se distribuyen así los testimonios, las dinámicas y el acompañamiento. Sé descriptivo: esto es para que cualquiera lo entienda.
+> **¿Por qué los guías necesitan su propia guía?** Porque son quienes están **cara a cara** con el participante en el pequeño grupo (PG). Aquí se describe **qué hacen, cuándo, con qué materiales**, y **por qué** se distribuyen así los testimonios, las dinámicas y el acompañamiento. Es **una guía descriptiva**, no un reglamento.
 >
 > **Pequeño Grupo (PG):** es el grupo de participantes que cada pareja de guías acompaña durante todo el retiro. **Son siempre 7 parejas de guías (regla fija: 14 guías).** Cada PG tiene su color, su espacio y sus dos guías fijos — no se mezclan. Los grupos pueden quedar de **distinto tamaño** (uno con más participantes que otro), pero el número de parejas no cambia.
 
 ---
 
 ## 1. El rol del guía (en 1 párrafo)
-El guía **no enseña ni predica**: acompaña. Su trabajo es crear confianza, escuchar, y guiar al participante a su propio encuentro con Cristo. Trabajan **en pareja** (2 guías por PG). **Son 7 parejas — es una regla: no hay más ni menos.** Combinan estilos y procuran que en cada pareja haya al menos alguien que ya haya servido antes.
+El guía no enseña ni predica: **acompaña**. Su trabajo es crear confianza, escuchar, y guiar al participante a su propio encuentro con Cristo. Los guías trabajan **en pareja** (2 guías por PG). **Son 7 parejas — es una regla: no hay más ni menos.** La pareja combina estilos y procura que al menos uno haya servido antes como guía.
 
 ## 2. Por qué se distribuyen así (la lógica)
-- **Testimonios:** se reparten entre las parejas según el tema y la historia de vida de cada guía. **Quienes ya han dado testimonio antes pueden compartir primero**, para que sea más fluido entender el formato; los demás aprenden observando. No todos dan testimonio: se eligen los que encarnan con más claridad cada tema.
-- **Dinámicas:** cada una tiene un objetivo (confianza, fe, entrega…). Se asignan a parejas para que las preparen y conduzcan — así nadie improvisa.
+- **Testimonios:** se reparten entre las parejas según el tema y la historia de vida de cada guía. **Los que ya han sido guías antes inician** dando testimonio, para que el formato se entienda con fluidez; los demás aprenden observando. No todos dan testimonio: se eligen los que encarnan con más claridad cada tema.
+- **Dinámicas:** cada una tiene un objetivo (rompe hielo, división de grupos, confianza, fe, perdón…). Se asignan a parejas que las preparan y conducen — así nadie improvisa.
 - **Acompañamiento en el PG:** la pareja sigue a SUS participantes todo el fin de semana (no se mezclan), para crear vínculo y confidencialidad. Cada guía escribe **palanca a cada uno** de su grupo.
 
 ## 3. Las parejas (color-coded)
-- **Son 7 parejas — regla fija** (14 guías). El número de parejas **no cambia**; lo que varía es cuántos participantes lleva cada grupo (uno puede tener más que otro).
-- Se forman en **F1** y eligen un **color** (identifica al PG todo el retiro).
-- Equilibrio: experiencia previa + comunidad (mezclar Belén/Betania) + estilos.
-- La **pareja debe coordinarse de antemano y ensayar entre ellos**: que se note la fluidez al conducir el PG.
-- **Cuidado (regla):** ningún participante puede caer en el plenario de un guía que sea su **hermano/pareja** (Guía, fn. 9) → cruzar con los lazos del equipo.
+- Son **7 parejas — regla fija** (14 guías). El número de parejas **no cambia**; lo que varía es cuántos participantes lleva cada grupo (uno puede tener más que otro).
+- **Las parejas las preparan los directores** (no las arman los coords), buscando equilibrio de experiencia previa y estilos.
+- Las parejas se presentan al equipo en **F1** y eligen su **color** (identifica al PG todo el retiro).
+- **La pareja se coordina de antemano y ensaya entre ellos**: que se note la fluidez al conducir el PG.
+- **Cuidado (regla):** ningún participante cae en el plenario de un guía que sea su **hermano/pareja** (Guía, fn. 9) → cruzar con los lazos del equipo.
 
 ## 4. Secuencia de los Pequeños Grupos (PG) — qué materiales y qué se hace
-*(del horario canónico — adaptar a la temática de expedición)*
-
 | PG | Cuándo | Materiales | Qué se hace |
 |---|---|---|---|
 | **1º** | VIE 7:35pm | hoja de datos, lápices | Bienvenida, presentación, expectativas |
@@ -34,39 +32,53 @@ El guía **no enseña ni predica**: acompaña. Su trabajo es crear confianza, es
 | **5º** | SÁB 10:45am | — | Preparar **sociodrama** |
 | **6º** | SÁB 11:45am | objeto/símbolo | Libertad para Entregarse · símbolo de entrega |
 | **7º** | SÁB 4:00pm | — | Regalo de la Vida · ensayar sociodrama |
-| **8º** | SÁB 7:50pm | — | Alegría del Perdón · motivar a confesión · preparar banderín y misa |
+| **8º** | SÁB 7:50pm | — | Alegría del Perdón · motivar a confesión · preparar misa |
 | **último** | DOM 9:00am | venda | Dinámica del cariño · despedida del PG |
 
-## 5. Responsabilidades del guía (10)
-1. Dispuesto al trabajo cara a cara.
+## 5. Responsabilidades del guía
+1. Disposición al trabajo cara a cara.
 2. Preparar testimonio de vida (darlo si es escogido).
 3. Libretas y **decoración del lugar del PG**.
-4. **Repasar el programa y aprenderse el horario** (vital — es de lo más importante).
-5. Integrarse, **coordinarse y ensayar con su compañero** de pareja.
+4. **Repasar el programa y aprenderse el horario** — vital, libera para acompañar.
+5. **Coordinarse y ensayar con su compañero** de pareja.
 6. Llevar **pañuelo y abrigo** para dinámicas.
 7. Verificar datos de sus participantes y **palanca a cada uno**.
 8. **Confidencialidad** de los testimonios de vida.
 9. Intereses propios **después** de los de sus participantes.
-10. Ser ejemplo de vida sacramental.
+10. Ejemplo de vida sacramental.
+11. **Presentación de los guías** al inicio del retiro (que se conozcan).
+12. **En cada reunión del equipo: sacar tiempo para repasar el horario y ensayar al menos un PG.**
 
-> **Recomendación del equipo:** en **cada reunión del equipo de Guías** se ensaya **al menos un Pequeño Grupo** completo (no solo en el Ensayo General). Repaso del programa y horario desde el principio en cada encuentro.
->
 > **Presupuesto:** las **libretas (cuadernos para los participantes)** entran en el **presupuesto de Guías** — no en cocina ni en materiales generales.
 
 ## 6. Formación que recibe el equipo de Guías (su roadmap)
-- **F1 (14-jun):** parejas + colores + cómo preparar un testimonio (quienes ya han dado testimonio antes comparten primero, para que el formato se entienda con fluidez).
-- **Liturgia + Banderín:** adiestramiento con coords + los encargados (lo lleva Frank) — *brecha señalada en el Informe del 85*.
+- **F1:** parejas + colores + cómo preparar un testimonio. **Los que ya han sido guías antes inician** dando testimonio o arrancando los ensayos, para que el formato se entienda con fluidez.
+- **Liturgia + Banderín:** sesiones de adiestramiento con los coords y los encargados (se convocan aparte).
 - **F4/F5:** lectura de perfiles 1 y 2.
 - **Cada reunión del equipo:** ensayar **al menos un PG** + repasar programa y horario desde el principio.
-- **Antes del 23-ago:** **ensayo de pequeños grupos** completo (recomendación del 85).
+- **Antes del Ensayo General:** ensayo de pequeños grupos completo.
 
 ### Mensaje de Paul para el equipo de Guías
 - **Enfocados en el PARTICIPANTE** — todo lo que se hace es para él, no para lucirse el guía.
 - **Aprenderse el programa y el horario** (vital): conocerlo de memoria libera al guía para acompañar.
 - **Pareja de guías: coordinarse de antemano y ensayar**; que se note la fluidez al conducir el PG.
 
-## 7. Cómo preparar un testimonio (resumen — ver Carpeta §6)
-Bosquejo → una idea central → experiencia ya superada → no predicar → positivo → no leer → preparado en oración. **Quienes ya han dado testimonio antes pueden compartir primero, para que el formato se entienda con fluidez.**
+## 7. Cómo se prepara un testimonio
+El testimonio nace de la **oración** y de mirar la propia vida con honestidad. Se parte de un bosquejo que el guía construye en su tiempo personal con Dios: una **idea central** que el guía quiere transmitir, **una experiencia ya superada** que iluminó esa idea, y cómo Dios pasó por ahí. El guía cuenta su propia vida — no enseña ni predica, no impone una conclusión. El tono es **positivo y agradecido**, sin amargura ni morbo. La preparación es escrita pero el testimonio **no se lee**: se vive al darlo. Hay quien necesita escribirlo todo y memorizarlo; hay quien escribe los hitos y habla desde el corazón; ambos caminos son válidos. **Los que ya han dado testimonio antes comparten primero** para que los demás vean el formato; pero no hay una sola forma de hacerlo. Lo que sí es común a todos: **la oración antes, durante y después**.
+
+## 8. Dinámicas que prepara la pareja
+La pareja conduce dinámicas a lo largo del retiro. Cada una tiene un objetivo distinto y se prepara con anticipación. Las principales:
+
+- **Rompe hielo** — al inicio, baja la guardia y disuelve la tensión natural del primer encuentro.
+- **División de grupos** — para asignar los PGs sin tensión, mezclando a los participantes.
+- **Dinámica de la confianza** — abre el corazón a confiar en los demás del PG (el abrigo es una de las que se usa).
+- **Dinámica de la fe** — invita a explorar qué es creer (el alambre acompaña la pregunta de Heb 11,1).
+- **Dinámica del perdón** — antes de la confesión, dispone el corazón.
+
+No es una lista cerrada: cada pareja adapta lo que conoce y lo que le sirve a su grupo. La regla común es **prepararlas con tiempo** y **ensayar antes** — sin improvisar.
+
+## 9. Coordinación y ensayo
+La pareja se coordina **antes** de cada reunión del equipo y de cada PG. En cada reunión del equipo se saca tiempo — **un tiempito** — para repasar el horario completo y para ensayar al menos un PG entero (no solo en el Ensayo General). Esto no es un extra: es parte del trabajo del guía. La fluidez se nota cuando la pareja ya tiene la coreografía conversada.
 
 ---
 *Guía de Guías ETC 88 · borrador · se ajusta con los coords (Priscilla + Camila) y los asesores.*

@@ -35,7 +35,25 @@ Eres mi director de arte. Vamos a construir desde cero la **identidad visual del
 - No inventes datos del equipo ni cifras: si necesitas un texto real, pídemelo (te paso la Carpeta y el roster).
 - Mantén la sobriedad de un retiro católico; nada estridente.
 
-《Pega aquí, cuando lo tengas decidido: el hilo espiritual / raíz del retiro, y el lema del retiro si ya lo cerraste.》
+## Insumos pastorales para el copy y para los separadores
+
+### Los 5 principios de comunicación del ETC 88
+Son el corazón pastoral del retiro. Alimentan el tono del copy, los separadores de la Carpeta, y las plantillas de RRSS. Mantén el copy coherente con ellos.
+
+1. **Enfocados en el participante** — todo lo demás es para él.
+2. **Transmitir, no reinterpretar** — los mensajes del director se bajan tal cual al equipo y al participante.
+3. **Un solo equipo, funciones distintas** — guías, cocina, música, asesores y directores son uno solo.
+4. **Servicio y sacrificio antes que protagonismo** — ancla bíblica Jn 13 (Lavatorio de los pies).
+5. **Coordinarse y ensayar de antemano** — la fluidez se prepara, no se improvisa.
+
+### Mensajes pastorales por área (Padre Paul Ramírez)
+Para los separadores de la Carpeta por área y para las plantillas RRSS:
+
+- **Guías:** *"Enfocados en el PARTICIPANTE — todo es para él, no para lucirse el guía."* Aprenderse el horario libera para acompañar. La pareja se coordina y ensaya de antemano.
+- **Cocina:** *"ENTREGA Y SACRIFICIO — servir desde la sombra para que el participante encuentre a Cristo en la mesa, el descanso, y sobre todo en el Lavatorio."* Ancla: **Jn 13,14–15**.
+- **Música:** *"Animación espiritual antes que técnica — eleva la atmósfera espiritual del retiro, no es solo lo técnico."*
+
+《Pega aquí, cuando lo tengas decidido: el hilo espiritual / raíz del retiro, y el lema del retiro si ya lo cerraste. — Los 5 principios + los 3 mensajes pastorales de arriba ya están listos para que Claude Design los use; las 2 piezas pendientes (lema y hilo) se completan cuando el director cierre con Paul/Sor en otra sesión.》
 
 ---
 

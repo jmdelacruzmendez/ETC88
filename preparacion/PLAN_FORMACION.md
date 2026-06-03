@@ -144,6 +144,8 @@
 
 # PARTE 3 · REUNIÓN DE COORDINADORES — jueves 4-jun (Corpus Christi · virtual · ~60 min)
 
+> **Para el día del evento (4-jun), el doc operativo es [`REUNION_COORDS_4JUN.md`](REUNION_COORDS_4JUN.md)** (foco redirigido: Roles + Responsabilidades + cómo gestionas tu 1ª reunión con tu equipo + qué requerimos + pagos mensuales; excluye finanzas, temática y branding). Esta sección queda como **referencia general de planificación**.
+
 > **Confirmado:** virtual, jueves 4-jun. **Convocados:** Co-Dir (JM + JC) · Asesores Laura · Tomás · Frank · Coords **Priscilla + Camila** (Guías) · **Paloma + Jhonnito** (Cocina) · **José Ángel Tusen** (Música). **Invitados transversales:** Padre Paul + Sor Angelina. **Timekeeper:** Tomás · **Acta:** Laura · **Cámara ON.**
 
 ## 3.1 Principio de diseño: puntuales SIN coartar preguntas (4 reglas)
