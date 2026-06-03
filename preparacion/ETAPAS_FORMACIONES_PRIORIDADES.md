@@ -39,7 +39,8 @@
 | Recaudación y Donaciones | Mapear fuentes (padrinos, donantes, empresas) |
 | Guagua | Pre-cotizaciones |
 | Profondo | Pre-ideación de actividad |
-| Intersección | Cadena de oración semanal arranca |
+| Intersección (diáspora) | Identificar etecianos del 88 fuera del país y comunidad eteciana amplia que apoyan al retiro · padrinazgo y red de oración desde el exterior |
+| Finanzas / Tesorería (auxiliar) | Co-Dir identifica responsable dentro del equipo · arma plantilla de control de pagos y reportes |
 | Paul + Sor | Inputs para raíz espiritual |
 
 ### Etapa 2 · Construcción (15-jun → 19-jul) — 🟠
@@ -52,7 +53,8 @@
 | Recaudación-Donaciones | Cartas a donantes · cierre preliminar de padrinos · campaña en RRSS |
 | Guagua | **3 cotizaciones formales** · plan de movilidad borrador |
 | Profondo | **Plan rifa Profondo #1** (ejecución 31-jul → 2-ago; monto VARIABLE — lo que se recaude; primera actividad por recomendación del equipo) · definir Profondo #2 |
-| Intersección | Oración por cada participante mencionado · acompañamiento del equipo |
+| Intersección (diáspora) | Activar a la diáspora del 88 (padrinazgo, donaciones desde el exterior, intenciones para la rifa) |
+| Finanzas / Tesorería (auxiliar) | Control de pagos arranca con la recaudación de F3 · conciliación semanal |
 | Paul + Sor | Asesoría en testimonios · enlace litúrgico |
 
 ### Etapa 3 · Consolidación (20-jul → 30-ago) — 🟠
@@ -65,7 +67,8 @@
 | Recaudación-Donaciones | **Profondo #1 (rifa)** 31-jul–2-ago · cierre nominal de padrinos (30-jul) |
 | Guagua | Plan de movilidad **final** |
 | Profondo | Profondo #2 ejecutado |
-| Intersección | Oración intensiva · acompañamiento espiritual del equipo |
+| Intersección (diáspora) | Cierre de aportes desde el exterior · intenciones para clausura |
+| Finanzas / Tesorería (auxiliar) | Cierre de cobranza al 100% · conciliación pre-retiro |
 | Equipo completo | **Convivencia 22-ago** (inicia con miniretiro/reflexión) · **Ensayo General 23-ago** (obligatorio) · **Reunión final 30-ago** (cobranza al 100%) |
 
 ### Etapa 4 · Ejecución (3 → 13-sep) — 🟠
@@ -75,7 +78,8 @@
 | Equipo completo | **Retiro 4–6-sep** |
 | Cocina | **Bienvenida nuevos etecianos 9-sep** (baile + bizcocho) |
 | Co-Dir + Asesores | **Evaluación 13-sep** (encuesta + reunión) |
-| Intersección | Acompañamiento del 4to día |
+| Intersección (diáspora) | Acompañamiento del 4to día desde el exterior |
+| Finanzas / Tesorería (auxiliar) | Informe post-retiro: planificado vs real (gap del Informe 85) |
 
 ---
 
