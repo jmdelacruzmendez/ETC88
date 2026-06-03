@@ -36,7 +36,8 @@ def md_to_text(md):
     txt = re.sub(r'\n{3,}', '\n\n', '\n'.join(out))
     return txt.strip() + '\n'
 
-for name, path in MASTERS.items():
-    md = open(f'{REPO}/{path}', encoding='utf-8').read()
-    open(f'/tmp/trabajo_{name}.txt', 'w', encoding='utf-8').write(md_to_text(md))
-    print(f"Wrote /tmp/trabajo_{name}.txt ({path})")
+if __name__ == '__main__':
+    for name, path in MASTERS.items():
+        md = open(f'{REPO}/{path}', encoding='utf-8').read()
+        open(f'/tmp/trabajo_{name}.txt', 'w', encoding='utf-8').write(md_to_text(md))
+        print(f"Wrote /tmp/trabajo_{name}.txt ({path})")
