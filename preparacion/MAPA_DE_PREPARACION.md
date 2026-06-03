@@ -47,7 +47,7 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 |---|---|---|---|
 | Cierre nominal (7 por decidir + cupo varón) | 🤝 | Co-Dir | 🔴 |
 | Parejas de guías color-coded (7 parejas) | ✏️🤝 | Coord. Guías | 🟠 |
-| Equipos auxiliares: Donaciones · Guagua · Profondo | 🤝 | Co-Dir | 🟡 30-jun |
+| Equipos auxiliares (5): Recaudación/Donaciones · Guagua · Profondo · Intersección (diáspora) · Finanzas/Tesorería | 🤝 | Co-Dir | 🟡 30-jun |
 | 6 roles vacantes (RF, RR, RS, RM, RT, FT) | 🤝 | Co-Dir | 🔴 |
 | Completar formularios (Daylin, Olanlly + confirmar resto) | 🤝 | Coords | 🟠 |
 
@@ -102,7 +102,7 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 ## J. Materiales del retiro
 | Item | Prep | Dueño | Fecha |
 |---|---|---|---|
-| Lista con cantidades (biblias, peces, libretas, alambres, antifaz, cartulinas, carnets, sobres, papelógrafo, hoja de datos) | ✏️ | Resp. Materiales | 🟡 5-jun |
+| Lista con cantidades (biblias, peces, libretas, alambres, cartulinas, carnets, sobres, papelógrafo, hoja de datos, banderín) | ✏️ | Resp. Materiales | 🟡 5-jun |
 | Camisetas del equipo (decisión viabilidad) | 🤝🔢 | Co-Dir + RM | 🟡 19-jul |
 
 ## K. Comunicación
