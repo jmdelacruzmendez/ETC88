@@ -34,15 +34,17 @@ Cada uno ya tiene un misionero del equipo que lo invita y le dará seguimiento.
 | Priscila María Matos Mercedes | 27 | Ivanna Mercedes | Familiar | — nuevo |
 | Yosmelkys Reyes | 23 | Jordelis Mateo | Familiar | — nuevo |
 | Yiraimy Núñez Ozoria | 24 | Kelvin Ventura | Amigo | — nuevo |
+| Diana Constanzo | — | Ismarie Constanzo (Música) | **Familiar (hermana)** | ✅ sí (en Doc como "Dianna") · confirmado 3-jun |
 
-## B. Participantes del Doc SIN misionero asignado aún (13)
+## B. Participantes del Doc SIN misionero asignado aún (12)
 Están en la lista de abril pero **nadie en el formulario los reclamó como invitado**. **Acción: asignar a cada uno un misionero que lo invite.**
 
-Dianna Constanzo · Gianna Gerónimo · Glorimar de la Cruz · Ivonne Vásquez · Laura Almeida · Marlin Rosario · Lied Pascual · Ronny del Rosario · Steven Pérez · Yarlenys Peralta · Yohn Figueroa · Francis David · Edwin Regalado.
+Gianna Gerónimo · Glorimar de la Cruz · Ivonne Vásquez · Laura Almeida · Marlin Rosario · Lied Pascual · Ronny del Rosario · Steven Pérez · Yarlenys Peralta · Yohn Figueroa · Francis David · Edwin Regalado.
 
 ## C. Banderas del cruce (verificar)
 - **Marianne:** el Doc dice *"Marianne Beltre"*; el formulario dice *"Marianne Castro"* (invita Franklin). ¿Misma persona con apellido distinto, o son dos? **Confirmar.**
-- **Ya estaban en ambos lados** (Doc + form): Joemely Smith, Karen Berroa, Luis Miguel Sandoval → cruce sólido.
+- **Diana Constanzo** (Doc: *"Dianna"*): **hermana de Ismarie Constanzo** (Música) — confirmado 3-jun por el director. La invita la propia Ismarie. ⚠ Lazo familiar a marcar en el tablero: al asignar PGs, el plenario donde caiga Diana se cruza con la presencia de Ismarie (Ismarie es música, no guía, así que la regla "no caer en PG de un hermano guía" no aplica directamente, pero conviene tenerlo visible).
+- **Ya estaban en ambos lados** (Doc + form): Joemely Smith, Karen Berroa, Luis Miguel Sandoval, Diana Constanzo → cruce sólido.
 - **El Doc es el borrador de abril:** sus secciones de *equipo* (guías/cocina/música) están **superadas** por el roster actual; aquí solo se usó su sección *Participantes*.
 
 ---
@@ -51,12 +53,12 @@ Dianna Constanzo · Gianna Gerónimo · Glorimar de la Cruz · Ivonne Vásquez �
 | | Cantidad |
 |---|---:|
 | Prospectos únicos identificados (Doc ∪ formulario) | **~26** |
-| — con misionero que invita | 13 |
-| — sin misionero asignado (§B) | 13 |
+| — con misionero que invita | 14 |
+| — sin misionero asignado (§B) | 12 |
 | **Meta de participantes** | **~52** |
 | **Faltan por captar** | **~26** |
 
-> La mitad del camino. **Dos palancas:** (1) asignar misionero a los 13 de §B; (2) que cada misionero registre en el formulario a quién invita (hoy solo 13 de ~48 lo hicieron).
+> La mitad del camino. **Dos palancas:** (1) asignar misionero a los 12 de §B; (2) que cada misionero registre en el formulario a quién invita (hoy solo 14 lo han hecho).
 
 ---
 
