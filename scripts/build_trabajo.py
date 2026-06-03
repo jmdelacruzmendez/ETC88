@@ -8,6 +8,7 @@ import re, os
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTERS = {
     'plan_formacion': 'preparacion/PLAN_FORMACION.md',
+    'plan_economico': 'preparacion/PLAN_ECONOMICO.md',
     'seguimiento':    'preparacion/SEGUIMIENTO_ETC88.md',
     'roadmap':        'preparacion/ROADMAP_SISTEMA.md',
 }
