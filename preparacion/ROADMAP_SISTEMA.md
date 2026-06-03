@@ -11,7 +11,6 @@ Organizado por los flujos reales del retiro. (✅ existe · 🟡 parcial · 🔴
 | **Tracker de captación** (28 → 52) | roster (quién invita) | Sheet editable (B2, hoy) | panel "Captación" | 🟡 semilla lista |
 | **Perfil del participante** (salud, sacramentos, lazos) | cocina (alergias), guías (PG) | Google Form vivo → hoja | panel "Participantes" | 🔴 spec lista, form no creado |
 | **Asignación de 7 PGs color-coded** | lazos del equipo (regla: no hermano/pareja en su plenario) | herramienta de armado | panel "Pequeños Grupos" | 🔴 falta (depende de perfiles) |
-| **Permisos de menores** | edad del participante | adjunto firmado | checklist | 🔴 falta |
 
 ### Finanzas
 | Elemento | Vincular con | Recopilar | Mostrar | Estado |
@@ -27,7 +26,7 @@ Organizado por los flujos reales del retiro. (✅ existe · 🟡 parcial · 🔴
 | **Materiales con cantidades** (peces/biblias/rosarios/banderín/camisetas) | **conteo final de participantes** → cantidades → presupuesto | 🟡 estimado, no atado al conteo vivo |
 | **Transporte** (3 cotizaciones → elegido → manifiesto) | zonas (SPM/Higüey/PC) | 🔴 falta cotizar |
 | **Menú vs alergias** (vista derivada) | perfiles + roster (mariscos/piña/diabetes/insulina) | 🟡 alergias del equipo ✓, faltan las de participantes |
-| **Tallas de camiseta** | roster + invitados | 🟡 faltan varias |
+| **Tallas de camiseta (SOLO equipo)** | roster del equipo (los participantes NO llevan camiseta) | 🟡 faltan varias del equipo |
 
 ### Formación y seguimiento
 | Elemento | Vincular | Estado |

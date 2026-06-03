@@ -101,7 +101,7 @@
 - [ ] **Confesores** sábado 9pm (≥2-3 sacerdotes) — gestiona Paul
 - [ ] **Coordinación con párroco de Higüey** (respaldo)
 - [ ] **Plan de emergencia médica** (hospital Higüey + ruta + responsable por turno)
-- [ ] **Permisos firmados** para participantes menores de edad
+- **Regla (3-jun):** el ETC NO admite menores de edad → no aplican permisos de menores.
 - [ ] **Carta pre-retiro** a participantes
 - [ ] **Camisetas del equipo** — decisión de viabilidad (19-jul)
 - [ ] **RRSS:** opción A/B/C + calendario editorial (arranca 30-may)

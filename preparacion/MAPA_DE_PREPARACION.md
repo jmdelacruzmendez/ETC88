@@ -12,7 +12,7 @@
 Borradores que puedo entregarte sin depender de decisiones abiertas:
 1. **Guía de Guías 88** y **Horario 88** (adaptados de la base LXXXV — solo cambian fechas/directores/sede).
 2. **Reglas de la Casa 88** (1 página, presentación del viernes).
-3. **Formulario de inscripción del participante** (campos + salud + permiso menores).
+3. **Formulario de inscripción del participante** (campos + salud). *Solo mayores de edad; el ETC no admite menores.*
 4. **Carta de invitación a participantes** (borrador; el núcleo kerigmático lo afina Frank/AE).
 5. **Lista de materiales del retiro con cantidades** (derivada del horario y las dinámicas).
 6. **Botiquín base + plantilla de plan de emergencia** (ya tengo el botiquín del tablero).
@@ -66,7 +66,7 @@ Borradores que puedo entregarte sin depender de decisiones abiertas:
 | Carta de invitación + protocolo de cobro | ✏️ | Co-Dir | 🟠 30-may |
 | Formulario de inscripción del participante | ✏️ | Co-Dir | 🟠 |
 | Lectura de perfiles (criterios + escalación) | ✏️🤝 | Guías + Co-Dir | 19-jul / 16-ago |
-| Permisos firmados para menores | ✏️ | Co-Dir | 🟡 |
+| Solo mayores de edad (el ETC no admite menores) — regla del director | ✔️ | Co-Dir | confirmada 3-jun |
 | Carta pre-retiro a participantes | ✏️ | Co-Dir | ⚪ |
 
 ## F. Salud y emergencias

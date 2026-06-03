@@ -66,7 +66,7 @@ Gianna Gerónimo · Glorimar de la Cruz · Ivonne Vásquez · Laura Almeida · M
 
 ## E. Para la perfilación temprana (lo que sigue)
 Para cada participante conviene capturar temprano (como el *Perfil del Participante* de los ETC 79/85):
-edad · cumpleaños · contacto · quién invita · situación/problemática · áreas a trabajar · palancas clave · sacramentos · **salud/alergias** · permiso si es menor.
+edad · cumpleaños · contacto · quién invita · situación/problemática · áreas a trabajar · palancas clave · sacramentos · **salud/alergias**. *(Solo mayores de edad — el ETC no admite menores.)*
 
 > Puedo prepararte el **formulario de Perfil del Participante 88** (campos listos) para que la captación recoja todo esto desde el inicio — y luego se vuelque al tablero como hicimos con el equipo.
 

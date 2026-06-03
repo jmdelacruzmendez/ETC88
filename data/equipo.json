@@ -90,6 +90,18 @@
         "estado": "confirmado",
         "fuente": "director",
         "nota": "REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo que varía es el número de participantes por grupo (un PG puede tener más que otro)."
+      },
+      "participantes_solo_mayores": {
+        "valor": true,
+        "estado": "confirmado",
+        "fuente": "director (3-jun)",
+        "nota": "El ETC 88 NO admite menores de edad como participantes. Por tanto NO existen 'permisos de menores'. (Corrige una invención previa de Claude que asumió consentimiento de menores.)"
+      },
+      "camiseta_solo_equipo": {
+        "valor": true,
+        "estado": "confirmado",
+        "fuente": "director (3-jun)",
+        "nota": "La camiseta es SOLO del equipo de servidores. Los participantes NO llevan camiseta del equipo. (Corrige una invención previa de Claude que preguntaba talla al participante.)"
       }
     },
     "finanzas": {
@@ -620,7 +632,7 @@
       "Cotizar transporte (3 empresas) y el banderín.",
       "Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).",
       "Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.",
-      "Completar las tallas de camiseta que faltan (invitados pendientes + Paul, Frank y la Sor); el mockup va tras el Design System."
+      "Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System."
     ]
   },
   "equipos_auxiliares": [

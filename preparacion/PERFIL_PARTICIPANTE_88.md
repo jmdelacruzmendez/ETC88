@@ -1,78 +1,71 @@
-> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Especificación lista para construir el Google Form de captación de participantes. Modelado sobre el formulario del equipo (mismas columnas → mismo volcado al tablero) + el *Perfil del Participante* de los ETC 79/85. Datos sensibles (salud, menores) → manejo reservado.
+> **DOCUMENTO DE TRABAJO — no es entregable oficial.** Especificación para construir el Google Form de captación de participantes. Modelado sobre el formulario del equipo (mismas columnas → mismo volcado al tablero). Datos sensibles (salud) → manejo reservado.
 
 # Formulario de Perfil del Participante — ETC 88
 ### Captación + perfilación temprana (insumo para la lectura de perfiles en F4/F5)
 
-> **Para qué:** recoger desde la invitación todo lo que se necesita para (a) decidir admisión, (b) armar los pequeños grupos, (c) que cocina planifique el menú con alergias, (d) seguimiento del 4º día. Cada misionero llena uno por cada invitado, o el invitado lo llena con acompañamiento.
-> **Meta:** ~52 participantes (ver `PARTICIPANTES_POTENCIALES.md`). Hoy hay ~28 prospectos.
+> **REGLAS CONFIRMADAS POR EL DIRECTOR (3-jun) — no inventar alrededor de esto:**
+> 1. **Solo mayores de edad.** El ETC 88 **NO admite menores** → no existen "permisos de menores".
+> 2. **La camiseta es solo del equipo.** Los participantes **NO** llevan camiseta del equipo → no se pregunta talla al participante.
+
+> **Para qué:** recoger desde la invitación lo necesario para (a) decidir admisión, (b) armar los pequeños grupos, (c) que cocina planifique el menú con alergias, (d) seguimiento del 4º día.
 
 ## Cómo se usa
-- 1 respuesta = 1 participante potencial. **El misionero que invita es responsable** de que se complete.
+- 1 respuesta = 1 participante potencial. El misionero que invita es responsable de que se complete.
 - Se vincula a una hoja (como el del equipo) y se vuelca al tablero.
-- **Confidencial:** salud y datos de menores solo los ve la Co-Dirección + cocina (alergias).
+- **Confidencial:** la salud solo la ve la Co-Dirección + cocina (alergias).
 
 ---
 
 ## Secciones y preguntas (listas para pegar en Google Forms)
 
 ### 0 · Encabezado
-> *"Bienvenido al ETC 88 (4–6 sep 2026). Estos datos nos ayudan a prepararte una buena experiencia y a cuidarte. Son confidenciales."*
+> *"Bienvenido al ETC 88 (4–6 sep 2026, Higüey). Estos datos nos ayudan a prepararte una buena experiencia y a cuidarte. Son confidenciales. (El ETC es para mayores de edad.)"*
 
 ### 1 · Identificación
-1. Nombre completo *(texto corto)*
-2. Edad *(texto corto)*
+1. Nombre completo *(texto corto · obligatoria)*
+2. Edad *(texto corto · obligatoria)*
 3. Fecha de nacimiento *(fecha)*
-4. Teléfono / WhatsApp *(texto corto)*
-5. Sector / dirección *(texto corto)*
-6. Comunidad o parroquia a la que pertenece (si alguna) *(texto corto)*
+4. Teléfono / WhatsApp *(texto corto · obligatoria)*
+5. Sector / dirección donde vives *(texto corto)*
+6. Comunidad o parroquia a la que perteneces (si alguna) *(texto corto)*
 
-### 2 · Vínculo con el equipo (¡clave para los PG!)
-7. ¿Quién te invita? (misionero del equipo ETC 88) *(texto corto / desplegable con el roster)*
-8. Relación con esa persona *(opción: amigo / familiar / pareja / compañero de trabajo / otro)*
-9. **¿Eres familiar o pareja de algún miembro del equipo?** ¿De quién? *(texto corto)*
-   > ⚠ Regla (Guía fn. 9): ningún participante cae en el plenario de su hermano/pareja del equipo. Este campo alimenta esa restricción al asignar PGs.
+### 2 · Tu vínculo con el equipo (clave para los PG)
+7. ¿Quién te invita al ETC 88? (nombre del servidor) *(texto corto · obligatoria)*
+8. ¿Qué relación tienes con esa persona? *(opción: Amigo/a · Familiar · Pareja · Compañero/a · Otro)*
+9. ¿Eres familiar o pareja de algún miembro del equipo? ¿De quién? *(texto corto)* — evita ponerte en el grupo de tu hermano/pareja.
 
-### 3 · Camino de fe
-10. Sacramentos recibidos *(casillas: Bautismo · Primera Comunión · Confirmación · Matrimonio por la Iglesia)*
-11. ¿Estás casado(a) solo por lo civil o en unión libre? *(sí / no / no aplica)*
-    > Criterio de admisión (Guía fn. 10) — lo revisa la Co-Dir, no descalifica automáticamente.
+### 3 · Tu camino de fe
+10. Sacramentos que has recibido *(casillas: Bautismo · Primera Comunión · Confirmación · Matrimonio por la Iglesia)*
+11. ¿Estás casado(a) solo por lo civil o en unión libre? *(Sí · No · No aplica)* — criterio que revisa la Co-Dir (Guía fn. 10).
 12. ¿Cómo describirías tu relación con Dios hoy? *(párrafo)*
-13. ¿Hay alguna situación que estés viviendo y quieras trabajar en el retiro? *(párrafo, opcional)*
+13. ¿Hay alguna situación que estés viviendo y quieras trabajar en el retiro? (opcional) *(párrafo)*
 14. ¿Qué esperas del ETC 88? *(párrafo)*
 
-### 4 · Salud y seguridad (para cocina y botiquín)
+### 4 · Salud y seguridad *(solo para cuidarte; lo maneja Dirección y cocina)*
 15. Alergias alimentarias *(texto corto)*
-16. Alergias ambientales / a medicamentos *(texto corto)*
+16. Alergias ambientales o a medicamentos *(texto corto)*
 17. Condiciones médicas relevantes *(texto corto)*
 18. Medicamentos que tomas regularmente *(texto corto)*
-19. Contacto de emergencia (nombre, relación, teléfono) *(texto corto)*
+19. Contacto de emergencia (nombre, relación, teléfono) *(texto corto · obligatoria)*
 
 ### 5 · Logística
-20. Talla de camiseta *(opción: S/M/L/XL/XXL)* — si se entrega a participantes
-21. ¿Necesitas transporte para llegar? ¿Desde dónde? *(texto corto)*
-22. Restricciones alimentarias por preferencia (vegetariano, etc.) *(texto corto)*
+20. ¿Necesitas transporte para llegar? ¿Desde dónde? *(texto corto)*
+21. ¿Tienes alguna restricción alimentaria por preferencia? (vegetariano, etc.) *(texto corto)*
 
-### 6 · Si es menor de edad (< 18)
-23. ¿Eres menor de 18 años? *(sí / no)*
-24. Si sí: nombre del padre/madre/tutor + teléfono + **permiso firmado** *(texto + casilla "entregará permiso firmado")*
-    > Varios prospectos tienen 18; si entra alguien de 17, el permiso es obligatorio.
-
-### 7 · Consentimiento
-25. Autorizo el uso de fotos/video del retiro con fines pastorales internos *(sí / no)*
-26. Acepto que estos datos los maneje la Co-Dirección del ETC 88 de forma confidencial *(casilla obligatoria)*
+### 6 · Consentimiento
+22. Autorizo el uso de fotos/video del retiro con fines pastorales internos *(Sí · No)*
+23. Acepto que la Co-Dirección del ETC 88 maneje estos datos de forma confidencial *(casilla · obligatoria)*
 
 ---
 
 ## Mapeo al tablero (mismas columnas que el equipo)
-`nombre · edad · cumpleaños · contacto · invita · relación · lazo_equipo · sacramentos · situación · espera · alergias · condiciones · medicamentos · contacto_emergencia · talla · transporte · menor · permiso · consentimiento_foto`
+`nombre · edad · cumpleaños · contacto · invita · relación · lazo_equipo · sacramentos · situación · espera · alergias · condiciones · medicamentos · contacto_emergencia · transporte · consentimiento_foto`
 
 ## Banderas que este formulario resuelve
 - **Lazos** (preg. 9) → evita el choque participante–hermano/pareja del equipo en PGs.
-- **Alergias** (15–17) → cocina cierra el menú con la misma matriz que usó con el equipo (mariscos, piña, etc.).
-- **Menores** (23–24) → permisos firmados a tiempo (gap operativo del checklist).
+- **Alergias** (15–17) → cocina cierra el menú con la misma matriz que usó con el equipo.
 - **Admisión** (11) → criterio de la Guía, revisado por Co-Dir.
 
-## Decisión para Co-Dir
-- ¿Apruebas estos campos? Si sí, te puedo dar el **texto exacto pregunta-por-pregunta** para pegarlo en Google Forms, o el CSV de columnas para la hoja.
-- ¿La camiseta (preg. 20) aplica a participantes o solo al equipo?
+## Decisiones para Co-Dir
+- ¿Apruebas estos campos? Si sí, te paso el texto exacto pregunta-por-pregunta o el CSV de columnas para la hoja.
 - ¿Se exige el sacramento de confirmación o solo se registra?

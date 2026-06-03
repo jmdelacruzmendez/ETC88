@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 37 confirmados · 15 propuestas · 8 pendientes (en estado.json).
+**Resumen:** 39 confirmados · 15 propuestas · 8 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
@@ -18,6 +18,8 @@
 | `retiro.lugar` | Casa de Retiro La Ceiba del Salado, Higüey | director |  |
 | `retiro.co_direccion` | ["Juan Manuel de la Cruz", "Jean Carlo de la Cruz"] | director |  |
 | `reglas.parejas_guias` | 7 | director | REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo … |
+| `reglas.participantes_solo_mayores` | True | director (3-jun) | El ETC 88 NO admite menores de edad como participantes. Por tanto NO e… |
+| `reglas.camiseta_solo_equipo` | True | director (3-jun) | La camiseta es SOLO del equipo de servidores. Los participantes NO lle… |
 | `finanzas.casa_por_persona_sin_exencion` | 2300 | director |  |
 | `finanzas.casa_por_persona_con_exencion` | 2000 | director | Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona. |
 | `finanzas.casa_incluye` | gas y limpieza | director |  |
@@ -118,4 +120,4 @@
 - [ ] Cotizar transporte (3 empresas) y el banderín.
 - [ ] Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).
 - [ ] Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.
-- [ ] Completar las tallas de camiseta que faltan (invitados pendientes + Paul, Frank y la Sor); el mockup va tras el Design System.
+- [ ] Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.
