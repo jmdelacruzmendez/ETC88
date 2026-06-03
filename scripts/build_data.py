@@ -275,10 +275,28 @@ def make_placeholder(name, area, rol, sexo, operativo):
         'transversal': False,
     }
 
+# Datos reales de los placeholders que SÍ respondieron el formulario en vivo
+# (hoja "Respuestas - Formulario pre-formación ETC 88", leída 3-jun-2026).
+# Daylin (Música), Pamela (Cocina) y Frank (Asesor) AÚN NO respondieron.
+FORM_LIVE_OVERRIDE = {
+    'Olanlly (sin formulario)': {
+        'nombre': 'Marian Olanlly Ortiz Carrasco', 'edad': 19, 'talla': 'S',
+        'sin_formulario': False,
+    },
+    'Randolph Joseph (sin formulario)': {
+        'nombre': 'Randolph Joseph', 'edad': 19, 'talla': 'L',
+        'sin_formulario': False,
+        'nota_nombre': 'El formulario se auto-reporta como "Randol Joseph Payano" — confirmar grafía y apellido con el director.',
+    },
+}
 for name, area, rol, sexo in PLACEHOLDERS_OP:
     # backups y vacante NO son titulares operativos
     is_op = rol not in ('Backup Guía', 'Vacante')
-    equipo.append(make_placeholder(name, area, rol, sexo, is_op))
+    p = make_placeholder(name, area, rol, sexo, is_op)
+    if name in FORM_LIVE_OVERRIDE:
+        p.update(FORM_LIVE_OVERRIDE[name])
+        p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
+    equipo.append(p)
 for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
     equipo.append(make_placeholder(name, area, rol, sexo, False))
 for name, area, rol, sexo in PLACEHOLDERS_TRANSVERSAL:
@@ -373,7 +391,8 @@ banderas = [
     {'n':28, 'bandera':'Pedir contacto de emergencia a Jonathan', 'persona':'Jonathan Andres Medina Mota', 'accion':'Solicitar dato', 'resp':'Directores'},
     {'n':29, 'bandera':'Pregunta "Oremos por JC"', 'persona':'Victoria Lorenzo Rivera', 'accion':'Acompañamiento espiritual a Jean Carlo', 'resp':'Asesores'},
     {'n':30, 'bandera':'Wirna: "No se dejen humillar"', 'persona':'Wirna Stapleton', 'accion':'Conversación 1:1', 'resp':'Directores'},
-    {'n':31, 'bandera':'4 tripulantes sin formulario', 'persona':'Daylin (Música), Olanlly + Roselyn + Pamela (Cocina)', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Música / Coord. Cocina'},
+    {'n':31, 'bandera':'3 tripulantes sin formulario (al 3-jun)', 'persona':'Daylin (Música), Pamela (Cocina), Frank (Asesor) — Olanlly y Randolph ya respondieron', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Música / Coord. Cocina / Co-Dir'},
+    {'n':33, 'bandera':'Discrepancia de nombre: Randolph Joseph (roster, director) vs "Randol Joseph Payano" (auto-reporte del formulario)', 'persona':'Randolph Joseph', 'accion':'Confirmar grafía y apellido con el director', 'resp':'Directores'},
     {'n':32, 'bandera':'Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)', 'persona':'Fabelly Maciel Fabian Bello', 'accion':'OK · nombre validado', 'resp':'Directores'},
     {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
 ]

@@ -1868,10 +1868,10 @@
       "transversal": false
     },
     {
-      "id": "olanlly-sin-formulario",
-      "nombre": "Olanlly (sin formulario)",
+      "id": "marian-olanlly-ortiz-carrasco",
+      "nombre": "Marian Olanlly Ortiz Carrasco",
       "sexo": "F",
-      "edad": null,
+      "edad": 19,
       "cumple_mes": null,
       "cumple_dia": null,
       "cumple_anio": null,
@@ -1882,7 +1882,7 @@
       "comunidad": "Por confirmar",
       "area": "cocina",
       "rol": "Cocina",
-      "talla": null,
+      "talla": "S",
       "telefono": null,
       "que_espera": null,
       "miedos": null,
@@ -1896,7 +1896,7 @@
       "dudas": null,
       "algo_directores": null,
       "invitados": [],
-      "sin_formulario": true,
+      "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
@@ -1938,10 +1938,10 @@
       "transversal": false
     },
     {
-      "id": "randolph-joseph-sin-formulario",
-      "nombre": "Randolph Joseph (sin formulario)",
+      "id": "randolph-joseph",
+      "nombre": "Randolph Joseph",
       "sexo": "M",
-      "edad": null,
+      "edad": 19,
       "cumple_mes": null,
       "cumple_dia": null,
       "cumple_anio": null,
@@ -1952,7 +1952,7 @@
       "comunidad": "Por confirmar",
       "area": "cocina",
       "rol": "Cocina",
-      "talla": null,
+      "talla": "L",
       "telefono": null,
       "que_espera": null,
       "miedos": null,
@@ -1966,11 +1966,12 @@
       "dudas": null,
       "algo_directores": null,
       "invitados": [],
-      "sin_formulario": true,
+      "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota_nombre": "El formulario se auto-reporta como \"Randol Joseph Payano\" — confirmar grafía y apellido con el director."
     },
     {
       "id": "risaira-santana-rosario",
@@ -3066,10 +3067,17 @@
     },
     {
       "n": 31,
-      "bandera": "4 tripulantes sin formulario",
-      "persona": "Daylin (Música), Olanlly + Roselyn + Pamela (Cocina)",
+      "bandera": "3 tripulantes sin formulario (al 3-jun)",
+      "persona": "Daylin (Música), Pamela (Cocina), Frank (Asesor) — Olanlly y Randolph ya respondieron",
       "accion": "Enviar formulario antes de F1 (14-jun)",
-      "resp": "Coord. Música / Coord. Cocina"
+      "resp": "Coord. Música / Coord. Cocina / Co-Dir"
+    },
+    {
+      "n": 33,
+      "bandera": "Discrepancia de nombre: Randolph Joseph (roster, director) vs \"Randol Joseph Payano\" (auto-reporte del formulario)",
+      "persona": "Randolph Joseph",
+      "accion": "Confirmar grafía y apellido con el director",
+      "resp": "Directores"
     },
     {
       "n": 32,
