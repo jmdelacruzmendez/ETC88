@@ -235,7 +235,7 @@ PLACEHOLDERS_OP = [
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
-    ('Vacante Cocina (varón — candidato Randolph)', 'cocina', 'Vacante', '?'),  # Roselyn salió 2-jun
+    ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, ocupa cupo de Roselyn
     ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup

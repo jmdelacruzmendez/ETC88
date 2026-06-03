@@ -4,8 +4,8 @@
     "romano": "LXXXVIII",
     "version": "v8-2026-06-02",
     "total_equipo": 56,
-    "operativos": 47,
-    "no_operativos": 9
+    "operativos": 48,
+    "no_operativos": 8
   },
   "finanzas": {
     "casa_por_persona_sin_exencion": 2300,
@@ -68,18 +68,18 @@
       }
     },
     "conteos_esperados": {
-      "_nota": "Derivados del roster confirmado (data/equipo.json) el 2-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
+      "_nota": "Derivados del roster confirmado (data/equipo.json) el 3-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
       "total_equipo": 56,
-      "operativos": 47,
+      "operativos": 48,
       "operativos_titulares_por_area": {
         "directores": 2,
         "asesores": 3,
         "asesores_espirituales": 2,
         "guias": 14,
-        "cocina": 20,
+        "cocina": 21,
         "musica": 6
       },
-      "vacantes": 1,
+      "vacantes": 0,
       "backups": 3,
       "asesores_cocina": 2,
       "asesores_diocesanos": 3
@@ -144,9 +144,9 @@
         "nota": "Piso fijado: completar 100 personas en la casa de retiro."
       },
       "participantes_objetivo": {
-        "valor": 53,
+        "valor": 52,
         "estado": "propuesta",
-        "fuente": "derivado (100 − 47 operativos)",
+        "fuente": "derivado (100 − 48 operativos)",
         "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
       },
       "meta_recaudacion_total": {
@@ -236,17 +236,26 @@
         "miembros": []
       },
       {
-        "nombre": "Intersección (espiritual)",
+        "nombre": "Intersección (diáspora)",
         "estado_equipo": "confirmado",
-        "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.",
+        "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.",
         "responsable": {
-          "valor": "Asesores Espirituales (Padre Paul + Sor Angelina)",
-          "estado": "confirmado"
+          "valor": "Por nombrar (Co-Dir decide)",
+          "estado": "pendiente",
+          "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)."
         },
-        "miembros": [
-          "Padre Paul Ramírez",
-          "Sor Angelina Lebrón"
-        ]
+        "miembros": []
+      },
+      {
+        "nombre": "Finanzas / Tesorería (auxiliar)",
+        "estado_equipo": "confirmado",
+        "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
+        "responsable": {
+          "valor": "Por nombrar dentro del equipo (Co-Dir decide)",
+          "estado": "pendiente",
+          "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección."
+        },
+        "miembros": []
       }
     ],
     "comunidades_y_parroquias": {
@@ -396,8 +405,8 @@
       "responsable_financiero": {
         "valor": null,
         "estado": "pendiente",
-        "fuente": "Informe 85",
-        "nota": "Nombrar 1-2 personas responsables de control de pagos y reportes de gastos (medida financiera #3 del Informe 85)."
+        "fuente": "Informe 85 + director (3-jun)",
+        "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)."
       },
       "informe_post_retiro": {
         "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.",
@@ -585,7 +594,10 @@
       "Apellido de Leober: Soriano.",
       "Roselyn sale del equipo (2-jun); su cupo pasa a un varón.",
       "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
-      "Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).",
+      "Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).",
+      "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
+      "Randolph Joseph confirmado en Cocina (3-jun): ocupa el cupo de varón que dejó Roselyn — la vacante de cocina queda cerrada.",
+      "Daylin confirmada en Música (3-jun).",
       "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
       "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
       "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
@@ -599,8 +611,9 @@
     "pendientes": [
       "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
       "Confirmar el conteo final de participantes para completar 100 en la casa.",
-      "Completar la vacante de cocina (varón — candidato Randolph).",
-      "Definir los responsables de cada equipo auxiliar.",
+      "Definir los responsables de cada uno de los 5 equipos auxiliares (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería).",
+      "Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).",
+      "Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).",
       "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
       "Confirmar la exención de la casa con el Padre Paul.",
       "Fijar fecha límite para cotizar transporte, biblias y peces.",
@@ -636,15 +649,20 @@
       "responsable_estado": "propuesta"
     },
     {
-      "nombre": "Intersección (espiritual)",
-      "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.",
+      "nombre": "Intersección (diáspora)",
+      "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.",
       "estado": "Por formular",
-      "miembros": [
-        "Padre Paul Ramírez",
-        "Sor Angelina Lebrón"
-      ],
-      "responsable_sugerido": "Asesores Espirituales (Padre Paul + Sor Angelina)",
-      "responsable_estado": "confirmado"
+      "miembros": [],
+      "responsable_sugerido": "Por nombrar (Co-Dir decide)",
+      "responsable_estado": "pendiente"
+    },
+    {
+      "nombre": "Finanzas / Tesorería (auxiliar)",
+      "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
+      "estado": "Por formular",
+      "miembros": [],
+      "responsable_sugerido": "Por nombrar dentro del equipo (Co-Dir decide)",
+      "responsable_estado": "pendiente"
     }
   ],
   "marca": {
@@ -1920,6 +1938,41 @@
       "transversal": false
     },
     {
+      "id": "randolph-joseph-sin-formulario",
+      "nombre": "Randolph Joseph (sin formulario)",
+      "sexo": "M",
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
+    },
+    {
       "id": "risaira-santana-rosario",
       "nombre": "Risaira Santana Rosario",
       "sexo": "F",
@@ -2697,41 +2750,6 @@
       "operativo": false,
       "backup": true,
       "vacante": false,
-      "transversal": false
-    },
-    {
-      "id": "vacante-cocina-var-n-candidato-randolph",
-      "nombre": "Vacante Cocina (varón — candidato Randolph)",
-      "sexo": "?",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "cocina",
-      "rol": "Vacante",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": true,
       "transversal": false
     }
   ],

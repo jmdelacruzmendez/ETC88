@@ -4,11 +4,11 @@
 ### Corte: 2-jun-2026 (v6)
 
 ## A. DECISIONES tomadas (consolidadas)
-1. **Universo del equipo:** 20 cocina + 1 vacante · 14 guías · 6 música · 2 directores · 3 asesores del retiro · 2 espirituales · 2 SD · 1 La Vega (Leticia) · + auxiliares. **Ya no se usa "Constelación".**
+1. **Universo del equipo:** **21 cocina** (Randolph confirmado 3-jun · vacante cerrada) · 14 guías · 6 música (Daylin confirmada 3-jun) · 2 directores · 3 asesores del retiro · 2 espirituales · 2 SD · 1 La Vega (Leticia) · + 5 equipos auxiliares.
 2. **Branding se reconstruye desde 0** partiendo de la **raíz espiritual** (por definir esta semana) → **temática narrativa** (expedición / búsqueda de tesoro / aventura, confirmada) → **branding visual** (en construcción).
 3. **Tema espiritual = por construir esta semana**, con: diagnóstico del formulario + **prioridad de los directores** (que sale de los formularios) + Sor Angelina y Padre Paul involucrados.
 4. **Frank** = asesor del retiro **+ lleva el Banderín**. **Espirituales = Paul + Sor Angelina.**
-5. **Roselyn fuera** → queda **1 vacante en cocina** (varón, **candidato Randolph**).
+5. **Roselyn fuera** → cupo de varón cubierto: **Randolph Joseph confirmado en cocina (3-jun)**.
 6. **Backups de guías:** Rodolfo Telémaco · Scarlett Nivar · Kamila Todd.
 7. **Recaudación y Donaciones = un solo equipo.** Profondo = equipo. **Guagua = tarea operativa** (no equipo auxiliar).
 8. **Daylin + Olanlly** = llamadas confirmadas (sin formulario aún). **Pamela** por confirmar.

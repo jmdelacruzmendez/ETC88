@@ -18,18 +18,18 @@
   },
 
   "conteos_esperados": {
-    "_nota": "Derivados del roster confirmado (data/equipo.json) el 2-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
+    "_nota": "Derivados del roster confirmado (data/equipo.json) el 3-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
     "total_equipo": 56,
-    "operativos": 47,
+    "operativos": 48,
     "operativos_titulares_por_area": {
       "directores": 2,
       "asesores": 3,
       "asesores_espirituales": 2,
       "guias": 14,
-      "cocina": 20,
+      "cocina": 21,
       "musica": 6
     },
-    "vacantes": 1,
+    "vacantes": 0,
     "backups": 3,
     "asesores_cocina": 2,
     "asesores_diocesanos": 3
@@ -53,7 +53,7 @@
       "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
     },
     "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
-    "participantes_objetivo":        { "valor": 53, "estado": "propuesta", "fuente": "derivado (100 − 47 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
+    "participantes_objetivo":        { "valor": 52, "estado": "propuesta", "fuente": "derivado (100 − 48 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
     "meta_recaudacion_total":        { "valor": 583281, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
@@ -74,7 +74,8 @@
     { "nombre": "Recaudación y Donaciones", "estado_equipo": "confirmado", "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables." }, "miembros": [] },
     { "nombre": "Guagua (Transporte)", "estado_equipo": "confirmado", "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).", "responsable": { "valor": "Producción", "estado": "propuesta" }, "miembros": [] },
     { "nombre": "Actividad Profondo", "estado_equipo": "confirmado", "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.", "responsable": { "valor": "Directores", "estado": "propuesta" }, "miembros": [] },
-    { "nombre": "Intersección (espiritual)", "estado_equipo": "confirmado", "descripcion": "Equipo espiritual transversal: oración, intercesión, acompañamiento.", "responsable": { "valor": "Asesores Espirituales (Padre Paul + Sor Angelina)", "estado": "confirmado" }, "miembros": ["Padre Paul Ramírez", "Sor Angelina Lebrón"] }
+    { "nombre": "Intersección (diáspora)", "estado_equipo": "confirmado", "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)." }, "miembros": [] },
+    { "nombre": "Finanzas / Tesorería (auxiliar)", "estado_equipo": "confirmado", "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.", "responsable": { "valor": "Por nombrar dentro del equipo (Co-Dir decide)", "estado": "pendiente", "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección." }, "miembros": [] }
   ],
 
   "comunidades_y_parroquias": {
@@ -110,7 +111,7 @@
 
   "gaps_post_informe_85": {
     "_nota": "Recomendaciones tomadas del Informe Final ETC 85. Cada una es [PROPUESTA] / [POR DEFINIR] hasta que el director la apruebe.",
-    "responsable_financiero":          { "valor": null, "estado": "pendiente", "fuente": "Informe 85", "nota": "Nombrar 1-2 personas responsables de control de pagos y reportes de gastos (medida financiera #3 del Informe 85)." },
+    "responsable_financiero":          { "valor": null, "estado": "pendiente", "fuente": "Informe 85 + director (3-jun)", "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)." },
     "informe_post_retiro":             { "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.", "estado": "propuesta", "fuente": "Informe 85, medida #5", "nota": "Compromiso para post-retiro (14-sep en adelante)." },
     "oracion_grupal_obligatoria":      { "valor": "Participación obligatoria de TODOS los equipos (guías y asesores incluidos) en momentos grupales de oración.", "estado": "propuesta", "fuente": "Informe 85, aspecto a mejorar", "nota": "Agregar a las reglas como equipo en F1." },
     "confirmar_n_etc_con_consejo":     { "valor": "Confirmar el # del ETC con concilio/consejo TEMPRANO; cambios tardíos en otras comunidades causaron retrabajos de cocina en el 85.", "estado": "propuesta", "fuente": "Informe 85", "nota": "Relevante a 'completar 100 en la casa'." },
@@ -157,7 +158,10 @@
     "Apellido de Leober: Soriano.",
     "Roselyn sale del equipo (2-jun); su cupo pasa a un varón.",
     "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
-    "Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).",
+    "Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).",
+    "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
+    "Randolph Joseph confirmado en Cocina (3-jun): ocupa el cupo de varón que dejó Roselyn — la vacante de cocina queda cerrada.",
+    "Daylin confirmada en Música (3-jun).",
     "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
     "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
     "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
@@ -172,8 +176,9 @@
   "pendientes": [
     "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
     "Confirmar el conteo final de participantes para completar 100 en la casa.",
-    "Completar la vacante de cocina (varón — candidato Randolph).",
-    "Definir los responsables de cada equipo auxiliar.",
+    "Definir los responsables de cada uno de los 5 equipos auxiliares (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería).",
+    "Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).",
+    "Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).",
     "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
     "Confirmar la exención de la casa con el Padre Paul.",
     "Fijar fecha límite para cotizar transporte, biblias y peces.",

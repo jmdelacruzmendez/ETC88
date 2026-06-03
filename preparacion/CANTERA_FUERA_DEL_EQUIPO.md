@@ -66,7 +66,8 @@ Identificados para **Recaudación-Donaciones · Guagua · Profondo · Intersecci
 | **Recaudación y Donaciones** | Roberto Figueroa (ya en cocina; propuso "donaciones de etecianos viejos") · Guido (donaciones de empresas) · Franklin (rifa de viaje) · Paloma (merch) · **no-misioneros** (Brissa, Carla Uribe, Lisset, Ramón Leonardo, Ángel Radesky) como vendedores/padrinos · diáspora | tienen red, contactos o ya propusieron ideas |
 | **Profondo (rifa)** | Mismo núcleo de Recaudación + coords de cocina para logística | la rifa es transversal |
 | **Guagua (transporte)** | Etecianos con vehículo fuera del equipo operativo · Kedward Acevedo (PC, logística) · gente de "no se estiman" de PC/SD para tramos | rol externo, no pernocta |
-| **Intersección (espiritual)** | Liderado por Paul + Sor · sumar etecianos de oración (no-misioneros que quieran apoyar orando) · Victoria pidió "orar por JC" | acompañamiento espiritual |
+| **Intersección (diáspora)** | Diáspora del 88: etecianos del equipo que viven fuera del país + comunidad eteciana amplia en el exterior · padrinazgo, oración, donaciones desde fuera | vínculo con etecianos fuera del país (rol tradicional del equipo) |
+| **Finanzas / Tesorería (auxiliar)** | 1-2 personas del equipo que auxilien a la Co-Dir: control de pagos, recibos, conciliación, planificado vs real (medida #3 Informe 85) | rol técnico — auxilia, no decide |
 
 > Nota: muchos de **Punta Cana** y de "no se estiman" sirven mejor como **apoyo externo** (venta de rifa, padrinos, oración) que como equipo operativo, por la logística de preparación.
 

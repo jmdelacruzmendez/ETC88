@@ -19,7 +19,7 @@ Somos la **Asociación Eteciana**, una obra de la Iglesia Católica. Lo nuestro:
 ---
 ## 2. El Equipo del ETC 88
 
-Somos **47 servidores operativos** + asesores ampliados y transversales. Una sola tripulación, diferentes funciones.
+Somos **48 servidores operativos** + asesores ampliados y transversales. Una sola tripulación, diferentes funciones.
 
 **Directores (2)**
 > Jean Carlo De la Cruz Mendez · Juan Manuel de la Cruz Méndez
@@ -30,8 +30,8 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 **Guías (14)** — Coord.: Camila Fernández Hazim, Priscilla Hidalgo Pou
 > Camila Fernández Hazim · Priscilla Hidalgo Pou · Darianny Rodriguez Belliard · Fernando Cordero · Franklin De Jesús Silverio Delgadillo · Ivanna Marien Mercedes Sosa · Jhonnalia Franchesca Silvestre Guzmán · Jonathan Andres Medina Mota · Juan Pablo Argüello Alzate · Luisa Maria Fiorentino Brugal · Oliver Rafael De León Ramírez · Victoria Lorenzo Rivera · Wilka María Reyes Mota · Yelaxni Mota
 
-**Cocina (20)** — Coord.: Johnnito Richiez Brugal, Paloma Mendez
-> Johnnito Richiez Brugal · Paloma Mendez · Adrián Francisco Santana Puente · Ambar Liz Jáquez Lebrón · Brianelis Abreu Calderón · Candy Elizabeth Gatwood Ramos · Chantal Melissa Carpio Jiménez · Dayrelins Jazmin Santana Salas · Fabelly Maciel Fabian Bello · Guido Maldonado · Jordelis Mateo · Kelvin Alexis Ventura Santana · Maria del Carmen Mejías Mateo · Olanlly · Pamela · Risaira Santana Rosario · Risairi Santana Rosario · Roberto Figueroa · Tommy Nova Nolasco · Wirna Miguelina Stapleton Pilier
+**Cocina (21)** — Coord.: Johnnito Richiez Brugal, Paloma Mendez
+> Johnnito Richiez Brugal · Paloma Mendez · Adrián Francisco Santana Puente · Ambar Liz Jáquez Lebrón · Brianelis Abreu Calderón · Candy Elizabeth Gatwood Ramos · Chantal Melissa Carpio Jiménez · Dayrelins Jazmin Santana Salas · Fabelly Maciel Fabian Bello · Guido Maldonado · Jordelis Mateo · Kelvin Alexis Ventura Santana · Maria del Carmen Mejías Mateo · Olanlly · Pamela · Randolph Joseph · Risaira Santana Rosario · Risairi Santana Rosario · Roberto Figueroa · Tommy Nova Nolasco · Wirna Miguelina Stapleton Pilier
 
 **Música (6)** — Coord.: José Ángel Tusen Russo
 > José Ángel Tusen Russo · Daylin · Dorian Elina Rodriguez Belliard · Ismarie Sthepanie Constanzo Ramos · Leober Carrion Soriano · Mary Carmen Ramírez Vásquez
@@ -40,7 +40,7 @@ Somos **47 servidores operativos** + asesores ampliados y transversales. Una sol
 **Asesoras de Cocina:** Johanny García · Mary "Petra" Morales
 **Asesores de Comunidad:** Leticia González · Marleny · Sandrita
 
-**Equipos auxiliares:** Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)
+**Equipos auxiliares:** Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar)
 
 ---
 ## 3. Calendario 2026

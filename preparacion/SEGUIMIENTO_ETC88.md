@@ -11,11 +11,11 @@
 
 ## 1. Estado del equipo (cifras)
 - **Total manifiesto:** 56 personas.
-- **Operativos (formación + retiro):** 47 (incluye Paul + Sor transversales).
+- **Operativos (formación + retiro):** 48 (incluye Paul + Sor transversales · Randolph confirmado 3-jun).
 - **Ampliados (solo retiro):** 5 (asesoras cocina + asesoras comunidad).
 - **Backups:** 3 (guías).
-- **Vacante:** 1 (cocina, varón, candidato Randolph).
-- **Sin formulario:** 4 (Daylin · Olanlly · Pamela · Frank — y los placeholders nuevos).
+- **Vacante:** 0 (Randolph Joseph confirmado en cocina, varón — 3-jun).
+- **Sin formulario:** 5 (Daylin · Olanlly · Pamela · Frank · Randolph).
 
 ## 2. DECISIONES tomadas
 
@@ -24,10 +24,14 @@
 | 2-jun | **Constelación** quitada del branding | Co-Dir |
 | 2-jun | **Leober Carrión Soriano** (typo "Soriano") | Usuario |
 | 2-jun | **Roselyn fuera** · vacante para varón (candidato Randolph) | Co-Dir |
+| 3-jun | **Randolph Joseph confirmado** en Cocina (varón) — vacante cerrada | Co-Dir |
+| 3-jun | **Daylin confirmada** en Música | Co-Dir |
+| 3-jun | **Intersección (auxiliar) = diáspora** (etecianos fuera del país); NO el equipo espiritual | Co-Dir |
+| 3-jun | **Finanzas / Tesorería (auxiliar)** agregada como 5º equipo auxiliar — responsable [POR DEFINIR] | Co-Dir |
 | 2-jun | Backups guías: **Rodolfo · Scarlett · Kamila Todd** | Co-Dir |
 | 2-jun | **Recaudación y Donaciones = 1 equipo** | Co-Dir |
 | 2-jun | **Guagua = equipo de transporte** (no tarea) | Co-Dir |
-| 2-jun | Equipo **Intersección (espiritual)** = nuevo auxiliar | Co-Dir |
+| 2-jun | Equipo **Intersección** = nuevo auxiliar (rol redefinido el 3-jun) | Co-Dir |
 | 2-jun | **Petra + Johanny** confirmadas (asesoras cocina) | Co-Dir |
 | 2-jun | **Paul + Sor = transversales** (todo el proceso) | Co-Dir |
 | 2-jun | **Ricaira / Mirna / Fabianlly / Kirina NO están** | Co-Dir |
@@ -57,9 +61,9 @@
 
 ### 🔴 Bloqueantes
 - [ ] Raíz espiritual definitiva (hilo principal + secundario)
-- [ ] Confirmar varón para cocina (Randolph u otro)
 - [ ] Confirmar Pamela (sin formulario)
-- [ ] Asignar responsables de los 4 equipos auxiliares
+- [ ] Asignar responsables de los **5 equipos auxiliares** (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería)
+- [ ] Identificar **responsable o equipo de Finanzas / Tesorería** dentro del equipo (auxilia a la Co-Dir; antes de F3 · 5-jul)
 - [ ] **Profondo #2** (actividad + meta) — deadline 30-jun
 - [ ] Confirmar **La Vega: 1 o 2** asesores
 
@@ -117,7 +121,7 @@
 | Pregunta | A quién | Estado |
 |---|---|---|
 | ¿Cuál es el hilo principal de la raíz? | Co-Dir + Paul/Sor | abierto |
-| ¿Randolph confirma la vacante? | JC + JM | abierto |
+| ¿Quién lleva Finanzas / Tesorería auxiliar dentro del equipo? | Co-Dir | abierto (antes de F3) |
 | ¿La Vega envía 1 o 2 asesores? | Co-Dir + La Vega | abierto |
 | ¿Cuál es la actividad del Profondo #2? | Co-Dir | abierto |
 | ¿Qué hacemos con los backups de guías? (sólo si baja alguien, o se integran a algo) | Co-Dir | abierto |

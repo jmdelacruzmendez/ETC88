@@ -53,11 +53,11 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 
 ### Bloque 1 · Equipo cerrado + punto de partida financiero (8 min · JM + JC)
 **Quién es quién hoy (números reales):**
-- 2 directores · 3 asesores del retiro (Laura, Tomás, Frank — Frank además lleva el **Banderín**) · **14 guías** · **20 cocina + 1 vacante** (varón, candidato Randolph) · 6 música.
+- 2 directores · 3 asesores del retiro (Laura, Tomás, Frank — Frank además lleva el **Banderín**) · **14 guías** · **21 cocina** (Randolph Joseph confirmado 3-jun — ocupa el cupo de varón que dejó Roselyn) · 6 música (Daylin confirmada 3-jun).
 - Transversales: **Padre Paul + Sor Angelina** (todo el proceso). Asesoras de cocina: **Mary "Petra" + Johanny**. Asesores de comunidad: **Marleny + Sandrita (Santo Domingo) · Leticia González (La Vega)** — confirmados.
-- **Piso de personas: completar 100 en la casa de retiro** (≈47 operativos + ~53 participantes).
+- **Piso de personas: completar 100 en la casa de retiro** (≈48 operativos + ~52 participantes).
 - Backups de guías (**no son parte del equipo per se**): Rodolfo, Scarlett, Kamila.
-- Equipos auxiliares (existen, se asignan responsables antes de F1): **Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual)**.
+- Equipos auxiliares (5; se asignan responsables antes de F1): **Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar)**.
 
 **Punto de partida financiero (lo dice JM, claro y sin dramatismo):**
 - **Arrancamos en negativo: el equipo debe $23,600 al Consejo Eteciano** (10% de reserva de la casa que JM adelantó y ya le fue devuelto). Es la **primera** obligación a cubrir.
@@ -126,8 +126,8 @@ Que cada coordinador salga con **un solo mensaje, una sola dimensión espiritual
 |---|---|---|---|
 | Hilo espiritual / raíz del retiro | [POR DEFINIR] | Co-Dir + Paul/Sor | antes de la reunión |
 | Monto final de la cuota del equipo | [PROPUESTA] | Co-Dir | después de mostrar costos (F1) |
-| Responsables de los 4 equipos auxiliares | [POR DEFINIR] | Co-Dir | antes de F1 |
-| Vacante de cocina (varón — Randolph) | [POR DEFINIR] | Co-Dir | esta semana |
+| Responsables de los **5 equipos auxiliares** (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería) | [POR DEFINIR] | Co-Dir | antes de F1 |
+| Responsable o equipo de **Finanzas / Tesorería** dentro del equipo (medida #3 Informe 85) | [POR DEFINIR] | Co-Dir | antes de F3 (5-jul · arranca recaudación) |
 | Fecha límite para cotizar transporte/biblias/peces | [POR DEFINIR] | Co-Dir | **fijarla en la reunión** |
 | Fecha del **visiteo a la casa** (pre-coord con Samuel Montilla) | [POR DEFINIR] | Co-Dir | esta semana (gap del Informe 85) |
 | Gestión de la exención de la casa | [POR DEFINIR] | Co-Dir + Padre Paul | en curso |

@@ -3,11 +3,11 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 38 confirmados · 15 propuestas · 6 pendientes (en estado.json).
+**Resumen:** 37 confirmados · 15 propuestas · 8 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 56 · operativos titulares 47 · vacantes 1 · backups 3.
-- Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 20 · directores 2 · guias 14 · musica 6
+- Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
+- Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
 | Campo | Valor | Fuente | Nota |
@@ -30,7 +30,6 @@
 | `recaudacion.modelo` | cuotas + rifa y/o venta de comida + donaciones | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
-| `equipos_auxiliares[3].responsable` | Asesores Espirituales (Padre Paul + Sor Angelina) | — |  |
 | `comunidades_y_parroquias.parroquia_spm` | San José Obrero (SPM) | director | Parroquia de referencia en SPM (misas etecianas y posibles actividades… |
 | `comunidades_y_parroquias.parroquia_pc` | Nuestra Señora del Pilar (Punta Cana) | director | Parroquia en PC con representación del 88 en el equipo; aún no se han … |
 | `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |
@@ -55,7 +54,7 @@
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
 | `finanzas.cuota_equipo` | {"total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "c… | director (planteado, sin cerrar) | NO está decidido. Mostrar primero los costos estimados del retiro para… |
-| `finanzas.participantes_objetivo` | 53 | derivado (100 − 47 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
+| `finanzas.participantes_objetivo` | 52 | derivado (100 − 48 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
 | `marca.lema_retiro` | No fuimos a buscarlo: Él nos esperaba | propuesta Claude | Lema específico del ETC 88 SIN confirmar. |
 | `marca.tematica` | expedición / búsqueda de tesoro | propuesta Claude | Dirección temática a confirmar. El branding se reconstruye desde 0 con… |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
@@ -75,10 +74,12 @@
 |---|---|---|---|
 | `marca.branding_reglas_esteticas` | None | — | Las reglas estéticas NO están definidas. Se trabajan con Claude Design… |
 | `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
+| `equipos_auxiliares[3].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
+| `equipos_auxiliares[4].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |
 | `calendario_hitos.fecha_limite_cotizar_transporte` | None | director | El director pidió fijar una fecha límite para cotizar transporte, bibl… |
 | `calendario_hitos.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
 | `calendario_hitos.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
-| `gaps_post_informe_85.responsable_financiero` | None | Informe 85 | Nombrar 1-2 personas responsables de control de pagos y reportes de ga… |
+| `gaps_post_informe_85.responsable_financiero` | None | Informe 85 + director (3-jun) | Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxil… |
 
 ## Decisiones confirmadas (lista del director)
 - Retiro ETC 88: 4–6 de septiembre de 2026, Casa de Retiro La Ceiba del Salado, Higüey.
@@ -91,7 +92,10 @@
 - Apellido de Leober: Soriano.
 - Roselyn sale del equipo (2-jun); su cupo pasa a un varón.
 - Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.
-- Equipos auxiliares: Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (espiritual).
+- Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).
+- Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
+- Randolph Joseph confirmado en Cocina (3-jun): ocupa el cupo de varón que dejó Roselyn — la vacante de cocina queda cerrada.
+- Daylin confirmada en Música (3-jun).
 - Profondo #1 = rifa (primera actividad, por recomendación del equipo).
 - Asesoras de cocina: Mary "Petra" Morales y Johanny García.
 - Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.
@@ -105,8 +109,9 @@
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).
 - [ ] Confirmar el conteo final de participantes para completar 100 en la casa.
-- [ ] Completar la vacante de cocina (varón — candidato Randolph).
-- [ ] Definir los responsables de cada equipo auxiliar.
+- [ ] Definir los responsables de cada uno de los 5 equipos auxiliares (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería).
+- [ ] Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).
+- [ ] Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).
 - [ ] Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).
 - [ ] Confirmar la exención de la casa con el Padre Paul.
 - [ ] Fijar fecha límite para cotizar transporte, biblias y peces.
