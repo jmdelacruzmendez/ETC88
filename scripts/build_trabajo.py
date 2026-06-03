@@ -7,10 +7,11 @@ Salida: /tmp/trabajo_*.txt  (se suben como Google Doc limpio a 'ETC 88 · TRABAJ
 import re, os
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTERS = {
-    'plan_formacion': 'preparacion/PLAN_FORMACION.md',
-    'plan_economico': 'preparacion/PLAN_ECONOMICO.md',
-    'seguimiento':    'preparacion/SEGUIMIENTO_ETC88.md',
-    'roadmap':        'preparacion/ROADMAP_SISTEMA.md',
+    'plan_formacion':   'preparacion/PLAN_FORMACION.md',
+    'plan_economico':   'preparacion/PLAN_ECONOMICO.md',
+    'plan_recaudacion': 'preparacion/PLAN_RECAUDACION.md',
+    'seguimiento':      'preparacion/SEGUIMIENTO_ETC88.md',
+    'roadmap':          'preparacion/ROADMAP_SISTEMA.md',
 }
 
 def md_to_text(md):
@@ -28,6 +29,7 @@ def md_to_text(md):
         s = re.sub(r'^\s*>\s?', '', s)                      # blockquote
         s = re.sub(r'^(\s*)[-*]\s+', r'\1•  ', s)            # viñetas
         s = s.replace('**', '').replace('`', '')             # bold / code
+        s = re.sub(r'\*([^*\n]+)\*', r'\1', s)               # italic *...* -> ...
         s = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'\1 (\2)', s)  # links [t](u) -> t (u)
         out.append(s)
     txt = re.sub(r'\n{3,}', '\n\n', '\n'.join(out))
