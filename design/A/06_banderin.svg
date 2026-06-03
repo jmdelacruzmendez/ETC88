@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560">
+  <rect width="760" height="560" fill="#F7F1E3"/>
+  <text x="40" y="40" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="5">ETC 88 · DIRECCIÓN A · BANDERÍN — concepto + bocetos [PROPUESTA]</text>
+
+  <!-- ===== Boceto 1 · estandarte vertical (principal) ===== -->
+  <g transform="translate(70, 70)">
+    <!-- tela con punta inferior -->
+    <path d="M 0 0 L 200 0 L 200 360 L 100 410 L 0 360 Z" fill="#1B3A5C"/>
+    <path d="M 0 0 L 200 0 L 200 360 L 100 410 L 0 360 Z" fill="none" stroke="#E8D4A8" stroke-width="2" opacity="0.5"/>
+    <!-- borde interno -->
+    <path d="M 14 16 L 186 16 L 186 352 L 100 392 L 14 352 Z" fill="none" stroke="#E8D4A8" stroke-width="0.8" opacity="0.4"/>
+    <!-- estrella polar -->
+    <g transform="translate(100, 70)">
+      <circle r="3" fill="#E8D4A8"/>
+      <line x1="0" y1="-12" x2="0" y2="-5" stroke="#E8D4A8" stroke-width="0.8"/>
+      <line x1="0" y1="12" x2="0" y2="5" stroke="#E8D4A8" stroke-width="0.8"/>
+      <line x1="-12" y1="0" x2="-5" y2="0" stroke="#E8D4A8" stroke-width="0.8"/>
+      <line x1="12" y1="0" x2="5" y2="0" stroke="#E8D4A8" stroke-width="0.8"/>
+    </g>
+    <!-- pez-brújula grande -->
+    <g transform="translate(100, 150)">
+      <path d="M -50 0 Q -14 -20 32 0 Q -14 20 -50 0 Z" fill="none" stroke="#E36C4F" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M 32 0 L 56 -14 L 56 14 Z" fill="#E36C4F"/>
+      <circle cx="-26" cy="-5" r="2.2" fill="#E36C4F"/>
+    </g>
+    <text x="100" y="250" text-anchor="middle" fill="#F7F1E3" font-family="Georgia, serif" font-size="52" letter-spacing="3">ETC</text>
+    <text x="100" y="284" text-anchor="middle" fill="#E8D4A8" font-family="Georgia, serif" font-size="22" letter-spacing="9">LXXXVIII</text>
+    <line x1="55" y1="304" x2="145" y2="304" stroke="#E36C4F" stroke-width="1.5"/>
+    <text x="100" y="330" text-anchor="middle" fill="#F7F1E3" font-family="Georgia, serif" font-size="15" font-style="italic">Siempre amigos</text>
+    <text x="100" y="440" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="2">PRINCIPAL · TELA · ~1 × 1.8 m</text>
+  </g>
+
+  <!-- ===== Boceto 2 · banderín de mesa / triangular ===== -->
+  <g transform="translate(330, 70)">
+    <path d="M 0 0 L 150 0 L 75 150 Z" fill="#E36C4F"/>
+    <g transform="translate(75, 50)">
+      <path d="M -30 0 Q -8 -12 18 0 Q -8 12 -30 0 Z" fill="none" stroke="#F7F1E3" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M 18 0 L 32 -8 L 32 8 Z" fill="#F7F1E3"/>
+    </g>
+    <text x="75" y="92" text-anchor="middle" fill="#F7F1E3" font-family="Georgia, serif" font-size="22">ETC 88</text>
+    <text x="330" y="60" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.7">Banderín pequeño</text>
+    <text x="330" y="76" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.7">triangular — para</text>
+    <text x="330" y="92" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.7">cada PG (su color).</text>
+  </g>
+
+  <!-- ===== Boceto 3 · gallardete horizontal ===== -->
+  <g transform="translate(330, 250)">
+    <path d="M 0 0 L 230 0 L 200 30 L 230 60 L 0 60 Z" fill="#1B3A5C"/>
+    <g transform="translate(34, 30)">
+      <path d="M -22 0 Q -6 -9 14 0 Q -6 9 -22 0 Z" fill="none" stroke="#E36C4F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M 14 0 L 25 -6 L 25 6 Z" fill="#E36C4F"/>
+    </g>
+    <text x="135" y="37" text-anchor="middle" fill="#F7F1E3" font-family="Georgia, serif" font-size="19" letter-spacing="2">Siempre amigos</text>
+  </g>
+  <text x="330" y="345" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.7">Gallardete horizontal — entrada de la casa / foto grupal.</text>
+
+  <!-- notas de producción -->
+  <g transform="translate(330, 380)">
+    <text x="0" y="0" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="11" letter-spacing="2" font-weight="bold">PRODUCCIÓN</text>
+    <text x="0" y="22" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.8">· Tela azul, estampado coral + arena (2–3 tintas).</text>
+    <text x="0" y="40" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.8">· Pez-brújula centrado, legible a 5+ metros.</text>
+    <text x="0" y="58" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.8">· Sin conteos ni nombres — el banderín es atemporal.</text>
+    <text x="0" y="76" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.8">· Versión 1 tinta disponible (coral sobre crema).</text>
+    <text x="0" y="94" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="10" opacity="0.8">· Confirmar con el director si hay logo oficial eteciano.</text>
+  </g>
+</svg>

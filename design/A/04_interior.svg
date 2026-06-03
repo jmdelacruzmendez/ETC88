@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 660" width="480" height="660">
+  <rect width="480" height="660" fill="#F7F1E3"/>
+  <!-- encabezado de página -->
+  <g transform="translate(44, 56)">
+    <path d="M -2 -8 Q 8 -14 24 -8 Q 8 -2 -2 -8 Z" fill="none" stroke="#E36C4F" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M 24 -8 L 32 -12 L 32 -4 Z" fill="#E36C4F"/>
+  </g>
+  <text x="392" y="52" text-anchor="end" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="3" opacity="0.7">CARPETA ETC 88 · LA TRAVESÍA</text>
+  <line x1="44" y1="68" x2="436" y2="68" stroke="#E8D4A8" stroke-width="1.5"/>
+
+  <!-- título de sección -->
+  <text x="44" y="118" fill="#E36C4F" font-family="Georgia, serif" font-size="15" letter-spacing="2">01</text>
+  <text x="44" y="150" fill="#1B3A5C" font-family="Georgia, serif" font-size="34">¿Qué es un ETC?</text>
+
+  <!-- cuerpo (texto real de la guía) -->
+  <g fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="12.5">
+    <text x="44" y="192">El <tspan font-weight="600">Encuentro Total con Cristo (ETC)</tspan> es una experiencia que</text>
+    <text x="44" y="212">lleva a las personas a Jesús a través del encuentro consigo</text>
+    <text x="44" y="232">mismo y con sus semejantes (Estatutos, Art. 6).</text>
+    <text x="44" y="266">Somos la <tspan font-weight="600">Asociación Eteciana</tspan>, una obra de la Iglesia</text>
+    <text x="44" y="286">Católica. Lo nuestro: acercar a las personas a Cristo, formar</text>
+    <text x="44" y="306">comunidad de vida cristiana, vivir coherentes con la fe y</text>
+    <text x="44" y="326">servir a los más necesitados.</text>
+  </g>
+
+  <!-- pull-quote / cita -->
+  <g transform="translate(44, 360)">
+    <rect x="0" y="0" width="392" height="92" fill="#1B3A5C"/>
+    <rect x="0" y="0" width="5" height="92" fill="#E36C4F"/>
+    <text x="26" y="40" fill="#F7F1E3" font-family="Georgia, serif" font-size="19" font-style="italic">"Siempre amigos."</text>
+    <text x="26" y="68" fill="#E8D4A8" font-family="Inter, Arial, sans-serif" font-size="11">Ya no los llamo siervos, sino amigos.</text>
+    <text x="26" y="84" fill="#E8D4A8" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="2" opacity="0.85">JUAN 15,15 · NUESTRA FIRMA</text>
+  </g>
+
+  <!-- subsección -->
+  <text x="44" y="500" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Una sola tripulación</text>
+  <g fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="12.5">
+    <text x="44" y="524">Guías, cocina, música, asesores y directores somos un solo</text>
+    <text x="44" y="544">equipo. Las funciones cambian; el equipo es uno. Esta carpeta</text>
+    <text x="44" y="564">es tu bitácora: tráela a cada formación.</text>
+  </g>
+
+  <!-- pie de página -->
+  <line x1="44" y1="608" x2="436" y2="608" stroke="#E8D4A8" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="9" opacity="0.7">ETC LXXXVIII · Higüey 2026</text>
+  <text x="436" y="628" text-anchor="end" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="9" opacity="0.7">5</text>
+
+  <text x="240" y="652" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="8" letter-spacing="2" opacity="0.4">PÁGINA INTERIOR DE MUESTRA · CONTENIDO REAL · [PROPUESTA]</text>
+</svg>

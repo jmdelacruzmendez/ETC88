@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440">
+  <rect width="1200" height="440" fill="#F7F1E3"/>
+  <text x="600" y="40" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="6">ETC 88 · DIRECCIÓN A · LOGO / WORDMARK — 3 VARIANTES [PROPUESTA]</text>
+
+  <!-- ===== Variante 1 · SELLO / INSIGNIA ===== -->
+  <g transform="translate(200, 230)">
+    <circle cx="0" cy="0" r="95" fill="none" stroke="#1B3A5C" stroke-width="3"/>
+    <circle cx="0" cy="0" r="83" fill="none" stroke="#1B3A5C" stroke-width="0.8"/>
+    <!-- marcas rosa de vientos -->
+    <g stroke="#1B3A5C" stroke-width="1.4">
+      <line x1="0" y1="-83" x2="0" y2="-72"/>
+      <line x1="0" y1="83" x2="0" y2="72"/>
+      <line x1="-83" y1="0" x2="-72" y2="0"/>
+      <line x1="83" y1="0" x2="72" y2="0"/>
+    </g>
+    <g stroke="#1B3A5C" stroke-width="0.7" opacity="0.6">
+      <line x1="-58" y1="-58" x2="-51" y2="-51"/>
+      <line x1="58" y1="-58" x2="51" y2="-51"/>
+      <line x1="-58" y1="58" x2="-51" y2="51"/>
+      <line x1="58" y1="58" x2="51" y2="51"/>
+    </g>
+    <text x="0" y="-58" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="1">N</text>
+    <!-- pez-brújula al centro -->
+    <g>
+      <path d="M -38 0 Q -10 -15 25 0 Q -10 15 -38 0 Z" fill="none" stroke="#E36C4F" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 25 0 L 44 -11 L 44 11 Z" fill="#E36C4F"/>
+      <circle cx="-20" cy="-3" r="1.6" fill="#E36C4F"/>
+    </g>
+    <text x="0" y="48" text-anchor="middle" fill="#1B3A5C" font-family="Georgia, serif" font-size="20" letter-spacing="3">LXXXVIII</text>
+    <text x="0" y="135" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="3">SELLO · gafetes · sellado · favicon</text>
+  </g>
+
+  <!-- ===== Variante 2 · APILADO (principal) ===== -->
+  <g transform="translate(600, 175)">
+    <g transform="translate(0, -20) scale(1.1)">
+      <path d="M -30 0 Q -8 -12 20 0 Q -8 12 -30 0 Z" fill="none" stroke="#E36C4F" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M 20 0 L 35 -9 L 35 9 Z" fill="#E36C4F"/>
+    </g>
+    <text x="0" y="70" text-anchor="middle" fill="#1B3A5C" font-family="Georgia, serif" font-size="74" letter-spacing="4">ETC</text>
+    <text x="0" y="108" text-anchor="middle" fill="#1B3A5C" font-family="Georgia, serif" font-size="30" letter-spacing="10">LXXXVIII</text>
+    <line x1="-70" y1="124" x2="70" y2="124" stroke="#E8D4A8" stroke-width="2"/>
+    <text x="0" y="146" text-anchor="middle" fill="#1B3A5C" font-family="Georgia, serif" font-size="15" font-style="italic" letter-spacing="2">Siempre amigos</text>
+  </g>
+  <text x="600" y="365" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="3">APILADO · principal · portada · banderín</text>
+
+  <!-- ===== Variante 3 · HORIZONTAL ===== -->
+  <g transform="translate(1000, 205)">
+    <g transform="translate(-95, 0)">
+      <path d="M -34 0 Q -9 -13 22 0 Q -9 13 -34 0 Z" fill="none" stroke="#E36C4F" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M 22 0 L 39 -10 L 39 10 Z" fill="#E36C4F"/>
+      <circle cx="-18" cy="-3" r="1.4" fill="#E36C4F"/>
+    </g>
+    <text x="-30" y="-2" fill="#1B3A5C" font-family="Georgia, serif" font-size="42" letter-spacing="2">ETC 88</text>
+    <text x="-29" y="22" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="11" letter-spacing="3">SIEMPRE AMIGOS · JN 15,15</text>
+  </g>
+  <text x="1000" y="345" text-anchor="middle" fill="#1B3A5C" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="3">HORIZONTAL · firma de correos · pie de docs</text>
+</svg>
