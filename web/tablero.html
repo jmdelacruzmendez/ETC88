@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETC 88 · Tablero vivo</title>
+<style>
+  :root{--bg:#0f1419;--card:#1a2230;--ink:#e8edf2;--mut:#8a97a8;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff;--line:#2a3340}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+  h1{font-size:19px;margin:0}
+  .sub{color:var(--mut);font-size:13px}
+  main{padding:18px 22px;max-width:1100px;margin:0 auto}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .n{font-size:26px;font-weight:700}
+  .kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .panel h2{font-size:15px;margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.04em}
+  .bar{height:10px;background:#0b0f14;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--ok))}
+  .pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;border:1px solid var(--line)}
+  .pill.warn{color:var(--warn);border-color:var(--warn)} .pill.bad{color:var(--bad);border-color:var(--bad)} .pill.ok{color:var(--ok);border-color:var(--ok)}
+  .muted{color:var(--mut)} .err{color:var(--bad)}
+  details{margin:4px 0} summary{cursor:pointer;color:var(--acc)}
+  .setup{background:#1d2330;border:1px dashed var(--warn);border-radius:10px;padding:12px;color:var(--mut);font-size:13px}
+  code{background:#0b0f14;padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>🧭 ETC 88 · Tablero vivo</h1><div class="sub" id="sub">cargando…</div></div>
+  <div class="sub">4–6 sep 2026 · Higüey &nbsp;|&nbsp; <span id="dias">—</span></div>
+</header>
+<main>
+  <div class="kpis" id="kpis"></div>
+  <div class="panel"><h2>💰 Finanzas — meta vs estimado</h2><div id="fin"></div></div>
+  <div class="panel"><h2>👥 Captación de participantes</h2><div id="cap"></div></div>
+  <div class="panel"><h2>📋 Pendientes por horizonte</h2><div id="pend"></div></div>
+  <div class="panel"><h2>🧑‍🤝‍🧑 Equipo por área</h2><div id="eq"></div></div>
+  <div class="panel"><h2 style="font-size:13px" class="muted">Fuente de datos</h2><div id="src" class="sub"></div></div>
+</main>
+<script>
+// ===== CONFIG: para LECTURA EN VIVO, pega aquí la URL "publicar en la web → CSV" de cada hoja.
+// Si se dejan vacías, el tablero lee los CSV locales (web/*.csv), que el pipeline regenera.
+const CONFIG = {
+  equipo:     "",   // Sheet "Equipo (roster oficial)" → publicar como CSV
+  pagos:      "",   // Sheet "Control de Pagos"        → publicar como CSV
+  captacion:  "",   // Sheet "Captación"               → publicar como CSV
+  pendientes: ""    // Sheet "Pendientes"              → publicar como CSV
+};
+const LOCAL = {equipo:"equipo.csv", pagos:"control_pagos.csv", captacion:"captacion.csv", pendientes:"pendientes.csv"};
+const META = 583281, PARTIC_META = 52, RETIRO = new Date("2026-09-04T00:00:00");
+
+function parseCSV(t){
+  const rows=[]; let row=[],cur="",q=false;
+  for(let i=0;i<t.length;i++){const c=t[i];
+    if(q){ if(c=='"'){ if(t[i+1]=='"'){cur+='"';i++} else q=false } else cur+=c }
+    else { if(c=='"')q=true; else if(c==',' ){row.push(cur);cur=""} else if(c=='\n'){row.push(cur);rows.push(row);row=[];cur=""} else if(c!='\r')cur+=c }
+  }
+  if(cur!==""||row.length){row.push(cur);rows.push(row)}
+  return rows.filter(r=>r.some(x=>x!==""));
+}
+function toObjs(rows){const h=rows[0]||[];return rows.slice(1).map(r=>Object.fromEntries(h.map((k,i)=>[k.trim(),(r[i]||"").trim()])))}
+async function load(key){
+  const url = CONFIG[key] || LOCAL[key];
+  const r = await fetch(url, {cache:"no-store"});
+  if(!r.ok) throw new Error(url+" → "+r.status);
+  return {objs: toObjs(parseCSV(await r.text())), url, live: !!CONFIG[key]};
+}
+const el=id=>document.getElementById(id);
+const esc=s=>(s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+async function main(){
+  el("dias").textContent = Math.max(0, Math.ceil((RETIRO-new Date())/86400000)) + " días al retiro";
+  let src=[];
+  const got={};
+  for(const k of Object.keys(LOCAL)){
+    try{ const d=await load(k); got[k]=d.objs; src.push(`${k}: ${d.live?"EN VIVO":"local"} (${d.objs.length})`); }
+    catch(e){ got[k]=null; src.push(`<span class="err">${k}: ${esc(e.message)}</span>`); }
+  }
+  el("src").innerHTML = src.join(" &nbsp;·&nbsp; ") + '<br><span class="muted">Para vivo: en cada Google Sheet → Archivo → Compartir → Publicar en la web → CSV, y pega la URL en el bloque CONFIG de este archivo.</span>';
+
+  // KPIs
+  const eq=got.equipo||[], cap=got.captacion||[];
+  const op=eq.filter(p=>p.Operativo=="Sí");
+  const respond=op.filter(p=>p.SinFormulario=="No").length;
+  const conMis=cap.filter(p=>p.Invita).length;
+  el("kpis").innerHTML = [
+    ["Equipo operativo", op.length, ""],
+    ["Captados / meta", cap.length+" / "+PARTIC_META, (cap.length<PARTIC_META?"warn":"ok")],
+    ["Con misionero", conMis+" / "+cap.length, ""],
+    ["Formularios equipo", respond+" / "+op.length, (respond<op.length?"warn":"ok")],
+    ["Meta recaudación", "RD$"+META.toLocaleString(), ""]
+  ].map(k=>`<div class="kpi"><div class="n">${k[1]}</div><div class="l">${k[0]}</div></div>`).join("");
+
+  // Finanzas
+  if(got.pagos){
+    const ing=got.pagos.filter(r=>r.Tipo=="INGRESO"), egr=got.pagos.filter(r=>r.Tipo=="EGRESO");
+    const movido=got.pagos.reduce((s,r)=>s+(parseFloat((r.Movido||"").replace(/[^0-9.]/g,""))||0),0);
+    const pct=Math.min(100,Math.round(movido/META*100));
+    el("fin").innerHTML =
+      `<div class="muted" style="font-size:13px;margin-bottom:6px">Movido (cobrado/pagado) vs meta: <b>RD$${movido.toLocaleString()}</b> / RD$${META.toLocaleString()} (${pct}%)</div>
+       <div class="bar"><i style="width:${pct}%"></i></div>
+       <table style="margin-top:10px"><tr><th>Concepto</th><th>Tipo</th><th>Estimado</th><th>Movido</th></tr>
+       ${got.pagos.map(r=>`<tr><td>${esc(r.Concepto)}</td><td><span class="pill ${r.Tipo=='INGRESO'?'ok':''}">${r.Tipo}</span></td><td>${esc(r.Estimado)}</td><td>${esc(r.Movido)||'<span class="muted">—</span>'}</td></tr>`).join("")}</table>`;
+  } else el("fin").innerHTML='<div class="err">no se pudo cargar control_pagos.csv</div>';
+
+  // Captación
+  if(got.captacion){
+    const byEst={}; cap.forEach(p=>byEst[p.Estado]=(byEst[p.Estado]||0)+1);
+    el("cap").innerHTML =
+      `<div style="margin-bottom:8px">${Object.entries(byEst).map(([k,v])=>`<span class="pill" style="margin-right:6px">${esc(k||'—')}: ${v}</span>`).join("")}
+       <span class="pill warn">faltan ${Math.max(0,PARTIC_META-cap.length)} para ${PARTIC_META}</span></div>
+       <details><summary>ver ${cap.length} prospectos</summary>
+       <table><tr><th>Participante</th><th>Edad</th><th>Invita</th><th>Estado</th></tr>
+       ${cap.map(p=>`<tr><td>${esc(p.Participante)}</td><td>${esc(p.Edad)}</td><td>${esc(p.Invita)||'<span class="muted">sin misionero</span>'}</td><td>${esc(p.Estado)}</td></tr>`).join("")}</table></details>`;
+  } else el("cap").innerHTML='<div class="err">no se pudo cargar captacion.csv</div>';
+
+  // Pendientes
+  if(got.pendientes){
+    const byH={}; got.pendientes.forEach(p=>{(byH[p.Horizonte]=byH[p.Horizonte]||[]).push(p)});
+    el("pend").innerHTML = Object.entries(byH).map(([h,arr])=>
+      `<div style="margin-bottom:8px"><b>${esc(h)}</b><table>${arr.map(p=>`<tr><td>${esc(p.Tarea)}</td><td class="muted">${esc(p["Dueño"]||p.Dueño||"")}</td><td><span class="pill ${p.Estado=='programado'?'ok':'warn'}">${esc(p.Estado)}</span></td></tr>`).join("")}</table></div>`).join("");
+  } else el("pend").innerHTML='<div class="err">no se pudo cargar pendientes.csv</div>';
+
+  // Equipo por área
+  if(got.equipo){
+    const byA={}; op.forEach(p=>{(byA[p["Área"]]=byA[p["Área"]]||[]).push(p)});
+    el("eq").innerHTML = Object.entries(byA).map(([a,arr])=>
+      `<details><summary>${esc(a)} (${arr.length})</summary><table>${arr.map(p=>`<tr><td>${esc(p.Nombre)}</td><td class="muted">${esc(p.Rol)}</td><td>${p.SinFormulario=='Sí'?'<span class="pill bad">sin formulario</span>':''}</td></tr>`).join("")}</table></details>`).join("");
+  } else el("eq").innerHTML='<div class="err">no se pudo cargar equipo.csv</div>';
+
+  el("sub").textContent = "actualizado " + new Date().toLocaleString("es-DO");
+}
+main().catch(e=>{el("sub").innerHTML='<span class="err">Error: '+esc(e.message)+'</span>';});
+</script>
+</body>
+</html>

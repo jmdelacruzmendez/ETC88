@@ -1,0 +1,57 @@
+Nombre,Área,Rol,Edad,Comunidad,Operativo,SinFormulario
+Jean Carlo De la Cruz Mendez,directores,Director,35,Betania,Sí,No
+Juan Manuel de la Cruz Méndez,directores,Director,33,Betania,Sí,No
+Laura Fernández,asesores,Asesora,30,Betania,Sí,No
+Tomás Lorenzo,asesores,Asesor,29,Betania,Sí,No
+Camila Fernández Hazim,guias,Coord. Guía,26,Betania,Sí,No
+Priscilla Hidalgo Pou,guias,Coord. Guía,33,Betania,Sí,No
+Darianny Rodriguez Belliard,guias,Guía,24,Betania,Sí,No
+Fernando Cordero,guias,Guía,23,Betania,Sí,No
+Franklin De Jesús Silverio Delgadillo,guias,Guía,27,Betania,Sí,No
+Ivanna Marien Mercedes Sosa,guias,Guía,30,Betania,Sí,No
+Jhonnalia Franchesca Silvestre Guzmán,guias,Guía,26,Betania,Sí,No
+Jonathan Andres Medina Mota,guias,Guía,27,Betania,Sí,No
+Juan Pablo Argüello Alzate,guias,Guía,23,Betania,Sí,No
+Luisa Maria Fiorentino Brugal,guias,Guía,27,Betania,Sí,No
+Oliver Rafael De León Ramírez,guias,Guía,30,Betania,Sí,No
+Victoria Lorenzo Rivera,guias,Guía,27,Betania,Sí,No
+Wilka María Reyes Mota,guias,Guía,20,Betania,Sí,No
+Yelaxni Mota,guias,Guía,21,Betania,Sí,No
+Johnnito Richiez Brugal,cocina,Coord. Cocina,41,Betania,Sí,No
+Paloma Mendez,cocina,Coord. Cocina,35,Betania,Sí,No
+Adrián Francisco Santana Puente,cocina,Cocina,21,Belén,Sí,No
+Ambar Liz Jáquez Lebrón,cocina,Cocina,18,Belén,Sí,No
+Brianelis Abreu Calderón,cocina,Cocina,23,Belén,Sí,No
+Candy Elizabeth Gatwood Ramos,cocina,Cocina,33,Betania,Sí,No
+Chantal Melissa Carpio Jiménez,cocina,Cocina,22,Belén,Sí,No
+Dayrelins Jazmin Santana Salas,cocina,Cocina,23,Betania,Sí,No
+Fabelly Maciel Fabian Bello,cocina,Cocina,34,Betania,Sí,No
+Guido Maldonado,cocina,Cocina,29,Betania,Sí,No
+Jordelis Mateo,cocina,Cocina,26,Betania,Sí,No
+Kelvin Alexis Ventura Santana,cocina,Cocina,24,Betania,Sí,No
+Maria del Carmen Mejías Mateo,cocina,Cocina,42,Betania,Sí,No
+Marian Olanlly Ortiz Carrasco,cocina,Cocina,19,Por confirmar,Sí,No
+Pamela (sin formulario),cocina,Cocina,,Por confirmar,Sí,Sí
+Randol Joseph Payano,cocina,Cocina,19,Por confirmar,Sí,No
+Risaira Santana Rosario,cocina,Cocina,21,Betania,Sí,No
+Risairi Santana Rosario,cocina,Cocina,19,Belén,Sí,No
+Roberto Figueroa,cocina,Cocina,45,Betania,Sí,No
+Tommy Nova Nolasco,cocina,Cocina,25,Belén,Sí,No
+Wirna Miguelina Stapleton Pilier,cocina,Cocina,32,Betania,Sí,No
+José Ángel Tusen Russo,musica,Coord. Música,26,Betania,Sí,No
+Daylin M Rambalde Moreta,musica,Música,29,Por confirmar,Sí,No
+Dorian Elina Rodriguez Belliard,musica,Música,21,Betania,Sí,No
+Ismarie Sthepanie Constanzo Ramos,musica,Música,20,Betania,Sí,No
+Leober Carrion Soriano,musica,Música,21,Betania,Sí,No
+Mary Carmen Ramírez Vásquez,musica,Música,27,Betania,Sí,No
+Frank Morales,asesores,Asesor + Banderín,,Por confirmar,Sí,Sí
+Padre Paul Ramírez,asesores_espirituales,Asesor Espiritual transversal,,Por confirmar,Sí,Sí
+Sor Angelina Lebrón,asesores_espirituales,Asesora Espiritual transversal,,Por confirmar,Sí,Sí
+Johanny García,asesores_cocina,Asesora Cocina,,Por confirmar,No,Sí
+"Mary ""Petra"" Morales",asesores_cocina,Asesora Cocina,,Por confirmar,No,Sí
+Kamila Todd,guias,Backup Guía,,Por confirmar,No,Sí
+Leticia González,asesores_diocesanos,Asesora Comunidad La Vega,,Por confirmar,No,Sí
+Marleny,asesores_diocesanos,Asesora Comunidad SD,,Por confirmar,No,Sí
+Rodolfo Telémaco,guias,Backup Guía,,Por confirmar,No,Sí
+Sandrita,asesores_diocesanos,Asesora Comunidad SD,,Por confirmar,No,Sí
+Scarlett Nivar,guias,Backup Guía,,Por confirmar,No,Sí

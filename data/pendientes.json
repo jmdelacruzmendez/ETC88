@@ -1,0 +1,20 @@
+{
+  "_meta": "Pendientes priorizados por horizonte. Semilla para la hoja viva + el tablero. Fuente: EVALUACION_SISTEMA.md + estado.json. El seguimiento vivo lo hace el equipo en el Sheet/tablero.",
+  "pendientes": [
+    {"horizonte": "Esta semana", "tarea": "Nombrar Tesorería (1–2 del equipo)", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Esta semana", "tarea": "Contactar a Samuel Montilla (visiteo a la casa)", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Esta semana", "tarea": "Gestionar exención RNC con el Padre Paul", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Esta semana", "tarea": "Reunión de coordinadores (jue 4-jun)", "dueño": "Coords", "estado": "programado"},
+    {"horizonte": "Esta semana", "tarea": "Abrir cuenta del retiro + plantilla de constancia", "dueño": "Co-Dir + Tesorería", "estado": "abierto"},
+    {"horizonte": "Antes de F1 (14-jun)", "tarea": "Definir responsables de los 5 auxiliares", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Antes de F1 (14-jun)", "tarea": "Lema / hilo espiritual con Paul + Sor", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Antes de F1 (14-jun)", "tarea": "Hoja Control de Pagos operando", "dueño": "Tesorería", "estado": "abierto"},
+    {"horizonte": "Antes de F1 (14-jun)", "tarea": "Asignar misionero a los 12 prospectos sin invitador", "dueño": "Recaudación", "estado": "abierto"},
+    {"horizonte": "Antes de F1 (14-jun)", "tarea": "Capacitar 1 asesor para run_all.sh (bus factor)", "dueño": "Co-Dir + Tomás", "estado": "abierto"},
+    {"horizonte": "Antes de F3 (5-jul)", "tarea": "Fijar fecha límite de cotizaciones (transporte/biblias/peces)", "dueño": "Co-Dir", "estado": "abierto"},
+    {"horizonte": "Antes de F3 (5-jul)", "tarea": "Política de earmark (qué entrada cubre qué)", "dueño": "Co-Dir + Tesorería", "estado": "abierto"},
+    {"horizonte": "Antes de F3 (5-jul)", "tarea": "Cierre semanal de Tesorería (lunes)", "dueño": "Tesorería", "estado": "abierto"},
+    {"horizonte": "Datos", "tarea": "Formulario del equipo: faltan Pamela y Frank", "dueño": "Coords", "estado": "abierto"},
+    {"horizonte": "Datos", "tarea": "Conteo final de participantes (hoy 52 estimado)", "dueño": "Co-Dir", "estado": "abierto"}
+  ]
+}

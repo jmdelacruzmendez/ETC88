@@ -15,6 +15,7 @@ python scripts/build_html.py
 python scripts/build_trazabilidad.py
 python scripts/build_cantera.py
 python scripts/build_captacion.py
+python scripts/build_web.py
 python scripts/build_drive.py
 echo "== Compuerta de verificación =="
 python scripts/verify.py
