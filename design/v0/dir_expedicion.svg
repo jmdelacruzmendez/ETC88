@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#1B3A5C"/>
+  <!-- stars -->
+  <circle cx="60" cy="70" r="1.5" fill="#F7F1E3"/>
+  <circle cx="110" cy="40" r="1" fill="#F7F1E3"/>
+  <circle cx="180" cy="80" r="1.8" fill="#F7F1E3"/>
+  <circle cx="260" cy="50" r="1" fill="#F7F1E3"/>
+  <circle cx="330" cy="90" r="1.4" fill="#F7F1E3"/>
+  <circle cx="350" cy="35" r="0.8" fill="#F7F1E3"/>
+  <circle cx="70" cy="130" r="0.9" fill="#F7F1E3"/>
+  <circle cx="295" cy="155" r="1.1" fill="#F7F1E3"/>
+  <!-- estrella polar -->
+  <circle cx="200" cy="120" r="3" fill="#E8D4A8"/>
+  <circle cx="200" cy="120" r="7" fill="#E8D4A8" opacity="0.25"/>
+  <!-- horizon line -->
+  <line x1="40" y1="270" x2="360" y2="270" stroke="#E8D4A8" stroke-width="1" opacity="0.55"/>
+  <!-- pez como brújula apuntando a la polar -->
+  <g transform="translate(200, 215)">
+    <path d="M -35 0 Q -10 -14 22 0 Q -10 14 -35 0 Z" fill="none" stroke="#E36C4F" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M 22 0 L 38 -9 L 38 9 Z" fill="none" stroke="#E36C4F" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="-18" cy="-3" r="1.3" fill="#E36C4F"/>
+  </g>
+  <!-- línea fina hacia la polar -->
+  <line x1="200" y1="195" x2="200" y2="135" stroke="#E8D4A8" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.45"/>
+  <!-- wordmark -->
+  <text x="200" y="370" text-anchor="middle" fill="#F7F1E3" font-family="Cormorant Garamond, Georgia, serif" font-size="30" letter-spacing="7">ETC LXXXVIII</text>
+  <text x="200" y="402" text-anchor="middle" fill="#E8D4A8" font-family="Cormorant Garamond, Georgia, serif" font-size="14" font-style="italic" letter-spacing="3">Siempre amigos · Jn 15,15</text>
+  <text x="200" y="438" text-anchor="middle" fill="#E36C4F" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="5">DIRECCIÓN A · EXPEDICIÓN</text>
+  <!-- swatches -->
+  <rect x="120" y="462" width="22" height="22" fill="#1B3A5C" stroke="#F7F1E3" stroke-width="0.6"/>
+  <rect x="147" y="462" width="22" height="22" fill="#E8D4A8"/>
+  <rect x="174" y="462" width="22" height="22" fill="#E36C4F"/>
+  <rect x="201" y="462" width="22" height="22" fill="#F7F1E3"/>
+  <rect x="228" y="462" width="22" height="22" fill="#1A1A1A"/>
+</svg>
