@@ -94,8 +94,8 @@
 - Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.
 - Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).
 - Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
-- Randolph Joseph confirmado en Cocina (3-jun): ocupa el cupo de varón que dejó Roselyn — la vacante de cocina queda cerrada.
-- Daylin confirmada en Música (3-jun).
+- Randol Joseph Payano (nombre tomado del formulario, confirmado por el director 3-jun) en Cocina: ocupa el cupo de varón que dejó Roselyn — vacante cerrada.
+- Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).
 - Profondo #1 = rifa (primera actividad, por recomendación del equipo).
 - Asesoras de cocina: Mary "Petra" Morales y Johanny García.
 - Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.

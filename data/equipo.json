@@ -596,8 +596,8 @@
       "Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.",
       "Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).",
       "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
-      "Randolph Joseph confirmado en Cocina (3-jun): ocupa el cupo de varón que dejó Roselyn — la vacante de cocina queda cerrada.",
-      "Daylin confirmada en Música (3-jun).",
+      "Randol Joseph Payano (nombre tomado del formulario, confirmado por el director 3-jun) en Cocina: ocupa el cupo de varón que dejó Roselyn — vacante cerrada.",
+      "Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).",
       "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
       "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
       "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
@@ -1938,8 +1938,8 @@
       "transversal": false
     },
     {
-      "id": "randolph-joseph",
-      "nombre": "Randolph Joseph",
+      "id": "randol-joseph-payano",
+      "nombre": "Randol Joseph Payano",
       "sexo": "M",
       "edad": 19,
       "cumple_mes": null,
@@ -1971,7 +1971,7 @@
       "backup": false,
       "vacante": false,
       "transversal": false,
-      "nota_nombre": "El formulario se auto-reporta como \"Randol Joseph Payano\" — confirmar grafía y apellido con el director."
+      "nota_nombre": "Nombre tomado del auto-reporte del formulario (decisión del director, 3-jun). El director lo había mencionado verbalmente como 'Randolph Joseph'."
     },
     {
       "id": "risaira-santana-rosario",
@@ -2190,10 +2190,10 @@
       "transversal": false
     },
     {
-      "id": "daylin-sin-formulario",
-      "nombre": "Daylin (sin formulario)",
+      "id": "daylin-m-rambalde-moreta",
+      "nombre": "Daylin M Rambalde Moreta",
       "sexo": "F",
-      "edad": null,
+      "edad": 29,
       "cumple_mes": null,
       "cumple_dia": null,
       "cumple_anio": null,
@@ -2204,25 +2204,26 @@
       "comunidad": "Por confirmar",
       "area": "musica",
       "rol": "Música",
-      "talla": null,
+      "talla": "M",
       "telefono": null,
       "que_espera": null,
       "miedos": null,
       "tema_dios": null,
       "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
+      "alergias": "Polvo, polen, aromas fuertes",
+      "condiciones": "Resistencia a la insulina",
+      "medicamentos": "Metformina",
       "contacto_emergencia": null,
       "palabra": null,
       "dudas": null,
       "algo_directores": null,
       "invitados": [],
-      "sin_formulario": true,
+      "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota": "Indicó en el formulario que NO puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia). Reside en Punta Cana."
     },
     {
       "id": "dorian-elina-rodriguez-belliard",
@@ -3067,17 +3068,24 @@
     },
     {
       "n": 31,
-      "bandera": "3 tripulantes sin formulario (al 3-jun)",
-      "persona": "Daylin (Música), Pamela (Cocina), Frank (Asesor) — Olanlly y Randolph ya respondieron",
+      "bandera": "2 tripulantes sin formulario (al 3-jun)",
+      "persona": "Pamela (Cocina), Frank (Asesor) — Olanlly, Randol y Daylin ya respondieron",
       "accion": "Enviar formulario antes de F1 (14-jun)",
-      "resp": "Coord. Música / Coord. Cocina / Co-Dir"
+      "resp": "Coord. Cocina / Co-Dir"
     },
     {
       "n": 33,
-      "bandera": "Discrepancia de nombre: Randolph Joseph (roster, director) vs \"Randol Joseph Payano\" (auto-reporte del formulario)",
-      "persona": "Randolph Joseph",
-      "accion": "Confirmar grafía y apellido con el director",
-      "resp": "Directores"
+      "bandera": "Daylin no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, vive en PC)",
+      "persona": "Daylin M Rambalde Moreta (Música)",
+      "accion": "Asignarle rol sin coordinación; considerar su distancia y asistencia",
+      "resp": "Coord. Música / Co-Dir"
+    },
+    {
+      "n": 34,
+      "bandera": "Daylin: resistencia a la insulina (Metformina) — dato de salud para botiquín/menú",
+      "persona": "Daylin M Rambalde Moreta",
+      "accion": "Tener en cuenta en cocina y botiquín",
+      "resp": "Coord. Cocina"
     },
     {
       "n": 32,

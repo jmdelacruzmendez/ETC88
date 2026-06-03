@@ -275,20 +275,14 @@ def make_placeholder(name, area, rol, sexo, operativo):
         'transversal': False,
     }
 
-# Datos reales de los placeholders que SÍ respondieron el formulario en vivo
-# (hoja "Respuestas - Formulario pre-formación ETC 88", leída 3-jun-2026).
-# Daylin (Música), Pamela (Cocina) y Frank (Asesor) AÚN NO respondieron.
-FORM_LIVE_OVERRIDE = {
-    'Olanlly (sin formulario)': {
-        'nombre': 'Marian Olanlly Ortiz Carrasco', 'edad': 19, 'talla': 'S',
-        'sin_formulario': False,
-    },
-    'Randolph Joseph (sin formulario)': {
-        'nombre': 'Randolph Joseph', 'edad': 19, 'talla': 'L',
-        'sin_formulario': False,
-        'nota_nombre': 'El formulario se auto-reporta como "Randol Joseph Payano" — confirmar grafía y apellido con el director.',
-    },
-}
+# OPTIMIZACIÓN D4 (3-jun): los datos del formulario en vivo viven en DATOS, no en código.
+# data/form_live_overrides.json = miembros que respondieron tras el snapshot del xlsx
+# (Olanlly, Randol, Daylin). Cuando se exporte un xlsx fresco que los incluya, ese
+# archivo puede vaciarse. Pamela y Frank aún no responden.
+try:
+    FORM_LIVE_OVERRIDE = json.load(open(f'{REPO}/data/form_live_overrides.json', encoding='utf-8')).get('overrides', {})
+except Exception:
+    FORM_LIVE_OVERRIDE = {}
 for name, area, rol, sexo in PLACEHOLDERS_OP:
     # backups y vacante NO son titulares operativos
     is_op = rol not in ('Backup Guía', 'Vacante')
@@ -391,8 +385,9 @@ banderas = [
     {'n':28, 'bandera':'Pedir contacto de emergencia a Jonathan', 'persona':'Jonathan Andres Medina Mota', 'accion':'Solicitar dato', 'resp':'Directores'},
     {'n':29, 'bandera':'Pregunta "Oremos por JC"', 'persona':'Victoria Lorenzo Rivera', 'accion':'Acompañamiento espiritual a Jean Carlo', 'resp':'Asesores'},
     {'n':30, 'bandera':'Wirna: "No se dejen humillar"', 'persona':'Wirna Stapleton', 'accion':'Conversación 1:1', 'resp':'Directores'},
-    {'n':31, 'bandera':'3 tripulantes sin formulario (al 3-jun)', 'persona':'Daylin (Música), Pamela (Cocina), Frank (Asesor) — Olanlly y Randolph ya respondieron', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Música / Coord. Cocina / Co-Dir'},
-    {'n':33, 'bandera':'Discrepancia de nombre: Randolph Joseph (roster, director) vs "Randol Joseph Payano" (auto-reporte del formulario)', 'persona':'Randolph Joseph', 'accion':'Confirmar grafía y apellido con el director', 'resp':'Directores'},
+    {'n':31, 'bandera':'2 tripulantes sin formulario (al 3-jun)', 'persona':'Pamela (Cocina), Frank (Asesor) — Olanlly, Randol y Daylin ya respondieron', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Cocina / Co-Dir'},
+    {'n':33, 'bandera':'Daylin no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, vive en PC)', 'persona':'Daylin M Rambalde Moreta (Música)', 'accion':'Asignarle rol sin coordinación; considerar su distancia y asistencia', 'resp':'Coord. Música / Co-Dir'},
+    {'n':34, 'bandera':'Daylin: resistencia a la insulina (Metformina) — dato de salud para botiquín/menú', 'persona':'Daylin M Rambalde Moreta', 'accion':'Tener en cuenta en cocina y botiquín', 'resp':'Coord. Cocina'},
     {'n':32, 'bandera':'Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)', 'persona':'Fabelly Maciel Fabian Bello', 'accion':'OK · nombre validado', 'resp':'Directores'},
     {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
 ]

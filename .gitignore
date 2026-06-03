@@ -1,0 +1,16 @@
+# OPTIMIZACIÓN D3 (3-jun): los entregables generados (binarios .docx/.xlsx) se
+# regeneran con el pipeline (ver CLAUDE.md) y viven en Drive (carpeta oficial),
+# no en git. Esto evita el churn binario en cada regeneración.
+# OJO: las rutas llevan "/" inicial para anclar a la raíz — NO afecta a
+# data/fuente_formulario.xlsx (que es FUENTE y sí se versiona).
+/Documento_Asesores_ETC88.docx
+/Carpeta_F1_ETC88.docx
+/Equipo_ETC88.xlsx
+/Finanzas_ETC88.xlsx
+/Flujo_Caja_ETC88.xlsx
+/Cantera_ETC88.xlsx
+
+# temporales
+/tmp/
+__pycache__/
+*.pyc
