@@ -2,9 +2,9 @@
 ## San Pedro de Macorís
 
 > **Lema eteciano:** *“Siempre amigos”* · **Jn 15:15**
-> **Lema del retiro:** *“En busca del tesoro”*
-> **Temática:** expedición · en busca del tesoro
-> **Hilo espiritual:** El tesoro escondido (Mt 13,44): la expedición busca el tesoro —el encuentro con Cristo— y, al hallarlo, de pura alegría vale venderlo todo. · **Mt 13:44**
+> **Lema del retiro:** *“Donde está tu tesoro, allí estará tu corazón”*
+> **Temática:** expedición · el tesoro y el corazón
+> **Hilo espiritual:** El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, allí va mi corazón. El retiro propone una expedición hacia adentro para mirar qué tesoro gobierna el corazón hoy, y reordenarlo poniendo a Cristo como tesoro. · **Mt 6:21**
 > **Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey
 > **Co-Dirección:** Juan Manuel de la Cruz · Jean Carlo de la Cruz
 

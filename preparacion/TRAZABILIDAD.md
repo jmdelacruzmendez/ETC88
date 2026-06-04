@@ -32,9 +32,9 @@
 | `recaudacion.modelo` | cuotas + rifa y/o venta de comida + donaciones | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
-| `marca.lema_retiro` | En busca del tesoro | director | Lema del retiro ETC 88 confirmado por el director. Referencia al tesor… |
-| `marca.hilo_espiritual` | El tesoro escondido (Mt 13,44): la expedición busca el tesor… | director |  |
-| `marca.tematica` | expedición · en busca del tesoro | director | Temática confirmada: expedición/travesía hacia el tesoro escondido (Mt… |
+| `marca.lema_retiro` | Donde está tu tesoro, allí estará tu corazón | director | Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro… |
+| `marca.hilo_espiritual` | El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, all… | director |  |
+| `marca.tematica` | expedición · el tesoro y el corazón | director | Temática confirmada: la expedición es hacia adentro — la brújula del c… |
 | `comunidades_y_parroquias.parroquia_spm` | San José Obrero (SPM) | director | Parroquia de referencia en SPM (misas etecianas y posibles actividades… |
 | `comunidades_y_parroquias.parroquia_pc` | Nuestra Señora del Pilar (Punta Cana) | director | Parroquia en PC con representación del 88 en el equipo; aún no se han … |
 | `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |

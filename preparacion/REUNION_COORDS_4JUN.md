@@ -3,7 +3,7 @@
 
 > **Convocados:** Co-Dir (Juan Manuel + Jean Carlo) · Asesores Laura · Tomás · Coords **Priscilla + Camila** (Guías) · **Paloma + Jhonnito** (Cocina) · **José Ángel Tusen** (Música). Reunión virtual, ~60 min.
 >
-> **Foco:** Roles y Responsabilidades del Coordinador + cómo gestionas tu primera reunión con tu equipo + qué le requerimos a cada área + materiales · disciplina · pagos mensuales. **No se trabaja:** lema (ya cerrado: *"En busca del tesoro"*), hilo espiritual (Mt 13,44), branding ni estructura financiera del retiro — esas son sesiones aparte.
+> **Foco:** Roles y Responsabilidades del Coordinador + cómo gestionas tu primera reunión con tu equipo + qué le requerimos a cada área + materiales · disciplina · pagos mensuales. **No se trabaja:** lema (ya cerrado: *"Donde está tu tesoro, allí estará tu corazón"* · Mt 6,21), hilo espiritual, branding ni estructura financiera del retiro — esas son sesiones aparte.
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## §1 · Apertura
 - Saludo del Co-Dir y agradecimiento a los coords por servir en el ETC 88.
-- Oración: **Mt 13,44** — *"El Reino de los cielos es como un tesoro escondido en un campo; el que lo encuentra, lleno de alegría, va, vende todo lo que tiene y compra ese campo."* (Hilo del retiro · lema *"En busca del tesoro"*.)
+- Oración: **Mt 6,21** — *"Porque donde está tu tesoro, allí estará también tu corazón."* (Lema e hilo del retiro 88.)
 
 ## §2 · Equipo cerrado — quién es quién
 
@@ -139,7 +139,9 @@ El coord **acompaña a su equipo de área**: es la voz del director hacia su gen
 
 ## Anexo · Citas para usar en vivo
 
-> **Mt 13,44** — *"El Reino de los cielos es como un tesoro escondido en un campo; el que lo encuentra, lleno de alegría, va, vende todo lo que tiene y compra ese campo."* *(Hilo del retiro.)*
+> **Mt 6,21** — *"Porque donde está tu tesoro, allí estará también tu corazón."* *(Lema e hilo del retiro 88.)*
+>
+> **Mt 13,44** — *"El Reino de los cielos es como un tesoro escondido en un campo; el que lo encuentra, lleno de alegría, va, vende todo lo que tiene y compra ese campo."* *(Cita complementaria: la consecuencia gozosa del hallazgo.)*
 
 > **Jn 15,15** — *"Ya no los llamo siervos… A ustedes los he llamado amigos."* *(Lema eteciano.)*
 

@@ -218,8 +218,8 @@ doc.add_paragraph().paragraph_format.space_after = Pt(20)
 # Lema + hilo
 callout(doc,
     '**Lema eteciano:** *"Siempre amigos"* · Jn 15,15\n'
-    '**Lema del retiro:** *"En busca del tesoro"*\n'
-    '**Hilo espiritual:** El tesoro escondido — Mt 13,44\n'
+    '**Lema del retiro:** *"Donde está tu tesoro, allí estará tu corazón"* · Mt 6,21\n'
+    '**Hilo espiritual:** El corazón y el tesoro — Mt 6,21\n'
     '**Retiro:** 4–6 de septiembre de 2026 · Casa de Retiro «La Ceiba del Salado», Higüey')
 
 p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
