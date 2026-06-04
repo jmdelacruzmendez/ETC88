@@ -25,15 +25,17 @@ QUÉ QUIERO QUE PRODUZCAS (APLICANDO EL SISTEMA)
 2. Páginas interiores fluyendo el texto real de la Guía (te lo adjunto): ¿Qué es un ETC? · el hilo espiritual · roles durante el retiro · los temas · escrituras · horario.
 3. Separadores de sección — uno por bloque, y separadores por área usando los mensajes pastorales de Padre Paul (Guías = "enfocados en el participante"; Cocina = "entrega y sacrificio · Jn 13"; Música = "animación espiritual antes que técnica").
 4. Los 9 temas como "estaciones de la expedición" — un tratamiento visual de la secuencia (mapa de ruta sobrio: Confianza → Singularidad → … → Cuarto Día → el tesoro).
-5. Los dos ANEXOS, cada uno con su portadilla en el mismo sistema:
+5. Los tres ANEXOS, cada uno con su portadilla en el mismo sistema:
    •  Anexo 1 · Guía de Guías (texto adjunto).
    •  Anexo 2 · Anexo de Cocina (texto adjunto).
+   •  Anexo 3 · Anexo de Música (texto adjunto).
 6. Página de directorio del equipo — déjala como plantilla / placeholder (la completamos al final).
 
 TEXTOS A ADJUNTAR (LOS PEGO/SUBO APARTE)
 •  Carpeta (cuerpo): COPY_GUIA_ETC88.md — la Guía del retiro.
 •  Anexo 1: GUIA_DE_GUIAS_88.md.
 •  Anexo 2: ANEXO_COCINA_88.md.
+•  Anexo 3: ANEXO_MUSICA_88.md.
 
 PRODUCCIÓN
 •  Imprimible y barato: 1–2 tintas (azul + coral sobre crema) con el pez a color como único acento full-color. Confirmar # de tintas con la imprenta.

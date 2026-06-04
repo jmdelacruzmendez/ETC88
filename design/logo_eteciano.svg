@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <defs>
+    <radialGradient id="fishBody" cx="40%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#FBE89C"/>
+      <stop offset="65%" stop-color="#F1C946"/>
+      <stop offset="100%" stop-color="#D9A82B"/>
+    </radialGradient>
+  </defs>
+  <!-- cuerpo + cola -->
+  <path d="
+    M 80 310
+    Q 80 90 540 90
+    Q 940 90 1000 270
+    L 1170 130
+    L 1170 490
+    L 1000 350
+    Q 940 530 540 530
+    Q 80 530 80 310 Z"
+    fill="url(#fishBody)" stroke="#5C3A1E" stroke-width="9" stroke-linejoin="round"/>
+  <!-- ojo -->
+  <ellipse cx="155" cy="295" rx="14" ry="18" fill="none" stroke="#5C3A1E" stroke-width="4"/>
+  <!-- boca -->
+  <path d="M 95 360 Q 130 395 175 370" fill="none" stroke="#5C3A1E" stroke-width="4" stroke-linecap="round"/>
+  <!-- líneas decorativas arriba (3 curvas) -->
+  <path d="M 220 180 Q 530 120 850 180" stroke="#5C3A1E" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <path d="M 200 215 Q 530 160 870 215" stroke="#5C3A1E" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <path d="M 195 255 Q 530 205 875 255" stroke="#5C3A1E" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <!-- ΙΧΘΥΣ en colores -->
+  <g font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="190" text-anchor="middle">
+    <text x="270" y="395" fill="#9DDDD3">Ι</text>
+    <text x="380" y="395" fill="#D9342B">Χ</text>
+    <text x="525" y="395" fill="#1E3A8A">Θ</text>
+    <text x="675" y="395" fill="#E76F2E">Υ</text>
+    <text x="820" y="395" fill="#C72175">Ϲ</text>
+  </g>
+  <!-- líneas decorativas abajo (2 curvas) -->
+  <path d="M 220 460 Q 530 510 850 460" stroke="#5C3A1E" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <path d="M 195 495 Q 530 545 875 495" stroke="#5C3A1E" stroke-width="11" fill="none" stroke-linecap="round"/>
+</svg>
