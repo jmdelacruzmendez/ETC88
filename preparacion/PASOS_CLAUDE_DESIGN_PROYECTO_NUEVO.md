@@ -1,6 +1,6 @@
 # Claude Design — montar un PROYECTO NUEVO para maquetar la Carpeta del ETC 88
 
-> Guía paso a paso para arrancar **desde cero** un proyecto en Claude dedicado al diseño de la Carpeta. La idea: cargar una sola vez el **sistema de diseño + los textos + el logo** como *conocimiento del proyecto*, y a partir de ahí pedir las piezas en chats. Así el sistema (Dirección A · Expedición) queda "fijo" y no hay que repegarlo cada vez.
+> Guía paso a paso para arrancar **desde cero** un proyecto en Claude dedicado al diseño de la Carpeta, con la **identidad ORIGINAL del ETC** (el pez ICTUS de colores). La idea: cargar una sola vez la **identidad + los textos + el logo** como *conocimiento del proyecto*, y a partir de ahí pedir las piezas en chats. Así no hay que repegar todo cada vez.
 
 ---
 
@@ -9,18 +9,18 @@ Súbelos desde tu copia del repo (carpeta `ETC88/`). Son los que el proyecto nec
 
 **La identidad (original del ETC):**
 - `design/DESIGN_SYSTEM_ETC.md` — la especificación (logo, paleta derivada del logo, estética, aplicación a la Carpeta).
-- **El LOGO ORIGINAL del ETC** — el archivo del **pez ICTUS de colores** que tiene el director. ⚠️ **Súbelo tú** (no usamos una recreación). Si el director te lo pasa como imagen, guárdalo como `design/logo_eteciano_oficial.png` y súbelo.
+- **El LOGO ORIGINAL del ETC** — el archivo del **pez ICTUS de colores** que tienes. ⚠️ **Súbelo tú** (no usamos una recreación). Guárdalo como `design/logo_eteciano_oficial.png` y súbelo.
 
 **Los textos reales (lo que se va a maquetar):**
-- `entrega_diseno/CARPETA_ETC88.txt` — el cuerpo de la Carpeta (12 secciones).
+- `entrega_diseno/CARPETA_ETC88.txt` — el cuerpo de la Carpeta (13 secciones, incluye el mensaje de los directores al final).
 - `entrega_diseno/ANEXO_1_GUIA_DE_GUIAS.txt`
 - `entrega_diseno/ANEXO_2_COCINA.txt`
 - `entrega_diseno/ANEXO_3_MUSICA.txt`
 - `entrega_diseno/ANEXO_4_ORACIONES.txt`
-- `entrega_diseno/DIRECTORIO_EQUIPO_88.md` — la lista de nombres del equipo (para la página de directorio).
+- `entrega_diseno/DIRECTORIO_EQUIPO_88.md` — la lista del equipo por área, con cumpleaños (para la página de directorio).
 
 **El prompt principal (lo que vas a pegar en el primer chat):**
-- `entrega_diseno/INSTRUCCION_CLAUDE_DESIGN.txt` — la instrucción "afinar-y-aplicar".
+- `entrega_diseno/INSTRUCCION_CLAUDE_DESIGN.txt` — la instrucción de diseño.
 
 **Opcional (referencia de contenido / paridad de librito):**
 - `entrega_diseno/CARPETA_ETC88.docx` — el booklet ya armado (sirve para que vea el orden, índice y tablas).
@@ -29,12 +29,12 @@ Súbelos desde tu copia del repo (carpeta `ETC88/`). Son los que el proyecto nec
 
 ## 1. Crea el proyecto
 1. Entra a **claude.ai** → barra lateral → **Projects** → **New project** (o "Crear proyecto").
-2. Nómbralo: **`ETC 88 · Carpeta (Dirección A)`**.
-3. Descripción corta: *"Maquetar la Carpeta del retiro ETC 88 aplicando el Design System Dirección A · Expedición."*
+2. Nómbralo: **`ETC 88 · Carpeta`**.
+3. Descripción corta: *"Maquetar la Carpeta del retiro ETC 88 con la identidad original del ETC (pez ICTUS de colores)."*
 
 ## 2. Carga el conocimiento del proyecto (una sola vez)
 En el panel del proyecto, en **Project knowledge** (o "Conocimiento") → **Add content / subir archivos**:
-1. Sube **todos los archivos del paso 0** (el `.md` del sistema, los 7 `.svg`, el `.png` del logo, los 5 `.txt`, y el `.docx` opcional).
+1. Sube **todos los archivos del paso 0** (el `DESIGN_SYSTEM_ETC.md`, el **logo original**, los 5 `.txt`, el `DIRECTORIO_EQUIPO_88.md`, y el `.docx` opcional).
 2. Esto queda disponible para **todos los chats** del proyecto — no hay que volver a subirlo.
 
 ## 3. Pon las instrucciones del proyecto (las reglas que no cambian)
@@ -52,38 +52,39 @@ En **Project instructions / "Set custom instructions"**, pega esto:
 
 ## 4. Primer chat — establecer y aplicar el sistema
 1. Abre un **chat nuevo dentro del proyecto**.
-2. Pega el contenido de **`entrega_diseno/INSTRUCCION_CLAUDE_DESIGN.txt`** (el prompt "afinar-y-aplicar").
-3. Añade al final: *"El sistema, el logo y los textos están en el conocimiento del proyecto. Empieza confirmándome en 3 líneas que el sistema está cargado (paleta + tipografía + concepto) y muéstrame la **portada** como primera pieza."*
+2. Pega el contenido de **`entrega_diseno/INSTRUCCION_CLAUDE_DESIGN.txt`** y **adjunta el logo original** en ese mensaje.
+3. Añade al final: *"El sistema, el logo y los textos están en el conocimiento del proyecto. Confírmame en 3 líneas que el sistema está cargado (logo + paleta + tono) y muéstrame la **portada** como primera pieza."*
 4. Claude responde con un **artifact** (SVG/HTML) que puedes previsualizar a la derecha.
 
 ## 5. Pide las piezas en orden (una por mensaje)
 Avanza pieza por pieza para poder corregir cada una:
-1. **Portada** — lema Mt 6,21 + datos del retiro + pez-brújula.
-2. **Índice / tabla de contenido** (12 secciones + 4 anexos).
+1. **Portada** — el **pez ICTUS original a color** + **"ETC 88"** + el lema *"Donde está tu tesoro…"* (Mt 6,21) + fechas y lugar. **Sin conteos.**
+2. **Índice / tabla de contenido** (13 secciones + 4 anexos).
 3. **Páginas interiores** fluyendo el texto de la Carpeta (`CARPETA_ETC88.txt`).
-4. **Separadores por sección** y **por área** (Guías / Cocina / Música / Asesores) con los mensajes pastorales de Padre Paul.
+4. **Separadores por sección** y **por área** (Guías / Cocina / Música / Asesores) — un color de los 5 por área, con los mensajes pastorales de Padre Paul.
 5. **Los 9 temas** como una secuencia visual sobria (ruta del retiro).
 6. **Portadillas de los 4 anexos** (Guías, Cocina, Música, Oraciones) — cada uno abre como capítulo.
-7. **Tablas** formateadas: horario (VIE/SÁB/DOM) y directorio del equipo (déjalo como **plantilla**, se llena al final).
-8. **Pie de página** con folio + "ETC 88 · Higüey 2026".
+7. **Directorio del equipo** — usa la lista real `DIRECTORIO_EQUIPO_88.md` (por área, **con cumpleaños**); marca coordinadores.
+8. **Mensaje de los directores** — ya viene al final del texto de la Carpeta; trátalo como página de cierre.
+9. **Tablas** del horario (VIE/SÁB/DOM). **Pie** con folio + "ETC 88 · Higüey 2026".
 
 Para cada pieza, si hay más de una salida posible, pídele: *"dame 2 opciones y una recomendación."*
 
 ## 6. Itera
-- Corrige con frases concretas: *"sube el contraste del subtítulo", "el pez más pequeño en la portada", "esta tabla a 1 tinta"*.
-- Si se desvía del sistema, recuérdale: *"aplica `DESIGN_SYSTEM_A.md`, no inventes paleta."*
+- Corrige con frases concretas: *"el pez más pequeño en la portada", "esta tabla a 1 tinta", "usa el magenta solo en los títulos de Cocina"*.
+- Si se desvía, recuérdale: *"aplica `DESIGN_SYSTEM_ETC.md` y el logo original, no inventes paleta."*
 
 ## 7. Exporta
 1. En cada artifact, usa **Copy / Download** (SVG o PNG; HTML si es maqueta de varias páginas).
 2. Para el librito completo, pídele: *"compón todo en un solo documento imprimible (media carta / A5), con folios e índice"* y expórtalo a **PDF**.
-3. Guarda los exportables en `entrega_diseno/` del repo (o donde lleves los finales) y, cuando esté aprobado, súbelo a la carpeta de Drive **"ETC 88 · ENTREGABLES (oficial)"**.
+3. Guarda los exportables en `entrega_diseno/` del repo y, cuando esté aprobado, súbelo a la carpeta de Drive **"ETC 88 · ENTREGABLES (oficial)"**.
 
 ---
 
 ## Notas
-- **Proyecto nuevo vs. sesión vieja:** si ya tenías una sesión con el sistema cargado, no hace falta el proyecto; pero el proyecto es mejor porque el conocimiento queda fijo y compartible. Esta guía cubre el caso **desde cero**.
-- **El logo** tiene sus propios colores (celeste/rojo/azul/naranja/magenta); el sistema de la Carpeta (azul/arena/coral) lo **enmarca**. No los mezcles dentro de una misma pieza salvo el pez como acento.
+- **Proyecto nuevo vs. sesión vieja:** el proyecto es mejor porque el conocimiento queda fijo y compartible. Esta guía cubre el caso **desde cero**.
+- **El color:** la base es **marrón + dorado + crema** (sobria); las **5 letras-color** son acentos puntuales y el **pez a color** es el único elemento full-color. Así se conserva la alegría del logo sin volverse ruidoso.
 - **Antes de imprimir:** confirma con la imprenta el **# de tintas** y el formato (media carta o A5).
 
 ---
-*Pasos para montar el proyecto de Claude Design de la Carpeta ETC 88 · Dirección A · Expedición.*
+*Pasos para montar el proyecto de Claude Design de la Carpeta ETC 88 · identidad original del ETC (pez ICTUS de colores).*
