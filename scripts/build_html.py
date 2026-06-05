@@ -497,7 +497,7 @@ tr:hover { background: var(--pergamino-claro); }
 
   <div class="mt-6 bg-pergamino-claro border border-rule p-5">
     <h3 class="f-display text-base text-tierra-honda mb-2">Recomendaciones para nuevas en Cocina</h3>
-    <p class="text-sm text-tinta-suave mb-3">Olanlly, Roselyn, Pamela pendientes de formulario. Para balancear, el perfil sugerido es:</p>
+    <p class="text-sm text-tinta-suave mb-3">El equipo de cocina ya completó sus formularios. Para balancear el perfil del equipo, la sugerencia es:</p>
     <ul class="text-sm space-y-1 list-disc list-inside" x-html="recomendacionVacantes()"></ul>
   </div>
 </section>

@@ -2088,39 +2088,51 @@
       "transversal": false
     },
     {
-      "id": "roselyn-sin-formulario",
-      "nombre": "Roselyn (sin formulario)",
+      "id": "roselyn-quiroz",
+      "nombre": "Roselyn Quiroz",
       "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
+      "edad": 20,
+      "cumple_mes": 11,
+      "cumple_dia": 2,
+      "cumple_anio": 2005,
+      "etc_propio": 85,
+      "etc_anio_propio": 2025,
+      "etcs_servidos": 0,
       "residencia": "—",
-      "comunidad": "Por confirmar",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
+      "talla": "XS",
+      "telefono": "8299330230",
+      "que_espera": "Juntos de la mano de Dios llevar a mas jóvenes a tener su encuentro con Cristo.",
+      "miedos": "Al ser la primera vez, creo que miedo a no saber que hacer o no ser suficiente",
+      "tema_dios": "No estoy segura",
+      "invita": "Sí",
+      "alergias": "Ninguna",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno",
       "contacto_emergencia": null,
       "palabra": null,
       "dudas": null,
       "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
+      "invitados": [
+        {
+          "nombre": "Digna Ally Guzmán de la Cruz",
+          "edad": "20",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Juan Alejandro Gonzalez",
+          "edad": "20",
+          "relacion": "Amigo"
+        }
+      ],
+      "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota": "Continuidad de cantera: vivió el ETC 85 (2025); primera vez sirviendo (cocina). Sin alergias ni condiciones médicas reportadas."
     },
     {
       "id": "tommy-nova-nolasco",
@@ -3815,6 +3827,21 @@
         {
           "nombre": "Yiraimy Núñez Ozoria",
           "edad": "24 años",
+          "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Roselyn Quiroz",
+      "invitados": [
+        {
+          "nombre": "Digna Ally Guzmán de la Cruz",
+          "edad": "20",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Juan Alejandro Gonzalez",
+          "edad": "20",
           "relacion": "Amigo"
         }
       ]

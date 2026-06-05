@@ -232,7 +232,7 @@ for p in equipo:
 PLACEHOLDERS_OP = [
     ('Daylin (sin formulario)', 'musica', 'Música', 'F'),
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
-    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: Roselyn DENTRO de cocina (junto con Randol). Pamela fuera.
+    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: DENTRO de cocina (junto con Randol). Formulario recibido 4-jun → datos reales en form_live_overrides.json (Roselyn Quiroz).
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
     ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, activo en cocina (NO backup)
     ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías
