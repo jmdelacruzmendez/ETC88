@@ -61,8 +61,8 @@
 | Jordelis Mateo | Cocina | 26 jul | (829) 610-1254 |
 | Kelvin Alexis Ventura Santana | Cocina | 28 jul | (809) 463-3990 |
 | Maria del Carmen Mejías Mateo | Cocina | 29 ago | (829) 713-7943 |
-| Marian Olanlly Ortiz Carrasco | Cocina | — | — |
-| Randol Joseph Payano | Cocina | — | — |
+| Marian Olanlly Ortiz Carrasco | Cocina | 23 oct | (849) 406-2313 |
+| Randol Joseph Payano | Cocina | 18 dic | (829) 963-9360 |
 | Risaira Santana Rosario | Cocina | 29 jun | (829) 203-2829 |
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |
 | Roberto Figueroa | Cocina | 12 may | (809) 717-1329 |
@@ -75,7 +75,7 @@
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
 | José Ángel Tusen Russo | Coordinador/a | 30 oct | (849) 352-1430 |
-| Daylin M Rambalde Moreta | Música | — | — |
+| Daylin M Rambalde Moreta | Música | 23 nov | (829) 863-9956 |
 | Dorian Elina Rodriguez Belliard | Música | 21 mar | (829) 986-0995 |
 | Ismarie Sthepanie Constanzo Ramos | Música | 14 jun | (849) 386-5474 |
 | Leober Carrion Soriano | Música | 4 oct | (829) 440-1305 |
