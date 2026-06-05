@@ -106,8 +106,8 @@
   },
 
   "historial": {
-    "etcs_disponibles_en_drive": { "valor": ["ETC 78", "ETC 79", "ETC 85", "ETC 88"], "estado": "confirmado", "fuente": "exploración Drive read-only 2026-06-02", "nota": "Carpeta padre Drive contiene 78, 79, 85, 88. NO existe carpeta del ETC 83 (búsqueda por título '83/LXXXIII' y full-text 'ETC 83' = cero matches en el ámbito)." },
-    "etc_83_disponible":         { "valor": false, "estado": "confirmado", "fuente": "exploración Drive 2026-06-02", "nota": "No se invente contenido del 83: no hay fuente." },
+    "etcs_disponibles_en_drive": { "valor": ["ETC 78", "ETC 79", "ETC 83", "ETC 85", "ETC 88"], "estado": "confirmado", "fuente": "exploración Drive 2026-06-04", "nota": "Carpeta padre Drive contiene 78, 79, 83, 85, 88. El ETC 83 fue agregado por el director el 4-jun-2026." },
+    "etc_83_disponible":         { "valor": true, "estado": "confirmado", "fuente": "Drive: carpeta ETC 83 compartida por el director 2026-06-04", "nota": "Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster + Equipos 83 (xlsx), Hoja s/título (xlsx), Guía para Guías LXXIX.pdf (referencial). NO hay informe final, ni programa del retiro, ni guía propia. ETC 83 ocurrió 30 ago - 1 sep 2024." },
     "informe_final_85":          { "valor": "Informe Final ETC 85.pdf — leído en Drive", "estado": "confirmado", "fuente": "Drive: ETC 85 / Informe Final ETC 85.pdf", "nota": "Roster 85 + puntos positivos + aspectos a mejorar + medidas financieras. Base de las recomendaciones de gaps del 88." },
     "drive_88_carpetas_vacias":  { "valor": ["Operaciones", "Finanzas"], "estado": "confirmado", "fuente": "exploración Drive 2026-06-02", "nota": "Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pasados las tienen llenas)." }
   },
