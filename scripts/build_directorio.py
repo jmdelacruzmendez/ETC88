@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Genera el DIRECTORIO del equipo (lista de nombres por área) desde data/equipo.json.
-Fuente única: equipo.json. Salida compartible para la Carpeta / Claude Design.
-NO se edita a mano la lista; se corrige el roster y se regenera (regla #2)."""
+"""Genera el DIRECTORIO del equipo (lista de nombres por área, con cumpleaños) desde
+data/equipo.json. Fuente única: equipo.json. Salida compartible para la Carpeta /
+Claude Design. NO se edita a mano la lista; se corrige el roster y se regenera (regla #2).
+No incluye cantera/backups (solo titulares del equipo)."""
 import json, os
 from collections import defaultdict
 
@@ -16,15 +17,36 @@ LABELS = {
     'asesores_espirituales': 'Asesores espirituales', 'guias': 'Guías',
     'cocina': 'Cocina', 'musica': 'Música',
     'asesores_cocina': 'Asesoras de cocina',
-    'asesores_diocesanos': 'Asesores diocesanos · comunidad',
+    'asesores_diocesanos': 'Asesores de comunidad',
 }
+MES = {1: 'ene', 2: 'feb', 3: 'mar', 4: 'abr', 5: 'may', 6: 'jun',
+       7: 'jul', 8: 'ago', 9: 'sep', 10: 'oct', 11: 'nov', 12: 'dic'}
+
+
+def comunidad_from_rol(rol):
+    if 'La Vega' in rol:
+        return 'La Vega'
+    if 'SD' in rol or 'Santo Domingo' in rol:
+        return 'Santo Domingo'
+    if 'SPM' in rol:
+        return 'San Pedro de Macorís'
+    return None
+
+
+def cumple(p):
+    d, m = p.get('cumple_dia'), p.get('cumple_mes')
+    if d and m and m in MES:
+        return f' · cumple {d} {MES[m]}'
+    return ''
+
+
 by = defaultdict(list)
 for p in team:
     by[p['area']].append(p)
 
 lines = []
 lines.append('# Directorio del equipo — ETC 88')
-lines.append('### Lista de servidores por área · generada desde data/equipo.json (fuente única)')
+lines.append('### Lista de servidores por área (con cumpleaños) · generada desde data/equipo.json (fuente única)')
 lines.append('')
 lines.append('> No editar a mano. Si un nombre cambia, se corrige el roster y se regenera con `python scripts/build_directorio.py`.')
 lines.append('')
@@ -44,29 +66,20 @@ for a in ORDER:
             tag = ' — Coordinador/a'
         elif p.get('transversal'):
             tag = ' — (acompaña todo el proceso)'
+        elif a == 'asesores_diocesanos':
+            com = comunidad_from_rol(p['rol'])
+            tag = f' — {com}' if com else ''
         else:
             tag = ''
-        lines.append(f'- {p["nombre"]}{tag}')
-    lines.append('')
-
-backs = [p for p in team if p.get('backup')]
-if backs:
-    bg = [p['nombre'] for p in backs if 'Guía' in p['rol']]
-    bc = [p['nombre'] for p in backs if 'Cocina' in p['rol']]
-    lines.append(f'## Cantera · backups ({len(backs)})')
-    lines.append('> Cantera del equipo; se activan según necesidad. No son titulares operativos.')
-    if bg:
-        lines.append(f'- **Guías ({len(bg)}):** ' + ' · '.join(sorted(bg)))
-    if bc:
-        lines.append(f'- **Cocina ({len(bc)}):** ' + ' · '.join(sorted(bc)))
+        lines.append(f'- {p["nombre"]}{tag}{cumple(p)}')
     lines.append('')
 
 lines.append('---')
-lines.append(f'*Titulares: {total_tit} · Cantera: {len(backs)} · Total: {total_tit + len(backs)}. '
-             'Directorio generado del roster — los datos de contacto viven en `Equipo_ETC88.xlsx`.*')
+lines.append(f'*{total_tit} servidores del equipo. Directorio generado del roster — '
+             'los datos de contacto viven en `Equipo_ETC88.xlsx`.*')
 
 out_md = f'{REPO}/entrega_diseno/DIRECTORIO_EQUIPO_88.md'
 os.makedirs(os.path.dirname(out_md), exist_ok=True)
 with open(out_md, 'w', encoding='utf-8') as f:
     f.write('\n'.join(lines) + '\n')
-print(f'Wrote {out_md} · titulares {total_tit} · cantera {len(backs)} · total {total_tit + len(backs)}')
+print(f'Wrote {out_md} · {total_tit} titulares (sin cantera)')

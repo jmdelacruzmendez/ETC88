@@ -5,7 +5,8 @@ con numeración de página y pie. Estilo Dirección A. Es un borrador FUNCIONAL
 para revisar contenido/estructura — el acabado visual final lo hace Claude Design.
 Salida: entrega_diseno/CARPETA_ETC88.docx
 """
-import os, re
+import os, re, json
+from collections import defaultdict
 import cairosvg
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor, Cm
@@ -16,6 +17,7 @@ from docx.oxml import OxmlElement
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CARPETA = os.path.join(REPO, 'preparacion', 'COPY_GUIA_ETC88.md')
+EQUIPO = os.path.join(REPO, 'data', 'equipo.json')
 ANEXOS = ['GUIA_DE_GUIAS_88.md', 'ANEXO_COCINA_88.md', 'ANEXO_MUSICA_88.md', 'ANEXO_ORACIONES_88.md']
 OUT = os.path.join(REPO, 'entrega_diseno', 'CARPETA_ETC88.docx')
 LOGO_SVG = os.path.join(REPO, 'design', 'logo_eteciano.svg')
@@ -116,6 +118,43 @@ def setup_footer(doc):
     page_field(p)
     for rr in p.runs: rr.font.size = Pt(8); rr.font.color.rgb = GRIS
 
+_DIR_LABELS = {'directores': 'Dirección', 'asesores': 'Asesores',
+    'asesores_espirituales': 'Asesores espirituales', 'guias': 'Guías',
+    'cocina': 'Cocina', 'musica': 'Música', 'asesores_cocina': 'Asesoras de cocina',
+    'asesores_diocesanos': 'Asesores de comunidad'}
+_DIR_ORDER = ['directores', 'asesores', 'asesores_espirituales', 'guias', 'cocina',
+    'musica', 'asesores_cocina', 'asesores_diocesanos']
+_MES = {1:'ene',2:'feb',3:'mar',4:'abr',5:'may',6:'jun',7:'jul',8:'ago',9:'sep',10:'oct',11:'nov',12:'dic'}
+
+def render_directorio(doc):
+    """Inyecta el directorio (titulares por área, con cumpleaños · sin cantera) desde equipo.json."""
+    data = json.load(open(EQUIPO, encoding='utf-8'))
+    team = data['equipo'] if isinstance(data, dict) and 'equipo' in data else data
+    by = defaultdict(list)
+    for p in team:
+        by[p['area']].append(p)
+    def com(rol):
+        if 'La Vega' in rol: return 'La Vega'
+        if 'SD' in rol or 'Santo Domingo' in rol: return 'Santo Domingo'
+        if 'SPM' in rol: return 'San Pedro de Macorís'
+        return None
+    def cumple(p):
+        d, m = p.get('cumple_dia'), p.get('cumple_mes')
+        return f' · cumple {d} {_MES[m]}' if d and m and m in _MES else ''
+    for a in _DIR_ORDER:
+        ppl = [p for p in by.get(a, []) if not p.get('backup') and not p.get('vacante')]
+        if not ppl: continue
+        ppl.sort(key=lambda p: (0 if (p['rol'] == 'Director' or 'Coord' in p['rol']) else 1, p['nombre']))
+        h2(doc, f'{_DIR_LABELS.get(a, a)} ({len(ppl)})')
+        for p in ppl:
+            if p['rol'] == 'Director': tag = ' — Director'
+            elif 'Coord' in p['rol']: tag = ' — Coordinador/a'
+            elif p.get('transversal'): tag = ' — (acompaña todo el proceso)'
+            elif a == 'asesores_diocesanos':
+                c = com(p['rol']); tag = f' — {c}' if c else ''
+            else: tag = ''
+            bullet(doc, f'{p["nombre"]}{tag}{cumple(p)}')
+
 def parse_body(doc, lines, page_break_per_section):
     """Renderiza el cuerpo (## ### #### > - 1. | texto). Sin lógica de portada."""
     i, first = 0, True
@@ -135,6 +174,12 @@ def parse_body(doc, lines, page_break_per_section):
             block = [b for b in block if b.strip()]
             if block: callout(doc, block)
             continue
+        if line.startswith('## ') and 'Directorio' in line:
+            if page_break_per_section and not first: doc.add_page_break()
+            first = False; h1(doc, line[3:]); i += 1
+            while i < len(lines) and lines[i].strip() and not lines[i].startswith('## '):
+                para(doc, lines[i].strip()); i += 1
+            render_directorio(doc); continue
         if line.startswith('## '):
             if page_break_per_section and not first: doc.add_page_break()
             first = False; h1(doc, line[3:]); i += 1; continue

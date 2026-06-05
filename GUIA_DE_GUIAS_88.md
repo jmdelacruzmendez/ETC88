@@ -49,7 +49,7 @@ El guía no enseña ni predica: **acompaña**. Su trabajo es crear confianza, es
 11. **Presentación de los guías** al inicio del retiro (que se conozcan).
 12. **En cada reunión del equipo: sacar tiempo para repasar el horario y ensayar al menos un PG.**
 13. **Pendiente de TODO el plenario** — el guía cuida a sus participantes y también a los demás (no solo a su PG). *(lección Informe 85)*
-14. **Definir con tiempo el espacio del PG y tener un backup** por si el lugar asignado no sirve. *(lección Informe 85)*
+14. **Definir con tiempo el espacio del PG y tener un lugar alterno** por si el asignado no sirve. *(lección Informe 85)*
 15. **Participación obligatoria en las oraciones grupales** — guías incluidos, sin excepción. *(lección Informe 85)*
 
 > **Presupuesto:** las **libretas (cuadernos para los participantes)** entran en el **presupuesto de Guías** — no en cocina ni en materiales generales.

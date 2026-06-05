@@ -1,81 +1,76 @@
 # Directorio del equipo — ETC 88
-### Lista de servidores por área · generada desde data/equipo.json (fuente única)
+### Lista de servidores por área (con cumpleaños) · generada desde data/equipo.json (fuente única)
 
 > No editar a mano. Si un nombre cambia, se corrige el roster y se regenera con `python scripts/build_directorio.py`.
 
 ## Dirección (2)
-- Jean Carlo De la Cruz Mendez — Director
-- Juan Manuel de la Cruz Méndez — Director
+- Jean Carlo De la Cruz Mendez — Director · cumple 12 may
+- Juan Manuel de la Cruz Méndez — Director · cumple 20 ene
 
 ## Asesores (3)
 - Frank Morales
-- Laura Fernández
-- Tomás Lorenzo
+- Laura Fernández · cumple 26 oct
+- Tomás Lorenzo · cumple 14 mar
 
 ## Asesores espirituales (2)
 - Padre Paul Ramírez — (acompaña todo el proceso)
 - Sor Angelina Lebrón — (acompaña todo el proceso)
 
 ## Guías (14)
-- Camila Fernández Hazim — Coordinador/a
-- Priscilla Hidalgo Pou — Coordinador/a
-- Darianny Rodriguez Belliard
-- Fernando Cordero
-- Franklin De Jesús Silverio Delgadillo
-- Ivanna Marien Mercedes Sosa
-- Jhonnalia Franchesca Silvestre Guzmán
-- Jonathan Andres Medina Mota
-- Juan Pablo Argüello Alzate
-- Luisa Maria Fiorentino Brugal
-- Oliver Rafael De León Ramírez
-- Victoria Lorenzo Rivera
-- Wilka María Reyes Mota
-- Yelaxni Mota
+- Camila Fernández Hazim — Coordinador/a · cumple 18 ago
+- Priscilla Hidalgo Pou — Coordinador/a · cumple 16 jul
+- Darianny Rodriguez Belliard · cumple 30 ene
+- Fernando Cordero · cumple 20 dic
+- Franklin De Jesús Silverio Delgadillo · cumple 18 feb
+- Ivanna Marien Mercedes Sosa · cumple 9 nov
+- Jhonnalia Franchesca Silvestre Guzmán · cumple 20 oct
+- Jonathan Andres Medina Mota · cumple 26 sep
+- Juan Pablo Argüello Alzate · cumple 21 ene
+- Luisa Maria Fiorentino Brugal · cumple 19 may
+- Oliver Rafael De León Ramírez · cumple 24 abr
+- Victoria Lorenzo Rivera · cumple 21 sep
+- Wilka María Reyes Mota · cumple 8 sep
+- Yelaxni Mota · cumple 25 sep
 
 ## Cocina (21)
-- Johnnito Richiez Brugal — Coordinador/a
-- Paloma Mendez — Coordinador/a
-- Adrián Francisco Santana Puente
-- Ambar Liz Jáquez Lebrón
-- Brianelis Abreu Calderón
-- Candy Elizabeth Gatwood Ramos
-- Chantal Melissa Carpio Jiménez
-- Dayrelins Jazmin Santana Salas
-- Fabelly Maciel Fabian Bello
-- Guido Maldonado
-- Jordelis Mateo
-- Kelvin Alexis Ventura Santana
-- Maria del Carmen Mejías Mateo
+- Johnnito Richiez Brugal — Coordinador/a · cumple 23 oct
+- Paloma Mendez — Coordinador/a · cumple 27 jun
+- Adrián Francisco Santana Puente · cumple 22 ene
+- Ambar Liz Jáquez Lebrón · cumple 22 sep
+- Brianelis Abreu Calderón · cumple 12 nov
+- Candy Elizabeth Gatwood Ramos · cumple 5 ene
+- Chantal Melissa Carpio Jiménez · cumple 24 dic
+- Dayrelins Jazmin Santana Salas · cumple 30 ago
+- Fabelly Maciel Fabian Bello · cumple 11 ago
+- Guido Maldonado · cumple 30 nov
+- Jordelis Mateo · cumple 26 jul
+- Kelvin Alexis Ventura Santana · cumple 28 jul
+- Maria del Carmen Mejías Mateo · cumple 29 ago
 - Marian Olanlly Ortiz Carrasco
 - Randol Joseph Payano
-- Risaira Santana Rosario
-- Risairi Santana Rosario
-- Roberto Figueroa
-- Roselyn Quiroz
-- Tommy Nova Nolasco
-- Wirna Miguelina Stapleton Pilier
+- Risaira Santana Rosario · cumple 29 jun
+- Risairi Santana Rosario · cumple 28 mar
+- Roberto Figueroa · cumple 12 may
+- Roselyn Quiroz · cumple 2 nov
+- Tommy Nova Nolasco · cumple 7 sep
+- Wirna Miguelina Stapleton Pilier · cumple 29 sep
 
 ## Música (6)
-- José Ángel Tusen Russo — Coordinador/a
+- José Ángel Tusen Russo — Coordinador/a · cumple 30 oct
 - Daylin M Rambalde Moreta
-- Dorian Elina Rodriguez Belliard
-- Ismarie Sthepanie Constanzo Ramos
-- Leober Carrion Soriano
-- Mary Carmen Ramírez Vásquez
+- Dorian Elina Rodriguez Belliard · cumple 21 mar
+- Ismarie Sthepanie Constanzo Ramos · cumple 14 jun
+- Leober Carrion Soriano · cumple 4 oct
+- Mary Carmen Ramírez Vásquez · cumple 29 ago
 
 ## Asesoras de cocina (2)
 - Johanny García
 - Mary "Petra" Morales
 
-## Asesores diocesanos · comunidad (3)
-- Leticia González
-- Marleny
-- Sandrita
-
-## Cantera · backups (19)
-> Cantera del equipo; se activan según necesidad. No son titulares operativos.
-- **Guías (3):** Kamila Todd · Rodolfo Telémaco · Scarlett Nivar
-- **Cocina (16):** Carlos · Eduardo · Emilio · Emily · Emily de la Rosa · Emmanuel · Inomar · Leandro · Merkin · Nestor · Ricaira · Rosanna · Samuel · Vileimi · Yileivi · Zahir
+## Asesores de comunidad (3)
+- Leticia González — La Vega
+- Marleny — Santo Domingo
+- Sandrita — Santo Domingo
 
 ---
-*Titulares: 53 · Cantera: 19 · Total: 72. Directorio generado del roster — los datos de contacto viven en `Equipo_ETC88.xlsx`.*
+*53 servidores del equipo. Directorio generado del roster — los datos de contacto viven en `Equipo_ETC88.xlsx`.*
