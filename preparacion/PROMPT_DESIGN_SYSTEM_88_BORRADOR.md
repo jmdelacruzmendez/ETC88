@@ -87,3 +87,20 @@ Si solo me respondes:
 
 ---
 *Brief de Design System ETC 88 · borrador — afinar con las respuestas del director antes de mandar a Claude Design.*
+
+---
+
+## Decisiones del director (5-jun) — primera ronda
+
+- **C6 (cómo se trabaja el 88):** *Claude propone 3 variantes y comparamos* — wordmark tipográfico fuerte, monograma/sello, símbolo abstracto (dos círculos = dos corazones unidos). El director elige sobre arte.
+- **B4–B5 (referencias editoriales/juveniles):** **las 4** — *Aimé Leon Dore (heritage refinado) + Patagonia/Arc'teryx (sport/outdoor) + Stüssy/Supreme (street/drop) + Kinfolk/Apartamento (editorial revista)*. Lectura: el sistema es un **híbrido** — sello + número grande deportivo + composición editorial. *"Aimé Leon Dore haciendo una colección deportiva para una parroquia."*
+- **A2 (pez ICTUS):** **solo en piezas institucionales** (Carpeta, sello, RRSS comunitarias). El **merch del 88 vive SIN el pez** — más limpio, más joven, más distintivo. El pez es el ancla de pertenencia, no la marca del retiro.
+
+### Lo que queda por responder (atajo mínimo para cerrar el prompt)
+- **A1** — colores de la camiseta tradicional de la comunidad (para esquivarlos/contradecirlos).
+- **D8** — color de la tela dryfit.
+- **D9** — serigrafía (1–2 colores) o sublimación (full color).
+- **D10** — composición de la estampa (frente · espalda grande tipo deportivo · etc.).
+- **D11** — si va el nombre del servidor en la espalda (estilo equipo).
+
+Las del bloque E (corazón explícito vs en código) y F (proveedor, alcance) se pueden iterar después de la primera ronda.
