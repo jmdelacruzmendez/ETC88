@@ -275,7 +275,7 @@ def build_carpeta():
     ret = EST['retiro']
     cover(doc, 'ETC 88 · Carpeta (F1)', f"{_v(ret['fechas'])} · {_v(ret['lugar'])}")
     legend(doc)
-    partes = ['GUIA_ETC88.md', 'GUIA_DE_GUIAS_88.md', 'ANEXO_COCINA_88.md']
+    partes = ['GUIA_ETC88.md', 'GUIA_DE_GUIAS_88.md', 'ANEXO_COCINA_88.md', 'ANEXO_MUSICA_88.md', 'ANEXO_ORACIONES_88.md']
     for k, fn in enumerate(partes):
         path = f'{REPO}/{fn}'
         if not os.path.exists(path):

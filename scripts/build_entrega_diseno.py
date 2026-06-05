@@ -20,6 +20,7 @@ PAQUETE = {
     'ANEXO_1_GUIA_DE_GUIAS.txt':     'GUIA_DE_GUIAS_88.md',
     'ANEXO_2_COCINA.txt':            'ANEXO_COCINA_88.md',
     'ANEXO_3_MUSICA.txt':            'ANEXO_MUSICA_88.md',
+    'ANEXO_4_ORACIONES.txt':         'ANEXO_ORACIONES_88.md',
 }
 
 for out_name, src in PAQUETE.items():

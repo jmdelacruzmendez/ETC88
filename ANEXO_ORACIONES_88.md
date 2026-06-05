@@ -1,0 +1,40 @@
+# Anexo de Oraciones — ETC
+### Anexo de la Carpeta · oraciones y momentos de oración del retiro
+
+> Reúne los momentos de oración del ETC: cuándo, quién los lleva, su base bíblica y los materiales. Los textos marcados **[DEL CANCIONERO]** los trae Música; los marcados **[POR DEFINIR]** se cierran con el Padre Paul.
+
+---
+
+## 1. Oración del equipo (mañana y noche)
+- **Cuándo:** al despertar y antes de dormir, cada día (solo el equipo).
+- **Quién:** un asesor o un guía designado.
+- **Forma:** dirigida o espontánea; centra al equipo en el servicio y en el participante. Sin texto fijo.
+
+## 2. Oración de los participantes a María (sábado AM)
+- **Cuándo:** sábado en la mañana, en la capilla.
+- **Quién:** los guías designados + Música (cantos marianos).
+- **Base:** el Rosario o una oración inspirada en María.
+- **Texto base — Ave María:**
+  > Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.
+
+## 3. Oración "Sal y Luz del Mundo" — el Bayuyo (viernes noche)
+- **Cuándo:** viernes en la noche, en el patio.
+- **Quién:** Música la conduce.
+- **Base bíblica:** **Mt 5,13–16** — *"Ustedes son la sal de la tierra… ustedes son la luz del mundo. Brille así su luz delante de los hombres."*
+- **Materiales:** antifaces de tela negra (uno por participante) · velas.
+- **Texto y ritual del Bayuyo:** **[POR DEFINIR — del cancionero eteciano / Padre Paul].** Es un momento característico del ETC; el texto y el orden los trae Música.
+
+## 4. Bendición de los alimentos (cada tiempo de comida)
+- **Cuándo:** antes de cada comida.
+- **Quién:** un cocinero o el designado.
+- **Forma:** **breve**, ligada al tema del día (los gestos o sociodramas breves enriquecen, no se prohíben).
+- **Texto base (ejemplo):**
+  > Bendícenos, Señor, y bendice estos alimentos que por tu bondad vamos a recibir. Por Cristo nuestro Señor. Amén.
+
+## 5. Otros momentos de oración
+- **Cadena de oración** (Asesores / Intersección): durante todo el retiro, por turnos, para que se produzca un verdadero encuentro.
+- **Confesiones** (sábado noche): música ambiente de oración mientras los sacerdotes confiesan.
+- **Carta de compromiso / Proyecto de Vida** (sábado): cada participante escribe su compromiso personal con Dios.
+
+---
+*Anexo de Oraciones ETC 88 · borrador · los textos del cancionero y el Bayuyo se cierran con Música + Padre Paul.*

@@ -88,6 +88,8 @@ Cada comunidad envía un asesor, **enlace entre el ETC 88 y su comunidad**: acom
 8. **Mantener contacto con el grupo después** del retiro.
 9. **Comunicación con caridad** — antes, durante y después.
 10. **Participación obligatoria en las oraciones grupales** — todos los equipos, sin excepción (guías y asesores incluidos). *(lección del Informe 85)*
+11. **Asistencia y puntualidad** — hasta 3 ausencias justificadas; **3 tardanzas = 1 ausencia**; las excusas se avisan con antelación. Ensayo General obligatorio. *(ref. ETCs anteriores)*
+12. **Canalizar por la vía correspondiente** — las dudas de cada área van primero a su coordinador, y el coordinador al Co-Dir. No se brinca el canal.
 
 **Los 5 principios de comunicación del ETC 88:**
 1. **Enfocados en el participante** — todo lo demás es para él.
@@ -221,7 +223,21 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 
 ---
 
-## 7. Reglas de la Casa *(para los participantes · se leen al inicio)*
+## 7. Qué debe llevar el equipo
+
+> *(Lista de empaque, ref. ETC 79. El participante recibe su propia lista en la invitación.)*
+
+- **Cama:** juego de sábana twin · almohada · toalla.
+- **Aseo personal:** jabón, pasta dental, desodorante, crema, papel de baño.
+- **Chancletas** plásticas (para la ducha).
+- **Ropa cómoda, fresca y adecuada** — camisetas con manga; pantalones de la rodilla hacia abajo.
+- **Calzado cómodo** (tenis o zapatillas bajas).
+- **Botiquín** y medicamentos personales que pudieras necesitar.
+- **Reloj** para cuidar el horario; **se evita el celular** durante el retiro.
+- **Avisar alergias** alimentarias al equipo de cocina.
+- **No llevar** aparatos electrónicos, prendas ni artículos costosos o innecesarios.
+
+## 8. Reglas de la Casa *(para los participantes · se leen al inicio)*
 
 > *(Migradas del ETC 78. Son las reglas del participante — distintas de lo que se espera del equipo, §3.8.)*
 
@@ -235,7 +251,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 - No se sale del recinto durante el retiro.
 - El retiro **inicia el viernes y termina el domingo** — no antes.
 
-## 8. Cierre — explicaciones finales *(en la clausura)*
+## 9. Cierre — explicaciones finales *(en la clausura)*
 
 > *(Migrado del ETC 79. Se reparte entre los asesores de comunidad y la Co-Dirección.)*
 
@@ -247,7 +263,21 @@ En la clausura se explica al participante lo que se lleva a su Cuarto Día:
 - **Familiares y parejas dentro del equipo** (transparencia).
 - **La confidencialidad** de todo lo vivido en el retiro — se guarda para siempre.
 
-## 9. Directorio del equipo del ETC 88
+## 10. Glosario eteciano
+
+- **PG (Pequeño Grupo):** el grupo de 6–7 participantes con su pareja de guías; los acompaña todo el retiro.
+- **Plenario:** la reunión de todos en el salón principal.
+- **Palanca:** carta de apoyo y oración que se escribe a un participante (y entre servidores).
+- **Banderín:** el estandarte/insignia del retiro (sábado noche).
+- **Bayuyo:** la oración "Sal y Luz del Mundo" del viernes en la noche (con antifaces).
+- **Lavatorio:** el lavatorio de los pies (Jn 13) en la cena del sábado — momento fuerte.
+- **Padrino/Madrina:** quien apoya espiritual o económicamente a un participante.
+- **Correcaminos:** rol vehicular de apoyo a cocina (compras/diligencias durante el retiro).
+- **Avanzada:** la llegada anticipada del equipo (sobre todo cocina) para montar antes de que lleguen los participantes.
+- **Cuarto Día:** la vida después del retiro — el ETC en realidad ahí comienza.
+- **Profondo:** actividad de recaudación de fondos del equipo.
+
+## 11. Directorio del equipo del ETC 88
 
 > **[ESTA PÁGINA SE COMPLETA AL FINAL — es lo último que limpiamos.]**
 >

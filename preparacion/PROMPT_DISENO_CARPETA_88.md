@@ -25,11 +25,12 @@ Ya tienes cargado el **Design System del ETC 88 — Dirección A · Expedición*
 1. **Portada de la Carpeta** — con el lema del retiro "Donde está tu tesoro, allí estará tu corazón" + Mt 6,21 + datos del retiro.
 2. **Páginas interiores** fluyendo el **texto real** de la Guía (te lo adjunto): ¿Qué es un ETC? · el hilo espiritual · roles durante el retiro · los temas · escrituras · horario.
 3. **Separadores de sección** — uno por bloque, y **separadores por área** usando los **mensajes pastorales de Padre Paul** (Guías = "enfocados en el participante"; Cocina = "entrega y sacrificio · Jn 13"; Música = "animación espiritual antes que técnica").
-4. **Los 9 temas como "estaciones de la expedición hacia adentro"** — un tratamiento visual de la secuencia (mapa de ruta sobrio: Confianza → Singularidad → … → Cuarto Día → el corazón reordenado).
-5. **Los tres ANEXOS**, cada uno con su portadilla en el mismo sistema:
+4. **Los 9 temas como una secuencia visual** — un tratamiento sobrio de la ruta del retiro (Confianza → Singularidad → … → Cuarto Día). Estructural, no una meditación temática.
+5. **Los cuatro ANEXOS**, cada uno con su portadilla en el mismo sistema:
    - **Anexo 1 · Guía de Guías** (texto adjunto).
    - **Anexo 2 · Anexo de Cocina** (texto adjunto).
    - **Anexo 3 · Anexo de Música** (texto adjunto).
+   - **Anexo 4 · Anexo de Oraciones** (texto adjunto).
 6. **Página de directorio del equipo** — déjala como **plantilla / placeholder** (la completamos al final).
 
 ## Textos a adjuntar (los pego/subo aparte)
@@ -37,6 +38,7 @@ Ya tienes cargado el **Design System del ETC 88 — Dirección A · Expedición*
 - **Anexo 1:** `GUIA_DE_GUIAS_88.md`.
 - **Anexo 2:** `ANEXO_COCINA_88.md`.
 - **Anexo 3:** `ANEXO_MUSICA_88.md`.
+- **Anexo 4:** `ANEXO_ORACIONES_88.md`.
 
 ## Producción
 - Imprimible y barato: **1–2 tintas** (azul + coral sobre crema) con el pez a color como único acento full-color. Confirmar # de tintas con la imprenta.
