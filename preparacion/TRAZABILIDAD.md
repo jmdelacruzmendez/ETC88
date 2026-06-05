@@ -47,8 +47,8 @@
 | `calendario_hitos.ensayo_general` | 23-ago · asistencia obligatoria | director |  |
 | `calendario_hitos.inicio_recaudacion` | F3 · primera formación de julio (5-jul) | director | La recaudación de cuotas inicia en la 1ra formación de julio. El miemb… |
 | `calendario_hitos.profondo1_fechas` | 31-jul → 2-ago | calendario | Rifa (Profondo #1); el neto entra a inicios de agosto. |
-| `historial.etcs_disponibles_en_drive` | ["ETC 78", "ETC 79", "ETC 85", "ETC 88"] | exploración Drive read-only 2026-06-02 | Carpeta padre Drive contiene 78, 79, 85, 88. NO existe carpeta del ETC… |
-| `historial.etc_83_disponible` | False | exploración Drive 2026-06-02 | No se invente contenido del 83: no hay fuente. |
+| `historial.etcs_disponibles_en_drive` | ["ETC 78", "ETC 79", "ETC 83", "ETC 85", "ETC 88"] | exploración Drive 2026-06-04 | Carpeta padre Drive contiene 78, 79, 83, 85, 88. El ETC 83 fue agregad… |
+| `historial.etc_83_disponible` | True | Drive: carpeta ETC 83 compartida por el director 2026-06-04 | Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster +… |
 | `historial.informe_final_85` | Informe Final ETC 85.pdf — leído en Drive | Drive: ETC 85 / Informe Final ETC 85.pdf | Roster 85 + puntos positivos + aspectos a mejorar + medidas financiera… |
 | `historial.drive_88_carpetas_vacias` | ["Operaciones", "Finanzas"] | exploración Drive 2026-06-02 | Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pa… |
 | `mapa_donaciones_por_rubro.zonas.spm` | San Pedro de Macorís — parroquia San José Obrero + comercios… | director |  |
