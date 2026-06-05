@@ -86,6 +86,7 @@ Cada comunidad envía un asesor, **enlace entre el ETC 88 y su comunidad**: acom
 7. **Cuidar los espacios** — dejar la casa más limpia de como se encontró.
 8. **Mantener contacto con el grupo después** del retiro.
 9. **Comunicación con caridad** — antes, durante y después.
+10. **Participación obligatoria en las oraciones grupales** — todos los equipos, sin excepción (guías y asesores incluidos). *(lección del Informe 85)*
 
 **Los 5 principios de comunicación del ETC 88:**
 1. **Enfocados en el participante** — todo lo demás es para él.
@@ -219,7 +220,33 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 
 ---
 
-## 7. Directorio del equipo del ETC 88
+## 7. Reglas de la Casa *(para los participantes · se leen al inicio)*
+
+> *(Migradas del ETC 78. Son las reglas del participante — distintas de lo que se espera del equipo, §3.8.)*
+
+- Si ves un letrero de **No Pase**, no pases.
+- Para ir al baño, hazlo acompañado de alguien del equipo.
+- Al salir de la habitación, **apaga la luz**.
+- Si usas el baño, descárgalo. Si abres la llave, ciérrala. **Ahorra agua.**
+- **A dormir es a dormir** (aprovecha el descanso); a levantarse es a levantarse.
+- Mantén la **disciplina, el orden y la limpieza** en toda la casa.
+- **Sin celulares, sin fotos ni videos** durante el retiro.
+- No se sale del recinto durante el retiro.
+- El retiro **inicia el viernes y termina el domingo** — no antes.
+
+## 8. Cierre — explicaciones finales *(en la clausura)*
+
+> *(Migrado del ETC 79. Se reparte entre los asesores de comunidad y la Co-Dirección.)*
+
+En la clausura se explica al participante lo que se lleva a su Cuarto Día:
+- **Los 3 pilares:** Oración · Eucaristía · Comunidad.
+- Que hay **diferentes comunidades** etecianas (San Pedro de Macorís · La Vega · Santo Domingo · Punta Cana).
+- El **significado del Pez** (ΙΧΘΥΣ): *"Jesucristo, Hijo de Dios, Salvador"* — nuestro signo.
+- **Proyecto Esperanza** *(lo presenta Sor Angelina).*
+- **Familiares y parejas dentro del equipo** (transparencia).
+- **La confidencialidad** de todo lo vivido en el retiro — se guarda para siempre.
+
+## 9. Directorio del equipo del ETC 88
 
 > **[ESTA PÁGINA SE COMPLETA AL FINAL — es lo último que limpiamos.]**
 >

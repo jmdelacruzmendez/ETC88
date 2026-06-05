@@ -66,6 +66,24 @@
 - **Alergias** (15–17) → cocina cierra el menú con la misma matriz que usó con el equipo.
 - **Admisión** (11) → criterio de la Guía, revisado por Co-Dir.
 
+## Metodología de presentación y asignación *(modelo real del ETC 85)*
+
+El formulario es solo la captura. Lo que lo vuelve útil es el **proceso de presentación de perfiles**, que el ETC 85 tenía muy afinado. Se migra tal cual:
+
+1. **Presentación de perfiles** — reunión (F4/F5) donde se lee cada ficha en voz alta y se decide: **Aprobado · En evaluación · Cancelado**. Cada ficha lleva una **columna de notas** con la decisión y el porqué (ej.: *"ok — énfasis en confianza"*, *"en evaluación — invitó a su pareja"*).
+2. **Restricciones "no puede estar con X"** — se registra explícitamente, por ficha, con quién NO puede caer el participante:
+   - con un **guía** que sea su hermano/pareja (regla fn. 9 de la Guía de Guías), o
+   - con otro **participante** con quien haya conflicto.
+   *Esto operacionaliza la regla de lazos: no es solo "no hermanos", es una lista nominal por participante.*
+3. **Comodines de guías** — participantes flexibles que pueden moverse entre PGs para **balancear** los grupos (el 85 los marcaba como "comodín de guías").
+4. **Meta vs cierre** — se trackea en vivo: **Aceptados / En evaluación / Cancelados** contra la meta. *(El 85: meta 42, cerró con 40.)* Para el 88: meta ~52 para completar 100 en la casa.
+5. **Asignación + redistribución por guías** — primero una asignación inicial por pareja de guías (campo "posible grupo" del formulario), y luego una **redistribución final** balanceando 5–6 participantes por PG, respetando todas las restricciones. Dos hojas: asignación inicial → redistribución.
+
+### Campos extra que conviene añadir vs el del 85
+- **Salud/alergias separado** (el 85 lo metía en "situación adicional"; el 88 lo separa → §4 de este spec). Alimenta a cocina directo.
+- **Sector/zona** (SPM / Higüey / Punta Cana / SD / La Vega) — para transporte y para la activación de Punta Cana.
+
 ## Decisiones para Co-Dir
 - ¿Apruebas estos campos? Si sí, te paso el texto exacto pregunta-por-pregunta o el CSV de columnas para la hoja.
 - ¿Se exige el sacramento de confirmación o solo se registra?
+- ¿Replicamos la **metodología de presentación de perfiles del 85** (aprobado/evaluación/cancelado + restricciones nominales + comodines)? — recomendado, ya está probada.

@@ -583,6 +583,19 @@ bullet(doc, 'Lo que se discute en reunión de equipo **no sale del equipo**.')
 bullet(doc, '**Los testimonios de vida son confidenciales para siempre** (regla del guía).')
 bullet(doc, 'Información médica / alergias / lazos del tablero: solo se usa para servir, no se comenta fuera.')
 
+h2(doc, 'Rúbrica de evaluación de servidores (herramienta del coord · modelo ETC 79)')
+para(doc, 'Feedback **formativo, no punitivo**. Sirve para acompañar, reconocer la cantera y conversar con el Co-Dir si algo se desvía. *Quien sirve bien hoy es director mañana.*')
+make_table(doc,
+    headers=['Criterio', 'Qué se observa'],
+    rows=[
+        ['Disposición para las tareas', 'Hace lo asignado sin que haya que recordárselo'],
+        ['Humildad para acatar instrucciones', 'Recibe la corrección sin defensividad'],
+        ['Actitud positiva ante el cansancio', 'No contagia mal ánimo cuando hay presión'],
+        ['Colaboración y trabajo en equipo', 'Ayuda a otras áreas, no solo a la suya'],
+        ['Servicio con alegría', 'Sirve desde el gozo, no por obligación'],
+    ],
+    col_widths_cm=[6, 11])
+
 espacio_notas(doc, 'Casos que hay que hablar / conversar con los directores', 6)
 doc.add_page_break()
 

@@ -79,6 +79,7 @@ costo_items = [
  ('Cocina · Mercado (canasta)', 59000, 62410, 65800, 'La casa INCLUYE gas; no se compra gasoil'),
  ('Cocina · Meriendas / Correcaminos', 9000, 9756, 10000, ''),
  ('Cocina · Decoración / motivos comedor', 8000, 10000, 12000, 'Foami, velas, flores, cajitas, hilo (ref. ETC 78)'),
+ ('Cocina · Detalles por comida + refrigerios reuniones internas', 13000, 15500, 18000, 'Modelo ETC 83: regalos al participante por tiempo de comida (tarjetas, cruces del Lavatorio, acta del corazón) + refrigerios de las reuniones internas de cocina (el 83 no lo presupuestó y dio déficit). Ver pestaña Detalles-Comida.'),
  ('Materiales y Litúrgico (itemizado)', 80000, 88500, 95000, 'Peces + Biblias + Banderín + Rosarios + Cofre palancas + Vino + Ofrenda confesores'),
  ('Guías · Materiales del PG (libretas, sobres, alambre…)', 14000, 17000, 20000, 'Libretas para participantes EN ESTE rubro'),
  ('Música · Impresión cancionero + cables/respaldo', 3000, 4500, 6000, 'La casa tiene sonido; solo respaldo'),
@@ -158,6 +159,31 @@ for m in menu:
     row(ws, r, m)
     r += 1
 ws.row_dimensions[r-1].height = 32
+
+# ============ Hoja 3b: DETALLES POR COMIDA (modelo ETC 83 → temática Mt 6,21) ============
+ws = wb.create_sheet('Detalles-Comida')
+title(ws, 'DETALLES POR TIEMPO DE COMIDA · modelo ETC 83 adaptado a "Donde está tu tesoro" (Mt 6,21)', SAFARI)
+header(ws, 3, [('Día / Tiempo', 22), ('Tema (corazón/tesoro)', 26), ('Cita', 16), ('Detalle al participante', 30), ('Est. RD$', 12)], SAFARI)
+detalles = [
+ ('VIE Cena', '¿Qué tesoros traes en el corazón?', 'Mt 6,19-21', 'Tarjeta + caja chiquita (el tesoro que se trae)', 1800),
+ ('VIE Noche (almohada)', 'Buenas noches', 'Sal 4,9', 'Tarjetita + chocolate', 1200),
+ ('SÁB Desayuno', 'El campo es tu vida — empieza a cavar', 'Mt 13,44', 'Cartonite con cita', 1500),
+ ('SÁB Almuerzo', 'La perla — saber elegir', 'Mt 13,45-46', 'Perla simbólica (canica + cordel)', 1500),
+ ('SÁB Cena (Lavatorio)', 'Encontraste el tesoro: Cristo se da', 'Jn 13,1-15', '60 cruces de madera + papel marrón + copas de barro', 2400),
+ ('SÁB Noche (almohada)', 'Buenas noches', 'Jn 3,16', 'Tarjetita + chocolate', 1200),
+ ('DOM Desayuno', 'Corazón nuevo', '2 Co 5,17', 'Pintura + dulces + ambiente de cumpleaños', 1600),
+ ('DOM Almuerzo (clausura)', '"Vende todo con alegría" · 4to día', 'Mt 13,44', 'ACTA DEL CORAZÓN NUEVO (versión 88 del Acta de Libertad del 83)', 1800),
+ ('— Refrigerios reuniones internas de cocina —', 'I-IX reuniones', '', 'Refrigerios de las ~8-9 reuniones propias de cocina (el 83 dio déficit por no presupuestarlo)', 2500),
+]
+r = 4
+total = 0
+for d in detalles:
+    row(ws, r, d)
+    if isinstance(d[4], (int, float)): total += d[4]
+    r += 1
+row(ws, r+1, ('', '', '', 'TOTAL DETALLES + REFRIGERIOS', total), total_row=True)
+row(ws, r+2, ('', '', '', 'Las cruces del Lavatorio están AQUÍ (no se duplican en Materiales).', None))
+ws.row_dimensions[8].height = 30
 
 # ============ Hoja 4: COCINA · COMPRAS ============
 ws = wb.create_sheet('Cocina-Compras')

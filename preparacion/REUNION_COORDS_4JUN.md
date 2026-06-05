@@ -131,6 +131,19 @@ El coord **acompaña a su equipo de área**: es la voz del director hacia su gen
 - **Renuncia:** el coord avisa al Co-Dir; la sustitución se decide con los asesores.
 - **Confidencialidad:** lo que se conversa en reunión de equipo no sale del equipo. Los testimonios de vida son confidenciales para siempre.
 
+## §9b · Rúbrica de evaluación de servidores *(herramienta del coord · modelo ETC 79)*
+Cada coord puede dar feedback formativo (no punitivo) a su equipo con estos **5 criterios**. Sirve para acompañar, para reconocer a la cantera, y para conversar con el Co-Dir si algo se desvía.
+
+| Criterio | Qué se observa |
+|---|---|
+| Disposición para las tareas encomendadas | hace lo asignado sin que haya que recordárselo |
+| Humildad para acatar instrucciones | recibe la corrección sin defensividad |
+| Actitud positiva ante el cansancio / estresores | no contagia mal ánimo cuando hay presión |
+| Colaboración y trabajo en equipo | ayuda a otras áreas, no solo a la suya |
+| Servicio con alegría | sirve desde el gozo, no por obligación |
+
+> No es para "calificar y castigar": es para que el coord vea quién está creciendo y quién necesita acompañamiento. **Quien sirve bien hoy es director mañana** — así se cultiva la cantera.
+
 ## §10 · Cierre
 - Cada coord se lleva sus compromisos para F1 (presupuesto + materiales/menú + 3 dudas).
 - Oración de cierre.

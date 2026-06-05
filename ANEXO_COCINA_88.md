@@ -68,6 +68,12 @@ El corazón de cocina es **ENTREGA Y SACRIFICIO**. La cocina sirve desde la somb
 ## 8. Reglas del cocinero (resumen)
 Trabajo humilde · asistir a reuniones · hacer lo asignado · motivos del comedor · **cena con Lavatorio** · presupuesto y donaciones · menú · oración de bendición · nunca poner intereses propios por encima del participante.
 
+## 8b. Cuidados durante el retiro (lecciones del Informe 85)
+- **Utensilios fuera del piso del plenario** — recoger ollas, bandejas y cables para evitar caídas durante las presentaciones.
+- **Controlar los abrazos en el proceso de palancas** — acompañar sin abrumar; el momento del participante es íntimo.
+- **Oficina/centro de operaciones separado de los pequeños grupos** — verificar en la visita previa a la casa.
+- **Participación obligatoria en las oraciones grupales** del equipo (cocina incluida).
+
 ## 9. Fechas clave de Cocina
 | Hito | Cuándo |
 |---|---|
