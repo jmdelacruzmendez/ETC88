@@ -119,54 +119,89 @@ Una **camiseta cruda con estampa a 1–2 tintas oscuras** = exactamente lo que v
 
 ---
 
-## ✂️ PROMPT FINAL — listo para pegar en Claude Design
+## ✂️ PROMPT FINAL — Design System (no solo merch) · listo para pegar en Claude Design
 
-> Diseña el **sistema visual del retiro ETC 88** (4–6 sep 2026, Casa La Ceiba del Salado, Higüey · organizado por la comunidad ETC San Pedro de Macorís). Es un retiro católico para jóvenes adultos. El sistema **convive con la herencia comunitaria** (el pez ICTUS de colores · camiseta tradicional verde/vino/cálido visible en @etcsanpedro) pero **se separa con su propia voz**: heritage refinado, deportivo, editorial, con guiño street/drop. La pieza emblema del retiro es una **camiseta dryfit sin cuello en tela cruda/arena**, serigrafiada a 1–2 colores.
+> Diseña el **Design System completo** del retiro **ETC 88** (Encuentro Total con Cristo #88 · 4–6 sep 2026 · Casa La Ceiba del Salado, Higüey · organizado por la comunidad **ETC San Pedro de Macorís**, retiro católico para jóvenes adultos).
 >
-> **Hilo conceptual**
-> - **Lema:** *"Donde está tu tesoro, allí estará tu corazón"* — **Mt 6,21**. Complementaria: Mt 13,44 (tesoro escondido).
-> - **Lema eteciano:** *"Siempre amigos"* · Jn 15,15.
-> - **Tema visual:** tesoro / corazón / búsqueda — **más allá del color**, trabajado en composición y sistema gráfico. NO literal: nada de cofres, X, mapas piratas, brújulas, anclas, expedición náutica.
-> - **Símbolo emblema:** el número **88**, gráficamente fuerte. Debe leerse desde 5 metros en una camiseta.
-> - **Símbolo institucional:** el pez ICTUS de colores **NO se rediseña**; vive en piezas comunitarias (Carpeta, sello). El merch del 88 vive **sin el pez** (más limpio, más distintivo).
+> ### Contexto y herencia
+> La comunidad ETC SPM tiene una identidad histórica (visible en **@etcsanpedro**): el **pez ICTUS de colores** y una **camiseta tradicional verde/vino**. Ese símbolo es de **toda la comunidad**, no de este retiro. El sistema que diseñas **convive** con esa herencia pero **se diferencia con voz propia**: *heritage refinado · deportivo · editorial · con guiño street/drop*. Frase mental: **"Aimé Leon Dore haciendo una colección deportiva para una parroquia"**.
 >
-> **Referencias de estilo (todas)**
-> *Aimé Leon Dore · Drake's · Noah* (heritage refinado · sello bordado · paleta cálida y baja) + *Patagonia · Arc'teryx · Salomon* (sport/outdoor · grotesca · número funcional) + *Stüssy · Supreme · Verdy* (street · número enorme · drop coleccionable) + *Kinfolk · Apartamento · Eye Magazine* (editorial · retícula tipográfica · mucho aire blanco). **El sistema resultante debe sentirse como "Aimé Leon Dore haciendo una colección deportiva para una parroquia".**
+> ### Hilo conceptual
+> - **Lema del retiro:** *"Donde está tu tesoro, allí estará tu corazón"* — **Mateo 6,21** · complementaria: Mt 13,44.
+> - **Lema eteciano (comunidad):** *"Siempre amigos"* — Jn 15,15.
+> - **Tema visual:** **tesoro · corazón · búsqueda**, trabajado *más allá del color* — en composición, sistema gráfico y símbolo. **NO literal**: nada de cofres, X, mapas piratas, brújulas, anclas, expedición náutica.
+> - **Símbolo emblema del retiro:** el número **88** — la firma del 88 sobre cualquier superficie.
+> - **Símbolo institucional:** el **pez ICTUS de colores no se rediseña**; vive en piezas comunitarias (Carpeta, sello). El sistema del 88 puede vivir **sin** el pez en las piezas más juveniles.
 >
-> **Paleta (propuesta — confirma)**
-> - **Tela:** crudo / arena (la camiseta).
-> - **Tintas de serigrafía:** **1–2 colores oscuros** que contrasten sobre crudo y NO sean verde ni vino (esos son de la comunidad histórica).
->   - Propuesta primaria: **marrón oscuro tinta** + **un acento** (por ejemplo, **azul ultramar profundo** o **naranja quemado** — guiños a las letras Θ/Υ del pez ICTUS sin usar el logo).
-> - Para piezas digitales / Carpeta puede ampliarse con neutros y los acentos.
+> ### 1 · Sistema de marcas
+> - **Marca del 88 — 3 variantes** para comparar y elegir:
+>   - **(a) Wordmark tipográfico fuerte** — dos números enormes, dorsal deportivo, condensada con peso.
+>   - **(b) Monograma / sello** — insignia varsity refinada, bordable.
+>   - **(c) Símbolo abstracto** — los dos 8 leídos como **dos corazones unidos** (guiño al tesoro/corazón sin literalidad).
+> - **Lock-up "ETC 88"** + lema (Mt 6,21) en composición editorial · versiones horizontal, vertical, stacked.
+> - **Sello institucional** — pez ICTUS + ETC 88 (para piezas comunitarias).
 >
-> **Tipografía (propuesta — confirma)**
-> - **Display / número 88:** una **serif con personalidad** (tipo *Söhne Breit*, *Editorial New*, *Migra*, *GT America Condensed*) o una **grotesca condensada deportiva** (tipo *Druk*). Algo con peso y editorial.
-> - **Cuerpo:** una sans neutra (*Inter*, *Söhne*, *Söhne Mono* para captions).
-> - **Guiño manuscrito** sobrio para el lema (no decorativo, no cursi).
+> ### 2 · Sistema de color
+> - **Base/tela:** crudo/arena (la pieza emblema impresa es una camiseta dryfit en este color).
+> - **Tintas primarias:** 1–2 colores oscuros que **contrasten sobre crudo** y NO sean verde ni vino (son de la comunidad). Propuesta de partida: **marrón oscuro tinta** + un acento (**azul ultramar** o **naranja quemado** — guiño a las letras Θ/Υ del pez sin usar el pez).
+> - **Sistema ampliado** para piezas digitales/impresas: neutros + acentos. Propón muestras.
+> - **Reglas de uso**: cuándo va el acento, proporciones, combinaciones prohibidas.
 >
-> **Entregables**
-> 1. **Marca del 88 — 3 variantes** para comparar (las 3 las dibujas tú):
->    - **(a) Wordmark tipográfico fuerte** (dos números enormes, dorsal deportivo).
->    - **(b) Monograma / sello** (insignia bordable, varsity refinado).
->    - **(c) Símbolo abstracto** (los dos 8 leídos como **dos corazones unidos** — guiño al tema *tesoro/corazón* sin literalidad).
-> 2. **Lock-up "ETC 88"** + lema (Mt 6,21) en composición editorial.
-> 3. **Paleta confirmada** + **par tipográfico** + **sistema gráfico** (retícula, íconos, patrones).
-> 4. **Camiseta dryfit sin cuello — 2 mock-ups** sobre tela cruda/arena, serigrafía a 1–2 colores:
->    - **Mock-up A:** sello pecho + **88 enorme en la espalda + nombre del servidor** (estilo equipo).
->    - **Mock-up B:** sello pecho + **88 enorme en la espalda SIN nombre** (uniformidad de equipo).
->    - (Bonus: una tercera con **frente protagonista** y lema en la espalda.)
-> 5. **Portada de la Carpeta** — el pez ICTUS original a color + "ETC 88" + lema + **fecha (4–6 sep 2026, SIN lugar)**.
-> 6. **Templates de RRSS** — feed, story, anuncio de formación.
-> 7. **Merch secundario** — sticker, eco-bag, pin.
+> ### 3 · Sistema tipográfico
+> - **Display / número 88:** serif con personalidad (*Editorial New*, *Migra*, *PP Editorial*) **o** grotesca condensada deportiva (*Druk*, *GT America Condensed*). Algo con peso, editorial, fotografiable.
+> - **Cuerpo:** sans neutra contemporánea (*Inter*, *Söhne*, *Neue Haas Grotesk*).
+> - **Acento/lema:** manuscrita sobria para el lema (no decorativa, no cursi).
+> - **Escala** completa (display · h1 · h2 · body · caption · label) + **reglas de jerarquía** (tracking, leading, qué fuente para qué uso).
 >
-> **Lo que NO queremos**
+> ### 4 · Sistema gráfico
+> - **Retícula editorial** que rige Carpeta, RRSS y merch.
+> - **Set de íconos** (≥ 8): secciones de Carpeta, áreas del equipo, momentos del retiro, RRSS.
+> - **Estilo de ilustración** definido (line-art, plano, mixta).
+> - **Patrones** (≥ 2) derivados del 88 o del corazón — para interiores de Carpeta, eco-bag, fondos de story.
+> - **Tratamiento de foto** — paleta de revelado, granos, máscaras tonales para que toda foto del retiro se vea del mismo sistema.
+>
+> ### 5 · Voz visual / tono
+> Una página corta: cuándo el sistema es **sobrio**, cuándo es **gozoso**, cómo evita lo cursi e infantil sin perder calidez.
+>
+> ---
+>
+> ### Aplicaciones — al menos una pieza por superficie
+>
+> **A · Carpeta del retiro (impreso, 1–2 tintas)**
+> Portada · contraportada · índice · página de sección · página interior (cuerpo) · separador por área (Guías, Cocina, Música, Asesores) · portadilla por anexo · página de directorio del equipo · página del mensaje de los directores.
+>
+> **B · Redes sociales** *(@etcsanpedro · feed + story)*
+> Plantillas: post de feed (cuadrado) · story (vertical) · anuncio de formación (fecha + tema) · countdown al retiro · agradecimiento post-retiro.
+>
+> **C · Merch**
+> Camiseta dryfit sin cuello en tela cruda/arena, serigrafía 1–2 colores — **2 mock-ups** (con / sin nombre del servidor) · sticker (vinilo troquelado, variantes con las 3 marcas del 88) · eco-bag (1 tinta sobre crudo) · pin/patch bordable · banderín del retiro.
+>
+> **D · Señalética y ambientación del retiro**
+> Cartel/banner de bienvenida en la casa · letreros (salón principal, capilla) · carteles de los momentos (Bayuyo, Lavatorio, PG, Plenario) · photo spot / backdrop.
+>
+> **E · Comunicaciones del equipo**
+> Plantilla de presentación (Slides) para formaciones · firma de email · avatar y portada del grupo de WhatsApp · plantilla de oficio/carta (donantes, párrocos, casa) · plantilla de certificado de participación.
+>
+> **F · Pieza de cierre del retiro**
+> Estampa-recuerdo (libreta/postal) que se entrega al final · marco para foto grupal del sistema.
+>
+> ---
+>
+> ### Manual de marca (entregable de cierre)
+> PDF de **12–20 páginas** con todo lo anterior: marcas, paleta, tipografía, grilla, íconos, patrones, foto, do/don't, aplicaciones representativas. Cualquier miembro del equipo debe poder producir una pieza nueva sin romper el sistema.
+>
+> ### Lo que NO queremos
 > - Cofre pirata, mapas con X, calaveras, brújulas, anclas, expedición náutica.
-> - Verde ni vino como color dominante (son de la camiseta tradicional).
-> - Tipografías pseudo-litúrgicas genéricas (Lucida Calligraphy, Papyrus).
-> - Cute / mascotas / Y2K gratis / neón ochentero.
+> - **Verde ni vino** como color dominante (son de la comunidad histórica).
+> - Tipografías pseudo-litúrgicas genéricas (Lucida Calligraphy, Papyrus, Brush Script).
+> - Cute / mascotas / Y2K gratis / neón ochentero / degradados sin sentido.
+> - "Joven" entendido como infantil; "editorial" entendido como frío.
 >
-> **Cómo trabajar**
-> Empieza por la **espina dorsal** (marca del 88 en sus 3 variantes + paleta + tipografía). Cuando apruebe esa base, generas las aplicaciones (camiseta primero — es la pieza emblema). Para cada pieza, da **2 opciones y una recomendación**.
+> ### Cómo trabajar
+> 1. **Empieza por la espina dorsal** — entrega primero las 3 variantes del 88 + paleta + par tipográfico + 2 muestras del sistema gráfico. **No avances a aplicaciones** hasta que apruebe esta base.
+> 2. Con la base aprobada, genera **una pieza por bloque** A–F para validar que el sistema funciona transversalmente.
+> 3. Después, consolida el **manual de marca**.
+> 4. Para cada decisión con varias salidas posibles, **da 2 opciones y una recomendación**.
 
 ---
-*Brief y prompt final del Design System del ETC 88 · cerrado con las decisiones del director (5-jun).*
+*Brief y PROMPT FINAL del Design System del ETC 88 · rebalanceado (no centrado en merch) · 5-jun.*
