@@ -9,7 +9,7 @@
 > **Lugar:** Casa de Retiro «La Ceiba del Salado», Higüey
 > **Asesores Espirituales:** Padre Paul Ramírez · Sor Angelina Lebrón
 
-> Esta es la **guía del retiro**: el documento de referencia de **todo el equipo** sobre lo que vivimos en los tres días. (Quiénes pueden servir y cómo se elige el equipo está en los Estatutos; el calendario de formación está en el Plan de Formación — aquí no.) Trae además los dos anexos: **Guía de Guías** y **Anexo de Cocina**.
+> Esta es la **guía del equipo**: el documento de referencia de **todo el equipo** sobre cómo funciona el ETC — su estructura, los roles y responsabilidades de cada grupo, las reglas del proceso, y lo que se vive en los tres días. *(El calendario detallado de las formaciones vive en el Plan de Formación; quiénes pueden servir, en los Estatutos.)* Trae además **cuatro anexos**: **Guía de Guías**, **Anexo de Cocina**, **Anexo de Música** y **Anexo de Oraciones**.
 
 ---
 
@@ -42,56 +42,97 @@ El retiro **alterna plenarios** (todos juntos) **con pequeños grupos** (PG de 6
 - **Sábado** — oración + testimonios (Libertad para Aceptar / para Entregarse / Regalo de la Vida) intercalados con PGs y dinámicas → entrega de palancas → **cena con Lavatorio** → testimonio del Perdón → **confesiones** → preparación de la misa y el banderín.
 - **Domingo** — testimonios (Nacer de Nuevo / Compromiso) → último PG → testimonio del Cuarto Día → evaluación → **Eucaristía de clausura + entrega de los peces**.
 
-*(El horario detallado está en §6. Los roles de cada área, en §3.)*
+*(El horario detallado está en §7. Las reglas del proceso, en §4.)*
 
 ---
 
-## 3. Roles durante el retiro
+## 3. Roles y responsabilidades de cada grupo
 
-> *Lo que hace cada área **durante los tres días**. Cómo se conforma y se forma el equipo va en los Estatutos y el Plan de Formación.*
+> Somos **un solo equipo con funciones distintas**. Aquí, qué hace y de qué responde cada grupo (en la preparación y en el retiro). Las responsabilidades completas de **Guías, Cocina y Música** están en sus anexos.
 
 ### 3.1 Co-Directores
-Conducen el retiro y velan por el horario. Acompañan de cerca testimonios y motivos. Distribuyen funciones (tesorería, ubicación de participantes, dinámicas, oraciones). Velan por que en ningún plenario haya un participante que sea hermano o pareja de su guía. **Oran con los Asesores antes de cada decisión, poniendo siempre a la persona por encima de la regla.** Sostienen el sentir de que es **un solo equipo con funciones distintas.**
+- Conducen el ETC y asumen con conciencia la responsabilidad de dirigirlo.
+- Escogen el equipo (con el Consejo) e informan a cada quien su responsabilidad.
+- Procuran la **formación espiritual** del equipo.
+- Planifican las reuniones de forma equilibrada (sin excesos).
+- Dan seguimiento a testimonios, motivos de cocina y al desenvolvimiento del equipo.
+- Velan por que **en ningún plenario haya un participante que sea hermano o pareja** de un miembro.
+- Distribuyen funciones (tesorería, captación/ubicación de participantes, materiales, dinámicas, oraciones).
+- Coordinan la presencia de sacerdotes para las confesiones.
+- Velan por el cumplimiento del **horario**.
+- Evalúan con los Asesores cualquier situación (inasistencia, disciplina, conflicto) y **oran antes de cada decisión, poniendo siempre a la persona por encima de la regla**.
+- Sostienen el sentir de que es **un solo equipo con funciones distintas**.
 
-### 3.2 Asesores del Retiro
-Aportan su experiencia a la Co-Dirección. Durante el retiro son **enlace con Cocina**, ayudan con el horario, organizan oraciones y entrega de palancas, **coordinan las confesiones**, explican la carta de compromiso, organizan la iglesia para la Eucaristía, reciben a las otras comunidades y a los familiares en la clausura. Son **entes conciliadores** y sostienen **cadena de oración** durante todo el retiro.
+### 3.2 Asesores del Retiro *(Laura · Tomás · Frank)*
+- Aportan su **experiencia** a la Co-Dirección.
+- Dan seguimiento a las reuniones; aclaran dudas y explican dinámicas.
+- Ayudan a los guías a preparar sus testimonios.
+- Están disponibles para **suplir cualquier necesidad** (sustituir un guía o director, dar un testimonio).
+- Durante el retiro son **enlace entre la Dirección y Cocina**; ayudan con el horario; organizan las oraciones y la entrega de palancas.
+- **Coordinan las confesiones** y explican la carta de compromiso; organizan la iglesia para la Eucaristía.
+- Son enlace con las otras comunidades y los familiares en la clausura.
+- Son **entes conciliadores** ante conflictos; presentan ante el Santísimo a quien va a dar testimonio; sostienen **cadena de oración**.
+- **Frank**, además, lleva el **Banderín**.
 
 ### 3.3 Asesores Espirituales — Padre Paul Ramírez + Sor Angelina Lebrón
-Acompañan a **todas** las áreas en lo pastoral. Disponibles para los guías (testimonios), la cocina (bendiciones), la música (animación espiritual). Padre Paul preside la Eucaristía final.
+- Acompañan a **todas las áreas** en lo pastoral, durante **todo el proceso** (no solo el retiro).
+- Disponibles para los guías (testimonios), la cocina (bendiciones) y la música (animación espiritual).
+- Cierran, con la Co-Dirección, el **hilo espiritual** y los **momentos litúrgicos**.
+- Padre Paul **preside la Eucaristía**; Sor Angelina acompaña el **Proyecto Esperanza**.
 
-### 3.4 Guías
-*Anexo: Guía de Guías 88.* Son el **rostro cara-a-cara** del retiro: acompañan al participante en su pequeño grupo (PG) durante todo el fin de semana. **7 parejas color-coded** (14 guías). Cada guía escribe palanca a cada uno de su grupo y guarda confidencialidad de los testimonios.
+### 3.4 Guías *(coords: Priscilla + Camila)*
+Son el **rostro cara-a-cara** del retiro: acompañan al participante en su pequeño grupo (PG) durante todo el fin de semana. **7 parejas color-coded** (14 guías). Preparan y dan testimonios, conducen las dinámicas, decoran su espacio de PG, escriben **palanca a cada uno** de su grupo y guardan **confidencialidad** de los testimonios.
+> **Responsabilidades completas, secuencia de PG, dinámicas y contenido de los temas: Anexo — Guía de Guías.**
+> **Padre Paul a los Guías:** *"Enfocados en el PARTICIPANTE — todo es para él, no para lucirse el guía."* Aprenderse el horario libera para acompañar; la pareja se coordina y ensaya de antemano.
 
-> **Padre Paul a los Guías:** *"Enfocados en el PARTICIPANTE — todo es para él, no para lucirse el guía."* Aprenderse el horario libera para acompañar; la pareja se coordina y ensaya de antemano. *(Cómo se prepara un testimonio: ver Guía de Guías §7.)*
-
-### 3.5 Cocina
-*Anexo: Anexo de Cocina 88.* No solo cocinan: montan y ambientan el comedor, **sirven** a los participantes, y llevan el **Lavatorio del sábado** (Jn 13). Avanzada anticipada. **El trabajo de cocina impacta el horario del ETC.**
-
+### 3.5 Cocina *(coords: Paloma + Jhonnito)*
+No solo cocinan: montan y ambientan el comedor, **sirven** a los participantes, llevan el **Lavatorio del sábado** (Jn 13), buscan donaciones y administran su presupuesto. Avanzada anticipada. **El trabajo de cocina impacta el horario del ETC.**
+> **Funciones completas, menú, alergias y ambientación por comida: Anexo — Anexo de Cocina.**
 > **Padre Paul a Cocina:** *"ENTREGA Y SACRIFICIO — servir desde la sombra para que el participante encuentre a Cristo en la mesa, el descanso y, sobre todo, en el Lavatorio."* Ancla: **Jn 13,14–15**.
 
-### 3.6 Música
-Amenizan todo el retiro. Llevan la **oración Sal y Luz del Mundo** ("Bayuyo", con antifaces), la música del despertar, los cantos de la oración a María del sábado, y preparan los cantos de la **Misa de Clausura**. Hacen el **cancionero**.
-
+### 3.6 Música *(coord: José Tusen)*
+Amenizan todo el retiro; llevan la **oración Sal y Luz del Mundo** ("Bayuyo", con antifaces), la música del despertar, los cantos de la oración a María del sábado y los de la **Misa de Clausura**. Hacen el **cancionero**.
+> **Funciones, materiales, momentos y repertorio: Anexo — Anexo de Música.**
 > **Padre Paul a Música:** *"Animación espiritual antes que técnica — eleva la atmósfera espiritual del retiro, no es solo lo técnico."*
 
-### 3.7 Asesores de comunidad
+### 3.7 Asesores de comunidad *(La Vega · Santo Domingo)*
 Cada comunidad envía un asesor, **enlace entre el ETC 88 y su comunidad**: acompaña a sus participantes antes, lee sus palancas generales en el retiro, y los recibe en el Cuarto Día.
 
-### 3.8 Lo que se espera del equipo durante el retiro
-1. **Vivir como cristiano** — el testimonio empieza por la vida del servidor.
-2. **Cuidar el tiempo** — traer reloj, evitar el celular (usos puntuales se acuerdan con la Co-Dir); cuando hay que moverse, el equipo guía y no se entretiene.
-3. **Terminar la avanzada antes** de que lleguen los participantes.
-4. **Atmósfera de amistad** — conversar, animar, dar la bienvenida.
-5. **Palanca a cada participante** del propio grupo.
-6. **Los intereses propios van después** — el ETC es del participante, no del guía.
-7. **Cuidar los espacios** — dejar la casa más limpia de como se encontró.
-8. **Mantener contacto con el grupo después** del retiro.
-9. **Comunicación con caridad** — antes, durante y después.
-10. **Participación obligatoria en las oraciones grupales** — todos los equipos, sin excepción (guías y asesores incluidos). *(lección del Informe 85)*
-11. **Asistencia y puntualidad** — hasta 3 ausencias justificadas; **3 tardanzas = 1 ausencia**; las excusas se avisan con antelación. Ensayo General obligatorio. *(ref. ETCs anteriores)*
-12. **Canalizar por la vía correspondiente** — las dudas de cada área van primero a su coordinador, y el coordinador al Co-Dir. No se brinca el canal.
+### 3.8 Equipos auxiliares (5)
+Equipos de apoyo que se activan durante la preparación: **Recaudación / Donaciones · Guagua (Transporte) · Profondo · Intersección (diáspora) · Finanzas / Tesorería.** Los responsables se nombran durante la preparación.
 
-**Los 5 principios de comunicación del ETC 88:**
+---
+
+## 4. Reglas del proceso (formación y equipo)
+
+> Lo que se espera de **cada servidor** durante **todo el proceso** — la formación y el retiro. *(ref. ETC 78/79.)*
+
+### 4.1 Responsabilidades de cada miembro
+- **Conducta y comportamiento cristiano** antes, durante y después del ETC.
+- **Cumplir lo asignado** (testimonio, dinámica, materiales, audiovisuales).
+- **Terminar las tareas antes** de que lleguen los participantes (la avanzada está lista a tiempo).
+- **Atmósfera de amistad** — conversar, animar, dar la bienvenida.
+- **Acompañar el movimiento** de los participantes (respetar el horario; no entretenerse).
+- **Palanca a cada participante** del propio PG.
+- **Poner los intereses propios de último** — el ETC es del participante, no del guía.
+- **Cuidar los espacios** (el lugar del PG, los baños) y mantener contacto con el PG después.
+- **La cocina está en función del ETC**, no el ETC en función de la cocina.
+- **Comunicación con caridad**, respeto y discreción.
+- Somos **instrumentos de la gracia** — ponerse en manos del Señor.
+
+### 4.2 Asistencia y disciplina
+- **Puntualidad.** Las excusas se comunican a los directores **con antelación**.
+- **Máximo 3 ausencias** justificadas; **3 tardanzas = 1 ausencia**. Excederse se conversa con el coord y el Co-Dir.
+- **Ensayo General: asistencia obligatoria** — sin ensayo no se sirve en el retiro.
+- **Participación obligatoria en las oraciones grupales** — todos, sin excepción (guías y asesores incluidos). *(lección del Informe 85)*
+- **Canalizar por la vía correspondiente** — las dudas de cada área van primero a su coordinador, y el coordinador al Co-Dir. No se brinca el canal.
+
+### 4.3 Confidencialidad
+- Lo que se conversa en reunión de equipo **no sale del equipo**.
+- **Los testimonios de vida son confidenciales para siempre.**
+- La información de salud / alergias / lazos solo se usa para servir; no se comenta fuera.
+
+### 4.4 Los 5 principios de comunicación del ETC 88
 1. **Enfocados en el participante** — todo lo demás es para él.
 2. **Transmitir, no reinterpretar** — los mensajes del director bajan tal cual.
 3. **Un solo equipo, funciones distintas.**
@@ -100,40 +141,40 @@ Cada comunidad envía un asesor, **enlace entre el ETC 88 y su comunidad**: acom
 
 ---
 
-## 4. Los temas del retiro
+## 5. Los temas del retiro
 
-Son los **9 temas tradicionales del ETC**. Cada uno se desarrolla con un **testimonio + una dinámica + el pequeño grupo + el plenario**. La temática del 88 los **ambienta**, no los cambia.
+Son los **9 temas tradicionales del ETC**. Cada uno se desarrolla con un **testimonio + una dinámica + el pequeño grupo + el plenario**. La temática del 88 los **ambienta**, no los cambia. *(El contenido de conversación de cada tema está en la Guía de Guías §10.)*
 
-### 4.1 Confianza *(viernes noche)*
-La confianza es **la piedra angular de la fe y el amor**. ¿En quién confío? ¿Qué rompió mi confianza? ¿Cómo vuelvo a confiar? Sin confianza no se zarpa: es la primera condición para la travesía.
+### 5.1 Confianza *(viernes noche)*
+La confianza es **la piedra angular de la fe y el amor**. ¿En quién confío? ¿Qué rompió mi confianza? ¿Cómo vuelvo a confiar?
 
-### 4.2 Singularidad *(viernes noche)*
+### 5.2 Singularidad *(viernes noche)*
 Cada persona es **creación individual de Dios**, un regalo único. Reconocer las cualidades propias y ponerlas al servicio. La diferencia entre estar solo y sentirse en soledad.
 
-### 4.3 Libertad para Aceptar *(sábado mañana)*
+### 5.3 Libertad para Aceptar *(sábado mañana)*
 Aceptar la propia singularidad, lo bueno y lo "no tan bueno", los errores, los cambios. Aceptar a los demás como regalo de Dios. La fe en que Dios es Padre y guía siempre *(Heb 11,1)*.
 
-### 4.4 Libertad para Entregarse *(sábado mediodía)*
+### 5.4 Libertad para Entregarse *(sábado mediodía)*
 La autenticidad de quien se da tal y como es, sin máscaras. Dar tiempo para **escuchar**. Reconocer los obstáculos a la entrega y soltarlos.
 
-### 4.5 Regalo de la Vida *(sábado tarde)*
+### 5.5 Regalo de la Vida *(sábado tarde)*
 La vida como regalo de Dios. El cuerpo como **templo del Espíritu Santo**. Cuidar la propia vida y la del otro. Vivir agradecido.
 
-### 4.6 Regalo del Perdón *(sábado noche · cena del Lavatorio)*
+### 5.6 Regalo del Perdón *(sábado noche · cena del Lavatorio)*
 Perdonarse a sí mismo. Perdonar **77 veces 7** (Mt 18,21-22). La Confesión. *Podemos ir por la vida con cicatrices, pero no con heridas.* Este tema enmarca el **Lavatorio de los pies** (Jn 13), el momento más fuerte del sábado.
 
-### 4.7 Nacer de Nuevo *(domingo mañana)*
+### 5.7 Nacer de Nuevo *(domingo mañana)*
 Nueva vida en Cristo (Zaqueo, Nicodemo). Renacer como hijos de Dios. El Bautismo. Dejar atrás lo que pesa.
 
-### 4.8 Compromiso *(domingo mañana)*
+### 5.8 Compromiso *(domingo mañana)*
 La responsabilidad cristiana en la sociedad, con Dios, con uno mismo, con la oración. La respuesta del participante: el compromiso de llevar lo vivido a su vida diaria.
 
-### 4.9 Cuarto Día *(domingo · cierre)*
+### 5.9 Cuarto Día *(domingo · cierre)*
 Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Tengo más deseo de entregarme? ¿Comprendo que **nosotros somos la Iglesia**? *El ETC comienza el Cuarto Día* — y se vive en comunidad, nunca solo.
 
 ---
 
-## 5. El ETC en las Sagradas Escrituras
+## 6. El ETC en las Sagradas Escrituras
 
 - **Mt 6,21** — *"Donde está tu tesoro, allí estará tu corazón."* **(Lema del retiro.)**
 - **Mt 13,44** — *El tesoro escondido.* (Cita complementaria: la consecuencia del hallazgo, vender todo con alegría.)
@@ -147,7 +188,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 
 ---
 
-## 6. Horario del ETC 88
+## 7. Horario del ETC 88
 
 > *Borrador basado en la estructura tradicional del ETC. Ajustes finales antes del Ensayo General.*
 
@@ -223,7 +264,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 
 ---
 
-## 7. Qué debe llevar el equipo
+## 8. Qué debe llevar el equipo
 
 > *(Lista de empaque, ref. ETC 79. El participante recibe su propia lista en la invitación.)*
 
@@ -237,9 +278,9 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 - **Avisar alergias** alimentarias al equipo de cocina.
 - **No llevar** aparatos electrónicos, prendas ni artículos costosos o innecesarios.
 
-## 8. Reglas de la Casa *(para los participantes · se leen al inicio)*
+## 9. Reglas de la Casa *(para los participantes · se leen al inicio)*
 
-> *(Migradas del ETC 78. Son las reglas del participante — distintas de lo que se espera del equipo, §3.8.)*
+> *(Migradas del ETC 78. Son las reglas del participante — distintas de las reglas del equipo, §4.)*
 
 - Si ves un letrero de **No Pase**, no pases.
 - Para ir al baño, hazlo acompañado de alguien del equipo.
@@ -251,7 +292,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 - No se sale del recinto durante el retiro.
 - El retiro **inicia el viernes y termina el domingo** — no antes.
 
-## 9. Cierre — explicaciones finales *(en la clausura)*
+## 10. Cierre — explicaciones finales *(en la clausura)*
 
 > *(Migrado del ETC 79. Se reparte entre los asesores de comunidad y la Co-Dirección.)*
 
@@ -263,7 +304,7 @@ En la clausura se explica al participante lo que se lleva a su Cuarto Día:
 - **Familiares y parejas dentro del equipo** (transparencia).
 - **La confidencialidad** de todo lo vivido en el retiro — se guarda para siempre.
 
-## 10. Glosario eteciano
+## 11. Glosario eteciano
 
 - **PG (Pequeño Grupo):** el grupo de 6–7 participantes con su pareja de guías; los acompaña todo el retiro.
 - **Plenario:** la reunión de todos en el salón principal.
@@ -277,7 +318,7 @@ En la clausura se explica al participante lo que se lleva a su Cuarto Día:
 - **Cuarto Día:** la vida después del retiro — el ETC en realidad ahí comienza.
 - **Profondo:** actividad de recaudación de fondos del equipo.
 
-## 11. Directorio del equipo del ETC 88
+## 12. Directorio del equipo del ETC 88
 
 > **[ESTA PÁGINA SE COMPLETA AL FINAL — es lo último que limpiamos.]**
 >
@@ -285,4 +326,4 @@ En la clausura se explica al participante lo que se lleva a su Cuarto Día:
 
 ---
 
-*Guía del ETC 88 · borrador V2 · guía del retiro (no estatutos, no formación) · tono descriptivo · lo marcado [POR DEFINIR] espera al director / Asesores Espirituales.*
+*Guía del ETC 88 · borrador V3 · guía del equipo (estructura · roles y responsabilidades · reglas del proceso · retiro) · tono descriptivo · lo marcado [POR DEFINIR] espera al director / Asesores Espirituales.*
