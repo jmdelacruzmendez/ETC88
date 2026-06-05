@@ -23,25 +23,26 @@ El retiro dura tres días, pero **comienza el Cuarto Día**: cuando el participa
 
 ---
 
-## 2. El hilo espiritual del ETC 88 — *Donde está tu tesoro, allí estará tu corazón*
+## 2. El ETC 88: lema y estructura
 
-> *"Porque donde está tu tesoro, allí estará también tu corazón."* — **Mateo 6,21**
+> **Lema del retiro:** *"Donde está tu tesoro, allí estará tu corazón"* — **Mateo 6,21**
 
-Todo el retiro nace de una pregunta sencilla y reveladora: **¿qué tesoro gobierna mi corazón hoy?** Donde pongo mi tesoro, allí va mi atención, mi tiempo, mi deseo — allí está mi corazón. A veces el tesoro es algo que no esperaba: el reconocimiento, el control, la imagen, una herida vieja, una persona, una idea de mí mismo. El ETC propone **una expedición hacia adentro** para ver con honestidad lo que rige el corazón hoy.
+El ETC 88 tiene su lema y su temática, que **visten** la ambientación, los detalles por tiempo de comida, el banderín y la decoración. Pero esta guía **no se organiza alrededor del tema**: describe la **estructura, los pasos y las responsabilidades** del ETC — que es lo que todo el equipo necesita para servir. La temática es la capa de arriba; la estructura es la base.
 
-Y propone un giro: **que el tesoro sea Cristo.** Cuando Cristo es el tesoro, el corazón se reordena — lo demás encuentra su lugar, sin ahogarnos, sin pesarnos. La parábola complementaria de **Mt 13,44** (el tesoro escondido en un campo) muestra la consecuencia: *el que halla el tesoro, lleno de alegría, vende todo y compra ese campo*. No es renuncia con resignación; es **alegría que reordena la vida entera.**
+### Cómo se prepara un ETC (antes del retiro) *(estructura tradicional, ref. ETC 78)*
+1. El Consejo elige a los **Directores** y a los **Asesores**.
+2. Los Directores, con el Consejo, **eligen el equipo** (Guías, Cocina, Música) y lo invitan.
+3. Se organizan las **5 formaciones (F1–F5)** y se preparan los documentos que se entregan en F1 (esta Carpeta, el perfil del participante, las reglas, la carta de compromiso).
+4. En cada formación el equipo se forma espiritualmente y prepara su parte (testimonios, motivos de cocina, cantos).
+5. **Convivencia + Ensayo General** cierran la preparación.
 
-**Cómo se vive en cada momento del retiro:**
-- **La expedición hacia adentro** → cada tema del retiro es una estación para descubrir lo que el corazón persigue hoy.
-- **El reconocimiento** → la cena del sábado con el **Lavatorio** (Jn 13) y la confesión: el momento en que el participante reconoce a Cristo como el verdadero tesoro.
-- **El corazón reordenado** → el Cuarto Día y el Compromiso: la respuesta gozosa que reorienta la vida — *vender todo, lleno de alegría* (Mt 13,44).
+### Cómo transcurre el retiro (los 3 días)
+El retiro **alterna plenarios** (todos juntos) **con pequeños grupos** (PG de 6–7 participantes con su pareja de guías):
+- **Viernes** — avanzada de cocina → llega el equipo → llegan los participantes → plenario de bienvenida + reglas → dinámicas → formación de los PGs → cena → testimonios de Confianza y Singularidad → oración Bayuyo → descanso.
+- **Sábado** — oración + testimonios (Libertad para Aceptar / para Entregarse / Regalo de la Vida) intercalados con PGs y dinámicas → entrega de palancas → **cena con Lavatorio** → testimonio del Perdón → **confesiones** → preparación de la misa y el banderín.
+- **Domingo** — testimonios (Nacer de Nuevo / Compromiso) → último PG → testimonio del Cuarto Día → evaluación → **Eucaristía de clausura + entrega de los peces**.
 
-**Cómo baja a cada área del equipo:**
-- **Guías** → acompañan a cada participante a mirar honestamente su corazón y a reconocer dónde está su tesoro hoy.
-- **Cocina** → preparan **la mesa del reconocimiento**: como en Emaús, en la mesa común el corazón se abre y reconoce a Cristo.
-- **Música** → pone la **banda sonora del corazón** que se reordena: del ruido del corazón ocupado al canto del corazón centrado.
-
-> Y todo se vive entre amigos. El corazón no se reordena en solitario: *Siempre amigos* (Jn 15,15). La expedición es de toda la tripulación.
+*(El horario detallado está en §6. Los roles de cada área, en §3.)*
 
 ---
 
@@ -99,7 +100,7 @@ Cada comunidad envía un asesor, **enlace entre el ETC 88 y su comunidad**: acom
 
 ## 4. Los temas del retiro
 
-Cada tema es una **estación de la expedición hacia adentro** — una pregunta sobre el corazón —, y se desarrolla con testimonio + dinámica + pequeño grupo + plenario.
+Son los **9 temas tradicionales del ETC**. Cada uno se desarrolla con un **testimonio + una dinámica + el pequeño grupo + el plenario**. La temática del 88 los **ambienta**, no los cambia.
 
 ### 4.1 Confianza *(viernes noche)*
 La confianza es **la piedra angular de la fe y el amor**. ¿En quién confío? ¿Qué rompió mi confianza? ¿Cómo vuelvo a confiar? Sin confianza no se zarpa: es la primera condición para la travesía.
@@ -117,13 +118,13 @@ La autenticidad de quien se da tal y como es, sin máscaras. Dar tiempo para **e
 La vida como regalo de Dios. El cuerpo como **templo del Espíritu Santo**. Cuidar la propia vida y la del otro. Vivir agradecido.
 
 ### 4.6 Regalo del Perdón *(sábado noche · cena del Lavatorio)*
-Perdonarse a sí mismo. Perdonar **77 veces 7** (Mt 18,21-22). La Confesión. *Podemos ir por la vida con cicatrices, pero no con heridas.* Este tema enmarca el **Lavatorio de los pies** (Jn 13): **aquí el participante reconoce dónde está su tesoro — y allí se reordena su corazón.**
+Perdonarse a sí mismo. Perdonar **77 veces 7** (Mt 18,21-22). La Confesión. *Podemos ir por la vida con cicatrices, pero no con heridas.* Este tema enmarca el **Lavatorio de los pies** (Jn 13), el momento más fuerte del sábado.
 
 ### 4.7 Nacer de Nuevo *(domingo mañana)*
 Nueva vida en Cristo (Zaqueo, Nicodemo). Renacer como hijos de Dios. El Bautismo. Dejar atrás lo que pesa.
 
 ### 4.8 Compromiso *(domingo mañana)*
-La responsabilidad cristiana en la sociedad, con Dios, con uno mismo, con la oración. **Aquí se "vende todo, lleno de alegría"** (Mt 13,44): la respuesta gozosa al tesoro reconocido.
+La responsabilidad cristiana en la sociedad, con Dios, con uno mismo, con la oración. La respuesta del participante: el compromiso de llevar lo vivido a su vida diaria.
 
 ### 4.9 Cuarto Día *(domingo · cierre)*
 Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Tengo más deseo de entregarme? ¿Comprendo que **nosotros somos la Iglesia**? *El ETC comienza el Cuarto Día* — y se vive en comunidad, nunca solo.
@@ -132,7 +133,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 
 ## 5. El ETC en las Sagradas Escrituras
 
-- **Mt 6,21** — *"Donde está tu tesoro, allí estará tu corazón."* **(Hilo del retiro.)**
+- **Mt 6,21** — *"Donde está tu tesoro, allí estará tu corazón."* **(Lema del retiro.)**
 - **Mt 13,44** — *El tesoro escondido.* (Cita complementaria: la consecuencia del hallazgo, vender todo con alegría.)
 - **Jn 15,9–17** — *"Ya no los llamo siervos, sino amigos."* (Lema eteciano.)
 - **Jn 13,1–17** — *El lavatorio de los pies.* (El servicio; eje de la cena del sábado.)

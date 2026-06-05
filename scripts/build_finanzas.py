@@ -78,8 +78,8 @@ costo_items = [
  ('Transporte (SPM→Higüey, equipo + participantes + clausura)', 69000, 77500, 86000, '3 cotizaciones a pedir (Metro, Transportando RD, DominicanBus)'),
  ('Cocina · Mercado (canasta)', 59000, 62410, 65800, 'La casa INCLUYE gas; no se compra gasoil'),
  ('Cocina · Meriendas / Correcaminos', 9000, 9756, 10000, ''),
- ('Cocina · Decoración / motivos comedor', 8000, 10000, 12000, 'Foami, velas, flores, cajitas, hilo (ref. ETC 78)'),
- ('Cocina · Detalles por comida + refrigerios reuniones internas', 13000, 15500, 18000, 'Modelo ETC 83: regalos al participante por tiempo de comida (tarjetas, cruces del Lavatorio, acta del corazón) + refrigerios de las reuniones internas de cocina (el 83 no lo presupuestó y dio déficit). Ver pestaña Detalles-Comida.'),
+ ('Cocina · Ambientación + detalles por tiempo de comida', 10000, 13000, 16000, 'Comedor + detalle al participante por comida (temas estándar: Singularidad, María, Pescador, Lavatorio, Niño, Despedida). Cocina lo itemiza en F1 — el detalle NO se pre-decide. Ver pestaña Detalles-Comida.'),
+ ('Cocina · Refrigerios de reuniones internas del equipo', 2000, 2500, 3500, 'Las reuniones propias de cocina necesitan refrigerio. El ETC 83 no lo presupuestó y dio déficit.'),
  ('Materiales y Litúrgico (itemizado)', 80000, 88500, 95000, 'Peces + Biblias + Banderín + Rosarios + Cofre palancas + Vino + Ofrenda confesores'),
  ('Guías · Materiales del PG (libretas, sobres, alambre…)', 14000, 17000, 20000, 'Libretas para participantes EN ESTE rubro'),
  ('Música · Impresión cancionero + cables/respaldo', 3000, 4500, 6000, 'La casa tiene sonido; solo respaldo'),
@@ -160,30 +160,31 @@ for m in menu:
     r += 1
 ws.row_dimensions[r-1].height = 32
 
-# ============ Hoja 3b: DETALLES POR COMIDA (modelo ETC 83 → temática Mt 6,21) ============
+# ============ Hoja 3b: AMBIENTACIÓN POR TIEMPO DE COMIDA (estructura · la llena cocina) ============
 ws = wb.create_sheet('Detalles-Comida')
-title(ws, 'DETALLES POR TIEMPO DE COMIDA · modelo ETC 83 adaptado a "Donde está tu tesoro" (Mt 6,21)', SAFARI)
-header(ws, 3, [('Día / Tiempo', 22), ('Tema (corazón/tesoro)', 26), ('Cita', 16), ('Detalle al participante', 30), ('Est. RD$', 12)], SAFARI)
+title(ws, 'AMBIENTACIÓN POR TIEMPO DE COMIDA · temas estándar del ETC (el detalle lo define cocina en F1)', SAFARI)
+header(ws, 3, [('Tiempo de comida', 22), ('Tema de ambientación', 24), ('Decoración (cocina/comedor)', 26), ('Detalle al participante', 26), ('Materiales / costo', 18)], SAFARI)
 detalles = [
- ('VIE Cena', '¿Qué tesoros traes en el corazón?', 'Mt 6,19-21', 'Tarjeta + caja chiquita (el tesoro que se trae)', 1800),
- ('VIE Noche (almohada)', 'Buenas noches', 'Sal 4,9', 'Tarjetita + chocolate', 1200),
- ('SÁB Desayuno', 'El campo es tu vida — empieza a cavar', 'Mt 13,44', 'Cartonite con cita', 1500),
- ('SÁB Almuerzo', 'La perla — saber elegir', 'Mt 13,45-46', 'Perla simbólica (canica + cordel)', 1500),
- ('SÁB Cena (Lavatorio)', 'Encontraste el tesoro: Cristo se da', 'Jn 13,1-15', '60 cruces de madera + papel marrón + copas de barro', 2400),
- ('SÁB Noche (almohada)', 'Buenas noches', 'Jn 3,16', 'Tarjetita + chocolate', 1200),
- ('DOM Desayuno', 'Corazón nuevo', '2 Co 5,17', 'Pintura + dulces + ambiente de cumpleaños', 1600),
- ('DOM Almuerzo (clausura)', '"Vende todo con alegría" · 4to día', 'Mt 13,44', 'ACTA DEL CORAZÓN NUEVO (versión 88 del Acta de Libertad del 83)', 1800),
- ('— Refrigerios reuniones internas de cocina —', 'I-IX reuniones', '', 'Refrigerios de las ~8-9 reuniones propias de cocina (el 83 dio déficit por no presupuestarlo)', 2500),
+ ('Cena del viernes', 'Singularidad', '(lo define cocina)', '(lo define cocina)', ''),
+ ('Desayuno del sábado', 'María', '(lo define cocina)', '(lo define cocina)', ''),
+ ('Almuerzo del sábado', 'Pescador de Hombres', '(lo define cocina)', '(lo define cocina)', ''),
+ ('Cena del sábado', 'Lavatorio de los Pies', '(lo define cocina)', '(lo define cocina)', ''),
+ ('Desayuno del domingo', 'Niño · Nacer de Nuevo', '(lo define cocina)', '(lo define cocina)', ''),
+ ('Almuerzo del domingo', 'Despedida · Cuarto Día', '(lo define cocina)', '(lo define cocina)', ''),
 ]
 r = 4
-total = 0
 for d in detalles:
     row(ws, r, d)
-    if isinstance(d[4], (int, float)): total += d[4]
     r += 1
-row(ws, r+1, ('', '', '', 'TOTAL DETALLES + REFRIGERIOS', total), total_row=True)
-row(ws, r+2, ('', '', '', 'Las cruces del Lavatorio están AQUÍ (no se duplican en Materiales).', None))
-ws.row_dimensions[8].height = 30
+r += 1
+ws.cell(row=r, column=1, value='Notas:').font = Font(bold=True, size=11, color=TIERRA); r += 1
+for nota in [
+ '- Los temas de ambientacion son los ESTANDAR del ETC (no dependen de la tematica del 88).',
+ '- El tema de cada momento lo comparten los detalles, el plenario y la cocina/comedor.',
+ '- El detalle concreto (que se entrega, como se decora) lo decide cocina en sus reuniones; no se prescribe aqui.',
+ '- Presupuesto: ver lineas de cocina en el Resumen (Ambientacion+detalles / Refrigerios reuniones).',
+]:
+    ws.cell(row=r, column=1, value=nota).font = Font(size=10); r += 1
 
 # ============ Hoja 4: COCINA · COMPRAS ============
 ws = wb.create_sheet('Cocina-Compras')

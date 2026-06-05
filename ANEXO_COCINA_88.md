@@ -46,12 +46,21 @@ Es importante hacer una **visita previa a la casa** para conocer el espacio, los
 ## 5. Menú — reglas y alergias
 Construir el menú **respetando** las alergias y condiciones del equipo y de los participantes — la lista vive en el tablero y se actualiza con cada nuevo miembro o participante. Como guía general: cuidar **mariscos, piña, huevo, canela, gastritis, diabetes** (bajo azúcar, horarios), **presión** (bajo sodio), restricciones por mascotas o por productos químicos en zona de comida. El menú definitivo se cierra cruzando la matriz de alergias y condiciones del tablero.
 
-## 6. Motivos y decoración del comedor (y de la cocina)
-- Cada tiempo de comida lleva un **motivo** ligado a la temática del retiro.
-- Sencillo, hecho por el equipo, alegre.
-- **Ambientación de la cocina** también: el espacio de trabajo refleja el espíritu del retiro.
+## 6. Motivos y ambientación por tiempo de comida
+Cada tiempo de comida tiene un **tema de ambientación** — es la estructura tradicional del ETC, no depende de la temática del retiro. El tema de cada momento lo comparten **los detalles, el plenario y la cocina/comedor**. Sencillo, hecho por el equipo, alegre.
 
-> **Nota sobre la temática:** la temática del retiro se conoce **después de la primera formación (F1)**. Hasta entonces, cocina prepara un **menú base sin tematización**; la ambientación con motivos temáticos se incorpora **después de F1**, una vez conocida la temática.
+| Tiempo de comida | Tema de ambientación |
+|---|---|
+| **Cena del viernes** | Singularidad |
+| **Desayuno del sábado** | María |
+| **Almuerzo del sábado** | Pescador de Hombres |
+| **Cena del sábado** | Lavatorio de los Pies |
+| **Desayuno del domingo** | Niño (Nacer de Nuevo) |
+| **Almuerzo del domingo** | Despedida — Cuarto Día |
+
+- El **detalle concreto** de cada comida (qué se entrega al participante, cómo se decora) lo define el equipo de cocina en sus reuniones — **no está prescrito**.
+- **Ambientación de la cocina** también: el espacio de trabajo refleja el espíritu del retiro.
+- La **temática del 88** añade una capa visual encima, pero los temas de comida son los estructurales de la tabla.
 
 ## 6b. Mensaje de Paul para el equipo de Cocina
 El corazón de cocina es **ENTREGA Y SACRIFICIO**. La cocina sirve desde la sombra para que el participante encuentre a Cristo en la mesa, en el descanso, y sobre todo en el **Lavatorio**.
