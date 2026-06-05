@@ -94,8 +94,7 @@ AREA = {
     'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
     'Roberto Figueroa':                    ('cocina', 'Cocina'),
     'Guido Mardonado':                     ('cocina', 'Cocina'),
-    'Pamela (sin formulario)':             ('cocina', 'Cocina'),  # NEW
-    # Roselyn fuera (2-jun): su cupo pasa a un varón, candidato Randolph → 1 vacante abierta
+    # Roselyn y Randol AMBOS dentro de cocina (4-jun); Pamela fuera. Roselyn como placeholder (sin formulario).
 }
 
 def parse_bday(s):
@@ -233,12 +232,18 @@ for p in equipo:
 PLACEHOLDERS_OP = [
     ('Daylin (sin formulario)', 'musica', 'Música', 'F'),
     ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
-    ('Pamela (sin formulario)', 'cocina', 'Cocina', 'F'),
+    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: Roselyn DENTRO de cocina (junto con Randol). Pamela fuera.
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
-    ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, ocupa cupo de Roselyn
-    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup
-    ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup
-    ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup
+    ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, activo en cocina (NO backup)
+    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías
+    ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
+    ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
+]
+# Backups de COCINA (4-jun): cantera del equipo de cocina. NO operativos. Nombres como los dio el director.
+PLACEHOLDERS_BACKUP_COCINA = [
+    'Emily de la Rosa', 'Zahir', 'Vileimi', 'Yileivi', 'Eduardo', 'Emmanuel',
+    'Ricaira', 'Merkin', 'Nestor', 'Leandro', 'Samuel', 'Emily',
+    'Emilio', 'Carlos', 'Rosanna', 'Inomar',
 ]
 # Asesores transversales: Paul y Sor Angelina están en TODO el proceso (no solo retiro)
 PLACEHOLDERS_TRANSVERSAL = [
@@ -270,7 +275,7 @@ def make_placeholder(name, area, rol, sexo, operativo):
         'invitados': [],
         'sin_formulario': True,
         'operativo': operativo,
-        'backup': rol == 'Backup Guía',
+        'backup': rol in ('Backup Guía', 'Backup Cocina'),
         'vacante': rol == 'Vacante',
         'transversal': False,
     }
@@ -285,12 +290,14 @@ except Exception:
     FORM_LIVE_OVERRIDE = {}
 for name, area, rol, sexo in PLACEHOLDERS_OP:
     # backups y vacante NO son titulares operativos
-    is_op = rol not in ('Backup Guía', 'Vacante')
+    is_op = rol not in ('Backup Guía', 'Backup Cocina', 'Vacante')
     p = make_placeholder(name, area, rol, sexo, is_op)
     if name in FORM_LIVE_OVERRIDE:
         p.update(FORM_LIVE_OVERRIDE[name])
         p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
     equipo.append(p)
+for nm in PLACEHOLDERS_BACKUP_COCINA:
+    equipo.append(make_placeholder(nm, 'cocina', 'Backup Cocina', None, False))
 for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
     equipo.append(make_placeholder(name, area, rol, sexo, False))
 for name, area, rol, sexo in PLACEHOLDERS_TRANSVERSAL:

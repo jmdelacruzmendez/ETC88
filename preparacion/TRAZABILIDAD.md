@@ -6,7 +6,7 @@
 **Resumen:** 44 confirmados · 14 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
+- Total 72 · operativos titulares 48 · vacantes 0 · backups 19.
 - Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
@@ -95,11 +95,11 @@
 - Frank Morales es asesor (como Laura y Tomás) y además lleva el Banderín.
 - Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).
 - Apellido de Leober: Soriano.
-- Roselyn sale del equipo (2-jun); su cupo pasa a un varón.
-- Los backups (Rodolfo Telémaco, Scarlett Nivar, Kamila Todd) NO son parte del equipo per se.
+- Roselyn DENTRO de cocina (4-jun): el director confirmó que Roselyn y Randol están AMBOS en cocina; Pamela queda fuera. Cocina sigue en 21.
+- Backups (4-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Merkin, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (16). Total 19 backups. NO son operativos.
 - Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).
 - Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
-- Randol Joseph Payano (nombre tomado del formulario, confirmado por el director 3-jun) en Cocina: ocupa el cupo de varón que dejó Roselyn — vacante cerrada.
+- Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.
 - Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).
 - Profondo #1 = rifa (primera actividad, por recomendación del equipo).
 - Asesoras de cocina: Mary "Petra" Morales y Johanny García.
