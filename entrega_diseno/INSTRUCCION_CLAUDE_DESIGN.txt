@@ -40,6 +40,16 @@ TEXTOS A ADJUNTAR (LOS PEGO/SUBO APARTE)
 •  Anexo 3: ANEXO_MUSICA_88.md.
 •  Anexo 4: ANEXO_ORACIONES_88.md.
 
+FORMATO DE REFERENCIA: LIBRITO IMPRESO (COMO EL ETC LXXIX)
+Los ETCs anteriores entregaban la Carpeta como un librito maquetado (tipografía, imágenes, separadores). Iguala o supera ese nivel — el contenido que adjunto es más completo que el de ellos; lo que falta es el diseño:
+•  Portada diseñada: pez-brújula + lema "Donde está tu tesoro…" + Mt 6,21 + fechas y lugar.
+•  Portadilla por sección y por anexo (separadores con el sistema; cada anexo abre como un capítulo).
+•  Ilustración sobria por sección en clave Dirección A (brújula, estrella polar, horizonte, pez) — ilustración de línea, NO fotos pesadas. Las imágenes del librito viejo NO se reutilizan (otra temática): genera nuevas en el sistema.
+•  Tipografía: Cormorant Garamond (display) + Inter (cuerpo).
+•  Tablas formateadas: horario (VIE/SÁB/DOM) y directorio.
+•  Numeración de página + pie "ETC 88 · Higüey 2026".
+•  Índice/tabla de contenido al inicio (12 secciones + 4 anexos).
+
 PRODUCCIÓN
 •  Imprimible y barato: 1–2 tintas (azul + coral sobre crema) con el pez a color como único acento full-color. Confirmar # de tintas con la imprenta.
 •  Todo debe sobrevivir a 1 tinta.
