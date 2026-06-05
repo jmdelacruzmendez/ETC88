@@ -1,5 +1,5 @@
 # GUÍA DEL ETC 88
-### Encuentro Total con Cristo · San Pedro de Macorís · 4–6 septiembre 2026
+### Encuentro Total con Cristo · 4–6 septiembre 2026
 ### *Donde está tu tesoro, allí estará tu corazón*
 
 > **Lema eteciano:** *"Siempre amigos"* · **Jn 15,15**

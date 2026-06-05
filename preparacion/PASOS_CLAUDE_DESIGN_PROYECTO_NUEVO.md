@@ -58,7 +58,7 @@ En **Project instructions / "Set custom instructions"**, pega esto:
 
 ## 5. Pide las piezas en orden (una por mensaje)
 Avanza pieza por pieza para poder corregir cada una:
-1. **Portada** — el **pez ICTUS original a color** + **"ETC 88"** + el lema *"Donde está tu tesoro…"* (Mt 6,21) + fechas y lugar. **Sin conteos.**
+1. **Portada** — el **pez ICTUS original a color** + **"ETC 88"** + el lema *"Donde está tu tesoro…"* (Mt 6,21) + la **fecha** (4–6 sep 2026). **El lugar NO va en la portada** (va en el interior). **Sin conteos.**
 2. **Índice / tabla de contenido** (13 secciones + 4 anexos).
 3. **Páginas interiores** fluyendo el texto de la Carpeta (`CARPETA_ETC88.txt`).
 4. **Separadores por sección** y **por área** (Guías / Cocina / Música / Asesores) — un color de los 5 por área, con los mensajes pastorales de Padre Paul.

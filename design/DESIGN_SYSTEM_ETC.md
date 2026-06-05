@@ -27,7 +27,7 @@
 - Display/títulos: una **serif cálida y amable** (p. ej. *Fraunces* o *Cormorant*) o, si se quiere más cercano al trazo del logo, una **redonda amistosa**. Cuerpo: una **sans legible** (*Inter*, *Source Sans*). Ambas con licencia abierta. **Confirmar con el director / la imprenta.**
 
 ## Aplicación a la Carpeta
-1. **Portada** — el pez ICTUS original (a color) + **"ETC 88"** (se le agrega el 88) + el **lema** *"Donde está tu tesoro, allí estará tu corazón"* · **Mt 6,21** + fechas y lugar (4–6 sep 2026 · La Ceiba del Salado, Higüey · SPM). **Sin conteos.**
+1. **Portada** — el pez ICTUS original (a color) + **"ETC 88"** (se le agrega el 88) + el **lema** *"Donde está tu tesoro, allí estará tu corazón"* · **Mt 6,21** + la **fecha** (4–6 sep 2026). **El lugar NO va en la portada** (Higüey / La Ceiba del Salado va en el interior). **Sin conteos.**
 2. **Interiores** — base crema, titulares marrón, número/acento de sección en uno de los 5 colores. Fluir el texto real de la Guía.
 3. **Separadores por área** — un color de los 5 por área (Guías, Cocina, Música, Asesores), con el mensaje pastoral de Padre Paul.
 4. **Portadillas de los 4 anexos** (Guías, Cocina, Música, Oraciones).

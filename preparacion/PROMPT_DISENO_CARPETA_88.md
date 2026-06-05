@@ -23,7 +23,7 @@ Vas a maquetar la **Carpeta del retiro ETC 88** con la **identidad visual origin
 Cálido, amistoso y **gozoso**, pero con el respeto de un retiro católico. La estética del ETC de siempre — nada de náutico/expedición/brújula, nada de cofre pirata.
 
 ## Qué quiero que produzcas
-1. **Portada** — el **pez ICTUS original a color** + **"ETC 88"** + el **lema** *"Donde está tu tesoro, allí estará tu corazón"* + **Mt 6,21** + fechas y lugar. **Sin conteos.**
+1. **Portada** — el **pez ICTUS original a color** + **"ETC 88"** + el **lema** *"Donde está tu tesoro, allí estará tu corazón"* + **Mt 6,21** + la **fecha** (4–6 sep 2026). **El lugar NO va en la portada** (va en el interior). **Sin conteos.**
 2. **Índice / tabla de contenido** (12 secciones + 4 anexos).
 3. **Páginas interiores** fluyendo el **texto real** de la Guía (adjunto): qué es un ETC · hilo espiritual · roles · reglas del proceso · los temas · escrituras · horario.
 4. **Separadores por sección y por área** — un color de los 5 por área, con los **mensajes pastorales de Padre Paul** (Guías = "enfocados en el participante"; Cocina = "entrega y sacrificio · Jn 13"; Música = "animación espiritual antes que técnica").
