@@ -1,67 +1,57 @@
-INSTRUCCIÓN PARA CLAUDE DESIGN — AFINAR EL SISTEMA Y MAQUETAR LA CARPETA DEL ETC 88
+INSTRUCCIÓN PARA CLAUDE DESIGN — MAQUETAR LA CARPETA DEL ETC 88 CON LA IDENTIDAD ORIGINAL DEL ETC
 
-Cómo usar este archivo: copia y pega el bloque de abajo en la sesión de Claude Design donde ya está cargado el Design System (Dirección A · Expedición). Adjunta los 3 textos que se indican como anexos. Ajusta lo que esté entre 《》.
+Cómo usar este archivo: copia y pega el bloque de abajo en Claude Design. Adjunta el LOGO ORIGINAL del ETC (el pez ICTUS de colores que tiene el director) y los textos que se indican. Ajusta lo que esté entre 《》.
+
+Cambio 5-jun: se descarta la dirección "Expedición · azul/arena/coral/brújula" (era una propuesta, no la identidad del ETC). Se usa la estética y los colores ORIGINALES del ETC y el logo original.
 
 ---
 
-Ya tienes cargado el Design System del ETC 88 — Dirección A · Expedición. No lo reconstruyas desde cero: afínalo y aplícalo. Ahora tenemos cerrado el núcleo espiritual y el contenido real, así que el trabajo es bajar el sistema a la Carpeta del retiro.
+Vas a maquetar la Carpeta del retiro ETC 88 con la identidad visual original del ETC: su símbolo es el pez ICTUS de colores (ΙΧΘΥΣ). No inventes un sistema nuevo ni uses paletas ajenas al ETC.
 
-NÚCLEO CONFIRMADO (YA NO ES PROPUESTA — ES FIJO)
+NÚCLEO CONFIRMADO (FIJO)
+•  Logo: el pez ICTUS de colores — te adjunto el archivo original; úsalo como está, no lo rediseñes. Para la Carpeta se le agrega "ETC 88".
+•  Lema del retiro: "Donde está tu tesoro, allí estará tu corazón" · Mt 6,21 (en la portada). Cita complementaria: Mt 13,44.
 •  Lema eteciano: "Siempre amigos" · Jn 15,15.
-•  Lema del retiro: "Donde está tu tesoro, allí estará tu corazón" · Mt 6,21.
-•  Hilo espiritual / raíz: el corazón y el tesoro — Mateo 6,21: "Porque donde está tu tesoro, allí estará también tu corazón." El retiro es una expedición hacia adentro — la brújula del corazón apunta al tesoro. La pregunta del retiro es ¿qué tesoro gobierna mi corazón hoy?, y propone que ese tesoro sea Cristo. Como cita complementaria: Mt 13,44 (el que halla el tesoro, lleno de alegría, vende todo y compra el campo) — la consecuencia gozosa del reconocimiento.
-•  Temática visual: expedición / travesía hacia adentro (Dirección A, ya cargada).
 •  Retiro: 4–6 sep 2026 · Casa de Retiro «La Ceiba del Salado», Higüey · San Pedro de Macorís.
 
-AFINAMIENTOS AL SISTEMA EN FUNCIÓN DEL CONTENIDO (IMPORTANTE)
-1. El símbolo central es la brújula del corazón apuntando al tesoro. El pez-brújula de la Dirección A queda perfecto: la brújula es el corazón, la aguja apunta al norte que es el tesoro (la estrella polar = Cristo). Este giro pequeño le da más profundidad al sistema. NO dibujar un corazón humano literal en la portada (cae en sentimentalismo); es la brújula la metáfora del corazón.
-2. El tesoro NO es un cofre pirata. Nada de cofre de monedas, mapa con X, calavera. El tesoro se sugiere como luz / resplandor / norte — sobrio, contemplativo. Como cita complementaria sigue válido el tesoro "escondido en un campo" (Mt 13,44), pero el centro narrativo es la brújula del corazón.
-3. Conserva lo náutico (la travesía, el horizonte) — la expedición ahora es hacia adentro; el horizonte interior es el campo.
-4. El pez se queda (símbolo eteciano + los peces que se entregan en la clausura). Es el acento coral del sistema, y es la propia brújula del corazón.
-5. La alegría es el tono emocional del reconocimiento — que el sistema no se vuelva sombrío; sobrio pero gozoso. La parábola es de alegría.
-6. Sin conteos ni nombres en piezas atemporales (portada, banderín). El # de participantes vive en la hoja del equipo, no en el branding.
+PALETA — DERIVADA DEL LOGO (ÚSALA; SI PROPONES AJUSTE, MUÉSTRAME ANTES/DESPUÉS)
+•  Amarillo dorado #E9C44E (cuerpo del pez · realces cálidos) · marrón #4E3119 (contorno, filetes, titulares, texto) · crema #F7F1E3 (fondo) · tinta cálida #2A2118 (cuerpo).
+•  Acentos = las 5 letras ΙΧΘΥΣ: celeste #B7E9EC, rojo #DA1F22, azul #1E2BB6, naranja #F0871F, magenta #D21C82. Úsalos como acentos puntuales (uno por área/sección), no en bloques grandes.
+•  La base (marrón + dorado + crema) es sobria; los 5 colores dan la alegría del logo sin volverse ruidoso. El pez a color es el único elemento full-color obligatorio.
 
-QUÉ QUIERO QUE PRODUZCAS (APLICANDO EL SISTEMA)
-1. Portada de la Carpeta — con el lema del retiro "Donde está tu tesoro, allí estará tu corazón" + Mt 6,21 + datos del retiro.
-2. Páginas interiores fluyendo el texto real de la Guía (te lo adjunto): ¿Qué es un ETC? · el hilo espiritual · roles durante el retiro · los temas · escrituras · horario.
-3. Separadores de sección — uno por bloque, y separadores por área usando los mensajes pastorales de Padre Paul (Guías = "enfocados en el participante"; Cocina = "entrega y sacrificio · Jn 13"; Música = "animación espiritual antes que técnica").
-4. Los 9 temas como una secuencia visual — un tratamiento sobrio de la ruta del retiro (Confianza → Singularidad → … → Cuarto Día). Estructural, no una meditación temática.
-5. Los cuatro ANEXOS, cada uno con su portadilla en el mismo sistema:
-   •  Anexo 1 · Guía de Guías (texto adjunto).
-   •  Anexo 2 · Anexo de Cocina (texto adjunto).
-   •  Anexo 3 · Anexo de Música (texto adjunto).
-   •  Anexo 4 · Anexo de Oraciones (texto adjunto).
-6. Página de directorio del equipo — déjala como plantilla / placeholder (la completamos al final).
+TONO
+Cálido, amistoso y gozoso, pero con el respeto de un retiro católico. La estética del ETC de siempre — nada de náutico/expedición/brújula, nada de cofre pirata.
 
-TEXTOS A ADJUNTAR (LOS PEGO/SUBO APARTE)
-•  Carpeta (cuerpo): COPY_GUIA_ETC88.md — la Guía del retiro.
-•  Anexo 1: GUIA_DE_GUIAS_88.md.
-•  Anexo 2: ANEXO_COCINA_88.md.
-•  Anexo 3: ANEXO_MUSICA_88.md.
-•  Anexo 4: ANEXO_ORACIONES_88.md.
+QUÉ QUIERO QUE PRODUZCAS
+1. Portada — el pez ICTUS original a color + "ETC 88" + el lema "Donde está tu tesoro, allí estará tu corazón" + Mt 6,21 + fechas y lugar. Sin conteos.
+2. Índice / tabla de contenido (12 secciones + 4 anexos).
+3. Páginas interiores fluyendo el texto real de la Guía (adjunto): qué es un ETC · hilo espiritual · roles · reglas del proceso · los temas · escrituras · horario.
+4. Separadores por sección y por área — un color de los 5 por área, con los mensajes pastorales de Padre Paul (Guías = "enfocados en el participante"; Cocina = "entrega y sacrificio · Jn 13"; Música = "animación espiritual antes que técnica").
+5. Los 9 temas como secuencia visual sobria (la ruta del retiro). Estructural, no una meditación.
+6. Los cuatro ANEXOS, cada uno con su portadilla en el mismo sistema:
+   •  Anexo 1 · Guía de Guías · Anexo 2 · Cocina · Anexo 3 · Música · Anexo 4 · Oraciones.
+7. Directorio del equipo — usa la lista real de nombres que te adjunto (DIRECTORIO_EQUIPO_88.md), por área, marcando coordinadores.
+8. Tablas formateadas: horario (VIE/SÁB/DOM) y directorio. Folio + pie "ETC 88 · Higüey 2026".
 
-FORMATO DE REFERENCIA: LIBRITO IMPRESO (COMO EL ETC LXXIX)
-Los ETCs anteriores entregaban la Carpeta como un librito maquetado (tipografía, imágenes, separadores). Iguala o supera ese nivel — el contenido que adjunto es más completo que el de ellos; lo que falta es el diseño:
-•  Portada diseñada: pez-brújula + lema "Donde está tu tesoro…" + Mt 6,21 + fechas y lugar.
-•  Portadilla por sección y por anexo (separadores con el sistema; cada anexo abre como un capítulo).
-•  Ilustración sobria por sección en clave Dirección A (brújula, estrella polar, horizonte, pez) — ilustración de línea, NO fotos pesadas. Las imágenes del librito viejo NO se reutilizan (otra temática): genera nuevas en el sistema.
-•  Tipografía: Cormorant Garamond (display) + Inter (cuerpo).
-•  Tablas formateadas: horario (VIE/SÁB/DOM) y directorio.
-•  Numeración de página + pie "ETC 88 · Higüey 2026".
-•  Índice/tabla de contenido al inicio (12 secciones + 4 anexos).
+TEXTOS A ADJUNTAR
+•  Carpeta (cuerpo): CARPETA_ETC88.txt (o COPY_GUIA_ETC88.md).
+•  Anexo 1: ANEXO_1_GUIA_DE_GUIAS.txt · Anexo 2: ANEXO_2_COCINA.txt · Anexo 3: ANEXO_3_MUSICA.txt · Anexo 4: ANEXO_4_ORACIONES.txt.
+•  Directorio: DIRECTORIO_EQUIPO_88.md.
+•  Logo: el archivo original del pez ICTUS de colores (lo adjunta el director).
+
+FORMATO DE REFERENCIA: LIBRITO IMPRESO (COMO EDICIONES ANTERIORES DEL ETC)
+•  Portadilla por sección y por anexo. Ilustración sobria de línea por sección (no fotos pesadas). Las imágenes de libritos viejos NO se reutilizan.
+•  Tablas: horario (VIE/SÁB/DOM) y directorio. Numeración de página + pie. Índice al inicio.
 
 PRODUCCIÓN
-•  Imprimible y barato: 1–2 tintas (azul + coral sobre crema) con el pez a color como único acento full-color. Confirmar # de tintas con la imprenta.
-•  Todo debe sobrevivir a 1 tinta.
-•  Formato folleto (media carta o A5, a definir con la imprenta).
+•  Imprimible y barato: base 1–2 tintas (marrón + dorado sobre crema) con el pez a color como único acento full-color. Todo debe sobrevivir a 1 tinta. Formato folleto (media carta o A5, a definir con la imprenta).
 
 CÓMO TRABAJAR
-•  No rehagas el sistema (paleta, tipografía, logo ya están). Si propones un ajuste, muéstrame antes/después y dime por qué.
-•  No inventes nombres ni cifras: usa solo el texto que te adjunto. Si falta algo, pídemelo.
-•  Para las decisiones de maquetación con varias salidas posibles, dame 2 opciones y una recomendación.
-•  Mantén la sobriedad de un retiro católico.
+•  Usa el logo original adjunto, no lo rediseñes. Si propones un ajuste de paleta o tipografía, muéstrame antes/después y dime por qué.
+•  No inventes nombres ni cifras: usa solo el texto adjunto. Si falta algo, pídemelo.
+•  Para maquetación con varias salidas posibles, dame 2 opciones y una recomendación.
 
-《Si quieres, pégale también el archivo del Design System (DESIGN_SYSTEM_A.md) y los SVG de design/A/ para que tenga el sistema a mano dentro de la sesión.》
+《Pégale también design/DESIGN_SYSTEM_ETC.md para que tenga la paleta y las reglas a mano.》
 
 ---
-Instrucción para Claude Design · Carpeta ETC 88 · modo afinar-y-aplicar (no reconstruir).
+Instrucción para Claude Design · Carpeta ETC 88 · identidad ORIGINAL del ETC (pez ICTUS de colores).

@@ -35,6 +35,7 @@ escapado**. Las reglas de abajo evitan que vuelva a pasar.
 ## Pipeline (regenerar SIEMPRE en este orden)
 ```
 python scripts/build_data.py       # lee xlsx + estado.json → data/equipo.json + /tmp
+python scripts/build_directorio.py # → entrega_diseno/DIRECTORIO_EQUIPO_88.md (lista de nombres por área, desde equipo.json)
 python scripts/build_docx.py       # → Documento_Asesores_ETC88.docx + Carpeta_F1_ETC88.docx
 python scripts/build_finanzas.py   # → Finanzas_ETC88.xlsx (+ /tmp/etc88_costos.json)
 python scripts/build_flujo.py      # → Flujo_Caja_ETC88.xlsx (modelo: topes, flujo, optimización)

@@ -7,10 +7,9 @@
 ## 0. Antes de empezar — ten a mano estos archivos del repo
 Súbelos desde tu copia del repo (carpeta `ETC88/`). Son los que el proyecto necesita "saber":
 
-**El sistema de diseño (Dirección A):**
-- `design/DESIGN_SYSTEM_A.md` — la especificación (paleta, tipografía, concepto, piezas).
-- `design/A/01_logo.svg` … `design/A/07_iconografia.svg` — las 7 láminas de referencia (logo, tipografía/color, portada, interior, separadores, banderín, iconografía).
-- `design/logo_eteciano.png` — el **pez ICTUS de colores** (el ícono/acento). *(Si ya generaste el oficial con `PROMPT_LOGO_PEZ.md`, sube ese.)*
+**La identidad (original del ETC):**
+- `design/DESIGN_SYSTEM_ETC.md` — la especificación (logo, paleta derivada del logo, estética, aplicación a la Carpeta).
+- **El LOGO ORIGINAL del ETC** — el archivo del **pez ICTUS de colores** que tiene el director. ⚠️ **Súbelo tú** (no usamos una recreación). Si el director te lo pasa como imagen, guárdalo como `design/logo_eteciano_oficial.png` y súbelo.
 
 **Los textos reales (lo que se va a maquetar):**
 - `entrega_diseno/CARPETA_ETC88.txt` — el cuerpo de la Carpeta (12 secciones).
@@ -18,6 +17,7 @@ Súbelos desde tu copia del repo (carpeta `ETC88/`). Son los que el proyecto nec
 - `entrega_diseno/ANEXO_2_COCINA.txt`
 - `entrega_diseno/ANEXO_3_MUSICA.txt`
 - `entrega_diseno/ANEXO_4_ORACIONES.txt`
+- `entrega_diseno/DIRECTORIO_EQUIPO_88.md` — la lista de nombres del equipo (para la página de directorio).
 
 **El prompt principal (lo que vas a pegar en el primer chat):**
 - `entrega_diseno/INSTRUCCION_CLAUDE_DESIGN.txt` — la instrucción "afinar-y-aplicar".
@@ -40,14 +40,15 @@ En el panel del proyecto, en **Project knowledge** (o "Conocimiento") → **Add 
 ## 3. Pon las instrucciones del proyecto (las reglas que no cambian)
 En **Project instructions / "Set custom instructions"**, pega esto:
 
-> Eres el diseñador de la **Carpeta del retiro ETC 88**. Trabajas con el **Design System Dirección A · Expedición** que está en el conocimiento del proyecto (`DESIGN_SYSTEM_A.md` + los SVG de `design/A/`). **No reconstruyas el sistema: aplícalo.**
+> Eres el diseñador de la **Carpeta del retiro ETC 88**. Usas la **identidad ORIGINAL del ETC**: su símbolo es el **pez ICTUS de colores** (ΙΧΘΥΣ). El sistema está en `DESIGN_SYSTEM_ETC.md` (en el conocimiento del proyecto). **Aplícalo; no inventes una identidad nueva.**
 > **Reglas fijas:**
-> - Paleta: azul profundo `#1B3A5C`, arena `#E8D4A8`, coral `#E36C4F`, crema `#F7F1E3`, tinta `#1A1A1A`. Tipografía: **Cormorant Garamond** (display) + **Inter** (cuerpo).
-> - **Lema del retiro:** *"Donde está tu tesoro, allí estará tu corazón"* · **Mt 6,21**. Cita complementaria: Mt 13,44. Lema eteciano: "Siempre amigos" · Jn 15,15.
-> - Símbolo central: la **brújula del corazón** que apunta al tesoro (la estrella polar = Cristo). El **pez ICTUS** es el acento. **Nada de cofre pirata, calavera ni mapa con X.** Sobrio, contemplativo, gozoso — es un retiro católico.
+> - **Logo:** el **pez ICTUS de colores original** (archivo adjunto) — úsalo como está, **no lo rediseñes**; en la Carpeta se le agrega **"ETC 88"**.
+> - Paleta (derivada del logo): amarillo dorado `#E9C44E`, marrón `#4E3119`, crema `#F7F1E3`, tinta `#2A2118`; **acentos = las 5 letras ΙΧΘΥΣ** (celeste `#B7E9EC`, rojo `#DA1F22`, azul `#1E2BB6`, naranja `#F0871F`, magenta `#D21C82`) como acentos puntuales (uno por área/sección), no en bloques grandes.
+> - **Lema del retiro:** *"Donde está tu tesoro, allí estará tu corazón"* · **Mt 6,21** (en la portada). Complementaria: Mt 13,44. Lema eteciano: "Siempre amigos" · Jn 15,15.
+> - Tono **cálido, amistoso y gozoso**, con el respeto de un retiro católico. **Nada de náutico/expedición/brújula ni cofre pirata.**
 > - Retiro: **4–6 sep 2026 · Casa La Ceiba del Salado, Higüey · San Pedro de Macorís.**
-> - **No inventes** nombres ni cifras: usa solo el texto del conocimiento. **Sin conteos ni nombres** en piezas atemporales (portada, banderín). Si falta un dato, pídemelo o déjalo como placeholder.
-> - Entrega imprimible y barato: que todo **sobreviva a 1 tinta**; el pez a color como único acento full-color.
+> - **No inventes** nombres ni cifras: usa solo el texto del conocimiento. **Sin conteos** en piezas atemporales (portada). Si falta un dato, pídemelo o déjalo como placeholder.
+> - Imprimible y barato: que todo **sobreviva a 1 tinta**; el pez a color como único acento full-color.
 
 ## 4. Primer chat — establecer y aplicar el sistema
 1. Abre un **chat nuevo dentro del proyecto**.

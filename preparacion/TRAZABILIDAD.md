@@ -62,7 +62,7 @@
 |---|---|---|---|
 | `finanzas.cuota_equipo` | {"total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "c… | director (planteado, sin cerrar) | NO está decidido. Mostrar primero los costos estimados del retiro para… |
 | `finanzas.participantes_objetivo` | 52 | derivado (100 − 48 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
-| `marca.branding_reglas_esteticas` | Dirección A · Expedición (azul profundo + arena + coral · Co… | Claude Design | Dirección elegida por el director; paleta/tipografía/logo aún se afina… |
+| `marca.branding_reglas_esteticas` | Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo or… | director + logo original | 5-jun: el director descartó la Dirección A inventada (azul/arena/coral… |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
 | `equipos_auxiliares[2].responsable` | Directores | — |  |
 | `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |

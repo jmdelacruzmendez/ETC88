@@ -6,6 +6,7 @@ set -e
 cd "$(dirname "$0")/.."
 echo "== ETC 88 · regenerando sistema =="
 python scripts/build_data.py
+python scripts/build_directorio.py
 python scripts/build_docx.py
 python scripts/build_finanzas.py
 python scripts/build_flujo.py

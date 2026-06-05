@@ -219,13 +219,13 @@
         "estado": "confirmado",
         "fuente": "director",
         "cita": "Mt 6:21",
-        "nota": "Temática confirmada: la expedición es hacia adentro — la brújula del corazón apunta al tesoro. Diseño = Dirección A (Expedición), se afina con Claude Design."
+        "nota": "Temática confirmada: la expedición es hacia adentro — la brújula del corazón apunta al tesoro. Identidad visual = la ORIGINAL del ETC (pez ICTUS de colores), no la Dirección A inventada; ver design/DESIGN_SYSTEM_ETC.md (director, 5-jun)."
       },
       "branding_reglas_esteticas": {
-        "valor": "Dirección A · Expedición (azul profundo + arena + coral · Cormorant Garamond + Inter · pez-brújula que apunta a la estrella polar). Sistema en design/DESIGN_SYSTEM_A.md.",
+        "valor": "Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo original del director). Paleta derivada del logo: amarillo dorado + contorno marrón + las cinco letras ΙΧΘΥΣ (celeste/rojo/azul/naranja/magenta) como acentos, sobre crema. Sistema en design/DESIGN_SYSTEM_ETC.md.",
         "estado": "propuesta",
-        "fuente": "Claude Design",
-        "nota": "Dirección elegida por el director; paleta/tipografía/logo aún se afinan con Claude Design en función del contenido."
+        "fuente": "director + logo original",
+        "nota": "5-jun: el director descartó la Dirección A inventada (azul/arena/coral + brújula/expedición) y pidió usar los COLORES y ESTÉTICA ORIGINALES del ETC con el LOGO ORIGINAL (no el generado). La paleta exacta derivada del logo sigue propuesta hasta confirmar color por color; el archivo del logo oficial lo sube el director. En la portada va el lema (Mt 6,21) y se le agrega el 88."
       }
     },
     "equipos_auxiliares": [
