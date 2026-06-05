@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 42 confirmados · 14 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 44 confirmados · 14 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
@@ -51,6 +51,8 @@
 | `historial.etc_83_disponible` | True | Drive: carpeta ETC 83 compartida por el director 2026-06-04 | Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster +… |
 | `historial.informe_final_85` | Informe Final ETC 85.pdf — leído en Drive | Drive: ETC 85 / Informe Final ETC 85.pdf | Roster 85 + puntos positivos + aspectos a mejorar + medidas financiera… |
 | `historial.drive_88_carpetas_vacias` | ["Operaciones", "Finanzas"] | exploración Drive 2026-06-02 | Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pa… |
+| `historial.revision_cruzada_completa` | 78/79/83/85 revisados a fondo 2026-06-04 | Drive: lectura de los 5 folders | Síntesis en preparacion/RESUMEN_MIGRACION_ETCS.md. 79 tiene el set doc… |
+| `historial.asesoras_cocina_continuidad` | Petra Morales + Johanny García sirvieron en ETC 83 y ETC 85 | Informe Final ETC 85 (roster: 'Asesores de cocina: Johani y Petra') + Presupuesto cocina ETC 83 | Continuidad de asesoras de cocina confirmada en 83 y 85. Son cantera c… |
 | `mapa_donaciones_por_rubro.zonas.spm` | San Pedro de Macorís — parroquia San José Obrero + comercios… | director |  |
 | `mapa_donaciones_por_rubro.zonas.higuey` | Higüey — cerca de la casa, proveedores locales (insumos pesa… | ubicación de la casa |  |
 | `mapa_donaciones_por_rubro.zonas.pc` | Punta Cana — parroquia Nuestra Señora del Pilar + hoteles pa… | director |  |

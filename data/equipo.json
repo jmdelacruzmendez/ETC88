@@ -420,6 +420,18 @@
         "estado": "confirmado",
         "fuente": "exploración Drive 2026-06-02",
         "nota": "Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pasados las tienen llenas)."
+      },
+      "revision_cruzada_completa": {
+        "valor": "78/79/83/85 revisados a fondo 2026-06-04",
+        "estado": "confirmado",
+        "fuente": "Drive: lectura de los 5 folders",
+        "nota": "Síntesis en preparacion/RESUMEN_MIGRACION_ETCS.md. 79 tiene el set documental más rico (guía librito, responsabilidades, rúbrica de evaluación de servidores, perfil, cierre). 78 tiene la guía meta 'cómo preparar un ETC por pasos' + costos base. 85 tiene el Informe Final + el formulario de Perfil del Participante. 83 tiene el presupuesto de cocina + detalles por comida."
+      },
+      "asesoras_cocina_continuidad": {
+        "valor": "Petra Morales + Johanny García sirvieron en ETC 83 y ETC 85",
+        "estado": "confirmado",
+        "fuente": "Informe Final ETC 85 (roster: 'Asesores de cocina: Johani y Petra') + Presupuesto cocina ETC 83",
+        "nota": "Continuidad de asesoras de cocina confirmada en 83 y 85. Son cantera consolidada para el 88."
       }
     },
     "gaps_post_informe_85": {
