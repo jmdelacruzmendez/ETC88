@@ -97,6 +97,17 @@ AREA = {
     # Roselyn y Randol AMBOS dentro de cocina (4-jun); Pamela fuera. Roselyn como placeholder (sin formulario).
 }
 
+def _telefono(value):
+    """Lee teléfono del form: maneja float (xlsx convierte ints a float, agregando '.0'),
+    int o string. Devuelve solo dígitos (sin formato — el render formatea)."""
+    if value is None or value == '':
+        return None
+    if isinstance(value, float):
+        value = int(value)  # 8098636434.0 -> 8098636434 (sin el .0 espurio)
+    s = re.sub(r'\D', '', str(value))
+    return s or None
+
+
 def parse_bday(s):
     if not s: return (None, None)
     s = str(s).lower().strip()
@@ -176,7 +187,7 @@ for row in range(2, ws.max_row + 1):
         'comunidad': comunidad,
         'area': area, 'rol': rol,
         'talla': ws.cell(row=row, column=5).value,
-        'telefono': re.sub(r'\D', '', str(ws.cell(row=row, column=4).value or '')) or None,
+        'telefono': _telefono(ws.cell(row=row, column=4).value),
         'que_espera': ws.cell(row=row, column=8).value,
         'miedos': ws.cell(row=row, column=9).value,
         'tema_dios': ws.cell(row=row, column=10).value,
@@ -299,10 +310,17 @@ for name, area, rol, sexo in PLACEHOLDERS_OP:
 for nm in PLACEHOLDERS_BACKUP_COCINA:
     equipo.append(make_placeholder(nm, 'cocina', 'Backup Cocina', None, False))
 for name, area, rol, sexo in PLACEHOLDERS_NO_OP:
-    equipo.append(make_placeholder(name, area, rol, sexo, False))
+    p = make_placeholder(name, area, rol, sexo, False)
+    if name in FORM_LIVE_OVERRIDE:
+        p.update(FORM_LIVE_OVERRIDE[name])
+        p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
+    equipo.append(p)
 for name, area, rol, sexo in PLACEHOLDERS_TRANSVERSAL:
     p = make_placeholder(name, area, rol, sexo, True)
     p['transversal'] = True  # están en todo el proceso, no solo retiro
+    if name in FORM_LIVE_OVERRIDE:
+        p.update(FORM_LIVE_OVERRIDE[name])
+        p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
     equipo.append(p)
 
 # Correcciones de nombre confirmadas por el director (la clave es el nombre del formulario).
