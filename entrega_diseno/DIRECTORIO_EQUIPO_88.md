@@ -14,7 +14,7 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Frank Morales | Asesor + Banderín | — | — |
+| Frank Morales | Asesor + Banderín | — | (809) 710-1743 |
 | Laura Fernández | Asesora | 26 oct | (829) 697-3316 |
 | Tomás Lorenzo | Asesor | 14 mar | (809) 863-6434 |
 
@@ -85,8 +85,8 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Johanny García | Asesora de Cocina | — | — |
-| Mary "Petra" Morales | Asesora de Cocina | — | — |
+| Johanny García | Asesora de Cocina | — | (809) 434-8874 |
+| Mary "Petra" Morales | Asesora de Cocina | — | (809) 224-4482 |
 
 ## Asesores de comunidad (3)
 

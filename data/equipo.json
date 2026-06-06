@@ -2426,7 +2426,7 @@
       "area": "asesores",
       "rol": "Asesor + Banderín",
       "talla": null,
-      "telefono": null,
+      "telefono": "8097101743",
       "que_espera": null,
       "miedos": null,
       "tema_dios": null,
@@ -2443,7 +2443,8 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
     },
     {
       "id": "padre-paul-ram-rez",
@@ -2533,7 +2534,7 @@
       "area": "asesores_cocina",
       "rol": "Asesora Cocina",
       "talla": null,
-      "telefono": null,
+      "telefono": "8094348874",
       "que_espera": null,
       "miedos": null,
       "tema_dios": null,
@@ -2550,7 +2551,8 @@
       "operativo": false,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
     },
     {
       "id": "mary-petra-morales",
@@ -2568,7 +2570,7 @@
       "area": "asesores_cocina",
       "rol": "Asesora Cocina",
       "talla": null,
-      "telefono": null,
+      "telefono": "8092244482",
       "que_espera": null,
       "miedos": null,
       "tema_dios": null,
@@ -2585,7 +2587,8 @@
       "operativo": false,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
     },
     {
       "id": "carlos",
