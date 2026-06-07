@@ -24,7 +24,7 @@
       "mensual": 500,
       "cubre": "comida del Ensayo General + participación en el retiro",
       "estado": "propuesta",
-      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
+      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
     }
   },
   "estado": {
@@ -151,7 +151,7 @@
         },
         "estado": "propuesta",
         "fuente": "director (planteado, sin cerrar)",
-        "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
+        "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
       },
       "personas_casa_piso": {
         "valor": 100,
@@ -169,21 +169,15 @@
         "valor": 583281,
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
+        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + Profondo #1 y #2 + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
       }
     },
     "recaudacion": {
-      "primera_actividad_es_rifa": {
-        "valor": true,
-        "estado": "confirmado",
-        "fuente": "director",
-        "nota": "Profondo #1 = rifa, primera actividad, por recomendación del equipo."
-      },
       "modelo": {
-        "valor": "cuotas + rifa y/o venta de comida + donaciones",
+        "valor": "cuotas + actividad de recaudación + venta de comida + donaciones",
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + rifa y/o venta de comida + donaciones. La rifa, la venta de comida y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)."
+        "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + Profondo #1 (actividad de recaudación, formato por definir por el director) + Profondo #2 (venta de comida / garaje) + donaciones. Las actividades Profondo y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)."
       },
       "donaciones_responsable": {
         "valor": "Directores (delegable)",
@@ -253,7 +247,7 @@
       {
         "nombre": "Actividad Profondo",
         "estado_equipo": "confirmado",
-        "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.",
+        "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.",
         "responsable": {
           "valor": "Directores",
           "estado": "propuesta"
@@ -345,38 +339,110 @@
       }
     },
     "calendario_hitos": {
+      "_fuente": "data/calendario.ics (Misiones Diocesanas SPM, publicado 17-may-2026). Calendario oficial del equipo: formaciones dominicales, misas etecianas, Profondo, Convivencia, Ensayo, Avanzada y retiro. Para items internos de la dirección ver 'pendientes_direccion' más abajo.",
       "reunion_coordinadores": {
         "valor": "jueves 4-jun (Corpus Christi, virtual)",
         "estado": "confirmado",
         "fuente": "coordinadores"
       },
-      "convivencia": {
-        "valor": "22-ago · inicia con miniretiro / reflexión · día completo",
+      "misa_eteciana_7jun": {
+        "valor": "domingo 7-jun",
         "estado": "confirmado",
-        "fuente": "director"
+        "fuente": "ics",
+        "nota": "Misa Eteciana."
+      },
+      "formacion_1": {
+        "valor": "domingo 14-jun",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Primera Formación."
+      },
+      "clausura_etc87_la_vega": {
+        "valor": "domingo 21-jun",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Clausura del ETC 87 en La Vega. NO hay Formación este domingo."
+      },
+      "formacion_2": {
+        "valor": "domingo 28-jun",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Segunda Formación."
+      },
+      "formacion_3": {
+        "valor": "domingo 5-jul",
+        "estado": "confirmado",
+        "fuente": "ics + director",
+        "nota": "Tercera Formación. Inicio de recaudación de cuotas (el miembro paga todo o por cuotas, a su decisión)."
+      },
+      "misa_eteciana_12jul": {
+        "valor": "domingo 12-jul",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Misa Eteciana. NO hay Formación este domingo."
+      },
+      "formacion_4": {
+        "valor": "domingo 19-jul",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Cuarta Formación. Contemplar la lectura de perfiles."
+      },
+      "dia_del_padre": {
+        "valor": "domingo 26-jul",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Día del Padre. NO hay Formación este domingo."
+      },
+      "profondo_1": {
+        "valor": "viernes 31-jul → domingo 2-ago",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Actividad Profondo No. 01 (formato por definir por el director); el neto entra a inicios de agosto."
+      },
+      "misa_eteciana_9ago": {
+        "valor": "domingo 9-ago",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Misa Eteciana. NO hay Formación este domingo."
+      },
+      "convivencia": {
+        "valor": "domingo 16-ago",
+        "estado": "confirmado",
+        "fuente": "ics",
+        "nota": "Convivencia / Retiro. Programar temprano y concluir al mediodía para reducir costos de almuerzo."
       },
       "ensayo_general": {
-        "valor": "23-ago · asistencia obligatoria",
+        "valor": "domingo 23-ago",
         "estado": "confirmado",
-        "fuente": "director"
+        "fuente": "ics + director",
+        "nota": "Ensayo General del ETC 88. Asistencia obligatoria."
       },
-      "inicio_recaudacion": {
-        "valor": "F3 · primera formación de julio (5-jul)",
+      "conciliacion_pre_etc": {
+        "valor": "domingo 30-ago",
         "estado": "confirmado",
-        "fuente": "director",
-        "nota": "La recaudación de cuotas inicia en la 1ra formación de julio. El miembro paga todo o por cuotas, a su decisión."
+        "fuente": "ics",
+        "nota": "Conciliar todos los pagos, corregir testimonios, atender observaciones del Ensayo General y planificación final."
       },
-      "profondo1_fechas": {
-        "valor": "31-jul → 2-ago",
+      "avanzada_cocina": {
+        "valor": "jueves 3-sep",
         "estado": "confirmado",
-        "fuente": "calendario",
-        "nota": "Rifa (Profondo #1); el neto entra a inicios de agosto."
+        "fuente": "ics",
+        "nota": "Avanzada del Equipo de Cocina (jueves)."
       },
+      "retiro_etc88": {
+        "valor": "viernes 4-sep → domingo 6-sep",
+        "estado": "confirmado",
+        "fuente": "ics + director",
+        "nota": "Encuentro ETC 88. Horario detallado en la Carpeta (Sección 7)."
+      }
+    },
+    "pendientes_direccion": {
+      "_nota": "Asuntos que conciernen SOLO a los directores (no se distribuyen al equipo general). No aparecen en el calendario público del equipo ni en el tablero compartible.",
       "fecha_limite_cotizar_transporte": {
         "valor": null,
         "estado": "pendiente",
         "fuente": "director",
-        "nota": "El director pidió fijar una fecha límite para cotizar transporte, biblias y peces. Falta definirla."
+        "nota": "Fecha límite para cotizar transporte, biblias y peces. Definir."
       },
       "asignacion_entradas": {
         "valor": null,
@@ -388,7 +454,7 @@
         "valor": null,
         "estado": "pendiente",
         "fuente": "director",
-        "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana [PROPUESTA] entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día."
+        "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana sugerida entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día."
       }
     },
     "historial": {
@@ -477,7 +543,7 @@
         "nota": "Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite del Padre Paul; lácteos; res; pollo)."
       },
       "visiteo_casa_obligatorio": {
-        "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar calendario_hitos.visiteo_coordinadores_casa).",
+        "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar pendientes_direccion.visiteo_coordinadores_casa).",
         "estado": "propuesta",
         "fuente": "Informe 85",
         "nota": "Coordina con Samuel Montilla antes de fijar fecha."
@@ -605,7 +671,7 @@
             "La casa tiene sonido (no aplica donación grande)"
           ]
         },
-        "rifa_premio": {
+        "profondo_recursos": {
           "donantes_confirmados": [],
           "sectores_propuesta": [
             "Comercios SPM (electrodomésticos)",
@@ -637,12 +703,12 @@
       "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
       "Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.",
       "Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).",
-      "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
+      "Profondo #1 = primera actividad de recaudación (formato por definir por el director).",
       "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
-      "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
+      "Convivencia 16-ago (programar temprano y concluir al mediodía para reducir costos de almuerzo). Ensayo General 23-ago es obligatorio.",
       "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
       "Piso de personas: completar 100 en la casa de retiro.",
-      "La meta de recaudación = el costo total del retiro (se cubre con cuotas + rifa/venta de comida + donaciones).",
+      "La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).",
       "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
       "La Vega: 1 asesor de comunidad, Leticia González.",
       "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."
@@ -681,7 +747,7 @@
     },
     {
       "nombre": "Actividad Profondo",
-      "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.",
+      "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.",
       "estado": "Por formular",
       "miembros": [],
       "responsable_sugerido": "Directores",

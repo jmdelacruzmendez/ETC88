@@ -112,13 +112,13 @@ TOTAL_CUBRIR = COSTO_BASE                    # = META. La deuda NO se suma: es p
 cuota_eq_low, cuota_eq_high = OPERATIVOS * CUOTA_LOW, OPERATIVOS * CUOTA_HIGH
 cuota_eq_mid = (cuota_eq_low + cuota_eq_high) // 2
 cuotas_part = PARTICIPANTES * CUOTA_PART
-brecha_fundraise = TOTAL_CUBRIR - cuotas_part - cuota_eq_mid  # lo que deben cubrir rifa+comida+donaciones
+brecha_fundraise = TOTAL_CUBRIR - cuotas_part - cuota_eq_mid  # lo que deben cubrir Profondo #1 + Profondo #2 + donaciones
 brecha = [
  ('(=) Costo total a cubrir = META de recaudación', TOTAL_CUBRIR, 'Incluye la casa completa; precios ESTIMADOS a validar en F1. La meta NO es fija: es el costo.'),
  (f'    · de la casa (${casa_con:,}), $23,600 se deben al Consejo', None, 'Reserva (10%) ya pagada por JM; es la PRIMERA salida. Arrancamos en negativo (NO se suma: ya está dentro de la casa).'),
  (f'(-) Cuotas participantes (~{PARTICIPANTES} × ${CUOTA_PART:,})', cuotas_part, f'Para completar {PERSONAS} en la casa · confirmado $3,000/participante'),
  (f'(-) Cuotas equipo ({OPERATIVOS} × ${CUOTA_LOW:,}–{CUOTA_HIGH:,})', cuota_eq_mid, P + f'${CUOTA_MES}/mes · SIN CERRAR · rango ${cuota_eq_low:,}–${cuota_eq_high:,}'),
- ('(=) BRECHA: rifa + venta de comida + donaciones', brecha_fundraise, 'Montos VARIABLES (lo que se recaude). Rifa = primera actividad. Donaciones = responsabilidad de Directores.'),
+ ('(=) BRECHA: Profondo #1 + Profondo #2 + donaciones', brecha_fundraise, 'Montos VARIABLES (lo que se recaude). Profondo #1 = primera actividad (formato por definir). Donaciones = responsabilidad de Directores.'),
 ]
 for b in brecha:
     row(ws, r, b)
@@ -353,16 +353,16 @@ row(ws, r+1, ('TOTAL', totM, totB, totMx, ''), total_row=True)
 
 # ============ Hoja 10: RECAUDACIÓN ============
 ws = wb.create_sheet('Recaudación')
-title(ws, f'RECAUDACIÓN · la META = costo total ${TOTAL_CUBRIR:,} (cuotas + rifa/comida + donaciones)', SAFARI)
+title(ws, f'RECAUDACIÓN · la META = costo total ${TOTAL_CUBRIR:,} (cuotas + Profondo #1/#2 + donaciones)', SAFARI)
 header(ws, 3, [('Fuente', 36), ('Monto (RD$)', 14), ('Estado', 16), ('Responsable', 22), ('Notas', 36)], SAFARI)
 rec = [
  (f'Cuotas participantes (~{PARTICIPANTES} × ${CUOTA_PART:,})', cuotas_part, 'Confirmado', 'Cada misionero', f'Para completar {PERSONAS} en la casa'),
  (f'Aportes equipo ({OPERATIVOS} × ${CUOTA_LOW:,}–{CUOTA_HIGH:,})', cuota_eq_mid, 'PROPUESTA', 'Cada miembro', P + f'${CUOTA_MES}/mes · SIN CERRAR'),
  ('Exención casa (vía RNC parroquia Paul)', (CASA_SIN - CASA_CON) * PERSONAS, 'Por gestionar', 'Co-Dir + Padre Paul', f'Ahorro ${CASA_SIN - CASA_CON}/persona × {PERSONAS}'),
- ('Rifa (Profondo #1)', None, 'VARIABLE', 'Co-Dir + Recaudación', 'Primera actividad · lo que se recaude'),
+ ('Profondo #1 (primera actividad de recaudación)', None, 'VARIABLE', 'Co-Dir + Recaudación', 'Formato por definir · lo que se recaude'),
  ('Venta de comida (Profondo #2)', None, 'VARIABLE', 'Equipo completo', 'Lo que se recaude'),
  ('Donaciones empresas/particulares', None, 'VARIABLE', 'DIRECTORES (resp.)', 'Lo que se recaude · delegable'),
- ('= BRECHA a cubrir con rifa + comida + donaciones', brecha_fundraise, '', '', 'Costo total − cuotas: esto es lo que la recaudación variable debe levantar'),
+ ('= BRECHA a cubrir con Profondo #1 + #2 + donaciones', brecha_fundraise, '', '', 'Costo total − cuotas: esto es lo que la recaudación variable debe levantar'),
 ]
 r = 4
 for c in rec:
@@ -418,7 +418,7 @@ notas = [
  ('   son lo que cada coordinador entrega y refina en F1 (14-jun). Precios son ESTIMADOS a validar.', False),
  ('3. Menú es estructura sin precios; cocina lo refina y de ahí salen las cantidades de Cocina-Compras.', False),
  ('4. Recaudación: la META = el costo total. Se cubre con cuotas (participantes + equipo) +', False),
- ('   rifa + venta de comida + donaciones (montos VARIABLES, lo que se recaude).', False),
+ ('   Profondo #1 + Profondo #2 + donaciones (montos VARIABLES, lo que se recaude).', False),
  ('5. Pagos Equipo: cuota PROPUESTA de $500/mes (total $1,500–2,000/persona). SIN CERRAR — la decide la Dirección.', False),
  ('', False),
  ('CONTEXTO CRÍTICO:', True),

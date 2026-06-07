@@ -77,7 +77,7 @@ AREAS = [
 # =========================================================== 1. EL MODELO ==
 ws = wb.create_sheet('1·Modelo')
 title(ws, 'MODELO ECONÓMICO ETC 88 · la ecuación', MAR, 4)
-ws.cell(row=2, column=1, value='COSTO TOTAL  =  CUOTAS  +  RECAUDACIÓN VARIABLE (rifa + venta de comida + donaciones)').font = Font(bold=True, size=11, color=TIERRA)
+ws.cell(row=2, column=1, value='COSTO TOTAL  =  CUOTAS  +  RECAUDACIÓN VARIABLE (Profondo #1 + Profondo #2 + donaciones)').font = Font(bold=True, size=11, color=TIERRA)
 header(ws, 4, [('Concepto', 46), ('Monto (RD$)', 16), ('Fuente', 14), ('Notas', 44)], MAR)
 eq_alta = EQ_HIGH   # ya es el agregado (47 × $2,000)
 filas = [
@@ -89,7 +89,7 @@ filas = [
     (f'(–) Cuotas equipo ({OPER} × $1,500–2,000)', eq_alta, '[PROPUESTA]', f'al tope del rango = ${EQ_LOW:,}–${EQ_HIGH:,}; sin cerrar'),
     ('(=) Subtotal CUOTAS', CUOTAS_PART + eq_alta, '', 'lo que aporta la gente directamente'),
     ('', None, '', ''),
-    ('(=) BRECHA: rifa + venta de comida + donaciones', META - CUOTAS_PART - eq_alta, '', 'ESTO es lo que la recaudación variable debe levantar'),
+    ('(=) BRECHA: Profondo #1 + Profondo #2 + donaciones', META - CUOTAS_PART - eq_alta, '', 'ESTO es lo que la recaudación variable debe levantar'),
 ]
 r = 5
 for f in filas:
@@ -122,7 +122,7 @@ eq_mes = OPER * 500  # [PROPUESTA] $500/mes
 entradas = {
     'Cuotas equipo ($500/mes desde F3, flexible) [PROPUESTA]': {'jul': eq_mes, 'ago': eq_mes, 'sep': eq_mes},
     'Cuotas participantes (desde jul) [ESTIMADO]':  {'jul': round(CUOTAS_PART*0.3), 'ago': CUOTAS_PART - round(CUOTAS_PART*0.3)},
-    'Rifa neta (Profondo #1, 31-jul→2-ago) [ESCENARIO]': {'ago': 180000},
+    'Profondo #1 neto (31-jul→2-ago) [ESCENARIO]': {'ago': 180000},
     'Venta de comida (Profondo #2) [ESCENARIO]':    {'sep': 60000},
     'Donaciones en efectivo [ESCENARIO]':           {'jul': 25000, 'ago': 40000, 'sep': 0},
 }
@@ -166,7 +166,7 @@ for m in meses:
     saldo += in_mes[m] - out_mes[m]; neto.append(saldo)
 row(ws, r, ['Neto del mes'] + [in_mes[m] - out_mes[m] for m in meses] + [''], bold=True); r += 1
 row(ws, r, ['SALDO ACUMULADO'] + neto + [''], bold=True, fill='F3E4BE'); r += 1
-ws.cell(row=r, column=1, value='⚠ Vigilar: el saldo se aprieta antes de la rifa (ago) y de los pagos grandes de sep (casa, transporte).').font = Font(italic=True, size=10, color=TIERRA)
+ws.cell(row=r, column=1, value='⚠ Vigilar: el saldo se aprieta antes del Profondo #1 (ago) y de los pagos grandes de sep (casa, transporte).').font = Font(italic=True, size=10, color=TIERRA)
 
 # =========================================================== 4. OPTIMIZACIÓN
 ws = wb.create_sheet('4·Optimización')
@@ -177,7 +177,7 @@ ahorro_exencion = (C['casa_sin'] - C['casa_con'])
 palancas = [
     ('Mantener la exención de la casa', f'−{ahorro_exencion:,}', 'Comprar vía RNC de la parroquia de Paul (ya asumido)', '[DATO]'),
     ('Donaciones en especie para cocina', '−15,000 a −25,000', 'Arroz, habichuelas, aceite donados (el 79 lo logró)', '[ESCENARIO]'),
-    ('Premio de la rifa DONADO', 'sube el neto', 'Si el premio se dona, casi todo lo vendido es neto', '[ESCENARIO]'),
+    ('Insumos del Profondo #1 DONADOS', 'sube el neto', 'Si los insumos/premios de la actividad se donan, casi todo lo recaudado es neto', '[ESCENARIO]'),
     ('Recortar en F1 (topes) materiales y cocina', '−15,000 a −25,000', 'Son los rubros más grandes; ajustar a la baja con tope', '[ESCENARIO]'),
     ('Cuota del equipo al tope ($2,000 vs $1,500)', f'+{EQ_HIGH - EQ_LOW:,}', 'Decisión de la Dirección', '[PROPUESTA]'),
     ('Donaciones en efectivo (empresas)', 'cada peso baja la brecha', 'Responsabilidad de los Directores (delegable)', '[DATO]'),
@@ -190,18 +190,18 @@ for p in palancas:
 # =========================================================== 5. ESCENARIO ==
 ws = wb.create_sheet('5·Escenario')
 title(ws, 'ESCENARIO DE CIERRE · UNA forma de cerrar la brecha — [ESCENARIO], a validar', AMBAR, 4)
-ws.cell(row=2, column=1, value='No es una decisión: muestra que la ecuación PUEDE cerrar. Los montos de rifa/comida/donaciones se ajustan.').font = Font(italic=True, size=10)
+ws.cell(row=2, column=1, value='No es una decisión: muestra que la ecuación PUEDE cerrar. Los montos de Profondo #1, Profondo #2 y donaciones se ajustan.').font = Font(italic=True, size=10)
 header(ws, 4, [('Fuente variable', 36), ('Monto (RD$)', 16), ('Supuesto', 40), ('Estado', 12)], AMBAR)
 esc = [
-    ('Rifa neta (Profondo #1)', 180000, '≈1,800 boletos a $100, premio donado · cierra 2-ago', '[ESCENARIO]'),
+    ('Profondo #1 neto', 180000, 'formato por definir · cierra 2-ago · insumos donados maximizan neto', '[ESCENARIO]'),
     ('Venta de comida (Profondo #2)', 60000, 'benchmark ETC 79', '[ESCENARIO]'),
-    ('Donaciones en efectivo', BRECHA - 180000 - 60000, 'lo que falte tras rifa y comida', '[ESCENARIO]'),
+    ('Donaciones en efectivo', BRECHA - 180000 - 60000, 'lo que falte tras Profondo #1 y #2', '[ESCENARIO]'),
 ]
 r = 5; tot = 0
 for e in esc:
     row(ws, r, e); tot += e[1]; r += 1
 row(ws, r, ('= TOTAL recaudación variable', tot, f'debe igualar la brecha ${BRECHA:,}', ''), bold=True, fill='F3E4BE'); r += 2
-ws.cell(row=r, column=1, value='Lectura: la rifa es la palanca #1. Si el premio se dona y la cocina consigue especie, la donación en efectivo necesaria baja.').font = Font(italic=True, size=10)
+ws.cell(row=r, column=1, value='Lectura: el Profondo #1 es la palanca #1. Si los insumos se donan y la cocina consigue especie, la donación en efectivo necesaria baja.').font = Font(italic=True, size=10)
 
 wb.save('/home/user/ETC88/Flujo_Caja_ETC88.xlsx')
 print(f"Wrote Flujo_Caja_ETC88.xlsx — {len(wb.sheetnames)} pestañas · brecha ${BRECHA:,}")

@@ -53,16 +53,15 @@
       "valor": { "total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "comida del Ensayo General + participación en el retiro" },
       "estado": "propuesta",
       "fuente": "director (planteado, sin cerrar)",
-      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar la rifa."
+      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
     },
     "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
     "participantes_objetivo":        { "valor": 52, "estado": "propuesta", "fuente": "derivado (100 − 48 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
-    "meta_recaudacion_total":        { "valor": 583281, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + rifa y/o venta de comida + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
+    "meta_recaudacion_total":        { "valor": 583281, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + Profondo #1 y #2 + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
   },
 
   "recaudacion": {
-    "primera_actividad_es_rifa": { "valor": true, "estado": "confirmado", "fuente": "director", "nota": "Profondo #1 = rifa, primera actividad, por recomendación del equipo." },
-    "modelo":                    { "valor": "cuotas + rifa y/o venta de comida + donaciones", "estado": "confirmado", "fuente": "director", "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + rifa y/o venta de comida + donaciones. La rifa, la venta de comida y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)." },
+    "modelo":                    { "valor": "cuotas + actividad de recaudación + venta de comida + donaciones", "estado": "confirmado", "fuente": "director", "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + Profondo #1 (actividad de recaudación, formato por definir por el director) + Profondo #2 (venta de comida / garaje) + donaciones. Las actividades Profondo y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)." },
     "donaciones_responsable":    { "valor": "Directores (delegable)", "estado": "confirmado", "fuente": "director", "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores." }
   },
 
@@ -77,7 +76,7 @@
   "equipos_auxiliares": [
     { "nombre": "Recaudación y Donaciones", "estado_equipo": "confirmado", "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables." }, "miembros": [] },
     { "nombre": "Guagua (Transporte)", "estado_equipo": "confirmado", "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).", "responsable": { "valor": "Producción", "estado": "propuesta" }, "miembros": [] },
-    { "nombre": "Actividad Profondo", "estado_equipo": "confirmado", "descripcion": "Profondo #1 = rifa (primera actividad). Profondo #2 = venta de comida / garaje.", "responsable": { "valor": "Directores", "estado": "propuesta" }, "miembros": [] },
+    { "nombre": "Actividad Profondo", "estado_equipo": "confirmado", "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.", "responsable": { "valor": "Directores", "estado": "propuesta" }, "miembros": [] },
     { "nombre": "Intersección (diáspora)", "estado_equipo": "confirmado", "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)." }, "miembros": [] },
     { "nombre": "Finanzas / Tesorería (auxiliar)", "estado_equipo": "confirmado", "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.", "responsable": { "valor": "Por nombrar dentro del equipo (Co-Dir decide)", "estado": "pendiente", "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección." }, "miembros": [] }
   ],
@@ -96,14 +95,30 @@
   },
 
   "calendario_hitos": {
-    "reunion_coordinadores": { "valor": "jueves 4-jun (Corpus Christi, virtual)", "estado": "confirmado", "fuente": "coordinadores" },
-    "convivencia":           { "valor": "22-ago · inicia con miniretiro / reflexión · día completo", "estado": "confirmado", "fuente": "director" },
-    "ensayo_general":        { "valor": "23-ago · asistencia obligatoria", "estado": "confirmado", "fuente": "director" },
-    "inicio_recaudacion":    { "valor": "F3 · primera formación de julio (5-jul)", "estado": "confirmado", "fuente": "director", "nota": "La recaudación de cuotas inicia en la 1ra formación de julio. El miembro paga todo o por cuotas, a su decisión." },
-    "profondo1_fechas":      { "valor": "31-jul → 2-ago", "estado": "confirmado", "fuente": "calendario", "nota": "Rifa (Profondo #1); el neto entra a inicios de agosto." },
-    "fecha_limite_cotizar_transporte": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "El director pidió fijar una fecha límite para cotizar transporte, biblias y peces. Falta definirla." },
-    "asignacion_entradas":   { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después." },
-    "visiteo_coordinadores_casa": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana [PROPUESTA] entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día." }
+    "_fuente": "data/calendario.ics (Misiones Diocesanas SPM, publicado 17-may-2026). Calendario oficial del equipo: formaciones dominicales, misas etecianas, Profondo, Convivencia, Ensayo, Avanzada y retiro. Para items internos de la dirección ver 'pendientes_direccion' más abajo.",
+    "reunion_coordinadores":   { "valor": "jueves 4-jun (Corpus Christi, virtual)", "estado": "confirmado", "fuente": "coordinadores" },
+    "misa_eteciana_7jun":      { "valor": "domingo 7-jun", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana." },
+    "formacion_1":             { "valor": "domingo 14-jun", "estado": "confirmado", "fuente": "ics", "nota": "Primera Formación." },
+    "clausura_etc87_la_vega":  { "valor": "domingo 21-jun", "estado": "confirmado", "fuente": "ics", "nota": "Clausura del ETC 87 en La Vega. NO hay Formación este domingo." },
+    "formacion_2":             { "valor": "domingo 28-jun", "estado": "confirmado", "fuente": "ics", "nota": "Segunda Formación." },
+    "formacion_3":             { "valor": "domingo 5-jul", "estado": "confirmado", "fuente": "ics + director", "nota": "Tercera Formación. Inicio de recaudación de cuotas (el miembro paga todo o por cuotas, a su decisión)." },
+    "misa_eteciana_12jul":     { "valor": "domingo 12-jul", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana. NO hay Formación este domingo." },
+    "formacion_4":             { "valor": "domingo 19-jul", "estado": "confirmado", "fuente": "ics", "nota": "Cuarta Formación. Contemplar la lectura de perfiles." },
+    "dia_del_padre":           { "valor": "domingo 26-jul", "estado": "confirmado", "fuente": "ics", "nota": "Día del Padre. NO hay Formación este domingo." },
+    "profondo_1":              { "valor": "viernes 31-jul → domingo 2-ago", "estado": "confirmado", "fuente": "ics", "nota": "Actividad Profondo No. 01 (formato por definir por el director); el neto entra a inicios de agosto." },
+    "misa_eteciana_9ago":      { "valor": "domingo 9-ago", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana. NO hay Formación este domingo." },
+    "convivencia":             { "valor": "domingo 16-ago", "estado": "confirmado", "fuente": "ics", "nota": "Convivencia / Retiro. Programar temprano y concluir al mediodía para reducir costos de almuerzo." },
+    "ensayo_general":          { "valor": "domingo 23-ago", "estado": "confirmado", "fuente": "ics + director", "nota": "Ensayo General del ETC 88. Asistencia obligatoria." },
+    "conciliacion_pre_etc":    { "valor": "domingo 30-ago", "estado": "confirmado", "fuente": "ics", "nota": "Conciliar todos los pagos, corregir testimonios, atender observaciones del Ensayo General y planificación final." },
+    "avanzada_cocina":         { "valor": "jueves 3-sep", "estado": "confirmado", "fuente": "ics", "nota": "Avanzada del Equipo de Cocina (jueves)." },
+    "retiro_etc88":            { "valor": "viernes 4-sep → domingo 6-sep", "estado": "confirmado", "fuente": "ics + director", "nota": "Encuentro ETC 88. Horario detallado en la Carpeta (Sección 7)." }
+  },
+
+  "pendientes_direccion": {
+    "_nota": "Asuntos que conciernen SOLO a los directores (no se distribuyen al equipo general). No aparecen en el calendario público del equipo ni en el tablero compartible.",
+    "fecha_limite_cotizar_transporte": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Fecha límite para cotizar transporte, biblias y peces. Definir." },
+    "asignacion_entradas":             { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después." },
+    "visiteo_coordinadores_casa":      { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana sugerida entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día." }
   },
 
   "historial": {
@@ -123,7 +138,7 @@
     "confirmar_n_etc_con_consejo":     { "valor": "Confirmar el # del ETC con concilio/consejo TEMPRANO; cambios tardíos en otras comunidades causaron retrabajos de cocina en el 85.", "estado": "propuesta", "fuente": "Informe 85", "nota": "Relevante a 'completar 100 en la casa'." },
     "responsabilidades_asesores_estandarizadas": { "valor": "Estandarizar y documentar las responsabilidades de los asesores (cocina y generales).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Producir doc breve por tipo de asesor antes de F2." },
     "escenario_cocina_con_donaciones": { "valor": "Modelar la canasta de cocina con un escenario 'con donaciones' (en 78: comida cayó ~70%, de \\$1,590 a \\$461/persona; en 78 el 51% del presupuesto total fue donado).", "estado": "propuesta", "fuente": "ETC 78 Costo ETC Participantes + Presupuesto General Agosto 7", "nota": "Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite del Padre Paul; lácteos; res; pollo)." },
-    "visiteo_casa_obligatorio":        { "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar calendario_hitos.visiteo_coordinadores_casa).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Coordina con Samuel Montilla antes de fijar fecha." },
+    "visiteo_casa_obligatorio":        { "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar pendientes_direccion.visiteo_coordinadores_casa).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Coordina con Samuel Montilla antes de fijar fecha." },
     "oficina_separada_pg":             { "valor": "La oficina debe estar separada de los pequeños grupos y organizarse para uso eficiente.", "estado": "propuesta", "fuente": "Informe 85", "nota": "A tener en cuenta en el visiteo a la casa." },
     "cocina_no_abrumar_palancas":      { "valor": "La cocina no abruma a los participantes durante el proceso de palancas (controlar abrazos).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Recordatorio para el Ensayo General." },
     "luces_apagadas_cena_sabado":      { "valor": "Evaluar mantener las luces apagadas en la cena del sábado para preservar la solemnidad.", "estado": "propuesta", "fuente": "Informe 85", "nota": "Decisión de Co-Dir + asesores espirituales." }
@@ -148,7 +163,7 @@
       "camisetas":          { "donantes_confirmados": [], "sectores_propuesta": ["Serigrafía SPM (Print Mate — usado en 78)", "imprentas SPM"] },
       "guias_pg":           { "donantes_confirmados": [], "sectores_propuesta": ["Cactus (libretas/papelería — usado en 78)", "Print Mate (impresiones — usado en 78)"] },
       "musica":             { "donantes_confirmados": [], "sectores_propuesta": ["La casa tiene sonido (no aplica donación grande)"] },
-      "rifa_premio":        { "donantes_confirmados": [], "sectores_propuesta": ["Comercios SPM (electrodomésticos)", "supermercados SPM/PC (gift cards)", "hoteles Punta Cana (noche por publicidad)"] },
+      "profondo_recursos":  { "donantes_confirmados": [], "sectores_propuesta": ["Comercios SPM (electrodomésticos)", "supermercados SPM/PC (gift cards)", "hoteles Punta Cana (noche por publicidad)"] },
       "imprevistos":        { "donantes_confirmados": [], "sectores_propuesta": ["Donaciones en efectivo de etecianos con experiencia previa (modelo del 78)"] }
     }
   },
@@ -169,12 +184,12 @@
     "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
     "Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.",
     "Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).",
-    "Profondo #1 = rifa (primera actividad, por recomendación del equipo).",
+    "Profondo #1 = primera actividad de recaudación (formato por definir por el director).",
     "Asesoras de cocina: Mary \"Petra\" Morales y Johanny García.",
-    "Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.",
+    "Convivencia 16-ago (programar temprano y concluir al mediodía para reducir costos de almuerzo). Ensayo General 23-ago es obligatorio.",
     "Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).",
     "Piso de personas: completar 100 en la casa de retiro.",
-    "La meta de recaudación = el costo total del retiro (se cubre con cuotas + rifa/venta de comida + donaciones).",
+    "La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).",
     "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
     "La Vega: 1 asesor de comunidad, Leticia González.",
     "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."

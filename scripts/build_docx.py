@@ -226,10 +226,10 @@ def build_asesores():
     pm.add_run('Modelo: ').bold = True
     pm.add_run(_v(mod))
     pm.add_run(f" — {mod['nota']}").italic = True
-    doc.add_paragraph('Rifa, venta de comida y donaciones: montos variables (lo que se recaude); '
+    doc.add_paragraph('Profondo #1, Profondo #2 y donaciones: montos variables (lo que se recaude); '
                       'cubren la brecha = costo − cuotas.', style='List Bullet')
-    doc.add_paragraph('La primera actividad es una rifa (confirmado). Las donaciones a '
-                      'empresas/particulares son responsabilidad de los Directores (delegable).',
+    doc.add_paragraph('Profondo #1 = primera actividad de recaudación (formato por definir por el director). '
+                      'Las donaciones a empresas/particulares son responsabilidad de los Directores (delegable).',
                       style='List Bullet')
 
     # 5. Equipos auxiliares

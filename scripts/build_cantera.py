@@ -80,7 +80,7 @@ def row(ws, r, vals):
 
 # ---------------- 1. PADRINOS (no-misioneros + no-se-estiman, sin los que están en el equipo)
 ws = wb.create_sheet('Padrinos')
-title(ws, 'PADRINOS / APOYO · etecianos que NO sirven este año (donaciones · venta de rifa · oración)', CUERO, 4)
+title(ws, 'PADRINOS / APOYO · etecianos que NO sirven este año (donaciones · apoyo en Profondo #1 · oración)', CUERO, 4)
 header(ws, 3, [('Nombre', 30), ('Ubicación', 14), ('Origen (Borrador 88)', 22), ('Nota', 30)], CUERO)
 r = 4; n_pad = 0
 for cat, etiqueta in [('no_misioneros', 'No-misionero/eteciano'), ('no_se_estiman', 'No se estima (reserva)')]:
@@ -97,10 +97,10 @@ header(ws, 3, [('Equipo auxiliar', 26), ('Candidatos (cantera, no-equipo)', 46),
 AUX = [
     ('Recaudación y Donaciones',
      'Kedward Acevedo (Dir. Cocina ETC 85 · liderazgo) · Brissa Rodríguez · Carla Uribe · Lisset Rosario · Ramón Leonardo · Ángel Radesky · diáspora',
-     'red/contactos para rifa, donaciones y padrinazgo'),
-    ('Actividad Profondo (rifa)',
-     'Mismo núcleo de Recaudación + vendedores externos de la cantera',
-     'la rifa es transversal; vendedores externos amplían alcance'),
+     'red/contactos para Profondo #1, donaciones y padrinazgo'),
+    ('Actividad Profondo',
+     'Mismo núcleo de Recaudación + apoyos externos de la cantera',
+     'Profondo #1 es transversal; apoyos externos amplían alcance'),
     ('Guagua (Transporte)',
      'Etecianos con vehículo fuera del equipo (PC/SD): de "no se estiman" para tramos · Kedward Acevedo (PC, logística)',
      'rol externo, no pernocta en la casa'),

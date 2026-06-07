@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 44 confirmados · 14 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 54 confirmados · 14 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
@@ -28,8 +28,7 @@
 | `finanzas.cuota_participante` | 3000 | director |  |
 | `finanzas.personas_casa_piso` | 100 | director | Piso fijado: completar 100 personas en la casa de retiro. |
 | `finanzas.meta_recaudacion_total` | 583281 | director | No es un número fijo: = costo total estimado a cubrir (casa 100 person… |
-| `recaudacion.primera_actividad_es_rifa` | True | director | Profondo #1 = rifa, primera actividad, por recomendación del equipo. |
-| `recaudacion.modelo` | cuotas + rifa y/o venta de comida + donaciones | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
+| `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
 | `marca.lema_retiro` | Donde está tu tesoro, allí estará tu corazón | director | Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro… |
@@ -43,10 +42,21 @@
 | `asesores_externos.comunidad_sd` | ["Marleny", "Sandrita"] | director | 2 representantes (asesores) de la comunidad de Santo Domingo. |
 | `asesores_externos.comunidad_la_vega` | ["Leticia González"] | director | 1 representante (asesor): Leticia González. |
 | `calendario_hitos.reunion_coordinadores` | jueves 4-jun (Corpus Christi, virtual) | coordinadores |  |
-| `calendario_hitos.convivencia` | 22-ago · inicia con miniretiro / reflexión · día completo | director |  |
-| `calendario_hitos.ensayo_general` | 23-ago · asistencia obligatoria | director |  |
-| `calendario_hitos.inicio_recaudacion` | F3 · primera formación de julio (5-jul) | director | La recaudación de cuotas inicia en la 1ra formación de julio. El miemb… |
-| `calendario_hitos.profondo1_fechas` | 31-jul → 2-ago | calendario | Rifa (Profondo #1); el neto entra a inicios de agosto. |
+| `calendario_hitos.misa_eteciana_7jun` | domingo 7-jun | ics | Misa Eteciana. |
+| `calendario_hitos.formacion_1` | domingo 14-jun | ics | Primera Formación. |
+| `calendario_hitos.clausura_etc87_la_vega` | domingo 21-jun | ics | Clausura del ETC 87 en La Vega. NO hay Formación este domingo. |
+| `calendario_hitos.formacion_2` | domingo 28-jun | ics | Segunda Formación. |
+| `calendario_hitos.formacion_3` | domingo 5-jul | ics + director | Tercera Formación. Inicio de recaudación de cuotas (el miembro paga to… |
+| `calendario_hitos.misa_eteciana_12jul` | domingo 12-jul | ics | Misa Eteciana. NO hay Formación este domingo. |
+| `calendario_hitos.formacion_4` | domingo 19-jul | ics | Cuarta Formación. Contemplar la lectura de perfiles. |
+| `calendario_hitos.dia_del_padre` | domingo 26-jul | ics | Día del Padre. NO hay Formación este domingo. |
+| `calendario_hitos.profondo_1` | viernes 31-jul → domingo 2-ago | ics | Actividad Profondo No. 01 (formato por definir por el director); el ne… |
+| `calendario_hitos.misa_eteciana_9ago` | domingo 9-ago | ics | Misa Eteciana. NO hay Formación este domingo. |
+| `calendario_hitos.convivencia` | domingo 16-ago | ics | Convivencia / Retiro. Programar temprano y concluir al mediodía para r… |
+| `calendario_hitos.ensayo_general` | domingo 23-ago | ics + director | Ensayo General del ETC 88. Asistencia obligatoria. |
+| `calendario_hitos.conciliacion_pre_etc` | domingo 30-ago | ics | Conciliar todos los pagos, corregir testimonios, atender observaciones… |
+| `calendario_hitos.avanzada_cocina` | jueves 3-sep | ics | Avanzada del Equipo de Cocina (jueves). |
+| `calendario_hitos.retiro_etc88` | viernes 4-sep → domingo 6-sep | ics + director | Encuentro ETC 88. Horario detallado en la Carpeta (Sección 7). |
 | `historial.etcs_disponibles_en_drive` | ["ETC 78", "ETC 79", "ETC 83", "ETC 85", "ETC 88"] | exploración Drive 2026-06-04 | Carpeta padre Drive contiene 78, 79, 83, 85, 88. El ETC 83 fue agregad… |
 | `historial.etc_83_disponible` | True | Drive: carpeta ETC 83 compartida por el director 2026-06-04 | Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster +… |
 | `historial.informe_final_85` | Informe Final ETC 85.pdf — leído en Drive | Drive: ETC 85 / Informe Final ETC 85.pdf | Roster 85 + puntos positivos + aspectos a mejorar + medidas financiera… |
@@ -81,9 +91,9 @@
 | `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
 | `equipos_auxiliares[3].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
 | `equipos_auxiliares[4].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |
-| `calendario_hitos.fecha_limite_cotizar_transporte` | None | director | El director pidió fijar una fecha límite para cotizar transporte, bibl… |
-| `calendario_hitos.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
-| `calendario_hitos.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
+| `pendientes_direccion.fecha_limite_cotizar_transporte` | None | director | Fecha límite para cotizar transporte, biblias y peces. Definir. |
+| `pendientes_direccion.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
+| `pendientes_direccion.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
 | `gaps_post_informe_85.responsable_financiero` | None | Informe 85 + director (3-jun) | Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxil… |
 
 ## Decisiones confirmadas (lista del director)
@@ -102,12 +112,12 @@
 - Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
 - Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.
 - Daylin M Rambalde Moreta confirmada en Música (3-jun); indicó que no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, reside en Punta Cana).
-- Profondo #1 = rifa (primera actividad, por recomendación del equipo).
+- Profondo #1 = primera actividad de recaudación (formato por definir por el director).
 - Asesoras de cocina: Mary "Petra" Morales y Johanny García.
-- Convivencia (22-ago) inicia con miniretiro/reflexión. Ensayo General (23-ago) es obligatorio.
+- Convivencia 16-ago (programar temprano y concluir al mediodía para reducir costos de almuerzo). Ensayo General 23-ago es obligatorio.
 - Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).
 - Piso de personas: completar 100 en la casa de retiro.
-- La meta de recaudación = el costo total del retiro (se cubre con cuotas + rifa/venta de comida + donaciones).
+- La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).
 - Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.
 - La Vega: 1 asesor de comunidad, Leticia González.
 - Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello.

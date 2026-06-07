@@ -98,8 +98,8 @@ head('4. Recaudación')
 er = EST['recaudacion']
 mod = er['modelo']
 bullet(f"Modelo: {_v(mod)} — {mod['nota']}")
-bullet('Rifa, venta de comida y donaciones: montos variables (lo que se recaude); cubren la brecha = costo − cuotas.')
-bullet('La primera actividad es una rifa (confirmado). Donaciones a empresas/particulares = responsabilidad de los Directores (delegable).')
+bullet('Profondo #1, Profondo #2 y donaciones: montos variables (lo que se recaude); cubren la brecha = costo − cuotas.')
+bullet('Profondo #1 = primera actividad de recaudación (formato por definir por el director). Donaciones a empresas/particulares = responsabilidad de los Directores (delegable).')
 
 head('5. Equipos auxiliares')
 for a in D['equipos_auxiliares']:
@@ -192,7 +192,7 @@ w.writerow(['Cuota del equipo', f"{_v(cq)['total_rango']} ({_v(cq)['mensual']}/m
 frow('Meta de recaudación (= costo total)', ef['meta_recaudacion_total'])
 frow('Personas en la casa (piso)', ef['personas_casa_piso'])
 frow('Participantes (objetivo)', ef['participantes_objetivo'])
-w.writerow(['Rifa / venta de comida / donaciones', 'variable', 'VARIABLE', 'Cubren la brecha (costo − cuotas); lo que se recaude. Rifa = primera actividad.'])
+w.writerow(['Profondo #1 / Profondo #2 / donaciones', 'variable', 'VARIABLE', 'Cubren la brecha (costo − cuotas); lo que se recaude. Profondo #1 = primera actividad, formato por definir.'])
 w.writerow([])
 w.writerow(['NOTA: el presupuesto itemizado completo (12 pestañas) está en Finanzas_ETC88.xlsx (repo).', '', '', ''])
 open('/tmp/drive_finanzas.csv', 'w', encoding='utf-8').write(buf.getvalue())
