@@ -6,7 +6,7 @@
 **Resumen:** 44 confirmados · 14 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 72 · operativos titulares 48 · vacantes 0 · backups 19.
+- Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
 - Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
@@ -96,7 +96,8 @@
 - Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).
 - Apellido de Leober: Soriano.
 - Roselyn DENTRO de cocina (4-jun): el director confirmó que Roselyn y Randol están AMBOS en cocina; Pamela queda fuera. Cocina sigue en 21.
-- Backups (4-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Merkin, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (16). Total 19 backups. NO son operativos.
+- Backups (4-jun; actualizado 7-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (15). Total 18 backups. NO son operativos. (Merkin subió de backup a titular cocina el 7-jun, reemplazando a Fabelly Maciel que salió del equipo.)
+- Cambio de equipo 7-jun: Fabelly Maciel Fabian Bello SALE del equipo. Merkin Jean sube de backup a titular en cocina. Cocina sigue en 21 titulares.
 - Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).
 - Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
 - Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.

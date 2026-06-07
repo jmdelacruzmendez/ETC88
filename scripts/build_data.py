@@ -149,6 +149,12 @@ def parse_etc_propio(s):
     m_y = re.search(r'(20\d{2})', s)
     return (num, int(m_y.group(1)) if m_y else None)
 
+# Personas que estaban en el xlsx pero SALIERON del equipo (decisiones del director).
+# Los matchea por nombre EXACTO como aparece en el form. Se filtran al procesar el xlsx.
+REMOVED_FROM_TEAM = {
+    'Fabelle maciel fabian bello',  # 7-jun: sale del equipo. Reemplazada por Merkin Jean (titular cocina).
+}
+
 wb = openpyxl.load_workbook(XLSX, data_only=True)
 ws = wb['Form Responses 1']
 
@@ -157,6 +163,8 @@ for row in range(2, ws.max_row + 1):
     name = ws.cell(row=row, column=2).value
     if not name: continue
     name = name.strip()
+    if name in REMOVED_FROM_TEAM:
+        continue
 
     bday, byear = parse_bday(ws.cell(row=row, column=3).value)
     etc_num, etc_year = parse_etc_propio(ws.cell(row=row, column=7).value)
@@ -246,14 +254,16 @@ PLACEHOLDERS_OP = [
     ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: DENTRO de cocina (junto con Randol). Formulario recibido 4-jun → datos reales en form_live_overrides.json (Roselyn Quiroz).
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
     ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, activo en cocina (NO backup)
+    ('Merkin Jean', 'cocina', 'Cocina', None),  # 7-jun: sube de backup a titular reemplazando a Fabelly Maciel Fabian Bello (que sale del equipo). Apellido pendiente.
     ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
 ]
 # Backups de COCINA (4-jun): cantera del equipo de cocina. NO operativos. Nombres como los dio el director.
+# 7-jun: Merkin sale de backup → sube a titular (PLACEHOLDERS_OP) como 'Merkin Jean'.
 PLACEHOLDERS_BACKUP_COCINA = [
     'Emily de la Rosa', 'Zahir', 'Vileimi', 'Yileivi', 'Eduardo', 'Emmanuel',
-    'Ricaira', 'Merkin', 'Nestor', 'Leandro', 'Samuel', 'Emily',
+    'Ricaira', 'Nestor', 'Leandro', 'Samuel', 'Emily',
     'Emilio', 'Carlos', 'Rosanna', 'Inomar',
 ]
 # Asesores transversales: Paul y Sor Angelina están en TODO el proceso (no solo retiro)
@@ -384,18 +394,18 @@ banderas = [
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
     {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'Jordelis Mateo', 'accion':'Mensaje virtual + saludo en F4', 'resp':'Directores'},
     {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
-    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'Fabelly (revisar lista v2)', 'accion':'Confirmar agenda ASAP', 'resp':'Directores'},
+    {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'— (era Fabelly)', 'accion':'Caducó: Fabelly fuera del equipo (7-jun)', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'Jordelis Mateo', 'accion':'No asignar carga física pesada', 'resp':'Coord. Cocina'},
     {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia + Mary Carmen', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía / Coord. Música'},
     {'n':9, 'bandera':'Sin claridad de rol', 'persona':'Wirna Miguelina Stapleton Pilier', 'accion':'Conversación 1:1 con Directores antes de F1', 'resp':'Directores'},
     {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
-    {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Fabelly, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
+    {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
     {'n':12, 'bandera':'Pareja Dorian↔José Ángel — ambos en Música', 'persona':'Dorian, José Ángel', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
     {'n':13, 'bandera':'Noviazgo Kelvin↔Brianelis — ambos en Cocina', 'persona':'Kelvin, Brianelis', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
     {'n':14, 'bandera':'Noviazgo Juan Manuel↔Yelaxni — áreas distintas ✓', 'persona':'Juan Manuel (Dir), Yelaxni (Guía)', 'accion':'OK', 'resp':'—'},
     {'n':15, 'bandera':'Noviazgo Oliver↔Dayrelins — áreas distintas ✓', 'persona':'Oliver (Guía), Dayrelins (Cocina)', 'accion':'OK', 'resp':'—'},
-    {'n':16, 'bandera':'Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelly en Cocina', 'persona':'JC, JM, Paloma, Fabelly', 'accion':'Confirmar distribución', 'resp':'Directores'},
+    {'n':16, 'bandera':'Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección', 'persona':'JC, JM, Paloma', 'accion':'Distribución confirmada (Fabelly salió del equipo el 7-jun)', 'resp':'Directores'},
     {'n':17, 'bandera':'Mariscos prohibidos como plato principal', 'persona':'Priscilla, Ivanna, Jonathan, Laura (4 alérgicas)', 'accion':'Avisar a Cocina', 'resp':'Coord. Cocina'},
     {'n':18, 'bandera':'Evitar piña en menú', 'persona':'Wilka, Candy, José Ángel (3 alérgicos)', 'accion':'No piña en jugos, postres, marinadas', 'resp':'Coord. Cocina'},
     {'n':19, 'bandera':'Alternativa sin huevo en desayunos', 'persona':'José Ángel', 'accion':'Avisar Cocina', 'resp':'Coord. Cocina'},
@@ -413,8 +423,8 @@ banderas = [
     {'n':31, 'bandera':'2 tripulantes sin formulario (al 3-jun)', 'persona':'Pamela (Cocina), Frank (Asesor) — Olanlly, Randol y Daylin ya respondieron', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Cocina / Co-Dir'},
     {'n':33, 'bandera':'Daylin no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, vive en PC)', 'persona':'Daylin M Rambalde Moreta (Música)', 'accion':'Asignarle rol sin coordinación; considerar su distancia y asistencia', 'resp':'Coord. Música / Co-Dir'},
     {'n':34, 'bandera':'Daylin: resistencia a la insulina (Metformina) — dato de salud para botiquín/menú', 'persona':'Daylin M Rambalde Moreta', 'accion':'Tener en cuenta en cocina y botiquín', 'resp':'Coord. Cocina'},
-    {'n':32, 'bandera':'Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)', 'persona':'Fabelly Maciel Fabian Bello', 'accion':'OK · nombre validado', 'resp':'Directores'},
-    {'n':33, 'bandera':'Familia De la Cruz Méndez (4 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)', 'accion':'OK distribución; 3 en cocina/dirección, 1 en cocina', 'resp':'Directores'},
+    {'n':32, 'bandera':'Cambio de equipo 7-jun: Fabelly sale, Merkin Jean sube de backup a titular cocina', 'persona':'Fabelly Maciel (fuera) / Merkin Jean (titular)', 'accion':'Aplicado · cocina sigue en 21', 'resp':'Directores'},
+    {'n':33, 'bandera':'Familia De la Cruz Méndez (3 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord)', 'accion':'OK distribución (Fabelly salió del equipo 7-jun)', 'resp':'Directores'},
 ]
 
 invitados_list = []

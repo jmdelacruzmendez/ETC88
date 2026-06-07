@@ -56,12 +56,12 @@
 | Candy Elizabeth Gatwood Ramos | Cocina | 5 ene | (849) 538-4498 |
 | Chantal Melissa Carpio Jiménez | Cocina | 24 dic | (829) 260-8939 |
 | Dayrelins Jazmin Santana Salas | Cocina | 30 ago | (809) 426-4150 |
-| Fabelly Maciel Fabian Bello | Cocina | 11 ago | (829) 285-9257 |
 | Guido Maldonado | Cocina | 30 nov | 5512144384 |
 | Jordelis Mateo | Cocina | 26 jul | (829) 610-1254 |
 | Kelvin Alexis Ventura Santana | Cocina | 28 jul | (809) 463-3990 |
 | Maria del Carmen Mejías Mateo | Cocina | 29 ago | (829) 713-7943 |
 | Marian Olanlly Ortiz Carrasco | Cocina | 23 oct | (849) 406-2313 |
+| Merkin Jean | Cocina | — | — |
 | Randol Joseph Payano | Cocina | 18 dic | (829) 963-9360 |
 | Risaira Santana Rosario | Cocina | 29 jun | (829) 203-2829 |
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |

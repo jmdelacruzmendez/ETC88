@@ -3,9 +3,9 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "version": "v8-2026-06-02",
-    "total_equipo": 72,
+    "total_equipo": 71,
     "operativos": 48,
-    "no_operativos": 24
+    "no_operativos": 23
   },
   "finanzas": {
     "casa_por_persona_sin_exencion": 2300,
@@ -68,8 +68,8 @@
       }
     },
     "conteos_esperados": {
-      "_nota": "Derivados del roster confirmado (data/equipo.json) el 3-jun-2026. scripts/verify.py valida que el roster siga cuadrando con estos números.",
-      "total_equipo": 72,
+      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15).",
+      "total_equipo": 71,
       "operativos": 48,
       "operativos_titulares_por_area": {
         "directores": 2,
@@ -80,10 +80,10 @@
         "musica": 6
       },
       "vacantes": 0,
-      "backups": 19,
+      "backups": 18,
       "backups_detalle": {
         "guias": 3,
-        "cocina": 16
+        "cocina": 15
       },
       "asesores_cocina": 2,
       "asesores_diocesanos": 3
@@ -631,7 +631,8 @@
       "Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).",
       "Apellido de Leober: Soriano.",
       "Roselyn DENTRO de cocina (4-jun): el director confirmó que Roselyn y Randol están AMBOS en cocina; Pamela queda fuera. Cocina sigue en 21.",
-      "Backups (4-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Merkin, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (16). Total 19 backups. NO son operativos.",
+      "Backups (4-jun; actualizado 7-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (15). Total 18 backups. NO son operativos. (Merkin subió de backup a titular cocina el 7-jun, reemplazando a Fabelly Maciel que salió del equipo.)",
+      "Cambio de equipo 7-jun: Fabelly Maciel Fabian Bello SALE del equipo. Merkin Jean sube de backup a titular en cocina. Cocina sigue en 21 titulares.",
       "Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).",
       "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
       "Randol Joseph Payano (nombre tomado del formulario, confirmado 3-jun) ACTIVO en Cocina (no backup). El 4-jun el director confirmó: Roselyn y Randol ambos dentro, Pamela fuera.",
@@ -1711,42 +1712,6 @@
       "transversal": false
     },
     {
-      "id": "fabelly-maciel-fabian-bello",
-      "nombre": "Fabelly Maciel Fabian Bello",
-      "sexo": "F",
-      "edad": 34,
-      "cumple_mes": 8,
-      "cumple_dia": 11,
-      "cumple_anio": 1991,
-      "etc_propio": 74,
-      "etc_anio_propio": 2018,
-      "etcs_servidos": 0,
-      "residencia": "SPM",
-      "comunidad": "Betania",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "S",
-      "telefono": "18292859257",
-      "que_espera": "Tener una experiencia de servicio que me acerque mas a Dios ",
-      "miedos": "Que tenga compañeros vago ",
-      "tema_dios": "Servicio ",
-      "invita": "Todavía no sé",
-      "idea_recaudacion": "Una rifa ",
-      "alergias": "Ninguna ",
-      "condiciones": "Ninguna \n",
-      "medicamentos": "Ninguno ",
-      "contacto_emergencia": "Fabianlly fabian, hermana 8299410506",
-      "palabra": "Amor ",
-      "dudas": "No\n\n",
-      "algo_directores": "Yo tengo un viaje programado para el mes de julio ",
-      "invitados": [],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "guido-maldonado",
       "nombre": "Guido Maldonado",
       "sexo": "M",
@@ -1938,6 +1903,41 @@
       "algo_directores": null,
       "invitados": [],
       "sin_formulario": false,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
+    },
+    {
+      "id": "merkin-jean",
+      "nombre": "Merkin Jean",
+      "sexo": null,
+      "edad": null,
+      "cumple_mes": null,
+      "cumple_dia": null,
+      "cumple_anio": null,
+      "etc_propio": null,
+      "etc_anio_propio": null,
+      "etcs_servidos": null,
+      "residencia": "—",
+      "comunidad": "Por confirmar",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": null,
+      "telefono": null,
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
       "operativo": true,
       "backup": false,
       "vacante": false,
@@ -2976,41 +2976,6 @@
       "transversal": false
     },
     {
-      "id": "merkin",
-      "nombre": "Merkin",
-      "sexo": null,
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "cocina",
-      "rol": "Backup Cocina",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": true,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "nestor",
       "nombre": "Nestor",
       "sexo": null,
@@ -3493,8 +3458,8 @@
     {
       "n": 5,
       "bandera": "Viaje julio vs Profondo (31-jul a 2-ago)",
-      "persona": "Fabelly (revisar lista v2)",
-      "accion": "Confirmar agenda ASAP",
+      "persona": "— (era Fabelly)",
+      "accion": "Caducó: Fabelly fuera del equipo (7-jun)",
       "resp": "Directores"
     },
     {
@@ -3535,7 +3500,7 @@
     {
       "n": 11,
       "bandera": "Memoria de fricciones pasadas",
-      "persona": "Luisa, Franklin, Fabelly, Juan Manuel",
+      "persona": "Luisa, Franklin, Juan Manuel",
       "accion": "Trabajar alianza interna en Profondo #1",
       "resp": "Directores"
     },
@@ -3569,9 +3534,9 @@
     },
     {
       "n": 16,
-      "bandera": "Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección, Fabelly en Cocina",
-      "persona": "JC, JM, Paloma, Fabelly",
-      "accion": "Confirmar distribución",
+      "bandera": "Familia De la Cruz Méndez — Paloma en Cocina, JC/JM en Dirección",
+      "persona": "JC, JM, Paloma",
+      "accion": "Distribución confirmada (Fabelly salió del equipo el 7-jun)",
       "resp": "Directores"
     },
     {
@@ -3695,16 +3660,16 @@
     },
     {
       "n": 32,
-      "bandera": "Nombre confirmado: Fabelly Maciel Fabian Bello (Cocina)",
-      "persona": "Fabelly Maciel Fabian Bello",
-      "accion": "OK · nombre validado",
+      "bandera": "Cambio de equipo 7-jun: Fabelly sale, Merkin Jean sube de backup a titular cocina",
+      "persona": "Fabelly Maciel (fuera) / Merkin Jean (titular)",
+      "accion": "Aplicado · cocina sigue en 21",
       "resp": "Directores"
     },
     {
       "n": 33,
-      "bandera": "Familia De la Cruz Méndez (4 personas) — distribuida",
-      "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord), Fabelly (Cocina)",
-      "accion": "OK distribución; 3 en cocina/dirección, 1 en cocina",
+      "bandera": "Familia De la Cruz Méndez (3 personas) — distribuida",
+      "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord)",
+      "accion": "OK distribución (Fabelly salió del equipo 7-jun)",
       "resp": "Directores"
     }
   ],
@@ -3829,7 +3794,7 @@
     "top": [
       {
         "propuesta": "Rifa",
-        "menciones": 22
+        "menciones": 21
       },
       {
         "propuesta": "Venta de comida",
@@ -3968,10 +3933,6 @@
       {
         "persona": "Dayrelins Jazmin Santana Salas",
         "idea": "Rifa 💯"
-      },
-      {
-        "persona": "Fabelly Maciel Fabian Bello",
-        "idea": "Una rifa"
       },
       {
         "persona": "Guido Maldonado",
