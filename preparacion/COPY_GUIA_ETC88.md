@@ -160,7 +160,7 @@ La autenticidad de quien se da tal y como es, sin máscaras. Dar tiempo para **e
 ### 5.5 Regalo de la Vida *(sábado tarde)*
 La vida como regalo de Dios. El cuerpo como **templo del Espíritu Santo**. Cuidar la propia vida y la del otro. Vivir agradecido.
 
-### 5.6 Regalo del Perdón *(sábado noche · cena del Lavatorio)*
+### 5.6 Alegría del Perdón *(sábado noche · cena del Lavatorio)*
 Perdonarse a sí mismo. Perdonar **77 veces 7** (Mt 18,21-22). La Confesión. *Podemos ir por la vida con cicatrices, pero no con heridas.* Este tema enmarca el **Lavatorio de los pies** (Jn 13), el momento más fuerte del sábado.
 
 ### 5.7 Nacer de Nuevo *(domingo mañana)*
@@ -237,7 +237,7 @@ Las preguntas que se lleva el participante: ¿He conocido mejor a Jesús? ¿Teng
 | **4:45 PM** | Refrigerio · reunión del equipo · repaso del sociodrama. |
 | **5:15 PM** | Plenario · presentación del **sociodrama** de cada grupo. |
 | **6:30 PM** | **Cena con Lavatorio de los Pies** (Jn 13) — cocina lleva el momento. |
-| **7:20 PM** | Plenario · Testimonio "Regalo del Perdón" · dinámica del lodo · examen de conciencia. |
+| **7:20 PM** | Plenario · Testimonio "Alegría del Perdón" · dinámica del lodo · examen de conciencia. |
 | **7:50 PM** | **8vo PG** — comentar testimonio. |
 | **9:00 PM** | **Confesiones** · Proyecto de Vida (carta de compromiso). |
 | **10:00 PM** | Preparación de Misa · **banderín**. |
