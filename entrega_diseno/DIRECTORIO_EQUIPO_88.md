@@ -61,7 +61,7 @@
 | Kelvin Alexis Ventura Santana | Cocina | 28 jul | (809) 463-3990 |
 | Maria del Carmen Mejías Mateo | Cocina | 29 ago | (829) 713-7943 |
 | Marian Olanlly Ortiz Carrasco | Cocina | 23 oct | (849) 406-2313 |
-| Merkin Jean | Cocina | — | — |
+| Merkin Jean Vásquez | Cocina | 4 may | (829) 618-5249 |
 | Randol Joseph Payano | Cocina | 18 dic | (829) 963-9360 |
 | Risaira Santana Rosario | Cocina | 29 jun | (829) 203-2829 |
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |

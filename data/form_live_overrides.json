@@ -1,5 +1,5 @@
 {
-  "_meta": "OPTIMIZACIÓN D4 — datos, no código. Miembros que respondieron el formulario DESPUÉS del snapshot de data/fuente_formulario.xlsx. build_data.py aplica estos datos sobre los placeholders 'sin formulario'. SCOPE: solo datos del directorio (nombre, cumpleaños, teléfono, talla, ETC propio). La info sensible (alergias, condiciones, medicamentos, miedos, invitados) vive en la hoja viva de Drive — NO se copia al repo. Fuente: hoja 'ETC 88 · Respuestas del formulario del equipo (vivo)' (Drive id 1Vx0vmoqhirWqAiLs7B2emOIGibdyvbSshtVYRCmJPA4). Roselyn 5-jun; Randol/Olanlly/Daylin cumple+tel+talla actualizados 5-jun (respondieron 2-jun). Cuando el xlsx fresco los incluya, este archivo puede vaciarse.",
+  "_meta": "OPTIMIZACIÓN D4 — datos, no código. Miembros que respondieron el formulario DESPUÉS del snapshot de data/fuente_formulario.xlsx. build_data.py aplica estos datos sobre los placeholders 'sin formulario'. SCOPE: solo datos del directorio (nombre, cumpleaños, teléfono, talla, ETC propio). La info sensible (alergias, condiciones, medicamentos, miedos, invitados) vive en la hoja viva de Drive — NO se copia al repo. Fuente: hoja 'ETC 88 · Respuestas del formulario del equipo (vivo)' (Drive id 1Vx0vmoqhirWqAiLs7B2emOIGibdyvbSshtVYRCmJPA4). Roselyn 5-jun; Randol/Olanlly/Daylin cumple+tel+talla actualizados 5-jun (respondieron 2-jun). Merkin 7-jun (respondió 7-jun 17:56; apellido confirmado = Vásquez). Cuando el xlsx fresco los incluya, este archivo puede vaciarse.",
   "overrides": {
     "Roselyn (sin formulario)": {
       "nombre": "Roselyn Quiroz",
@@ -27,6 +27,13 @@
       "talla": "M", "telefono": "8298639956", "sin_formulario": false,
       "etc_propio": 66, "etcs_servidos": 3,
       "nota": "Indicó en el formulario que NO puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia). Reside en Punta Cana."
+    },
+    "Merkin Jean": {
+      "nombre": "Merkin Jean Vásquez",
+      "edad": 22, "cumple_mes": 5, "cumple_dia": 4, "cumple_anio": 2004,
+      "talla": "M", "telefono": "8296185249", "sin_formulario": false,
+      "etc_propio": 86, "etc_anio_propio": 2025, "etcs_servidos": 0,
+      "nota": "Subió de backup de cocina a titular (7-jun), reemplazando a Fabelly Maciel (fuera del equipo). Respondió el formulario 7-jun; apellido confirmado = Vásquez."
     },
     "Padre Paul Ramírez": {
       "telefono": "8298083399",

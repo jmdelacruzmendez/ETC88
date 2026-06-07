@@ -254,7 +254,7 @@ PLACEHOLDERS_OP = [
     ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: DENTRO de cocina (junto con Randol). Formulario recibido 4-jun → datos reales en form_live_overrides.json (Roselyn Quiroz).
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
     ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, activo en cocina (NO backup)
-    ('Merkin Jean', 'cocina', 'Cocina', None),  # 7-jun: sube de backup a titular reemplazando a Fabelly Maciel Fabian Bello (que sale del equipo). Apellido pendiente.
+    ('Merkin Jean', 'cocina', 'Cocina', None),  # 7-jun: sube de backup a titular reemplazando a Fabelly Maciel Fabian Bello (que sale del equipo). Respondió formulario 7-jun → datos reales en form_live_overrides.json (Merkin Jean Vásquez, ETC 86).
     ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
