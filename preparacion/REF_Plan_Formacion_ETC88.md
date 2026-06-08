@@ -27,12 +27,12 @@
 | **F2** | dom 28-jun | Una sola tripulación | ¿Vengo a servir o a tener experiencia? | Jn 17,21 / 1 Cor 12 | Co-Dir + AE |
 | **F3** | dom 5-jul | ¿Dónde está mi tesoro? | ¿Qué busco yo de verdad? | Mt 6,21 | Co-Dir (arranca recaudación de cuotas) |
 | **F4** | dom 19-jul | Conociendo el terreno | ¿A quién vamos a servir? (lectura de perfiles) | Rom 12,4–6 | Guías |
-| **F5** | [PROPUESTA] ventana 16-ago | Listos para zarpar (envío y consagración) | — | Mt 6,21 + Mt 13,44 | Co-Dir + AE |
+| **F5** *(propuesta original, no en .ics)* | integrada a la Convivencia del 16-ago | Listos para zarpar (envío y consagración) | Mt 6,21 + Mt 13,44 | Co-Dir + AE |
 
-> Nota sobre F5: el calendario oficial (.ics) lista F1–F4 como formaciones y **16-ago como
-> Convivencia/Retiro** (no como "F5"). El plan de 4-jun ubicaba la F5 en esa misma fecha, así que
-> F5 ≈ el componente formativo de la Convivencia. Confirmar con el director si hay F5 propia o si
-> se integra a la Convivencia.
+> Nota sobre F5: el calendario oficial (.ics) **NO lista una F5** — solo F1–F4. El 16-ago aparece
+> como **Convivencia / Retiro** (programar temprano · concluye al mediodía). El plan de 4-jun
+> proponía F5 en esa misma fecha; la lectura actual es que el componente formativo de F5 se vive
+> dentro de la Convivencia. Confirmar con el director si hay sesión formativa separada.
 
 ## Cómo baja la temática a cada área
 - **Guías** → acompañan a mirar el corazón y reconocer dónde está el tesoro.

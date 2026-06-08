@@ -71,8 +71,8 @@ La casa de retiro suele tener sonido propio; el equipo confirma con la administr
 |---|---|
 | **F1** | Presupuesto base + repertorio borrador + 3 dudas |
 | **F2 / F3** | Confirmar canciones por tema · primer ensayo |
-| **F4** | Segundo ensayo · cancionero borrador |
-| **F5** | Tercer ensayo · cancionero cerrado · cantos misa ensayados |
+| **F4 (19-jul)** | Segundo ensayo · cancionero borrador |
+| **Convivencia (16-ago)** | Tercer ensayo · cancionero cerrado · cantos misa ensayados |
 | **Ensayo General** | Pase completo con Co-Dir, Guías y Cocina · asistencia obligatoria |
 | **Avanzada** | Jueves o viernes mañana — instalación de sonido y prueba |
 | **Retiro** | Servicio completo |

@@ -3457,12 +3457,7 @@
     },
     {
       "fecha": "2026-08-16",
-      "titulo": "F5 — Quinta Formación (lectura de perfiles 2 + cobro al cierre)",
-      "tipo": "formacion"
-    },
-    {
-      "fecha": "2026-08-22",
-      "titulo": "Convivencia del Equipo (inicia con miniretiro/reflexión · día completo)",
+      "titulo": "Convivencia / Retiro (programar temprano · concluye al mediodía)",
       "tipo": "convivencia"
     },
     {
@@ -3472,7 +3467,7 @@
     },
     {
       "fecha": "2026-08-30",
-      "titulo": "Reunión final · deadline pagos equipo + padrinos",
+      "titulo": "Conciliación y planificación pre-ETC (cierre pagos + corregir testimonios + observaciones del ensayo)",
       "tipo": "pre_retiro"
     },
     {

@@ -57,7 +57,7 @@ El guía no enseña ni predica: **acompaña**. Su trabajo es crear confianza, es
 ## 6. Formación que recibe el equipo de Guías (su roadmap)
 - **F1:** parejas + colores + cómo preparar un testimonio. **Los que ya han sido guías antes inician** dando testimonio o arrancando los ensayos, para que el formato se entienda con fluidez.
 - **Liturgia + Banderín:** sesiones de adiestramiento con los coords y los encargados (se convocan aparte).
-- **F4/F5:** lectura de perfiles 1 y 2.
+- **F4 (19-jul) y Convivencia (16-ago):** lectura de perfiles 1 y 2.
 - **Cada reunión del equipo:** ensayar **al menos un PG** + repasar programa y horario desde el principio.
 - **Antes del Ensayo General:** ensayo de pequeños grupos completo.
 

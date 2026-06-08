@@ -299,7 +299,7 @@ for paso in [
     '**Presenta a los Asesores Espirituales transversales** (Padre Paul + Sor Angelina) — están para acompañar al equipo durante todo el camino, no solo el día del retiro.',
     '**Transmite los 5 principios** (§4) **sin reinterpretarlos.** El coord es el primer canal del director hacia el equipo.',
     '**Presentación de cada miembro** — que se conozcan; cada área llega con gente nueva y con gente que ya ha servido antes.',
-    '**Repaso del calendario** del ETC 88 (F1 a F5, Profondo, Convivencia, Ensayo General, Retiro).',
+    '**Repaso del calendario** del ETC 88 (F1 a F4, Profondo, Convivencia, Ensayo General, Retiro).',
     '**Asigna lectura** del material que tu equipo necesita: Guía de Guías 88, Anexo de Cocina 88, Anexo de Música 88.',
     '**Fija la próxima reunión** (lugar + fecha + agenda) antes de cerrar.',
     '**Cierra con oración** — el ETC es ante todo una obra espiritual.',
@@ -542,10 +542,9 @@ make_table(doc,
         ['F2 · 2da Formación', '[PROPUESTA] 28-jun', 'Tema 1 · primeros testimonios'],
         ['F3 · 3ra Formación', '5-jul', 'Tema 2 · inicio recaudación'],
         ['F4 · 4ta Formación', '[PROPUESTA] 19-jul', 'Tema 3 · perfiles 1 y 2'],
-        ['F5 · 5ta Formación', '[PROPUESTA] 2-ago', 'Tema 4 · cierre logístico'],
         ['Profondo', '31-jul → 2-ago', 'Actividad pro-fondos del equipo'],
         ['Visita a la casa', '[POR DEFINIR]', 'Cocina + Guías + Co-Dir + admin (Samuel Montilla)'],
-        ['Convivencia + mini-retiro', '22-ago', 'Día completo'],
+        ['Convivencia / Retiro', '16-ago', 'Programar temprano · concluye al mediodía'],
         ['Ensayo General', '23-ago (obligatorio)', 'Pase completo del retiro'],
         ['Avanzada', '3-sep', 'Cocina + Música anticipados'],
         ['ETC 88', '4–6 sep 2026', 'Higüey · La Ceiba del Salado'],
@@ -616,7 +615,7 @@ para(doc, 'Cocina + Guías + Co-Dir + administración (Samuel Montilla). Define 
 linea_para_escribir(doc, 'Fecha propuesta:')
 
 h3(doc, '11.4 · Espiritualidad del equipo (oración + mini-retiro)')
-para(doc, 'La Convivencia del 22-ago tiene mini-retiro. ¿Hay también momentos de oración del equipo entre formaciones? Vale para los coords con su gente.')
+para(doc, 'La Convivencia / Retiro del 16-ago se programa temprano (concluye al mediodía para reducir costos). ¿Hay también momentos de oración del equipo entre formaciones? Vale para los coords con su gente.')
 linea_para_escribir(doc, 'Decisión:')
 
 h3(doc, '11.5 · Briefing pastoral del director')

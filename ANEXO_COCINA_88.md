@@ -88,7 +88,7 @@ Trabajo humilde · asistir a reuniones · hacer lo asignado · motivos del comed
 |---|---|
 | **F1** | Borrador de menú + presupuesto base (sin tematización todavía) |
 | **F3** | Compras anticipadas (no perecederos) |
-| **F5 / agosto** | Cerrar lista de compras + identificar Correcaminos |
+| **agosto (antes de la Convivencia 16-ago)** | Cerrar lista de compras + identificar Correcaminos |
 | **Avanzada** | Llegada anticipada de cocina (días antes del retiro) |
 | **Retiro** | Servicio completo |
 | **Bienvenida nuevos etecianos** | Después del retiro (cocina lleva el momento) |

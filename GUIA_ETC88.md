@@ -59,10 +59,9 @@ Somos **48 servidores operativos** + asesores ampliados y transversales. Una sol
 | 26-jul | Día del Padre *(sin formación)* |
 | 31-jul | Profondo #1 (31-jul → 2-ago) |
 | 9-ago | Misa Eteciana *(sin formación)* |
-| 16-ago | F5 — Quinta Formación (lectura de perfiles 2 + cobro al cierre) |
-| 22-ago | Convivencia del Equipo (inicia con miniretiro/reflexión · día completo) |
+| 16-ago | Convivencia / Retiro (programar temprano · concluye al mediodía) |
 | 23-ago | Ensayo General del ETC 88 (obligatorio) |
-| 30-ago | Reunión final · deadline pagos equipo + padrinos |
+| 30-ago | Conciliación y planificación pre-ETC (cierre pagos + corregir testimonios + observaciones del ensayo) |
 | 3-sep | Avanzada del Equipo de Cocina |
 | 4-sep | ETC 88 (4 → 6 sep) |
 | 9-sep | Bienvenida post-ETC a los nuevos (baile + bizcocho) *(sin formación)* |
