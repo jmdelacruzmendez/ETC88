@@ -41,7 +41,7 @@ Somos **48 servidores operativos** + asesores ampliados y transversales. Una sol
 **Asesoras de Cocina:** Johanny García · Mary "Petra" Morales
 **Asesores de Comunidad:** Leticia González · Marleny · Sandrita
 
-**Equipos auxiliares:** Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar)
+**Equipos auxiliares:** Recaudación / Profondo · Guagua (Transporte) · Intersección (diáspora) · Finanzas / Tesorería (auxiliar)
 
 ---
 ## 3. Calendario 2026

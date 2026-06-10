@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 54 confirmados · 14 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 55 confirmados · 12 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
@@ -27,6 +27,7 @@
 | `finanzas.deuda_inicial` | 23600 | director | 10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue dev… |
 | `finanzas.cuota_participante` | 3000 | director |  |
 | `finanzas.personas_casa_piso` | 100 | director | Piso fijado: completar 100 personas en la casa de retiro. |
+| `finanzas.participantes_objetivo` | 47 | director (10-jun-2026) | Target = 45–48 participantes (rango). Para presupuesto se usa 47 (punt… |
 | `finanzas.meta_recaudacion_total` | 583281 | director | No es un número fijo: = costo total estimado a cubrir (casa 100 person… |
 | `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
@@ -71,10 +72,8 @@
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
 | `finanzas.cuota_equipo` | {"total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "c… | director (planteado, sin cerrar) | NO está decidido. Mostrar primero los costos estimados del retiro para… |
-| `finanzas.participantes_objetivo` | 52 | derivado (100 − 48 operativos) | Los que falten para completar 100 en la casa junto al equipo. Ajustar … |
 | `marca.branding_reglas_esteticas` | Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo or… | director + logo original | 7-jun (final): el director descartó la Dirección A y pidió la identida… |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
-| `equipos_auxiliares[2].responsable` | Directores | — |  |
 | `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |
 | `gaps_post_informe_85.oracion_grupal_obligatoria` | Participación obligatoria de TODOS los equipos (guías y ases… | Informe 85, aspecto a mejorar | Agregar a las reglas como equipo en F1. |
 | `gaps_post_informe_85.confirmar_n_etc_con_consejo` | Confirmar el # del ETC con concilio/consejo TEMPRANO; cambio… | Informe 85 | Relevante a 'completar 100 en la casa'. |
@@ -89,8 +88,8 @@
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
 | `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
-| `equipos_auxiliares[3].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
-| `equipos_auxiliares[4].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |
+| `equipos_auxiliares[2].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
+| `equipos_auxiliares[3].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |
 | `pendientes_direccion.fecha_limite_cotizar_transporte` | None | director | Fecha límite para cotizar transporte, biblias y peces. Definir. |
 | `pendientes_direccion.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
 | `pendientes_direccion.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
@@ -125,17 +124,21 @@
 - 10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary "Petra" 19-oct · Johanny 13-feb.
 - 10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).
 - 10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director.
+- 10-jun-2026: Target de participantes confirmado en 45–48 (para completar ~100 personas en la casa con los 48 operativos).
+- 10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.
+- 10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).
+- 10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.
+- 10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.
+- 10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.
+- 10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.
 
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).
-- [ ] Confirmar el conteo final de participantes para completar 100 en la casa.
-- [ ] Definir los responsables de cada uno de los 5 equipos auxiliares (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería).
+- [ ] Definir los responsables de cada uno de los 4 equipos auxiliares (Recaudación-Profondo (un solo equipo) · Guagua · Intersección/diáspora · Finanzas/Tesorería).
 - [ ] Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).
 - [ ] Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).
-- [ ] Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).
 - [ ] Confirmar la exención de la casa con el Padre Paul.
-- [ ] Fijar fecha límite para cotizar transporte, biblias y peces.
-- [ ] Cotizar transporte (3 empresas) y el banderín.
 - [ ] Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).
 - [ ] Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.
 - [ ] Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.
+- [ ] Cotizar transporte (3 empresas), peces de bronce ICTUS y banderín. (Biblias cotizadas con Paulinas — proforma 32397, $34,000.)

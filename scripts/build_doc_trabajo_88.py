@@ -276,7 +276,7 @@ make_table(doc,
     col_widths_cm=[5, 2.5, 9])
 
 para(doc)
-h3(doc, '5 equipos auxiliares en construcción')
+h3(doc, '4 equipos auxiliares en construcción')
 para(doc, 'Responsables por definir. Salen de esta reunión con un primer nombre por equipo si es posible.')
 make_table(doc,
     headers=['Equipo auxiliar', 'Función', 'Responsable [POR DEFINIR]'],

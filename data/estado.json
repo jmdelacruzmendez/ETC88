@@ -131,10 +131,11 @@
       "nota": "Piso fijado: completar 100 personas en la casa de retiro."
     },
     "participantes_objetivo": {
-      "valor": 52,
-      "estado": "propuesta",
-      "fuente": "derivado (100 − 48 operativos)",
-      "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
+      "valor": 47,
+      "rango": "45–48",
+      "estado": "confirmado",
+      "fuente": "director (10-jun-2026)",
+      "nota": "Target = 45–48 participantes (rango). Para presupuesto se usa 47 (punto medio). Cierra: casa con 48 op + 47 participantes = ~95 personas (de 100 capacidad)."
     },
     "meta_recaudacion_total": {
       "valor": 583281,
@@ -195,9 +196,9 @@
   },
   "equipos_auxiliares": [
     {
-      "nombre": "Recaudación y Donaciones",
+      "nombre": "Recaudación / Profondo",
       "estado_equipo": "confirmado",
-      "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
+      "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable). Incluye también la organización de las Actividades Profondo (#1 31-jul→2-ago) — el equipo de Profondo es el MISMO que el de Recaudación (decisión director 10-jun-2026).",
       "responsable": {
         "valor": "Por nombrar (Co-Dir decide)",
         "estado": "pendiente",
@@ -211,16 +212,6 @@
       "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).",
       "responsable": {
         "valor": "Producción",
-        "estado": "propuesta"
-      },
-      "miembros": []
-    },
-    {
-      "nombre": "Actividad Profondo",
-      "estado_equipo": "confirmado",
-      "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.",
-      "responsable": {
-        "valor": "Directores",
         "estado": "propuesta"
       },
       "miembros": []
@@ -597,16 +588,42 @@
           "Cuesta Libros",
           "librerías católicas",
           "Multibox (cajas/cofre palancas — usado en 78)"
-        ]
+        ],
+        "referencias_producto": {
+          "pez_ictus_bronce": {
+            "nombre": "Bronze Fish Pendant",
+            "fabricante": "Terra Sancta Guild",
+            "amazon_asin": "B00VB37PIK",
+            "url": "https://www.amazon.com/Terra-Sancta-Guild-330-Q-Pendant/dp/B00VB37PIK",
+            "uso": "Referencia del pez ICTUS de bronce para participantes (entrega simbólica). Precio/proveedor final pendiente.",
+            "estado": "referencia · proveedor final pendiente"
+          }
+        }
       },
       "biblias": {
         "donantes_confirmados": [],
         "sectores_propuesta": [
           "SDQLee",
           "Cuesta",
-          "Librería Paulinas",
           "Verbo Divino"
-        ]
+        ],
+        "proveedor_cotizado": {
+          "nombre": "Librería Paulinas",
+          "direccion": "Av. Bolívar 203, Gazcue, Santo Domingo",
+          "telefono": "809-685-7542",
+          "email": "paulinasventasrd@gmail.com",
+          "preparada_por": "Norberto",
+          "proforma": "32397",
+          "fecha_proforma": "2026-06-08",
+          "termino_dias": 30,
+          "producto": "Biblia Latinoamericana bolsillo color",
+          "cantidad": 50,
+          "precio_unidad": 800,
+          "descuento_pct": 15,
+          "precio_efectivo": 680,
+          "total": 34000,
+          "estado": "cotizado · pendiente compra"
+        }
       },
       "vino_y_formas": {
         "donantes_confirmados": [],
@@ -686,20 +703,24 @@
     "10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).",
     "10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary \"Petra\" 19-oct · Johanny 13-feb.",
     "10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).",
-    "10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director."
+    "10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director.",
+    "10-jun-2026: Target de participantes confirmado en 45–48 (para completar ~100 personas en la casa con los 48 operativos).",
+    "10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.",
+    "10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).",
+    "10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.",
+    "10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.",
+    "10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.",
+    "10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente."
   ],
   "pendientes": [
     "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
-    "Confirmar el conteo final de participantes para completar 100 en la casa.",
-    "Definir los responsables de cada uno de los 5 equipos auxiliares (Recaudación · Guagua · Profondo · Intersección/diáspora · Finanzas/Tesorería).",
+    "Definir los responsables de cada uno de los 4 equipos auxiliares (Recaudación-Profondo (un solo equipo) · Guagua · Intersección/diáspora · Finanzas/Tesorería).",
     "Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).",
     "Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).",
-    "Lema del retiro, hilo espiritual y reglas estéticas/branding (se trabajan con Claude Design).",
     "Confirmar la exención de la casa con el Padre Paul.",
-    "Fijar fecha límite para cotizar transporte, biblias y peces.",
-    "Cotizar transporte (3 empresas) y el banderín.",
     "Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).",
     "Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.",
-    "Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System."
+    "Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.",
+    "Cotizar transporte (3 empresas), peces de bronce ICTUS y banderín. (Biblias cotizadas con Paulinas — proforma 32397, $34,000.)"
   ]
 }
