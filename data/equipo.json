@@ -711,7 +711,11 @@
       "La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).",
       "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
       "La Vega: 1 asesor de comunidad, Leticia González.",
-      "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."
+      "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello.",
+      "10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).",
+      "10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary \"Petra\" 19-oct · Johanny 13-feb.",
+      "10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).",
+      "10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director."
     ],
     "pendientes": [
       "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
@@ -3776,6 +3780,13 @@
       "persona": "Jordelis Mateo (fuera) / Pamela Colón (titular)",
       "accion": "Aplicado · cocina sigue en 21",
       "resp": "Directores"
+    },
+    {
+      "n": 37,
+      "bandera": "Hermanas en Cocina — Risaira y Risairi Santana Rosario",
+      "persona": "Risaira, Risairi Santana Rosario",
+      "accion": "Confirmado por director (10-jun): no es typo, son hermanas. Mantener registro separado.",
+      "resp": "—"
     }
   ],
   "invitados": [

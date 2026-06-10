@@ -8,15 +8,36 @@
       "pendiente": "Falta el dato o la decisión. Se muestra con [POR DEFINIR]."
     }
   },
-
   "retiro": {
-    "numero":        { "valor": 88, "estado": "confirmado", "fuente": "director" },
-    "romano":        { "valor": "LXXXVIII", "estado": "confirmado", "fuente": "director" },
-    "fechas":        { "valor": "4–6 de septiembre de 2026", "estado": "confirmado", "fuente": "director" },
-    "lugar":         { "valor": "Casa de Retiro La Ceiba del Salado, Higüey", "estado": "confirmado", "fuente": "director" },
-    "co_direccion":  { "valor": ["Juan Manuel de la Cruz", "Jean Carlo de la Cruz"], "estado": "confirmado", "fuente": "director" }
+    "numero": {
+      "valor": 88,
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "romano": {
+      "valor": "LXXXVIII",
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "fechas": {
+      "valor": "4–6 de septiembre de 2026",
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "lugar": {
+      "valor": "Casa de Retiro La Ceiba del Salado, Higüey",
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "co_direccion": {
+      "valor": [
+        "Juan Manuel de la Cruz",
+        "Jean Carlo de la Cruz"
+      ],
+      "estado": "confirmado",
+      "fuente": "director"
+    }
   },
-
   "conteos_esperados": {
     "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15).",
     "total_equipo": 71,
@@ -31,143 +52,612 @@
     },
     "vacantes": 0,
     "backups": 18,
-    "backups_detalle": { "guias": 3, "cocina": 15 },
+    "backups_detalle": {
+      "guias": 3,
+      "cocina": 15
+    },
     "asesores_cocina": 2,
     "asesores_diocesanos": 3
   },
-
   "reglas": {
-    "parejas_guias": { "valor": 7, "estado": "confirmado", "fuente": "director", "nota": "REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo que varía es el número de participantes por grupo (un PG puede tener más que otro)." },
-    "participantes_solo_mayores": { "valor": true, "estado": "confirmado", "fuente": "director (3-jun)", "nota": "El ETC 88 NO admite menores de edad como participantes. Por tanto NO existen 'permisos de menores'. (Corrige una invención previa de Claude que asumió consentimiento de menores.)" },
-    "camiseta_solo_equipo": { "valor": true, "estado": "confirmado", "fuente": "director (3-jun)", "nota": "La camiseta es SOLO del equipo de servidores. Los participantes NO llevan camiseta del equipo. (Corrige una invención previa de Claude que preguntaba talla al participante.)" }
+    "parejas_guias": {
+      "valor": 7,
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo que varía es el número de participantes por grupo (un PG puede tener más que otro)."
+    },
+    "participantes_solo_mayores": {
+      "valor": true,
+      "estado": "confirmado",
+      "fuente": "director (3-jun)",
+      "nota": "El ETC 88 NO admite menores de edad como participantes. Por tanto NO existen 'permisos de menores'. (Corrige una invención previa de Claude que asumió consentimiento de menores.)"
+    },
+    "camiseta_solo_equipo": {
+      "valor": true,
+      "estado": "confirmado",
+      "fuente": "director (3-jun)",
+      "nota": "La camiseta es SOLO del equipo de servidores. Los participantes NO llevan camiseta del equipo. (Corrige una invención previa de Claude que preguntaba talla al participante.)"
+    }
   },
-
   "finanzas": {
-    "casa_por_persona_sin_exencion": { "valor": 2300, "estado": "confirmado", "fuente": "director" },
-    "casa_por_persona_con_exencion": { "valor": 2000, "estado": "confirmado", "fuente": "director", "nota": "Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona." },
-    "casa_incluye":                  { "valor": "gas y limpieza", "estado": "confirmado", "fuente": "director" },
-    "casa_tiene_sonido":             { "valor": true, "estado": "confirmado", "fuente": "director", "nota": "Música solo lleva equipo de respaldo." },
-    "deuda_inicial":                 { "valor": 23600, "estado": "confirmado", "fuente": "director", "acreedor": "Consejo Eteciano SPM", "nota": "10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue devuelto). El equipo arranca debiendo este monto." },
-    "cuota_participante":            { "valor": 3000, "estado": "confirmado", "fuente": "director" },
+    "casa_por_persona_sin_exencion": {
+      "valor": 2300,
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "casa_por_persona_con_exencion": {
+      "valor": 2000,
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona."
+    },
+    "casa_incluye": {
+      "valor": "gas y limpieza",
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "casa_tiene_sonido": {
+      "valor": true,
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Música solo lleva equipo de respaldo."
+    },
+    "deuda_inicial": {
+      "valor": 23600,
+      "estado": "confirmado",
+      "fuente": "director",
+      "acreedor": "Consejo Eteciano SPM",
+      "nota": "10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue devuelto). El equipo arranca debiendo este monto."
+    },
+    "cuota_participante": {
+      "valor": 3000,
+      "estado": "confirmado",
+      "fuente": "director"
+    },
     "cuota_equipo": {
-      "valor": { "total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "comida del Ensayo General + participación en el retiro" },
+      "valor": {
+        "total_rango": "1,500 – 2,000",
+        "mensual": 500,
+        "cubre": "comida del Ensayo General + participación en el retiro"
+      },
       "estado": "propuesta",
       "fuente": "director (planteado, sin cerrar)",
       "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
     },
-    "personas_casa_piso":            { "valor": 100, "estado": "confirmado", "fuente": "director", "nota": "Piso fijado: completar 100 personas en la casa de retiro." },
-    "participantes_objetivo":        { "valor": 52, "estado": "propuesta", "fuente": "derivado (100 − 48 operativos)", "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final." },
-    "meta_recaudacion_total":        { "valor": 583281, "estado": "confirmado", "fuente": "director", "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + Profondo #1 y #2 + donaciones. Se recalcula con el presupuesto (hoja Finanzas)." }
+    "personas_casa_piso": {
+      "valor": 100,
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Piso fijado: completar 100 personas en la casa de retiro."
+    },
+    "participantes_objetivo": {
+      "valor": 52,
+      "estado": "propuesta",
+      "fuente": "derivado (100 − 48 operativos)",
+      "nota": "Los que falten para completar 100 en la casa junto al equipo. Ajustar con el conteo final."
+    },
+    "meta_recaudacion_total": {
+      "valor": 583281,
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + Profondo #1 y #2 + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
+    }
   },
-
   "recaudacion": {
-    "modelo":                    { "valor": "cuotas + actividad de recaudación + venta de comida + donaciones", "estado": "confirmado", "fuente": "director", "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + Profondo #1 (actividad de recaudación, formato por definir por el director) + Profondo #2 (venta de comida / garaje) + donaciones. Las actividades Profondo y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)." },
-    "donaciones_responsable":    { "valor": "Directores (delegable)", "estado": "confirmado", "fuente": "director", "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores." }
+    "modelo": {
+      "valor": "cuotas + actividad de recaudación + venta de comida + donaciones",
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "La meta = el costo total del retiro. Se cubre con: cuotas de participantes ($3,000 c/u) + cuotas del equipo ($1,500–2,000 c/u) + Profondo #1 (actividad de recaudación, formato por definir por el director) + Profondo #2 (venta de comida / garaje) + donaciones. Las actividades Profondo y las donaciones cubren la BRECHA = costo − cuotas; sus montos son variables (lo que se recaude)."
+    },
+    "donaciones_responsable": {
+      "valor": "Directores (delegable)",
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Conseguir donaciones a empresas/particulares es responsabilidad de los Directores."
+    }
   },
-
   "marca": {
-    "lema_eteciano":            { "valor": "Siempre amigos", "estado": "confirmado", "fuente": "asociación", "cita": "Jn 15:15", "cita_texto": "Ya no os llamo siervos, os he llamado amigos" },
-    "lema_retiro":              { "valor": "Donde está tu tesoro, allí estará tu corazón", "estado": "confirmado", "fuente": "director", "cita": "Mt 6:21", "nota": "Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro pregunta: ¿qué tesoro gobierna mi corazón hoy? Mt 13,44 queda como cita complementaria (la consecuencia del hallazgo)." },
-    "hilo_espiritual":          { "valor": "El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, allí va mi corazón. El retiro propone una expedición hacia adentro para mirar qué tesoro gobierna el corazón hoy, y reordenarlo poniendo a Cristo como tesoro.", "estado": "confirmado", "fuente": "director", "cita": "Mt 6:21", "cita_texto": "Porque donde está tu tesoro, allí estará también tu corazón." },
-    "tematica":                 { "valor": "expedición · el tesoro y el corazón", "estado": "confirmado", "fuente": "director", "cita": "Mt 6:21", "nota": "Temática confirmada: la expedición es hacia adentro — la brújula del corazón apunta al tesoro. Identidad visual = la ORIGINAL del ETC (pez ICTUS de colores), no la Dirección A inventada; ver design/DESIGN_SYSTEM_ETC.md (director, 5-jun)." },
-    "branding_reglas_esteticas":{ "valor": "Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo original del director). Paleta derivada del logo: amarillo dorado + contorno marrón + las cinco letras ΙΧΘΥΣ (celeste/rojo/azul/naranja/magenta) como acentos, sobre crema. Sistema en design/DESIGN_SYSTEM_ETC.md.", "estado": "propuesta", "fuente": "director + logo original", "nota": "7-jun (final): el director descartó la Dirección A y pidió la identidad ORIGINAL del ETC con el LOGO ORIGINAL. (a) Portada: lema (Mt 6,21) + 88 + SOLO la fecha — NO va lugar. (b) INTERIOR tampoco va lugar (revierte la del 5-jun): la Carpeta no menciona Higüey ni Casa de Retiro en ningún lado. (c) Las 7 parejas de guías NO se mencionan en el booklet (van por aparte). (d) La brújula SÍ se queda en el mensaje de cierre, con códigos del ETC apuntando al corazón. (e) El tema 6 es 'Alegría del Perdón' (no 'Regalo del Perdón'). (f) El término histórico que en otros ETCs se usaba para los servidores con experiencia está prohibido en el booklet — usar 'los que ya han sido guías antes'." }
+    "lema_eteciano": {
+      "valor": "Siempre amigos",
+      "estado": "confirmado",
+      "fuente": "asociación",
+      "cita": "Jn 15:15",
+      "cita_texto": "Ya no os llamo siervos, os he llamado amigos"
+    },
+    "lema_retiro": {
+      "valor": "Donde está tu tesoro, allí estará tu corazón",
+      "estado": "confirmado",
+      "fuente": "director",
+      "cita": "Mt 6:21",
+      "nota": "Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro pregunta: ¿qué tesoro gobierna mi corazón hoy? Mt 13,44 queda como cita complementaria (la consecuencia del hallazgo)."
+    },
+    "hilo_espiritual": {
+      "valor": "El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, allí va mi corazón. El retiro propone una expedición hacia adentro para mirar qué tesoro gobierna el corazón hoy, y reordenarlo poniendo a Cristo como tesoro.",
+      "estado": "confirmado",
+      "fuente": "director",
+      "cita": "Mt 6:21",
+      "cita_texto": "Porque donde está tu tesoro, allí estará también tu corazón."
+    },
+    "tematica": {
+      "valor": "expedición · el tesoro y el corazón",
+      "estado": "confirmado",
+      "fuente": "director",
+      "cita": "Mt 6:21",
+      "nota": "Temática confirmada: la expedición es hacia adentro — la brújula del corazón apunta al tesoro. Identidad visual = la ORIGINAL del ETC (pez ICTUS de colores), no la Dirección A inventada; ver design/DESIGN_SYSTEM_ETC.md (director, 5-jun)."
+    },
+    "branding_reglas_esteticas": {
+      "valor": "Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo original del director). Paleta derivada del logo: amarillo dorado + contorno marrón + las cinco letras ΙΧΘΥΣ (celeste/rojo/azul/naranja/magenta) como acentos, sobre crema. Sistema en design/DESIGN_SYSTEM_ETC.md.",
+      "estado": "propuesta",
+      "fuente": "director + logo original",
+      "nota": "7-jun (final): el director descartó la Dirección A y pidió la identidad ORIGINAL del ETC con el LOGO ORIGINAL. (a) Portada: lema (Mt 6,21) + 88 + SOLO la fecha — NO va lugar. (b) INTERIOR tampoco va lugar (revierte la del 5-jun): la Carpeta no menciona Higüey ni Casa de Retiro en ningún lado. (c) Las 7 parejas de guías NO se mencionan en el booklet (van por aparte). (d) La brújula SÍ se queda en el mensaje de cierre, con códigos del ETC apuntando al corazón. (e) El tema 6 es 'Alegría del Perdón' (no 'Regalo del Perdón'). (f) El término histórico que en otros ETCs se usaba para los servidores con experiencia está prohibido en el booklet — usar 'los que ya han sido guías antes'."
+    }
   },
-
   "equipos_auxiliares": [
-    { "nombre": "Recaudación y Donaciones", "estado_equipo": "confirmado", "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables." }, "miembros": [] },
-    { "nombre": "Guagua (Transporte)", "estado_equipo": "confirmado", "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).", "responsable": { "valor": "Producción", "estado": "propuesta" }, "miembros": [] },
-    { "nombre": "Actividad Profondo", "estado_equipo": "confirmado", "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.", "responsable": { "valor": "Directores", "estado": "propuesta" }, "miembros": [] },
-    { "nombre": "Intersección (diáspora)", "estado_equipo": "confirmado", "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.", "responsable": { "valor": "Por nombrar (Co-Dir decide)", "estado": "pendiente", "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)." }, "miembros": [] },
-    { "nombre": "Finanzas / Tesorería (auxiliar)", "estado_equipo": "confirmado", "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.", "responsable": { "valor": "Por nombrar dentro del equipo (Co-Dir decide)", "estado": "pendiente", "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección." }, "miembros": [] }
+    {
+      "nombre": "Recaudación y Donaciones",
+      "estado_equipo": "confirmado",
+      "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable).",
+      "responsable": {
+        "valor": "Por nombrar (Co-Dir decide)",
+        "estado": "pendiente",
+        "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables."
+      },
+      "miembros": []
+    },
+    {
+      "nombre": "Guagua (Transporte)",
+      "estado_equipo": "confirmado",
+      "descripcion": "Coordinación de transporte para formaciones, retiro y avanzada. Equipo externo (no pernocta en la casa).",
+      "responsable": {
+        "valor": "Producción",
+        "estado": "propuesta"
+      },
+      "miembros": []
+    },
+    {
+      "nombre": "Actividad Profondo",
+      "estado_equipo": "confirmado",
+      "descripcion": "Profondo #1 (primera actividad de recaudación, 31-jul → 2-ago; formato por definir por el director). Profondo #2 = venta de comida / garaje.",
+      "responsable": {
+        "valor": "Directores",
+        "estado": "propuesta"
+      },
+      "miembros": []
+    },
+    {
+      "nombre": "Intersección (diáspora)",
+      "estado_equipo": "confirmado",
+      "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.",
+      "responsable": {
+        "valor": "Por nombrar (Co-Dir decide)",
+        "estado": "pendiente",
+        "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)."
+      },
+      "miembros": []
+    },
+    {
+      "nombre": "Finanzas / Tesorería (auxiliar)",
+      "estado_equipo": "confirmado",
+      "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
+      "responsable": {
+        "valor": "Por nombrar dentro del equipo (Co-Dir decide)",
+        "estado": "pendiente",
+        "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección."
+      },
+      "miembros": []
+    }
   ],
-
   "comunidades_y_parroquias": {
-    "parroquia_spm":      { "valor": "San José Obrero (SPM)", "estado": "confirmado", "fuente": "director", "nota": "Parroquia de referencia en SPM (misas etecianas y posibles actividades post-misa)." },
-    "parroquia_pc":       { "valor": "Nuestra Señora del Pilar (Punta Cana)", "estado": "confirmado", "fuente": "director", "nota": "Parroquia en PC con representación del 88 en el equipo; aún no se han realizado actividades allí — oportunidad para potenciar." },
-    "etecianos_pc_en_88": { "valor": ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Belliard", "Ivanna Marien Mercedes Sosa", "Jordelis Mateo", "José Ángel Tusen Russo", "Tommy Nova Nolasco", "Yelaxni Mota"], "estado": "confirmado", "fuente": "data/equipo.json (residencia=Punta Cana)", "nota": "Etecianos del 88 residentes en Punta Cana — base natural para activar la parroquia del Pilar." },
-    "liga_softball_etecianos": { "valor": "Equipo/liga de softball de etecianos que ya se reúne y juega", "estado": "confirmado", "fuente": "director", "nota": "Actividad existente de la comunidad eteciana — potenciable para profondos pequeños (juego benéfico, vender palomitas/entradas, aporte simbólico de los jugadores)." }
+    "parroquia_spm": {
+      "valor": "San José Obrero (SPM)",
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Parroquia de referencia en SPM (misas etecianas y posibles actividades post-misa)."
+    },
+    "parroquia_pc": {
+      "valor": "Nuestra Señora del Pilar (Punta Cana)",
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Parroquia en PC con representación del 88 en el equipo; aún no se han realizado actividades allí — oportunidad para potenciar."
+    },
+    "etecianos_pc_en_88": {
+      "valor": [
+        "Candy Elizabeth Gatwood Ramos",
+        "Dorian Elina Rodriguez Belliard",
+        "Ivanna Marien Mercedes Sosa",
+        "Jordelis Mateo",
+        "José Ángel Tusen Russo",
+        "Tommy Nova Nolasco",
+        "Yelaxni Mota"
+      ],
+      "estado": "confirmado",
+      "fuente": "data/equipo.json (residencia=Punta Cana)",
+      "nota": "Etecianos del 88 residentes en Punta Cana — base natural para activar la parroquia del Pilar."
+    },
+    "liga_softball_etecianos": {
+      "valor": "Equipo/liga de softball de etecianos que ya se reúne y juega",
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "Actividad existente de la comunidad eteciana — potenciable para profondos pequeños (juego benéfico, vender palomitas/entradas, aporte simbólico de los jugadores)."
+    }
   },
-
   "asesores_externos": {
-    "cocina":          { "valor": ["Mary \"Petra\" Morales", "Johanny García"], "estado": "confirmado", "fuente": "director" },
-    "comunidad_sd":    { "valor": ["Marleny", "Sandrita"], "estado": "confirmado", "fuente": "director", "nota": "2 representantes (asesores) de la comunidad de Santo Domingo." },
-    "comunidad_la_vega": { "valor": ["Leticia González"], "estado": "confirmado", "fuente": "director", "nota": "1 representante (asesor): Leticia González." }
+    "cocina": {
+      "valor": [
+        "Mary \"Petra\" Morales",
+        "Johanny García"
+      ],
+      "estado": "confirmado",
+      "fuente": "director"
+    },
+    "comunidad_sd": {
+      "valor": [
+        "Marleny",
+        "Sandrita"
+      ],
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "2 representantes (asesores) de la comunidad de Santo Domingo."
+    },
+    "comunidad_la_vega": {
+      "valor": [
+        "Leticia González"
+      ],
+      "estado": "confirmado",
+      "fuente": "director",
+      "nota": "1 representante (asesor): Leticia González."
+    }
   },
-
   "calendario_hitos": {
     "_fuente": "data/calendario.ics (Misiones Diocesanas SPM, publicado 17-may-2026). Calendario oficial del equipo: formaciones dominicales, misas etecianas, Profondo, Convivencia, Ensayo, Avanzada y retiro. Para items internos de la dirección ver 'pendientes_direccion' más abajo.",
-    "reunion_coordinadores":   { "valor": "jueves 4-jun (Corpus Christi, virtual)", "estado": "confirmado", "fuente": "coordinadores" },
-    "misa_eteciana_7jun":      { "valor": "domingo 7-jun", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana." },
-    "formacion_1":             { "valor": "domingo 14-jun", "estado": "confirmado", "fuente": "ics", "nota": "Primera Formación." },
-    "clausura_etc87_la_vega":  { "valor": "domingo 21-jun", "estado": "confirmado", "fuente": "ics", "nota": "Clausura del ETC 87 en La Vega. NO hay Formación este domingo." },
-    "formacion_2":             { "valor": "domingo 28-jun", "estado": "confirmado", "fuente": "ics", "nota": "Segunda Formación." },
-    "formacion_3":             { "valor": "domingo 5-jul", "estado": "confirmado", "fuente": "ics + director", "nota": "Tercera Formación. Inicio de recaudación de cuotas (el miembro paga todo o por cuotas, a su decisión)." },
-    "misa_eteciana_12jul":     { "valor": "domingo 12-jul", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana. NO hay Formación este domingo." },
-    "formacion_4":             { "valor": "domingo 19-jul", "estado": "confirmado", "fuente": "ics", "nota": "Cuarta Formación. Contemplar la lectura de perfiles." },
-    "dia_del_padre":           { "valor": "domingo 26-jul", "estado": "confirmado", "fuente": "ics", "nota": "Día del Padre. NO hay Formación este domingo." },
-    "profondo_1":              { "valor": "viernes 31-jul → domingo 2-ago", "estado": "confirmado", "fuente": "ics", "nota": "Actividad Profondo No. 01 (formato por definir por el director); el neto entra a inicios de agosto." },
-    "misa_eteciana_9ago":      { "valor": "domingo 9-ago", "estado": "confirmado", "fuente": "ics", "nota": "Misa Eteciana. NO hay Formación este domingo." },
-    "convivencia":             { "valor": "domingo 16-ago", "estado": "confirmado", "fuente": "ics", "nota": "Convivencia / Retiro. Programar temprano y concluir al mediodía para reducir costos de almuerzo." },
-    "ensayo_general":          { "valor": "domingo 23-ago", "estado": "confirmado", "fuente": "ics + director", "nota": "Ensayo General del ETC 88. Asistencia obligatoria." },
-    "conciliacion_pre_etc":    { "valor": "domingo 30-ago", "estado": "confirmado", "fuente": "ics", "nota": "Conciliar todos los pagos, corregir testimonios, atender observaciones del Ensayo General y planificación final." },
-    "avanzada_cocina":         { "valor": "jueves 3-sep", "estado": "confirmado", "fuente": "ics", "nota": "Avanzada del Equipo de Cocina (jueves)." },
-    "retiro_etc88":            { "valor": "viernes 4-sep → domingo 6-sep", "estado": "confirmado", "fuente": "ics + director", "nota": "Encuentro ETC 88. Horario detallado en la Carpeta (Sección 7)." }
+    "reunion_coordinadores": {
+      "valor": "jueves 4-jun (Corpus Christi, virtual)",
+      "estado": "confirmado",
+      "fuente": "coordinadores"
+    },
+    "misa_eteciana_7jun": {
+      "valor": "domingo 7-jun",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Misa Eteciana."
+    },
+    "formacion_1": {
+      "valor": "domingo 14-jun",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Primera Formación."
+    },
+    "clausura_etc87_la_vega": {
+      "valor": "domingo 21-jun",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Clausura del ETC 87 en La Vega. NO hay Formación este domingo."
+    },
+    "formacion_2": {
+      "valor": "domingo 28-jun",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Segunda Formación."
+    },
+    "formacion_3": {
+      "valor": "domingo 5-jul",
+      "estado": "confirmado",
+      "fuente": "ics + director",
+      "nota": "Tercera Formación. Inicio de recaudación de cuotas (el miembro paga todo o por cuotas, a su decisión)."
+    },
+    "misa_eteciana_12jul": {
+      "valor": "domingo 12-jul",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Misa Eteciana. NO hay Formación este domingo."
+    },
+    "formacion_4": {
+      "valor": "domingo 19-jul",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Cuarta Formación. Contemplar la lectura de perfiles."
+    },
+    "dia_del_padre": {
+      "valor": "domingo 26-jul",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Día del Padre. NO hay Formación este domingo."
+    },
+    "profondo_1": {
+      "valor": "viernes 31-jul → domingo 2-ago",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Actividad Profondo No. 01 (formato por definir por el director); el neto entra a inicios de agosto."
+    },
+    "misa_eteciana_9ago": {
+      "valor": "domingo 9-ago",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Misa Eteciana. NO hay Formación este domingo."
+    },
+    "convivencia": {
+      "valor": "domingo 16-ago",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Convivencia / Retiro. Programar temprano y concluir al mediodía para reducir costos de almuerzo."
+    },
+    "ensayo_general": {
+      "valor": "domingo 23-ago",
+      "estado": "confirmado",
+      "fuente": "ics + director",
+      "nota": "Ensayo General del ETC 88. Asistencia obligatoria."
+    },
+    "conciliacion_pre_etc": {
+      "valor": "domingo 30-ago",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Conciliar todos los pagos, corregir testimonios, atender observaciones del Ensayo General y planificación final."
+    },
+    "avanzada_cocina": {
+      "valor": "jueves 3-sep",
+      "estado": "confirmado",
+      "fuente": "ics",
+      "nota": "Avanzada del Equipo de Cocina (jueves)."
+    },
+    "retiro_etc88": {
+      "valor": "viernes 4-sep → domingo 6-sep",
+      "estado": "confirmado",
+      "fuente": "ics + director",
+      "nota": "Encuentro ETC 88. Horario detallado en la Carpeta (Sección 7)."
+    }
   },
-
   "pendientes_direccion": {
     "_nota": "Asuntos que conciernen SOLO a los directores (no se distribuyen al equipo general). No aparecen en el calendario público del equipo ni en el tablero compartible.",
-    "fecha_limite_cotizar_transporte": { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Fecha límite para cotizar transporte, biblias y peces. Definir." },
-    "asignacion_entradas":             { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después." },
-    "visiteo_coordinadores_casa":      { "valor": null, "estado": "pendiente", "fuente": "director", "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana sugerida entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día." }
+    "fecha_limite_cotizar_transporte": {
+      "valor": null,
+      "estado": "pendiente",
+      "fuente": "director",
+      "nota": "Fecha límite para cotizar transporte, biblias y peces. Definir."
+    },
+    "asignacion_entradas": {
+      "valor": null,
+      "estado": "pendiente",
+      "fuente": "director",
+      "nota": "Política de earmark (qué entrada se destina a qué compromiso). Se revisa después."
+    },
+    "visiteo_coordinadores_casa": {
+      "valor": null,
+      "estado": "pendiente",
+      "fuente": "director",
+      "nota": "Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del retiro (gap señalado en el Informe Final ETC 85). PRE-REQUISITO: coordinar fecha con la administración de la casa (Samuel Montilla). Ventana sugerida entre F2 (28-jun) y F4 (19-jul), ideal sábado para no chocar con formaciones — el director fija el día."
+    }
   },
-
   "historial": {
-    "etcs_disponibles_en_drive": { "valor": ["ETC 78", "ETC 79", "ETC 83", "ETC 85", "ETC 88"], "estado": "confirmado", "fuente": "exploración Drive 2026-06-04", "nota": "Carpeta padre Drive contiene 78, 79, 83, 85, 88. El ETC 83 fue agregado por el director el 4-jun-2026." },
-    "etc_83_disponible":         { "valor": true, "estado": "confirmado", "fuente": "Drive: carpeta ETC 83 compartida por el director 2026-06-04", "nota": "Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster + Equipos 83 (xlsx), Hoja s/título (xlsx), Guía para Guías LXXIX.pdf (referencial). NO hay informe final, ni programa del retiro, ni guía propia. ETC 83 ocurrió 30 ago - 1 sep 2024." },
-    "informe_final_85":          { "valor": "Informe Final ETC 85.pdf — leído en Drive", "estado": "confirmado", "fuente": "Drive: ETC 85 / Informe Final ETC 85.pdf", "nota": "Roster 85 + puntos positivos + aspectos a mejorar + medidas financieras. Base de las recomendaciones de gaps del 88." },
-    "drive_88_carpetas_vacias":  { "valor": ["Operaciones", "Finanzas"], "estado": "confirmado", "fuente": "exploración Drive 2026-06-02", "nota": "Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pasados las tienen llenas)." },
-    "revision_cruzada_completa": { "valor": "78/79/83/85 revisados a fondo 2026-06-04", "estado": "confirmado", "fuente": "Drive: lectura de los 5 folders", "nota": "Síntesis en preparacion/RESUMEN_MIGRACION_ETCS.md. 79 tiene el set documental más rico (guía librito, responsabilidades, rúbrica de evaluación de servidores, perfil, cierre). 78 tiene la guía meta 'cómo preparar un ETC por pasos' + costos base. 85 tiene el Informe Final + el formulario de Perfil del Participante. 83 tiene el presupuesto de cocina + detalles por comida." },
-    "asesoras_cocina_continuidad": { "valor": "Petra Morales + Johanny García sirvieron en ETC 83 y ETC 85", "estado": "confirmado", "fuente": "Informe Final ETC 85 (roster: 'Asesores de cocina: Johani y Petra') + Presupuesto cocina ETC 83", "nota": "Continuidad de asesoras de cocina confirmada en 83 y 85. Son cantera consolidada para el 88." }
+    "etcs_disponibles_en_drive": {
+      "valor": [
+        "ETC 78",
+        "ETC 79",
+        "ETC 83",
+        "ETC 85",
+        "ETC 88"
+      ],
+      "estado": "confirmado",
+      "fuente": "exploración Drive 2026-06-04",
+      "nota": "Carpeta padre Drive contiene 78, 79, 83, 85, 88. El ETC 83 fue agregado por el director el 4-jun-2026."
+    },
+    "etc_83_disponible": {
+      "valor": true,
+      "estado": "confirmado",
+      "fuente": "Drive: carpeta ETC 83 compartida por el director 2026-06-04",
+      "nota": "Contiene 4 archivos: Presupuesto cocina ETC 83 (xlsx grande), Roster + Equipos 83 (xlsx), Hoja s/título (xlsx), Guía para Guías LXXIX.pdf (referencial). NO hay informe final, ni programa del retiro, ni guía propia. ETC 83 ocurrió 30 ago - 1 sep 2024."
+    },
+    "informe_final_85": {
+      "valor": "Informe Final ETC 85.pdf — leído en Drive",
+      "estado": "confirmado",
+      "fuente": "Drive: ETC 85 / Informe Final ETC 85.pdf",
+      "nota": "Roster 85 + puntos positivos + aspectos a mejorar + medidas financieras. Base de las recomendaciones de gaps del 88."
+    },
+    "drive_88_carpetas_vacias": {
+      "valor": [
+        "Operaciones",
+        "Finanzas"
+      ],
+      "estado": "confirmado",
+      "fuente": "exploración Drive 2026-06-02",
+      "nota": "Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pasados las tienen llenas)."
+    },
+    "revision_cruzada_completa": {
+      "valor": "78/79/83/85 revisados a fondo 2026-06-04",
+      "estado": "confirmado",
+      "fuente": "Drive: lectura de los 5 folders",
+      "nota": "Síntesis en preparacion/RESUMEN_MIGRACION_ETCS.md. 79 tiene el set documental más rico (guía librito, responsabilidades, rúbrica de evaluación de servidores, perfil, cierre). 78 tiene la guía meta 'cómo preparar un ETC por pasos' + costos base. 85 tiene el Informe Final + el formulario de Perfil del Participante. 83 tiene el presupuesto de cocina + detalles por comida."
+    },
+    "asesoras_cocina_continuidad": {
+      "valor": "Petra Morales + Johanny García sirvieron en ETC 83 y ETC 85",
+      "estado": "confirmado",
+      "fuente": "Informe Final ETC 85 (roster: 'Asesores de cocina: Johani y Petra') + Presupuesto cocina ETC 83",
+      "nota": "Continuidad de asesoras de cocina confirmada en 83 y 85. Son cantera consolidada para el 88."
+    }
   },
-
   "gaps_post_informe_85": {
     "_nota": "Recomendaciones tomadas del Informe Final ETC 85. Cada una es [PROPUESTA] / [POR DEFINIR] hasta que el director la apruebe.",
-    "responsable_financiero":          { "valor": null, "estado": "pendiente", "fuente": "Informe 85 + director (3-jun)", "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)." },
-    "informe_post_retiro":             { "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.", "estado": "propuesta", "fuente": "Informe 85, medida #5", "nota": "Compromiso para post-retiro (14-sep en adelante)." },
-    "oracion_grupal_obligatoria":      { "valor": "Participación obligatoria de TODOS los equipos (guías y asesores incluidos) en momentos grupales de oración.", "estado": "propuesta", "fuente": "Informe 85, aspecto a mejorar", "nota": "Agregar a las reglas como equipo en F1." },
-    "confirmar_n_etc_con_consejo":     { "valor": "Confirmar el # del ETC con concilio/consejo TEMPRANO; cambios tardíos en otras comunidades causaron retrabajos de cocina en el 85.", "estado": "propuesta", "fuente": "Informe 85", "nota": "Relevante a 'completar 100 en la casa'." },
-    "responsabilidades_asesores_estandarizadas": { "valor": "Estandarizar y documentar las responsabilidades de los asesores (cocina y generales).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Producir doc breve por tipo de asesor antes de F2." },
-    "escenario_cocina_con_donaciones": { "valor": "Modelar la canasta de cocina con un escenario 'con donaciones' (en 78: comida cayó ~70%, de \\$1,590 a \\$461/persona; en 78 el 51% del presupuesto total fue donado).", "estado": "propuesta", "fuente": "ETC 78 Costo ETC Participantes + Presupuesto General Agosto 7", "nota": "Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite del Padre Paul; lácteos; res; pollo)." },
-    "visiteo_casa_obligatorio":        { "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar pendientes_direccion.visiteo_coordinadores_casa).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Coordina con Samuel Montilla antes de fijar fecha." },
-    "oficina_separada_pg":             { "valor": "La oficina debe estar separada de los pequeños grupos y organizarse para uso eficiente.", "estado": "propuesta", "fuente": "Informe 85", "nota": "A tener en cuenta en el visiteo a la casa." },
-    "cocina_no_abrumar_palancas":      { "valor": "La cocina no abruma a los participantes durante el proceso de palancas (controlar abrazos).", "estado": "propuesta", "fuente": "Informe 85", "nota": "Recordatorio para el Ensayo General." },
-    "luces_apagadas_cena_sabado":      { "valor": "Evaluar mantener las luces apagadas en la cena del sábado para preservar la solemnidad.", "estado": "propuesta", "fuente": "Informe 85", "nota": "Decisión de Co-Dir + asesores espirituales." }
+    "responsable_financiero": {
+      "valor": null,
+      "estado": "pendiente",
+      "fuente": "Informe 85 + director (3-jun)",
+      "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)."
+    },
+    "informe_post_retiro": {
+      "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.",
+      "estado": "propuesta",
+      "fuente": "Informe 85, medida #5",
+      "nota": "Compromiso para post-retiro (14-sep en adelante)."
+    },
+    "oracion_grupal_obligatoria": {
+      "valor": "Participación obligatoria de TODOS los equipos (guías y asesores incluidos) en momentos grupales de oración.",
+      "estado": "propuesta",
+      "fuente": "Informe 85, aspecto a mejorar",
+      "nota": "Agregar a las reglas como equipo en F1."
+    },
+    "confirmar_n_etc_con_consejo": {
+      "valor": "Confirmar el # del ETC con concilio/consejo TEMPRANO; cambios tardíos en otras comunidades causaron retrabajos de cocina en el 85.",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "Relevante a 'completar 100 en la casa'."
+    },
+    "responsabilidades_asesores_estandarizadas": {
+      "valor": "Estandarizar y documentar las responsabilidades de los asesores (cocina y generales).",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "Producir doc breve por tipo de asesor antes de F2."
+    },
+    "escenario_cocina_con_donaciones": {
+      "valor": "Modelar la canasta de cocina con un escenario 'con donaciones' (en 78: comida cayó ~70%, de \\$1,590 a \\$461/persona; en 78 el 51% del presupuesto total fue donado).",
+      "estado": "propuesta",
+      "fuente": "ETC 78 Costo ETC Participantes + Presupuesto General Agosto 7",
+      "nota": "Reforzar gestión de donaciones en especie (arroz, habichuelas, aceite del Padre Paul; lácteos; res; pollo)."
+    },
+    "visiteo_casa_obligatorio": {
+      "valor": "Hacer obligatorio el visiteo a la casa de retiro previo (referenciar pendientes_direccion.visiteo_coordinadores_casa).",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "Coordina con Samuel Montilla antes de fijar fecha."
+    },
+    "oficina_separada_pg": {
+      "valor": "La oficina debe estar separada de los pequeños grupos y organizarse para uso eficiente.",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "A tener en cuenta en el visiteo a la casa."
+    },
+    "cocina_no_abrumar_palancas": {
+      "valor": "La cocina no abruma a los participantes durante el proceso de palancas (controlar abrazos).",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "Recordatorio para el Ensayo General."
+    },
+    "luces_apagadas_cena_sabado": {
+      "valor": "Evaluar mantener las luces apagadas en la cena del sábado para preservar la solemnidad.",
+      "estado": "propuesta",
+      "fuente": "Informe 85",
+      "nota": "Decisión de Co-Dir + asesores espirituales."
+    }
   },
-
   "mapa_donaciones_por_rubro": {
     "_nota": "Mapa de donaciones por partida del presupuesto y por zona. Cada empresa/contacto = [PROPUESTA] salvo lo que el director confirme. NUNCA hardcodear contactos sin fuente. Sectores derivados del cruce con ETC 78/79 (donde se ve qué se donó).",
     "zonas": {
-      "spm":   { "valor": "San Pedro de Macorís — parroquia San José Obrero + comercios locales", "estado": "confirmado", "fuente": "director" },
-      "higuey":{ "valor": "Higüey — cerca de la casa, proveedores locales (insumos pesados/frescos)", "estado": "confirmado", "fuente": "ubicación de la casa" },
-      "pc":    { "valor": "Punta Cana — parroquia Nuestra Señora del Pilar + hoteles para premios/estadías + comercios PC", "estado": "confirmado", "fuente": "director" }
+      "spm": {
+        "valor": "San Pedro de Macorís — parroquia San José Obrero + comercios locales",
+        "estado": "confirmado",
+        "fuente": "director"
+      },
+      "higuey": {
+        "valor": "Higüey — cerca de la casa, proveedores locales (insumos pesados/frescos)",
+        "estado": "confirmado",
+        "fuente": "ubicación de la casa"
+      },
+      "pc": {
+        "valor": "Punta Cana — parroquia Nuestra Señora del Pilar + hoteles para premios/estadías + comercios PC",
+        "estado": "confirmado",
+        "fuente": "director"
+      }
     },
     "rubros": {
       "_nota": "Cada rubro lista (a) sectores que típicamente donan, (b) candidatos del 79 confirmados, (c) propuestas sin confirmar. Lo confirmado = lo que el director o el doc fuente diga; lo demás es [PROPUESTA].",
-      "casa_y_reserva":     { "donantes_confirmados": ["Parroquia del Padre Paul (RNC para exención)"], "sectores_propuesta": ["Parroquia local SPM"] },
-      "cocina_canasta":     { "donantes_confirmados": ["Padre Paul (arroz/habichuelas/aceite — ETC 79)"], "sectores_propuesta": ["MERCADOM", "El Suplidor", "Iberia (lácteos · ETC 78)", "Pricemart", "agricultores SPM/PC", "carnicerías SPM"] },
-      "transporte":         { "donantes_confirmados": [], "sectores_propuesta": ["Metro Servicios SPM", "Transportando RD", "DominicanBus", "empresas con guaguas en SPM/Higüey/PC"] },
-      "materiales_liturgico":{ "donantes_confirmados": [], "sectores_propuesta": ["Cofradía/parroquia (peces)", "SDQLee", "Cuesta Libros", "librerías católicas", "Multibox (cajas/cofre palancas — usado en 78)"] },
-      "biblias":            { "donantes_confirmados": [], "sectores_propuesta": ["SDQLee", "Cuesta", "Librería Paulinas", "Verbo Divino"] },
-      "vino_y_formas":      { "donantes_confirmados": [], "sectores_propuesta": ["Parroquia del Padre Paul (donación litúrgica directa)"] },
-      "banderin":           { "donantes_confirmados": [], "sectores_propuesta": ["Talleres de costura SPM", "serigrafía SPM", "imprentas SPM"] },
-      "camisetas":          { "donantes_confirmados": [], "sectores_propuesta": ["Serigrafía SPM (Print Mate — usado en 78)", "imprentas SPM"] },
-      "guias_pg":           { "donantes_confirmados": [], "sectores_propuesta": ["Cactus (libretas/papelería — usado en 78)", "Print Mate (impresiones — usado en 78)"] },
-      "musica":             { "donantes_confirmados": [], "sectores_propuesta": ["La casa tiene sonido (no aplica donación grande)"] },
-      "profondo_recursos":  { "donantes_confirmados": [], "sectores_propuesta": ["Comercios SPM (electrodomésticos)", "supermercados SPM/PC (gift cards)", "hoteles Punta Cana (noche por publicidad)"] },
-      "imprevistos":        { "donantes_confirmados": [], "sectores_propuesta": ["Donaciones en efectivo de etecianos con experiencia previa (modelo del 78)"] }
+      "casa_y_reserva": {
+        "donantes_confirmados": [
+          "Parroquia del Padre Paul (RNC para exención)"
+        ],
+        "sectores_propuesta": [
+          "Parroquia local SPM"
+        ]
+      },
+      "cocina_canasta": {
+        "donantes_confirmados": [
+          "Padre Paul (arroz/habichuelas/aceite — ETC 79)"
+        ],
+        "sectores_propuesta": [
+          "MERCADOM",
+          "El Suplidor",
+          "Iberia (lácteos · ETC 78)",
+          "Pricemart",
+          "agricultores SPM/PC",
+          "carnicerías SPM"
+        ]
+      },
+      "transporte": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Metro Servicios SPM",
+          "Transportando RD",
+          "DominicanBus",
+          "empresas con guaguas en SPM/Higüey/PC"
+        ]
+      },
+      "materiales_liturgico": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Cofradía/parroquia (peces)",
+          "SDQLee",
+          "Cuesta Libros",
+          "librerías católicas",
+          "Multibox (cajas/cofre palancas — usado en 78)"
+        ]
+      },
+      "biblias": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "SDQLee",
+          "Cuesta",
+          "Librería Paulinas",
+          "Verbo Divino"
+        ]
+      },
+      "vino_y_formas": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Parroquia del Padre Paul (donación litúrgica directa)"
+        ]
+      },
+      "banderin": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Talleres de costura SPM",
+          "serigrafía SPM",
+          "imprentas SPM"
+        ]
+      },
+      "camisetas": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Serigrafía SPM (Print Mate — usado en 78)",
+          "imprentas SPM"
+        ]
+      },
+      "guias_pg": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Cactus (libretas/papelería — usado en 78)",
+          "Print Mate (impresiones — usado en 78)"
+        ]
+      },
+      "musica": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "La casa tiene sonido (no aplica donación grande)"
+        ]
+      },
+      "profondo_recursos": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Comercios SPM (electrodomésticos)",
+          "supermercados SPM/PC (gift cards)",
+          "hoteles Punta Cana (noche por publicidad)"
+        ]
+      },
+      "imprevistos": {
+        "donantes_confirmados": [],
+        "sectores_propuesta": [
+          "Donaciones en efectivo de etecianos con experiencia previa (modelo del 78)"
+        ]
+      }
     }
   },
-
   "decisiones_confirmadas": [
     "Retiro ETC 88: 4–6 de septiembre de 2026, Casa de Retiro La Ceiba del Salado, Higüey.",
     "Co-dirección: Juan Manuel de la Cruz y Jean Carlo de la Cruz.",
@@ -192,9 +682,12 @@
     "La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).",
     "Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.",
     "La Vega: 1 asesor de comunidad, Leticia González.",
-    "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello."
+    "Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello.",
+    "10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).",
+    "10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary \"Petra\" 19-oct · Johanny 13-feb.",
+    "10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).",
+    "10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director."
   ],
-
   "pendientes": [
     "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
     "Confirmar el conteo final de participantes para completar 100 en la casa.",

@@ -427,6 +427,7 @@ banderas = [
     {'n':33, 'bandera':'Familia De la Cruz Méndez (3 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord)', 'accion':'OK distribución (Fabelly salió del equipo 7-jun)', 'resp':'Directores'},
     {'n':35, 'bandera':'Migralepsia (migraña + epilepsia) — riesgo con mucho calor o sin desayunar', 'persona':'Pamela Colón (Cocina)', 'accion':'Garantizar desayuno regular + agua + sombra disponible; sin medicamentos pero alertar enfermería', 'resp':'Coord. Cocina + Asesores'},
     {'n':36, 'bandera':'Cambio de equipo 10-jun: Jordelis sale, Pamela Colón entra titular cocina', 'persona':'Jordelis Mateo (fuera) / Pamela Colón (titular)', 'accion':'Aplicado · cocina sigue en 21', 'resp':'Directores'},
+    {'n':37, 'bandera':'Hermanas en Cocina — Risaira y Risairi Santana Rosario', 'persona':'Risaira, Risairi Santana Rosario', 'accion':'Confirmado por director (10-jun): no es typo, son hermanas. Mantener registro separado.', 'resp':'—'},
 ]
 
 invitados_list = []
