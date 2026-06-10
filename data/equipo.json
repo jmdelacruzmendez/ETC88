@@ -1820,48 +1820,6 @@
       "transversal": false
     },
     {
-      "id": "jordelis-mateo",
-      "nombre": "Jordelis Mateo",
-      "sexo": "F",
-      "edad": 26,
-      "cumple_mes": 7,
-      "cumple_dia": 26,
-      "cumple_anio": 1999,
-      "etc_propio": 79,
-      "etc_anio_propio": 2023,
-      "etcs_servidos": 2,
-      "residencia": "Punta Cana",
-      "comunidad": "Betania",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "M",
-      "telefono": "8296101254",
-      "que_espera": "Espero revivir esa chispa que sentí cuando participé de mi ETC 79, y ese encuentro tanto intimo, como colectivo que viví siendo parte del equipo de cocina del ETC 83. ",
-      "miedos": "Miedo tal vez a no saber confrontar alguna situación con algún participante o miembro del equipo. ",
-      "tema_dios": "Si, aceptar sus planes y dejar que Dios sea Dios en mi vida. ",
-      "invita": "Sí",
-      "idea_recaudacion": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan. ",
-      "alergias": "Ninguna",
-      "condiciones": "Actualmente en POSTOPERATORIO. ",
-      "medicamentos": "N/A",
-      "contacto_emergencia": "Kedward Acevedo (ESposo) 829-610-1254\nYovany Cepeda (Tía-Mamá) 829-714-8863",
-      "palabra": "Aceptar",
-      "dudas": "Más bien una salvedad, actualmente estoy en postoperatorio por una intervención que tuve, me siento bien y estoy evolucionando bien, sin embargo, quisiera que lo sepan por si se me presenta alguna situación en el camino. ",
-      "algo_directores": "Expuesto más arriba. ",
-      "invitados": [
-        {
-          "nombre": "Yosmelkys Reyes",
-          "edad": "23.0",
-          "relacion": "Familiar"
-        }
-      ],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "kelvin-alexis-ventura-santana",
       "nombre": "Kelvin Alexis Ventura Santana",
       "sexo": "M",
@@ -1949,25 +1907,37 @@
       "cumple_anio": 2006,
       "etc_propio": 85,
       "etc_anio_propio": 2025,
-      "etcs_servidos": 0,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
+      "etcs_servidos": null,
+      "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "S",
       "telefono": "8494062313",
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
+      "que_espera": "Dar un poquito de todo lo que recibí en el 85\nHacer que la experiencia del 88 sea igual de bonita o mejor ",
+      "miedos": "Llego con el miedo de no estar a la altura \nPero tambien con el deseo de aprender, crecer y dejar que Dios me vaya guiando durante el proceso ",
+      "tema_dios": "Diría que la confianza en el \n",
+      "invita": "Sí",
+      "idea_recaudacion": "Alcancías solidarias\nSe le da a cada familia Eteciana una alcancia y en tu dia a dia 25 pesos que dejes...\nVenta de postres \nFlan\nBrownies etc...",
+      "alergias": "Ninguna",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno ",
+      "contacto_emergencia": "Fernando Montero( Novio) 8094029902",
+      "palabra": "Entrega",
+      "dudas": "Noup",
+      "algo_directores": "Nopp",
+      "invitados": [
+        {
+          "nombre": "Lusiany Castillo",
+          "edad": "18.0",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Hemerson Asencio",
+          "edad": "18.0",
+          "relacion": "Amigo"
+        }
+      ],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
@@ -1977,7 +1947,7 @@
     {
       "id": "merkin-jean-v-squez",
       "nombre": "Merkin Jean Vásquez",
-      "sexo": null,
+      "sexo": "F",
       "edad": 22,
       "cumple_mes": 5,
       "cumple_dia": 4,
@@ -1985,35 +1955,77 @@
       "etc_propio": 86,
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
+      "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "M",
-      "telefono": "8296185249",
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
+      "telefono": "18296185249",
+      "que_espera": "Revivir los momentos de mi etc, compartir con otros dar y recibir ",
+      "miedos": "A ser juzgado ",
+      "tema_dios": "El rencor ",
+      "invita": "Todavía no sé",
+      "idea_recaudacion": "Ventas tipo kermés, rifas ",
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna ",
+      "medicamentos": "Ninguno ",
+      "contacto_emergencia": "Madre 849 527 2708 ",
+      "palabra": "Disposición ",
+      "dudas": "Por qué me eligieron a mí ? ",
+      "algo_directores": "Por el momento nada ",
       "invitados": [],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false,
-      "nota": "Subió de backup de cocina a titular (7-jun), reemplazando a Fabelly Maciel (fuera del equipo). Respondió el formulario 7-jun; apellido confirmado = Vásquez."
+      "transversal": false
+    },
+    {
+      "id": "pamela-col-n",
+      "nombre": "Pamela Colón",
+      "sexo": "F",
+      "edad": 21,
+      "cumple_mes": 5,
+      "cumple_dia": 15,
+      "cumple_anio": 2005,
+      "etc_propio": 86,
+      "etc_anio_propio": 2025,
+      "etcs_servidos": 0,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "S",
+      "telefono": "18293422888",
+      "que_espera": "Vivir otra experiencia maravillosa junto al equipo y familia ",
+      "miedos": "Ninguna ",
+      "tema_dios": "Yo diría que mi timidez, ya que tal vez eso era lo que me alejaba a vivir nuevas experiencias y a acercarme más a él. ",
+      "invita": "Sí",
+      "idea_recaudacion": "Podría ser tipo una noche de cine cobrando entrada y cosas así.\nUn torneo de juegos (pero que juguemos los etecainos tambien) ",
+      "alergias": "Camarones, más nada ",
+      "condiciones": "Hace unos años me diagnosticaron con Migralepsia (migraña y epilepsia) pero hace un buen tiempo que no me pasa nada, no estoy tomando medicamentos, pero puede ser que por mucho calor o si no he desayunado me pueda dar un mareito leve.",
+      "medicamentos": "Ninguno ",
+      "contacto_emergencia": "Marcia Colón (mamá) 829-342-2888\nSamuel Humphreys (novio) 829-637-5820",
+      "palabra": "Emoción ",
+      "dudas": "Hasta ahora ninguna ",
+      "algo_directores": "Nada supongo ",
+      "invitados": [
+        {
+          "nombre": "Amanda Rivera",
+          "edad": "21 años",
+          "relacion": "Amigo"
+        }
+      ],
+      "sin_formulario": false,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
     },
     {
       "id": "randol-joseph-payano",
-      "nombre": "Randol Joseph Payano",
-      "sexo": "M",
+      "nombre": "Randol Joseph payano",
+      "sexo": "F",
       "edad": 19,
       "cumple_mes": 12,
       "cumple_dia": 18,
@@ -2021,30 +2033,30 @@
       "etc_propio": 85,
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
+      "residencia": "SPM",
+      "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "L",
-      "telefono": "8299639360",
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
+      "telefono": "18299639360",
+      "que_espera": "Buena amistad y todos nos divertamos trabajando en equipo para ver cómo fue que los nuestros ETC85 trabajaron y vivir esa experiencia ",
+      "miedos": "Tendré un poco de curiosidad el primer día pero todo saldrá bien ",
+      "tema_dios": "El llamado \nNo pensar todavía estar listo para servir en un ETC nuevo que se formaria ",
+      "invita": "Todavía no sé",
+      "idea_recaudacion": null,
+      "alergias": "Ambroxol ",
       "condiciones": null,
       "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
+      "contacto_emergencia": "809-715-0438.   829-989-7914. 829-602-3608. ",
+      "palabra": "Todo que si y dispuesto ",
       "dudas": null,
-      "algo_directores": null,
+      "algo_directores": "Tendrán mi ayuda en todo lo que me digan y estaré pendiente ",
       "invitados": [],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false,
-      "nota_nombre": "Nombre tomado del auto-reporte del formulario (decisión del director, 3-jun). El director lo había mencionado verbalmente como 'Randolph Joseph'."
+      "transversal": false
     },
     {
       "id": "risaira-santana-rosario",
@@ -2165,24 +2177,36 @@
       "etc_propio": 85,
       "etc_anio_propio": 2025,
       "etcs_servidos": 0,
-      "residencia": "—",
+      "residencia": "SPM",
       "comunidad": "Belén",
       "area": "cocina",
       "rol": "Cocina",
       "talla": "XS",
       "telefono": "8299330230",
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
+      "que_espera": "Juntos de la mano de Dios llevar a mas jóvenes a tener su encuentro con Cristo.",
+      "miedos": "Al ser la primera vez, creo que miedo a no saber que hacer o no ser suficiente ",
+      "tema_dios": "No estoy segura ",
+      "invita": "Sí",
+      "idea_recaudacion": null,
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna ",
+      "medicamentos": "Ninguno ",
+      "contacto_emergencia": "Rosaura Ramos (mamá) - 8496295233",
+      "palabra": "Disposición ",
       "dudas": null,
       "algo_directores": null,
-      "invitados": [],
+      "invitados": [
+        {
+          "nombre": "Digna Ally Guzmán de la Cruz",
+          "edad": "20.0",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Juan Alejandro Gonzalez",
+          "edad": "20.0",
+          "relacion": "Amigo"
+        }
+      ],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
@@ -2308,30 +2332,30 @@
       "etc_propio": 66,
       "etc_anio_propio": null,
       "etcs_servidos": 3,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
+      "residencia": "SPM",
+      "comunidad": "Betania",
       "area": "musica",
       "rol": "Música",
       "talla": "M",
       "telefono": "8298639956",
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
+      "que_espera": "Una oportunidad para servir nuevamente ",
+      "miedos": "No",
+      "tema_dios": "La paciencia y aceptar su voluntad ",
+      "invita": "Todavía no sé",
+      "idea_recaudacion": "Una Rifa podría ser algo bueno, que el boleto incluya una entrada a una tarde familiar dinde tambuen se haga ventas y se saque el premio ahi (solo tengo la idea) ",
+      "alergias": "Al polvo, polen, aromas fuertes ",
+      "condiciones": "Resistencia a la insulina",
+      "medicamentos": "Metformina",
+      "contacto_emergencia": "Randy Calderón, esposo, (849) 657-5857",
+      "palabra": "Esperanza ",
+      "dudas": "No",
+      "algo_directores": "Estoy en un proceso de un posible cambio de empleo, por eso no puedo asumir responsabilidades tales como coordinaciones ya que el futuro es un poco incierto y por la distancia en la vivo equipos que se necesitan reunir varias veces a la semana tampoco me sería factible ya que entiendo que la asistencia es súper importante en la organización sería lo único  😇y  sé cantar 🫰🏽❣️",
       "invitados": [],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false,
-      "nota": "Indicó en el formulario que NO puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia). Reside en Punta Cana."
+      "transversal": false
     },
     {
       "id": "dorian-elina-rodriguez-belliard",
@@ -2482,8 +2506,8 @@
       "nombre": "Frank Morales",
       "sexo": "M",
       "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
+      "cumple_mes": 7,
+      "cumple_dia": 11,
       "cumple_anio": null,
       "etc_propio": null,
       "etc_anio_propio": null,
@@ -2511,15 +2535,16 @@
       "backup": false,
       "vacante": false,
       "transversal": false,
-      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
+      "nota_telefono": "Confirmado por el director (6-jun-2026).",
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
     },
     {
       "id": "padre-paul-ram-rez",
       "nombre": "Padre Paul Ramírez",
       "sexo": "M",
       "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
+      "cumple_mes": 11,
+      "cumple_dia": 9,
       "cumple_anio": null,
       "etc_propio": null,
       "etc_anio_propio": null,
@@ -2547,15 +2572,16 @@
       "backup": false,
       "vacante": false,
       "transversal": true,
-      "nota_telefono": "Confirmado por el director (5-jun-2026). Cumpleaños pendiente."
+      "nota_telefono": "Confirmado por el director (5-jun-2026).",
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
     },
     {
       "id": "sor-angelina-lebr-n",
       "nombre": "Sor Angelina Lebrón",
       "sexo": "F",
       "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
+      "cumple_mes": 10,
+      "cumple_dia": 22,
       "cumple_anio": null,
       "etc_propio": null,
       "etc_anio_propio": null,
@@ -2583,15 +2609,16 @@
       "backup": false,
       "vacante": false,
       "transversal": true,
-      "nota_telefono": "Confirmado por el director (5-jun-2026). Cumpleaños pendiente."
+      "nota_telefono": "Confirmado por el director (5-jun-2026).",
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
     },
     {
       "id": "johanny-garc-a",
       "nombre": "Johanny García",
       "sexo": "F",
       "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
+      "cumple_mes": 2,
+      "cumple_dia": 13,
       "cumple_anio": null,
       "etc_propio": null,
       "etc_anio_propio": null,
@@ -2619,15 +2646,16 @@
       "backup": false,
       "vacante": false,
       "transversal": false,
-      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
+      "nota_telefono": "Confirmado por el director (6-jun-2026).",
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
     },
     {
       "id": "mary-petra-morales",
       "nombre": "Mary \"Petra\" Morales",
       "sexo": "F",
       "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
+      "cumple_mes": 10,
+      "cumple_dia": 19,
       "cumple_anio": null,
       "etc_propio": null,
       "etc_anio_propio": null,
@@ -2655,7 +2683,8 @@
       "backup": false,
       "vacante": false,
       "transversal": false,
-      "nota_telefono": "Confirmado por el director (6-jun-2026). Cumpleaños pendiente."
+      "nota_telefono": "Confirmado por el director (6-jun-2026).",
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
     },
     {
       "id": "carlos",
@@ -3506,8 +3535,8 @@
     {
       "n": 3,
       "bandera": "Cumple en Día del Padre (sin formación)",
-      "persona": "Jordelis Mateo",
-      "accion": "Mensaje virtual + saludo en F4",
+      "persona": "— (era Jordelis)",
+      "accion": "Caducó: Jordelis fuera del equipo (10-jun)",
       "resp": "Directores"
     },
     {
@@ -3534,8 +3563,8 @@
     {
       "n": 7,
       "bandera": "Postoperatoria",
-      "persona": "Jordelis Mateo",
-      "accion": "No asignar carga física pesada",
+      "persona": "— (era Jordelis)",
+      "accion": "Caducó: Jordelis fuera del equipo (10-jun); Jhonnalia sigue en bandera #8",
       "resp": "Coord. Cocina"
     },
     {
@@ -3701,10 +3730,10 @@
     },
     {
       "n": 31,
-      "bandera": "2 tripulantes sin formulario (al 3-jun)",
-      "persona": "Pamela (Cocina), Frank (Asesor) — Olanlly, Randol y Daylin ya respondieron",
-      "accion": "Enviar formulario antes de F1 (14-jun)",
-      "resp": "Coord. Cocina / Co-Dir"
+      "bandera": "1 tripulante sin formulario (al 10-jun)",
+      "persona": "Frank Morales (Asesor + Banderín) — Pamela respondió 10-jun",
+      "accion": "Enviar formulario a Frank antes de F1 (14-jun)",
+      "resp": "Co-Dir"
     },
     {
       "n": 33,
@@ -3732,6 +3761,20 @@
       "bandera": "Familia De la Cruz Méndez (3 personas) — distribuida",
       "persona": "JC (Dir), JM (Dir), Paloma (Cocina coord)",
       "accion": "OK distribución (Fabelly salió del equipo 7-jun)",
+      "resp": "Directores"
+    },
+    {
+      "n": 35,
+      "bandera": "Migralepsia (migraña + epilepsia) — riesgo con mucho calor o sin desayunar",
+      "persona": "Pamela Colón (Cocina)",
+      "accion": "Garantizar desayuno regular + agua + sombra disponible; sin medicamentos pero alertar enfermería",
+      "resp": "Coord. Cocina + Asesores"
+    },
+    {
+      "n": 36,
+      "bandera": "Cambio de equipo 10-jun: Jordelis sale, Pamela Colón entra titular cocina",
+      "persona": "Jordelis Mateo (fuera) / Pamela Colón (titular)",
+      "accion": "Aplicado · cocina sigue en 21",
       "resp": "Directores"
     }
   ],
@@ -3832,21 +3875,51 @@
       ]
     },
     {
-      "inviter": "Jordelis Mateo",
-      "invitados": [
-        {
-          "nombre": "Yosmelkys Reyes",
-          "edad": "23.0",
-          "relacion": "Familiar"
-        }
-      ]
-    },
-    {
       "inviter": "Kelvin Alexis Ventura Santana",
       "invitados": [
         {
           "nombre": "Yiraimy Núñez Ozoria",
           "edad": "24 años",
+          "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Marian Olanlly Ortiz Carrasco",
+      "invitados": [
+        {
+          "nombre": "Lusiany Castillo",
+          "edad": "18.0",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Hemerson Asencio",
+          "edad": "18.0",
+          "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Pamela Colón",
+      "invitados": [
+        {
+          "nombre": "Amanda Rivera",
+          "edad": "21 años",
+          "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Roselyn Quiroz",
+      "invitados": [
+        {
+          "nombre": "Digna Ally Guzmán de la Cruz",
+          "edad": "20.0",
+          "relacion": "Amigo"
+        },
+        {
+          "nombre": "Juan Alejandro Gonzalez",
+          "edad": "20.0",
           "relacion": "Amigo"
         }
       ]
@@ -3856,15 +3929,19 @@
     "top": [
       {
         "propuesta": "Rifa",
-        "menciones": 21
+        "menciones": 23
       },
       {
         "propuesta": "Venta de comida",
-        "menciones": 9
+        "menciones": 10
       },
       {
         "propuesta": "Noche de talento / karaoke / película",
         "menciones": 4
+      },
+      {
+        "propuesta": "Rifa/viaje (boletos, avión)",
+        "menciones": 3
       },
       {
         "propuesta": "Bazar / venta de garaje",
@@ -3879,20 +3956,16 @@
         "menciones": 2
       },
       {
-        "propuesta": "Rifa/viaje (boletos, avión)",
-        "menciones": 2
-      },
-      {
-        "propuesta": "Excursión / día-pass / tómbola",
-        "menciones": 2
-      },
-      {
         "propuesta": "Lavado de autos",
         "menciones": 2
       },
       {
         "propuesta": "Donaciones (etecianos / empresas)",
         "menciones": 2
+      },
+      {
+        "propuesta": "Excursión / día-pass / tómbola",
+        "menciones": 1
       },
       {
         "propuesta": "Merch eteciana",
@@ -4001,16 +4074,24 @@
         "idea": "Rifa y enviar solicitudes de donacion a empresas"
       },
       {
-        "persona": "Jordelis Mateo",
-        "idea": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan."
-      },
-      {
         "persona": "Kelvin Alexis Ventura Santana",
         "idea": "Bazar de ropas, joyas y accesorios, venta de comida o apoyar un negocio local sirviendo y dividiendo las ganancias de ese día con un por ciento."
       },
       {
         "persona": "Maria del Carmen Mejías Mateo",
         "idea": "Se podría intentar una noche de talento, tipo karaoke"
+      },
+      {
+        "persona": "Marian Olanlly Ortiz Carrasco",
+        "idea": "Alcancías solidarias\nSe le da a cada familia Eteciana una alcancia y en tu dia a dia 25 pesos que dejes...\nVenta de postres \nFlan\nBrownies etc..."
+      },
+      {
+        "persona": "Merkin Jean Vásquez",
+        "idea": "Ventas tipo kermés, rifas"
+      },
+      {
+        "persona": "Pamela Colón",
+        "idea": "Podría ser tipo una noche de cine cobrando entrada y cosas así.\nUn torneo de juegos (pero que juguemos los etecainos tambien)"
       },
       {
         "persona": "Roberto Figueroa",
@@ -4029,6 +4110,10 @@
         "idea": "Venta de comida."
       },
       {
+        "persona": "Daylin M Rambalde Moreta",
+        "idea": "Una Rifa podría ser algo bueno, que el boleto incluya una entrada a una tarde familiar dinde tambuen se haga ventas y se saque el premio ahi (solo tengo la idea)"
+      },
+      {
         "persona": "Dorian Elina Rodriguez Belliard",
         "idea": "Pienso que la rifa funcionó muy bien."
       },
@@ -4043,7 +4128,7 @@
     ],
     "fuente": "Formulario col 18 \"¿Qué tipo de actividad de recaudación propondrías?\"",
     "cita_franklin": "1. Viaje al interior del país\n2. Rifa de boletos de avión para dos (O viaje todo incluido para una persona) a Colombia.\n3. Noche bailable",
-    "cita_jordelis": "Tómbolas (Daypass, giras etc.), CON PRECIOS ASEQUIBLES para poder darle  mas oportunidad aquellas personas que siempre nos apoyan."
+    "cita_pamela": "Podría ser tipo una noche de cine cobrando entrada y cosas así.\nUn torneo de juegos (pero que juguemos los etecainos tambien)"
   },
   "salud": {
     "alergias_alimentarias": {
@@ -4098,8 +4183,10 @@
         "Dorian Elina Rodriguez Belliard",
         "Ismarie Sthepanie Constanzo Ramos"
       ],
+      "Migralepsia (migraña + epilepsia)": [
+        "Pamela Colón"
+      ],
       "Postoperatoria reciente": [
-        "Jordelis Mateo",
         "Jhonnalia Franchesca Silvestre Guzmán"
       ],
       "Postquirúrgica escoliosis": [
@@ -4115,7 +4202,8 @@
       "Limpieza profunda de polvo previa (4 sensibles)",
       "Usar productos de limpieza suaves (Victoria atópica)",
       "Jabón alternativo en duchas (Franklin alérgico al de cuaba)",
-      "Tener espacio oscuro/silencioso disponible (Dorian, Ismarie migrañas)"
+      "Tener espacio oscuro/silencioso disponible (Dorian, Ismarie migrañas; Pamela migralepsia)",
+      "Desayuno temprano + hidratación disponible (Pamela migralepsia — riesgo si no desayuna o mucho calor)"
     ]
   }
 }

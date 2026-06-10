@@ -756,7 +756,7 @@ tr:hover { background: var(--pergamino-claro); }
       </div>
       <div class="bg-pergamino-claro border border-rule p-4 mt-4 text-sm space-y-3">
         <p class="italic">"<span x-text="data.recaudacion.cita_franklin"></span>" <span class="f-cond text-xs uppercase tracking-widest text-cuero">— Franklin</span></p>
-        <p class="italic">"<span x-text="data.recaudacion.cita_jordelis"></span>" <span class="f-cond text-xs uppercase tracking-widest text-cuero">— Jordelis</span></p>
+        <p class="italic">"<span x-text="data.recaudacion.cita_pamela"></span>" <span class="f-cond text-xs uppercase tracking-widest text-cuero">— Pamela</span></p>
       </div>
     </div>
   </div>

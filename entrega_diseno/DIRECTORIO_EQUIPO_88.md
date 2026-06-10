@@ -14,7 +14,7 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Frank Morales | Asesor + Banderín | — | (809) 710-1743 |
+| Frank Morales | Asesor + Banderín | 11 jul | (809) 710-1743 |
 | Laura Fernández | Asesora | 26 oct | (829) 697-3316 |
 | Tomás Lorenzo | Asesor | 14 mar | (809) 863-6434 |
 
@@ -22,8 +22,8 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Padre Paul Ramírez | Acompaña todo el proceso | — | (829) 808-3399 |
-| Sor Angelina Lebrón | Acompaña todo el proceso | — | (809) 749-2646 |
+| Padre Paul Ramírez | Acompaña todo el proceso | 9 nov | (829) 808-3399 |
+| Sor Angelina Lebrón | Acompaña todo el proceso | 22 oct | (809) 749-2646 |
 
 ## Guías (14)
 
@@ -57,12 +57,12 @@
 | Chantal Melissa Carpio Jiménez | Cocina | 24 dic | (829) 260-8939 |
 | Dayrelins Jazmin Santana Salas | Cocina | 30 ago | (809) 426-4150 |
 | Guido Maldonado | Cocina | 30 nov | 5512144384 |
-| Jordelis Mateo | Cocina | 26 jul | (829) 610-1254 |
 | Kelvin Alexis Ventura Santana | Cocina | 28 jul | (809) 463-3990 |
 | Maria del Carmen Mejías Mateo | Cocina | 29 ago | (829) 713-7943 |
 | Marian Olanlly Ortiz Carrasco | Cocina | 23 oct | (849) 406-2313 |
 | Merkin Jean Vásquez | Cocina | 4 may | (829) 618-5249 |
-| Randol Joseph Payano | Cocina | 18 dic | (829) 963-9360 |
+| Pamela Colón | Cocina | 15 may | (829) 342-2888 |
+| Randol Joseph payano | Cocina | 18 dic | (829) 963-9360 |
 | Risaira Santana Rosario | Cocina | 29 jun | (829) 203-2829 |
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |
 | Roberto Figueroa | Cocina | 12 may | (809) 717-1329 |
@@ -85,8 +85,8 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Johanny García | Asesora de Cocina | — | (809) 434-8874 |
-| Mary "Petra" Morales | Asesora de Cocina | — | (809) 224-4482 |
+| Johanny García | Asesora de Cocina | 13 feb | (809) 434-8874 |
+| Mary "Petra" Morales | Asesora de Cocina | 19 oct | (809) 224-4482 |
 
 ## Asesores de comunidad (3)
 

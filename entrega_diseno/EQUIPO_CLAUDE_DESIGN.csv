@@ -1,0 +1,58 @@
+#,Área,Rol,Nombre,Cumple,Teléfono,Comunidad,Sexo,Edad,Salud relevante
+1,Dirección,Director,Jean Carlo De la Cruz Mendez,12-may,849-859-5178,Betania,M,35,
+2,Dirección,Director,Juan Manuel de la Cruz Méndez,20-ene,829-898-1416,Betania,M,33,Alergias: N.A | Condiciones: N.A | Medicamentos: N.A
+3,Asesores,Asesor + Banderín,Frank Morales,11-jul,809-710-1743,Por confirmar,M,,
+4,Asesores,Asesora,Laura Fernández,26-oct,829-697-3316,Betania,F,30,Alergias: Mariscos.
+5,Asesores,Asesor,Tomás Lorenzo,14-mar,809-863-6434,Betania,M,29,Alergias: Ibuprofeno
+6,Asesores Espirituales,Asesor Espiritual transversal,Padre Paul Ramírez,09-nov,829-808-3399,Por confirmar,M,,
+7,Asesores Espirituales,Asesora Espiritual transversal,Sor Angelina Lebrón,22-oct,809-749-2646,Por confirmar,F,,
+8,Guías,Coord. Guía,Camila Fernández Hazim,18-ago,809-961-5497,Betania,F,26,
+9,Guías,Guía,Darianny Rodriguez Belliard,30-ene,829-372-6925,Betania,F,24,
+10,Guías,Guía,Fernando Cordero,20-dic,809-639-8714,Betania,M,23,"Alergias: Alérgico al polvo, polen y olores fuertes | Condiciones: Asmático | Medicamentos: Frenaler forte (loratadina)"
+11,Guías,Guía,Franklin De Jesús Silverio Delgadillo,18-feb,849-864-8510,Betania,M,27,Alergias: Jabón de cuaba
+12,Guías,Guía,Ivanna Marien Mercedes Sosa,09-nov,829-994-6731,Betania,F,30,Alergias: Mariscos | Condiciones: Asthma | Medicamentos: Antialérgicos
+13,Guías,Guía,Jhonnalia Franchesca Silvestre Guzmán,20-oct,829-918-0666,Betania,F,26,Alergias: Al medicamento (Metrocopramida) | Condiciones: Operación de la columna reciente (Escolisis) | Medicamentos: Antiinflamatorio oh relajantes musculares y omeprazol
+14,Guías,Guía,Jonathan Andres Medina Mota,26-sep,809-779-2446,Betania,M,27,Alergias: Mariscos
+15,Guías,Guía,Juan Pablo Argüello Alzate,21-ene,829-879-0121,Betania,M,23,
+16,Guías,Guía,Luisa Maria Fiorentino Brugal,19-may,809-972-2327,Betania,F,27,"Alergias: Si, medicamento penicilina. En general a polvo y olores fuertes. | Condiciones: Diabetes* y tiroides | Medicamentos: Jarinu (diabetes) y Synox (tiroides)"
+17,Guías,Guía,Oliver Rafael De León Ramírez,24-abr,809-263-6802,Betania,M,30,
+18,Guías,Coord. Guía,Priscilla Hidalgo Pou,16-jul,829-478-3840,Betania,F,33,Alergias: Mariscos
+19,Guías,Guía,Victoria Lorenzo Rivera,21-sep,809-882-6523,Betania,F,27,Alergias: Colorantes conservantes polvo y olores fuertes y detergentes fuertes | Condiciones: Atopica | Medicamentos: Antialérgico
+20,Guías,Guía,Wilka María Reyes Mota,08-sep,829-861-8355,Betania,F,20,Alergias: Canela y Piña
+21,Guías,Guía,Yelaxni Mota,25-sep,809-491-1672,Betania,F,21,Condiciones: Asma
+22,Cocina,Cocina,Adrián Francisco Santana Puente,22-ene,829-640-5377,Belén,M,21,
+23,Cocina,Cocina,Ambar Liz Jáquez Lebrón,22-sep,849-244-1217,Belén,F,18,
+24,Cocina,Cocina,Brianelis Abreu Calderón,12-nov,809-842-1217,Belén,F,23,
+25,Cocina,Cocina,Candy Elizabeth Gatwood Ramos,05-ene,849-538-4498,Betania,F,33,Alergias: Alergia a la piña! Si es de verdad | Condiciones: Gastritis severa | Medicamentos: Unos cuentos por el proceso de la gastritis
+26,Cocina,Cocina,Chantal Melissa Carpio Jiménez,24-dic,829-260-8939,Belén,F,22,
+27,Cocina,Cocina,Dayrelins Jazmin Santana Salas,30-ago,809-426-4150,Betania,F,23,Alergias: Aines
+28,Cocina,Cocina,Guido Maldonado,30-nov,551-214-4384,Betania,M,29,Alergias: No
+29,Cocina,Coord. Cocina,Johnnito Richiez Brugal,23-oct,829-264-4176,Betania,M,41,
+30,Cocina,Cocina,Kelvin Alexis Ventura Santana,28-jul,809-463-3990,Betania,M,24,
+31,Cocina,Cocina,Maria del Carmen Mejías Mateo,29-ago,829-713-7943,Betania,F,42,Medicamentos: Pastillas de la presión
+32,Cocina,Cocina,Marian Olanlly Ortiz Carrasco,23-oct,849-406-2313,Belén,F,19,
+33,Cocina,Cocina,Merkin Jean Vásquez,04-may,829-618-5249,Betania,F,22,
+34,Cocina,Coord. Cocina,Paloma Mendez,27-jun,809-860-7630,Betania,F,35,
+35,Cocina,Cocina,Pamela Colón,15-may,829-342-2888,Betania,F,21,"Alergias: Camarones, más nada | Condiciones: Hace unos años me diagnosticaron con Migralepsia (migraña y epilepsia) pero hace un buen tiempo que no me pasa nada, no estoy tomando medicamentos, pero puede ser que por mucho calor o si no he desayunado me pueda dar un mareito leve."
+36,Cocina,Cocina,Randol Joseph payano,18-dic,829-963-9360,Belén,F,19,Alergias: Ambroxol
+37,Cocina,Cocina,Risaira Santana Rosario,29-jun,829-203-2829,Betania,F,21,
+38,Cocina,Cocina,Risairi Santana Rosario,28-mar,829-376-2582,Belén,F,19,
+39,Cocina,Cocina,Roberto Figueroa,12-may,809-717-1329,Betania,M,45,Medicamentos: Nimguno
+40,Cocina,Cocina,Roselyn Quiroz,02-nov,829-933-0230,Belén,F,20,
+41,Cocina,Cocina,Tommy Nova Nolasco,07-sep,849-266-6296,Belén,M,25,
+42,Cocina,Cocina,Wirna Miguelina Stapleton Pilier,29-sep,829-801-9927,Betania,F,32,Alergias: No
+43,Música,Música,Daylin M Rambalde Moreta,23-nov,829-863-9956,Betania,F,29,"Alergias: Al polvo, polen, aromas fuertes | Condiciones: Resistencia a la insulina | Medicamentos: Metformina"
+44,Música,Música,Dorian Elina Rodriguez Belliard,21-mar,829-986-0995,Betania,F,21,"Alergias: Polvo, gatos, etc.. (pero no se preocupen tengo siempre tengo antialérgico) | Condiciones: Migraña | Medicamentos: Antialérgicos, antimigrañosos"
+45,Música,Música,Ismarie Sthepanie Constanzo Ramos,14-jun,849-386-5474,Betania,F,20,Alergias: Neo-Melubrina (metamizol sódico) | Condiciones: Ninguna. | Medicamentos: Analgésicos y triptanes.
+46,Música,Coord. Música,José Ángel Tusen Russo,30-oct,849-352-1430,Betania,M,26,"Alergias: Alimentaria:
+Huevo
+Piña
+Ambientales:
+Baygon (Liquidos de fumigacion). | Medicamentos: Normalmente cargo con mis medicamentos"
+47,Música,Música,Leober Carrion Soriano,04-oct,829-440-1305,Betania,M,21,
+48,Música,Música,Mary Carmen Ramírez Vásquez,29-ago,829-693-7582,Betania,F,27,Condiciones: Postquirurgica de la una corrección de escoliosis
+49,Asesoras Cocina,Asesora Cocina,Johanny García,13-feb,809-434-8874,Por confirmar,F,,
+50,Asesoras Cocina,Asesora Cocina,"Mary ""Petra"" Morales",19-oct,809-224-4482,Por confirmar,F,,
+51,Asesores Comunidad,Asesora Comunidad La Vega,Leticia González,,,Por confirmar,F,,
+52,Asesores Comunidad,Asesora Comunidad SD,Marleny,,,Por confirmar,F,,
+53,Asesores Comunidad,Asesora Comunidad SD,Sandrita,,,Por confirmar,F,,

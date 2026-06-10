@@ -5,12 +5,10 @@ import openpyxl, json, re, os
 
 REPO = '/home/user/ETC88'
 # El xlsx fuente puede estar en el dir efímero de uploads o en la copia durable del repo.
-# Se prefiere la copia del repo si la de uploads no existe (contenedor nuevo).
-_XLSX_CANDIDATES = [
-    '/root/.claude/uploads/2da4a2cd-be63-4d49-b615-cf5c7554c95e/93ed3347-Respuestas__Formulario_preformacio_n_ETC_88.xlsx',
-    f'{REPO}/data/fuente_formulario.xlsx',
-]
-XLSX = next((p for p in _XLSX_CANDIDATES if os.path.exists(p)), _XLSX_CANDIDATES[-1])
+# El repo es la fuente única de verdad (Regla #1 de CLAUDE.md). La copia de uploads
+# era un fallback histórico que quedó como PREFERIDA por error de orden — corregido
+# 10-jun-2026 tras encontrar que el script usaba un xlsx desactualizado.
+XLSX = f'{REPO}/data/fuente_formulario.xlsx'
 
 MONTHS = {'enero':1,'ene':1,'febrero':2,'feb':2,'marzo':3,'mar':3,'abril':4,'abr':4,
           'mayo':5,'may':5,'junio':6,'jun':6,'julio':7,'jul':7,'agosto':8,'ago':8,
@@ -31,7 +29,6 @@ GENDER = {
 RESIDENCIA = {
     'Candy Elizabeth Gatwood Ramos':'Punta Cana',
     'Dorian Elina Rodriguez Belliard':'Punta Cana',
-    'Jordelis Mateo':'Punta Cana',
     'José Ángel Tusen Russo':'Punta Cana',
     'Ivanna Marien Mercedes Sosa':'Punta Cana',
     'Tommy Nova Nolasco':'Punta Cana',
@@ -43,8 +40,10 @@ RESIDENCIA = {
     'Chantal Melissa Carpio Jiménez':'Higüey / SPM',
 }
 
-# v3 area assignments per xlsx ETC_88_1 manifest (2026-06-02)
-# Fabelle = Fabelly → cocina; Chantal → cocina; Olanlly/Roselyn/Pamela = new cocina; total 45
+# v4 area assignments (2026-06-10): reconciliación tras re-export del xlsx.
+# Pamela Colón IN (reemplaza a Jordelis Mateo, fuera del equipo).
+# 5 personas con nombres ahora reales del form (Daylin/Olanlly/Merkin/Randol/Roselyn);
+# sus placeholders "(sin formulario)" eliminados.
 AREA = {
     # Directores
     'Jean Carlo De la Cruz Mendez':       ('directores', 'Director'),
@@ -73,17 +72,17 @@ AREA = {
     'Ismarie Sthepanie Constanzo Ramos':   ('musica', 'Música'),
     'Leober Carrion Soriank':              ('musica', 'Música'),
     'Mary Carmen Ramírez Vásquez':         ('musica', 'Música'),
-    'Daylin (sin formulario)':             ('musica', 'Música'),
+    'Daylin M Rambalde Moreta':            ('musica', 'Música'),
     # Cocina (21 = 2 coords + 19, todas filas del xlsx)
     'Paloma Mendez':                       ('cocina', 'Coord. Cocina'),
     'Johnnito Richiez Brugal':             ('cocina', 'Coord. Cocina'),
     'Dayrelins Jazmin Santana Salas':      ('cocina', 'Cocina'),
     'Fabelle maciel fabian bello':         ('cocina', 'Cocina'),  # = Fabelly per user
     'Wirna Miguelina Stapleton Pilier':    ('cocina', 'Cocina'),
-    'Jordelis Mateo':                      ('cocina', 'Cocina'),
+    'Pamela Colón':                        ('cocina', 'Cocina'),  # 10-jun: IN, reemplazo de Jordelis
     'Candy Elizabeth Gatwood Ramos':       ('cocina', 'Cocina'),
     'Kelvin Alexis Ventura Santana':       ('cocina', 'Cocina'),
-    'Olanlly (sin formulario)':            ('cocina', 'Cocina'),  # NEW
+    'Marian Olanlly Ortiz Carrasco':       ('cocina', 'Cocina'),
     'Ambar Liz Jáquez Lebrón':             ('cocina', 'Cocina'),
     'Brianelis Abreu Calderón':            ('cocina', 'Cocina'),
     'Tommy Nova Nolasco':                  ('cocina', 'Cocina'),
@@ -94,7 +93,9 @@ AREA = {
     'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
     'Roberto Figueroa':                    ('cocina', 'Cocina'),
     'Guido Mardonado':                     ('cocina', 'Cocina'),
-    # Roselyn y Randol AMBOS dentro de cocina (4-jun); Pamela fuera. Roselyn como placeholder (sin formulario).
+    'Randol Joseph payano':                ('cocina', 'Cocina'),  # p minúscula como llegó del form
+    'Merkin Jean Vásquez':                 ('cocina', 'Cocina'),
+    'Roselyn Quiroz':                      ('cocina', 'Cocina'),
 }
 
 def _telefono(value):
@@ -153,6 +154,8 @@ def parse_etc_propio(s):
 # Los matchea por nombre EXACTO como aparece en el form. Se filtran al procesar el xlsx.
 REMOVED_FROM_TEAM = {
     'Fabelle maciel fabian bello',  # 7-jun: sale del equipo. Reemplazada por Merkin Jean (titular cocina).
+    'Jordelis Mateo',  # 10-jun: sale del equipo. Reemplazada por Pamela Colón (titular cocina).
+    'Rodolfo Telémaco Arrendel',  # 10-jun: llenó form pero sigue como backup guía; el placeholder lo maneja.
 }
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
@@ -223,7 +226,7 @@ FIXES = {
     'Victoria Lorenzo Rivera': {'edad': 27, 'cumple_mes': 9, 'cumple_dia': 21, 'cumple_anio': 1998},
     'Jhonnalia Franchesca Silvestre Guzmán': {'cumple_mes': 10, 'cumple_dia': 20, 'cumple_anio': 1999, 'edad': 26},
     'Paloma Mendez': {'cumple_mes': 6, 'cumple_dia': 27, 'cumple_anio': 1990, 'edad': 35},
-    'Jordelis Mateo': {'edad': 26},
+    'Daylin M Rambalde Moreta': {'cumple_mes': 11, 'cumple_dia': 23, 'cumple_anio': 1996, 'edad': 29},
     'José Ángel Tusen Russo': {'edad': 26},
     'Wirna Miguelina Stapleton Pilier': {'edad': 32},
     'Darianny Rodriguez Belliard': {'edad': 24},
@@ -247,15 +250,13 @@ for p in equipo:
     p['vacante'] = False
     p['transversal'] = False
 
-# Placeholders for people in xlsx without form response (operativos)
+# Placeholders for people NOT in xlsx form (operativos + backups).
+# v4 (10-jun): los 5 ex-placeholders (Daylin/Olanlly/Merkin/Randol/Roselyn) ahora
+# vienen del xlsx con sus nombres reales — sus entradas eliminadas. Frank sigue sin
+# form (asesor externo); Scarlett y Kamila son backups que no respondieron.
 PLACEHOLDERS_OP = [
-    ('Daylin (sin formulario)', 'musica', 'Música', 'F'),
-    ('Olanlly (sin formulario)', 'cocina', 'Cocina', 'F'),
-    ('Roselyn (sin formulario)', 'cocina', 'Cocina', 'F'),  # 4-jun: DENTRO de cocina (junto con Randol). Formulario recibido 4-jun → datos reales en form_live_overrides.json (Roselyn Quiroz).
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
-    ('Randolph Joseph (sin formulario)', 'cocina', 'Cocina', 'M'),  # confirmado 3-jun, activo en cocina (NO backup)
-    ('Merkin Jean', 'cocina', 'Cocina', None),  # 7-jun: sube de backup a titular reemplazando a Fabelly Maciel Fabian Bello (que sale del equipo). Respondió formulario 7-jun → datos reales en form_live_overrides.json (Merkin Jean Vásquez, ETC 86).
-    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías
+    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías (llenó form 10-jun pero sigue backup; xlsx excluido vía REMOVED_FROM_TEAM)
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
 ]
@@ -391,11 +392,11 @@ calendario = [
 banderas = [
     {'n':1, 'bandera':'Cumple en F1', 'persona':'Ismarie Sthepanie Constanzo Ramos', 'accion':'Preparar momento corto en F1', 'resp':'Directores'},
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
-    {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'Jordelis Mateo', 'accion':'Mensaje virtual + saludo en F4', 'resp':'Directores'},
+    {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun)', 'resp':'Directores'},
     {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
     {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'— (era Fabelly)', 'accion':'Caducó: Fabelly fuera del equipo (7-jun)', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
-    {'n':7, 'bandera':'Postoperatoria', 'persona':'Jordelis Mateo', 'accion':'No asignar carga física pesada', 'resp':'Coord. Cocina'},
+    {'n':7, 'bandera':'Postoperatoria', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun); Jhonnalia sigue en bandera #8', 'resp':'Coord. Cocina'},
     {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia + Mary Carmen', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía / Coord. Música'},
     {'n':9, 'bandera':'Sin claridad de rol', 'persona':'Wirna Miguelina Stapleton Pilier', 'accion':'Conversación 1:1 con Directores antes de F1', 'resp':'Directores'},
     {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
@@ -419,11 +420,13 @@ banderas = [
     {'n':28, 'bandera':'Pedir contacto de emergencia a Jonathan', 'persona':'Jonathan Andres Medina Mota', 'accion':'Solicitar dato', 'resp':'Directores'},
     {'n':29, 'bandera':'Pregunta "Oremos por JC"', 'persona':'Victoria Lorenzo Rivera', 'accion':'Acompañamiento espiritual a Jean Carlo', 'resp':'Asesores'},
     {'n':30, 'bandera':'Wirna: "No se dejen humillar"', 'persona':'Wirna Stapleton', 'accion':'Conversación 1:1', 'resp':'Directores'},
-    {'n':31, 'bandera':'2 tripulantes sin formulario (al 3-jun)', 'persona':'Pamela (Cocina), Frank (Asesor) — Olanlly, Randol y Daylin ya respondieron', 'accion':'Enviar formulario antes de F1 (14-jun)', 'resp':'Coord. Cocina / Co-Dir'},
+    {'n':31, 'bandera':'1 tripulante sin formulario (al 10-jun)', 'persona':'Frank Morales (Asesor + Banderín) — Pamela respondió 10-jun', 'accion':'Enviar formulario a Frank antes de F1 (14-jun)', 'resp':'Co-Dir'},
     {'n':33, 'bandera':'Daylin no puede asumir coordinaciones (posible cambio de empleo + distancia/asistencia, vive en PC)', 'persona':'Daylin M Rambalde Moreta (Música)', 'accion':'Asignarle rol sin coordinación; considerar su distancia y asistencia', 'resp':'Coord. Música / Co-Dir'},
     {'n':34, 'bandera':'Daylin: resistencia a la insulina (Metformina) — dato de salud para botiquín/menú', 'persona':'Daylin M Rambalde Moreta', 'accion':'Tener en cuenta en cocina y botiquín', 'resp':'Coord. Cocina'},
     {'n':32, 'bandera':'Cambio de equipo 7-jun: Fabelly sale, Merkin Jean sube de backup a titular cocina', 'persona':'Fabelly Maciel (fuera) / Merkin Jean (titular)', 'accion':'Aplicado · cocina sigue en 21', 'resp':'Directores'},
     {'n':33, 'bandera':'Familia De la Cruz Méndez (3 personas) — distribuida', 'persona':'JC (Dir), JM (Dir), Paloma (Cocina coord)', 'accion':'OK distribución (Fabelly salió del equipo 7-jun)', 'resp':'Directores'},
+    {'n':35, 'bandera':'Migralepsia (migraña + epilepsia) — riesgo con mucho calor o sin desayunar', 'persona':'Pamela Colón (Cocina)', 'accion':'Garantizar desayuno regular + agua + sombra disponible; sin medicamentos pero alertar enfermería', 'resp':'Coord. Cocina + Asesores'},
+    {'n':36, 'bandera':'Cambio de equipo 10-jun: Jordelis sale, Pamela Colón entra titular cocina', 'persona':'Jordelis Mateo (fuera) / Pamela Colón (titular)', 'accion':'Aplicado · cocina sigue en 21', 'resp':'Directores'},
 ]
 
 invitados_list = []
@@ -464,7 +467,7 @@ recaudacion = {
     'ideas': _ideas,  # crudo, cada respuesta con su autor (trazabilidad de hechos)
     'fuente': 'Formulario col 18 "¿Qué tipo de actividad de recaudación propondrías?"',
     'cita_franklin': _idea_de('Franklin') or '',
-    'cita_jordelis': _idea_de('Jordelis') or '',
+    'cita_pamela': _idea_de('Pamela') or '',
 }
 
 # ===== Fuente única de hechos NO-roster: data/estado.json =====
@@ -550,7 +553,8 @@ data = {
             'Diabetes + tiroides':['Luisa Maria Fiorentino Brugal'],
             'Gastritis severa':['Candy Elizabeth Gatwood Ramos'],
             'Migraña':['Dorian Elina Rodriguez Belliard','Ismarie Sthepanie Constanzo Ramos'],
-            'Postoperatoria reciente':['Jordelis Mateo','Jhonnalia Franchesca Silvestre Guzmán'],
+            'Migralepsia (migraña + epilepsia)':['Pamela Colón'],
+            'Postoperatoria reciente':['Jhonnalia Franchesca Silvestre Guzmán'],
             'Postquirúrgica escoliosis':['Mary Carmen Ramírez Vásquez'],
             'Pastillas presión':['Maria del Carmen Mejías Mateo'],
         },
@@ -560,7 +564,8 @@ data = {
             'Limpieza profunda de polvo previa (4 sensibles)',
             'Usar productos de limpieza suaves (Victoria atópica)',
             'Jabón alternativo en duchas (Franklin alérgico al de cuaba)',
-            'Tener espacio oscuro/silencioso disponible (Dorian, Ismarie migrañas)',
+            'Tener espacio oscuro/silencioso disponible (Dorian, Ismarie migrañas; Pamela migralepsia)',
+            'Desayuno temprano + hidratación disponible (Pamela migralepsia — riesgo si no desayuna o mucho calor)',
         ]
     }
 }
