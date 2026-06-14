@@ -74,29 +74,26 @@ def row(ws, r, vals, bold_last=False, total_row=False):
 
 # ============ Hoja 1: RESUMEN ============
 ws = wb.create_sheet('Resumen')
-title(ws, 'ETC 88 · FINANZAS VIVO · Resumen Ejecutivo (v8 · 2-jun-2026)')
-header(ws, 3, [('Concepto', 36), ('Mín. (RD$)', 14), ('Base', 14), ('Máx.', 14), ('Notas', 50)], MAR)
-casa_con = PERSONAS * CASA_CON
-casa_sin = PERSONAS * CASA_SIN
+title(ws, 'ETC 88 · FINANZAS · Resumen Ejecutivo (v9 · 14-jun-2026 · sincronizado con Presupuesto Maestro)')
+header(ws, 3, [('Rubro', 36), ('% LADO A', 14), ('Monto (RD$)', 14), ('—', 14), ('Estado · Notas', 50)], MAR)
+# v9 (14-jun): Rubros del Presupuesto Maestro consolidado (data/presupuesto/ETC88_Presupuesto_Maestro.xlsx).
+# El detalle granular de cocina/comidas/eventos sigue en las pestañas operativas; el TOTAL es el del Maestro.
+_rubros_maestro = _estado['finanzas']['meta_recaudacion_total']['desglose']
+_rb = _estado['finanzas']['meta_recaudacion_total']['rubros']
+def _r(k): return _rb[k]['monto']
 costo_items = [
- (f'Casa de retiro (con exención ${CASA_CON:,}/p × {PERSONAS} pers.)', casa_con, casa_con, casa_con, f'CON exención · {OPERATIVOS} equipo + ~{PARTICIPANTES} part. = {PERSONAS} en la casa'),
- ('Transporte (SPM→Higüey, equipo + participantes + clausura)', 69000, 77500, 86000, '3 cotizaciones a pedir (Metro, Transportando RD, DominicanBus)'),
- ('Cocina · Mercado (canasta)', 59000, 62410, 65800, 'La casa INCLUYE gas; no se compra gasoil'),
- ('Cocina · Meriendas / Correcaminos', 9000, 9756, 10000, ''),
- ('Cocina · Ambientación + detalles por tiempo de comida', 10000, 13000, 16000, 'Comedor + detalle al participante por comida (temas estándar: Singularidad, María, Pescador, Lavatorio, Niño, Despedida). Cocina lo itemiza en F1 — el detalle NO se pre-decide. Ver pestaña Detalles-Comida.'),
- ('Cocina · Refrigerios de reuniones internas del equipo', 2000, 2500, 3500, 'Las reuniones propias de cocina necesitan refrigerio. El ETC 83 no lo presupuestó y dio déficit.'),
- ('Materiales y Litúrgico (itemizado)', 80000, 88500, 95000, 'Peces + Biblias + Banderín + Rosarios + Cofre palancas + Vino + Ofrenda confesores'),
- ('Guías · Materiales del PG (libretas, sobres, alambre…)', 14000, 17000, 20000, 'Libretas para participantes EN ESTE rubro'),
- ('Música · Impresión cancionero + cables/respaldo', 3000, 4500, 6000, 'La casa tiene sonido; solo respaldo'),
- ('Formaciones F1–F4 (4 sesiones · refrigerio + local)', 11000, 13000, 17000, ''),
- ('Convivencia / Retiro (16-ago · temprano, concluye al mediodía)', 6000, 8000, 12000, 'Programar temprano para reducir costos de almuerzo; confirmar si incluye local'),
- ('Ensayo General (23-ago · INCLUYE el almuerzo del equipo)', 12000, 16000, 20000, 'Almuerzo ~52 personas + refrigerio + local'),
- ('Bienvenida post-ETC (9-sep · bizcocho)', 2000, 3000, 4500, 'Bizcocho de bienvenida de los nuevos (1ra reunión post-retiro)'),
- ('Camisetas del equipo (~56 × est.)', 19600, 22400, 28000, 'Tallas PARCIALES (ver pestaña Camisetas); faltan invitados pendientes + Paul, Frank y la Sor. Mockup tras el Design System.'),
- ('Avanzada jueves 3-sep (porción casa + 3 comidas del equipo que adelanta)', 15000, 20000, 24000, 'CONFIRMAR con la casa la tarifa de noche/día extra; depende de cuántos adelantan (cocina). Desayuno + almuerzo + cena de ese día.'),
- ('Imprevistos 5%', 22000, 23900, 25000, ''),
+ (f'1 · Casa (100 pers. × ${CASA_CON:,}/pers., 3 días)', _r('casa') / _rubros_maestro['subtotal_operativo'], _r('casa'), _r('casa'), 'Tarifa La Ceiba del Salado, Higüey. Exención por confirmar con parroquia (vale 30,000).'),
+ ('2 · Cocina (mercado + meriendas + detalles + limpieza)', _r('cocina') / _rubros_maestro['subtotal_operativo'], _r('cocina'), _r('cocina'), 'Precios cocina jun-2026. La casa INCLUYE gas. Detalle granular en pestañas Cocina-Compras / Menú / Detalles-Comida.'),
+ ('3 · Transporte (3 buses · ida y vuelta)', _r('transporte') / _rubros_maestro['subtotal_operativo'], _r('transporte'), _r('transporte'), 'POR COTIZAR: Metro Servicios (15K) + Transportando RD (34K) + DominicanBus (28.5K). Pedir 3 cotizaciones reales.'),
+ ('4 · Biblias y peces (material participante)', _r('biblias_y_peces') / _rubros_maestro['subtotal_operativo'], _r('biblias_y_peces'), _r('biblias_y_peces'), 'FIRME: Biblias 34,000 (Paulinas proforma #32397) + Peces 30,000 (importado US$10 × 60).'),
+ ('5 · Guías / Eventos / Música / Camisetas', _r('guias_eventos_musica_camisetas') / _rubros_maestro['subtotal_operativo'], _r('guias_eventos_musica_camisetas'), _r('guias_eventos_musica_camisetas'), 'Guías PG 17K + Eventos formativos 16.3K + Música 4.5K + Almuerzo ensayo 15.9K + Camisetas 20K.'),
+ ('6 · Litúrgico (ofrendas + insumos misa)', _r('liturgico') / _rubros_maestro['subtotal_operativo'], _r('liturgico'), _r('liturgico'), '4 ofrendas sacerdotes (12K) + insumos pan/vino (3.3K).'),
+ ('7 · Avanzada (jueves 3-sep)', 0, 0, 0, '🚩 PENDIENTE: verificar con cocina cuántas personas adelantan jue/vie. Hospedaje + 3 comidas del equipo de cocina. Hoy 0 = subestima el total.'),
+ ('Imprevistos 10%', _r('imprevistos_10pct') / _rubros_maestro['subtotal_operativo'], _r('imprevistos_10pct'), _r('imprevistos_10pct'), 'Fondo de reserva (lección ETC 85). Alineado con ETC 83 (10% en detalles).'),
 ]
-tot_min = sum(x[1] for x in costo_items); tot_base = sum(x[2] for x in costo_items); tot_max = sum(x[3] for x in costo_items)
+# Totales OFICIALES desde el Maestro (no se recalculan):
+tot_min = tot_base = tot_max = _estado['finanzas']['meta_recaudacion_total']['valor']  # 553,622
+casa_con = _r('casa'); casa_sin = casa_con + 30000  # exención vale 30K
 data = costo_items + [
  (f'Casa SIN exención (${CASA_SIN:,}/p × {PERSONAS}) — alternativa', casa_sin, casa_sin, casa_sin, 'Si NO se consigue exención: reemplaza la línea de casa (no se suma aquí)'),
  ('', None, None, None, ''),
@@ -112,9 +109,12 @@ ws.cell(row=r, column=1, value='BRECHA Y RECAUDACIÓN').font = Font(bold=True, s
 r += 1
 header(ws, r, [('Concepto', 36), ('Monto', 14), ('Notas', 50)], TIERRA)
 r += 1
-COSTO_BASE = tot_base                       # computado (con exención); INCLUYE la casa completa
-TOTAL_CUBRIR = COSTO_BASE                    # = META. La deuda NO se suma: es parte de la casa (10% ya pagado).
-cuota_eq_low, cuota_eq_high = OPERATIVOS * CUOTA_LOW, OPERATIVOS * CUOTA_HIGH
+COSTO_BASE = tot_base                       # = total del Maestro (553,622)
+TOTAL_CUBRIR = COSTO_BASE                   # = META. La deuda NO se suma: es parte de la casa (10% ya pagado).
+# Maestro: 53 titulares pagan cuota equipo (48 operativos + 2 asesoras cocina + 3 asesores comunidad
+# externos — los 3 externos pagan cuota pero auto-cubren estadía).
+EQUIPO_TOTAL = 53
+cuota_eq_low, cuota_eq_high = EQUIPO_TOTAL * CUOTA_LOW, EQUIPO_TOTAL * CUOTA_HIGH
 cuota_eq_mid = (cuota_eq_low + cuota_eq_high) // 2
 cuotas_part = PARTICIPANTES * CUOTA_PART
 brecha_fundraise = TOTAL_CUBRIR - cuotas_part - cuota_eq_mid  # lo que deben cubrir Profondo #1 + Profondo #2 + donaciones
