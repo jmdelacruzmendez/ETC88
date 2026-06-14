@@ -212,7 +212,15 @@ def build_asesores():
     cq = ef['cuota_equipo']
     pr = doc.add_paragraph(style='List Bullet')
     pr.add_run('Cuota del equipo: ').bold = True
-    pr.add_run(flag(cq) + f"${_v(cq)['total_rango']} total · ${_v(cq)['mensual']}/mes · cubre {_v(cq)['cubre']}")
+    v = _v(cq)
+    if isinstance(v, dict):
+        total = v.get('total') or v.get('total_rango', '—')
+        mensual = v.get('mensual')
+        mensual_str = f" · ${mensual}/mes" if mensual else ''
+        cubre = v.get('cubre', '')
+        pr.add_run(flag(cq) + f"${total} total{mensual_str}" + (f" · cubre {cubre}" if cubre else ''))
+    else:
+        pr.add_run(flag(cq) + f"${v}")
     pr.add_run(f" — {cq['nota']}").italic = True
     fin_line('Meta de recaudación', ef['meta_recaudacion_total'])
     fin_line('Personas en la casa (piso)', ef['personas_casa_piso'], fmt=lambda v: str(v))

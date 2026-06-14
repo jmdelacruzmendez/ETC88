@@ -28,10 +28,15 @@ CUOTA_PART= _ev(_ef['cuota_participante'])               # 3000 confirmado
 PERSONAS  = _ev(_ef['personas_casa_piso'])               # 100 confirmado (piso en la casa)
 OPERATIVOS= _estado['conteos_esperados']['operativos']   # 47
 PARTICIPANTES = _ev(_ef['participantes_objetivo'])       # 53 (= 100 - 47), derivado
-_cuota    = _ev(_ef['cuota_equipo'])                     # propuesta (rango + mensual)
-CUOTA_MES = _cuota['mensual']
-_nums     = [int(x.replace(',','')) for x in _re.findall(r'[\d,]+', _cuota['total_rango'])]
-CUOTA_LOW, CUOTA_HIGH = (_nums[0], _nums[-1]) if len(_nums) >= 2 else (1500, 2000)
+_cuota    = _ev(_ef['cuota_equipo'])                     # confirmada 14-jun: 2000 total
+# Compat: estructura nueva (total/mensual) o vieja (total_rango/mensual)
+if 'total' in _cuota:
+    CUOTA_LOW = CUOTA_HIGH = int(_cuota['total'])
+    CUOTA_MES = _cuota.get('mensual')
+else:
+    CUOTA_MES = _cuota.get('mensual')
+    _nums     = [int(x.replace(',','')) for x in _re.findall(r'[\d,]+', _cuota.get('total_rango',''))]
+    CUOTA_LOW, CUOTA_HIGH = (_nums[0], _nums[-1]) if len(_nums) >= 2 else (1500, 2000)
 # Etiquetas de estado para render
 P = '[PROPUESTA] '   # prefijo obligatorio para cifras no confirmadas
 

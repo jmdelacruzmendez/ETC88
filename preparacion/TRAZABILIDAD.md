@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 55 confirmados · 12 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
@@ -25,10 +25,10 @@
 | `finanzas.casa_incluye` | gas y limpieza | director |  |
 | `finanzas.casa_tiene_sonido` | True | director | Música solo lleva equipo de respaldo. |
 | `finanzas.deuda_inicial` | 23600 | director | 10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue dev… |
-| `finanzas.cuota_participante` | 3000 | director |  |
+| `finanzas.cuota_participante` | 3000 | director · Presupuesto Maestro 14-jun-2026 | 1er + 2do pago. Cubre transporte/comida/casa/pez/biblia. NO cubre su c… |
+| `finanzas.cuota_equipo` | {"total": 2000, "mensual": 500, "nota_plan_pago": "2,000 tot… | director · Presupuesto Maestro 14-jun-2026 | Confirmada en 2,000 (era propuesta 1,500–2,000). Cubre ensayo general … |
 | `finanzas.personas_casa_piso` | 100 | director | Piso fijado: completar 100 personas en la casa de retiro. |
-| `finanzas.participantes_objetivo` | 47 | director (10-jun-2026) | Target = 45–48 participantes (rango). Para presupuesto se usa 47 (punt… |
-| `finanzas.meta_recaudacion_total` | 583281 | director | No es un número fijo: = costo total estimado a cubrir (casa 100 person… |
+| `finanzas.meta_recaudacion_total` | 553622 | director · Presupuesto Maestro 14-jun-2026 | LADO A consolidado: subtotal operativo 503,293 + imprevistos 10% (50,3… |
 | `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
@@ -71,7 +71,6 @@
 ## 🟡 Propuestas (sin cerrar — se muestran [PROPUESTA]; OJO con la fuente)
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
-| `finanzas.cuota_equipo` | {"total_rango": "1,500 – 2,000", "mensual": 500, "cubre": "c… | director (planteado, sin cerrar) | NO está decidido. Mostrar primero los costos estimados del retiro para… |
 | `marca.branding_reglas_esteticas` | Identidad ORIGINAL del ETC: el pez ICTUS de colores (logo or… | director + logo original | 7-jun (final): el director descartó la Dirección A y pidió la identida… |
 | `equipos_auxiliares[1].responsable` | Producción | — |  |
 | `gaps_post_informe_85.informe_post_retiro` | Comparar presupuesto planificado vs gastos reales tras el re… | Informe 85, medida #5 | Compromiso para post-retiro (14-sep en adelante). |
@@ -131,14 +130,27 @@
 - 10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.
 - 10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.
 - 10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.
+- 14-jun-2026: Presupuesto Maestro construido (Juan Manuel, Co-Dir.). Cifra TOTAL LADO A = RD$ 553,622 (reemplaza estimado previo 583,281). Subtotal operativo 503,293 + imprevistos 10% (50,329).
+- 14-jun-2026: Cuotas CONFIRMADAS: participante RD$ 3,000 (1er + 2do pago) · equipo RD$ 2,000.
+- 14-jun-2026: Target presupuestario 50 participantes (rango operativo 45–50). Cierra casa con 100 personas (50 part. + 50 equipo cubierto).
+- 14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).
+- 14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).
+- 14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.
 
 ## Pendientes y decisiones por cerrar (lista del director)
-- [ ] Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).
+- [ ] 🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.
+- [ ] 🚩 Confirmar exención de la casa con Padre Paul (vale 30,000 — convierte 200,000 estimado en firme).
+- [ ] 🚩 BLOQUEANTE: Nombrar responsable único de Tesorería ANTES de recaudar el primer peso (Informe ETC 85 + Plan Recaudación §8). Sin esto, NO se opera el modelo.
 - [ ] Definir los responsables de cada uno de los 4 equipos auxiliares (Recaudación-Profondo (un solo equipo) · Guagua · Intersección/diáspora · Finanzas/Tesorería).
 - [ ] Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).
 - [ ] Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).
 - [ ] Confirmar la exención de la casa con el Padre Paul.
-- [ ] Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).
 - [ ] Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.
 - [ ] Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.
-- [ ] Cotizar transporte (3 empresas), peces de bronce ICTUS y banderín. (Biblias cotizadas con Paulinas — proforma 32397, $34,000.)
+- [ ] Pedir 3 cotizaciones reales de transporte (Metro Servicios 809-530-2850 · Transportando RD 849-803-1626 · DominicanBus 809-530-9742). Hoy 77,500 es estimado.
+- [ ] Reembolsar 10,000 a Juan Manuel (Co-Dir.) por pago del salón (deuda pendiente desde 2026-06-07).
+- [ ] Lanzar rifa/profondo: 600 boletos × 200 (premio 30,000) — meta caja 90,000 para sorteo en agosto.
+- [ ] Gestionar donaciones en especie: biblias 34K, peces 30K, camisetas 20K, materiales guías 17K = 88% del potencial 114,701.
+- [ ] Verificar si 2 buses cubren en vez de 3 (lección ETC 86 SD usó 2×26pax) — posible ahorro estructural.
+- [ ] Confirmar lista REAL de participantes (hoy 50 es estimado; rango operativo 45–50).
+- [ ] Cerrar ítems cocina no verificados: té frío, sazón, orégano, puerro, bizcocho, salsa roja kg.

@@ -88,8 +88,15 @@ fin('Casa por persona (con exención)', ef['casa_por_persona_con_exencion'])
 fin('Deuda inicial al Consejo', ef['deuda_inicial'])
 fin('Cuota de participante', ef['cuota_participante'])
 cq = ef['cuota_equipo']
-bullet(f"Cuota del equipo: {tag(cq)}${_v(cq)['total_rango']} total · ${_v(cq)['mensual']}/mes · "
-       f"cubre {_v(cq)['cubre']} — {cq['nota']}")
+_cv = _v(cq)
+_tot = _cv.get('total') if isinstance(_cv, dict) else _cv
+_tot = _cv.get('total_rango', _tot) if isinstance(_cv, dict) else _tot
+_mens = _cv.get('mensual') if isinstance(_cv, dict) else None
+_cubre = _cv.get('cubre', '') if isinstance(_cv, dict) else ''
+bullet(f"Cuota del equipo: {tag(cq)}${_tot} total" +
+       (f" · ${_mens}/mes" if _mens else '') +
+       (f" · cubre {_cubre}" if _cubre else '') +
+       f" — {cq['nota']}")
 fin('Meta de recaudación', ef['meta_recaudacion_total'])
 fin('Personas en la casa (piso)', ef['personas_casa_piso'], fmt=lambda v: str(v))
 fin('Participantes (objetivo)', ef['participantes_objetivo'], fmt=lambda v: str(v))
@@ -188,7 +195,12 @@ frow('Casa por persona (sin exención)', ef['casa_por_persona_sin_exencion'])
 frow('Casa por persona (con exención)', ef['casa_por_persona_con_exencion'])
 frow('Deuda inicial al Consejo', ef['deuda_inicial'])
 frow('Cuota de participante', ef['cuota_participante'])
-w.writerow(['Cuota del equipo', f"{_v(cq)['total_rango']} ({_v(cq)['mensual']}/mes)", 'PROPUESTA', cq['nota']])
+_cv2 = _v(cq)
+_tot2 = _cv2.get('total') or _cv2.get('total_rango', '—')
+_mens2 = _cv2.get('mensual')
+_cuota_str = f"{_tot2}" + (f" ({_mens2}/mes)" if _mens2 else "")
+_estado2 = cq.get('estado', '').upper() or 'PROPUESTA'
+w.writerow(['Cuota del equipo', _cuota_str, _estado2, cq['nota']])
 frow('Meta de recaudación (= costo total)', ef['meta_recaudacion_total'])
 frow('Personas en la casa (piso)', ef['personas_casa_piso'])
 frow('Participantes (objetivo)', ef['participantes_objetivo'])

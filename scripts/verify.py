@@ -137,15 +137,24 @@ try:
     txt_as = docx_text(f'{REPO}/Documento_Asesores_ETC88.docx')
     fin_txt = xlsx_text(f'{REPO}/Finanzas_ETC88.xlsx')
     errs = []
-    # En el Doc de Asesores, la cuota de equipo debe llevar [PROPUESTA]
-    # (la meta de recaudación ya NO es propuesta: = costo total, confirmado)
+    # 14-jun: cuota equipo ahora CONFIRMADA (2,000 total, era PROPUESTA 1,500–2,000).
+    # Reglas vivas: lo no-confirmado en estado.json debe ir con [PROPUESTA] en docs.
+    import json as _json
+    _est = _json.load(open(f'{REPO}/data/estado.json', encoding='utf-8'))
+    _ce_estado = _est['finanzas']['cuota_equipo'].get('estado', '')
     for needle in ['Cuota del equipo']:
         line = next((l for l in txt_as.split('\n') if needle in l), '')
-        if '[PROPUESTA]' not in line:
-            errs.append(f"'{needle}' sin [PROPUESTA] en Doc Asesores")
-    # En Finanzas, las pestañas de propuesta deben marcar PROPUESTA
-    if 'PROPUESTA' not in fin_txt:
-        errs.append("Finanzas no marca ninguna PROPUESTA")
+        if _ce_estado.startswith('propuesta'):
+            if '[PROPUESTA]' not in line:
+                errs.append(f"'{needle}' (propuesta en estado.json) sin [PROPUESTA] en Doc Asesores")
+        # Si está confirmada, no exigir [PROPUESTA] (sería incongruente).
+    # En Finanzas, marcar PROPUESTA solo si HAY algo en estado.json todavía como propuesta
+    has_proposals = any(
+        isinstance(v, dict) and v.get('estado', '').startswith('propuesta')
+        for v in _est['finanzas'].values()
+    )
+    if has_proposals and 'PROPUESTA' not in fin_txt:
+        errs.append("Finanzas no marca ninguna PROPUESTA (estado.json tiene propuestas vivas)")
     check('5. Propuestas etiquetadas [PROPUESTA]', not errs, '; '.join(errs))
 except Exception as e:
     check('5. Propuestas etiquetadas', False, str(e))

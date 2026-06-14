@@ -17,14 +17,14 @@
       "acreedor": "Consejo Eteciano SPM"
     },
     "cuota_participante": 3000,
-    "meta_recaudacion_total": 583281,
+    "meta_recaudacion_total": 553622,
     "meta_recaudacion_estado": "confirmado",
     "cuota_equipo_propuesta": {
-      "total_rango": "1,500 – 2,000",
+      "total": 2000,
       "mensual": 500,
-      "cubre": "comida del Ensayo General + participación en el retiro",
-      "estado": "propuesta",
-      "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
+      "nota_plan_pago": "2,000 totales = 500/mes × 4 meses (jun-sep).",
+      "estado": "confirmado",
+      "nota": "Confirmada en 2,000 (era propuesta 1,500–2,000). Cubre ensayo general + prorrateo salón + transporte + comida ensayo + camiseta. Los 3 asesores externos pagan cuota pero auto-cubren estadía."
     }
   },
   "estado": {
@@ -141,17 +141,18 @@
       "cuota_participante": {
         "valor": 3000,
         "estado": "confirmado",
-        "fuente": "director"
+        "fuente": "director · Presupuesto Maestro 14-jun-2026",
+        "nota": "1er + 2do pago. Cubre transporte/comida/casa/pez/biblia. NO cubre su costo real (~5,536/pers, déficit estructural ~2,536 que tapan palancas+especie)."
       },
       "cuota_equipo": {
         "valor": {
-          "total_rango": "1,500 – 2,000",
+          "total": 2000,
           "mensual": 500,
-          "cubre": "comida del Ensayo General + participación en el retiro"
+          "nota_plan_pago": "2,000 totales = 500/mes × 4 meses (jun-sep)."
         },
-        "estado": "propuesta",
-        "fuente": "director (planteado, sin cerrar)",
-        "nota": "NO está decidido. Mostrar primero los costos estimados del retiro para que el equipo entienda la necesidad de donaciones y de profundizar las actividades Profondo."
+        "estado": "confirmado",
+        "fuente": "director · Presupuesto Maestro 14-jun-2026",
+        "nota": "Confirmada en 2,000 (era propuesta 1,500–2,000). Cubre ensayo general + prorrateo salón + transporte + comida ensayo + camiseta. Los 3 asesores externos pagan cuota pero auto-cubren estadía."
       },
       "personas_casa_piso": {
         "valor": 100,
@@ -160,17 +161,180 @@
         "nota": "Piso fijado: completar 100 personas en la casa de retiro."
       },
       "participantes_objetivo": {
-        "valor": 47,
-        "rango": "45–48",
-        "estado": "confirmado",
-        "fuente": "director (10-jun-2026)",
-        "nota": "Target = 45–48 participantes (rango). Para presupuesto se usa 47 (punto medio). Cierra: casa con 48 op + 47 participantes = ~95 personas (de 100 capacidad)."
+        "valor": 50,
+        "rango": "45–50",
+        "estado": "confirmado · modelo presupuestario",
+        "fuente": "director · Presupuesto Maestro 14-jun-2026",
+        "nota": "El modelo del Maestro asume 50 participantes (cierre con 48 op + 2 asesoras cocina = 50 equipo cubierto + 50 part = 100 personas en casa). El rango operativo sigue siendo 45–50."
       },
       "meta_recaudacion_total": {
-        "valor": 583281,
+        "valor": 553622,
         "estado": "confirmado",
-        "fuente": "director",
-        "nota": "No es un número fijo: = costo total estimado a cubrir (casa 100 personas COMPLETA + transporte + cocina + materiales + guías + música + eventos formativos + camisetas + avanzada). La deuda de $23,600 NO se suma aparte: ya está dentro de la casa (es el 10% de reserva). Se cubre con cuotas de participantes ($3,000) + cuotas del equipo ($1,500–2,000) + Profondo #1 y #2 + donaciones. Se recalcula con el presupuesto (hoja Finanzas)."
+        "fuente": "director · Presupuesto Maestro 14-jun-2026",
+        "nota": "LADO A consolidado: subtotal operativo 503,293 + imprevistos 10% (50,329) = 553,622. Base: 100 personas (50 part. + 50 equipo cubierto · 53 equipo total con 3 asesores externos auto-cubiertos). Reemplaza la cifra previa 583,281.",
+        "desglose": {
+          "subtotal_operativo": 503293,
+          "imprevistos_10pct": 50329,
+          "costo_por_persona_100": 5536,
+          "cuotas_firmes": 256000,
+          "cobertura_cuotas_pct": 46,
+          "brecha_tras_cuotas": 297622,
+          "especie_potencial": 114701,
+          "plan_a_caja_objetivo": 471000,
+          "margen_proyectado": 32079
+        },
+        "rubros": {
+          "casa": {
+            "monto": 200000,
+            "pct": 36.1,
+            "estado": "estimado · exención por confirmar"
+          },
+          "transporte": {
+            "monto": 77500,
+            "pct": 14.0,
+            "estado": "por cotizar (3 buses)"
+          },
+          "guias_eventos_musica_camisetas": {
+            "monto": 73715,
+            "pct": 13.3,
+            "estado": "estimado"
+          },
+          "cocina": {
+            "monto": 72778,
+            "pct": 13.1,
+            "estado": "precios jun-2026"
+          },
+          "biblias_y_peces": {
+            "monto": 64000,
+            "pct": 11.6,
+            "estado": "firme (Paulinas proforma 32397 + peces importados)"
+          },
+          "imprevistos_10pct": {
+            "monto": 50329,
+            "pct": 9.1,
+            "estado": "calculado"
+          },
+          "liturgico": {
+            "monto": 15300,
+            "pct": 2.8,
+            "estado": "estimado"
+          },
+          "avanzada": {
+            "monto": 0,
+            "pct": 0,
+            "estado": "pendiente · verificar con cocina"
+          }
+        }
+      },
+      "plan_recaudacion": {
+        "estado": "confirmado",
+        "fuente": "director · Análisis y Plan de Recaudación 14-jun-2026",
+        "fuentes_caja_plan_a": {
+          "cuotas": {
+            "monto": 256000,
+            "prob": 90,
+            "estado": "firme"
+          },
+          "rifa_profondo": {
+            "monto": 90000,
+            "prob": 50,
+            "nota": "600 boletos × 200 − premio 30,000"
+          },
+          "venta_garaje": {
+            "monto": 60000,
+            "prob": 60,
+            "nota": "artículos donados"
+          },
+          "venta_comida": {
+            "monto": 25000,
+            "prob": 65,
+            "nota": "2 eventos × 12,500"
+          },
+          "donaciones_efectivo": {
+            "monto": 40000,
+            "prob": 40,
+            "nota": "parroquia + padrinos + diáspora"
+          },
+          "total_caja_objetivo": 471000
+        },
+        "especie_potencial": {
+          "monto": 114701,
+          "nota": "No entra como caja — reduce el costo peso a peso. Priorizar: biblias (34K) + peces (30K) + camisetas (20K) + materiales guías (17K) = 88% del potencial."
+        },
+        "flujo_caja_proyectado": {
+          "jun": {
+            "entradas": 128000,
+            "salidas": 60000,
+            "saldo_acum": 68000,
+            "nota": "Salón pagado + anticipo casa"
+          },
+          "jul": {
+            "entradas": 200500,
+            "salidas": 81000,
+            "saldo_acum": 187500,
+            "nota": "Biblias, peces, materiales guías"
+          },
+          "ago": {
+            "entradas": 142500,
+            "salidas": 88750,
+            "saldo_acum": 241250,
+            "nota": "Anticipo transporte, camisetas, no perecederos"
+          },
+          "sep": {
+            "entradas": 0,
+            "salidas": 209171,
+            "saldo_acum": 32079,
+            "nota": "⚠️ MES PICO — toda la recaudación debe estar en caja ANTES del 1-sep"
+          }
+        }
+      },
+      "caja": {
+        "estado": "vivo",
+        "fuente": "Presupuesto Maestro · hoja 04 Caja",
+        "movimientos": [
+          {
+            "fecha": "2026-06-07",
+            "concepto": "Reserva de la casa (depósito)",
+            "tipo": "salida",
+            "monto": 23600,
+            "medio": "Transferencia",
+            "ref": "Casa La Ceiba del Salado"
+          },
+          {
+            "fecha": "2026-06-07",
+            "concepto": "Reserva devuelta",
+            "tipo": "entrada",
+            "monto": 23600,
+            "medio": "Transferencia",
+            "ref": "Casa La Ceiba del Salado"
+          },
+          {
+            "fecha": "2026-06-07",
+            "concepto": "Aporte personal J.M. (cubre salón)",
+            "tipo": "entrada",
+            "monto": 10000,
+            "medio": "Aporte personal",
+            "ref": "Juan Manuel (Co-Dir.)"
+          },
+          {
+            "fecha": "2026-06-07",
+            "concepto": "Pago de salón",
+            "tipo": "salida",
+            "monto": 10000,
+            "medio": "Efectivo",
+            "ref": "Franklin Pozo"
+          }
+        ],
+        "saldo_actual": 0,
+        "deudas_pendientes": [
+          {
+            "acreedor": "Juan Manuel de la Cruz (Co-Dir.)",
+            "concepto": "Salón pagado de su dinero personal",
+            "monto": 10000,
+            "fecha": "2026-06-07",
+            "estado": "pendiente reembolso"
+          }
+        ]
       }
     },
     "recaudacion": {
@@ -607,6 +771,26 @@
             "Transportando RD",
             "DominicanBus",
             "empresas con guaguas en SPM/Higüey/PC"
+          ],
+          "proveedores_cotizar": [
+            {
+              "rol": "Minibús equipo (15-20)",
+              "estimado": 15000,
+              "proveedor": "Metro Servicios",
+              "tel": "809-530-2850"
+            },
+            {
+              "rol": "Autobús participantes (40-50)",
+              "estimado": 34000,
+              "proveedor": "Transportando RD",
+              "tel": "+1 849-803-1626"
+            },
+            {
+              "rol": "Autobús clausura padres/etecianos",
+              "estimado": 28500,
+              "proveedor": "DominicanBus / Dominican Tours",
+              "tel": "809-530-9742"
+            }
           ]
         },
         "materiales_liturgico": {
@@ -701,6 +885,16 @@
           "sectores_propuesta": [
             "Donaciones en efectivo de etecianos con experiencia previa (modelo del 78)"
           ]
+        },
+        "peces": {
+          "proveedor_cotizado": {
+            "producto": "Pez ICTUS (símbolo)",
+            "cantidad": 50,
+            "precio_unidad": 600,
+            "total": 30000,
+            "fuente": "Importado US$10 × 60 (referencia: Terra Sancta Guild, Amazon B00VB37PIK)",
+            "estado": "firme (referencia confirmada)"
+          }
         }
       }
     },
@@ -739,18 +933,31 @@
       "10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.",
       "10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.",
       "10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.",
-      "10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente."
+      "10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.",
+      "14-jun-2026: Presupuesto Maestro construido (Juan Manuel, Co-Dir.). Cifra TOTAL LADO A = RD$ 553,622 (reemplaza estimado previo 583,281). Subtotal operativo 503,293 + imprevistos 10% (50,329).",
+      "14-jun-2026: Cuotas CONFIRMADAS: participante RD$ 3,000 (1er + 2do pago) · equipo RD$ 2,000.",
+      "14-jun-2026: Target presupuestario 50 participantes (rango operativo 45–50). Cierra casa con 100 personas (50 part. + 50 equipo cubierto).",
+      "14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).",
+      "14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).",
+      "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`."
     ],
     "pendientes": [
-      "Cerrar el monto final de la cuota del equipo (propuesta: $1,500–2,000, $500/mes).",
+      "🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.",
+      "🚩 Confirmar exención de la casa con Padre Paul (vale 30,000 — convierte 200,000 estimado en firme).",
+      "🚩 BLOQUEANTE: Nombrar responsable único de Tesorería ANTES de recaudar el primer peso (Informe ETC 85 + Plan Recaudación §8). Sin esto, NO se opera el modelo.",
       "Definir los responsables de cada uno de los 4 equipos auxiliares (Recaudación-Profondo (un solo equipo) · Guagua · Intersección/diáspora · Finanzas/Tesorería).",
       "Identificar responsable o equipo de Finanzas / Tesorería dentro del equipo (auxilia a la Co-Dirección; control de pagos y reportes — medida #3 Informe 85).",
       "Asignar el equipo de Intersección — diáspora del 88 (etecianos fuera del país que sirven como padrinos / red de oración / donaciones desde el exterior).",
       "Confirmar la exención de la casa con el Padre Paul.",
-      "Modelo de flujo de caja: asignar cada entrada a un compromiso e ir costeando con el calendario de pagos (sesión aparte).",
       "Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.",
       "Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.",
-      "Cotizar transporte (3 empresas), peces de bronce ICTUS y banderín. (Biblias cotizadas con Paulinas — proforma 32397, $34,000.)"
+      "Pedir 3 cotizaciones reales de transporte (Metro Servicios 809-530-2850 · Transportando RD 849-803-1626 · DominicanBus 809-530-9742). Hoy 77,500 es estimado.",
+      "Reembolsar 10,000 a Juan Manuel (Co-Dir.) por pago del salón (deuda pendiente desde 2026-06-07).",
+      "Lanzar rifa/profondo: 600 boletos × 200 (premio 30,000) — meta caja 90,000 para sorteo en agosto.",
+      "Gestionar donaciones en especie: biblias 34K, peces 30K, camisetas 20K, materiales guías 17K = 88% del potencial 114,701.",
+      "Verificar si 2 buses cubren en vez de 3 (lección ETC 86 SD usó 2×26pax) — posible ahorro estructural.",
+      "Confirmar lista REAL de participantes (hoy 50 es estimado; rango operativo 45–50).",
+      "Cerrar ítems cocina no verificados: té frío, sazón, orégano, puerro, bizcocho, salsa roja kg."
     ]
   },
   "equipos_auxiliares": [
