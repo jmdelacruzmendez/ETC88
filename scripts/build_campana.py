@@ -147,17 +147,32 @@ for a in corr['areas']:
                     f'<span class="area-name" style="color:{col}">{a["area"]}</span>'
                     f'<span class="area-amt">≈ {money(a["monto_indicativo"])}</span></div>'
                     f'<ul class="area-items">{lis}</ul></div>')
+def _esc(s): return str(s).replace('"', "'")
 pres_html = ""
 for g in presupuesto:
+    rb = (f'<button type="button" class="apad-mini rub-mini" data-apad data-tipo="rubro" '
+          f'data-label="{_esc(g["rubro"])}" data-monto="{g["subtotal"]}">apadrinar todo este rubro</button>')
     its = "".join(f'<div class="pres-it"><span class="pi-n">{it["item"]}</span>'
-                  f'<span class="pi-d">{it["detalle"]}</span><b class="pi-m">{money(it["monto"])}</b></div>'
+                  f'<span class="pi-d">{it["detalle"]}</span><b class="pi-m">{money(it["monto"])}</b>'
+                  f'<button type="button" class="apad-mini" data-apad data-tipo="item" '
+                  f'data-label="{_esc(it["item"])}" data-monto="{it["monto"]}">apadrinar</button></div>'
                   for it in g['items'])
-    body = f'<div class="pres-items">{its}</div>' if g['items'] else ''
+    body = f'<div class="pres-items">{rb}{its}</div>'
     pres_html += (f'<details class="pres-grp"><summary><span class="pg-n">{g["rubro"]}</span>'
                   f'<span class="pg-c">{len(g["items"])} ít.</span><b class="pg-s">{money(g["subtotal"])}</b></summary>{body}</details>')
 
+# Aplicativo "Apadrina la Misión 88": selector (carta + lo que falta + rubros) + WhatsApp
+WA_CONTACTS = EST['marca']['contacto_whatsapp']['contactos']
+_sel = ['<option value="carta" data-tipo="carta" data-label="Carta de donación" selected>Pedir una carta de donación</option>',
+        f'<option data-tipo="meta" data-label="Lo que falta de la misión" data-monto="{brecha}">Lo que falta de la misión — {money(brecha)}</option>']
+for g in presupuesto:
+    if g['subtotal'] > 0:
+        _sel.append(f'<option data-tipo="rubro" data-label="{_esc(g["rubro"])}" data-monto="{g["subtotal"]}">{g["rubro"]} — {money(g["subtotal"])}</option>')
+APAD_OPTS = "".join(_sel)
+
 datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha,
-                       "fechaCierrePagos": FECHA_CPAGO, "fechaRetiro": FECHA_RET, "locale": "es-DO", "moneda": "RD$"}, ensure_ascii=False)
+                       "fechaCierrePagos": FECHA_CPAGO, "fechaRetiro": FECHA_RET, "locale": "es-DO", "moneda": "RD$",
+                       "wa": [{"n": c["nombre"], "num": c["wa"]} for c in WA_CONTACTS]}, ensure_ascii=False)
 
 CSS = r'''
   :root{--bg:#0B1F3A;--bg2:#0e2a4d;--bg3:#071427;--ink:#EAF2FF;--muted:#9DB2D4;--muted2:#6F87AD;
@@ -267,6 +282,23 @@ CSS = r'''
   .reveal.visible{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.stars i{animation:none}html{scroll-behavior:auto}}
   .no-js .reveal{opacity:1;transform:none}
+  .apad{background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(56,189,248,.05) 70%,transparent),var(--card);border:1px solid rgba(37,211,102,.28)}
+  .apad-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.apad-grid{grid-template-columns:1fr}}
+  .apad-f{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--muted)}
+  .apad-f input,.apad-f select{font-family:inherit;font-size:1rem;color:var(--ink);background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+  .apad-read{margin:16px 0;font-size:1.05rem;color:var(--muted)}.apad-read b{color:var(--ink)}
+  .apad-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#053a1e;font-weight:800;padding:13px 20px;border-radius:100px;text-decoration:none;font-size:1rem}
+  .wa-btn:hover{filter:brightness(1.07)}
+  .apad-note{color:var(--muted2);font-size:.85rem;margin-top:12px}
+  .apad-mini{font-family:inherit;cursor:pointer;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#7ef0a8;border-radius:100px;padding:3px 11px;font-size:.72rem;font-weight:700;white-space:nowrap}
+  .apad-mini:hover{background:rgba(37,211,102,.26)}
+  .rub-mini{margin-bottom:8px}
+  .pres-it .pi-n{grid-column:1;grid-row:1}
+  .pres-it .apad-mini{grid-column:2;grid-row:2;justify-self:end;margin-top:2px}
+  .qbig.hl{font-size:clamp(2.1rem,7vw,3.3rem);color:var(--gold)}
+  .hl-amt{color:var(--gold)}
 '''
 
 JS = r'''
@@ -311,6 +343,24 @@ recompute();
   if(!('IntersectionObserver' in window)){ns.forEach(n=>n.classList.add('visible'));return;}
   var io=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:.12});
   ns.forEach(n=>io.observe(n));})();
+/* apadrinar por WhatsApp */
+(function(){
+  var WA = datos.wa || [];
+  var sel = {label:'Carta de donación', monto:null, tipo:'carta'};
+  function msg(){ var n=(($('apad-name')||{}).value||'').trim(); var hi = n ? ('Hola, soy '+n+'. ') : 'Hola. ';
+    if(sel.tipo==='carta') return hi+'Quiero pedir una carta de donación para el ETC · Misión 88 (Encuentro Total con Cristo).';
+    return hi+'Me gustaría apadrinar: '+sel.label+(sel.monto?(' ('+money(sel.monto)+')'):'')+' para el ETC · Misión 88.'; }
+  function upd(){ var t=encodeURIComponent(msg());
+    WA.forEach(function(c,i){ var a=$('wa-'+i); if(a){ a.href='https://wa.me/'+c.num+'?text='+t; a.textContent='WhatsApp a '+c.n; } });
+    var r=$('apad-read'); if(r){ r.innerHTML = sel.tipo==='carta' ? 'Vas a: <b>pedir una carta de donación</b>' : 'Vas a apadrinar: <b>'+sel.label+'</b>'+(sel.monto?(' — '+money(sel.monto)):''); } }
+  function setSel(label,monto,tipo){ sel={label:label||'Carta de donación', monto:(monto?+monto:null), tipo:tipo||'item'}; upd(); }
+  var s=$('apad-sel'); if(s){ s.addEventListener('change',function(e){ var o=e.target.selectedOptions[0]; setSel(o.dataset.label||o.textContent, o.dataset.monto, o.dataset.tipo); }); }
+  var nm=$('apad-name'); if(nm){ nm.addEventListener('input', upd); }
+  document.addEventListener('click', function(e){ var b=e.target.closest('[data-apad]'); if(!b) return; e.preventDefault(); e.stopPropagation();
+    setSel(b.dataset.label, b.dataset.monto, b.dataset.tipo);
+    var p=document.getElementById('apad-panel'); if(p) p.scrollIntoView({behavior:'smooth',block:'start'}); });
+  upd();
+})();
 '''.replace('__DATOS_JS__', datos_js)
 
 PATCH = r'''<svg class="patch" viewBox="0 0 200 200" role="img" aria-label="ETC Misión 88">
@@ -394,8 +444,8 @@ BODY = f'''
       <div class="qcard"><div class="qt">Cuota del participante</div><div class="qbig" data-count="{part_cuota_total}" data-kind="money">{money(part_cuota_total)}</div>
         <div class="qline"><b>{money(cuota_part)}</b> × {n_part} participantes</div><div class="chips">{chips_p}</div>
         <div class="qtot">Aporta en total <b>{money(part_cuota_total)}</b></div></div>
-      <div class="qcard"><div class="qt">Cuota del equipo</div><div class="qbig" style="color:var(--green)" data-count="{equipo_cuotas}" data-kind="money">{money(equipo_cuotas)}</div>
-        <div class="qline"><b>{money(eq_total)}</b> = {eq_pagos} pagos de {money(eq_pago)} (jun–sep) · {n_equipo} del equipo</div><div class="chips">{chips_e}</div>
+      <div class="qcard"><div class="qt">Cuota del equipo · lo que aporta el equipo</div><div class="qbig hl" data-count="{equipo_cuotas}" data-kind="money">{money(equipo_cuotas)}</div>
+        <div class="qline"><b class="hl-amt">{money(eq_total)}</b> = <b class="hl-amt">{eq_pagos} pagos de {money(eq_pago)}</b> (jun–sep) · {n_equipo} del equipo</div><div class="chips">{chips_e}</div>
         <div class="qtot">Aporta en total <b>{money(equipo_cuotas)}</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección</div></div>
     </div>
   </section>
@@ -432,6 +482,21 @@ BODY = f'''
       <div class="cd-block"><div class="cd-head">Lanzamiento (retiro) · <b>{FECHA_RET_T}</b></div>
         <div class="cd-grid">{cd_cell(dias_ret,"Días","ret-d")}{cd_cell("00","Hrs","ret-h")}{cd_cell("00","Min","ret-m")}{cd_cell("00","Seg","ret-s")}</div></div>
     </div>
+  </section>
+
+  <section class="panel apad reveal" id="apad-panel">
+    <h2>Apadrina la Misión 88</h2>
+    <p class="h2note">Elige algo del presupuesto (o pide una carta de donación) y escríbele directo a un director por WhatsApp. También puedes tocar “apadrinar” en cualquier ítem del presupuesto de abajo.</p>
+    <div class="apad-grid">
+      <label class="apad-f"><span>Tu nombre (opcional)</span><input id="apad-name" type="text" placeholder="Tu nombre" autocomplete="name"></label>
+      <label class="apad-f"><span>¿Qué quieres apoyar?</span><select id="apad-sel">{APAD_OPTS}</select></label>
+    </div>
+    <div class="apad-read" id="apad-read">Vas a: <b>pedir una carta de donación</b></div>
+    <div class="apad-btns">
+      <a class="wa-btn" id="wa-0" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="wa-btn" id="wa-1" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="apad-note">Se abre WhatsApp con el mensaje ya escrito; tú solo lo revisas y envías. El donante elige a qué director escribir.</p>
   </section>
 
   <section class="panel reveal">

@@ -435,6 +435,15 @@
       "fuente": "director (17-jun-2026)",
       "nota": "Cita bíblica para el Tablero de la Misión 88 (tema espacial). El lema del retiro sigue siendo Mt 6,21 (ver lema_retiro)."
     },
+    "contacto_whatsapp": {
+      "estado": "confirmado",
+      "fuente": "director · Carpeta (17-jun-2026)",
+      "nota": "Para el bloque 'Apadrina la Misión 88' del tablero. El donante elige a quién escribir. Tesorería aún no nombrada; por ahora Co-Dirección.",
+      "contactos": [
+        {"nombre": "Juan Manuel", "wa": "18298981416"},
+        {"nombre": "Jean Carlo", "wa": "18498595178"}
+      ]
+    },
     "lema_retiro": {
       "valor": "Donde está tu tesoro, allí estará tu corazón",
       "estado": "confirmado",
