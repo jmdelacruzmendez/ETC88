@@ -299,6 +299,9 @@ CSS = r'''
   .costo-card .ct{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700;margin-bottom:4px}
   .costo-card .cbig{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;line-height:1}
   .costo-card .csub{color:var(--muted);font-size:.85rem;margin:4px 0 16px}.costo-card .csub b{color:var(--ink)}
+  .costo-card .csub b.cuota-amt{font-size:1.5rem;color:var(--gold);line-height:1.1}
+  .costo-card .ct .role-p{color:var(--green)}
+  .costo-card .ct .role-e{color:var(--sky)}
   .qcard{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,24px)}
   .qcard .qt{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700}
   .qcard .qbig{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:800;color:var(--sky);font-variant-numeric:tabular-nums;line-height:1;margin:6px 0}
@@ -636,13 +639,13 @@ BODY = f'''
     <h2>Lo que cuesta la misión, por persona</h2>
     <p class="h2note">Para dimensionar el esfuerzo — sencillo y claro. (Incluye el 10% de imprevistos.)</p>
     <div class="grid2">
-      <div class="costo-card"><div class="ct">Por participante</div>
+      <div class="costo-card"><div class="ct">Por <span class="role-p">participante</span></div>
         <div class="cbig" data-count="{part_costo}" data-kind="money2">{money2(part_costo)}</div>
-        <div class="csub">su cuota es <b>{money(cuota_part)}</b> · el resto no recae en él</div>
+        <div class="csub">su cuota es <b class="cuota-amt">{money(cuota_part)}</b> · el resto no recae en él</div>
         <div class="pie-row"><div class="pie donut" style="background:{pie_bg(desg_part)}"></div><div class="legend">{legend(desg_part, money2)}</div></div></div>
-      <div class="costo-card"><div class="ct">Por miembro de equipo</div>
+      <div class="costo-card"><div class="ct">Por <span class="role-e">miembro de equipo</span></div>
         <div class="cbig" style="color:var(--sky)" data-count="{eq_costo}" data-kind="money2">{money2(eq_costo)}</div>
-        <div class="csub">su cuota es <b>{money(eq_total)}</b></div>
+        <div class="csub">su cuota es <b class="cuota-amt">{money(eq_total)}</b></div>
         <div class="pie-row"><div class="pie donut" style="background:{pie_bg(desg_eq)}"></div><div class="legend">{legend(desg_eq, money2)}</div></div></div>
     </div>
   </section>
@@ -656,7 +659,7 @@ BODY = f'''
         <div class="qtot">Aporta en total <b>{money(part_cuota_total)}</b></div></div>
       <div class="qcard"><div class="qt">Cuota del equipo · lo que aporta el equipo</div><div class="qbig hl" data-count="{equipo_cuotas}" data-kind="money">{money(equipo_cuotas)}</div>
         <div class="qline"><b class="hl-amt">{money(eq_total)}</b> = <b class="hl-amt">{eq_pagos} pagos de {money(eq_pago)}</b> (jun–sep) · {n_equipo} del equipo</div><div class="chips">{chips_e}</div>
-        <div class="qtot">Aporta en total <b>{money(equipo_cuotas)}</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección</div></div>
+        <div class="qtot">Aporta en total <b>{money(equipo_cuotas)}</b></div></div>
     </div>
   </section>
 

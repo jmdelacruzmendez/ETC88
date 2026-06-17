@@ -40,6 +40,9 @@
   .costo-card .ct{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700;margin-bottom:4px}
   .costo-card .cbig{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;line-height:1}
   .costo-card .csub{color:var(--muted);font-size:.85rem;margin:4px 0 16px}.costo-card .csub b{color:var(--ink)}
+  .costo-card .csub b.cuota-amt{font-size:1.5rem;color:var(--gold);line-height:1.1}
+  .costo-card .ct .role-p{color:var(--green)}
+  .costo-card .ct .role-e{color:var(--sky)}
   .qcard{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,24px)}
   .qcard .qt{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700}
   .qcard .qbig{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:800;color:var(--sky);font-variant-numeric:tabular-nums;line-height:1;margin:6px 0}
@@ -210,13 +213,13 @@
     <h2>Lo que cuesta la misión, por persona</h2>
     <p class="h2note">Para dimensionar el esfuerzo — sencillo y claro. (Incluye el 10% de imprevistos.)</p>
     <div class="grid2">
-      <div class="costo-card"><div class="ct">Por participante</div>
+      <div class="costo-card"><div class="ct">Por <span class="role-p">participante</span></div>
         <div class="cbig" data-count="6548.92" data-kind="money2">RD$ 6,548.92</div>
-        <div class="csub">su cuota es <b>RD$ 3,000</b> · el resto no recae en él</div>
+        <div class="csub">su cuota es <b class="cuota-amt">RD$ 3,000</b> · el resto no recae en él</div>
         <div class="pie-row"><div class="pie donut" style="background:conic-gradient(#38BDF8 0.00% 33.59%, #34D399 33.59% 58.04%, #F2C572 58.04% 79.54%, #FC5130 79.54% 90.96%, #A78BFA 90.96% 96.67%, #22D3EE 96.67% 99.24%, #FB7185 99.24% 100.00%)"></div><div class="legend"><div class="leg-row"><span class="leg-dot" style="background:#38BDF8"></span><span class="leg-l">Casa (hospedaje)</span><span class="leg-v">RD$ 2,000.00 · 33,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#34D399"></span><span class="leg-l">Comida del retiro</span><span class="leg-v">RD$ 1,455.56 · 24,4%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F2C572"></span><span class="leg-l">Biblia + pez</span><span class="leg-v">RD$ 1,280.00 · 21,5%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FC5130"></span><span class="leg-l">Su transporte</span><span class="leg-v">RD$ 680.00 · 11,4%</span></div><div class="leg-row"><span class="leg-dot" style="background:#A78BFA"></span><span class="leg-l">Materiales de su PG</span><span class="leg-v">RD$ 340.00 · 5,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#22D3EE"></span><span class="leg-l">Litúrgico</span><span class="leg-v">RD$ 153.00 · 2,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FB7185"></span><span class="leg-l">Música</span><span class="leg-v">RD$ 45.00 · 0,8%</span></div></div></div></div>
-      <div class="costo-card"><div class="ct">Por miembro de equipo</div>
+      <div class="costo-card"><div class="ct">Por <span class="role-e">miembro de equipo</span></div>
         <div class="cbig" style="color:var(--sky)" data-count="4523.53" data-kind="money2">RD$ 4,523.53</div>
-        <div class="csub">su cuota es <b>RD$ 2,000</b></div>
+        <div class="csub">su cuota es <b class="cuota-amt">RD$ 2,000</b></div>
         <div class="pie-row"><div class="pie donut" style="background:conic-gradient(#38BDF8 0.00% 48.63%, #34D399 48.63% 69.79%, #F2C572 69.79% 79.52%, #FC5130 79.52% 87.45%, #A78BFA 87.45% 95.19%, #22D3EE 95.19% 98.91%, #FB7185 98.91% 100.00%)"></div><div class="legend"><div class="leg-row"><span class="leg-dot" style="background:#38BDF8"></span><span class="leg-l">Casa (hospedaje)</span><span class="leg-v">RD$ 2,000.00 · 48,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#34D399"></span><span class="leg-l">Transporte (equipo + clausura)</span><span class="leg-v">RD$ 870.00 · 21,2%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F2C572"></span><span class="leg-l">Camiseta</span><span class="leg-v">RD$ 400.00 · 9,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FC5130"></span><span class="leg-l">Formación</span><span class="leg-v">RD$ 326.30 · 7,9%</span></div><div class="leg-row"><span class="leg-dot" style="background:#A78BFA"></span><span class="leg-l">Almuerzo del ensayo</span><span class="leg-v">RD$ 318.00 · 7,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#22D3EE"></span><span class="leg-l">Litúrgico</span><span class="leg-v">RD$ 153.00 · 3,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FB7185"></span><span class="leg-l">Música</span><span class="leg-v">RD$ 45.00 · 1,1%</span></div></div></div></div>
     </div>
   </section>
@@ -230,7 +233,7 @@
         <div class="qtot">Aporta en total <b>RD$ 150,000</b></div></div>
       <div class="qcard"><div class="qt">Cuota del equipo · lo que aporta el equipo</div><div class="qbig hl" data-count="106000" data-kind="money">RD$ 106,000</div>
         <div class="qline"><b class="hl-amt">RD$ 2,000</b> = <b class="hl-amt">4 pagos de RD$ 500</b> (jun–sep) · 53 del equipo</div><div class="chips"><span class="chip">Ensayo general</span><span class="chip">Prorrateo del salón</span><span class="chip">Transporte al retiro</span><span class="chip">Comida del ensayo</span><span class="chip">Camiseta del equipo</span></div>
-        <div class="qtot">Aporta en total <b>RD$ 106,000</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección</div></div>
+        <div class="qtot">Aporta en total <b>RD$ 106,000</b></div></div>
     </div>
   </section>
 
