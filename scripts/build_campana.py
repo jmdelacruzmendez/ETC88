@@ -198,6 +198,61 @@ wa_btns = "".join(
     f'<span class="wa-name" id="wa-{i}-n">WhatsApp a {c["nombre"]}</span></a>'
     for i, c in enumerate(WA_CONTACTS))
 
+# Bloque "Cómo pagar tu cuota": transferencia + reenviar comprobante + PayPal opcional (data-driven)
+APORTE = EST['marca'].get('aporte', {})
+_cta = APORTE.get('cuenta', {}); _cf = APORTE.get('contacto_financiero', {}); _pp = APORTE.get('paypal', {})
+POR_DEF = '<span class="pordef">[POR DEFINIR]</span>'
+def _copy_btn(val): return f'<button type="button" class="cp-btn" data-copy="{_esc(val)}" title="Copiar">📋</button>'
+def _pay_row(lbl, val, copy=False):
+    v = (f'<span class="pay-val">{val}</span>' + (_copy_btn(val) if copy else '')) if val else POR_DEF
+    return f'<div class="pay-row"><span class="pay-k">{lbl}</span><span class="pay-v">{v}</span></div>'
+cuenta_rows = "".join([
+    _pay_row('Banco', _cta.get('banco', '')),
+    _pay_row('Tipo de cuenta', _cta.get('tipo', '')),
+    _pay_row('Número', _cta.get('numero', ''), copy=True),
+    _pay_row('Titular', _cta.get('titular', '')),
+    _pay_row(_cta.get('documento_tipo', 'Cédula'), _cta.get('documento', ''), copy=True),
+])
+if _cta.get('numero'):
+    _all = f"{_cta.get('banco','')} · {_cta.get('tipo','')} · Cuenta {_cta.get('numero','')} · {_cta.get('titular','')} · {_cta.get('documento_tipo','Cédula')} {_cta.get('documento','')}"
+    cuenta_extra = f'<button type="button" class="cp-all" data-copy="{_esc(_all)}">📋 Copiar todos los datos</button>'
+else:
+    cuenta_extra = '<p class="pay-note">Esperando los datos de la cuenta de Tesorería — no se inventan (regla #1).</p>'
+_fin, _prov = (_cf['contactos'], False) if _cf.get('contactos') else (WA_CONTACTS, True)
+_comp_msg = urllib.parse.quote("Hola. Hice mi aporte para el ETC · Misión 88 (Encuentro Total con Cristo) por transferencia. Te adjunto el comprobante. 🙏")
+comp_btns = "".join(
+    f'<a class="wa-btn" target="_blank" rel="noopener" href="https://wa.me/{c["wa"]}?text={_comp_msg}">{WA_ICON}'
+    f'<span class="wa-name">Enviar comprobante a {c["nombre"]}</span></a>' for c in _fin)
+prov_note = '<p class="pay-note">Contacto provisional (Co-Dirección) hasta nombrar Tesorería.</p>' if _prov else ''
+if _pp.get('habilitado') and _pp.get('url'):
+    paypal_html = (f'<a class="pp-btn" target="_blank" rel="noopener" href="{_pp["url"]}">Donar con PayPal</a>'
+                   '<p class="pay-note">PayPal cobra comisión; úsalo solo si no tienes cuenta local.</p>')
+else:
+    paypal_html = f'<div class="pay-pend">{POR_DEF} — opcional; se activa cuando exista el link de PayPal</div>'
+PAY_SECTION = f'''  <section class="panel pay reveal" id="pay-panel">
+    <h2>Cómo pagar tu cuota</h2>
+    <p class="h2note">Por transferencia: copia los datos, transfiere y reenvía tu comprobante con un toque. El control de pagos es interno de Tesorería — aquí no se listan nombres.</p>
+    <div class="pay-grid">
+      <div class="pay-card">
+        <div class="pay-card-h">1 · Datos para transferir</div>
+        {cuenta_rows}
+        {cuenta_extra}
+      </div>
+      <div class="pay-card">
+        <div class="pay-card-h">2 · Ya transferí → enviar comprobante</div>
+        <p class="pay-sub">Se abre WhatsApp con el mensaje listo; solo adjunta tu captura y envía.</p>
+        {comp_btns}
+        {prov_note}
+      </div>
+    </div>
+    <div class="pay-card pay-pp">
+      <div class="pay-card-h">¿Sin cuenta local? PayPal (opcional)</div>
+      <p class="pay-sub">Para diáspora o quien no tenga cuenta dominicana.</p>
+      {paypal_html}
+    </div>
+  </section>
+'''
+
 datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha, "subOperativo": sub_operativo,
                        "fechaCierrePagos": FECHA_CPAGO, "fechaRetiro": FECHA_RET, "locale": "es-DO", "moneda": "RD$",
                        "wa": [{"n": c["nombre"], "num": c["wa"]} for c in WA_CONTACTS]}, ensure_ascii=False)
@@ -366,6 +421,27 @@ CSS = r'''
     .bi-p{grid-column:2;grid-row:2;justify-self:end}
     .bi .apad-mini{grid-column:1 / -1;grid-row:3;justify-self:start;margin-top:5px}
   }
+  /* bloque pagar cuota: cuenta + comprobante + paypal + copiar */
+  .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.pay-grid{grid-template-columns:1fr}}
+  .pay-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .pay-pp{margin-top:14px}
+  .pay-card-h{color:var(--sky);font-weight:700;font-size:.9rem;margin-bottom:12px}
+  .pay-sub{color:var(--muted);font-size:.83rem;margin-bottom:12px}
+  .pay-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.06)}
+  .pay-row:first-of-type{border-top:none}
+  .pay-k{color:var(--muted);font-size:.84rem}
+  .pay-v{color:var(--ink);font-size:.9rem;text-align:right;display:flex;align-items:center;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+  .pay-val{font-variant-numeric:tabular-nums;font-weight:600}
+  .pordef{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.02em}
+  .cp-btn{font-family:inherit;cursor:pointer;background:rgba(56,189,248,.14);border:1px solid rgba(56,189,248,.4);border-radius:8px;padding:3px 8px;font-size:.85rem;line-height:1}
+  .cp-all{font-family:inherit;cursor:pointer;margin-top:12px;width:100%;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.4);color:#cfeafe;border-radius:10px;padding:10px;font-size:.86rem;font-weight:700}
+  .pay-note{color:var(--muted2);font-size:.78rem;margin-top:10px}
+  .pay-pend{color:var(--muted);font-size:.85rem;padding:8px 0}
+  .pay .wa-btn{margin-top:8px}
+  .pp-btn{display:inline-block;background:#0070BA;color:#fff;border-radius:10px;padding:10px 18px;font-weight:700;text-decoration:none;font-size:.9rem}
+  .cp-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);background:#04241a;color:#8df3b3;border:1px solid var(--green);border-radius:100px;padding:9px 18px;font-size:.85rem;font-weight:700;opacity:0;transition:opacity .25s,transform .25s;z-index:50;pointer-events:none}
+  .cp-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 '''
 
 JS = r'''
@@ -470,6 +546,16 @@ recompute();
   var rb=$('sim2-reset'); if(rb) rb.addEventListener('click',reset);
   list.addEventListener('input',function(e){ if(e.target.classList.contains('bi-qi')||e.target.classList.contains('bi-pi')){ paint(e.target.closest('.bi')); recompute(); } });
   sortBy('monto-desc');
+})();
+/* copiar al portapapeles (datos de la cuenta) */
+(function(){
+  function toast(m){ var t=document.createElement('div'); t.className='cp-toast'; t.textContent=m; document.body.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('show'); }); setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); },300); },1500); }
+  document.addEventListener('click',function(e){ var b=e.target.closest('[data-copy]'); if(!b) return; e.preventDefault();
+    var v=b.getAttribute('data-copy')||'';
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(function(){ toast('Copiado ✓'); }, function(){ toast('No se pudo copiar'); }); }
+    else { try{ var ta=document.createElement('textarea'); ta.value=v; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand('copy'); ta.remove(); toast('Copiado ✓'); }catch(_){ toast('No se pudo copiar'); } }
+  });
 })();
 '''.replace('__DATOS_JS__', datos_js)
 
@@ -620,6 +706,7 @@ BODY = f'''
     <p class="apad-note">Se abre WhatsApp con el mensaje ya escrito; tú solo lo revisas y envías. El donante elige a qué director escribir.</p>
   </section>
 
+{PAY_SECTION}
   <section class="panel bud reveal" id="bud-panel">
     <h2>Explora y simula el presupuesto</h2>
     <p class="h2note">Los {len(bud_items)} ítems del Maestro. Filtra por rubro, ordena por precio o cantidad, y activa el simulador para "rejugar" cantidades y precios y ver cómo cambia lo que falta. (Para tocar y simular, ábrelo en un navegador.)</p>

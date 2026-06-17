@@ -559,6 +559,32 @@
           }
         ]
       },
+      "aporte": {
+        "estado": "pendiente",
+        "fuente": "—",
+        "nota": "Bloque 'Cómo pagar tu cuota' del tablero: transferencia + reenviar comprobante + PayPal opcional (diáspora). La cuenta real y el responsable de Tesorería los confirma el director (regla #1). Hasta entonces: cuenta [POR DEFINIR], PayPal desactivado, y el contacto del comprobante va a Co-Dirección (provisional). BLOQUEANTE vigente: no recaudar antes de nombrar Tesorería.",
+        "cuenta": {
+          "estado": "pendiente",
+          "banco": "",
+          "tipo": "",
+          "numero": "",
+          "titular": "",
+          "documento_tipo": "Cédula",
+          "documento": ""
+        },
+        "contacto_financiero": {
+          "estado": "propuesta",
+          "nota": "Provisional: vacío => usa los contactos de Co-Dirección (marca.contacto_whatsapp) hasta nombrar Tesorería. Cuando se nombre, llenar 'contactos' con {nombre, wa}.",
+          "contactos": []
+        },
+        "paypal": {
+          "estado": "pendiente",
+          "habilitado": false,
+          "url": "",
+          "usuario": "",
+          "nota": "Opcional, solo para quien no tiene cuenta local (diáspora). Poner habilitado=true y la url (PayPal.me) cuando exista. PayPal cobra comisión."
+        }
+      },
       "lema_retiro": {
         "valor": "Donde está tu tesoro, allí estará tu corazón",
         "estado": "confirmado",
