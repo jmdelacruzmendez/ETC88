@@ -188,7 +188,7 @@ datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha,
                        "wa": [{"n": c["nombre"], "num": c["wa"]} for c in WA_CONTACTS]}, ensure_ascii=False)
 
 CSS = r'''
-  :root{--bg:#0B1F3A;--bg2:#0e2a4d;--bg3:#071427;--ink:#EAF2FF;--muted:#9DB2D4;--muted2:#6F87AD;
+  :root{--bg:#0B1F3A;--bg2:#0e2a4d;--bg3:#071427;--ink:#EAF2FF;--muted:#9DB2D4;--muted2:#8EA3C6;
     --line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);--card-h:rgba(255,255,255,.075);--hole:#10233f;
     --green:#34D399;--green3:#059669;--sky:#38BDF8;--gold:#F2C572;--red:#FC5130;--shadow:0 20px 50px -20px rgba(0,0,0,.6);--r:20px}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -312,7 +312,7 @@ CSS = r'''
   .wa-btn .wa-ic{flex:none}
   .pres-it .pi-n{grid-column:1;grid-row:1}
   .pres-it .apad-mini{grid-column:2;grid-row:2;justify-self:end;margin-top:2px}
-  .qbig.hl{font-size:clamp(2.1rem,7vw,3.3rem);color:var(--gold)}
+  .qbig.hl{color:var(--gold)}
   .hl-amt{color:var(--gold)}
 '''
 
@@ -399,7 +399,21 @@ PATCH = r'''<svg class="patch" viewBox="0 0 200 200" role="img" aria-label="ETC 
 # archivo, se incrusta tal cual (base64, self-contained); si no, cae al SVG.
 _logo_path = os.path.join(REPO, 'design', 'logo_mision88.png')
 if os.path.exists(_logo_path):
-    _b64 = base64.b64encode(open(_logo_path, 'rb').read()).decode()
+    _raw = open(_logo_path, 'rb').read()
+    try:  # optimización NO destructiva (no modifica el archivo fuente): redimensiona a 360px + 256 colores
+        from PIL import Image
+        import io as _io
+        _im = Image.open(_io.BytesIO(_raw)).convert('RGBA')
+        _W = 360
+        if _im.width > _W:
+            _im = _im.resize((_W, round(_im.height * _W / _im.width)), Image.LANCZOS)
+        _im = _im.quantize(colors=256, method=Image.FASTOCTREE, dither=Image.NONE)
+        _buf = _io.BytesIO(); _im.save(_buf, format='PNG', optimize=True)
+        if len(_buf.getvalue()) < len(_raw):
+            _raw = _buf.getvalue()
+    except Exception:   # sin Pillow se incrusta el original (run_all sigue funcionando)
+        pass
+    _b64 = base64.b64encode(_raw).decode()
     LOGO_HTML = '<img class="patch" src="data:image/png;base64,' + _b64 + '" alt="ETC · Misión 88">'
 else:
     LOGO_HTML = PATCH
