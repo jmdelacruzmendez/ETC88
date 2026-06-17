@@ -1,0 +1,659 @@
+#!/usr/bin/env python3
+"""Genera el Tablero de Campaña (recaudación) del ETC 88 como UN archivo HTML
+autocontenido (HTML + CSS + JS nativo, sin dependencias externas, sin CDNs).
+
+Cifras trazadas a data/estado.json (Presupuesto Maestro 14-jun-2026):
+  meta 553,622 · cuotas firmes 256,000 · palancas (no firmes) 215,000 ·
+  especie 114,701 · proyección 585,701 · superávit +32,079 · brecha 297,622.
+
+REGLAS ETC 88 respetadas:
+  - Nada se inventa: los montos se leen de estado.json (única fuente).
+  - Lo NO firme (palancas, especie) se marca como 'estimado' — nunca como hecho.
+  - La fecha del retiro sale de estado.json (4–6 sep 2026), no de un supuesto.
+  - Es GENERADO (regla #2): no se edita el HTML a mano; se cambian los DATOS y
+    se vuelve a correr este script.
+
+Salida:  tablero_campana_etc88.html  (en la raíz del repo)
+Uso:     python scripts/build_campana.py
+"""
+import json
+import os
+
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EST = json.load(open(os.path.join(REPO, 'data', 'estado.json'), encoding='utf-8'))
+
+# ----------------------------------------------------------- leer estado.json
+fin = EST['finanzas']
+meta_blk = fin['meta_recaudacion_total']
+desg = meta_blk['desglose']
+plan = fin['plan_recaudacion']['fuentes_caja_plan_a']
+
+meta      = meta_blk['valor']                 # 553_622
+cuotas    = desg['cuotas_firmes']             # 256_000
+brecha    = desg['brecha_tras_cuotas']        # 297_622
+especie   = desg['especie_potencial']         # 114_701
+margen    = desg['margen_proyectado']         # 32_079
+rifa      = plan['rifa_profondo']['monto']    # 90_000
+garaje    = plan['venta_garaje']['monto']     # 60_000
+comida    = plan['venta_comida']['monto']     # 25_000
+efectivo  = plan['donaciones_efectivo']['monto']   # 40_000
+caja_obj  = plan['total_caja_objetivo']       # 471_000
+
+cuota_part   = fin['cuota_participante']['valor']        # 3_000
+n_part       = fin['participantes_objetivo']['valor']    # 50
+part_cuotas  = cuota_part * n_part                       # 150_000
+equipo_cuotas = cuotas - part_cuotas                     # 106_000  (53 × 2,000)
+
+lema = EST['marca']['lema_retiro']['valor']   # "Donde está tu tesoro, allí estará tu corazón"
+
+# Costo por persona: provisto por el director (prompt 17-jun / hoja maestra).
+# NO se recalcula desde estado.json (allí 'costo_por_persona_100'=5,536 es el
+# promedio mezclado sobre 100 personas; estos son el desglose participante vs
+# equipo de la hoja del director). Editables abajo.
+COSTO_POR_PARTICIPANTE = 6660.56
+COSTO_POR_MIEMBRO_EQUIPO = 1093
+
+# ----------------------------------------------------- chequeo de aritmética
+palancas   = rifa + garaje + comida + efectivo            # 215_000
+proyeccion = cuotas + palancas + especie                  # 585_701
+superavit  = proyeccion - meta                            # 32_079
+
+errores = []
+if palancas + cuotas != caja_obj:
+    errores.append(f"caja objetivo {caja_obj} ≠ cuotas+palancas {cuotas+palancas}")
+if meta - cuotas != brecha:
+    errores.append(f"brecha {brecha} ≠ meta-cuotas {meta-cuotas}")
+if superavit != margen:
+    errores.append(f"superávit {superavit} ≠ margen estado.json {margen}")
+if part_cuotas + equipo_cuotas != cuotas:
+    errores.append(f"detalle cuotas {part_cuotas}+{equipo_cuotas} ≠ {cuotas}")
+if errores:
+    raise SystemExit("CIFRAS NO CUADRAN con estado.json:\n  - " + "\n  - ".join(errores))
+
+# ------------------------------------------------------------- objeto datos
+datos = {
+    "evento": "Retiro ETC 88",
+    "subtitulo": "Campaña de recaudación · cubrir el costo total del retiro",
+    "lema": lema,
+    "citaBiblica": "Mt 6, 21",
+    "moneda": "RD$",
+    "locale": "es-DO",
+    "fechaRetiro": "2026-09-04",                       # inicio del retiro (estado.json)
+    "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
+    "actualizado": "17 de junio de 2026",
+
+    "costoTotal": meta,            # META = costo total del retiro (confirmado)
+    "recaudado": cuotas,           # ← EDITABLE: cuotas firmes a la fecha
+
+    # Fuentes de recaudación (alimentan el gráfico). tipo: firme | estimado | especie
+    "fuentes": [
+        {"nombre": "Cuotas (participantes + equipo)", "monto": cuotas,   "tipo": "firme"},
+        {"nombre": "Rifa / Profondo",                 "monto": rifa,     "tipo": "estimado"},
+        {"nombre": "Venta de garaje",                 "monto": garaje,   "tipo": "estimado"},
+        {"nombre": "Venta de comida",                 "monto": comida,   "tipo": "estimado"},
+        {"nombre": "Donaciones en efectivo",          "monto": efectivo, "tipo": "estimado"},
+        {"nombre": "Donaciones en especie",           "monto": especie,  "tipo": "especie"},
+    ],
+
+    "cuotasDetalle": {
+        "participantes": part_cuotas, "equipo": equipo_cuotas,
+        "notaParticipantes": f"{n_part} × {cuota_part:,}",
+        "notaEquipo": "53 × 2,000",
+    },
+
+    # Costo por persona (hoja del director — secundario, editable)
+    "costoPorParticipante": COSTO_POR_PARTICIPANTE,
+    "costoPorMiembroEquipo": COSTO_POR_MIEMBRO_EQUIPO,
+    "numParticipantes": n_part,
+    "numEquipo": 50,
+}
+
+datos_json = json.dumps(datos, ensure_ascii=False, indent=2)
+
+# =========================================================================
+#  PLANTILLA  (HTML + CSS + JS)  — el único marcador es __DATOS_JSON__
+# =========================================================================
+TEMPLATE = r'''<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retiro ETC 88 · Tablero de Campaña</title>
+<style>
+  :root{
+    --bg:#0B1F3A; --bg2:#0e2a4d; --bg3:#091830;
+    --ink:#EAF2FF; --muted:#9DB2D4; --muted2:#6F87AD;
+    --line:rgba(255,255,255,.10); --card:rgba(255,255,255,.045);
+    --card-h:rgba(255,255,255,.075);
+    --green:#34D399; --green2:#10B981; --green3:#059669;
+    --amber:#FBBF24; --sky:#38BDF8; --rose:#FB7185;
+    --gold:#F2C572;
+    --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+    --r:20px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+                "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    color:var(--ink); line-height:1.5; min-height:100vh;
+    background:
+      radial-gradient(1100px 700px at 12% -8%, rgba(52,211,153,.13), transparent 60%),
+      radial-gradient(900px 600px at 95% 0%, rgba(56,189,248,.12), transparent 55%),
+      radial-gradient(1200px 900px at 50% 120%, rgba(16,185,129,.08), transparent 60%),
+      linear-gradient(160deg, var(--bg2), var(--bg) 45%, var(--bg3));
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(16px,3vw,40px);
+  }
+  .wrap{max-width:1180px; margin:0 auto}
+
+  /* ---------- header ---------- */
+  header{text-align:center; padding:clamp(20px,4vw,48px) 0 clamp(14px,2vw,26px)}
+  .eyebrow{
+    display:inline-block; font-size:clamp(.72rem,1.4vw,.86rem); letter-spacing:.28em;
+    text-transform:uppercase; color:var(--green); font-weight:700;
+    padding:7px 16px; border:1px solid rgba(52,211,153,.35); border-radius:100px;
+    background:rgba(52,211,153,.08);
+  }
+  h1{
+    font-size:clamp(2.4rem,7vw,5rem); font-weight:800; line-height:1.02;
+    letter-spacing:-.02em; margin:18px 0 6px;
+    background:linear-gradient(180deg,#fff, #cfe0ff 70%, #9db2d4);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sub{color:var(--muted); font-size:clamp(1rem,2.2vw,1.32rem); font-weight:500}
+  .lema{
+    margin:18px auto 0; max-width:680px; color:var(--gold); font-style:italic;
+    font-size:clamp(1rem,2.4vw,1.45rem); line-height:1.35;
+  }
+  .lema b{font-style:normal; color:var(--muted2); font-size:.8em; display:block; margin-top:6px;
+    letter-spacing:.04em}
+
+  /* ---------- KPI row ---------- */
+  .kpis{
+    display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(20px,3vw,34px) 0;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  }
+  .kpi{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+    padding:clamp(16px,2vw,24px); position:relative; overflow:hidden;
+    transition:transform .35s ease, background .35s ease, border-color .35s ease;
+  }
+  .kpi:hover{transform:translateY(-4px); background:var(--card-h); border-color:rgba(255,255,255,.2)}
+  .kpi::before{content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px;
+    background:linear-gradient(90deg,var(--green),var(--sky))}
+  .kpi .lbl{font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+  .kpi .val{font-size:clamp(1.6rem,3.4vw,2.5rem); font-weight:800; letter-spacing:-.02em;
+    margin-top:8px; font-variant-numeric:tabular-nums; line-height:1.05}
+  .kpi .note{font-size:.82rem; color:var(--muted2); margin-top:6px}
+  .kpi.accent .val{color:var(--green)}
+  .kpi.warn .val{color:var(--amber)}
+
+  /* ---------- panels & layout ---------- */
+  .panel{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+    padding:clamp(18px,2.6vw,32px); box-shadow:var(--shadow); margin-bottom:clamp(14px,2vw,22px);
+  }
+  .panel h2{font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:700; letter-spacing:-.01em}
+  .panel .h2note{color:var(--muted); font-size:.9rem; margin-top:4px; margin-bottom:18px}
+  .grid2{display:grid; gap:clamp(14px,2vw,22px); grid-template-columns:1fr 1fr}
+  @media(max-width:820px){ .grid2{grid-template-columns:1fr} }
+
+  /* ---------- thermometer ---------- */
+  .thermo-flex{display:flex; gap:clamp(14px,3vw,30px); align-items:center}
+  .thermo-svg{width:clamp(120px,28vw,168px); flex:none}
+  .thermo-svg svg{display:block; width:100%; height:auto; overflow:visible}
+  .thermo-info{flex:1; min-width:0}
+  .big-pct{font-size:clamp(3rem,11vw,5.2rem); font-weight:800; line-height:.95;
+    letter-spacing:-.03em; color:var(--green); font-variant-numeric:tabular-nums}
+  .big-pct small{font-size:.42em; color:var(--muted); font-weight:600; letter-spacing:0}
+  .th-rows{margin-top:18px; display:grid; gap:10px}
+  .th-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    padding-bottom:10px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums}
+  .th-row:last-child{border-bottom:0; padding-bottom:0}
+  .th-row .k{color:var(--muted); font-size:.95rem}
+  .th-row .v{font-weight:700; font-size:1.1rem}
+  .th-row.is-falta .v{color:var(--amber)}
+
+  /* ---------- countdown ---------- */
+  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(8px,1.4vw,14px)}
+  .cd-cell{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:14px;
+    padding:clamp(12px,2vw,20px) 6px; text-align:center}
+  .cd-num{font-size:clamp(1.9rem,6.5vw,3.4rem); font-weight:800; font-variant-numeric:tabular-nums;
+    line-height:1; letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff,#bcd2f5); -webkit-background-clip:text;
+    background-clip:text; color:transparent}
+  .cd-lbl{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+    margin-top:8px}
+  .cd-when{color:var(--muted); text-align:center; margin-top:16px; font-size:.95rem}
+  .cd-when b{color:var(--ink)}
+
+  /* ---------- bar chart ---------- */
+  #chart-svg{width:100%; height:auto; display:block}
+  .legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin-top:18px; color:var(--muted);
+    font-size:.88rem}
+  .legend span{display:inline-flex; align-items:center; gap:8px}
+  .sw{width:14px; height:14px; border-radius:4px; flex:none}
+  .sw.firme{background:var(--green)} .sw.estimado{background:var(--amber)}
+  .sw.especie{background:var(--sky)}
+
+  /* ---------- projection ---------- */
+  .proj{background:
+      linear-gradient(135deg, rgba(52,211,153,.16), rgba(56,189,248,.08) 70%, transparent),
+      var(--card);
+    border:1px solid rgba(52,211,153,.3)}
+  .proj .surplus{font-size:clamp(2.2rem,7vw,3.6rem); font-weight:800; color:var(--green);
+    letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1}
+  .proj .surplus small{display:block; font-size:.26em; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--muted); font-weight:700; margin-bottom:6px}
+  .formula{margin-top:18px; color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem);
+    line-height:1.8; font-variant-numeric:tabular-nums}
+  .formula b{color:var(--ink); font-weight:700}
+  .formula .t-firme{color:var(--green)} .formula .t-est{color:var(--amber)} .formula .t-esp{color:var(--sky)}
+  .stack{height:34px; border-radius:10px; overflow:hidden; display:flex; margin-top:22px;
+    background:rgba(0,0,0,.25); position:relative}
+  .stack i{height:100%; display:block; width:0; transition:width 1.4s cubic-bezier(.16,1,.3,1)}
+  .stack i.firme{background:linear-gradient(180deg,var(--green),var(--green3))}
+  .stack i.estimado{background:linear-gradient(180deg,var(--amber),#d99908)}
+  .stack i.especie{background:linear-gradient(180deg,var(--sky),#0c8fce)}
+  .meta-mark{position:absolute; top:-6px; bottom:-6px; width:2px; background:#fff;
+    box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+  .meta-mark span{position:absolute; top:-22px; transform:translateX(-50%); white-space:nowrap;
+    font-size:.72rem; color:#fff; font-weight:700; letter-spacing:.04em}
+  .stack-cap{display:flex; justify-content:space-between; margin-top:30px; color:var(--muted);
+    font-size:.85rem; flex-wrap:wrap; gap:6px}
+  .msg{margin-top:24px; padding:18px 20px; border-radius:14px; background:rgba(0,0,0,.22);
+    border-left:4px solid var(--green); font-size:clamp(1.02rem,2.3vw,1.28rem); line-height:1.5}
+  .msg b{color:var(--green)}
+
+  /* ---------- per-person mini ---------- */
+  .mini{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px}
+  @media(max-width:520px){ .mini{grid-template-columns:1fr} }
+  .mini .box{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:14px; padding:16px 18px}
+  .mini .box .k{color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.06em}
+  .mini .box .v{font-size:clamp(1.3rem,3.5vw,1.7rem); font-weight:800; margin-top:6px;
+    font-variant-numeric:tabular-nums}
+  .mini .box .n{color:var(--muted2); font-size:.8rem; margin-top:4px}
+
+  footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.visible{opacity:1; transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1; transform:none; transition:none}
+    .stack i{transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="reveal">
+    <span class="eyebrow">Encuentro Total con Cristo</span>
+    <h1 id="evento">Retiro ETC 88</h1>
+    <p class="sub" id="subtitulo"></p>
+    <p class="lema" id="lema"></p>
+  </header>
+
+  <!-- KPI row -->
+  <section class="kpis reveal" id="kpis">
+    <div class="kpi"><div class="lbl">Costo total (meta)</div><div class="val" id="kpi-costo">RD$ 0</div><div class="note">cubrir el costo del retiro</div></div>
+    <div class="kpi accent"><div class="lbl">Recaudado a la fecha</div><div class="val" id="kpi-recaudado">RD$ 0</div><div class="note">cuotas firmes comprometidas</div></div>
+    <div class="kpi accent"><div class="lbl">% cubierto</div><div class="val" id="kpi-pct">0%</div><div class="note">de la meta</div></div>
+    <div class="kpi warn"><div class="lbl">Falta por recaudar</div><div class="val" id="kpi-falta">RD$ 0</div><div class="note">brecha tras cuotas</div></div>
+    <div class="kpi"><div class="lbl">Días restantes</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">al inicio del retiro</div></div>
+  </section>
+
+  <!-- thermometer + countdown -->
+  <div class="grid2">
+    <section class="panel reveal" id="thermo-panel">
+      <h2>Progreso hacia la meta</h2>
+      <p class="h2note">Recaudado vs. costo total del retiro</p>
+      <div class="thermo-flex">
+        <div class="thermo-svg" aria-hidden="true">
+          <svg viewBox="0 0 200 470" role="img">
+            <defs>
+              <linearGradient id="gradFill" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#059669"/>
+                <stop offset="55%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#34D399"/>
+              </linearGradient>
+              <clipPath id="tubeClip"><rect x="84" y="24" width="38" height="350" rx="19"/></clipPath>
+            </defs>
+            <!-- tracks -->
+            <circle cx="103" cy="406" r="40" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
+            <rect x="84" y="24" width="38" height="350" rx="19" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
+            <!-- bulb fill (siempre lleno) -->
+            <circle cx="103" cy="406" r="33" fill="url(#gradFill)"/>
+            <circle cx="94" cy="396" r="9" fill="rgba(255,255,255,.28)"/>
+            <!-- tube fill (animado) -->
+            <rect id="thermo-fill" x="84" y="374" width="38" height="0" fill="url(#gradFill)" clip-path="url(#tubeClip)"/>
+            <!-- meta line -->
+            <line x1="70" x2="150" y1="24" y2="24" stroke="#fff" stroke-width="2" stroke-dasharray="4 4" opacity=".75"/>
+            <text x="128" y="18" fill="#fff" font-size="12" font-weight="700">META</text>
+            <!-- ticks -->
+            <g stroke="rgba(255,255,255,.25)" font-size="11" fill="var(--muted)">
+              <line x1="122" x2="132" y1="111.5" y2="111.5"/><text x="136" y="115">75%</text>
+              <line x1="122" x2="132" y1="199" y2="199"/><text x="136" y="203">50%</text>
+              <line x1="122" x2="132" y1="286.5" y2="286.5"/><text x="136" y="290">25%</text>
+            </g>
+            <!-- current marker -->
+            <g id="thermo-marker" transform="translate(0,374)">
+              <line x1="54" x2="84" y1="0" y2="0" stroke="var(--green)" stroke-width="2"/>
+              <text id="thermo-marker-pct" x="50" y="5" text-anchor="end" fill="var(--green)" font-size="15" font-weight="800">0%</text>
+            </g>
+          </svg>
+        </div>
+        <div class="thermo-info">
+          <div class="big-pct"><span id="th-pct">0,0</span><small>%</small></div>
+          <div style="color:var(--muted); margin-top:2px">de la meta cubierta</div>
+          <div class="th-rows">
+            <div class="th-row"><span class="k">Recaudado</span><span class="v" id="th-recaudado">RD$ 0</span></div>
+            <div class="th-row"><span class="k">Meta (costo total)</span><span class="v" id="th-meta">RD$ 0</span></div>
+            <div class="th-row is-falta"><span class="k">Falta</span><span class="v" id="th-falta">RD$ 0</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="cd-panel">
+      <h2>Cuenta regresiva</h2>
+      <p class="h2note">Tiempo restante hasta el inicio del retiro</p>
+      <div class="cd-grid">
+        <div class="cd-cell"><div class="cd-num" id="cd-d">0</div><div class="cd-lbl">Días</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Min</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Seg</div></div>
+      </div>
+      <p class="cd-when">Retiro ETC 88 · <b id="cd-when"></b></p>
+    </section>
+  </div>
+
+  <!-- bar chart -->
+  <section class="panel reveal" id="chart-panel">
+    <h2>Recaudación por fuente</h2>
+    <p class="h2note">Cuotas firmes + palancas estimadas + donaciones en especie</p>
+    <svg id="chart-svg" role="img" aria-label="Recaudación por fuente"></svg>
+    <div class="legend">
+      <span><i class="sw firme"></i> Firme (comprometido)</span>
+      <span><i class="sw estimado"></i> Estimado (palanca, no firme)</span>
+      <span><i class="sw especie"></i> En especie (no es caja, reduce el costo)</span>
+    </div>
+  </section>
+
+  <!-- projection -->
+  <section class="panel proj reveal" id="proj-panel">
+    <div class="surplus"><small>Superávit proyectado sobre el costo</small><span id="pr-superavit">RD$ 0</span></div>
+    <div class="formula">
+      <span class="t-firme"><b id="pr-cuotas">RD$ 0</b> cuotas</span> +
+      <span class="t-est"><b id="pr-palancas">RD$ 0</b> palancas</span> +
+      <span class="t-esp"><b id="pr-especie">RD$ 0</b> especie</span> =
+      <b id="pr-proyeccion">RD$ 0</b> proyectado &nbsp;vs.&nbsp; meta <b id="pr-meta">RD$ 0</b>
+    </div>
+    <div class="stack" id="stack"></div>
+    <div class="stack-cap"><span>Recaudación total proyectada</span><span id="stack-total">RD$ 0</span></div>
+    <p class="msg">Si conseguimos las <b>donaciones en especie</b> (<span id="s-especie">RD$ 0</span>)
+      y las <b>palancas</b>, cerramos con <b>superávit de <span id="s-superavit">RD$ 0</span></b>.</p>
+
+    <div class="mini">
+      <div class="box"><div class="k">Costo por participante</div><div class="v" id="pp-part">RD$ 0</div><div class="n" id="pp-part-n"></div></div>
+      <div class="box"><div class="k">Costo por miembro del equipo</div><div class="v" id="pp-equipo">RD$ 0</div><div class="n" id="pp-equipo-n"></div></div>
+    </div>
+  </section>
+
+  <footer>
+    Generado desde <b>data/estado.json</b> (Presupuesto Maestro 14-jun-2026) · actualizado <span id="ft-fecha"></span>.<br>
+    Cifras: cuotas = firmes · palancas y especie = <b>estimadas (no firmes)</b>. Edita el objeto <code>datos</code> para actualizar.
+  </footer>
+
+</div>
+
+<script>
+/* =========================================================================
+   ETC 88 · TABLERO DE CAMPAÑA  —  DATOS EDITABLES (objeto `datos`)
+   Cifras trazadas a data/estado.json. Edita un valor y recarga: el %, la
+   brecha, la proyección y el superávit se recalculan SOLOS.
+   ========================================================================= */
+const datos = __DATOS_JSON__;
+
+/* ---- Derivados (se calculan solos) ------------------------------------ */
+const sumTipo = t => datos.fuentes.filter(f => f.tipo === t).reduce((a, f) => a + f.monto, 0);
+const D = {
+  cuotas:   sumTipo('firme'),
+  palancas: sumTipo('estimado'),
+  especie:  sumTipo('especie'),
+};
+D.proyeccion = datos.fuentes.reduce((a, f) => a + f.monto, 0);     // cuotas + palancas + especie
+D.pct        = Math.min(100, (datos.recaudado / datos.costoTotal) * 100);
+D.falta      = Math.max(0, datos.costoTotal - datos.recaudado);
+D.superavit  = D.proyeccion - datos.costoTotal;
+
+/* ---- Utilidades ------------------------------------------------------- */
+const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const nf  = new Intl.NumberFormat(datos.locale || 'es-DO');
+const nf2 = new Intl.NumberFormat(datos.locale || 'es-DO', {minimumFractionDigits:2, maximumFractionDigits:2});
+const money  = n => datos.moneda + ' ' + nf.format(Math.round(n));
+const money2 = n => datos.moneda + ' ' + nf2.format(n);
+const pctTxt = n => n.toFixed(1).replace('.', ',');
+const $ = id => document.getElementById(id);
+const setText = (id, v) => { const e = $(id); if (e) e.textContent = v; };
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+function animate(duration, onUpdate, onDone){
+  if (REDUCE){ onUpdate(1); if (onDone) onDone(); return; }
+  const t0 = performance.now();
+  function frame(now){
+    const t = Math.min(1, (now - t0) / duration);
+    onUpdate(easeOutCubic(t));
+    if (t < 1) requestAnimationFrame(frame); else if (onDone) onDone();
+  }
+  requestAnimationFrame(frame);
+}
+function countUp(id, to, fmt, dur){
+  const e = $(id); if (!e) return;
+  animate(dur || 1600, p => { e.textContent = fmt(to * p); });
+}
+
+/* ---- Encabezado / textos estáticos ----------------------------------- */
+setText('evento', datos.evento);
+setText('subtitulo', datos.subtitulo);
+$('lema').innerHTML = '«' + datos.lema + '»<b>' + datos.citaBiblica + '</b>';
+setText('cd-when', datos.fechaRetiroTexto);
+setText('ft-fecha', datos.actualizado);
+setText('th-meta', money(datos.costoTotal));
+setText('pr-meta', money(datos.costoTotal));
+setText('kpi-dias-note', 'al ' + datos.fechaRetiroTexto.split('–')[0].trim() + ' sep');
+
+/* ---- Fecha objetivo (medianoche local, evita parseo UTC) ------------- */
+function targetDate(){
+  const p = datos.fechaRetiro.split('-').map(Number);
+  return new Date(p[0], p[1] - 1, p[2], 0, 0, 0, 0);
+}
+function diffParts(){
+  let ms = Math.max(0, targetDate().getTime() - Date.now());
+  const d = Math.floor(ms / 86400000); ms -= d * 86400000;
+  const h = Math.floor(ms / 3600000);  ms -= h * 3600000;
+  const m = Math.floor(ms / 60000);    ms -= m * 60000;
+  const s = Math.floor(ms / 1000);
+  return {d, h, m, s};
+}
+function tickCountdown(){
+  const t = diffParts();
+  setText('cd-d', t.d);
+  setText('cd-h', String(t.h).padStart(2, '0'));
+  setText('cd-m', String(t.m).padStart(2, '0'));
+  setText('cd-s', String(t.s).padStart(2, '0'));
+}
+
+/* ---- KPIs (count-up) -------------------------------------------------- */
+function runKpis(){
+  countUp('kpi-costo', datos.costoTotal, money);
+  countUp('kpi-recaudado', datos.recaudado, money);
+  countUp('kpi-falta', D.falta, money);
+  animate(1600, p => { $('kpi-pct').textContent = pctTxt(D.pct * p) + '%'; });
+  animate(1600, p => { $('kpi-dias').textContent = nf.format(Math.round(diffParts().d * p)); });
+}
+
+/* ---- Termómetro -------------------------------------------------------- */
+function runThermo(){
+  const fill = $('thermo-fill'), marker = $('thermo-marker'), mpct = $('thermo-marker-pct');
+  const TOP = 24, BOTTOM = 374, RANGE = BOTTOM - TOP;       // 350
+  const fracTarget = D.pct / 100;
+  setText('th-recaudado', money(datos.recaudado));
+  setText('th-falta', money(D.falta));
+  animate(1800, p => {
+    const frac = fracTarget * p;
+    const y = BOTTOM - frac * RANGE;
+    fill.setAttribute('y', y);
+    fill.setAttribute('height', BOTTOM - y);
+    marker.setAttribute('transform', 'translate(0,' + y + ')');
+    mpct.textContent = pctTxt(frac * 100) + '%';
+    $('th-pct').textContent = pctTxt(frac * 100);
+  });
+}
+
+/* ---- Gráfico de barras (SVG, animado al aparecer) --------------------- */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function el(name, attrs){
+  const e = document.createElementNS(SVGNS, name);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+const COLOR = {firme:'var(--green)', estimado:'var(--amber)', especie:'var(--sky)'};
+const TIPO_LBL = {firme:'firme', estimado:'estimado', especie:'especie'};
+function renderChart(){
+  const svg = $('chart-svg');
+  const W = 1000, X0 = 12, ROW = 78, PAD = 8, BARH = 26;
+  const trackW = W - X0 * 2;
+  const max = Math.max.apply(null, datos.fuentes.map(f => f.monto));
+  const H = PAD + datos.fuentes.length * ROW;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  const fills = [];
+  datos.fuentes.forEach((f, i) => {
+    const yTop = PAD + i * ROW;
+    const yName = yTop + 22, yBar = yTop + 34;
+    // nombre
+    const name = el('text', {x:X0, y:yName, fill:'var(--ink)', 'font-size':'21', 'font-weight':'700'});
+    name.textContent = f.nombre;
+    svg.appendChild(name);
+    // chip de tipo
+    const chip = el('text', {x:X0 + measure(f.nombre) + 14, y:yName, fill:COLOR[f.tipo],
+                             'font-size':'15', 'font-weight':'700'});
+    chip.textContent = '· ' + TIPO_LBL[f.tipo];
+    svg.appendChild(chip);
+    // monto (derecha)
+    const amt = el('text', {x:W - X0, y:yName, fill:COLOR[f.tipo], 'font-size':'21',
+                            'font-weight':'800', 'text-anchor':'end'});
+    amt.textContent = money(0);
+    svg.appendChild(amt);
+    // track
+    svg.appendChild(el('rect', {x:X0, y:yBar, width:trackW, height:BARH, rx:BARH/2,
+                                fill:'rgba(255,255,255,.06)'}));
+    // fill
+    const wTarget = trackW * (f.monto / max);
+    const bar = el('rect', {x:X0, y:yBar, width:0, height:BARH, rx:BARH/2, fill:COLOR[f.tipo]});
+    if (f.tipo !== 'firme') bar.setAttribute('opacity', '.92');
+    svg.appendChild(bar);
+    fills.push({bar, amt, wTarget, monto:f.monto});
+  });
+  return fills;
+}
+// medir ancho aproximado de texto SVG (para ubicar el chip) sin DOM extra
+let _mctx;
+function measure(txt){
+  if (!_mctx){ _mctx = document.createElement('canvas').getContext('2d'); _mctx.font = '700 21px -apple-system,Segoe UI,Roboto,sans-serif'; }
+  return _mctx.measureText(txt).width;
+}
+function animateChart(fills){
+  fills.forEach((it, i) => {
+    animate(1500 + i * 90, p => {
+      it.bar.setAttribute('width', it.wTarget * Math.min(1, p));
+      it.amt.textContent = money(it.monto * Math.min(1, p));
+    });
+  });
+}
+
+/* ---- Proyección + barra apilada + superávit ------------------------- */
+function runProjection(){
+  countUp('pr-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
+  countUp('pr-cuotas', D.cuotas, money);
+  countUp('pr-palancas', D.palancas, money);
+  countUp('pr-especie', D.especie, money);
+  countUp('pr-proyeccion', D.proyeccion, money);
+  countUp('s-especie', D.especie, money);
+  countUp('s-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
+  countUp('stack-total', D.proyeccion, money);
+  // costo por persona
+  setText('pp-part', money2(datos.costoPorParticipante));
+  setText('pp-part-n', datos.numParticipantes + ' participantes');
+  setText('pp-equipo', money(datos.costoPorMiembroEquipo));
+  setText('pp-equipo-n', datos.numEquipo + ' de equipo · bus compartido');
+  // barra apilada
+  const stack = $('stack');
+  const segs = [
+    {t:'firme', v:D.cuotas}, {t:'estimado', v:D.palancas}, {t:'especie', v:D.especie}
+  ];
+  segs.forEach(s => {
+    const seg = document.createElement('i');
+    seg.className = s.t;
+    seg.dataset.w = (s.v / D.proyeccion * 100).toFixed(3);
+    stack.appendChild(seg);
+  });
+  // marca de meta
+  const mark = document.createElement('div');
+  mark.className = 'meta-mark';
+  mark.style.left = (datos.costoTotal / D.proyeccion * 100) + '%';
+  mark.innerHTML = '<span>META ' + money(datos.costoTotal) + '</span>';
+  stack.appendChild(mark);
+  requestAnimationFrame(() => {
+    if (REDUCE){ stack.querySelectorAll('i').forEach(i => i.style.width = i.dataset.w + '%'); return; }
+    setTimeout(() => stack.querySelectorAll('i').forEach(i => { i.style.width = i.dataset.w + '%'; }), 120);
+  });
+}
+
+/* ---- Disparar animaciones cuando cada sección entra en vista ---------- */
+function onVisible(node, cb){
+  if (!('IntersectionObserver' in window)){ cb(); return; }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting){ cb(); obs.disconnect(); } });
+  }, {threshold:.25});
+  io.observe(node);
+}
+function setupReveal(){
+  document.querySelectorAll('.reveal').forEach(n => onVisible(n, () => n.classList.add('visible')));
+}
+
+/* ---- Init ------------------------------------------------------------- */
+window.addEventListener('DOMContentLoaded', () => {
+  setupReveal();
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+  let chartFills = null;
+  onVisible($('kpis'), runKpis);
+  onVisible($('thermo-panel'), runThermo);
+  onVisible($('chart-panel'), () => { if (!chartFills) chartFills = renderChart(); animateChart(chartFills); });
+  onVisible($('proj-panel'), runProjection);
+});
+</script>
+</body>
+</html>
+'''
+
+html = TEMPLATE.replace('__DATOS_JSON__', datos_json)
+out = os.path.join(REPO, 'tablero_campana_etc88.html')
+with open(out, 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print("OK  tablero_campana_etc88.html")
+print(f"    meta        RD$ {meta:,}")
+print(f"    recaudado   RD$ {cuotas:,}  ({cuotas/meta*100:.1f}% de la meta)")
+print(f"    palancas    RD$ {palancas:,}  (estimadas, no firmes)")
+print(f"    especie     RD$ {especie:,}")
+print(f"    proyección  RD$ {proyeccion:,}")
+print(f"    superávit   RD$ {superavit:,}  (= margen estado.json {margen:,})")
+print(f"    brecha      RD$ {brecha:,}")
+print(f"    retiro      {datos['fechaRetiroTexto']}")
+print("    aritmética cuadra con data/estado.json ✓")

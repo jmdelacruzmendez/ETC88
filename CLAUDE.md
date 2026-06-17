@@ -46,6 +46,7 @@ python scripts/build_trazabilidad.py # → preparacion/TRAZABILIDAD.md (registro
 python scripts/build_cantera.py     # → Cantera_ETC88.xlsx (maqueta: padrinos + auxiliares)
 python scripts/build_captacion.py   # → /tmp/drive_captacion.csv (tracker de participantes, desde data/participantes.json)
 python scripts/build_web.py         # → web/*.csv + web/tablero_offline.html (tablero: vivo/snapshot + autocontenido para compartir privado; ver web/LEEME.md)
+python scripts/build_campana.py     # → tablero_campana_etc88.html (1 archivo autocontenido: termómetro + cuenta regresiva + recaudación por fuente; cifras desde estado.json)
 python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```
