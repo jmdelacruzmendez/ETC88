@@ -1,1040 +1,268 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ETC · Misión 88 · Tablero de la Tripulación</title>
-<style>
-  :root{
-    --bg:#0B1F3A; --bg2:#0e2a4d; --bg3:#071427;
-    --ink:#EAF2FF; --muted:#9DB2D4; --muted2:#6F87AD;
-    --line:rgba(255,255,255,.10); --card:rgba(255,255,255,.045); --card-h:rgba(255,255,255,.075); --hole:#10233f;
-    --green:#34D399; --green3:#059669; --sky:#38BDF8; --gold:#F2C572; --red:#FC5130;
-    --shadow:0 20px 50px -20px rgba(0,0,0,.6); --r:20px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0}
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ETC · Misión 88 · Tablero de la Tripulación</title><style>
+  :root{--bg:#0B1F3A;--bg2:#0e2a4d;--bg3:#071427;--ink:#EAF2FF;--muted:#9DB2D4;--muted2:#6F87AD;
+    --line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);--card-h:rgba(255,255,255,.075);--hole:#10233f;
+    --green:#34D399;--green3:#059669;--sky:#38BDF8;--gold:#F2C572;--red:#FC5130;--shadow:0 20px 50px -20px rgba(0,0,0,.6);--r:20px}
+  *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink); line-height:1.5; min-height:100vh;
-    background:
-      radial-gradient(1100px 700px at 12% -8%, rgba(56,189,248,.12), transparent 60%),
-      radial-gradient(900px 600px at 95% 0%, rgba(252,81,48,.10), transparent 55%),
-      radial-gradient(1200px 900px at 50% 120%, rgba(52,211,153,.08), transparent 60%),
-      linear-gradient(160deg, var(--bg2), var(--bg) 45%, var(--bg3));
-    background-attachment:fixed; -webkit-font-smoothing:antialiased; padding:clamp(16px,3vw,40px)}
-  .stars{position:fixed; inset:0; z-index:-1; overflow:hidden}
-  .stars i{position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; opacity:.5; animation:tw 4s infinite ease-in-out}
-  @keyframes tw{0%,100%{opacity:.2} 50%{opacity:.8}}
-  .wrap{max-width:1180px; margin:0 auto}
-
-  header{text-align:center; padding:clamp(14px,3vw,30px) 0 clamp(10px,2vw,22px)}
-  .patch{width:clamp(120px,22vw,168px); height:auto; display:block; margin:0 auto 14px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.45))}
-  h1{font-size:clamp(2.1rem,6vw,4.2rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:6px 0;
-    background:linear-gradient(180deg,#fff,#cfe0ff 70%,#9db2d4); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .sub{color:var(--muted); font-size:clamp(1rem,2.1vw,1.25rem); font-weight:500; max-width:760px; margin:6px auto 0}
-  .cita{margin:16px auto 0; max-width:640px; color:var(--gold); font-style:italic; font-size:clamp(.98rem,2.2vw,1.3rem); line-height:1.35}
-  .cita b{font-style:normal; color:var(--muted2); font-size:.8em; display:block; margin-top:5px; letter-spacing:.04em}
-
-  .kpis{display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(18px,3vw,30px) 0; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-  .kpi{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(15px,2vw,22px); position:relative; overflow:hidden;
-    transition:transform .35s ease, background .35s ease, border-color .35s ease}
-  .kpi:hover{transform:translateY(-4px); background:var(--card-h); border-color:rgba(255,255,255,.2)}
-  .kpi::before{content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--sky),var(--green))}
-  .kpi .lbl{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
-  .kpi .val{font-size:clamp(1.5rem,3.2vw,2.3rem); font-weight:800; letter-spacing:-.02em; margin-top:8px; font-variant-numeric:tabular-nums; line-height:1.05}
-  .kpi .note{font-size:.8rem; color:var(--muted2); margin-top:6px}
-  .kpi.green .val{color:var(--green)} .kpi.red .val{color:var(--red)}
-
-  .panel{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(18px,2.6vw,32px); box-shadow:var(--shadow); margin-bottom:clamp(14px,2vw,22px)}
-  .panel h2{font-size:clamp(1.2rem,2.4vw,1.6rem); font-weight:700; letter-spacing:-.01em}
-  .panel .h2note{color:var(--muted); font-size:.92rem; margin-top:5px; margin-bottom:20px}
-  .grid2{display:grid; gap:clamp(16px,2.4vw,26px); grid-template-columns:1fr 1fr}
-  @media(max-width:820px){ .grid2{grid-template-columns:1fr} }
-
-  .pie-row{display:flex; gap:clamp(14px,2.5vw,22px); align-items:center; flex-wrap:wrap}
-  .pie{width:clamp(130px,28vw,180px); aspect-ratio:1; border-radius:50%; flex:none; box-shadow:0 0 0 6px rgba(255,255,255,.03); position:relative}
-  .pie.donut::after{content:""; position:absolute; inset:30%; border-radius:50%; background:var(--hole); box-shadow:inset 0 2px 8px rgba(0,0,0,.4)}
-  .legend{flex:1; min-width:190px; display:grid; gap:7px}
-  .leg-row{display:grid; grid-template-columns:auto 1fr auto; gap:9px; align-items:center; font-size:.9rem; font-variant-numeric:tabular-nums}
-  .leg-dot{width:11px; height:11px; border-radius:3px}
-  .leg-l{color:var(--ink)} .leg-v{color:var(--muted); font-weight:600; white-space:nowrap}
-  .costo-card .ct{color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; font-weight:700; margin-bottom:4px}
-  .costo-card .cbig{font-size:clamp(1.7rem,4.5vw,2.4rem); font-weight:800; color:var(--green); font-variant-numeric:tabular-nums; line-height:1}
-  .costo-card .csub{color:var(--muted); font-size:.85rem; margin:4px 0 16px} .costo-card .csub b{color:var(--ink)}
-
-  .qcard{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:clamp(16px,2.2vw,24px)}
-  .qcard .qt{color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; font-weight:700}
-  .qcard .qbig{font-size:clamp(1.7rem,4.5vw,2.3rem); font-weight:800; color:var(--sky); font-variant-numeric:tabular-nums; line-height:1; margin:6px 0}
-  .qcard .qline{color:var(--muted); font-size:.92rem; margin-bottom:14px} .qcard .qline b{color:var(--ink)}
-  .chips{display:flex; flex-wrap:wrap; gap:7px}
-  .chip{background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.25); color:#cfeafe; font-size:.82rem; padding:5px 11px; border-radius:100px}
-  .qtot{margin-top:18px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem; font-variant-numeric:tabular-nums} .qtot b{color:var(--ink)}
-
-  .sim{background:linear-gradient(135deg, rgba(56,189,248,.12), rgba(52,211,153,.06) 70%, transparent), var(--card); border:1px solid rgba(56,189,248,.28)}
-  .sim-flex{display:flex; gap:clamp(18px,3vw,34px); align-items:flex-start; flex-wrap:wrap}
-  .rocket-wrap{flex:none; width:clamp(130px,30vw,180px); text-align:center}
-  .rocket-wrap svg{width:100%; height:auto; display:block; overflow:visible}
-  .sim-read{flex:1; min-width:240px}
-  .sim-falta{font-size:clamp(2.4rem,8vw,4rem); font-weight:800; color:var(--red); letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.5;min-height:100vh;
+    background:radial-gradient(1100px 700px at 12% -8%,rgba(56,189,248,.12),transparent 60%),radial-gradient(900px 600px at 95% 0%,rgba(252,81,48,.10),transparent 55%),radial-gradient(1200px 900px at 50% 120%,rgba(52,211,153,.08),transparent 60%),linear-gradient(160deg,var(--bg2),var(--bg) 45%,var(--bg3));
+    background-attachment:fixed;-webkit-font-smoothing:antialiased;padding:clamp(14px,3vw,40px);overflow-x:hidden}
+  .stars{position:fixed;inset:0;z-index:-1;overflow:hidden}
+  .stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.5;animation:tw 4s infinite ease-in-out}
+  @keyframes tw{0%,100%{opacity:.2}50%{opacity:.8}}
+  .wrap{max-width:1180px;margin:0 auto}
+  header{text-align:center;padding:clamp(12px,3vw,30px) 0 clamp(10px,2vw,22px)}
+  .patch{width:clamp(120px,30vw,168px);height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45))}
+  h1{font-size:clamp(1.9rem,7vw,4.2rem);font-weight:800;line-height:1.04;letter-spacing:-.02em;margin:6px 0;background:linear-gradient(180deg,#fff,#cfe0ff 70%,#9db2d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);font-size:clamp(.98rem,2.6vw,1.25rem);font-weight:500;max-width:760px;margin:6px auto 0}
+  .cita{margin:16px auto 0;max-width:640px;color:var(--gold);font-style:italic;font-size:clamp(.98rem,3vw,1.3rem);line-height:1.35}
+  .cita b{font-style:normal;color:var(--muted2);font-size:.8em;display:block;margin-top:5px;letter-spacing:.04em}
+  .kpis{display:grid;gap:clamp(10px,1.6vw,18px);margin:clamp(18px,3vw,30px) 0;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(14px,2vw,22px);position:relative;overflow:hidden;transition:transform .35s,background .35s,border-color .35s}
+  .kpi:hover{transform:translateY(-4px);background:var(--card-h);border-color:rgba(255,255,255,.2)}
+  .kpi::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:linear-gradient(90deg,var(--sky),var(--green))}
+  .kpi .lbl{font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .kpi .val{font-size:clamp(1.4rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin-top:8px;font-variant-numeric:tabular-nums;line-height:1.05}
+  .kpi .note{font-size:.78rem;color:var(--muted2);margin-top:6px}
+  .kpi.green .val{color:var(--green)}.kpi.red .val{color:var(--red)}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(16px,2.6vw,32px);box-shadow:var(--shadow);margin-bottom:clamp(14px,2vw,22px)}
+  .panel h2{font-size:clamp(1.15rem,3vw,1.6rem);font-weight:700;letter-spacing:-.01em}
+  .panel .h2note{color:var(--muted);font-size:clamp(.85rem,2.2vw,.92rem);margin-top:5px;margin-bottom:20px}
+  .grid2{display:grid;gap:clamp(16px,2.4vw,26px);grid-template-columns:1fr 1fr}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  .pie-row{display:flex;gap:clamp(14px,2.5vw,22px);align-items:center;flex-wrap:wrap}
+  .pie{width:clamp(128px,40vw,180px);aspect-ratio:1;border-radius:50%;flex:none;box-shadow:0 0 0 6px rgba(255,255,255,.03);position:relative}
+  .pie.donut::after{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--hole);box-shadow:inset 0 2px 8px rgba(0,0,0,.4)}
+  .legend{flex:1;min-width:min(100%,200px);display:grid;gap:7px}
+  .leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:9px;align-items:center;font-size:clamp(.82rem,2.2vw,.9rem);font-variant-numeric:tabular-nums}
+  .leg-dot{width:11px;height:11px;border-radius:3px}
+  .leg-l{color:var(--ink)}.leg-v{color:var(--muted);font-weight:600;white-space:nowrap}
+  .costo-card .ct{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700;margin-bottom:4px}
+  .costo-card .cbig{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;line-height:1}
+  .costo-card .csub{color:var(--muted);font-size:.85rem;margin:4px 0 16px}.costo-card .csub b{color:var(--ink)}
+  .qcard{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.2vw,24px)}
+  .qcard .qt{color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:700}
+  .qcard .qbig{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:800;color:var(--sky);font-variant-numeric:tabular-nums;line-height:1;margin:6px 0}
+  .qcard .qline{color:var(--muted);font-size:.92rem;margin-bottom:14px}.qcard .qline b{color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:#cfeafe;font-size:.82rem;padding:5px 11px;border-radius:100px}
+  .qtot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem;font-variant-numeric:tabular-nums}.qtot b{color:var(--ink)}
+  .sim{background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(52,211,153,.06) 70%,transparent),var(--card);border:1px solid rgba(56,189,248,.28)}
+  .sim-flex{display:flex;gap:clamp(18px,3vw,34px);align-items:flex-start;flex-wrap:wrap}
+  .rocket-wrap{flex:none;width:clamp(120px,32vw,180px);margin:0 auto;text-align:center}
+  .rocket-wrap svg{width:100%;height:auto;display:block;overflow:visible}
+  .sim-read{flex:1;min-width:min(100%,240px)}
+  .sim-falta{font-size:clamp(2.2rem,9vw,4rem);font-weight:800;color:var(--red);letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
   .sim-falta.done{color:var(--green)}
-  .sim-falta-lbl{color:var(--muted); margin:4px 0 14px; font-size:1.02rem}
-  .sim-mini{display:flex; gap:22px; flex-wrap:wrap; color:var(--muted); font-size:.92rem; font-variant-numeric:tabular-nums; margin-bottom:16px}
-  .sim-mini b{color:var(--ink); display:block; font-size:1.15rem; font-weight:800}
-  .sim-actions{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px}
-  .sim-btn{font-family:inherit; cursor:pointer; border-radius:100px; padding:9px 16px; font-size:.86rem; font-weight:700; border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--ink); transition:all .2s}
+  .sim-falta-lbl{color:var(--muted);margin:4px 0 14px;font-size:1.02rem}
+  .sim-mini{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums;margin-bottom:16px}
+  .sim-mini b{color:var(--ink);display:block;font-size:1.15rem;font-weight:800}
+  .sim-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .sim-btn{font-family:inherit;cursor:pointer;border-radius:100px;padding:9px 16px;font-size:.86rem;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);transition:all .2s}
   .sim-btn:hover{border-color:rgba(255,255,255,.3)}
-  .sim-btn.go{background:linear-gradient(180deg,var(--sky),#0c8fce); border-color:var(--sky); color:#04243a}
-  .sim-list{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:18px}
-  @media(max-width:680px){ .sim-list{grid-template-columns:1fr} }
-  .rub{display:flex; align-items:center; gap:10px; width:100%; text-align:left; font-family:inherit; cursor:pointer; background:rgba(0,0,0,.2); border:1px solid var(--line); border-radius:12px; padding:11px 13px; color:var(--ink); transition:all .18s}
+  .sim-btn.go{background:linear-gradient(180deg,var(--sky),#0c8fce);border-color:var(--sky);color:#04243a}
+  .sim-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+  @media(max-width:680px){.sim-list{grid-template-columns:1fr}}
+  .rub{display:flex;align-items:center;gap:10px;width:100%;text-align:left;font-family:inherit;cursor:pointer;background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--ink);transition:all .18s}
   .rub:hover{border-color:rgba(255,255,255,.28)}
-  .rub.on{background:rgba(52,211,153,.14); border-color:var(--green)}
-  .rub-check{width:20px; height:20px; border-radius:6px; border:2px solid var(--muted2); flex:none; position:relative; transition:all .18s}
-  .rub.on .rub-check{background:var(--green); border-color:var(--green)}
-  .rub.on .rub-check::after{content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#04241a; font-size:13px; font-weight:900}
-  .rub-n{flex:1; font-size:.92rem} .rub-m{font-variant-numeric:tabular-nums; font-weight:700; color:var(--muted)}
+  .rub.on{background:rgba(52,211,153,.14);border-color:var(--green)}
+  .rub-check{width:20px;height:20px;border-radius:6px;border:2px solid var(--muted2);flex:none;position:relative;transition:all .18s}
+  .rub.on .rub-check{background:var(--green);border-color:var(--green)}
+  .rub.on .rub-check::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#04241a;font-size:13px;font-weight:900}
+  .rub-n{flex:1;font-size:.92rem}.rub-m{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted)}
   .rub.on .rub-m{color:var(--green)}
-  .rub-tag{font-size:.66rem; color:var(--green); border:1px solid rgba(52,211,153,.4); border-radius:100px; padding:1px 7px; margin-left:4px; vertical-align:middle}
-  .sim-note{color:var(--muted); font-size:.88rem; margin-top:16px; line-height:1.5} .sim-note b{color:var(--ink)}
-
-  .areas-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:14px}
-  .area-card{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:18px 20px; border-top:3px solid var(--green)}
-  .area-h{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:12px; padding-bottom:11px; border-bottom:1px solid var(--line)}
-  .area-name{font-weight:800; font-size:1.16rem} .area-amt{color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.92rem}
-  .area-items{list-style:none; display:grid; gap:8px}
-  .area-items li{color:var(--muted); padding-left:18px; position:relative; font-size:.94rem}
-  .area-items li::before{content:""; position:absolute; left:3px; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--green)}
-  .areas-foot{color:var(--muted); margin-top:16px; font-size:.9rem} .areas-foot b{color:var(--ink)}
-
-  .cd-two{display:grid; gap:14px; grid-template-columns:1fr 1fr}
-  @media(max-width:680px){ .cd-two{grid-template-columns:1fr} }
-  .cd-block{background:rgba(0,0,0,.2); border:1px solid var(--line); border-radius:14px; padding:14px 14px 16px}
-  .cd-block.urgent{border-color:rgba(252,81,48,.4); background:rgba(252,81,48,.06)}
-  .cd-head{color:var(--muted); font-size:.85rem; margin-bottom:10px} .cd-head b{color:var(--ink)} .cd-block.urgent .cd-head b{color:var(--red)}
-  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
-  .cd-cell{background:rgba(0,0,0,.25); border:1px solid var(--line); border-radius:12px; padding:12px 4px; text-align:center}
-  .cd-num{font-size:clamp(1.4rem,4.5vw,2.2rem); font-weight:800; font-variant-numeric:tabular-nums; line-height:1; background:linear-gradient(180deg,#fff,#bcd2f5); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .cd-lbl{font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:7px}
-
-  /* presupuesto desplegable */
-  .pres-grp{border:1px solid var(--line); border-radius:12px; margin-bottom:8px; overflow:hidden; background:rgba(0,0,0,.14)}
-  .pres-grp summary{display:flex; align-items:center; gap:10px; padding:13px 16px; cursor:pointer; list-style:none; font-weight:700}
+  .rub-tag{font-size:.66rem;color:var(--green);border:1px solid rgba(52,211,153,.4);border-radius:100px;padding:1px 7px;margin-left:4px;vertical-align:middle}
+  .sim-note{color:var(--muted);font-size:.88rem;margin-top:16px;line-height:1.5}.sim-note b{color:var(--ink)}
+  .areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .area-card{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:16px;padding:18px 20px;border-top:3px solid var(--green)}
+  .area-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+  .area-name{font-weight:800;font-size:1.16rem}.area-amt{color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.92rem}
+  .area-items{list-style:none;display:grid;gap:8px}
+  .area-items li{color:var(--muted);padding-left:18px;position:relative;font-size:.94rem}
+  .area-items li::before{content:"";position:absolute;left:3px;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+  .areas-foot{color:var(--muted);margin-top:16px;font-size:.9rem}.areas-foot b{color:var(--ink)}
+  .cd-two{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+  @media(max-width:680px){.cd-two{grid-template-columns:1fr}}
+  .cd-block{background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:14px;padding:14px 14px 16px}
+  .cd-block.urgent{border-color:rgba(252,81,48,.4);background:rgba(252,81,48,.06)}
+  .cd-head{color:var(--muted);font-size:.85rem;margin-bottom:10px}.cd-head b{color:var(--ink)}.cd-block.urgent .cd-head b{color:var(--red)}
+  .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .cd-cell{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:12px;padding:12px 2px;text-align:center}
+  .cd-num{font-size:clamp(1.3rem,5vw,2.2rem);font-weight:800;font-variant-numeric:tabular-nums;line-height:1;background:linear-gradient(180deg,#fff,#bcd2f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cd-lbl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+  .pres-grp{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden;background:rgba(0,0,0,.14)}
+  .pres-grp summary{display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;list-style:none;font-weight:700}
   .pres-grp summary::-webkit-details-marker{display:none}
-  .pres-grp summary::before{content:"▸"; color:var(--sky); transition:transform .2s; font-size:.9em}
+  .pres-grp summary::before{content:"▸";color:var(--sky);transition:transform .2s;font-size:.9em}
   .pres-grp[open] summary::before{transform:rotate(90deg)}
   .pres-grp summary:hover{background:rgba(255,255,255,.03)}
-  .pg-n{flex:1} .pg-c{color:var(--muted2); font-size:.8rem; font-weight:600} .pg-s{font-variant-numeric:tabular-nums; color:var(--sky)}
+  .pg-n{flex:1}.pg-c{color:var(--muted2);font-size:.8rem;font-weight:600}.pg-s{font-variant-numeric:tabular-nums;color:var(--sky)}
   .pres-items{padding:4px 16px 14px}
-  .pres-it{display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center; padding:6px 0; border-top:1px solid rgba(255,255,255,.05); font-size:.88rem}
-  .pi-n{color:var(--ink)} .pi-d{color:var(--muted2); font-size:.82rem; white-space:nowrap} .pi-m{font-variant-numeric:tabular-nums; color:var(--muted); font-weight:600; white-space:nowrap}
-  .pres-foot{color:var(--muted); margin-top:14px; font-size:.9rem; font-variant-numeric:tabular-nums} .pres-foot b{color:var(--ink)}
-
-  footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:24px 0 8px; line-height:1.7} footer b{color:var(--muted)}
-
-  .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)}
-  .reveal.visible{opacity:1; transform:none}
-  @media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} .stars i{animation:none} html{scroll-behavior:auto} }
-</style>
-</head>
-<body>
+  .pres-it{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:baseline;padding:6px 0;border-top:1px solid rgba(255,255,255,.05);font-size:.86rem}
+  .pi-n{color:var(--ink)}.pi-d{color:var(--muted2);font-size:.78rem;grid-column:1;grid-row:2}.pi-m{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600;white-space:nowrap;grid-column:2;grid-row:1}
+  .pres-foot{color:var(--muted);margin-top:14px;font-size:.9rem;font-variant-numeric:tabular-nums}.pres-foot b{color:var(--ink)}
+  footer{text-align:center;color:var(--muted2);font-size:.82rem;padding:24px 0 8px;line-height:1.7}footer b{color:var(--muted)}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.stars i{animation:none}html{scroll-behavior:auto}}
+  .no-js .reveal{opacity:1;transform:none}
+</style></head><body class="no-js">
 <div class="stars" id="stars" aria-hidden="true"></div>
 <div class="wrap">
-
   <header class="reveal">
     <svg class="patch" viewBox="0 0 200 200" role="img" aria-label="ETC Misión 88">
-      <defs><path id="patchArc" d="M30,108 A74,74 0 0 1 170,108"/></defs>
-      <circle cx="100" cy="100" r="95" fill="#0B2A52" stroke="#fff" stroke-width="5"/>
-      <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
-      <ellipse cx="100" cy="98" rx="44" ry="72" fill="none" stroke="#fff" stroke-width="2.4" transform="rotate(24 100 100)"/>
-      <g fill="#fff"><circle cx="62" cy="58" r="1.6"/><circle cx="142" cy="54" r="2"/><circle cx="151" cy="120" r="1.5"/><circle cx="55" cy="132" r="1.7"/><circle cx="122" cy="150" r="1.5"/><circle cx="80" cy="151" r="1.3"/><circle cx="44" cy="94" r="1.3"/><circle cx="158" cy="86" r="1.3"/></g>
-      <path d="M20,150 Q120,56 188,64 Q120,90 34,158 Z" fill="#FC5130"/>
-      <text x="100" y="122" text-anchor="middle" font-size="56" font-weight="800" fill="#fff" letter-spacing="2" font-family="-apple-system,Segoe UI,Roboto,sans-serif">ETC</text>
-      <text fill="#fff" font-size="13" font-weight="700" letter-spacing="2.4" font-family="-apple-system,Segoe UI,Roboto,sans-serif"><textPath href="#patchArc" startOffset="50%" text-anchor="middle">ENCUENTRO TOTAL CON CRISTO</textPath></text>
-      <text x="100" y="178" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="4" fill="#fff" font-family="-apple-system,Segoe UI,Roboto,sans-serif">MISIÓN 88</text>
-    </svg>
-    <h1 id="evento">ETC · Misión 88</h1>
-    <p class="sub" id="subtitulo"></p>
-    <p class="cita" id="cita"></p>
+  <defs><path id="patchArc" d="M30,108 A74,74 0 0 1 170,108"/></defs>
+  <circle cx="100" cy="100" r="95" fill="#0B2A52" stroke="#fff" stroke-width="5"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+  <ellipse cx="100" cy="98" rx="44" ry="72" fill="none" stroke="#fff" stroke-width="2.4" transform="rotate(24 100 100)"/>
+  <g fill="#fff"><circle cx="62" cy="58" r="1.6"/><circle cx="142" cy="54" r="2"/><circle cx="151" cy="120" r="1.5"/><circle cx="55" cy="132" r="1.7"/><circle cx="122" cy="150" r="1.5"/><circle cx="80" cy="151" r="1.3"/><circle cx="44" cy="94" r="1.3"/><circle cx="158" cy="86" r="1.3"/></g>
+  <path d="M20,150 Q120,56 188,64 Q120,90 34,158 Z" fill="#FC5130"/>
+  <text x="100" y="122" text-anchor="middle" font-size="56" font-weight="800" fill="#fff" letter-spacing="2" font-family="-apple-system,Segoe UI,Roboto,sans-serif">ETC</text>
+  <text fill="#fff" font-size="13" font-weight="700" letter-spacing="2.4" font-family="-apple-system,Segoe UI,Roboto,sans-serif"><textPath href="#patchArc" startOffset="50%" text-anchor="middle">ENCUENTRO TOTAL CON CRISTO</textPath></text>
+  <text x="100" y="178" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="4" fill="#fff" font-family="-apple-system,Segoe UI,Roboto,sans-serif">MISIÓN 88</text>
+</svg>
+    <h1>ETC · Misión 88</h1>
+    <p class="sub">Lo que cuesta la misión, y cómo —trabajando como tripulación— la hacemos posible</p>
+    <p class="cita">«Los cielos cuentan la gloria de Dios»<b>Salmo 19, 1</b></p>
   </header>
 
-  <section class="kpis reveal" id="kpis">
-    <div class="kpi"><div class="lbl">Costo de la misión</div><div class="val" id="kpi-costo">RD$ 0</div><div class="note">lo que cuesta el retiro completo</div></div>
-    <div class="kpi green"><div class="lbl">Lo que ya ponemos</div><div class="val" id="kpi-cuotas">RD$ 0</div><div class="note">cuotas de participantes + equipo</div></div>
-    <div class="kpi red"><div class="lbl">Falta por reunir</div><div class="val" id="kpi-falta">RD$ 0</div><div class="note">y depende de nosotros</div></div>
-    <div class="kpi"><div class="lbl">Días: cierre de pagos</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">lanzamiento: 4–6 sep</div></div>
+  <section class="kpis reveal">
+    <div class="kpi"><div class="lbl">Costo de la misión</div><div class="val" data-count="553622" data-kind="money">RD$ 553,622</div><div class="note">lo que cuesta el retiro completo</div></div>
+    <div class="kpi green"><div class="lbl">Lo que ya ponemos</div><div class="val" data-count="256000" data-kind="money">RD$ 256,000</div><div class="note">cuotas de participantes + equipo</div></div>
+    <div class="kpi red"><div class="lbl">Falta por reunir</div><div class="val" data-count="297622" data-kind="money">RD$ 297,622</div><div class="note">y depende de nosotros</div></div>
+    <div class="kpi"><div class="lbl">Días: cierre de pagos</div><div class="val" id="kpi-dias">74</div><div class="note">lanzamiento: 4–6 sep</div></div>
   </section>
 
-  <!-- estructura del costo -->
-  <section class="panel reveal" id="estructura-panel">
+  <section class="panel reveal">
     <h2>En qué se va el costo de la misión</h2>
     <p class="h2note">La estructura completa, por rubro (incluye el 10% de imprevistos)</p>
-    <div class="pie-row"><div class="pie" id="pie-estructura"></div><div class="legend" id="leg-estructura"></div></div>
+    <div class="pie-row"><div class="pie" style="background:conic-gradient(#38BDF8 0.00% 36.13%, #34D399 36.13% 50.12%, #F2C572 50.12% 63.27%, #FC5130 63.27% 74.83%, #A78BFA 74.83% 83.92%, #22D3EE 83.92% 87.53%, #FB7185 87.53% 90.60%, #FACC15 90.60% 93.55%, #4ADE80 93.55% 96.42%, #60A5FA 96.42% 99.19%, #F97316 99.19% 100.00%)"></div><div class="legend"><div class="leg-row"><span class="leg-dot" style="background:#38BDF8"></span><span class="leg-l">Casa (hospedaje)</span><span class="leg-v">RD$ 200,000 · 36,1%</span></div><div class="leg-row"><span class="leg-dot" style="background:#34D399"></span><span class="leg-l">Transporte (3 buses)</span><span class="leg-v">RD$ 77,500 · 14,0%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F2C572"></span><span class="leg-l">Comida (cocina, 3 días)</span><span class="leg-v">RD$ 72,778 · 13,1%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FC5130"></span><span class="leg-l">Biblias y peces</span><span class="leg-v">RD$ 64,000 · 11,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#A78BFA"></span><span class="leg-l">Imprevistos (10%)</span><span class="leg-v">RD$ 50,329 · 9,1%</span></div><div class="leg-row"><span class="leg-dot" style="background:#22D3EE"></span><span class="leg-l">Camisetas del equipo</span><span class="leg-v">RD$ 20,000 · 3,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FB7185"></span><span class="leg-l">Materiales de guía / PG</span><span class="leg-v">RD$ 17,000 · 3,1%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FACC15"></span><span class="leg-l">Eventos formativos</span><span class="leg-v">RD$ 16,315 · 2,9%</span></div><div class="leg-row"><span class="leg-dot" style="background:#4ADE80"></span><span class="leg-l">Almuerzo del ensayo</span><span class="leg-v">RD$ 15,900 · 2,9%</span></div><div class="leg-row"><span class="leg-dot" style="background:#60A5FA"></span><span class="leg-l">Litúrgico</span><span class="leg-v">RD$ 15,300 · 2,8%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F97316"></span><span class="leg-l">Música</span><span class="leg-v">RD$ 4,500 · 0,8%</span></div></div></div>
   </section>
 
-  <!-- costo por persona -->
-  <section class="panel reveal" id="costo-panel">
+  <section class="panel reveal">
     <h2>Lo que cuesta la misión, por persona</h2>
     <p class="h2note">Para dimensionar el esfuerzo — sencillo y claro. (Incluye el 10% de imprevistos.)</p>
     <div class="grid2">
-      <div class="costo-card">
-        <div class="ct">Por participante</div><div class="cbig" id="cp-part">RD$ 0</div>
-        <div class="csub">su cuota es <b id="cp-part-cuota"></b> · el resto no recae en él</div>
-        <div class="pie-row"><div class="pie donut" id="pie-part"></div><div class="legend" id="leg-part"></div></div>
-      </div>
-      <div class="costo-card">
-        <div class="ct">Por miembro de equipo</div><div class="cbig" id="cp-eq" style="color:var(--sky)">RD$ 0</div>
-        <div class="csub">su cuota es <b id="cp-eq-cuota"></b></div>
-        <div class="pie-row"><div class="pie donut" id="pie-eq"></div><div class="legend" id="leg-eq"></div></div>
-      </div>
+      <div class="costo-card"><div class="ct">Por participante</div>
+        <div class="cbig" data-count="6548.92" data-kind="money2">RD$ 6,548.92</div>
+        <div class="csub">su cuota es <b>RD$ 3,000</b> · el resto no recae en él</div>
+        <div class="pie-row"><div class="pie donut" style="background:conic-gradient(#38BDF8 0.00% 33.59%, #34D399 33.59% 58.04%, #F2C572 58.04% 79.54%, #FC5130 79.54% 90.96%, #A78BFA 90.96% 96.67%, #22D3EE 96.67% 99.24%, #FB7185 99.24% 100.00%)"></div><div class="legend"><div class="leg-row"><span class="leg-dot" style="background:#38BDF8"></span><span class="leg-l">Casa (hospedaje)</span><span class="leg-v">RD$ 2,000.00 · 33,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#34D399"></span><span class="leg-l">Comida del retiro</span><span class="leg-v">RD$ 1,455.56 · 24,4%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F2C572"></span><span class="leg-l">Biblia + pez</span><span class="leg-v">RD$ 1,280.00 · 21,5%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FC5130"></span><span class="leg-l">Su transporte</span><span class="leg-v">RD$ 680.00 · 11,4%</span></div><div class="leg-row"><span class="leg-dot" style="background:#A78BFA"></span><span class="leg-l">Materiales de su PG</span><span class="leg-v">RD$ 340.00 · 5,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#22D3EE"></span><span class="leg-l">Litúrgico</span><span class="leg-v">RD$ 153.00 · 2,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FB7185"></span><span class="leg-l">Música</span><span class="leg-v">RD$ 45.00 · 0,8%</span></div></div></div></div>
+      <div class="costo-card"><div class="ct">Por miembro de equipo</div>
+        <div class="cbig" style="color:var(--sky)" data-count="4523.53" data-kind="money2">RD$ 4,523.53</div>
+        <div class="csub">su cuota es <b>RD$ 2,000</b></div>
+        <div class="pie-row"><div class="pie donut" style="background:conic-gradient(#38BDF8 0.00% 48.63%, #34D399 48.63% 69.79%, #F2C572 69.79% 79.52%, #FC5130 79.52% 87.45%, #A78BFA 87.45% 95.19%, #22D3EE 95.19% 98.91%, #FB7185 98.91% 100.00%)"></div><div class="legend"><div class="leg-row"><span class="leg-dot" style="background:#38BDF8"></span><span class="leg-l">Casa (hospedaje)</span><span class="leg-v">RD$ 2,000.00 · 48,6%</span></div><div class="leg-row"><span class="leg-dot" style="background:#34D399"></span><span class="leg-l">Transporte (equipo + clausura)</span><span class="leg-v">RD$ 870.00 · 21,2%</span></div><div class="leg-row"><span class="leg-dot" style="background:#F2C572"></span><span class="leg-l">Camiseta</span><span class="leg-v">RD$ 400.00 · 9,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FC5130"></span><span class="leg-l">Formación</span><span class="leg-v">RD$ 326.30 · 7,9%</span></div><div class="leg-row"><span class="leg-dot" style="background:#A78BFA"></span><span class="leg-l">Almuerzo del ensayo</span><span class="leg-v">RD$ 318.00 · 7,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#22D3EE"></span><span class="leg-l">Litúrgico</span><span class="leg-v">RD$ 153.00 · 3,7%</span></div><div class="leg-row"><span class="leg-dot" style="background:#FB7185"></span><span class="leg-l">Música</span><span class="leg-v">RD$ 45.00 · 1,1%</span></div></div></div></div>
     </div>
   </section>
 
-  <!-- cuotas -->
-  <section class="panel reveal" id="cuota-panel">
+  <section class="panel reveal">
     <h2>Lo que ponemos nosotros</h2>
     <p class="h2note">La cuota no cubre el costo real — pero es nuestro primer aporte como tripulación</p>
     <div class="grid2">
-      <div class="qcard"><div class="qt">Cuota del participante</div><div class="qbig" id="q-part">RD$ 0</div>
-        <div class="qline" id="q-part-line"></div><div class="chips" id="q-part-chips"></div><div class="qtot" id="q-part-tot"></div></div>
-      <div class="qcard"><div class="qt">Cuota del equipo</div><div class="qbig" id="q-eq" style="color:var(--green)">RD$ 0</div>
-        <div class="qline" id="q-eq-line"></div><div class="chips" id="q-eq-chips"></div><div class="qtot" id="q-eq-tot"></div></div>
+      <div class="qcard"><div class="qt">Cuota del participante</div><div class="qbig" data-count="150000" data-kind="money">RD$ 150,000</div>
+        <div class="qline"><b>RD$ 3,000</b> × 50 participantes</div><div class="chips"><span class="chip">Transporte al retiro</span><span class="chip">Comida del retiro</span><span class="chip">Casa (hospedaje)</span><span class="chip">Pez</span><span class="chip">Biblia</span></div>
+        <div class="qtot">Aporta en total <b>RD$ 150,000</b></div></div>
+      <div class="qcard"><div class="qt">Cuota del equipo</div><div class="qbig" style="color:var(--green)" data-count="106000" data-kind="money">RD$ 106,000</div>
+        <div class="qline"><b>RD$ 2,000</b> = 4 pagos de RD$ 500 (jun–sep) · 53 del equipo</div><div class="chips"><span class="chip">Ensayo general</span><span class="chip">Prorrateo del salón</span><span class="chip">Transporte al retiro</span><span class="chip">Comida del ensayo</span><span class="chip">Camiseta del equipo</span></div>
+        <div class="qtot">Aporta en total <b>RD$ 106,000</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección</div></div>
     </div>
   </section>
 
-  <!-- SIMULADOR -->
-  <section class="panel sim reveal" id="sim-panel">
+  <section class="panel sim reveal">
     <h2>El ejercicio de la tripulación</h2>
-    <p class="h2note">Marca lo que crees que podemos conseguir donado o gestionado, y mira bajar lo que hay que reunir. No es una meta fría: es ver que, juntos, se puede.</p>
+    <p class="h2note">Marca lo que crees que podemos conseguir donado o gestionado, y mira bajar lo que hay que reunir. No es una meta fría: es ver que, juntos, se puede. (Para tocar y probar, ábrelo en un navegador.)</p>
     <div class="sim-flex">
-      <div class="rocket-wrap" aria-hidden="true">
-        <svg viewBox="0 0 160 430">
-          <defs>
-            <linearGradient id="fuelG" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0c8fce"/><stop offset="55%" stop-color="#34D399"/><stop offset="100%" stop-color="#A7F3D0"/></linearGradient>
-            <clipPath id="bodyClip"><rect x="55" y="78" width="50" height="250" rx="12"/></clipPath>
-          </defs>
-          <path id="flame" d="M70,330 Q80,395 90,330 Z" fill="#FC5130" opacity=".9"/>
-          <rect x="55" y="78" width="50" height="250" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.16)"/>
-          <rect id="fuel" x="55" y="328" width="50" height="0" fill="url(#fuelG)" clip-path="url(#bodyClip)"/>
-          <path d="M55,80 L80,20 L105,80 Z" fill="#E7EEFA"/>
-          <path d="M55,300 L38,346 L55,332 Z" fill="#FC5130"/><path d="M105,300 L122,346 L105,332 Z" fill="#FC5130"/>
-          <rect x="55" y="78" width="50" height="250" rx="12" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
-          <circle cx="80" cy="112" r="11" fill="#0B2A52" stroke="#E7EEFA" stroke-width="3"/>
-          <line x1="44" x2="116" y1="78" y2="78" stroke="#fff" stroke-dasharray="4 4" stroke-width="1.5" opacity=".7"/>
-          <text x="120" y="82" fill="#fff" font-size="10" font-weight="700">META</text>
-        </svg>
-        <div style="color:var(--muted); font-size:.82rem; margin-top:6px">cubierto: <b id="sim-cubierto" style="color:var(--ink)">RD$ 0</b></div>
-      </div>
+      <div class="rocket-wrap" aria-hidden="true"><svg viewBox="0 0 160 430">
+  <defs><linearGradient id="fuelG" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0c8fce"/><stop offset="55%" stop-color="#34D399"/><stop offset="100%" stop-color="#A7F3D0"/></linearGradient>
+  <clipPath id="bodyClip"><rect x="55" y="78" width="50" height="250" rx="12"/></clipPath></defs>
+  <path id="flame" d="M70,330 Q80,395 90,330 Z" fill="#FC5130" opacity=".9"/>
+  <rect x="55" y="78" width="50" height="250" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.16)"/>
+  <rect id="fuel" x="55" y="328" width="50" height="0" fill="url(#fuelG)" clip-path="url(#bodyClip)"/>
+  <path d="M55,80 L80,20 L105,80 Z" fill="#E7EEFA"/>
+  <path d="M55,300 L38,346 L55,332 Z" fill="#FC5130"/><path d="M105,300 L122,346 L105,332 Z" fill="#FC5130"/>
+  <rect x="55" y="78" width="50" height="250" rx="12" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+  <circle cx="80" cy="112" r="11" fill="#0B2A52" stroke="#E7EEFA" stroke-width="3"/>
+  <line x1="44" x2="116" y1="78" y2="78" stroke="#fff" stroke-dasharray="4 4" stroke-width="1.5" opacity=".7"/>
+  <text x="120" y="82" fill="#fff" font-size="10" font-weight="700">META</text></svg><div style="color:var(--muted);font-size:.82rem;margin-top:6px">cubierto: <b id="sim-cubierto" style="color:var(--ink)">RD$ 256,000</b></div></div>
       <div class="sim-read">
-        <div class="sim-falta" id="sim-falta">RD$ 0</div>
+        <div class="sim-falta" id="sim-falta">RD$ 297,622</div>
         <div class="sim-falta-lbl" id="sim-falta-lbl">hay que reunir entre todos</div>
-        <div class="sim-mini"><div>por cada uno (100)<b id="sim-porcabeza">RD$ 0</b></div><div>costo de la misión<b id="sim-costo">RD$ 0</b></div></div>
+        <div class="sim-mini"><div>por cada uno (100)<b id="sim-porcabeza">RD$ 2,976</b></div><div>costo de la misión<b>RD$ 553,622</b></div></div>
         <div class="sim-actions"><button type="button" class="sim-btn go" id="sim-realista">Probar: lo realista</button><button type="button" class="sim-btn" id="sim-reset">Reiniciar</button></div>
-        <div class="sim-list" id="sim-list"></div>
+        <div class="sim-list" id="sim-list"><button type="button" class="rub" data-monto="200000" data-donable="0"><span class="rub-check"></span><span class="rub-n">Casa (hospedaje)</span><span class="rub-m">RD$ 200,000</span></button><button type="button" class="rub" data-monto="77500" data-donable="0"><span class="rub-check"></span><span class="rub-n">Transporte (3 buses)</span><span class="rub-m">RD$ 77,500</span></button><button type="button" class="rub" data-monto="72778" data-donable="1"><span class="rub-check"></span><span class="rub-n">Comida (cocina, 3 días) <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 72,778</span></button><button type="button" class="rub" data-monto="64000" data-donable="1"><span class="rub-check"></span><span class="rub-n">Biblias y peces <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 64,000</span></button><button type="button" class="rub" data-monto="50329" data-donable="0"><span class="rub-check"></span><span class="rub-n">Imprevistos (10%)</span><span class="rub-m">RD$ 50,329</span></button><button type="button" class="rub" data-monto="20000" data-donable="1"><span class="rub-check"></span><span class="rub-n">Camisetas del equipo <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 20,000</span></button><button type="button" class="rub" data-monto="17000" data-donable="1"><span class="rub-check"></span><span class="rub-n">Materiales de guía / PG <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 17,000</span></button><button type="button" class="rub" data-monto="16315" data-donable="0"><span class="rub-check"></span><span class="rub-n">Eventos formativos</span><span class="rub-m">RD$ 16,315</span></button><button type="button" class="rub" data-monto="15900" data-donable="0"><span class="rub-check"></span><span class="rub-n">Almuerzo del ensayo</span><span class="rub-m">RD$ 15,900</span></button><button type="button" class="rub" data-monto="15300" data-donable="1"><span class="rub-check"></span><span class="rub-n">Litúrgico <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 15,300</span></button><button type="button" class="rub" data-monto="4500" data-donable="1"><span class="rub-check"></span><span class="rub-n">Música <span class="rub-tag">donable</span></span><span class="rub-m">RD$ 4,500</span></button></div>
         <p class="sim-note">Es un ejercicio para imaginar y validar juntos — no un compromiso. Lo marcado como <b style="color:var(--green)">donable</b> es lo más realista de gestionar (en el ETC 78 se donó más de la mitad).</p>
       </div>
     </div>
   </section>
 
-  <!-- corresponsabilidad -->
-  <section class="panel reveal" id="areas-panel">
+  <section class="panel reveal">
     <h2>Cada área aporta su parte</h2>
     <p class="h2note">El esfuerzo no es solo de los directores — cada área de la tripulación carga lo suyo</p>
-    <div class="areas-grid" id="areas-grid"></div>
+    <div class="areas-grid"><div class="area-card" style="border-top-color:#34D399"><div class="area-h"><span class="area-name" style="color:#34D399">Guías</span><span class="area-amt">≈ RD$ 17,000</span></div><ul class="area-items"><li>Libretas</li><li>Rosario</li><li>Bolsa (tote / mochila)</li><li>Separadores de libros (para la Biblia)</li><li>Identificadores de habitación</li><li>Decoración del pequeño grupo</li></ul></div><div class="area-card" style="border-top-color:#F2C572"><div class="area-h"><span class="area-name" style="color:#F2C572">Música</span><span class="area-amt">≈ RD$ 4,500</span></div><ul class="area-items"><li>Chocolates</li><li>Crema</li><li>Combustible para el Bayuyo</li></ul></div><div class="area-card" style="border-top-color:#38BDF8"><div class="area-h"><span class="area-name" style="color:#38BDF8">Cocina</span><span class="area-amt">≈ RD$ 72,778</span></div><ul class="area-items"><li>Comida del retiro (3 días)</li><li>Detalles</li></ul></div><div class="area-card" style="border-top-color:#FC5130"><div class="area-h"><span class="area-name" style="color:#FC5130">Directores</span><span class="area-amt">≈ RD$ 79,300</span></div><ul class="area-items"><li>Biblias</li><li>Peces</li><li>Materiales del banderín</li><li>Materiales de oficina (resma de papel, etc.)</li><li>Decoración del espacio de plenario</li><li>Liturgia: formas (pan y vino)</li><li>Aporte a los sacerdotes para la confesión</li></ul></div></div>
     <p class="areas-foot">Montos <b>indicativos</b>. Casa, transporte y la coordinación general completan el costo total.</p>
   </section>
 
-  <!-- countdown -->
-  <section class="panel reveal" id="cd-panel">
+  <section class="panel reveal">
     <h2>Cuenta regresiva</h2>
     <p class="h2note">El dinero debe estar conciliado para el cierre de pagos, antes del lanzamiento</p>
     <div class="cd-two">
-      <div class="cd-block urgent"><div class="cd-head">Cierre de pagos · <b id="cd-cpago-when"></b></div>
-        <div class="cd-grid"><div class="cd-cell"><div class="cd-num" id="cpago-d">0</div><div class="cd-lbl">Días</div></div><div class="cd-cell"><div class="cd-num" id="cpago-h">00</div><div class="cd-lbl">Hrs</div></div><div class="cd-cell"><div class="cd-num" id="cpago-m">00</div><div class="cd-lbl">Min</div></div><div class="cd-cell"><div class="cd-num" id="cpago-s">00</div><div class="cd-lbl">Seg</div></div></div></div>
-      <div class="cd-block"><div class="cd-head">Lanzamiento (retiro) · <b id="cd-ret-when"></b></div>
-        <div class="cd-grid"><div class="cd-cell"><div class="cd-num" id="ret-d">0</div><div class="cd-lbl">Días</div></div><div class="cd-cell"><div class="cd-num" id="ret-h">00</div><div class="cd-lbl">Hrs</div></div><div class="cd-cell"><div class="cd-num" id="ret-m">00</div><div class="cd-lbl">Min</div></div><div class="cd-cell"><div class="cd-num" id="ret-s">00</div><div class="cd-lbl">Seg</div></div></div></div>
+      <div class="cd-block urgent"><div class="cd-head">Cierre de pagos · <b>30 de agosto de 2026</b></div>
+        <div class="cd-grid"><div class="cd-cell"><div class="cd-num" id="cpago-d">74</div><div class="cd-lbl">Días</div></div><div class="cd-cell"><div class="cd-num" id="cpago-h">00</div><div class="cd-lbl">Hrs</div></div><div class="cd-cell"><div class="cd-num" id="cpago-m">00</div><div class="cd-lbl">Min</div></div><div class="cd-cell"><div class="cd-num" id="cpago-s">00</div><div class="cd-lbl">Seg</div></div></div></div>
+      <div class="cd-block"><div class="cd-head">Lanzamiento (retiro) · <b>4 – 6 de septiembre de 2026</b></div>
+        <div class="cd-grid"><div class="cd-cell"><div class="cd-num" id="ret-d">79</div><div class="cd-lbl">Días</div></div><div class="cd-cell"><div class="cd-num" id="ret-h">00</div><div class="cd-lbl">Hrs</div></div><div class="cd-cell"><div class="cd-num" id="ret-m">00</div><div class="cd-lbl">Min</div></div><div class="cd-cell"><div class="cd-num" id="ret-s">00</div><div class="cd-lbl">Seg</div></div></div></div>
     </div>
   </section>
 
-  <!-- presupuesto completo (desplegable) -->
-  <section class="panel reveal" id="pres-panel">
+  <section class="panel reveal">
     <h2>El presupuesto completo</h2>
     <p class="h2note">Transparencia total: despliega cada rubro para ver su detalle. La cocina es el menú. (Precios estimados de junio 2026.)</p>
-    <div id="pres-list"></div>
-    <p class="pres-foot">Subtotal operativo <b id="pres-sub">RD$ 0</b> + 10% de imprevistos = <b id="pres-total">RD$ 0</b> (la meta de la misión).</p>
+    <details class="pres-grp"><summary><span class="pg-n">1 · Casa</span><span class="pg-c">1 ít.</span><b class="pg-s">RD$ 200,000</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Hospedaje 100 pers. (3 días)</span><span class="pi-d">100 Persona</span><b class="pi-m">RD$ 200,000</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">2 · Cocina</span><span class="pg-c">56 ít.</span><b class="pg-s">RD$ 72,778</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Plátano verde</span><span class="pi-d">180 Unidad</span><b class="pi-m">RD$ 4,320</b></div><div class="pres-it"><span class="pi-n">Pechuga de pollo (con hueso)</span><span class="pi-d">50 Libra</span><b class="pi-m">RD$ 6,750</b></div><div class="pres-it"><span class="pi-n">Carne de res para guisar</span><span class="pi-d">45 Libra</span><b class="pi-m">RD$ 11,925</b></div><div class="pres-it"><span class="pi-n">Papa</span><span class="pi-d">64 Libra</span><b class="pi-m">RD$ 2,880</b></div><div class="pres-it"><span class="pi-n">Cebolla roja</span><span class="pi-d">8 Libra</span><b class="pi-m">RD$ 392</b></div><div class="pres-it"><span class="pi-n">Ají morrón</span><span class="pi-d">7 Libra</span><b class="pi-m">RD$ 581</b></div><div class="pres-it"><span class="pi-n">Tomate barceló</span><span class="pi-d">10 Libra</span><b class="pi-m">RD$ 420</b></div><div class="pres-it"><span class="pi-n">Chuleta ahumada</span><span class="pi-d">6 Libra</span><b class="pi-m">RD$ 774</b></div><div class="pres-it"><span class="pi-n">Salami (barra Induveca 2.25lb)</span><span class="pi-d">3 Barra</span><b class="pi-m">RD$ 1,290</b></div><div class="pres-it"><span class="pi-n">Huevos</span><span class="pi-d">6 Cartón 30</span><b class="pi-m">RD$ 1,290</b></div><div class="pres-it"><span class="pi-n">Jamón cocido rebanado</span><span class="pi-d">6 Libra</span><b class="pi-m">RD$ 930</b></div><div class="pres-it"><span class="pi-n">Queso amarillo/cheddar rebanado</span><span class="pi-d">5 Libra</span><b class="pi-m">RD$ 1,725</b></div><div class="pres-it"><span class="pi-n">Pasta espagueti</span><span class="pi-d">15 Paq 400g</span><b class="pi-m">RD$ 630</b></div><div class="pres-it"><span class="pi-n">Espirales pasta</span><span class="pi-d">8 Paq 400g</span><b class="pi-m">RD$ 336</b></div><div class="pres-it"><span class="pi-n">Leche entera</span><span class="pi-d">5 Caja 12L</span><b class="pi-m">RD$ 4,560</b></div><div class="pres-it"><span class="pi-n">Leche evaporada</span><span class="pi-d">15 Lata 315g</span><b class="pi-m">RD$ 1,005</b></div><div class="pres-it"><span class="pi-n">Café Santo Domingo 1lb</span><span class="pi-d">8 Paq 1lb</span><b class="pi-m">RD$ 3,352</b></div><div class="pres-it"><span class="pi-n">Azúcar crema</span><span class="pi-d">4 Paq 5lb</span><b class="pi-m">RD$ 628</b></div><div class="pres-it"><span class="pi-n">Vino la Fuerza (litúrgico)</span><span class="pi-d">2 Galón</span><b class="pi-m">RD$ 1,050</b></div><div class="pres-it"><span class="pi-n">Mayonesa Baldom</span><span class="pi-d">2 Galón</span><b class="pi-m">RD$ 1,590</b></div><div class="pres-it"><span class="pi-n">Aceite de freír</span><span class="pi-d">1 Galón 128oz</span><b class="pi-m">RD$ 634</b></div><div class="pres-it"><span class="pi-n">Crema de leche</span><span class="pi-d">5 Lata 300g</span><b class="pi-m">RD$ 750</b></div><div class="pres-it"><span class="pi-n">Harina de trigo</span><span class="pi-d">20 Libra</span><b class="pi-m">RD$ 840</b></div><div class="pres-it"><span class="pi-n">Galletas Guarina Salada</span><span class="pi-d">15 Paq 12</span><b class="pi-m">RD$ 885</b></div><div class="pres-it"><span class="pi-n">Galletas Guarina Dulce</span><span class="pi-d">15 Paq 12</span><b class="pi-m">RD$ 1,215</b></div><div class="pres-it"><span class="pi-n">Refrescos doble litro</span><span class="pi-d">14 Unidad 2L</span><b class="pi-m">RD$ 1,288</b></div><div class="pres-it"><span class="pi-n">Chocolate molido</span><span class="pi-d">6 Pote 200g</span><b class="pi-m">RD$ 654</b></div><div class="pres-it"><span class="pi-n">Té frío (sobres)</span><span class="pi-d">4 Caja</span><b class="pi-m">RD$ 1,880</b></div><div class="pres-it"><span class="pi-n">Pan baguette</span><span class="pi-d">40 Unidad</span><b class="pi-m">RD$ 2,000</b></div><div class="pres-it"><span class="pi-n">Pan rebanado grande</span><span class="pi-d">4 Funda</span><b class="pi-m">RD$ 860</b></div><div class="pres-it"><span class="pi-n">Papel de baño</span><span class="pi-d">2 Fardo 24</span><b class="pi-m">RD$ 720</b></div><div class="pres-it"><span class="pi-n">Mistolín</span><span class="pi-d">2 Galón</span><b class="pi-m">RD$ 670</b></div><div class="pres-it"><span class="pi-n">Cloro</span><span class="pi-d">2 Galón</span><b class="pi-m">RD$ 270</b></div><div class="pres-it"><span class="pi-n">Escoba</span><span class="pi-d">3 Unidad</span><b class="pi-m">RD$ 510</b></div><div class="pres-it"><span class="pi-n">Suape</span><span class="pi-d">3 Unidad</span><b class="pi-m">RD$ 660</b></div><div class="pres-it"><span class="pi-n">Esponja de fregar</span><span class="pi-d">6 Unidad</span><b class="pi-m">RD$ 210</b></div><div class="pres-it"><span class="pi-n">Jabón de fregar</span><span class="pi-d">2 Paquete</span><b class="pi-m">RD$ 260</b></div><div class="pres-it"><span class="pi-n">Bandejas desechables</span><span class="pi-d">10 Unidad</span><b class="pi-m">RD$ 900</b></div><div class="pres-it"><span class="pi-n">Tenedores</span><span class="pi-d">8 Paq 25</span><b class="pi-m">RD$ 440</b></div><div class="pres-it"><span class="pi-n">Vasos 7 Oz</span><span class="pi-d">12 Paq 50</span><b class="pi-m">RD$ 972</b></div><div class="pres-it"><span class="pi-n">Arroz</span><span class="pi-d">30 Libra</span><b class="pi-m">RD$ 1,200</b></div><div class="pres-it"><span class="pi-n">Habichuelas</span><span class="pi-d">15 Libra</span><b class="pi-m">RD$ 1,095</b></div><div class="pres-it"><span class="pi-n">Salsa Prego roja</span><span class="pi-d">3 Pote 24oz</span><b class="pi-m">RD$ 837</b></div><div class="pres-it"><span class="pi-n">Sazón en polvo</span><span class="pi-d">2 Pote</span><b class="pi-m">RD$ 430</b></div><div class="pres-it"><span class="pi-n">Palitos de trigo</span><span class="pi-d">4 Paquete</span><b class="pi-m">RD$ 400</b></div><div class="pres-it"><span class="pi-n">Albahaca fresca</span><span class="pi-d">5 Paquete</span><b class="pi-m">RD$ 325</b></div><div class="pres-it"><span class="pi-n">Cilantro</span><span class="pi-d">3 Paquete</span><b class="pi-m">RD$ 150</b></div><div class="pres-it"><span class="pi-n">Orégano</span><span class="pi-d">1 Paquete</span><b class="pi-m">RD$ 150</b></div><div class="pres-it"><span class="pi-n">Puerro fino</span><span class="pi-d">10 Paquete</span><b class="pi-m">RD$ 500</b></div><div class="pres-it"><span class="pi-n">Hershey's Kisses</span><span class="pi-d">2 Paq 9.2oz</span><b class="pi-m">RD$ 990</b></div><div class="pres-it"><span class="pi-n">Bizcocho esponjoso</span><span class="pi-d">4 Caja</span><b class="pi-m">RD$ 320</b></div><div class="pres-it"><span class="pi-n">Royal (polvo de hornear)</span><span class="pi-d">1 Caja</span><b class="pi-m">RD$ 100</b></div><div class="pres-it"><span class="pi-n">Curry en polvo</span><span class="pi-d">1 Frasco</span><b class="pi-m">RD$ 150</b></div><div class="pres-it"><span class="pi-n">Salsa roja</span><span class="pi-d">2 Kilo</span><b class="pi-m">RD$ 300</b></div><div class="pres-it"><span class="pi-n">Aceite verde / oliva</span><span class="pi-d">1 Litro</span><b class="pi-m">RD$ 1,000</b></div><div class="pres-it"><span class="pi-n">Maíz lata grande</span><span class="pi-d">3 Lata 3kg</span><b class="pi-m">RD$ 1,785</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">3 · Transporte</span><span class="pg-c">3 ít.</span><b class="pg-s">RD$ 77,500</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Minibús equipo (15-20) ida y vuelta</span><span class="pi-d">1 Servicio i/v</span><b class="pi-m">RD$ 15,000</b></div><div class="pres-it"><span class="pi-n">Autobús participantes (40-50) ida y vuelta</span><span class="pi-d">1 Servicio i/v</span><b class="pi-m">RD$ 34,000</b></div><div class="pres-it"><span class="pi-n">Autobús clausura padres/etecianos ida y vuelta</span><span class="pi-d">1 Servicio i/v</span><b class="pi-m">RD$ 28,500</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">4 · Biblias y peces</span><span class="pg-c">2 ít.</span><b class="pg-s">RD$ 64,000</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Biblia Latinoam. Bolsillo Color</span><span class="pi-d">50 Unidad</span><b class="pi-m">RD$ 34,000</b></div><div class="pres-it"><span class="pi-n">Peces (símbolo)</span><span class="pi-d">50 Unidad</span><b class="pi-m">RD$ 30,000</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">5 · Guías/Eventos/Música/Camisetas</span><span class="pg-c">5 ít.</span><b class="pg-s">RD$ 73,715</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Guías/PG — materiales (banderín, carnets, papelería, rosarios, bolsas)</span><span class="pi-d">1 Paquete</span><b class="pi-m">RD$ 17,000</b></div><div class="pres-it"><span class="pi-n">Eventos formativos</span><span class="pi-d">1 Global</span><b class="pi-m">RD$ 16,315</b></div><div class="pres-it"><span class="pi-n">Música / sonido</span><span class="pi-d">1 Global</span><b class="pi-m">RD$ 4,500</b></div><div class="pres-it"><span class="pi-n">Almuerzo ensayo general</span><span class="pi-d">53 Persona</span><b class="pi-m">RD$ 15,900</b></div><div class="pres-it"><span class="pi-n">Camisetas EQUIPO</span><span class="pi-d">50 Unidad</span><b class="pi-m">RD$ 20,000</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">6 · Litúrgico</span><span class="pg-c">2 ít.</span><b class="pg-s">RD$ 15,300</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Ofrendas sacerdotes</span><span class="pi-d">4 Sacerdote</span><b class="pi-m">RD$ 12,000</b></div><div class="pres-it"><span class="pi-n">Insumos litúrgicos de misa (pan y vino)</span><span class="pi-d">1 Global</span><b class="pi-m">RD$ 3,300</b></div></div></details><details class="pres-grp"><summary><span class="pg-n">7 · Avanzada</span><span class="pg-c">1 ít.</span><b class="pg-s">RD$ 0</b></summary><div class="pres-items"><div class="pres-it"><span class="pi-n">Equipo avanzada (15-20, jue/vie): hospedaje + comida</span><span class="pi-d">1 Global</span><b class="pi-m">RD$ 0</b></div></div></details>
+    <p class="pres-foot">Subtotal operativo <b>RD$ 503,293</b> + 10% de imprevistos = <b>RD$ 553,622</b> (la meta de la misión).</p>
   </section>
 
   <footer>
-    Hecho por la tripulación · desde <b>data/estado.json</b> y el Presupuesto Maestro · actualizado <span id="ft-fecha"></span>.<br>
-    <span id="ft-avanzada"></span> El control de pagos por nombre es interno (Excel de Tesorería), no se muestra aquí.
+    Hecho por la tripulación · desde data/estado.json y el Presupuesto Maestro · actualizado 17 de junio de 2026.<br>
+    La avanzada del equipo (jueves, ~15 personas: 3 comidas + 1 noche) está como PROPUESTA y NO se suma al costo. El control de pagos por nombre es interno (Excel de Tesorería).
   </footer>
-
-</div>
-
-<script>
-const datos = {
-  "evento": "ETC · Misión 88",
-  "subtitulo": "Lo que cuesta la misión, y cómo —trabajando como tripulación— la hacemos posible",
-  "cita": "Los cielos cuentan la gloria de Dios",
-  "citaRef": "Salmo 19, 1",
-  "moneda": "RD$",
-  "locale": "es-DO",
-  "actualizado": "17 de junio de 2026",
-  "fechaCierrePagos": "2026-08-30",
-  "fechaCierrePagosTexto": "30 de agosto de 2026",
-  "fechaRetiro": "2026-09-04",
-  "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
-  "costoTotal": 553622,
-  "cuotas": 256000,
-  "especie": 114701,
-  "brecha": 297622,
-  "subOperativo": 503293.0,
-  "estructura": [
-    {
-      "label": "Casa (hospedaje)",
-      "monto": 200000
-    },
-    {
-      "label": "Transporte (3 buses)",
-      "monto": 77500
-    },
-    {
-      "label": "Comida (cocina, 3 días)",
-      "monto": 72778
-    },
-    {
-      "label": "Biblias y peces",
-      "monto": 64000
-    },
-    {
-      "label": "Imprevistos (10%)",
-      "monto": 50329
-    },
-    {
-      "label": "Camisetas del equipo",
-      "monto": 20000
-    },
-    {
-      "label": "Materiales de guía / PG",
-      "monto": 17000
-    },
-    {
-      "label": "Eventos formativos",
-      "monto": 16315
-    },
-    {
-      "label": "Almuerzo del ensayo",
-      "monto": 15900
-    },
-    {
-      "label": "Litúrgico",
-      "monto": 15300
-    },
-    {
-      "label": "Música",
-      "monto": 4500
-    }
-  ],
-  "costoPersona": {
-    "participante": {
-      "costo": 6548.92,
-      "cuota": 3000,
-      "oper": 5953.56,
-      "desglose": [
-        {
-          "label": "Casa (hospedaje)",
-          "monto": 2000
-        },
-        {
-          "label": "Comida del retiro",
-          "monto": 1455.56
-        },
-        {
-          "label": "Biblia + pez",
-          "monto": 1280
-        },
-        {
-          "label": "Su transporte",
-          "monto": 680
-        },
-        {
-          "label": "Materiales de su PG",
-          "monto": 340
-        },
-        {
-          "label": "Litúrgico",
-          "monto": 153
-        },
-        {
-          "label": "Música",
-          "monto": 45
-        }
-      ]
-    },
-    "equipo": {
-      "costo": 4523.53,
-      "cuota": 2000,
-      "oper": 4112.3,
-      "desglose": [
-        {
-          "label": "Casa (hospedaje)",
-          "monto": 2000
-        },
-        {
-          "label": "Transporte (equipo + clausura)",
-          "monto": 870
-        },
-        {
-          "label": "Camiseta",
-          "monto": 400
-        },
-        {
-          "label": "Formación",
-          "monto": 326.3
-        },
-        {
-          "label": "Almuerzo del ensayo",
-          "monto": 318
-        },
-        {
-          "label": "Litúrgico",
-          "monto": 153
-        },
-        {
-          "label": "Música",
-          "monto": 45
-        }
-      ]
-    }
-  },
-  "cuotaParticipante": {
-    "monto": 3000,
-    "n": 50,
-    "total": 150000,
-    "cubre": [
-      "Transporte al retiro",
-      "Comida del retiro",
-      "Casa (hospedaje)",
-      "Pez",
-      "Biblia"
-    ]
-  },
-  "cuotaEquipo": {
-    "pago": 500,
-    "pagos": 4,
-    "total": 2000,
-    "n": 53,
-    "totalRecaudo": 106000,
-    "cubre": [
-      "Ensayo general",
-      "Prorrateo del salón",
-      "Transporte al retiro",
-      "Comida del ensayo",
-      "Camiseta del equipo"
-    ]
-  },
-  "rubrosSimulador": [
-    {
-      "nombre": "Casa (hospedaje)",
-      "monto": 200000,
-      "donable": false
-    },
-    {
-      "nombre": "Transporte (3 buses)",
-      "monto": 77500,
-      "donable": false
-    },
-    {
-      "nombre": "Comida (cocina, 3 días)",
-      "monto": 72778,
-      "donable": true
-    },
-    {
-      "nombre": "Biblias y peces",
-      "monto": 64000,
-      "donable": true
-    },
-    {
-      "nombre": "Imprevistos (10%)",
-      "monto": 50329,
-      "donable": false
-    },
-    {
-      "nombre": "Camisetas del equipo",
-      "monto": 20000,
-      "donable": true
-    },
-    {
-      "nombre": "Materiales de guía / PG",
-      "monto": 17000,
-      "donable": true
-    },
-    {
-      "nombre": "Eventos formativos",
-      "monto": 16315,
-      "donable": false
-    },
-    {
-      "nombre": "Almuerzo del ensayo",
-      "monto": 15900,
-      "donable": false
-    },
-    {
-      "nombre": "Litúrgico",
-      "monto": 15300,
-      "donable": true
-    },
-    {
-      "nombre": "Música",
-      "monto": 4500,
-      "donable": true
-    }
-  ],
-  "corresponsabilidad": [
-    {
-      "area": "Guías",
-      "monto_indicativo": 17000,
-      "items": [
-        "Libretas",
-        "Rosario",
-        "Bolsa (tote / mochila)",
-        "Separadores de libros (para la Biblia)",
-        "Identificadores de habitación",
-        "Decoración del pequeño grupo"
-      ]
-    },
-    {
-      "area": "Música",
-      "monto_indicativo": 4500,
-      "items": [
-        "Chocolates",
-        "Crema",
-        "Gasolina"
-      ]
-    },
-    {
-      "area": "Cocina",
-      "monto_indicativo": 72778,
-      "items": [
-        "Comida del retiro (3 días)",
-        "Detalles"
-      ]
-    },
-    {
-      "area": "Directores",
-      "monto_indicativo": 79300,
-      "items": [
-        "Biblias",
-        "Peces",
-        "Materiales del banderín",
-        "Materiales de oficina (resma de papel, etc.)",
-        "Decoración del espacio de plenario",
-        "Liturgia: formas (pan y vino)",
-        "Aporte a los sacerdotes para la confesión"
-      ],
-      "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). El banderín lo ejecutan los guías pero lo costean los directores (hoy está dentro de la línea de Guías, 17,000). Oficina/plenario sin línea propia."
-    }
-  ],
-  "presupuesto": [
-    {
-      "rubro": "1 · Casa",
-      "items": [
-        {
-          "item": "Hospedaje 100 pers. (3 días)",
-          "detalle": "100 Persona",
-          "monto": 200000.0
-        }
-      ],
-      "subtotal": 200000.0
-    },
-    {
-      "rubro": "2 · Cocina",
-      "items": [
-        {
-          "item": "Plátano verde",
-          "detalle": "180 Unidad",
-          "monto": 4320.0
-        },
-        {
-          "item": "Pechuga de pollo (con hueso)",
-          "detalle": "50 Libra",
-          "monto": 6750.0
-        },
-        {
-          "item": "Carne de res para guisar",
-          "detalle": "45 Libra",
-          "monto": 11925.0
-        },
-        {
-          "item": "Papa",
-          "detalle": "64 Libra",
-          "monto": 2880.0
-        },
-        {
-          "item": "Cebolla roja",
-          "detalle": "8 Libra",
-          "monto": 392.0
-        },
-        {
-          "item": "Ají morrón",
-          "detalle": "7 Libra",
-          "monto": 581.0
-        },
-        {
-          "item": "Tomate barceló",
-          "detalle": "10 Libra",
-          "monto": 420.0
-        },
-        {
-          "item": "Chuleta ahumada",
-          "detalle": "6 Libra",
-          "monto": 774.0
-        },
-        {
-          "item": "Salami (barra Induveca 2.25lb)",
-          "detalle": "3 Barra",
-          "monto": 1290.0
-        },
-        {
-          "item": "Huevos",
-          "detalle": "6 Cartón 30",
-          "monto": 1290.0
-        },
-        {
-          "item": "Jamón cocido rebanado",
-          "detalle": "6 Libra",
-          "monto": 930.0
-        },
-        {
-          "item": "Queso amarillo/cheddar rebanado",
-          "detalle": "5 Libra",
-          "monto": 1725.0
-        },
-        {
-          "item": "Pasta espagueti",
-          "detalle": "15 Paq 400g",
-          "monto": 630.0
-        },
-        {
-          "item": "Espirales pasta",
-          "detalle": "8 Paq 400g",
-          "monto": 336.0
-        },
-        {
-          "item": "Leche entera",
-          "detalle": "5 Caja 12L",
-          "monto": 4560.0
-        },
-        {
-          "item": "Leche evaporada",
-          "detalle": "15 Lata 315g",
-          "monto": 1005.0
-        },
-        {
-          "item": "Café Santo Domingo 1lb",
-          "detalle": "8 Paq 1lb",
-          "monto": 3352.0
-        },
-        {
-          "item": "Azúcar crema",
-          "detalle": "4 Paq 5lb",
-          "monto": 628.0
-        },
-        {
-          "item": "Vino la Fuerza (litúrgico)",
-          "detalle": "2 Galón",
-          "monto": 1050.0
-        },
-        {
-          "item": "Mayonesa Baldom",
-          "detalle": "2 Galón",
-          "monto": 1590.0
-        },
-        {
-          "item": "Aceite de freír",
-          "detalle": "1 Galón 128oz",
-          "monto": 634.0
-        },
-        {
-          "item": "Crema de leche",
-          "detalle": "5 Lata 300g",
-          "monto": 750.0
-        },
-        {
-          "item": "Harina de trigo",
-          "detalle": "20 Libra",
-          "monto": 840.0
-        },
-        {
-          "item": "Galletas Guarina Salada",
-          "detalle": "15 Paq 12",
-          "monto": 885.0
-        },
-        {
-          "item": "Galletas Guarina Dulce",
-          "detalle": "15 Paq 12",
-          "monto": 1215.0
-        },
-        {
-          "item": "Refrescos doble litro",
-          "detalle": "14 Unidad 2L",
-          "monto": 1288.0
-        },
-        {
-          "item": "Chocolate molido",
-          "detalle": "6 Pote 200g",
-          "monto": 654.0
-        },
-        {
-          "item": "Té frío (sobres)",
-          "detalle": "4 Caja",
-          "monto": 1880.0
-        },
-        {
-          "item": "Pan baguette",
-          "detalle": "40 Unidad",
-          "monto": 2000.0
-        },
-        {
-          "item": "Pan rebanado grande",
-          "detalle": "4 Funda",
-          "monto": 860.0
-        },
-        {
-          "item": "Papel de baño",
-          "detalle": "2 Fardo 24",
-          "monto": 720.0
-        },
-        {
-          "item": "Mistolín",
-          "detalle": "2 Galón",
-          "monto": 670.0
-        },
-        {
-          "item": "Cloro",
-          "detalle": "2 Galón",
-          "monto": 270.0
-        },
-        {
-          "item": "Escoba",
-          "detalle": "3 Unidad",
-          "monto": 510.0
-        },
-        {
-          "item": "Suape",
-          "detalle": "3 Unidad",
-          "monto": 660.0
-        },
-        {
-          "item": "Esponja de fregar",
-          "detalle": "6 Unidad",
-          "monto": 210.0
-        },
-        {
-          "item": "Jabón de fregar",
-          "detalle": "2 Paquete",
-          "monto": 260.0
-        },
-        {
-          "item": "Bandejas desechables",
-          "detalle": "10 Unidad",
-          "monto": 900.0
-        },
-        {
-          "item": "Tenedores",
-          "detalle": "8 Paq 25",
-          "monto": 440.0
-        },
-        {
-          "item": "Vasos 7 Oz",
-          "detalle": "12 Paq 50",
-          "monto": 972.0
-        },
-        {
-          "item": "Arroz",
-          "detalle": "30 Libra",
-          "monto": 1200.0
-        },
-        {
-          "item": "Habichuelas",
-          "detalle": "15 Libra",
-          "monto": 1095.0
-        },
-        {
-          "item": "Salsa Prego roja",
-          "detalle": "3 Pote 24oz",
-          "monto": 837.0
-        },
-        {
-          "item": "Sazón en polvo",
-          "detalle": "2 Pote",
-          "monto": 430.0
-        },
-        {
-          "item": "Palitos de trigo",
-          "detalle": "4 Paquete",
-          "monto": 400.0
-        },
-        {
-          "item": "Albahaca fresca",
-          "detalle": "5 Paquete",
-          "monto": 325.0
-        },
-        {
-          "item": "Cilantro",
-          "detalle": "3 Paquete",
-          "monto": 150.0
-        },
-        {
-          "item": "Orégano",
-          "detalle": "1 Paquete",
-          "monto": 150.0
-        },
-        {
-          "item": "Puerro fino",
-          "detalle": "10 Paquete",
-          "monto": 500.0
-        },
-        {
-          "item": "Hershey's Kisses",
-          "detalle": "2 Paq 9.2oz",
-          "monto": 990.0
-        },
-        {
-          "item": "Bizcocho esponjoso",
-          "detalle": "4 Caja",
-          "monto": 320.0
-        },
-        {
-          "item": "Royal (polvo de hornear)",
-          "detalle": "1 Caja",
-          "monto": 100.0
-        },
-        {
-          "item": "Curry en polvo",
-          "detalle": "1 Frasco",
-          "monto": 150.0
-        },
-        {
-          "item": "Salsa roja",
-          "detalle": "2 Kilo",
-          "monto": 300.0
-        },
-        {
-          "item": "Aceite verde / oliva",
-          "detalle": "1 Litro",
-          "monto": 1000.0
-        },
-        {
-          "item": "Maíz lata grande",
-          "detalle": "3 Lata 3kg",
-          "monto": 1785.0
-        }
-      ],
-      "subtotal": 72778.0
-    },
-    {
-      "rubro": "3 · Transporte",
-      "items": [
-        {
-          "item": "Minibús equipo (15-20) ida y vuelta",
-          "detalle": "1 Servicio i/v",
-          "monto": 15000.0
-        },
-        {
-          "item": "Autobús participantes (40-50) ida y vuelta",
-          "detalle": "1 Servicio i/v",
-          "monto": 34000.0
-        },
-        {
-          "item": "Autobús clausura padres/etecianos ida y vuelta",
-          "detalle": "1 Servicio i/v",
-          "monto": 28500.0
-        }
-      ],
-      "subtotal": 77500.0
-    },
-    {
-      "rubro": "4 · Biblias y peces",
-      "items": [
-        {
-          "item": "Biblia Latinoam. Bolsillo Color",
-          "detalle": "50 Unidad",
-          "monto": 34000.0
-        },
-        {
-          "item": "Peces (símbolo)",
-          "detalle": "50 Unidad",
-          "monto": 30000.0
-        }
-      ],
-      "subtotal": 64000.0
-    },
-    {
-      "rubro": "5 · Guías/Eventos/Música/Camisetas",
-      "items": [
-        {
-          "item": "Guías/PG — materiales (banderín, carnets, papelería, rosarios, bolsas)",
-          "detalle": "1 Paquete",
-          "monto": 17000.0
-        },
-        {
-          "item": "Eventos formativos",
-          "detalle": "1 Global",
-          "monto": 16315.0
-        },
-        {
-          "item": "Música / sonido",
-          "detalle": "1 Global",
-          "monto": 4500.0
-        },
-        {
-          "item": "Almuerzo ensayo general",
-          "detalle": "53 Persona",
-          "monto": 15900.0
-        },
-        {
-          "item": "Camisetas EQUIPO",
-          "detalle": "50 Unidad",
-          "monto": 20000.0
-        }
-      ],
-      "subtotal": 73715.0
-    },
-    {
-      "rubro": "6 · Litúrgico",
-      "items": [
-        {
-          "item": "Ofrendas sacerdotes",
-          "detalle": "4 Sacerdote",
-          "monto": 12000.0
-        },
-        {
-          "item": "Insumos litúrgicos de misa (pan y vino)",
-          "detalle": "1 Global",
-          "monto": 3300.0
-        }
-      ],
-      "subtotal": 15300.0
-    },
-    {
-      "rubro": "7 · Avanzada",
-      "items": [
-        {
-          "item": "Equipo avanzada (15-20, jue/vie): hospedaje + comida",
-          "detalle": "1 Global",
-          "monto": 0.0
-        }
-      ],
-      "subtotal": 0.0
-    }
-  ],
-  "avanzada": {
-    "personas": 15,
-    "comidas": 3,
-    "noches": 1,
-    "total": 19500
-  }
-};
-
+</div><script>document.body.classList.remove("no-js");
+const datos = {"costoTotal": 553622, "cuotas": 256000, "brecha": 297622, "fechaCierrePagos": "2026-08-30", "fechaRetiro": "2026-09-04", "locale": "es-DO", "moneda": "RD$"};
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const nf  = new Intl.NumberFormat(datos.locale || 'es-DO');
-const nf2 = new Intl.NumberFormat(datos.locale || 'es-DO', {minimumFractionDigits:2, maximumFractionDigits:2});
-const money  = n => datos.moneda + ' ' + nf.format(Math.round(n));
-const money2 = n => datos.moneda + ' ' + nf2.format(n);
+const nf = new Intl.NumberFormat(datos.locale), nf2 = new Intl.NumberFormat(datos.locale,{minimumFractionDigits:2,maximumFractionDigits:2});
+const money = n => datos.moneda+' '+nf.format(Math.round(n));
 const $ = id => document.getElementById(id);
-const setText = (id, v) => { const e = $(id); if (e) e.textContent = v; };
-const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
-const PALETTE = ['#38BDF8','#34D399','#F2C572','#FC5130','#A78BFA','#22D3EE','#FB7185','#FACC15','#4ADE80','#60A5FA','#F97316'];
-function animate(d, on, done){ if(REDUCE){ on(1); if(done)done(); return; } const t0=performance.now();
-  (function f(now){ const t=Math.min(1,(now-t0)/d); on(easeOutCubic(t)); if(t<1) requestAnimationFrame(f); else if(done)done(); })(performance.now()); }
-function countUp(id, to, fmt, dur){ const e=$(id); if(!e) return; animate(dur||1500, p=>{ e.textContent=fmt(to*p); }); }
-
-(function(){ let h=''; for(let i=0;i<48;i++){ h+='<i style="left:'+(Math.random()*100).toFixed(2)+'%;top:'+(Math.random()*100).toFixed(2)+'%;animation-delay:'+(Math.random()*4).toFixed(2)+'s"></i>'; } $('stars').innerHTML=h; })();
-
-setText('evento', datos.evento);
-setText('subtitulo', datos.subtitulo);
-$('cita').innerHTML = '«' + datos.cita + '»<b>' + datos.citaRef + '</b>';
-setText('cd-cpago-when', datos.fechaCierrePagosTexto);
-setText('cd-ret-when', datos.fechaRetiroTexto);
-setText('ft-fecha', datos.actualizado);
-setText('sim-costo', money(datos.costoTotal));
-setText('cp-part-cuota', money(datos.cuotaParticipante.monto));
-setText('cp-eq-cuota', money(datos.cuotaEquipo.total));
-$('ft-avanzada').textContent = 'La avanzada del equipo (jueves, ~' + datos.avanzada.personas + ' personas: ' + datos.avanzada.comidas + ' comidas + ' + datos.avanzada.noches + ' noche) está como PROPUESTA y NO se suma al costo hasta cotizarla.';
-
-function dateLocal(iso){ const p=iso.split('-').map(Number); return new Date(p[0],p[1]-1,p[2],0,0,0,0); }
-function diffParts(iso){ let ms=Math.max(0,dateLocal(iso).getTime()-Date.now()); const d=Math.floor(ms/86400000); ms-=d*86400000; const h=Math.floor(ms/3600000); ms-=h*3600000; const m=Math.floor(ms/60000); ms-=m*60000; return {d,h,m,s:Math.floor(ms/1000)}; }
-function mkCountdown(pfx, iso){ function tick(){ const t=diffParts(iso); setText(pfx+'-d',t.d); setText(pfx+'-h',String(t.h).padStart(2,'0')); setText(pfx+'-m',String(t.m).padStart(2,'0')); setText(pfx+'-s',String(t.s).padStart(2,'0')); } tick(); setInterval(tick,1000); }
-
-function runKpis(){ countUp('kpi-costo', datos.costoTotal, money); countUp('kpi-cuotas', datos.cuotas, money); countUp('kpi-falta', datos.brecha, money);
-  animate(1500, p=>{ $('kpi-dias').textContent = nf.format(Math.round(diffParts(datos.fechaCierrePagos).d*p)); }); }
-
-function renderPie(pieId, legId, items, fmt){
-  const total=items.reduce((a,i)=>a+i.monto,0); let acc=0, parts=[], leg='';
-  items.forEach((it,idx)=>{ const col=PALETTE[idx%PALETTE.length]; const s=acc/total*100; acc+=it.monto; const e=acc/total*100;
-    const pct=(it.monto/total*100).toFixed(1).replace('.',',');
-    parts.push(col+' '+s.toFixed(2)+'% '+e.toFixed(2)+'%');
-    leg+='<div class="leg-row"><span class="leg-dot" style="background:'+col+'"></span><span class="leg-l">'+it.label+'</span><span class="leg-v">'+fmt(it.monto)+' · '+pct+'%</span></div>'; });
-  $(pieId).style.background='conic-gradient('+parts.join(',')+')';
-  $(legId).innerHTML=leg;
-}
-function runEstructura(){ renderPie('pie-estructura','leg-estructura', datos.estructura, money); }
-function runCosto(){ const C=datos.costoPersona;
-  countUp('cp-part', C.participante.costo, money2); countUp('cp-eq', C.equipo.costo, money2);
-  renderPie('pie-part','leg-part', C.participante.desglose, money2); renderPie('pie-eq','leg-eq', C.equipo.desglose, money2); }
-
-function runCuotas(){ const P=datos.cuotaParticipante, E=datos.cuotaEquipo;
-  countUp('q-part', P.total, money);
-  $('q-part-line').innerHTML = '<b>'+money(P.monto)+'</b> × '+P.n+' participantes';
-  $('q-part-chips').innerHTML = P.cubre.map(c=>'<span class="chip">'+c+'</span>').join('');
-  $('q-part-tot').innerHTML = 'Aporta en total <b>'+money(P.total)+'</b>';
-  countUp('q-eq', E.totalRecaudo, money);
-  $('q-eq-line').innerHTML = '<b>'+money(E.total)+'</b> = '+E.pagos+' pagos de '+money(E.pago)+' (jun–sep) · '+E.n+' del equipo';
-  $('q-eq-chips').innerHTML = E.cubre.map(c=>'<span class="chip">'+c+'</span>').join('');
-  $('q-eq-tot').innerHTML = 'Aporta en total <b>'+money(E.totalRecaudo)+'</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección'; }
-
-const RBOT=328, RTOP=78, RRANGE=RBOT-RTOP; let fuelCur=0;
-function setFuel(frac){ const f=$('fuel'); f.setAttribute('y',RBOT-frac*RRANGE); f.setAttribute('height',frac*RRANGE);
-  const fl=$('flame'); fl.setAttribute('transform','translate(80 330) scale('+(0.7+frac*0.6)+','+(0.4+frac*1.4)+') translate(-80 -330)'); fl.setAttribute('opacity',(0.4+frac*0.5).toFixed(2)); }
-function animateFuel(t){ if(REDUCE){ setFuel(t); fuelCur=t; return; } const from=fuelCur; animate(600, p=>setFuel(from+(t-from)*p), ()=>{fuelCur=t;}); }
-const simSel=new Set();
-function renderSim(){ let html=''; datos.rubrosSimulador.forEach((r,i)=>{ html+='<button type="button" class="rub" data-i="'+i+'"><span class="rub-check"></span><span class="rub-n">'+r.nombre+(r.donable?' <span class="rub-tag">donable</span>':'')+'</span><span class="rub-m">'+money(r.monto)+'</span></button>'; });
-  $('sim-list').innerHTML=html;
-  $('sim-list').addEventListener('click', e=>{ const b=e.target.closest('.rub'); if(!b) return; const i=+b.dataset.i; if(simSel.has(i)){simSel.delete(i); b.classList.remove('on');} else {simSel.add(i); b.classList.add('on');} recomputeSim(); });
-  $('sim-realista').addEventListener('click', ()=>preset(true)); $('sim-reset').addEventListener('click', ()=>preset(false)); }
-function preset(don){ simSel.clear(); if(don) datos.rubrosSimulador.forEach((r,i)=>{ if(r.donable) simSel.add(i); });
-  document.querySelectorAll('.rub').forEach(b=>b.classList.toggle('on', simSel.has(+b.dataset.i))); recomputeSim(); }
-function recomputeSim(){ let S=0; datos.rubrosSimulador.forEach((r,i)=>{ if(simSel.has(i)) S+=r.monto; });
-  const cubierto=datos.cuotas+S, falta=datos.costoTotal-cubierto; setText('sim-cubierto', money(cubierto));
-  const fEl=$('sim-falta');
-  if(falta>0){ fEl.textContent=money(falta); fEl.classList.remove('done'); setText('sim-falta-lbl','hay que reunir entre todos'); }
-  else { fEl.textContent = falta===0?money(0):('+'+money(Math.abs(falta))); fEl.classList.add('done'); setText('sim-falta-lbl', falta===0?'¡misión cubierta!':'¡misión cubierta! incluso sobra'); }
-  setText('sim-porcabeza', money(Math.max(0,falta)/100)); animateFuel(Math.max(0,Math.min(1,cubierto/datos.costoTotal))); }
-
-const AREA_COLOR = {'Guías':'#34D399','Música':'#F2C572','Cocina':'#38BDF8','Directores':'#FC5130'};
-function renderAreas(){ const g=$('areas-grid'); datos.corresponsabilidad.forEach(a=>{ const col=AREA_COLOR[a.area]||'#34D399';
-  const c=document.createElement('div'); c.className='area-card'; c.style.borderTopColor=col;
-  c.innerHTML='<div class="area-h"><span class="area-name" style="color:'+col+'">'+a.area+'</span><span class="area-amt">≈ '+money(a.monto_indicativo)+'</span></div><ul class="area-items">'+a.items.map(x=>'<li>'+x+'</li>').join('')+'</ul>'; g.appendChild(c); }); }
-
-function renderPresupuesto(){ const wrap=$('pres-list'); let html='';
-  datos.presupuesto.forEach(grp=>{ html+='<details class="pres-grp"><summary><span class="pg-n">'+grp.rubro+'</span><span class="pg-c">'+grp.items.length+' ít.</span><b class="pg-s">'+money(grp.subtotal)+'</b></summary>';
-    if(grp.items.length){ html+='<div class="pres-items">'; grp.items.forEach(it=>{ html+='<div class="pres-it"><span class="pi-n">'+it.item+'</span><span class="pi-d">'+it.detalle+'</span><b class="pi-m">'+money(it.monto)+'</b></div>'; }); html+='</div>'; }
-    html+='</details>'; });
-  wrap.innerHTML=html;
-  setText('pres-sub', money(datos.subOperativo)); setText('pres-total', money(datos.costoTotal)); }
-
-function onVisible(node, cb){ if(!node) return; if(!('IntersectionObserver' in window)){ cb(); return; }
-  const io=new IntersectionObserver((es,ob)=>{ es.forEach(e=>{ if(e.isIntersecting){ cb(); ob.disconnect(); } }); }, {threshold:.15}); io.observe(node); }
-window.addEventListener('DOMContentLoaded', ()=>{
-  document.querySelectorAll('.reveal').forEach(n=>onVisible(n, ()=>n.classList.add('visible')));
-  mkCountdown('cpago', datos.fechaCierrePagos); mkCountdown('ret', datos.fechaRetiro);
-  renderAreas(); renderSim(); renderPresupuesto();
-  onVisible($('kpis'), runKpis);
-  onVisible($('estructura-panel'), runEstructura);
-  onVisible($('costo-panel'), runCosto);
-  onVisible($('cuota-panel'), runCuotas);
-  onVisible($('sim-panel'), recomputeSim);
-});
-</script>
-</body>
-</html>
+const setText = (id,v)=>{const e=$(id); if(e)e.textContent=v;};
+const ease = t => 1-Math.pow(1-t,3);
+function animate(d,on,done){ if(REDUCE){on(1);if(done)done();return;} const t0=performance.now();
+  (function f(now){const t=Math.min(1,(now-t0)/d); on(ease(t)); if(t<1)requestAnimationFrame(f); else if(done)done();})(performance.now()); }
+/* estrellas */
+(function(){let h='';for(let i=0;i<48;i++){h+='<i style="left:'+(Math.random()*100).toFixed(2)+'%;top:'+(Math.random()*100).toFixed(2)+'%;animation-delay:'+(Math.random()*4).toFixed(2)+'s"></i>';}var s=$('stars'); if(s)s.innerHTML=h;})();
+/* count-up sobre los valores ya impresos */
+document.querySelectorAll('[data-count]').forEach(el=>{ const to=+el.dataset.count, k=el.dataset.kind;
+  const f = k==='money2' ? (n=>datos.moneda+' '+nf2.format(n)) : money;
+  animate(1400, p=>{ el.textContent=f(to*p); }); });
+/* cuenta regresiva en vivo */
+function dl(iso){const p=iso.split('-').map(Number);return new Date(p[0],p[1]-1,p[2],0,0,0,0);}
+function diff(iso){let ms=Math.max(0,dl(iso)-Date.now());const d=Math.floor(ms/86400000);ms-=d*86400000;const h=Math.floor(ms/3600000);ms-=h*3600000;const m=Math.floor(ms/60000);ms-=m*60000;return{d:d,h:h,m:m,s:Math.floor(ms/1000)};}
+function cd(pfx,iso,alsoKpi){function t(){const x=diff(iso);setText(pfx+'-d',x.d);setText(pfx+'-h',String(x.h).padStart(2,'0'));setText(pfx+'-m',String(x.m).padStart(2,'0'));setText(pfx+'-s',String(x.s).padStart(2,'0'));if(alsoKpi)setText('kpi-dias',x.d);}t();setInterval(t,1000);}
+cd('cpago',datos.fechaCierrePagos,true); cd('ret',datos.fechaRetiro,false);
+/* simulador (cohete) */
+const RBOT=328,RRANGE=250; let fuelCur=0;
+function setFuel(fr){var f=$('fuel');if(!f)return;f.setAttribute('y',RBOT-fr*RRANGE);f.setAttribute('height',fr*RRANGE);
+  var fl=$('flame');if(fl){fl.setAttribute('transform','translate(80 330) scale('+(0.7+fr*0.6)+','+(0.4+fr*1.4)+') translate(-80 -330)');fl.setAttribute('opacity',(0.4+fr*0.5).toFixed(2));}}
+function aFuel(t){if(REDUCE){setFuel(t);fuelCur=t;return;}const from=fuelCur;animate(600,p=>setFuel(from+(t-from)*p),()=>{fuelCur=t;});}
+function recompute(){let S=0;document.querySelectorAll('.rub.on').forEach(b=>S+=+b.dataset.monto);
+  const cub=datos.cuotas+S, falta=datos.costoTotal-cub; setText('sim-cubierto',money(cub));
+  var fE=$('sim-falta');
+  if(falta>0){fE.textContent=money(falta);fE.classList.remove('done');setText('sim-falta-lbl','hay que reunir entre todos');}
+  else{fE.textContent=falta===0?money(0):('+'+money(Math.abs(falta)));fE.classList.add('done');setText('sim-falta-lbl',falta===0?'¡misión cubierta!':'¡misión cubierta! incluso sobra');}
+  setText('sim-porcabeza',money(Math.max(0,falta)/100)); aFuel(Math.max(0,Math.min(1,cub/datos.costoTotal)));}
+var sl=$('sim-list');
+if(sl){ sl.addEventListener('click',e=>{var b=e.target.closest('.rub');if(!b)return;b.classList.toggle('on');recompute();});
+  $('sim-realista').addEventListener('click',()=>{document.querySelectorAll('.rub').forEach(b=>b.classList.toggle('on',b.dataset.donable==='1'));recompute();});
+  $('sim-reset').addEventListener('click',()=>{document.querySelectorAll('.rub').forEach(b=>b.classList.remove('on'));recompute();}); }
+recompute();
+/* reveal */
+(function(){var ns=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ns.forEach(n=>n.classList.add('visible'));return;}
+  var io=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:.12});
+  ns.forEach(n=>io.observe(n));})();
+</script></body></html>
