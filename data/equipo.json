@@ -193,17 +193,27 @@
         },
         "equipo": {
           "cuota": 2000,
-          "operativo_persona": 4112.13,
+          "operativo_persona": 4112.3,
           "con_imprevistos_persona": 4523.53,
-          "operativo_total_50": 205615
+          "operativo_total_50": 205615,
+          "desglose_persona": {
+            "casa": 2000,
+            "transporte": 870,
+            "camisetas": 400,
+            "eventos_formativos": 326.3,
+            "almuerzo_ensayo": 318,
+            "liturgico": 153,
+            "musica": 45
+          }
         }
       },
       "cuota_equipo_exentos": {
         "estado": "confirmado",
         "fuente": "director (17-jun-2026)",
-        "nota": "Quién NO paga la cuota del equipo. Los backups no van al retiro y no pagan. La cuota de la Sor la asume la Co-Dirección (no la paga ella); la meta de cuotas (106,000) se mantiene porque la parte asumida igual entra. Padre Paul y Co-Dirección: por confirmar si pagan o se asume.",
+        "nota": "Quién NO paga la cuota del equipo. Los backups no van al retiro y no pagan. Las cuotas de la Sor y del Padre Paul las asume la Co-Dirección (no las pagan ellos); la meta de cuotas (106,000) se mantiene porque la parte asumida igual entra. Esto NO se muestra persona a persona en el HTML; el control de pagos por nombre va en el Excel interno de Tesorería.",
         "asumidos_por_codireccion": [
-          "Sor Angelina Lebrón"
+          "Sor Angelina Lebrón",
+          "Padre Paul Ramírez"
         ]
       },
       "corresponsabilidad_areas": {
@@ -246,9 +256,9 @@
             "items": [
               "Biblias",
               "Peces",
-              "Materiales del banderín (lo ejecutan los guías)",
-              "Materiales de oficina",
-              "Decoración del plenario",
+              "Materiales del banderín",
+              "Materiales de oficina (resma de papel, etc.)",
+              "Decoración del espacio de plenario",
               "Liturgia: formas (pan y vino)",
               "Aporte a los sacerdotes para la confesión"
             ],
@@ -331,6 +341,68 @@
           "subtotal": 15000
         },
         "total_estimado": 19500
+      },
+      "rubros_simulador": {
+        "estado": "confirmado",
+        "fuente": "LADO A del Presupuesto Maestro (agrupado por rubro, no producto a producto)",
+        "nota": "Para el ejercicio de la tripulación en el HTML: cada rubro se puede marcar 'lo conseguimos (donación / gestión / exención)' y baja lo que hay que reunir entre todos. La suma de los montos = meta 553,622. 'donable' = lo más realista de gestionar (cuadra con el potencial en especie).",
+        "items": [
+          {
+            "nombre": "Casa (hospedaje)",
+            "monto": 200000,
+            "donable": false
+          },
+          {
+            "nombre": "Transporte (3 buses)",
+            "monto": 77500,
+            "donable": false
+          },
+          {
+            "nombre": "Comida (cocina, 3 días)",
+            "monto": 72778,
+            "donable": true
+          },
+          {
+            "nombre": "Biblias y peces",
+            "monto": 64000,
+            "donable": true
+          },
+          {
+            "nombre": "Imprevistos (10%)",
+            "monto": 50329,
+            "donable": false
+          },
+          {
+            "nombre": "Camisetas del equipo",
+            "monto": 20000,
+            "donable": true
+          },
+          {
+            "nombre": "Materiales de guía / PG",
+            "monto": 17000,
+            "donable": true
+          },
+          {
+            "nombre": "Eventos formativos",
+            "monto": 16315,
+            "donable": false
+          },
+          {
+            "nombre": "Almuerzo del ensayo",
+            "monto": 15900,
+            "donable": false
+          },
+          {
+            "nombre": "Litúrgico",
+            "monto": 15300,
+            "donable": true
+          },
+          {
+            "nombre": "Música",
+            "monto": 4500,
+            "donable": true
+          }
+        ]
       },
       "plan_recaudacion": {
         "estado": "confirmado",

@@ -1,168 +1,128 @@
 #!/usr/bin/env python3
-"""Genera el Tablero de Campaña (recaudación) del ETC 88 como UN archivo HTML
-autocontenido (HTML + CSS + JS nativo, sin dependencias externas, sin CDNs).
+"""Genera el Tablero de la Tripulación ETC 88 (Misión 88) — UN archivo HTML
+autocontenido (HTML + CSS + JS nativo, sin dependencias ni CDNs).
 
-Mensajes al EQUIPO:
-  1. El COSTO REAL del retiro (por participante y por equipo, y de qué se compone).
-  2. Los DRIVERS que alivianan el costo (Profondo, donaciones, especie) — juntos lo bajamos.
-  3. La CORRESPONSABILIDAD: qué cubre cada área (Guías, Música, Cocina, Directores).
-  4. La CUOTA del equipo escalonada (4 pagos de 500) + tracker con todos los nombres.
+NO es una presentación económica: es un EJERCICIO de concientización para que el
+equipo vea, juegue y valide cómo, trabajando como tripulación, sube o baja lo que
+hay que reunir. Tono sencillo, sin jerga.
 
-Cifras desde data/estado.json (Maestro + papel de costos por persona, conciliado
-al peso con LADO A). Roster del tracker desde data/equipo.json.
+Contiene:
+  - Lo que cuesta la misión por persona (participante y equipo), DESGLOSADO (pastel).
+  - Lo que ponemos nosotros en cuotas (participante y equipo) y qué cubre cada una.
+  - SIMULADOR: marca los rubros que creamos poder conseguir (donación/gestión) y
+    mira bajar lo que hay que reunir — termómetro tipo cohete.
+  - Corresponsabilidad: qué cubre cada área.
+  - Cuenta regresiva (cierre de pagos y lanzamiento).
 
-REGLAS ETC 88: nada se inventa; lo no firme va como 'estimado'/[PROPUESTA];
-la avanzada va aparte (no toca la meta confirmada 553,622); es GENERADO (regla #2).
+El control de pagos por NOMBRE no va aquí (es interno): vive en el Excel de
+Tesorería (scripts/build_tripulacion_xlsx.py). La avanzada queda como PROPUESTA y
+NO se suma al costo.
 
-Salida:  tablero_campana_etc88.html      Uso: python scripts/build_campana.py
+Cifras desde data/estado.json. Salida: tablero_campana_etc88.html
+Uso: python scripts/build_campana.py
 """
 import json
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EST = json.load(open(os.path.join(REPO, 'data', 'estado.json'), encoding='utf-8'))
-EQ  = json.load(open(os.path.join(REPO, 'data', 'equipo.json'), encoding='utf-8'))['equipo']
 
-# ----------------------------------------------------------- leer estado.json
 fin = EST['finanzas']
 meta_blk = fin['meta_recaudacion_total']
 desg = meta_blk['desglose']
-plan = fin['plan_recaudacion']['fuentes_caja_plan_a']
 cpp = fin['costos_por_persona']
 corr = fin['corresponsabilidad_areas']
 av = fin['avanzada_estimada']
+sim = fin['rubros_simulador']
+exentos = fin['cuota_equipo_exentos']['asumidos_por_codireccion']
 
-meta      = meta_blk['valor']
-cuotas    = desg['cuotas_firmes']
-brecha    = desg['brecha_tras_cuotas']
-especie   = desg['especie_potencial']
-margen    = desg['margen_proyectado']
-rifa      = plan['rifa_profondo']['monto']
-garaje    = plan['venta_garaje']['monto']
-comida    = plan['venta_comida']['monto']
-efectivo  = plan['donaciones_efectivo']['monto']
-caja_obj  = plan['total_caja_objetivo']
+meta     = meta_blk['valor']
+cuotas   = desg['cuotas_firmes']            # 256_000
+brecha   = desg['brecha_tras_cuotas']       # 297_622
+especie  = desg['especie_potencial']        # 114_701
 
-cuota_part   = fin['cuota_participante']['valor']
-n_part       = fin['participantes_objetivo']['valor']
-part_cuotas  = cuota_part * n_part
-equipo_cuotas = cuotas - part_cuotas
+cuota_part = fin['cuota_participante']['valor']      # 3000
+n_part     = fin['participantes_objetivo']['valor']  # 50
+part_cuota_total = cuota_part * n_part               # 150_000
+equipo_cuotas = cuotas - part_cuota_total            # 106_000
+eq_pago    = fin['cuota_equipo']['valor']['mensual'] # 500
+eq_total   = fin['cuota_equipo']['valor']['total']   # 2000
+eq_pagos   = eq_total // eq_pago                      # 4
+n_equipo   = equipo_cuotas // eq_total                # 53
 
-desglose   = cpp['participante']['desglose_persona']
-part_costo = cpp['participante']['con_imprevistos_persona']
-eq_costo   = cpp['equipo']['con_imprevistos_persona']
-part_oper  = cpp['participante']['operativo_persona']
-eq_oper    = cpp['equipo']['operativo_persona']
+pdesg = cpp['participante']['desglose_persona']
+edesg = cpp['equipo']['desglose_persona']
+part_costo = cpp['participante']['con_imprevistos_persona']   # 6548.92
+eq_costo   = cpp['equipo']['con_imprevistos_persona']         # 4523.53
+part_oper  = cpp['participante']['operativo_persona']         # 5953.56
+eq_oper    = cpp['equipo']['operativo_persona']               # 4112.30
 
-eq_cuota_mensual = fin['cuota_equipo']['valor']['mensual']    # 500
-eq_cuota_total   = fin['cuota_equipo']['valor']['total']      # 2000
-n_pagos = eq_cuota_total // eq_cuota_mensual                  # 4
+PART_LBL = [('casa', 'Casa (hospedaje)'), ('cocina', 'Comida del retiro'),
+            ('biblias_y_peces', 'Biblia + pez'), ('transporte', 'Su transporte'),
+            ('guias', 'Materiales de su PG'), ('liturgico', 'Litúrgico'), ('musica', 'Música')]
+EQ_LBL = [('casa', 'Casa (hospedaje)'), ('transporte', 'Transporte (equipo + clausura)'),
+          ('camisetas', 'Camiseta'), ('eventos_formativos', 'Formación'),
+          ('almuerzo_ensayo', 'Almuerzo del ensayo'), ('liturgico', 'Litúrgico'), ('musica', 'Música')]
+desg_part = [{"label": lbl, "monto": pdesg[k]} for k, lbl in PART_LBL]
+desg_eq   = [{"label": lbl, "monto": edesg[k]} for k, lbl in EQ_LBL]
 
 lema = EST['marca']['lema_retiro']['valor']
 
-# ----------------------------------------- roster del equipo (cuota tracker) --
-AREA_ORDER = ['directores', 'asesores', 'asesores_espirituales', 'guias', 'musica',
-              'cocina', 'asesores_cocina', 'asesores_diocesanos']
-AREA_LABEL = {
-    'directores': 'Co-Dirección', 'asesores': 'Asesores',
-    'asesores_espirituales': 'Asesores Espirituales', 'guias': 'Guías',
-    'musica': 'Música', 'cocina': 'Cocina', 'asesores_cocina': 'Asesoras de Cocina',
-    'asesores_diocesanos': 'Asesores de Comunidad',
-}
-integrantes = []
-for area in AREA_ORDER:
-    for p in EQ:
-        if p['area'] == area and not p.get('backup') and not p.get('vacante'):
-            integrantes.append({"nombre": p['nombre'], "area": AREA_LABEL[area]})
-# Sor (y quien decida el director) NO paga: lo asume la Co-Dirección. Backups no van.
-exentos = set(fin.get('cuota_equipo_exentos', {}).get('asumidos_por_codireccion', []))
-for it in integrantes:
-    it['asumida'] = it['nombre'] in exentos
+# --------------------------------------------------------- chequeo aritmética
+errs = []
+if round(sum(d['monto'] for d in desg_part), 2) != part_oper:
+    errs.append(f"desglose participante {sum(d['monto'] for d in desg_part)} ≠ {part_oper}")
+if round(sum(d['monto'] for d in desg_eq), 2) != eq_oper:
+    errs.append(f"desglose equipo {sum(d['monto'] for d in desg_eq)} ≠ {eq_oper}")
+if sum(r['monto'] for r in sim['items']) != meta:
+    errs.append(f"rubros simulador {sum(r['monto'] for r in sim['items'])} ≠ meta {meta}")
+if abs(round(part_costo * n_part + eq_costo * 50) - meta) > 5:
+    errs.append("costo/persona ×50 no amarra con la meta")
+if part_cuota_total + equipo_cuotas != cuotas:
+    errs.append("cuotas no cuadran")
+if errs:
+    raise SystemExit("NO CUADRA con estado.json:\n  - " + "\n  - ".join(errs))
 
-# ----------------------------------------------------- chequeo de aritmética
-palancas   = rifa + garaje + comida + efectivo
-profondo   = rifa + garaje + comida
-proyeccion = cuotas + palancas + especie
-superavit  = proyeccion - meta
-
-errores = []
-if palancas + cuotas != caja_obj:
-    errores.append(f"caja objetivo {caja_obj} ≠ cuotas+palancas {cuotas+palancas}")
-if meta - cuotas != brecha:
-    errores.append(f"brecha {brecha} ≠ meta-cuotas {meta-cuotas}")
-if superavit != margen:
-    errores.append(f"superávit {superavit} ≠ margen estado.json {margen}")
-if round(sum(desglose.values()), 2) != part_oper:
-    errores.append(f"desglose participante {sum(desglose.values())} ≠ {part_oper}")
-if len(integrantes) * eq_cuota_total != equipo_cuotas:
-    errores.append(f"tracker {len(integrantes)}×{eq_cuota_total} ≠ cuotas equipo {equipo_cuotas}")
-if av['total_estimado'] != av['comidas']['subtotal'] + av['hospedaje']['subtotal']:
-    errores.append("avanzada: total ≠ comidas+hospedaje")
-if errores:
-    raise SystemExit("CIFRAS NO CUADRAN con estado.json:\n  - " + "\n  - ".join(errores))
-
-# ------------------------------------------------------------- objeto datos
 datos = {
-    "evento": "Retiro ETC 88",
-    "subtitulo": "El costo real del retiro · cómo lo bajamos entre todos · quién cubre qué",
+    "evento": "ETC · Misión 88",
+    "subtitulo": "Lo que cuesta la misión, y cómo —trabajando como tripulación— la hacemos posible",
     "lema": lema, "citaBiblica": "Mt 6, 21",
     "moneda": "RD$", "locale": "es-DO", "actualizado": "17 de junio de 2026",
-
     "fechaCierrePagos": "2026-08-30", "fechaCierrePagosTexto": "30 de agosto de 2026",
     "fechaRetiro": "2026-09-04", "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
 
-    "costoTotal": meta, "recaudado": cuotas,
-
-    "fuentes": [
-        {"nombre": "Cuotas (participantes + equipo)", "monto": cuotas,   "tipo": "firme",    "grupo": "cuota"},
-        {"nombre": "Rifa / Profondo",                 "monto": rifa,     "tipo": "estimado", "grupo": "profondo"},
-        {"nombre": "Venta de garaje",                 "monto": garaje,   "tipo": "estimado", "grupo": "profondo"},
-        {"nombre": "Venta de comida",                 "monto": comida,   "tipo": "estimado", "grupo": "profondo"},
-        {"nombre": "Donaciones en efectivo",          "monto": efectivo, "tipo": "estimado", "grupo": "donacion"},
-        {"nombre": "Donaciones en especie",           "monto": especie,  "tipo": "especie",  "grupo": "especie"},
-    ],
+    "costoTotal": meta, "cuotas": cuotas, "especie": especie, "brecha": brecha,
 
     "costoPersona": {
-        "participante": {"costo": part_costo, "cuota": cpp['participante']['cuota'], "operativo": part_oper},
-        "equipo":       {"costo": eq_costo,   "cuota": cpp['equipo']['cuota'],       "operativo": eq_oper},
+        "participante": {"costo": part_costo, "cuota": cuota_part, "oper": part_oper, "desglose": desg_part},
+        "equipo":       {"costo": eq_costo,   "cuota": eq_total,   "oper": eq_oper,   "desglose": desg_eq},
     },
-    "desgloseParticipante": desglose,
+    "cuotaParticipante": {"monto": cuota_part, "n": n_part, "total": part_cuota_total,
+                          "cubre": ["Transporte al retiro", "Comida del retiro", "Casa (hospedaje)", "Pez", "Biblia"]},
+    "cuotaEquipo": {"pago": eq_pago, "pagos": eq_pagos, "total": eq_total, "n": n_equipo,
+                    "totalRecaudo": equipo_cuotas, "asumidos": len(exentos),
+                    "cubre": ["Ensayo general", "Prorrateo del salón", "Transporte al retiro", "Comida del ensayo", "Camiseta del equipo"]},
+
+    "rubrosSimulador": [{"nombre": r['nombre'], "monto": r['monto'], "donable": r['donable']} for r in sim['items']],
     "corresponsabilidad": corr['areas'],
-
-    # avanzada (PROPUESTA · no toca la meta)
-    "avanzada": {
-        "personas": av['personas'],
-        "comidas": av['comidas']['cantidad'],
-        "noches": av['hospedaje']['noches'],
-        "total": av['total_estimado'],
-    },
-
-    # cuota del equipo escalonada + tracker
-    "equipoCuota": {
-        "cuotaTotal": eq_cuota_total, "pagoMonto": eq_cuota_mensual, "pagos": n_pagos,
-        "meses": ["Jun", "Jul", "Ago", "Sep"][:n_pagos],
-        "objetivo": equipo_cuotas, "integrantes": integrantes,
-    },
+    "avanzada": {"personas": av['personas'], "comidas": av['comidas']['cantidad'],
+                 "noches": av['hospedaje']['noches'], "total": av['total_estimado']},
 }
-
 datos_json = json.dumps(datos, ensure_ascii=False, indent=2)
 
-# =========================================================================
-#  PLANTILLA  (HTML + CSS + JS)  — el único marcador es __DATOS_JSON__
-# =========================================================================
 TEMPLATE = r'''<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retiro ETC 88 · Tablero de Campaña</title>
+<title>ETC · Misión 88 · Tablero de la Tripulación</title>
 <style>
   :root{
-    --bg:#0B1F3A; --bg2:#0e2a4d; --bg3:#091830;
+    --bg:#0B1F3A; --bg2:#0e2a4d; --bg3:#071427;
     --ink:#EAF2FF; --muted:#9DB2D4; --muted2:#6F87AD;
     --line:rgba(255,255,255,.10); --card:rgba(255,255,255,.045); --card-h:rgba(255,255,255,.075);
-    --green:#34D399; --green2:#10B981; --green3:#059669;
-    --amber:#FBBF24; --sky:#38BDF8; --gold:#F2C572;
+    --hole:#10233f;
+    --green:#34D399; --green3:#059669; --sky:#38BDF8; --gold:#F2C572; --red:#FC5130;
     --shadow:0 20px 50px -20px rgba(0,0,0,.6); --r:20px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
@@ -170,619 +130,420 @@ TEMPLATE = r'''<!DOCTYPE html>
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink); line-height:1.5; min-height:100vh;
     background:
-      radial-gradient(1100px 700px at 12% -8%, rgba(52,211,153,.13), transparent 60%),
-      radial-gradient(900px 600px at 95% 0%, rgba(56,189,248,.12), transparent 55%),
-      radial-gradient(1200px 900px at 50% 120%, rgba(16,185,129,.08), transparent 60%),
+      radial-gradient(1100px 700px at 12% -8%, rgba(56,189,248,.12), transparent 60%),
+      radial-gradient(900px 600px at 95% 0%, rgba(252,81,48,.10), transparent 55%),
+      radial-gradient(1200px 900px at 50% 120%, rgba(52,211,153,.08), transparent 60%),
       linear-gradient(160deg, var(--bg2), var(--bg) 45%, var(--bg3));
     background-attachment:fixed; -webkit-font-smoothing:antialiased; padding:clamp(16px,3vw,40px)}
+  .stars{position:fixed; inset:0; z-index:-1; overflow:hidden}
+  .stars i{position:absolute; width:2px; height:2px; background:#fff; border-radius:50%; opacity:.5; animation:tw 4s infinite ease-in-out}
+  @keyframes tw{0%,100%{opacity:.2} 50%{opacity:.8}}
   .wrap{max-width:1180px; margin:0 auto}
 
-  header{text-align:center; padding:clamp(20px,4vw,48px) 0 clamp(14px,2vw,26px)}
-  .eyebrow{display:inline-block; font-size:clamp(.72rem,1.4vw,.86rem); letter-spacing:.28em; text-transform:uppercase;
-    color:var(--green); font-weight:700; padding:7px 16px; border:1px solid rgba(52,211,153,.35); border-radius:100px; background:rgba(52,211,153,.08)}
-  h1{font-size:clamp(2.4rem,7vw,5rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:18px 0 6px;
+  header{text-align:center; padding:clamp(14px,3vw,30px) 0 clamp(10px,2vw,22px)}
+  .patch{width:clamp(120px,22vw,168px); height:auto; display:block; margin:0 auto 14px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.45))}
+  h1{font-size:clamp(2.1rem,6vw,4.2rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:6px 0;
     background:linear-gradient(180deg,#fff,#cfe0ff 70%,#9db2d4); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .sub{color:var(--muted); font-size:clamp(1rem,2.2vw,1.32rem); font-weight:500}
-  .lema{margin:18px auto 0; max-width:680px; color:var(--gold); font-style:italic; font-size:clamp(1rem,2.4vw,1.45rem); line-height:1.35}
-  .lema b{font-style:normal; color:var(--muted2); font-size:.8em; display:block; margin-top:6px; letter-spacing:.04em}
+  .sub{color:var(--muted); font-size:clamp(1rem,2.1vw,1.25rem); font-weight:500; max-width:760px; margin:6px auto 0}
+  .lema{margin:16px auto 0; max-width:640px; color:var(--gold); font-style:italic; font-size:clamp(.98rem,2.2vw,1.3rem); line-height:1.35}
+  .lema b{font-style:normal; color:var(--muted2); font-size:.8em; display:block; margin-top:5px; letter-spacing:.04em}
 
-  .kpis{display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(20px,3vw,34px) 0; grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-  .kpi{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(16px,2vw,24px); position:relative; overflow:hidden;
+  .kpis{display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(18px,3vw,30px) 0; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .kpi{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(15px,2vw,22px); position:relative; overflow:hidden;
     transition:transform .35s ease, background .35s ease, border-color .35s ease}
   .kpi:hover{transform:translateY(-4px); background:var(--card-h); border-color:rgba(255,255,255,.2)}
-  .kpi::before{content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--green),var(--sky))}
-  .kpi .lbl{font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
-  .kpi .val{font-size:clamp(1.6rem,3.4vw,2.5rem); font-weight:800; letter-spacing:-.02em; margin-top:8px; font-variant-numeric:tabular-nums; line-height:1.05}
-  .kpi .note{font-size:.82rem; color:var(--muted2); margin-top:6px}
-  .kpi.accent .val{color:var(--green)} .kpi.warn .val{color:var(--amber)}
+  .kpi::before{content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--sky),var(--green))}
+  .kpi .lbl{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+  .kpi .val{font-size:clamp(1.5rem,3.2vw,2.3rem); font-weight:800; letter-spacing:-.02em; margin-top:8px; font-variant-numeric:tabular-nums; line-height:1.05}
+  .kpi .note{font-size:.8rem; color:var(--muted2); margin-top:6px}
+  .kpi.green .val{color:var(--green)} .kpi.red .val{color:var(--red)} .kpi.sky .val{color:var(--sky)}
 
   .panel{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(18px,2.6vw,32px); box-shadow:var(--shadow); margin-bottom:clamp(14px,2vw,22px)}
-  .panel h2{font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:700; letter-spacing:-.01em}
-  .panel .h2note{color:var(--muted); font-size:.9rem; margin-top:4px; margin-bottom:18px}
-  .grid2{display:grid; gap:clamp(14px,2vw,22px); grid-template-columns:1fr 1fr}
+  .panel h2{font-size:clamp(1.2rem,2.4vw,1.6rem); font-weight:700; letter-spacing:-.01em}
+  .panel .h2note{color:var(--muted); font-size:.92rem; margin-top:5px; margin-bottom:20px}
+  .grid2{display:grid; gap:clamp(16px,2.4vw,26px); grid-template-columns:1fr 1fr}
   @media(max-width:820px){ .grid2{grid-template-columns:1fr} }
 
-  .pcard{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:clamp(18px,2.4vw,26px)}
-  .pc-tag{color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; font-weight:700}
-  .pc-cost{font-size:clamp(2rem,6vw,3rem); font-weight:800; color:var(--green); margin:6px 0 16px; font-variant-numeric:tabular-nums; line-height:1}
-  .pc-rows{display:grid; gap:9px; margin-bottom:16px; font-variant-numeric:tabular-nums}
-  .pc-rows>div{display:flex; justify-content:space-between; gap:12px}
-  .pc-rows span{color:var(--muted)} .pc-rows b.warn{color:var(--amber)}
-  .cover{height:12px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden}
-  .cover i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width 1.3s cubic-bezier(.16,1,.3,1)}
-  .cover-lbl{color:var(--muted); font-size:.85rem; margin-top:8px} .cover-lbl b{color:var(--ink)}
+  /* pastel + leyenda */
+  .costo-card .ct{color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; font-weight:700; margin-bottom:4px}
+  .costo-card .cbig{font-size:clamp(1.7rem,4.5vw,2.4rem); font-weight:800; color:var(--green); font-variant-numeric:tabular-nums; line-height:1}
+  .costo-card .csub{color:var(--muted); font-size:.85rem; margin:4px 0 16px}
+  .pie-row{display:flex; gap:clamp(14px,2.5vw,22px); align-items:center; flex-wrap:wrap}
+  .pie{width:clamp(120px,26vw,160px); aspect-ratio:1; border-radius:50%; flex:none; box-shadow:0 0 0 6px rgba(255,255,255,.03); position:relative}
+  .pie::after{content:""; position:absolute; inset:30%; border-radius:50%; background:var(--hole); box-shadow:inset 0 2px 8px rgba(0,0,0,.4)}
+  .legend{flex:1; min-width:170px; display:grid; gap:7px}
+  .leg-row{display:grid; grid-template-columns:auto 1fr auto; gap:9px; align-items:center; font-size:.9rem; font-variant-numeric:tabular-nums}
+  .leg-dot{width:11px; height:11px; border-radius:3px}
+  .leg-l{color:var(--ink)} .leg-v{color:var(--muted); font-weight:600}
 
-  .compo{margin-top:24px; padding-top:22px; border-top:1px solid var(--line)}
-  .compo-h{font-weight:700; margin-bottom:16px}
-  .compo-row{display:grid; grid-template-columns:1fr auto; gap:5px 12px; align-items:center; margin-bottom:13px}
-  .compo-row .cl{color:var(--ink)} .compo-row .cv{color:var(--muted); font-variant-numeric:tabular-nums; font-weight:700}
-  .compo-row .ct{grid-column:1 / -1; height:8px; border-radius:4px; background:rgba(255,255,255,.07); overflow:hidden}
-  .compo-row .ct i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width 1s cubic-bezier(.16,1,.3,1)}
-  .compo-foot{color:var(--muted); margin-top:8px; font-size:.92rem} .compo-foot b{color:var(--ink)}
+  /* cuotas */
+  .qcard{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:clamp(16px,2.2vw,24px)}
+  .qcard .qt{color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; font-weight:700}
+  .qcard .qbig{font-size:clamp(1.7rem,4.5vw,2.3rem); font-weight:800; color:var(--sky); font-variant-numeric:tabular-nums; line-height:1; margin:6px 0}
+  .qcard .qline{color:var(--muted); font-size:.92rem; margin-bottom:14px}
+  .qcard .qline b{color:var(--ink)}
+  .chips{display:flex; flex-wrap:wrap; gap:7px}
+  .chip{background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.25); color:#cfeafe; font-size:.82rem; padding:5px 11px; border-radius:100px}
+  .qtot{margin-top:18px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem; font-variant-numeric:tabular-nums}
+  .qtot b{color:var(--ink)}
 
-  /* gap / por contemplar */
-  .gap-note{background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.32); border-radius:14px; padding:16px 18px;
-    color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem); margin-bottom:clamp(14px,2vw,22px); font-variant-numeric:tabular-nums; line-height:1.55}
-  .gap-note b{color:var(--ink)}
-  .tag-prop{display:inline-block; background:rgba(251,191,36,.18); color:var(--amber); font-weight:700; font-size:.78em;
-    padding:1px 8px; border-radius:100px; letter-spacing:.04em}
+  /* simulador */
+  .sim{background:linear-gradient(135deg, rgba(56,189,248,.12), rgba(52,211,153,.06) 70%, transparent), var(--card); border:1px solid rgba(56,189,248,.28)}
+  .sim-flex{display:flex; gap:clamp(18px,3vw,34px); align-items:flex-start; flex-wrap:wrap}
+  .rocket-wrap{flex:none; width:clamp(130px,30vw,180px); text-align:center}
+  .rocket-wrap svg{width:100%; height:auto; display:block; overflow:visible}
+  .sim-read{flex:1; min-width:240px}
+  .sim-falta{font-size:clamp(2.4rem,8vw,4rem); font-weight:800; color:var(--red); letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1}
+  .sim-falta.done{color:var(--green)}
+  .sim-falta-lbl{color:var(--muted); margin:4px 0 14px; font-size:1.02rem}
+  .sim-mini{display:flex; gap:22px; flex-wrap:wrap; color:var(--muted); font-size:.92rem; font-variant-numeric:tabular-nums; margin-bottom:16px}
+  .sim-mini b{color:var(--ink); display:block; font-size:1.15rem; font-weight:800}
+  .sim-actions{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px}
+  .sim-btn{font-family:inherit; cursor:pointer; border-radius:100px; padding:9px 16px; font-size:.86rem; font-weight:700;
+    border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--ink); transition:all .2s}
+  .sim-btn:hover{border-color:rgba(255,255,255,.3)}
+  .sim-btn.go{background:linear-gradient(180deg,var(--sky),#0c8fce); border-color:var(--sky); color:#04243a}
+  .sim-list{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:18px}
+  @media(max-width:680px){ .sim-list{grid-template-columns:1fr} }
+  .rub{display:flex; align-items:center; gap:10px; width:100%; text-align:left; font-family:inherit; cursor:pointer;
+    background:rgba(0,0,0,.2); border:1px solid var(--line); border-radius:12px; padding:11px 13px; color:var(--ink); transition:all .18s}
+  .rub:hover{border-color:rgba(255,255,255,.28)}
+  .rub.on{background:rgba(52,211,153,.14); border-color:var(--green)}
+  .rub-check{width:20px; height:20px; border-radius:6px; border:2px solid var(--muted2); flex:none; position:relative; transition:all .18s}
+  .rub.on .rub-check{background:var(--green); border-color:var(--green)}
+  .rub.on .rub-check::after{content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#04241a; font-size:13px; font-weight:900}
+  .rub-n{flex:1; font-size:.92rem} .rub-m{font-variant-numeric:tabular-nums; font-weight:700; color:var(--muted)}
+  .rub.on .rub-m{color:var(--green)}
+  .rub-tag{font-size:.66rem; color:var(--green); border:1px solid rgba(52,211,153,.4); border-radius:100px; padding:1px 7px; margin-left:4px; vertical-align:middle}
+  .sim-note{color:var(--muted); font-size:.88rem; margin-top:16px; line-height:1.5}
 
-  .thermo-flex{display:flex; gap:clamp(14px,3vw,30px); align-items:center}
-  .thermo-svg{width:clamp(120px,28vw,168px); flex:none}
-  .thermo-svg svg{display:block; width:100%; height:auto; overflow:visible}
-  .thermo-info{flex:1; min-width:0}
-  .big-pct{font-size:clamp(3rem,11vw,5.2rem); font-weight:800; line-height:.95; letter-spacing:-.03em; color:var(--green); font-variant-numeric:tabular-nums}
-  .big-pct small{font-size:.42em; color:var(--muted); font-weight:600; letter-spacing:0}
-  .th-rows{margin-top:18px; display:grid; gap:10px}
-  .th-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding-bottom:10px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums}
-  .th-row:last-child{border-bottom:0; padding-bottom:0}
-  .th-row .k{color:var(--muted); font-size:.95rem} .th-row .v{font-weight:700; font-size:1.1rem}
-  .th-row.is-falta .v{color:var(--amber)}
-
-  .cd-two{display:grid; gap:14px}
-  .cd-block{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:14px; padding:14px 14px 16px}
-  .cd-block.urgent{border-color:rgba(251,191,36,.45); background:rgba(251,191,36,.06)}
-  .cd-head{color:var(--muted); font-size:.85rem; margin-bottom:10px} .cd-head b{color:var(--ink)}
-  .cd-block.urgent .cd-head b{color:var(--amber)}
-  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(6px,1.2vw,12px)}
-  .cd-cell{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:12px; padding:clamp(10px,1.6vw,16px) 4px; text-align:center}
-  .cd-num{font-size:clamp(1.5rem,5vw,2.6rem); font-weight:800; font-variant-numeric:tabular-nums; line-height:1; letter-spacing:-.02em;
-    background:linear-gradient(180deg,#fff,#bcd2f5); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .cd-block.urgent .cd-num{background:linear-gradient(180deg,#fff,#ffe2a6); -webkit-background-clip:text; background-clip:text}
-  .cd-lbl{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:7px}
-
-  #chart-svg{width:100%; height:auto; display:block}
-  .legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin-top:18px; color:var(--muted); font-size:.88rem}
-  .legend span{display:inline-flex; align-items:center; gap:8px}
-  .sw{width:14px; height:14px; border-radius:4px; flex:none}
-  .sw.firme{background:var(--green)} .sw.estimado{background:var(--amber)} .sw.especie{background:var(--sky)}
-
-  .proj{background:linear-gradient(135deg, rgba(52,211,153,.16), rgba(56,189,248,.08) 70%, transparent), var(--card); border:1px solid rgba(52,211,153,.3)}
-  .drivers{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:6px 0 20px}
-  .driver{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:14px; padding:16px}
-  .driver.amber{border-color:rgba(251,191,36,.32)} .driver.sky{border-color:rgba(56,189,248,.32)}
-  .driver .dv{font-size:clamp(1.3rem,3.6vw,1.85rem); font-weight:800; font-variant-numeric:tabular-nums}
-  .driver.amber .dv{color:var(--amber)} .driver.sky .dv{color:var(--sky)}
-  .driver .dn{color:var(--muted); font-size:.85rem; margin-top:4px}
-  .proj .surplus{font-size:clamp(2.2rem,7vw,3.6rem); font-weight:800; color:var(--green); letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1}
-  .proj .surplus small{display:block; font-size:.26em; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:6px}
-  .formula{margin-top:18px; color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem); line-height:1.8; font-variant-numeric:tabular-nums}
-  .formula b{color:var(--ink); font-weight:700}
-  .formula .t-firme{color:var(--green)} .formula .t-est{color:var(--amber)} .formula .t-esp{color:var(--sky)}
-  .stack{height:34px; border-radius:10px; overflow:hidden; display:flex; margin-top:22px; background:rgba(0,0,0,.25); position:relative}
-  .stack i{height:100%; display:block; width:0; transition:width 1.4s cubic-bezier(.16,1,.3,1)}
-  .stack i.firme{background:linear-gradient(180deg,var(--green),var(--green3))}
-  .stack i.estimado{background:linear-gradient(180deg,var(--amber),#d99908)}
-  .stack i.especie{background:linear-gradient(180deg,var(--sky),#0c8fce)}
-  .meta-mark{position:absolute; top:-6px; bottom:-6px; width:2px; background:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.3)}
-  .meta-mark span{position:absolute; top:-22px; transform:translateX(-50%); white-space:nowrap; font-size:.72rem; color:#fff; font-weight:700; letter-spacing:.04em}
-  .stack-cap{display:flex; justify-content:space-between; margin-top:30px; color:var(--muted); font-size:.85rem; flex-wrap:wrap; gap:6px}
-  .reduce{margin-top:20px; padding:14px 16px; border-radius:12px; background:rgba(56,189,248,.08); border:1px solid rgba(56,189,248,.25); color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem); font-variant-numeric:tabular-nums}
-  .reduce b{color:var(--ink)} .reduce .t-esp{color:var(--sky); font-weight:700}
-  .msg{margin-top:18px; padding:18px 20px; border-radius:14px; background:rgba(0,0,0,.22); border-left:4px solid var(--green); font-size:clamp(1.02rem,2.3vw,1.28rem); line-height:1.5}
-  .msg b{color:var(--green)}
-
+  /* corresponsabilidad */
   .areas-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:14px}
   .area-card{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:18px 20px; border-top:3px solid var(--green)}
   .area-h{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:12px; padding-bottom:11px; border-bottom:1px solid var(--line)}
-  .area-name{font-weight:800; font-size:1.18rem} .area-amt{color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.95rem}
+  .area-name{font-weight:800; font-size:1.16rem} .area-amt{color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.92rem}
   .area-items{list-style:none; display:grid; gap:8px}
-  .area-items li{color:var(--muted); padding-left:18px; position:relative; font-size:.95rem}
+  .area-items li{color:var(--muted); padding-left:18px; position:relative; font-size:.94rem}
   .area-items li::before{content:""; position:absolute; left:3px; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--green)}
   .areas-foot{color:var(--muted); margin-top:16px; font-size:.9rem} .areas-foot b{color:var(--ink)}
 
-  /* cuota escalonada + tracker */
-  .cuota-msg{background:rgba(52,211,153,.08); border:1px solid rgba(52,211,153,.28); border-radius:14px; padding:16px 18px;
-    font-size:clamp(.95rem,2vw,1.1rem); line-height:1.55; margin-bottom:18px}
-  .cuota-msg b{color:var(--green)}
-  .cuota-summary{display:grid; grid-template-columns:auto 1fr auto; gap:10px 18px; align-items:center; margin-bottom:18px}
-  @media(max-width:680px){ .cuota-summary{grid-template-columns:1fr} }
-  .cs-big{font-size:clamp(1.6rem,5vw,2.4rem); font-weight:800; color:var(--green); font-variant-numeric:tabular-nums; line-height:1}
-  .cs-lbl{color:var(--muted); font-size:.85rem; margin-top:4px}
-  .cs-bar{height:12px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden; min-width:120px}
-  .cs-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width .5s ease}
-  .cs-note{color:var(--muted); font-size:.85rem; white-space:nowrap; font-variant-numeric:tabular-nums}
-  .trk-group{margin-bottom:14px}
-  .trk-area{font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--green); font-weight:700; margin:14px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--line)}
-  .trk-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 0; flex-wrap:wrap}
-  .trk-name{font-size:.98rem}
-  .trk-boxes{display:flex; gap:6px}
-  .pay-box{width:46px; height:32px; border-radius:8px; border:1px solid var(--line); background:rgba(0,0,0,.2);
-    color:var(--muted2); font-size:.72rem; font-weight:700; cursor:pointer; transition:all .18s ease; font-family:inherit}
-  .pay-box:hover{border-color:rgba(255,255,255,.3)}
-  .pay-box.on{background:linear-gradient(180deg,var(--green2),var(--green3)); color:#04241a; border-color:var(--green)}
-  .trk-asumida{font-size:.78rem; color:var(--gold); font-weight:700; background:rgba(242,197,114,.12); border:1px solid rgba(242,197,114,.32); padding:5px 12px; border-radius:100px}
-  .tracker-foot{color:var(--muted2); font-size:.84rem; margin-top:16px}
+  /* countdown */
+  .cd-two{display:grid; gap:14px; grid-template-columns:1fr 1fr}
+  @media(max-width:680px){ .cd-two{grid-template-columns:1fr} }
+  .cd-block{background:rgba(0,0,0,.2); border:1px solid var(--line); border-radius:14px; padding:14px 14px 16px}
+  .cd-block.urgent{border-color:rgba(252,81,48,.4); background:rgba(252,81,48,.06)}
+  .cd-head{color:var(--muted); font-size:.85rem; margin-bottom:10px} .cd-head b{color:var(--ink)}
+  .cd-block.urgent .cd-head b{color:var(--red)}
+  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
+  .cd-cell{background:rgba(0,0,0,.25); border:1px solid var(--line); border-radius:12px; padding:12px 4px; text-align:center}
+  .cd-num{font-size:clamp(1.4rem,4.5vw,2.2rem); font-weight:800; font-variant-numeric:tabular-nums; line-height:1;
+    background:linear-gradient(180deg,#fff,#bcd2f5); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .cd-lbl{font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:7px}
 
-  footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
+  footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:24px 0 8px; line-height:1.7}
+  footer b{color:var(--muted)}
 
   .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)}
   .reveal.visible{opacity:1; transform:none}
-  @media(prefers-reduced-motion:reduce){
-    .reveal{opacity:1; transform:none; transition:none}
-    .stack i, .cover i, .compo-row .ct i, .cs-bar i{transition:none}
-    html{scroll-behavior:auto}
-  }
+  @media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} .stars i{animation:none} html{scroll-behavior:auto} }
 </style>
 </head>
 <body>
+<div class="stars" id="stars" aria-hidden="true"></div>
 <div class="wrap">
 
   <header class="reveal">
-    <span class="eyebrow">Encuentro Total con Cristo</span>
-    <h1 id="evento">Retiro ETC 88</h1>
+    <svg class="patch" viewBox="0 0 200 200" role="img" aria-label="ETC Misión 88">
+      <defs><path id="patchArc" d="M30,108 A74,74 0 0 1 170,108"/></defs>
+      <circle cx="100" cy="100" r="95" fill="#0B2A52" stroke="#fff" stroke-width="5"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+      <ellipse cx="100" cy="98" rx="44" ry="72" fill="none" stroke="#fff" stroke-width="2.4" transform="rotate(24 100 100)"/>
+      <g fill="#fff">
+        <circle cx="62" cy="58" r="1.6"/><circle cx="142" cy="54" r="2"/><circle cx="151" cy="120" r="1.5"/>
+        <circle cx="55" cy="132" r="1.7"/><circle cx="122" cy="150" r="1.5"/><circle cx="80" cy="151" r="1.3"/>
+        <circle cx="44" cy="94" r="1.3"/><circle cx="158" cy="86" r="1.3"/>
+      </g>
+      <path d="M20,150 Q120,56 188,64 Q120,90 34,158 Z" fill="#FC5130"/>
+      <text x="100" y="122" text-anchor="middle" font-size="56" font-weight="800" fill="#fff" letter-spacing="2" font-family="-apple-system,Segoe UI,Roboto,sans-serif">ETC</text>
+      <text fill="#fff" font-size="13" font-weight="700" letter-spacing="2.4" font-family="-apple-system,Segoe UI,Roboto,sans-serif"><textPath href="#patchArc" startOffset="50%" text-anchor="middle">ENCUENTRO TOTAL CON CRISTO</textPath></text>
+      <text x="100" y="178" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="4" fill="#fff" font-family="-apple-system,Segoe UI,Roboto,sans-serif">MISIÓN 88</text>
+    </svg>
+    <h1 id="evento">ETC · Misión 88</h1>
     <p class="sub" id="subtitulo"></p>
     <p class="lema" id="lema"></p>
   </header>
 
   <section class="kpis reveal" id="kpis">
-    <div class="kpi"><div class="lbl">Costo total (meta)</div><div class="val" id="kpi-costo">RD$ 0</div><div class="note">cubrir el costo del retiro</div></div>
-    <div class="kpi accent"><div class="lbl">Recaudado a la fecha</div><div class="val" id="kpi-recaudado">RD$ 0</div><div class="note">cuotas firmes comprometidas</div></div>
-    <div class="kpi accent"><div class="lbl">% cubierto</div><div class="val" id="kpi-pct">0%</div><div class="note">de la meta</div></div>
-    <div class="kpi warn"><div class="lbl">Falta por recaudar</div><div class="val" id="kpi-falta">RD$ 0</div><div class="note">brecha tras cuotas</div></div>
-    <div class="kpi"><div class="lbl">Días: cierre de pagos</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">retiro: 4–6 sep</div></div>
+    <div class="kpi"><div class="lbl">Costo de la misión</div><div class="val" id="kpi-costo">RD$ 0</div><div class="note">lo que cuesta el retiro completo</div></div>
+    <div class="kpi green"><div class="lbl">Lo que ya ponemos</div><div class="val" id="kpi-cuotas">RD$ 0</div><div class="note">cuotas de participantes + equipo</div></div>
+    <div class="kpi red"><div class="lbl">Falta por reunir</div><div class="val" id="kpi-falta">RD$ 0</div><div class="note">y depende de nosotros</div></div>
+    <div class="kpi"><div class="lbl">Días: cierre de pagos</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">lanzamiento: 4–6 sep</div></div>
   </section>
 
-  <!-- 1 · costo real por persona -->
+  <!-- costo por persona -->
   <section class="panel reveal" id="costo-panel">
-    <h2>1 · Lo que cuesta el retiro de verdad</h2>
-    <p class="h2note">Costo real por cabeza (incluye el 10% de imprevistos) vs. la cuota que paga cada quien</p>
+    <h2>Lo que cuesta la misión, por persona</h2>
+    <p class="h2note">Para dimensionar el esfuerzo — sencillo y claro. (Incluye el 10% de imprevistos.)</p>
     <div class="grid2">
-      <div class="pcard">
-        <div class="pc-tag">Por participante</div>
-        <div class="pc-cost" id="pc-part-cost">RD$ 0</div>
-        <div class="pc-rows">
-          <div><span>Cuota que paga</span><b id="pc-part-cuota">RD$ 0</b></div>
-          <div><span>No cubre la cuota</span><b class="warn" id="pc-part-falta">RD$ 0</b></div>
-        </div>
-        <div class="cover"><i id="pc-part-bar" data-w="0"></i></div>
-        <div class="cover-lbl">la cuota cubre <b id="pc-part-pct">0%</b> de su costo</div>
+      <div class="costo-card">
+        <div class="ct">Por participante</div>
+        <div class="cbig" id="cp-part">RD$ 0</div>
+        <div class="csub">su cuota es <b id="cp-part-cuota"></b> · el resto no recae en él</div>
+        <div class="pie-row"><div class="pie" id="pie-part"></div><div class="legend" id="leg-part"></div></div>
       </div>
-      <div class="pcard">
-        <div class="pc-tag">Por miembro de equipo</div>
-        <div class="pc-cost" id="pc-eq-cost">RD$ 0</div>
-        <div class="pc-rows">
-          <div><span>Cuota que paga</span><b id="pc-eq-cuota">RD$ 0</b></div>
-          <div><span>No cubre la cuota</span><b class="warn" id="pc-eq-falta">RD$ 0</b></div>
-        </div>
-        <div class="cover"><i id="pc-eq-bar" data-w="0"></i></div>
-        <div class="cover-lbl">la cuota cubre <b id="pc-eq-pct">0%</b> de su costo</div>
+      <div class="costo-card">
+        <div class="ct">Por miembro de equipo</div>
+        <div class="cbig" id="cp-eq" style="color:var(--sky)">RD$ 0</div>
+        <div class="csub">su cuota es <b id="cp-eq-cuota"></b></div>
+        <div class="pie-row"><div class="pie" id="pie-eq"></div><div class="legend" id="leg-eq"></div></div>
       </div>
-    </div>
-    <div class="compo">
-      <div class="compo-h">¿De qué se compone el costo de cada participante?</div>
-      <div id="compo-bars"></div>
-      <div class="compo-foot">Suma <b id="compo-sum">RD$ 0</b> (operativo) + 10% de imprevistos = <b id="compo-total">RD$ 0</b> por participante. Lo que la cuota no cubre <b>no recae en el participante</b>: lo bajan los drivers de abajo.</div>
     </div>
   </section>
 
-  <!-- por contemplar: avanzada -->
-  <div class="gap-note reveal" id="gap-avanzada"></div>
-
-  <!-- thermometer + countdowns -->
-  <div class="grid2">
-    <section class="panel reveal" id="thermo-panel">
-      <h2>Progreso hacia la meta</h2>
-      <p class="h2note">Recaudado vs. costo total del retiro</p>
-      <div class="thermo-flex">
-        <div class="thermo-svg" aria-hidden="true">
-          <svg viewBox="0 0 200 470" role="img">
-            <defs>
-              <linearGradient id="gradFill" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stop-color="#059669"/><stop offset="55%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/>
-              </linearGradient>
-              <clipPath id="tubeClip"><rect x="84" y="24" width="38" height="350" rx="19"/></clipPath>
-            </defs>
-            <circle cx="103" cy="406" r="40" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
-            <rect x="84" y="24" width="38" height="350" rx="19" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
-            <circle cx="103" cy="406" r="33" fill="url(#gradFill)"/>
-            <circle cx="94" cy="396" r="9" fill="rgba(255,255,255,.28)"/>
-            <rect id="thermo-fill" x="84" y="374" width="38" height="0" fill="url(#gradFill)" clip-path="url(#tubeClip)"/>
-            <line x1="70" x2="150" y1="24" y2="24" stroke="#fff" stroke-width="2" stroke-dasharray="4 4" opacity=".75"/>
-            <text x="128" y="18" fill="#fff" font-size="12" font-weight="700">META</text>
-            <g stroke="rgba(255,255,255,.25)" font-size="11" fill="var(--muted)">
-              <line x1="122" x2="132" y1="111.5" y2="111.5"/><text x="136" y="115">75%</text>
-              <line x1="122" x2="132" y1="199" y2="199"/><text x="136" y="203">50%</text>
-              <line x1="122" x2="132" y1="286.5" y2="286.5"/><text x="136" y="290">25%</text>
-            </g>
-            <g id="thermo-marker" transform="translate(0,374)">
-              <line x1="54" x2="84" y1="0" y2="0" stroke="var(--green)" stroke-width="2"/>
-              <text id="thermo-marker-pct" x="50" y="5" text-anchor="end" fill="var(--green)" font-size="15" font-weight="800">0%</text>
-            </g>
-          </svg>
-        </div>
-        <div class="thermo-info">
-          <div class="big-pct"><span id="th-pct">0,0</span><small>%</small></div>
-          <div style="color:var(--muted); margin-top:2px">de la meta cubierta</div>
-          <div class="th-rows">
-            <div class="th-row"><span class="k">Recaudado</span><span class="v" id="th-recaudado">RD$ 0</span></div>
-            <div class="th-row"><span class="k">Meta (costo total)</span><span class="v" id="th-meta">RD$ 0</span></div>
-            <div class="th-row is-falta"><span class="k">Falta</span><span class="v" id="th-falta">RD$ 0</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel reveal" id="cd-panel">
-      <h2>Cuánto falta</h2>
-      <p class="h2note">El dinero debe estar conciliado para el cierre de pagos, antes del retiro</p>
-      <div class="cd-two">
-        <div class="cd-block urgent">
-          <div class="cd-head">Cierre de pagos · <b id="cd-cpago-when"></b></div>
-          <div class="cd-grid">
-            <div class="cd-cell"><div class="cd-num" id="cpago-d">0</div><div class="cd-lbl">Días</div></div>
-            <div class="cd-cell"><div class="cd-num" id="cpago-h">00</div><div class="cd-lbl">Hrs</div></div>
-            <div class="cd-cell"><div class="cd-num" id="cpago-m">00</div><div class="cd-lbl">Min</div></div>
-            <div class="cd-cell"><div class="cd-num" id="cpago-s">00</div><div class="cd-lbl">Seg</div></div>
-          </div>
-        </div>
-        <div class="cd-block">
-          <div class="cd-head">Inicio del retiro · <b id="cd-ret-when"></b></div>
-          <div class="cd-grid">
-            <div class="cd-cell"><div class="cd-num" id="ret-d">0</div><div class="cd-lbl">Días</div></div>
-            <div class="cd-cell"><div class="cd-num" id="ret-h">00</div><div class="cd-lbl">Hrs</div></div>
-            <div class="cd-cell"><div class="cd-num" id="ret-m">00</div><div class="cd-lbl">Min</div></div>
-            <div class="cd-cell"><div class="cd-num" id="ret-s">00</div><div class="cd-lbl">Seg</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- bar chart -->
-  <section class="panel reveal" id="chart-panel">
-    <h2>Recaudación por fuente</h2>
-    <p class="h2note">Cuotas firmes + palancas estimadas + donaciones en especie</p>
-    <svg id="chart-svg" role="img" aria-label="Recaudación por fuente"></svg>
-    <div class="legend">
-      <span><i class="sw firme"></i> Firme (comprometido)</span>
-      <span><i class="sw estimado"></i> Estimado (palanca, no firme)</span>
-      <span><i class="sw especie"></i> En especie (no es caja, reduce el costo)</span>
-    </div>
-  </section>
-
-  <!-- 2 · drivers + projection -->
-  <section class="panel proj reveal" id="proj-panel">
-    <h2>2 · Drivers que alivianan: juntos bajamos el costo</h2>
-    <p class="h2note">El costo no recae solo en las cuotas ni en los directores — estos drivers lo cubren y lo bajan entre todos</p>
-    <div class="drivers" id="drivers"></div>
-    <div class="surplus"><small>Superávit proyectado sobre el costo</small><span id="pr-superavit">RD$ 0</span></div>
-    <div class="formula">
-      <span class="t-firme"><b id="pr-cuotas">RD$ 0</b> cuotas</span> +
-      <span class="t-est"><b id="pr-palancas">RD$ 0</b> palancas/Profondo</span> +
-      <span class="t-esp"><b id="pr-especie">RD$ 0</b> especie</span> =
-      <b id="pr-proyeccion">RD$ 0</b> proyectado &nbsp;vs.&nbsp; meta <b id="pr-meta">RD$ 0</b>
-    </div>
-    <div class="stack" id="stack"></div>
-    <div class="stack-cap"><span>Recaudación total proyectada</span><span id="stack-total">RD$ 0</span></div>
-    <div class="reduce">Las <b>donaciones en especie</b> reducen el costo peso a peso:
-      <span id="rd-meta">RD$ 0</span> − <span class="t-esp" id="rd-especie">RD$ 0</span> = <b id="rd-caja">RD$ 0</b> a cubrir en efectivo.</div>
-    <p class="msg">Si conseguimos las <b>donaciones en especie</b> (<span id="s-especie">RD$ 0</span>)
-      y las <b>palancas</b>, cerramos con <b>superávit de <span id="s-superavit">RD$ 0</span></b>.</p>
-  </section>
-
-  <!-- 3 · corresponsabilidad -->
-  <section class="panel reveal" id="areas-panel">
-    <h2>3 · Corresponsabilidad: quién cubre qué</h2>
-    <p class="h2note">El esfuerzo no es solo de los directores ni de las cuotas — cada área carga su parte</p>
-    <div class="areas-grid" id="areas-grid"></div>
-    <p class="areas-foot">Montos <b>indicativos</b> del Presupuesto Maestro. Además, <b>casa, transporte y la coordinación general</b> completan el costo total (RD$ 553,622).</p>
-  </section>
-
-  <!-- 4 · cuota escalonada + tracker -->
+  <!-- cuotas -->
   <section class="panel reveal" id="cuota-panel">
-    <h2 id="cuota-h2">4 · Cuota del equipo</h2>
-    <p class="h2note">Escalonada para que sea alcanzable · marca cada pago al tocar la casilla</p>
-    <div class="cuota-msg" id="cuota-msg"></div>
-    <div class="cuota-summary">
-      <div><div class="cs-big" id="cuota-cobrado">RD$ 0</div><div class="cs-lbl" id="cuota-cobrado-lbl">cobrado en cuotas de equipo</div></div>
-      <div class="cs-bar"><i id="cuota-bar"></i></div>
-      <div class="cs-note" id="cuota-boxes">0 pagos</div>
+    <h2>Lo que ponemos nosotros</h2>
+    <p class="h2note">La cuota no cubre el costo real — pero es nuestro primer aporte como tripulación</p>
+    <div class="grid2">
+      <div class="qcard">
+        <div class="qt">Cuota del participante</div>
+        <div class="qbig" id="q-part">RD$ 0</div>
+        <div class="qline" id="q-part-line"></div>
+        <div class="chips" id="q-part-chips"></div>
+        <div class="qtot" id="q-part-tot"></div>
+      </div>
+      <div class="qcard">
+        <div class="qt">Cuota del equipo</div>
+        <div class="qbig" id="q-eq" style="color:var(--green)">RD$ 0</div>
+        <div class="qline" id="q-eq-line"></div>
+        <div class="chips" id="q-eq-chips"></div>
+        <div class="qtot" id="q-eq-tot"></div>
+      </div>
     </div>
-    <div id="tracker"></div>
-    <p class="tracker-foot">Los backups no van al retiro y no pagan cuota. La cuota de la Sor la asume la Co-Dirección. Las marcas se guardan en este dispositivo (no se comparten); la fuente oficial de pagos es Tesorería.</p>
+  </section>
+
+  <!-- SIMULADOR -->
+  <section class="panel sim reveal" id="sim-panel">
+    <h2>El ejercicio de la tripulación</h2>
+    <p class="h2note">Marca lo que crees que podemos conseguir donado o gestionado, y mira bajar lo que hay que reunir. No es una meta fría: es ver que, juntos, se puede.</p>
+    <div class="sim-flex">
+      <div class="rocket-wrap" aria-hidden="true">
+        <svg viewBox="0 0 160 430">
+          <defs>
+            <linearGradient id="fuelG" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#0c8fce"/><stop offset="55%" stop-color="#34D399"/><stop offset="100%" stop-color="#A7F3D0"/>
+            </linearGradient>
+            <clipPath id="bodyClip"><rect x="55" y="78" width="50" height="250" rx="12"/></clipPath>
+          </defs>
+          <!-- flame -->
+          <path id="flame" d="M70,330 Q80,395 90,330 Z" fill="#FC5130" opacity=".9"/>
+          <!-- body track -->
+          <rect x="55" y="78" width="50" height="250" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.16)"/>
+          <!-- fuel -->
+          <rect id="fuel" x="55" y="328" width="50" height="0" fill="url(#fuelG)" clip-path="url(#bodyClip)"/>
+          <!-- nose -->
+          <path d="M55,80 L80,20 L105,80 Z" fill="#E7EEFA"/>
+          <!-- fins -->
+          <path d="M55,300 L38,346 L55,332 Z" fill="#FC5130"/>
+          <path d="M105,300 L122,346 L105,332 Z" fill="#FC5130"/>
+          <!-- body outline + window -->
+          <rect x="55" y="78" width="50" height="250" rx="12" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+          <circle cx="80" cy="112" r="11" fill="#0B2A52" stroke="#E7EEFA" stroke-width="3"/>
+          <!-- meta line -->
+          <line x1="44" x2="116" y1="78" y2="78" stroke="#fff" stroke-dasharray="4 4" stroke-width="1.5" opacity=".7"/>
+          <text x="120" y="82" fill="#fff" font-size="10" font-weight="700">META</text>
+        </svg>
+        <div style="color:var(--muted); font-size:.82rem; margin-top:6px">cubierto: <b id="sim-cubierto" style="color:var(--ink)">RD$ 0</b></div>
+      </div>
+      <div class="sim-read">
+        <div class="sim-falta" id="sim-falta">RD$ 0</div>
+        <div class="sim-falta-lbl" id="sim-falta-lbl">hay que reunir entre todos</div>
+        <div class="sim-mini">
+          <div>por cada uno (100)<b id="sim-porcabeza">RD$ 0</b></div>
+          <div>costo de la misión<b id="sim-costo">RD$ 0</b></div>
+        </div>
+        <div class="sim-actions">
+          <button type="button" class="sim-btn go" id="sim-realista">Probar: lo realista</button>
+          <button type="button" class="sim-btn" id="sim-reset">Reiniciar</button>
+        </div>
+        <div class="sim-list" id="sim-list"></div>
+        <p class="sim-note">Es un ejercicio para imaginar y validar juntos — no un compromiso. Lo marcado como <b style="color:var(--green)">donable</b> es lo más realista de gestionar (en el ETC 78 se donó más de la mitad).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- corresponsabilidad -->
+  <section class="panel reveal" id="areas-panel">
+    <h2>Cada área aporta su parte</h2>
+    <p class="h2note">El esfuerzo no es solo de los directores — cada área de la tripulación carga lo suyo</p>
+    <div class="areas-grid" id="areas-grid"></div>
+    <p class="areas-foot">Montos <b>indicativos</b>. Casa, transporte y la coordinación general completan el costo total.</p>
+  </section>
+
+  <!-- countdown -->
+  <section class="panel reveal" id="cd-panel">
+    <h2>Cuenta regresiva</h2>
+    <p class="h2note">El dinero debe estar conciliado para el cierre de pagos, antes del lanzamiento</p>
+    <div class="cd-two">
+      <div class="cd-block urgent">
+        <div class="cd-head">Cierre de pagos · <b id="cd-cpago-when"></b></div>
+        <div class="cd-grid">
+          <div class="cd-cell"><div class="cd-num" id="cpago-d">0</div><div class="cd-lbl">Días</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cpago-h">00</div><div class="cd-lbl">Hrs</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cpago-m">00</div><div class="cd-lbl">Min</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cpago-s">00</div><div class="cd-lbl">Seg</div></div>
+        </div>
+      </div>
+      <div class="cd-block">
+        <div class="cd-head">Lanzamiento (retiro) · <b id="cd-ret-when"></b></div>
+        <div class="cd-grid">
+          <div class="cd-cell"><div class="cd-num" id="ret-d">0</div><div class="cd-lbl">Días</div></div>
+          <div class="cd-cell"><div class="cd-num" id="ret-h">00</div><div class="cd-lbl">Hrs</div></div>
+          <div class="cd-cell"><div class="cd-num" id="ret-m">00</div><div class="cd-lbl">Min</div></div>
+          <div class="cd-cell"><div class="cd-num" id="ret-s">00</div><div class="cd-lbl">Seg</div></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    Generado desde <b>data/estado.json</b> + <b>data/equipo.json</b> (Maestro · papel de costos · roster) · actualizado <span id="ft-fecha"></span>.<br>
-    Cifras: cuotas = firmes · palancas y especie = <b>estimadas</b> · avanzada = <b>[PROPUESTA]</b> (no toca la meta). Edita el objeto <code>datos</code> para actualizar.
+    Hecho por la tripulación · desde <b>data/estado.json</b> · actualizado <span id="ft-fecha"></span>.<br>
+    <span id="ft-avanzada"></span> El control de pagos por nombre es interno (Excel de Tesorería), no se muestra aquí.
   </footer>
 
 </div>
 
 <script>
-/* =========================================================================
-   ETC 88 · TABLERO DE CAMPAÑA  —  DATOS EDITABLES (objeto `datos`)
-   Cifras trazadas a data/estado.json + data/equipo.json. Edita y recarga.
-   ========================================================================= */
 const datos = __DATOS_JSON__;
 
-/* ---- Derivados -------------------------------------------------------- */
-const sumTipo  = t => datos.fuentes.filter(f => f.tipo  === t).reduce((a, f) => a + f.monto, 0);
-const sumGrupo = g => datos.fuentes.filter(f => f.grupo === g).reduce((a, f) => a + f.monto, 0);
-const D = { cuotas:sumTipo('firme'), palancas:sumTipo('estimado'), especie:sumTipo('especie') };
-D.proyeccion = datos.fuentes.reduce((a, f) => a + f.monto, 0);
-D.pct = Math.min(100, (datos.recaudado / datos.costoTotal) * 100);
-D.falta = Math.max(0, datos.costoTotal - datos.recaudado);
-D.superavit = D.proyeccion - datos.costoTotal;
-D.cajaTrasEspecie = datos.costoTotal - D.especie;
-const DR = { profondo:sumGrupo('profondo'), donacion:sumGrupo('donacion'), especie:sumGrupo('especie') };
-const CP = datos.costoPersona;
-['participante', 'equipo'].forEach(k => { CP[k].noCubre = CP[k].costo - CP[k].cuota; CP[k].cubrePct = CP[k].cuota / CP[k].costo * 100; });
-
-/* ---- Utilidades ------------------------------------------------------- */
+/* ---- utilidades ---- */
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const nf  = new Intl.NumberFormat(datos.locale || 'es-DO');
 const nf2 = new Intl.NumberFormat(datos.locale || 'es-DO', {minimumFractionDigits:2, maximumFractionDigits:2});
 const money  = n => datos.moneda + ' ' + nf.format(Math.round(n));
 const money2 = n => datos.moneda + ' ' + nf2.format(n);
-const pctTxt = n => n.toFixed(1).replace('.', ',');
 const $ = id => document.getElementById(id);
 const setText = (id, v) => { const e = $(id); if (e) e.textContent = v; };
 const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+const PALETTE = ['#38BDF8','#34D399','#F2C572','#FC5130','#A78BFA','#22D3EE','#FB7185'];
 function animate(duration, onUpdate, onDone){
   if (REDUCE){ onUpdate(1); if (onDone) onDone(); return; }
   const t0 = performance.now();
-  function frame(now){ const t = Math.min(1, (now - t0) / duration); onUpdate(easeOutCubic(t)); if (t < 1) requestAnimationFrame(frame); else if (onDone) onDone(); }
-  requestAnimationFrame(frame);
+  (function f(now){ const t = Math.min(1,(now-t0)/duration); onUpdate(easeOutCubic(t)); if (t<1) requestAnimationFrame(f); else if (onDone) onDone(); })(performance.now());
 }
-function countUp(id, to, fmt, dur){ const e = $(id); if (!e) return; animate(dur || 1600, p => { e.textContent = fmt(to * p); }); }
+function countUp(id, to, fmt, dur){ const e=$(id); if(!e) return; animate(dur||1500, p=>{ e.textContent = fmt(to*p); }); }
 
-/* ---- Textos estáticos ------------------------------------------------- */
+/* ---- estrellas ---- */
+(function(){ const s=$('stars'); let h=''; for(let i=0;i<48;i++){ h+='<i style="left:'+(Math.random()*100).toFixed(2)+'%;top:'+(Math.random()*100).toFixed(2)+'%;animation-delay:'+(Math.random()*4).toFixed(2)+'s"></i>'; } s.innerHTML=h; })();
+
+/* ---- textos ---- */
 setText('evento', datos.evento);
 setText('subtitulo', datos.subtitulo);
 $('lema').innerHTML = '«' + datos.lema + '»<b>' + datos.citaBiblica + '</b>';
 setText('cd-cpago-when', datos.fechaCierrePagosTexto);
 setText('cd-ret-when', datos.fechaRetiroTexto);
 setText('ft-fecha', datos.actualizado);
-setText('th-meta', money(datos.costoTotal));
-setText('pr-meta', money(datos.costoTotal));
+setText('sim-costo', money(datos.costoTotal));
+setText('cp-part-cuota', money(datos.cuotaParticipante.monto));
+setText('cp-eq-cuota', money(datos.cuotaEquipo.total));
+$('ft-avanzada').textContent = 'La avanzada del equipo (jueves, ~' + datos.avanzada.personas + ' personas: ' + datos.avanzada.comidas + ' comidas + ' + datos.avanzada.noches + ' noche) está como PROPUESTA y NO se suma al costo hasta cotizarla.';
 
-/* ---- avanzada (por contemplar) ---------------------------------------- */
-(function(){
-  const a = datos.avanzada;
-  $('gap-avanzada').innerHTML = '<b>Por contemplar — no está en la meta:</b> avanzada del equipo · '
-    + a.personas + ' personas suben el jueves: ' + a.comidas + ' comidas extra + ' + a.noches + ' noche de hospedaje ≈ <b>'
-    + money(a.total) + '</b> <span class="tag-prop">PROPUESTA</span> · por cotizar con la casa/cocina. '
-    + 'Con avanzada, el costo subiría a ≈ <b>' + money(datos.costoTotal + a.total) + '</b>.';
-})();
+/* ---- fechas / countdown ---- */
+function dateLocal(iso){ const p=iso.split('-').map(Number); return new Date(p[0],p[1]-1,p[2],0,0,0,0); }
+function diffParts(iso){ let ms=Math.max(0,dateLocal(iso).getTime()-Date.now());
+  const d=Math.floor(ms/86400000); ms-=d*86400000; const h=Math.floor(ms/3600000); ms-=h*3600000; const m=Math.floor(ms/60000); ms-=m*60000; return {d,h,m,s:Math.floor(ms/1000)}; }
+function mkCountdown(pfx, iso){ function tick(){ const t=diffParts(iso); setText(pfx+'-d',t.d); setText(pfx+'-h',String(t.h).padStart(2,'0')); setText(pfx+'-m',String(t.m).padStart(2,'0')); setText(pfx+'-s',String(t.s).padStart(2,'0')); } tick(); setInterval(tick,1000); }
 
-/* ---- cuota escalonada (mensaje) --------------------------------------- */
-(function(){
-  const q = datos.equipoCuota;
-  setText('cuota-h2', '4 · Cuota del equipo: ' + q.pagos + ' pagos de ' + money(q.pagoMonto));
-  $('cuota-msg').innerHTML = 'La cuota del equipo (<b>' + money(q.cuotaTotal) + '</b>) se paga en <b>' + q.pagos
-    + ' cuotas de ' + money(q.pagoMonto) + '</b> (' + q.meses.join(' · ') + '). Escalonarla la hace <b>alcanzable para todos</b> — y es una <b>necesidad</b>: sostiene el ensayo general, el prorrateo del salón, el transporte y la comida del proceso.';
-  setText('cuota-cobrado-lbl', 'cobrado en cuotas de equipo · meta ' + money(q.objetivo));
-})();
-
-/* ---- Fechas / countdown ----------------------------------------------- */
-function dateLocal(iso){ const p = iso.split('-').map(Number); return new Date(p[0], p[1]-1, p[2], 0,0,0,0); }
-function diffParts(iso){
-  let ms = Math.max(0, dateLocal(iso).getTime() - Date.now());
-  const d = Math.floor(ms/86400000); ms -= d*86400000;
-  const h = Math.floor(ms/3600000);  ms -= h*3600000;
-  const m = Math.floor(ms/60000);    ms -= m*60000;
-  return {d, h, m, s:Math.floor(ms/1000)};
-}
-function mkCountdown(prefix, iso){
-  function tick(){ const t = diffParts(iso); setText(prefix+'-d', t.d); setText(prefix+'-h', String(t.h).padStart(2,'0')); setText(prefix+'-m', String(t.m).padStart(2,'0')); setText(prefix+'-s', String(t.s).padStart(2,'0')); }
-  tick(); setInterval(tick, 1000);
-}
-
-/* ---- KPIs ------------------------------------------------------------- */
+/* ---- KPIs ---- */
 function runKpis(){
   countUp('kpi-costo', datos.costoTotal, money);
-  countUp('kpi-recaudado', datos.recaudado, money);
-  countUp('kpi-falta', D.falta, money);
-  animate(1600, p => { $('kpi-pct').textContent = pctTxt(D.pct * p) + '%'; });
-  animate(1600, p => { $('kpi-dias').textContent = nf.format(Math.round(diffParts(datos.fechaCierrePagos).d * p)); });
+  countUp('kpi-cuotas', datos.cuotas, money);
+  countUp('kpi-falta', datos.brecha, money);
+  animate(1500, p=>{ $('kpi-dias').textContent = nf.format(Math.round(diffParts(datos.fechaCierrePagos).d*p)); });
 }
 
-/* ---- Costo por persona + composición ---------------------------------- */
-const DESG_LBL = {casa:'Casa (hospedaje)', cocina:'Comida (cocina)', biblias_y_peces:'Biblia + pez',
-                  transporte:'Transporte', guias:'Materiales de guía / PG', liturgico:'Litúrgico', musica:'Música'};
-const DESG_ORDER = ['casa','cocina','biblias_y_peces','transporte','guias','liturgico','musica'];
+/* ---- pastel + costo por persona ---- */
+function renderPie(pieId, legId, items){
+  const total=items.reduce((a,i)=>a+i.monto,0); let acc=0, parts=[], leg='';
+  items.forEach((it,idx)=>{ const col=PALETTE[idx%PALETTE.length]; const s=acc/total*100; acc+=it.monto; const e=acc/total*100;
+    parts.push(col+' '+s.toFixed(2)+'% '+e.toFixed(2)+'%');
+    leg+='<div class="leg-row"><span class="leg-dot" style="background:'+col+'"></span><span class="leg-l">'+it.label+'</span><span class="leg-v">'+money2(it.monto)+'</span></div>'; });
+  $(pieId).style.background='conic-gradient('+parts.join(',')+')';
+  $(legId).innerHTML=leg;
+}
 function runCosto(){
-  countUp('pc-part-cost', CP.participante.costo, money2);
-  setText('pc-part-cuota', money(CP.participante.cuota));
-  countUp('pc-part-falta', CP.participante.noCubre, money2);
-  setText('pc-part-pct', pctTxt(CP.participante.cubrePct) + '%');
-  countUp('pc-eq-cost', CP.equipo.costo, money2);
-  setText('pc-eq-cuota', money(CP.equipo.cuota));
-  countUp('pc-eq-falta', CP.equipo.noCubre, money2);
-  setText('pc-eq-pct', pctTxt(CP.equipo.cubrePct) + '%');
-  const fillCover = () => { $('pc-part-bar').style.width = CP.participante.cubrePct+'%'; $('pc-eq-bar').style.width = CP.equipo.cubrePct+'%'; };
-  if (REDUCE) fillCover(); else setTimeout(fillCover, 120);
-  const wrap = $('compo-bars'), d = datos.desgloseParticipante;
-  const max = Math.max.apply(null, DESG_ORDER.map(k => d[k]));
-  let sum = 0;
-  DESG_ORDER.forEach(k => {
-    sum += d[k];
-    const row = document.createElement('div'); row.className = 'compo-row';
-    row.innerHTML = '<span class="cl">' + DESG_LBL[k] + '</span><span class="cv">' + money2(d[k]) + '</span>'
-                  + '<div class="ct"><i data-w="' + (d[k]/max*100).toFixed(2) + '"></i></div>';
-    wrap.appendChild(row);
-  });
-  setText('compo-sum', money2(sum));
-  setText('compo-total', money2(CP.participante.costo));
-  const fillCompo = () => wrap.querySelectorAll('i').forEach(i => i.style.width = i.dataset.w + '%');
-  if (REDUCE) fillCompo(); else setTimeout(fillCompo, 160);
+  const C=datos.costoPersona;
+  countUp('cp-part', C.participante.costo, money2);
+  countUp('cp-eq', C.equipo.costo, money2);
+  renderPie('pie-part','leg-part', C.participante.desglose);
+  renderPie('pie-eq','leg-eq', C.equipo.desglose);
 }
 
-/* ---- Termómetro ------------------------------------------------------- */
-function runThermo(){
-  const fill = $('thermo-fill'), marker = $('thermo-marker'), mpct = $('thermo-marker-pct');
-  const TOP = 24, BOTTOM = 374, RANGE = BOTTOM - TOP, fracTarget = D.pct / 100;
-  setText('th-recaudado', money(datos.recaudado));
-  setText('th-falta', money(D.falta));
-  animate(1800, p => {
-    const frac = fracTarget * p, y = BOTTOM - frac * RANGE;
-    fill.setAttribute('y', y); fill.setAttribute('height', BOTTOM - y);
-    marker.setAttribute('transform', 'translate(0,' + y + ')');
-    mpct.textContent = pctTxt(frac*100) + '%';
-    $('th-pct').textContent = pctTxt(frac*100);
-  });
+/* ---- cuotas ---- */
+function runCuotas(){
+  const P=datos.cuotaParticipante, E=datos.cuotaEquipo;
+  countUp('q-part', P.total, money);
+  $('q-part-line').innerHTML = '<b>'+money(P.monto)+'</b> × '+P.n+' participantes';
+  $('q-part-chips').innerHTML = P.cubre.map(c=>'<span class="chip">'+c+'</span>').join('');
+  $('q-part-tot').innerHTML = 'Aporta en total <b>'+money(P.total)+'</b>';
+  countUp('q-eq', E.totalRecaudo, money);
+  $('q-eq-line').innerHTML = '<b>'+money(E.total)+'</b> = '+E.pagos+' pagos de '+money(E.pago)+' (jun–sep) · '+E.n+' del equipo';
+  $('q-eq-chips').innerHTML = E.cubre.map(c=>'<span class="chip">'+c+'</span>').join('');
+  $('q-eq-tot').innerHTML = 'Aporta en total <b>'+money(E.totalRecaudo)+'</b> · la Sor y el Padre Paul no pagan: lo asume la Co-Dirección';
 }
 
-/* ---- Gráfico de barras (SVG) ------------------------------------------ */
-const SVGNS = 'http://www.w3.org/2000/svg';
-function el(name, attrs){ const e = document.createElementNS(SVGNS, name); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
-const COLOR = {firme:'var(--green)', estimado:'var(--amber)', especie:'var(--sky)'};
-const TIPO_LBL = {firme:'firme', estimado:'estimado', especie:'especie'};
-let _mctx;
-function measure(txt){ if (!_mctx){ _mctx = document.createElement('canvas').getContext('2d'); _mctx.font = '700 21px -apple-system,Segoe UI,Roboto,sans-serif'; } return _mctx.measureText(txt).width; }
-function renderChart(){
-  const svg = $('chart-svg'), W = 1000, X0 = 12, ROW = 78, PAD = 8, BARH = 26;
-  const trackW = W - X0 * 2, max = Math.max.apply(null, datos.fuentes.map(f => f.monto));
-  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (PAD + datos.fuentes.length * ROW));
-  const fills = [];
-  datos.fuentes.forEach((f, i) => {
-    const yTop = PAD + i * ROW, yName = yTop + 22, yBar = yTop + 34;
-    const name = el('text', {x:X0, y:yName, fill:'var(--ink)', 'font-size':'21', 'font-weight':'700'}); name.textContent = f.nombre; svg.appendChild(name);
-    const chip = el('text', {x:X0 + measure(f.nombre) + 14, y:yName, fill:COLOR[f.tipo], 'font-size':'15', 'font-weight':'700'}); chip.textContent = '· ' + TIPO_LBL[f.tipo]; svg.appendChild(chip);
-    const amt = el('text', {x:W - X0, y:yName, fill:COLOR[f.tipo], 'font-size':'21', 'font-weight':'800', 'text-anchor':'end'}); amt.textContent = money(0); svg.appendChild(amt);
-    svg.appendChild(el('rect', {x:X0, y:yBar, width:trackW, height:BARH, rx:BARH/2, fill:'rgba(255,255,255,.06)'}));
-    const bar = el('rect', {x:X0, y:yBar, width:0, height:BARH, rx:BARH/2, fill:COLOR[f.tipo]});
-    if (f.tipo !== 'firme') bar.setAttribute('opacity', '.92');
-    svg.appendChild(bar);
-    fills.push({bar, amt, wTarget: trackW * (f.monto / max), monto:f.monto});
-  });
-  return fills;
+/* ---- SIMULADOR (cohete) ---- */
+const RBOT=328, RTOP=78, RRANGE=RBOT-RTOP;
+let fuelCur=0;
+function setFuel(frac){ const f=$('fuel'); const y=RBOT-frac*RRANGE; f.setAttribute('y',y); f.setAttribute('height',frac*RRANGE);
+  const fl=$('flame'); const sc=0.4+frac*1.4; fl.setAttribute('transform','translate(80 330) scale('+(0.7+frac*0.6)+','+sc+') translate(-80 -330)'); fl.setAttribute('opacity', (0.4+frac*0.5).toFixed(2)); }
+function animateFuel(target){ if(REDUCE){ setFuel(target); fuelCur=target; return; } const from=fuelCur; animate(600, p=>{ setFuel(from+(target-from)*p); }, ()=>{ fuelCur=target; }); }
+const simSel = new Set();
+function renderSim(){
+  let html='';
+  datos.rubrosSimulador.forEach((r,i)=>{ html+='<button type="button" class="rub" data-i="'+i+'"><span class="rub-check"></span><span class="rub-n">'+r.nombre+(r.donable?' <span class="rub-tag">donable</span>':'')+'</span><span class="rub-m">'+money(r.monto)+'</span></button>'; });
+  $('sim-list').innerHTML=html;
+  $('sim-list').addEventListener('click', e=>{ const b=e.target.closest('.rub'); if(!b) return; const i=+b.dataset.i;
+    if(simSel.has(i)){ simSel.delete(i); b.classList.remove('on'); } else { simSel.add(i); b.classList.add('on'); } recomputeSim(); });
+  $('sim-realista').addEventListener('click', ()=>preset(true));
+  $('sim-reset').addEventListener('click', ()=>preset(false));
 }
-function animateChart(fills){ fills.forEach((it, i) => animate(1500 + i*90, p => { it.bar.setAttribute('width', it.wTarget * Math.min(1, p)); it.amt.textContent = money(it.monto * Math.min(1, p)); })); }
-
-/* ---- Drivers + proyección --------------------------------------------- */
-function runProjection(){
-  const wrap = $('drivers');
-  [{n:'Profondo (rifa + comida + garaje)', v:DR.profondo, c:'amber'},
-   {n:'Donaciones al presupuesto (efectivo)', v:DR.donacion, c:'amber'},
-   {n:'Donaciones en especie', v:DR.especie, c:'sky'}].forEach(it => {
-    const d = document.createElement('div'); d.className = 'driver ' + it.c;
-    d.innerHTML = '<div class="dv">' + money(it.v) + '</div><div class="dn">' + it.n + '</div>'; wrap.appendChild(d);
-  });
-  countUp('pr-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
-  countUp('pr-cuotas', D.cuotas, money);
-  countUp('pr-palancas', D.palancas, money);
-  countUp('pr-especie', D.especie, money);
-  countUp('pr-proyeccion', D.proyeccion, money);
-  countUp('stack-total', D.proyeccion, money);
-  setText('rd-meta', money(datos.costoTotal));
-  setText('rd-especie', money(D.especie));
-  countUp('rd-caja', D.cajaTrasEspecie, money);
-  countUp('s-especie', D.especie, money);
-  countUp('s-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
-  const stack = $('stack');
-  [{t:'firme', v:D.cuotas}, {t:'estimado', v:D.palancas}, {t:'especie', v:D.especie}].forEach(s => {
-    const seg = document.createElement('i'); seg.className = s.t; seg.dataset.w = (s.v / D.proyeccion * 100).toFixed(3); stack.appendChild(seg);
-  });
-  const mark = document.createElement('div'); mark.className = 'meta-mark';
-  mark.style.left = (datos.costoTotal / D.proyeccion * 100) + '%';
-  mark.innerHTML = '<span>META ' + money(datos.costoTotal) + '</span>'; stack.appendChild(mark);
-  const fill = () => stack.querySelectorAll('i').forEach(i => i.style.width = i.dataset.w + '%');
-  if (REDUCE) fill(); else setTimeout(fill, 120);
+function preset(donable){ simSel.clear(); if(donable) datos.rubrosSimulador.forEach((r,i)=>{ if(r.donable) simSel.add(i); });
+  document.querySelectorAll('.rub').forEach(b=>b.classList.toggle('on', simSel.has(+b.dataset.i))); recomputeSim(); }
+function recomputeSim(){
+  let S=0; datos.rubrosSimulador.forEach((r,i)=>{ if(simSel.has(i)) S+=r.monto; });
+  const cubierto=datos.cuotas+S, falta=datos.costoTotal-cubierto;
+  setText('sim-cubierto', money(cubierto));
+  const fEl=$('sim-falta');
+  if(falta>0){ fEl.textContent=money(falta); fEl.classList.remove('done'); setText('sim-falta-lbl','hay que reunir entre todos'); }
+  else { fEl.textContent = falta===0?money(0):('+'+money(Math.abs(falta))); fEl.classList.add('done'); setText('sim-falta-lbl', falta===0?'¡misión cubierta!':'¡misión cubierta! incluso sobra'); }
+  setText('sim-porcabeza', money(Math.max(0,falta)/100));
+  animateFuel(Math.max(0,Math.min(1,cubierto/datos.costoTotal)));
 }
 
-/* ---- Corresponsabilidad ----------------------------------------------- */
-const AREA_COLOR = {'Guías':'#34D399', 'Música':'#FBBF24', 'Cocina':'#38BDF8', 'Directores':'#F2C572'};
+/* ---- corresponsabilidad ---- */
+const AREA_COLOR = {'Guías':'#34D399','Música':'#F2C572','Cocina':'#38BDF8','Directores':'#FC5130'};
 function renderAreas(){
-  const grid = $('areas-grid');
-  datos.corresponsabilidad.forEach(a => {
-    const col = AREA_COLOR[a.area] || 'var(--green)';
-    const c = document.createElement('div'); c.className = 'area-card'; c.style.borderTopColor = col;
-    const li = a.items.map(x => '<li>' + x + '</li>').join('');
-    c.innerHTML = '<div class="area-h"><span class="area-name" style="color:' + col + '">' + a.area + '</span>'
-                + '<span class="area-amt">≈ ' + money(a.monto_indicativo) + '</span></div><ul class="area-items">' + li + '</ul>';
-    grid.appendChild(c);
-  });
+  const g=$('areas-grid');
+  datos.corresponsabilidad.forEach(a=>{ const col=AREA_COLOR[a.area]||'#34D399';
+    const c=document.createElement('div'); c.className='area-card'; c.style.borderTopColor=col;
+    c.innerHTML='<div class="area-h"><span class="area-name" style="color:'+col+'">'+a.area+'</span><span class="area-amt">≈ '+money(a.monto_indicativo)+'</span></div><ul class="area-items">'+a.items.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+    g.appendChild(c); });
 }
 
-/* ---- Tracker de cuota del equipo (4 pagos · localStorage) ------------- */
-function renderTracker(){
-  const q = datos.equipoCuota, wrap = $('tracker'), KEY = 'etc88_cuota_v1';
-  let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
-  const asumidos = q.integrantes.filter(p => p.asumida).length;
-  const pagables = q.integrantes.length - asumidos;
-  const groups = {};
-  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx, asumida:p.asumida}); });
-  function recompute(){
-    let boxes = 0;
-    q.integrantes.forEach((p, idx) => { if (!p.asumida) (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
-    const total = boxes * q.pagoMonto + asumidos * q.cuotaTotal;
-    setText('cuota-cobrado', money(total));
-    setText('cuota-boxes', boxes + ' / ' + (pagables * q.pagos) + ' pagos' + (asumidos ? ' · ' + asumidos + ' asumida (Co-Dir)' : '') + ' · ' + q.integrantes.length + ' del equipo');
-    const pct = q.objetivo ? total / q.objetivo * 100 : 0;
-    $('cuota-bar').style.width = Math.min(100, pct) + '%';
-  }
-  let html = '';
-  Object.keys(groups).forEach(area => {
-    html += '<div class="trk-group"><div class="trk-area">' + area + ' · ' + groups[area].length + '</div>';
-    groups[area].forEach(p => {
-      if (p.asumida){
-        html += '<div class="trk-row"><span class="trk-name">' + p.nombre + '</span><span class="trk-asumida">asumida · Co-Dir</span></div>';
-        return;
-      }
-      let boxes = '';
-      for (let m = 0; m < q.pagos; m++){
-        const on = (saved[p.idx] && saved[p.idx][m]) ? ' on' : '';
-        boxes += '<button type="button" class="pay-box' + on + '" data-idx="' + p.idx + '" data-m="' + m + '">' + q.meses[m] + '</button>';
-      }
-      html += '<div class="trk-row"><span class="trk-name">' + p.nombre + '</span><div class="trk-boxes">' + boxes + '</div></div>';
-    });
-    html += '</div>';
-  });
-  wrap.innerHTML = html;
-  wrap.addEventListener('click', e => {
-    const b = e.target.closest('.pay-box'); if (!b) return;
-    const idx = b.dataset.idx, m = +b.dataset.m;
-    saved[idx] = saved[idx] || [];
-    saved[idx][m] = !saved[idx][m];
-    b.classList.toggle('on', !!saved[idx][m]);
-    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
-    recompute();
-  });
-  recompute();
-}
-
-/* ---- Reveal + init ---------------------------------------------------- */
-function onVisible(node, cb){
-  if (!node) return;
-  if (!('IntersectionObserver' in window)){ cb(); return; }
-  const io = new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting){ cb(); obs.disconnect(); } }); }, {threshold:.15});
-  io.observe(node);
-}
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.reveal').forEach(n => onVisible(n, () => n.classList.add('visible')));
+/* ---- reveal + init ---- */
+function onVisible(node, cb){ if(!node) return; if(!('IntersectionObserver' in window)){ cb(); return; }
+  const io=new IntersectionObserver((es,ob)=>{ es.forEach(e=>{ if(e.isIntersecting){ cb(); ob.disconnect(); } }); }, {threshold:.15}); io.observe(node); }
+window.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelectorAll('.reveal').forEach(n=>onVisible(n, ()=>n.classList.add('visible')));
   mkCountdown('cpago', datos.fechaCierrePagos);
   mkCountdown('ret', datos.fechaRetiro);
   renderAreas();
-  renderTracker();
-  let chartFills = null;
+  renderSim();
   onVisible($('kpis'), runKpis);
   onVisible($('costo-panel'), runCosto);
-  onVisible($('thermo-panel'), runThermo);
-  onVisible($('chart-panel'), () => { if (!chartFills) chartFills = renderChart(); animateChart(chartFills); });
-  onVisible($('proj-panel'), runProjection);
+  onVisible($('cuota-panel'), runCuotas);
+  onVisible($('sim-panel'), recomputeSim);
 });
 </script>
 </body>
@@ -790,14 +551,14 @@ window.addEventListener('DOMContentLoaded', () => {
 '''
 
 html = TEMPLATE.replace('__DATOS_JSON__', datos_json)
-out = os.path.join(REPO, 'tablero_campana_etc88.html')
-with open(out, 'w', encoding='utf-8') as f:
+with open(os.path.join(REPO, 'tablero_campana_etc88.html'), 'w', encoding='utf-8') as f:
     f.write(html)
 
-print("OK  tablero_campana_etc88.html")
-print(f"    meta confirmada    RD$ {meta:,}  (avanzada NO incluida)")
-print(f"    avanzada [PROP]    RD$ {av['total_estimado']:,}  ({av['personas']} pax · {av['comidas']['cantidad']} comidas + {av['hospedaje']['noches']} noche) → costo c/avanzada ≈ {meta+av['total_estimado']:,}")
-print(f"    costo/participante RD$ {part_costo:,.2f}  ·  costo/equipo RD$ {eq_costo:,.2f}")
-print(f"    cuota equipo       {n_pagos} × {eq_cuota_mensual:,} = {eq_cuota_total:,}  ·  tracker {len(integrantes)} nombres → meta {equipo_cuotas:,}")
-print(f"    áreas              {', '.join(a['area'] for a in corr['areas'])}")
-print("    aritmética cuadra con data/estado.json ✓")
+print("OK  tablero_campana_etc88.html  (tema Misión 88 · simulador)")
+print(f"    costo misión       RD$ {meta:,}  ·  cuotas {cuotas:,}  ·  falta {brecha:,}")
+print(f"    part RD$ {part_costo:,.2f} (desglose suma {sum(d['monto'] for d in desg_part):,.2f} oper)")
+print(f"    equipo RD$ {eq_costo:,.2f} (desglose suma {sum(d['monto'] for d in desg_eq):,.2f} oper)")
+print(f"    simulador {len(sim['items'])} rubros suman {sum(r['monto'] for r in sim['items']):,} = meta ✓")
+print(f"    cuota equipo {eq_pagos}×{eq_pago} ·  {n_equipo} del equipo · {len(exentos)} asumidos (Sor + Paul)")
+print(f"    avanzada PROPUESTA {av['total_estimado']:,} (NO sumada)")
+print("    aritmética cuadra ✓")

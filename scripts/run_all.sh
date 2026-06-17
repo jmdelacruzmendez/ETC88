@@ -18,6 +18,7 @@ python scripts/build_cantera.py
 python scripts/build_captacion.py
 python scripts/build_web.py
 python scripts/build_campana.py
+python scripts/build_tripulacion_xlsx.py
 python scripts/build_drive.py
 python scripts/build_trabajo.py
 python scripts/build_entrega_diseno.py
