@@ -74,6 +74,10 @@ for area in AREA_ORDER:
     for p in EQ:
         if p['area'] == area and not p.get('backup') and not p.get('vacante'):
             integrantes.append({"nombre": p['nombre'], "area": AREA_LABEL[area]})
+# Sor (y quien decida el director) NO paga: lo asume la Co-Dirección. Backups no van.
+exentos = set(fin.get('cuota_equipo_exentos', {}).get('asumidos_por_codireccion', []))
+for it in integrantes:
+    it['asumida'] = it['nombre'] in exentos
 
 # ----------------------------------------------------- chequeo de aritmética
 palancas   = rifa + garaje + comida + efectivo
@@ -307,6 +311,7 @@ TEMPLATE = r'''<!DOCTYPE html>
     color:var(--muted2); font-size:.72rem; font-weight:700; cursor:pointer; transition:all .18s ease; font-family:inherit}
   .pay-box:hover{border-color:rgba(255,255,255,.3)}
   .pay-box.on{background:linear-gradient(180deg,var(--green2),var(--green3)); color:#04241a; border-color:var(--green)}
+  .trk-asumida{font-size:.78rem; color:var(--gold); font-weight:700; background:rgba(242,197,114,.12); border:1px solid rgba(242,197,114,.32); padding:5px 12px; border-radius:100px}
   .tracker-foot{color:var(--muted2); font-size:.84rem; margin-top:16px}
 
   footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
@@ -495,7 +500,7 @@ TEMPLATE = r'''<!DOCTYPE html>
       <div class="cs-note" id="cuota-boxes">0 pagos</div>
     </div>
     <div id="tracker"></div>
-    <p class="tracker-foot">Las marcas se guardan en este dispositivo (no se comparten). La fuente oficial de pagos es Tesorería.</p>
+    <p class="tracker-foot">Los backups no van al retiro y no pagan cuota. La cuota de la Sor la asume la Co-Dirección. Las marcas se guardan en este dispositivo (no se comparten); la fuente oficial de pagos es Tesorería.</p>
   </section>
 
   <footer>
@@ -716,14 +721,16 @@ function renderAreas(){
 function renderTracker(){
   const q = datos.equipoCuota, wrap = $('tracker'), KEY = 'etc88_cuota_v1';
   let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  const asumidos = q.integrantes.filter(p => p.asumida).length;
+  const pagables = q.integrantes.length - asumidos;
   const groups = {};
-  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx}); });
+  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx, asumida:p.asumida}); });
   function recompute(){
     let boxes = 0;
-    q.integrantes.forEach((p, idx) => { (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
-    const total = boxes * q.pagoMonto;
+    q.integrantes.forEach((p, idx) => { if (!p.asumida) (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
+    const total = boxes * q.pagoMonto + asumidos * q.cuotaTotal;
     setText('cuota-cobrado', money(total));
-    setText('cuota-boxes', boxes + ' / ' + (q.integrantes.length * q.pagos) + ' pagos · ' + q.integrantes.length + ' del equipo');
+    setText('cuota-boxes', boxes + ' / ' + (pagables * q.pagos) + ' pagos' + (asumidos ? ' · ' + asumidos + ' asumida (Co-Dir)' : '') + ' · ' + q.integrantes.length + ' del equipo');
     const pct = q.objetivo ? total / q.objetivo * 100 : 0;
     $('cuota-bar').style.width = Math.min(100, pct) + '%';
   }
@@ -731,6 +738,10 @@ function renderTracker(){
   Object.keys(groups).forEach(area => {
     html += '<div class="trk-group"><div class="trk-area">' + area + ' · ' + groups[area].length + '</div>';
     groups[area].forEach(p => {
+      if (p.asumida){
+        html += '<div class="trk-row"><span class="trk-name">' + p.nombre + '</span><span class="trk-asumida">asumida · Co-Dir</span></div>';
+        return;
+      }
       let boxes = '';
       for (let m = 0; m < q.pagos; m++){
         const on = (saved[p.idx] && saved[p.idx][m]) ? ' on' : '';

@@ -198,6 +198,14 @@
           "operativo_total_50": 205615
         }
       },
+      "cuota_equipo_exentos": {
+        "estado": "confirmado",
+        "fuente": "director (17-jun-2026)",
+        "nota": "Quién NO paga la cuota del equipo. Los backups no van al retiro y no pagan. La cuota de la Sor la asume la Co-Dirección (no la paga ella); la meta de cuotas (106,000) se mantiene porque la parte asumida igual entra. Padre Paul y Co-Dirección: por confirmar si pagan o se asume.",
+        "asumidos_por_codireccion": [
+          "Sor Angelina Lebrón"
+        ]
+      },
       "corresponsabilidad_areas": {
         "estado": "confirmado",
         "fuente": "director (17-jun-2026)",
@@ -238,13 +246,13 @@
             "items": [
               "Biblias",
               "Peces",
-              "Materiales del banderín",
+              "Materiales del banderín (lo ejecutan los guías)",
               "Materiales de oficina",
               "Decoración del plenario",
               "Liturgia: formas (pan y vino)",
               "Aporte a los sacerdotes para la confesión"
             ],
-            "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). Banderín/oficina/plenario sin línea propia."
+            "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). El banderín lo ejecutan los guías pero lo costean los directores (hoy está dentro de la línea de Guías, 17,000). Oficina/plenario sin línea propia."
           }
         ]
       },

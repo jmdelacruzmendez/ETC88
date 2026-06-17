@@ -159,6 +159,7 @@
     color:var(--muted2); font-size:.72rem; font-weight:700; cursor:pointer; transition:all .18s ease; font-family:inherit}
   .pay-box:hover{border-color:rgba(255,255,255,.3)}
   .pay-box.on{background:linear-gradient(180deg,var(--green2),var(--green3)); color:#04241a; border-color:var(--green)}
+  .trk-asumida{font-size:.78rem; color:var(--gold); font-weight:700; background:rgba(242,197,114,.12); border:1px solid rgba(242,197,114,.32); padding:5px 12px; border-radius:100px}
   .tracker-foot{color:var(--muted2); font-size:.84rem; margin-top:16px}
 
   footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
@@ -347,7 +348,7 @@
       <div class="cs-note" id="cuota-boxes">0 pagos</div>
     </div>
     <div id="tracker"></div>
-    <p class="tracker-foot">Las marcas se guardan en este dispositivo (no se comparten). La fuente oficial de pagos es Tesorería.</p>
+    <p class="tracker-foot">Los backups no van al retiro y no pagan cuota. La cuota de la Sor la asume la Co-Dirección. Las marcas se guardan en este dispositivo (no se comparten); la fuente oficial de pagos es Tesorería.</p>
   </section>
 
   <footer>
@@ -471,13 +472,13 @@ const datos = {
       "items": [
         "Biblias",
         "Peces",
-        "Materiales del banderín",
+        "Materiales del banderín (lo ejecutan los guías)",
         "Materiales de oficina",
         "Decoración del plenario",
         "Liturgia: formas (pan y vino)",
         "Aporte a los sacerdotes para la confesión"
       ],
-      "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). Banderín/oficina/plenario sin línea propia."
+      "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). El banderín lo ejecutan los guías pero lo costean los directores (hoy está dentro de la línea de Guías, 17,000). Oficina/plenario sin línea propia."
     }
   ],
   "avanzada": {
@@ -500,215 +501,268 @@ const datos = {
     "integrantes": [
       {
         "nombre": "Jean Carlo De la Cruz Mendez",
-        "area": "Co-Dirección"
+        "area": "Co-Dirección",
+        "asumida": false
       },
       {
         "nombre": "Juan Manuel de la Cruz Méndez",
-        "area": "Co-Dirección"
+        "area": "Co-Dirección",
+        "asumida": false
       },
       {
         "nombre": "Laura Fernández",
-        "area": "Asesores"
+        "area": "Asesores",
+        "asumida": false
       },
       {
         "nombre": "Tomás Lorenzo",
-        "area": "Asesores"
+        "area": "Asesores",
+        "asumida": false
       },
       {
         "nombre": "Frank Morales",
-        "area": "Asesores"
+        "area": "Asesores",
+        "asumida": false
       },
       {
         "nombre": "Padre Paul Ramírez",
-        "area": "Asesores Espirituales"
+        "area": "Asesores Espirituales",
+        "asumida": false
       },
       {
         "nombre": "Sor Angelina Lebrón",
-        "area": "Asesores Espirituales"
+        "area": "Asesores Espirituales",
+        "asumida": true
       },
       {
         "nombre": "Camila Fernández Hazim",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Priscilla Hidalgo Pou",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Darianny Rodriguez Belliard",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Fernando Cordero",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Franklin De Jesús Silverio Delgadillo",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Ivanna Marien Mercedes Sosa",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Jhonnalia Franchesca Silvestre Guzmán",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Jonathan Andres Medina Mota",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Juan Pablo Argüello Alzate",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Luisa Maria Fiorentino Brugal",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Oliver Rafael De León Ramírez",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Victoria Lorenzo Rivera",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Wilka María Reyes Mota",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "Yelaxni Mota",
-        "area": "Guías"
+        "area": "Guías",
+        "asumida": false
       },
       {
         "nombre": "José Ángel Tusen Russo",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Daylin M Rambalde Moreta",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Dorian Elina Rodriguez Belliard",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Ismarie Sthepanie Constanzo Ramos",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Leober Carrion Soriano",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Mary Carmen Ramírez Vásquez",
-        "area": "Música"
+        "area": "Música",
+        "asumida": false
       },
       {
         "nombre": "Johnnito Richiez Brugal",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Paloma Mendez",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Adrián Francisco Santana Puente",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Ambar Liz Jáquez Lebrón",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Brianelis Abreu Calderón",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Candy Elizabeth Gatwood Ramos",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Chantal Melissa Carpio Jiménez",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Dayrelins Jazmin Santana Salas",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Guido Maldonado",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Kelvin Alexis Ventura Santana",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Maria del Carmen Mejías Mateo",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Marian Olanlly Ortiz Carrasco",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Merkin Jean Vásquez",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Pamela Colón",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Randol Joseph payano",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Risaira Santana Rosario",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Risairi Santana Rosario",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Roberto Figueroa",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Roselyn Quiroz",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Tommy Nova Nolasco",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Wirna Miguelina Stapleton Pilier",
-        "area": "Cocina"
+        "area": "Cocina",
+        "asumida": false
       },
       {
         "nombre": "Johanny García",
-        "area": "Asesoras de Cocina"
+        "area": "Asesoras de Cocina",
+        "asumida": false
       },
       {
         "nombre": "Mary \"Petra\" Morales",
-        "area": "Asesoras de Cocina"
+        "area": "Asesoras de Cocina",
+        "asumida": false
       },
       {
         "nombre": "Leticia González",
-        "area": "Asesores de Comunidad"
+        "area": "Asesores de Comunidad",
+        "asumida": false
       },
       {
         "nombre": "Marleny",
-        "area": "Asesores de Comunidad"
+        "area": "Asesores de Comunidad",
+        "asumida": false
       },
       {
         "nombre": "Sandrita",
-        "area": "Asesores de Comunidad"
+        "area": "Asesores de Comunidad",
+        "asumida": false
       }
     ]
   }
@@ -918,14 +972,16 @@ function renderAreas(){
 function renderTracker(){
   const q = datos.equipoCuota, wrap = $('tracker'), KEY = 'etc88_cuota_v1';
   let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  const asumidos = q.integrantes.filter(p => p.asumida).length;
+  const pagables = q.integrantes.length - asumidos;
   const groups = {};
-  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx}); });
+  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx, asumida:p.asumida}); });
   function recompute(){
     let boxes = 0;
-    q.integrantes.forEach((p, idx) => { (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
-    const total = boxes * q.pagoMonto;
+    q.integrantes.forEach((p, idx) => { if (!p.asumida) (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
+    const total = boxes * q.pagoMonto + asumidos * q.cuotaTotal;
     setText('cuota-cobrado', money(total));
-    setText('cuota-boxes', boxes + ' / ' + (q.integrantes.length * q.pagos) + ' pagos · ' + q.integrantes.length + ' del equipo');
+    setText('cuota-boxes', boxes + ' / ' + (pagables * q.pagos) + ' pagos' + (asumidos ? ' · ' + asumidos + ' asumida (Co-Dir)' : '') + ' · ' + q.integrantes.length + ' del equipo');
     const pct = q.objetivo ? total / q.objetivo * 100 : 0;
     $('cuota-bar').style.width = Math.min(100, pct) + '%';
   }
@@ -933,6 +989,10 @@ function renderTracker(){
   Object.keys(groups).forEach(area => {
     html += '<div class="trk-group"><div class="trk-area">' + area + ' · ' + groups[area].length + '</div>';
     groups[area].forEach(p => {
+      if (p.asumida){
+        html += '<div class="trk-row"><span class="trk-name">' + p.nombre + '</span><span class="trk-asumida">asumida · Co-Dir</span></div>';
+        return;
+      }
       let boxes = '';
       for (let m = 0; m < q.pagos; m++){
         const on = (saved[p.idx] && saved[p.idx][m]) ? ' on' : '';
