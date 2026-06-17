@@ -166,6 +166,34 @@
         "operativo_total_50": 205615
       }
     },
+    "corresponsabilidad_areas": {
+      "estado": "confirmado",
+      "fuente": "director (17-jun-2026)",
+      "nota": "Qué prepara/cubre cada área del equipo (corresponsabilidad: el esfuerzo no recae solo en los directores ni en las cuotas). Montos indicativos del LADO A del Maestro; banderín, oficina y decoración del plenario no tienen línea propia (van dentro de partidas mayores). No suman el total: casa, transporte y comida son el grueso logístico.",
+      "areas": [
+        {
+          "area": "Guías",
+          "monto_indicativo": 17000,
+          "items": ["Libretas", "Rosario", "Bolsa (tote / mochila)", "Separadores de libros (para la Biblia)", "Identificadores de habitación", "Decoración del pequeño grupo"]
+        },
+        {
+          "area": "Música",
+          "monto_indicativo": 4500,
+          "items": ["Chocolates", "Crema", "Gasolina"]
+        },
+        {
+          "area": "Cocina",
+          "monto_indicativo": 72778,
+          "items": ["Comida del retiro (3 días)", "Detalles"]
+        },
+        {
+          "area": "Directores",
+          "monto_indicativo": 79300,
+          "items": ["Biblias", "Peces", "Materiales del banderín", "Materiales de oficina", "Decoración del plenario", "Liturgia: formas (pan y vino)", "Aporte a los sacerdotes para la confesión"],
+          "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). Banderín/oficina/plenario sin línea propia."
+        }
+      ]
+    },
     "meta_recaudacion_total": {
       "valor": 553622,
       "estado": "confirmado",
