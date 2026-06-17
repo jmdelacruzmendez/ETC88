@@ -167,6 +167,37 @@
         "fuente": "director · Presupuesto Maestro 14-jun-2026",
         "nota": "El modelo del Maestro asume 50 participantes (cierre con 48 op + 2 asesoras cocina = 50 equipo cubierto + 50 part = 100 personas en casa). El rango operativo sigue siendo 45–50."
       },
+      "costos_por_persona": {
+        "estado": "confirmado",
+        "fuente": "director · papel de estimación de precios y distribución (17-jun-2026)",
+        "nota": "Reparto del costo OPERATIVO (503,293) entre 50 participantes y 50 de equipo cubierto. El participante asume biblias+peces, su propio bus y materiales de guía; casa, música y litúrgico se prorratean entre 100 personas. 'con_imprevistos' aplica el 10% (×1.1) y amarra con la meta total 553,622 (327,446 + 226,176 ≈ 553,622). Reemplaza el placeholder previo (6,660.56 / 1,093). Las cuotas firmes (256,000) cuentan 53 de equipo; el reparto de costo usa 50 — no se contradicen.",
+        "mostrar": "con_imprevistos",
+        "base_personas": {
+          "participantes": 50,
+          "equipo": 50
+        },
+        "participante": {
+          "cuota": 3000,
+          "operativo_persona": 5953.56,
+          "con_imprevistos_persona": 6548.92,
+          "operativo_total_50": 297678,
+          "desglose_persona": {
+            "casa": 2000,
+            "cocina": 1455.56,
+            "biblias_y_peces": 1280,
+            "transporte": 680,
+            "guias": 340,
+            "liturgico": 153,
+            "musica": 45
+          }
+        },
+        "equipo": {
+          "cuota": 2000,
+          "operativo_persona": 4112.13,
+          "con_imprevistos_persona": 4523.53,
+          "operativo_total_50": 205615
+        }
+      },
       "meta_recaudacion_total": {
         "valor": 553622,
         "estado": "confirmado",

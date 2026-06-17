@@ -2,16 +2,23 @@
 """Genera el Tablero de Campaña (recaudación) del ETC 88 como UN archivo HTML
 autocontenido (HTML + CSS + JS nativo, sin dependencias externas, sin CDNs).
 
-Cifras trazadas a data/estado.json (Presupuesto Maestro 14-jun-2026):
+Para que el EQUIPO vea de un vistazo:
+  1. Lo que CUESTA el retiro por participante y por miembro de equipo.
+  2. Lo que necesitamos RECAUDAR (la brecha tras cuotas).
+  3. Lo que se REDUCE con donaciones en especie.
+  4. Cuánto FALTA: cierre de pagos (30-ago) e inicio del retiro (4-sep).
+
+Cifras trazadas a data/estado.json (Presupuesto Maestro 14-jun + papel de costos
+por persona del director 17-jun):
   meta 553,622 · cuotas firmes 256,000 · palancas (no firmes) 215,000 ·
-  especie 114,701 · proyección 585,701 · superávit +32,079 · brecha 297,622.
+  especie 114,701 · proyección 585,701 · superávit +32,079 · brecha 297,622 ·
+  costo/participante 6,548.92 · costo/equipo 4,523.53 (con 10% de imprevistos).
 
 REGLAS ETC 88 respetadas:
   - Nada se inventa: los montos se leen de estado.json (única fuente).
   - Lo NO firme (palancas, especie) se marca como 'estimado' — nunca como hecho.
-  - La fecha del retiro sale de estado.json (4–6 sep 2026), no de un supuesto.
-  - Es GENERADO (regla #2): no se edita el HTML a mano; se cambian los DATOS y
-    se vuelve a correr este script.
+  - Fechas de estado.json/ICS (cierre pagos 30-ago · retiro 4-6 sep 2026).
+  - Es GENERADO (regla #2): se cambian los DATOS y se vuelve a correr.
 
 Salida:  tablero_campana_etc88.html  (en la raíz del repo)
 Uso:     python scripts/build_campana.py
@@ -27,6 +34,7 @@ fin = EST['finanzas']
 meta_blk = fin['meta_recaudacion_total']
 desg = meta_blk['desglose']
 plan = fin['plan_recaudacion']['fuentes_caja_plan_a']
+cpp = fin['costos_por_persona']
 
 meta      = meta_blk['valor']                 # 553_622
 cuotas    = desg['cuotas_firmes']             # 256_000
@@ -42,16 +50,16 @@ caja_obj  = plan['total_caja_objetivo']       # 471_000
 cuota_part   = fin['cuota_participante']['valor']        # 3_000
 n_part       = fin['participantes_objetivo']['valor']    # 50
 part_cuotas  = cuota_part * n_part                       # 150_000
-equipo_cuotas = cuotas - part_cuotas                     # 106_000  (53 × 2,000)
+equipo_cuotas = cuotas - part_cuotas                     # 106_000
 
-lema = EST['marca']['lema_retiro']['valor']   # "Donde está tu tesoro, allí estará tu corazón"
+# costo por persona (con imprevistos — decisión del director)
+desglose   = cpp['participante']['desglose_persona']
+part_costo = cpp['participante']['con_imprevistos_persona']   # 6_548.92
+eq_costo   = cpp['equipo']['con_imprevistos_persona']         # 4_523.53
+part_oper  = cpp['participante']['operativo_persona']         # 5_953.56
+eq_oper    = cpp['equipo']['operativo_persona']               # 4_112.13
 
-# Costo por persona: provisto por el director (prompt 17-jun / hoja maestra).
-# NO se recalcula desde estado.json (allí 'costo_por_persona_100'=5,536 es el
-# promedio mezclado sobre 100 personas; estos son el desglose participante vs
-# equipo de la hoja del director). Editables abajo.
-COSTO_POR_PARTICIPANTE = 6660.56
-COSTO_POR_MIEMBRO_EQUIPO = 1093
+lema = EST['marca']['lema_retiro']['valor']
 
 # ----------------------------------------------------- chequeo de aritmética
 palancas   = rifa + garaje + comida + efectivo            # 215_000
@@ -65,8 +73,11 @@ if meta - cuotas != brecha:
     errores.append(f"brecha {brecha} ≠ meta-cuotas {meta-cuotas}")
 if superavit != margen:
     errores.append(f"superávit {superavit} ≠ margen estado.json {margen}")
-if part_cuotas + equipo_cuotas != cuotas:
-    errores.append(f"detalle cuotas {part_cuotas}+{equipo_cuotas} ≠ {cuotas}")
+if round(sum(desglose.values()), 2) != part_oper:
+    errores.append(f"desglose participante {sum(desglose.values())} ≠ {part_oper}")
+tie = round(part_costo * n_part + eq_costo * cpp['base_personas']['equipo'])
+if abs(tie - meta) > 5:
+    errores.append(f"costo/persona×50 {tie} no amarra con meta {meta}")
 if errores:
     raise SystemExit("CIFRAS NO CUADRAN con estado.json:\n  - " + "\n  - ".join(errores))
 
@@ -78,9 +89,13 @@ datos = {
     "citaBiblica": "Mt 6, 21",
     "moneda": "RD$",
     "locale": "es-DO",
-    "fechaRetiro": "2026-09-04",                       # inicio del retiro (estado.json)
-    "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
     "actualizado": "17 de junio de 2026",
+
+    # fechas (estado.json / ICS Misiones Diocesanas SPM)
+    "fechaCierrePagos": "2026-08-30",
+    "fechaCierrePagosTexto": "30 de agosto de 2026",
+    "fechaRetiro": "2026-09-04",
+    "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
 
     "costoTotal": meta,            # META = costo total del retiro (confirmado)
     "recaudado": cuotas,           # ← EDITABLE: cuotas firmes a la fecha
@@ -101,11 +116,15 @@ datos = {
         "notaEquipo": "53 × 2,000",
     },
 
-    # Costo por persona (hoja del director — secundario, editable)
-    "costoPorParticipante": COSTO_POR_PARTICIPANTE,
-    "costoPorMiembroEquipo": COSTO_POR_MIEMBRO_EQUIPO,
-    "numParticipantes": n_part,
-    "numEquipo": 50,
+    # Costo por persona (con 10% de imprevistos — papel del director)
+    "costoPersona": {
+        "base": "incluye el 10% de imprevistos",
+        "participante": {"costo": part_costo, "cuota": cpp['participante']['cuota'], "operativo": part_oper},
+        "equipo":       {"costo": eq_costo,   "cuota": cpp['equipo']['cuota'],       "operativo": eq_oper},
+        "numParticipantes": cpp['base_personas']['participantes'],
+        "numEquipo": cpp['base_personas']['equipo'],
+    },
+    "desgloseParticipante": desglose,
 }
 
 datos_json = json.dumps(datos, ensure_ascii=False, indent=2)
@@ -200,6 +219,24 @@ TEMPLATE = r'''<!DOCTYPE html>
   .grid2{display:grid; gap:clamp(14px,2vw,22px); grid-template-columns:1fr 1fr}
   @media(max-width:820px){ .grid2{grid-template-columns:1fr} }
 
+  /* ---------- costo por persona ---------- */
+  .pcard{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px;
+    padding:clamp(18px,2.4vw,26px)}
+  .pc-tag{color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; font-weight:700}
+  .pc-cost{font-size:clamp(2rem,6vw,3rem); font-weight:800; color:var(--green); margin:6px 0 16px;
+    font-variant-numeric:tabular-nums; line-height:1}
+  .pc-rows{display:grid; gap:9px; margin-bottom:16px; font-variant-numeric:tabular-nums}
+  .pc-rows>div{display:flex; justify-content:space-between; gap:12px}
+  .pc-rows span{color:var(--muted)}
+  .pc-rows b.warn{color:var(--amber)}
+  .cover{height:12px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden}
+  .cover i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3));
+    transition:width 1.3s cubic-bezier(.16,1,.3,1)}
+  .cover-lbl{color:var(--muted); font-size:.85rem; margin-top:8px}
+  .cover-lbl b{color:var(--ink)}
+  .pc-foot{color:var(--muted); margin-top:18px; font-size:.92rem}
+  .pc-foot b{color:var(--ink)}
+
   /* ---------- thermometer ---------- */
   .thermo-flex{display:flex; gap:clamp(14px,3vw,30px); align-items:center}
   .thermo-svg{width:clamp(120px,28vw,168px); flex:none}
@@ -217,22 +254,25 @@ TEMPLATE = r'''<!DOCTYPE html>
   .th-row.is-falta .v{color:var(--amber)}
 
   /* ---------- countdown ---------- */
-  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(8px,1.4vw,14px)}
-  .cd-cell{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:14px;
-    padding:clamp(12px,2vw,20px) 6px; text-align:center}
-  .cd-num{font-size:clamp(1.9rem,6.5vw,3.4rem); font-weight:800; font-variant-numeric:tabular-nums;
+  .cd-two{display:grid; gap:14px}
+  .cd-block{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:14px; padding:14px 14px 16px}
+  .cd-block.urgent{border-color:rgba(251,191,36,.45); background:rgba(251,191,36,.06)}
+  .cd-head{color:var(--muted); font-size:.85rem; margin-bottom:10px}
+  .cd-head b{color:var(--ink)}
+  .cd-block.urgent .cd-head b{color:var(--amber)}
+  .cd-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(6px,1.2vw,12px)}
+  .cd-cell{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:12px;
+    padding:clamp(10px,1.6vw,16px) 4px; text-align:center}
+  .cd-num{font-size:clamp(1.5rem,5vw,2.6rem); font-weight:800; font-variant-numeric:tabular-nums;
     line-height:1; letter-spacing:-.02em;
     background:linear-gradient(180deg,#fff,#bcd2f5); -webkit-background-clip:text;
     background-clip:text; color:transparent}
-  .cd-lbl{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
-    margin-top:8px}
-  .cd-when{color:var(--muted); text-align:center; margin-top:16px; font-size:.95rem}
-  .cd-when b{color:var(--ink)}
+  .cd-block.urgent .cd-num{background:linear-gradient(180deg,#fff,#ffe2a6); -webkit-background-clip:text; background-clip:text}
+  .cd-lbl{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:7px}
 
   /* ---------- bar chart ---------- */
   #chart-svg{width:100%; height:auto; display:block}
-  .legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin-top:18px; color:var(--muted);
-    font-size:.88rem}
+  .legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin-top:18px; color:var(--muted); font-size:.88rem}
   .legend span{display:inline-flex; align-items:center; gap:8px}
   .sw{width:14px; height:14px; border-radius:4px; flex:none}
   .sw.firme{background:var(--green)} .sw.estimado{background:var(--amber)}
@@ -257,24 +297,18 @@ TEMPLATE = r'''<!DOCTYPE html>
   .stack i.firme{background:linear-gradient(180deg,var(--green),var(--green3))}
   .stack i.estimado{background:linear-gradient(180deg,var(--amber),#d99908)}
   .stack i.especie{background:linear-gradient(180deg,var(--sky),#0c8fce)}
-  .meta-mark{position:absolute; top:-6px; bottom:-6px; width:2px; background:#fff;
-    box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+  .meta-mark{position:absolute; top:-6px; bottom:-6px; width:2px; background:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.3)}
   .meta-mark span{position:absolute; top:-22px; transform:translateX(-50%); white-space:nowrap;
     font-size:.72rem; color:#fff; font-weight:700; letter-spacing:.04em}
   .stack-cap{display:flex; justify-content:space-between; margin-top:30px; color:var(--muted);
     font-size:.85rem; flex-wrap:wrap; gap:6px}
-  .msg{margin-top:24px; padding:18px 20px; border-radius:14px; background:rgba(0,0,0,.22);
+  .reduce{margin-top:20px; padding:14px 16px; border-radius:12px; background:rgba(56,189,248,.08);
+    border:1px solid rgba(56,189,248,.25); color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem);
+    font-variant-numeric:tabular-nums}
+  .reduce b{color:var(--ink)} .reduce .t-esp{color:var(--sky); font-weight:700}
+  .msg{margin-top:18px; padding:18px 20px; border-radius:14px; background:rgba(0,0,0,.22);
     border-left:4px solid var(--green); font-size:clamp(1.02rem,2.3vw,1.28rem); line-height:1.5}
   .msg b{color:var(--green)}
-
-  /* ---------- per-person mini ---------- */
-  .mini{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:22px}
-  @media(max-width:520px){ .mini{grid-template-columns:1fr} }
-  .mini .box{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:14px; padding:16px 18px}
-  .mini .box .k{color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.06em}
-  .mini .box .v{font-size:clamp(1.3rem,3.5vw,1.7rem); font-weight:800; margin-top:6px;
-    font-variant-numeric:tabular-nums}
-  .mini .box .n{color:var(--muted2); font-size:.8rem; margin-top:4px}
 
   footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
 
@@ -283,7 +317,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .reveal.visible{opacity:1; transform:none}
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1; transform:none; transition:none}
-    .stack i{transition:none}
+    .stack i, .cover i{transition:none}
     html{scroll-behavior:auto}
   }
 </style>
@@ -304,10 +338,39 @@ TEMPLATE = r'''<!DOCTYPE html>
     <div class="kpi accent"><div class="lbl">Recaudado a la fecha</div><div class="val" id="kpi-recaudado">RD$ 0</div><div class="note">cuotas firmes comprometidas</div></div>
     <div class="kpi accent"><div class="lbl">% cubierto</div><div class="val" id="kpi-pct">0%</div><div class="note">de la meta</div></div>
     <div class="kpi warn"><div class="lbl">Falta por recaudar</div><div class="val" id="kpi-falta">RD$ 0</div><div class="note">brecha tras cuotas</div></div>
-    <div class="kpi"><div class="lbl">Días restantes</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">al inicio del retiro</div></div>
+    <div class="kpi"><div class="lbl">Días: cierre de pagos</div><div class="val" id="kpi-dias">0</div><div class="note" id="kpi-dias-note">retiro: 4–6 sep</div></div>
   </section>
 
-  <!-- thermometer + countdown -->
+  <!-- costo por persona -->
+  <section class="panel reveal" id="costo-panel">
+    <h2>Lo que cuesta el retiro por persona</h2>
+    <p class="h2note">Costo real por cabeza (incluye el 10% de imprevistos) vs. la cuota que paga cada quien</p>
+    <div class="grid2">
+      <div class="pcard">
+        <div class="pc-tag">Por participante</div>
+        <div class="pc-cost" id="pc-part-cost">RD$ 0</div>
+        <div class="pc-rows">
+          <div><span>Cuota que paga</span><b id="pc-part-cuota">RD$ 0</b></div>
+          <div><span>No cubre la cuota</span><b class="warn" id="pc-part-falta">RD$ 0</b></div>
+        </div>
+        <div class="cover"><i id="pc-part-bar" data-w="0"></i></div>
+        <div class="cover-lbl">la cuota cubre <b id="pc-part-pct">0%</b> de su costo</div>
+      </div>
+      <div class="pcard">
+        <div class="pc-tag">Por miembro de equipo</div>
+        <div class="pc-cost" id="pc-eq-cost">RD$ 0</div>
+        <div class="pc-rows">
+          <div><span>Cuota que paga</span><b id="pc-eq-cuota">RD$ 0</b></div>
+          <div><span>No cubre la cuota</span><b class="warn" id="pc-eq-falta">RD$ 0</b></div>
+        </div>
+        <div class="cover"><i id="pc-eq-bar" data-w="0"></i></div>
+        <div class="cover-lbl">la cuota cubre <b id="pc-eq-pct">0%</b> de su costo</div>
+      </div>
+    </div>
+    <p class="pc-foot">La diferencia que la cuota no cubre se tapa con <b>palancas</b> (rifa, garaje, comida) y <b>donaciones</b>. Base: 50 participantes + 50 de equipo (bus compartido).</p>
+  </section>
+
+  <!-- thermometer + countdowns -->
   <div class="grid2">
     <section class="panel reveal" id="thermo-panel">
       <h2>Progreso hacia la meta</h2>
@@ -323,24 +386,18 @@ TEMPLATE = r'''<!DOCTYPE html>
               </linearGradient>
               <clipPath id="tubeClip"><rect x="84" y="24" width="38" height="350" rx="19"/></clipPath>
             </defs>
-            <!-- tracks -->
             <circle cx="103" cy="406" r="40" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
             <rect x="84" y="24" width="38" height="350" rx="19" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)"/>
-            <!-- bulb fill (siempre lleno) -->
             <circle cx="103" cy="406" r="33" fill="url(#gradFill)"/>
             <circle cx="94" cy="396" r="9" fill="rgba(255,255,255,.28)"/>
-            <!-- tube fill (animado) -->
             <rect id="thermo-fill" x="84" y="374" width="38" height="0" fill="url(#gradFill)" clip-path="url(#tubeClip)"/>
-            <!-- meta line -->
             <line x1="70" x2="150" y1="24" y2="24" stroke="#fff" stroke-width="2" stroke-dasharray="4 4" opacity=".75"/>
             <text x="128" y="18" fill="#fff" font-size="12" font-weight="700">META</text>
-            <!-- ticks -->
             <g stroke="rgba(255,255,255,.25)" font-size="11" fill="var(--muted)">
               <line x1="122" x2="132" y1="111.5" y2="111.5"/><text x="136" y="115">75%</text>
               <line x1="122" x2="132" y1="199" y2="199"/><text x="136" y="203">50%</text>
               <line x1="122" x2="132" y1="286.5" y2="286.5"/><text x="136" y="290">25%</text>
             </g>
-            <!-- current marker -->
             <g id="thermo-marker" transform="translate(0,374)">
               <line x1="54" x2="84" y1="0" y2="0" stroke="var(--green)" stroke-width="2"/>
               <text id="thermo-marker-pct" x="50" y="5" text-anchor="end" fill="var(--green)" font-size="15" font-weight="800">0%</text>
@@ -360,15 +417,28 @@ TEMPLATE = r'''<!DOCTYPE html>
     </section>
 
     <section class="panel reveal" id="cd-panel">
-      <h2>Cuenta regresiva</h2>
-      <p class="h2note">Tiempo restante hasta el inicio del retiro</p>
-      <div class="cd-grid">
-        <div class="cd-cell"><div class="cd-num" id="cd-d">0</div><div class="cd-lbl">Días</div></div>
-        <div class="cd-cell"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
-        <div class="cd-cell"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Min</div></div>
-        <div class="cd-cell"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Seg</div></div>
+      <h2>Cuánto falta</h2>
+      <p class="h2note">El dinero debe estar conciliado para el cierre de pagos, antes del retiro</p>
+      <div class="cd-two">
+        <div class="cd-block urgent">
+          <div class="cd-head">Cierre de pagos · <b id="cd-cpago-when"></b></div>
+          <div class="cd-grid">
+            <div class="cd-cell"><div class="cd-num" id="cpago-d">0</div><div class="cd-lbl">Días</div></div>
+            <div class="cd-cell"><div class="cd-num" id="cpago-h">00</div><div class="cd-lbl">Hrs</div></div>
+            <div class="cd-cell"><div class="cd-num" id="cpago-m">00</div><div class="cd-lbl">Min</div></div>
+            <div class="cd-cell"><div class="cd-num" id="cpago-s">00</div><div class="cd-lbl">Seg</div></div>
+          </div>
+        </div>
+        <div class="cd-block">
+          <div class="cd-head">Inicio del retiro · <b id="cd-ret-when"></b></div>
+          <div class="cd-grid">
+            <div class="cd-cell"><div class="cd-num" id="ret-d">0</div><div class="cd-lbl">Días</div></div>
+            <div class="cd-cell"><div class="cd-num" id="ret-h">00</div><div class="cd-lbl">Hrs</div></div>
+            <div class="cd-cell"><div class="cd-num" id="ret-m">00</div><div class="cd-lbl">Min</div></div>
+            <div class="cd-cell"><div class="cd-num" id="ret-s">00</div><div class="cd-lbl">Seg</div></div>
+          </div>
+        </div>
       </div>
-      <p class="cd-when">Retiro ETC 88 · <b id="cd-when"></b></p>
     </section>
   </div>
 
@@ -386,6 +456,8 @@ TEMPLATE = r'''<!DOCTYPE html>
 
   <!-- projection -->
   <section class="panel proj reveal" id="proj-panel">
+    <h2>Lo que falta y cómo se cubre</h2>
+    <p class="h2note">Cuotas + palancas + donaciones vs. el costo del retiro</p>
     <div class="surplus"><small>Superávit proyectado sobre el costo</small><span id="pr-superavit">RD$ 0</span></div>
     <div class="formula">
       <span class="t-firme"><b id="pr-cuotas">RD$ 0</b> cuotas</span> +
@@ -395,17 +467,15 @@ TEMPLATE = r'''<!DOCTYPE html>
     </div>
     <div class="stack" id="stack"></div>
     <div class="stack-cap"><span>Recaudación total proyectada</span><span id="stack-total">RD$ 0</span></div>
+    <div class="reduce">Las <b>donaciones en especie</b> reducen el costo peso a peso:
+      <span id="rd-meta">RD$ 0</span> − <span class="t-esp" id="rd-especie">RD$ 0</span> =
+      <b id="rd-caja">RD$ 0</b> a cubrir en efectivo.</div>
     <p class="msg">Si conseguimos las <b>donaciones en especie</b> (<span id="s-especie">RD$ 0</span>)
       y las <b>palancas</b>, cerramos con <b>superávit de <span id="s-superavit">RD$ 0</span></b>.</p>
-
-    <div class="mini">
-      <div class="box"><div class="k">Costo por participante</div><div class="v" id="pp-part">RD$ 0</div><div class="n" id="pp-part-n"></div></div>
-      <div class="box"><div class="k">Costo por miembro del equipo</div><div class="v" id="pp-equipo">RD$ 0</div><div class="n" id="pp-equipo-n"></div></div>
-    </div>
   </section>
 
   <footer>
-    Generado desde <b>data/estado.json</b> (Presupuesto Maestro 14-jun-2026) · actualizado <span id="ft-fecha"></span>.<br>
+    Generado desde <b>data/estado.json</b> (Presupuesto Maestro + papel de costos por persona) · actualizado <span id="ft-fecha"></span>.<br>
     Cifras: cuotas = firmes · palancas y especie = <b>estimadas (no firmes)</b>. Edita el objeto <code>datos</code> para actualizar.
   </footer>
 
@@ -415,7 +485,7 @@ TEMPLATE = r'''<!DOCTYPE html>
 /* =========================================================================
    ETC 88 · TABLERO DE CAMPAÑA  —  DATOS EDITABLES (objeto `datos`)
    Cifras trazadas a data/estado.json. Edita un valor y recarga: el %, la
-   brecha, la proyección y el superávit se recalculan SOLOS.
+   brecha, la proyección, el superávit y los costos por persona se recalculan.
    ========================================================================= */
 const datos = __DATOS_JSON__;
 
@@ -430,13 +500,20 @@ D.proyeccion = datos.fuentes.reduce((a, f) => a + f.monto, 0);     // cuotas + p
 D.pct        = Math.min(100, (datos.recaudado / datos.costoTotal) * 100);
 D.falta      = Math.max(0, datos.costoTotal - datos.recaudado);
 D.superavit  = D.proyeccion - datos.costoTotal;
+D.cajaTrasEspecie = datos.costoTotal - D.especie;
+
+const CP = datos.costoPersona;
+['participante', 'equipo'].forEach(k => {
+  CP[k].noCubre   = CP[k].costo - CP[k].cuota;
+  CP[k].cubrePct  = CP[k].cuota / CP[k].costo * 100;
+});
 
 /* ---- Utilidades ------------------------------------------------------- */
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const nf  = new Intl.NumberFormat(datos.locale || 'es-DO');
 const nf2 = new Intl.NumberFormat(datos.locale || 'es-DO', {minimumFractionDigits:2, maximumFractionDigits:2});
-const money  = n => datos.moneda + ' ' + nf.format(Math.round(n));
-const money2 = n => datos.moneda + ' ' + nf2.format(n);
+const money  = n => datos.moneda + ' ' + nf.format(Math.round(n));
+const money2 = n => datos.moneda + ' ' + nf2.format(n);
 const pctTxt = n => n.toFixed(1).replace('.', ',');
 const $ = id => document.getElementById(id);
 const setText = (id, v) => { const e = $(id); if (e) e.textContent = v; };
@@ -461,31 +538,35 @@ function countUp(id, to, fmt, dur){
 setText('evento', datos.evento);
 setText('subtitulo', datos.subtitulo);
 $('lema').innerHTML = '«' + datos.lema + '»<b>' + datos.citaBiblica + '</b>';
-setText('cd-when', datos.fechaRetiroTexto);
+setText('cd-cpago-when', datos.fechaCierrePagosTexto);
+setText('cd-ret-when', datos.fechaRetiroTexto);
 setText('ft-fecha', datos.actualizado);
 setText('th-meta', money(datos.costoTotal));
 setText('pr-meta', money(datos.costoTotal));
-setText('kpi-dias-note', 'al ' + datos.fechaRetiroTexto.split('–')[0].trim() + ' sep');
 
-/* ---- Fecha objetivo (medianoche local, evita parseo UTC) ------------- */
-function targetDate(){
-  const p = datos.fechaRetiro.split('-').map(Number);
+/* ---- Fechas objetivo (medianoche local, evita parseo UTC) ------------ */
+function dateLocal(iso){
+  const p = iso.split('-').map(Number);
   return new Date(p[0], p[1] - 1, p[2], 0, 0, 0, 0);
 }
-function diffParts(){
-  let ms = Math.max(0, targetDate().getTime() - Date.now());
+function diffParts(iso){
+  let ms = Math.max(0, dateLocal(iso).getTime() - Date.now());
   const d = Math.floor(ms / 86400000); ms -= d * 86400000;
   const h = Math.floor(ms / 3600000);  ms -= h * 3600000;
   const m = Math.floor(ms / 60000);    ms -= m * 60000;
   const s = Math.floor(ms / 1000);
   return {d, h, m, s};
 }
-function tickCountdown(){
-  const t = diffParts();
-  setText('cd-d', t.d);
-  setText('cd-h', String(t.h).padStart(2, '0'));
-  setText('cd-m', String(t.m).padStart(2, '0'));
-  setText('cd-s', String(t.s).padStart(2, '0'));
+function mkCountdown(prefix, iso){
+  function tick(){
+    const t = diffParts(iso);
+    setText(prefix + '-d', t.d);
+    setText(prefix + '-h', String(t.h).padStart(2, '0'));
+    setText(prefix + '-m', String(t.m).padStart(2, '0'));
+    setText(prefix + '-s', String(t.s).padStart(2, '0'));
+  }
+  tick();
+  setInterval(tick, 1000);
 }
 
 /* ---- KPIs (count-up) -------------------------------------------------- */
@@ -494,7 +575,28 @@ function runKpis(){
   countUp('kpi-recaudado', datos.recaudado, money);
   countUp('kpi-falta', D.falta, money);
   animate(1600, p => { $('kpi-pct').textContent = pctTxt(D.pct * p) + '%'; });
-  animate(1600, p => { $('kpi-dias').textContent = nf.format(Math.round(diffParts().d * p)); });
+  animate(1600, p => { $('kpi-dias').textContent = nf.format(Math.round(diffParts(datos.fechaCierrePagos).d * p)); });
+}
+
+/* ---- Costo por persona ------------------------------------------------ */
+function runCosto(){
+  countUp('pc-part-cost', CP.participante.costo, money2);
+  setText('pc-part-cuota', money(CP.participante.cuota));
+  countUp('pc-part-falta', CP.participante.noCubre, money2);
+  setText('pc-part-pct', pctTxt(CP.participante.cubrePct) + '%');
+  countUp('pc-eq-cost', CP.equipo.costo, money2);
+  setText('pc-eq-cuota', money(CP.equipo.cuota));
+  countUp('pc-eq-falta', CP.equipo.noCubre, money2);
+  setText('pc-eq-pct', pctTxt(CP.equipo.cubrePct) + '%');
+  if (REDUCE){
+    $('pc-part-bar').style.width = CP.participante.cubrePct + '%';
+    $('pc-eq-bar').style.width = CP.equipo.cubrePct + '%';
+  } else {
+    setTimeout(() => {
+      $('pc-part-bar').style.width = CP.participante.cubrePct + '%';
+      $('pc-eq-bar').style.width = CP.equipo.cubrePct + '%';
+    }, 120);
+  }
 }
 
 /* ---- Termómetro -------------------------------------------------------- */
@@ -524,6 +626,11 @@ function el(name, attrs){
 }
 const COLOR = {firme:'var(--green)', estimado:'var(--amber)', especie:'var(--sky)'};
 const TIPO_LBL = {firme:'firme', estimado:'estimado', especie:'especie'};
+let _mctx;
+function measure(txt){
+  if (!_mctx){ _mctx = document.createElement('canvas').getContext('2d'); _mctx.font = '700 21px -apple-system,Segoe UI,Roboto,sans-serif'; }
+  return _mctx.measureText(txt).width;
+}
 function renderChart(){
   const svg = $('chart-svg');
   const W = 1000, X0 = 12, ROW = 78, PAD = 8, BARH = 26;
@@ -535,24 +642,16 @@ function renderChart(){
   datos.fuentes.forEach((f, i) => {
     const yTop = PAD + i * ROW;
     const yName = yTop + 22, yBar = yTop + 34;
-    // nombre
     const name = el('text', {x:X0, y:yName, fill:'var(--ink)', 'font-size':'21', 'font-weight':'700'});
     name.textContent = f.nombre;
     svg.appendChild(name);
-    // chip de tipo
-    const chip = el('text', {x:X0 + measure(f.nombre) + 14, y:yName, fill:COLOR[f.tipo],
-                             'font-size':'15', 'font-weight':'700'});
+    const chip = el('text', {x:X0 + measure(f.nombre) + 14, y:yName, fill:COLOR[f.tipo], 'font-size':'15', 'font-weight':'700'});
     chip.textContent = '· ' + TIPO_LBL[f.tipo];
     svg.appendChild(chip);
-    // monto (derecha)
-    const amt = el('text', {x:W - X0, y:yName, fill:COLOR[f.tipo], 'font-size':'21',
-                            'font-weight':'800', 'text-anchor':'end'});
+    const amt = el('text', {x:W - X0, y:yName, fill:COLOR[f.tipo], 'font-size':'21', 'font-weight':'800', 'text-anchor':'end'});
     amt.textContent = money(0);
     svg.appendChild(amt);
-    // track
-    svg.appendChild(el('rect', {x:X0, y:yBar, width:trackW, height:BARH, rx:BARH/2,
-                                fill:'rgba(255,255,255,.06)'}));
-    // fill
+    svg.appendChild(el('rect', {x:X0, y:yBar, width:trackW, height:BARH, rx:BARH/2, fill:'rgba(255,255,255,.06)'}));
     const wTarget = trackW * (f.monto / max);
     const bar = el('rect', {x:X0, y:yBar, width:0, height:BARH, rx:BARH/2, fill:COLOR[f.tipo]});
     if (f.tipo !== 'firme') bar.setAttribute('opacity', '.92');
@@ -560,12 +659,6 @@ function renderChart(){
     fills.push({bar, amt, wTarget, monto:f.monto});
   });
   return fills;
-}
-// medir ancho aproximado de texto SVG (para ubicar el chip) sin DOM extra
-let _mctx;
-function measure(txt){
-  if (!_mctx){ _mctx = document.createElement('canvas').getContext('2d'); _mctx.font = '700 21px -apple-system,Segoe UI,Roboto,sans-serif'; }
-  return _mctx.measureText(txt).width;
 }
 function animateChart(fills){
   fills.forEach((it, i) => {
@@ -583,39 +676,32 @@ function runProjection(){
   countUp('pr-palancas', D.palancas, money);
   countUp('pr-especie', D.especie, money);
   countUp('pr-proyeccion', D.proyeccion, money);
+  countUp('stack-total', D.proyeccion, money);
+  setText('rd-meta', money(datos.costoTotal));
+  setText('rd-especie', money(D.especie));
+  countUp('rd-caja', D.cajaTrasEspecie, money);
   countUp('s-especie', D.especie, money);
   countUp('s-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
-  countUp('stack-total', D.proyeccion, money);
-  // costo por persona
-  setText('pp-part', money2(datos.costoPorParticipante));
-  setText('pp-part-n', datos.numParticipantes + ' participantes');
-  setText('pp-equipo', money(datos.costoPorMiembroEquipo));
-  setText('pp-equipo-n', datos.numEquipo + ' de equipo · bus compartido');
-  // barra apilada
   const stack = $('stack');
-  const segs = [
-    {t:'firme', v:D.cuotas}, {t:'estimado', v:D.palancas}, {t:'especie', v:D.especie}
-  ];
+  const segs = [{t:'firme', v:D.cuotas}, {t:'estimado', v:D.palancas}, {t:'especie', v:D.especie}];
   segs.forEach(s => {
     const seg = document.createElement('i');
     seg.className = s.t;
     seg.dataset.w = (s.v / D.proyeccion * 100).toFixed(3);
     stack.appendChild(seg);
   });
-  // marca de meta
   const mark = document.createElement('div');
   mark.className = 'meta-mark';
   mark.style.left = (datos.costoTotal / D.proyeccion * 100) + '%';
   mark.innerHTML = '<span>META ' + money(datos.costoTotal) + '</span>';
   stack.appendChild(mark);
-  requestAnimationFrame(() => {
-    if (REDUCE){ stack.querySelectorAll('i').forEach(i => i.style.width = i.dataset.w + '%'); return; }
-    setTimeout(() => stack.querySelectorAll('i').forEach(i => { i.style.width = i.dataset.w + '%'; }), 120);
-  });
+  const fill = () => stack.querySelectorAll('i').forEach(i => { i.style.width = i.dataset.w + '%'; });
+  if (REDUCE) fill(); else setTimeout(fill, 120);
 }
 
 /* ---- Disparar animaciones cuando cada sección entra en vista ---------- */
 function onVisible(node, cb){
+  if (!node) return;
   if (!('IntersectionObserver' in window)){ cb(); return; }
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(e => { if (e.isIntersecting){ cb(); obs.disconnect(); } });
@@ -629,10 +715,11 @@ function setupReveal(){
 /* ---- Init ------------------------------------------------------------- */
 window.addEventListener('DOMContentLoaded', () => {
   setupReveal();
-  tickCountdown();
-  setInterval(tickCountdown, 1000);
+  mkCountdown('cpago', datos.fechaCierrePagos);
+  mkCountdown('ret', datos.fechaRetiro);
   let chartFills = null;
   onVisible($('kpis'), runKpis);
+  onVisible($('costo-panel'), runCosto);
   onVisible($('thermo-panel'), runThermo);
   onVisible($('chart-panel'), () => { if (!chartFills) chartFills = renderChart(); animateChart(chartFills); });
   onVisible($('proj-panel'), runProjection);
@@ -648,12 +735,14 @@ with open(out, 'w', encoding='utf-8') as f:
     f.write(html)
 
 print("OK  tablero_campana_etc88.html")
-print(f"    meta        RD$ {meta:,}")
-print(f"    recaudado   RD$ {cuotas:,}  ({cuotas/meta*100:.1f}% de la meta)")
-print(f"    palancas    RD$ {palancas:,}  (estimadas, no firmes)")
-print(f"    especie     RD$ {especie:,}")
-print(f"    proyección  RD$ {proyeccion:,}")
-print(f"    superávit   RD$ {superavit:,}  (= margen estado.json {margen:,})")
-print(f"    brecha      RD$ {brecha:,}")
-print(f"    retiro      {datos['fechaRetiroTexto']}")
+print(f"    meta              RD$ {meta:,}")
+print(f"    recaudado         RD$ {cuotas:,}  ({cuotas/meta*100:.1f}% de la meta)")
+print(f"    falta (brecha)    RD$ {brecha:,}")
+print(f"    costo/participante RD$ {part_costo:,.2f}  (cuota 3,000 → cubre {3000/part_costo*100:.0f}%)")
+print(f"    costo/equipo       RD$ {eq_costo:,.2f}  (cuota 2,000 → cubre {2000/eq_costo*100:.0f}%)")
+print(f"    palancas          RD$ {palancas:,}  (estimadas, no firmes)")
+print(f"    especie           RD$ {especie:,}  (reduce costo → caja {meta-especie:,})")
+print(f"    proyección        RD$ {proyeccion:,}  · superávit RD$ {superavit:,}")
+print(f"    cierre de pagos   {datos['fechaCierrePagosTexto']}")
+print(f"    retiro            {datos['fechaRetiroTexto']}")
 print("    aritmética cuadra con data/estado.json ✓")
