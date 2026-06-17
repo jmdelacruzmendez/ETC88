@@ -81,12 +81,15 @@ try:
         if not isinstance(a, str) or not a[:1].isdigit() or '·' not in a or row[2] is None:
             continue
         try:
-            monto = (float(row[3]) if row[3] not in (None, '') else 0) * (float(row[5]) if row[5] not in (None, '') else 0)
+            q = float(row[3]) if row[3] not in (None, '') else 0
+            p = float(row[5]) if row[5] not in (None, '') else 0
+            monto = q * p
         except (TypeError, ValueError):
-            monto = 0
+            q = p = monto = 0
         detalle = ' '.join(str(x) for x in (row[3], row[4]) if x not in (None, '')).strip()
         groups.setdefault(a, []) or (a not in order and order.append(a))
-        groups[a].append({"item": str(row[2]), "detalle": detalle, "monto": round(monto, 2)})
+        groups[a].append({"item": str(row[2]), "cantidad": q, "unidad": str(row[4] or '').strip(),
+                          "precio": p, "detalle": detalle, "monto": round(monto, 2)})
     for rb in order:
         st = round(sum(i['monto'] for i in groups[rb]), 2)
         presupuesto.append({"rubro": rb, "items": groups[rb], "subtotal": st}); sub_operativo += st
@@ -149,18 +152,30 @@ for a in corr['areas']:
                     f'<span class="area-amt">≈ {money(a["monto_indicativo"])}</span></div>'
                     f'<ul class="area-items">{lis}</ul></div>')
 def _esc(s): return str(s).replace('"', "'")
-pres_html = ""
-for g in presupuesto:
-    rb = (f'<button type="button" class="apad-mini rub-mini" data-apad data-tipo="rubro" '
-          f'data-label="{_esc(g["rubro"])}" data-monto="{g["subtotal"]}">apadrinar todo este rubro</button>')
-    its = "".join(f'<div class="pres-it"><span class="pi-n">{it["item"]}</span>'
-                  f'<span class="pi-d">{it["detalle"]}</span><b class="pi-m">{money(it["monto"])}</b>'
-                  f'<button type="button" class="apad-mini" data-apad data-tipo="item" '
-                  f'data-label="{_esc(it["item"])}" data-monto="{it["monto"]}">apadrinar</button></div>'
-                  for it in g['items'])
-    body = f'<div class="pres-items">{rb}{its}</div>'
-    pres_html += (f'<details class="pres-grp"><summary><span class="pg-n">{g["rubro"]}</span>'
-                  f'<span class="pg-c">{len(g["items"])} ít.</span><b class="pg-s">{money(g["subtotal"])}</b></summary>{body}</details>')
+def _raw(n): n = float(n); return str(int(n)) if n.is_integer() else ('%g' % n)
+def _disp(n): n = float(n); return format(int(n), ',') if n.is_integer() else format(n, ',g')
+def _short_rubro(r): return r.split('·', 1)[1].strip() if '·' in r else r
+
+# Explorador del presupuesto: lista plana (cantidad · precio · total) para ver/ordenar/clasificar/simular
+bud_items = []
+for gi, g in enumerate(presupuesto):
+    for it in g['items']:
+        bud_items.append({**it, "rubro_idx": gi, "rubro_corto": _short_rubro(g['rubro'])})
+bud_items.sort(key=lambda x: x['monto'], reverse=True)
+bud_rows = ""
+for it in bud_items:
+    bud_rows += (
+        f'<div class="bi" data-rubro="{it["rubro_idx"]}" data-qty="{_raw(it["cantidad"])}" '
+        f'data-precio="{_raw(it["precio"])}" data-monto="{int(round(it["monto"]))}" data-item="{_esc(it["item"])}">'
+        f'<div class="bi-main"><span class="bi-n">{it["item"]}</span><span class="bi-rub">{it["rubro_corto"]}</span></div>'
+        f'<span class="bi-q" data-u="{_esc(it["unidad"])}"><b>{_disp(it["cantidad"])}</b> {it["unidad"]}</span>'
+        f'<span class="bi-p">× {money(it["precio"])}</span>'
+        f'<b class="bi-t">{money(it["monto"])}</b>'
+        f'<button type="button" class="apad-mini" data-apad data-tipo="item" '
+        f'data-label="{_esc(it["item"])}" data-monto="{int(round(it["monto"]))}">apadrinar</button></div>')
+bud_chips = '<button type="button" class="bchip on" data-rub="all">Todos</button>'
+for gi, g in enumerate(presupuesto):
+    bud_chips += f'<button type="button" class="bchip" data-rub="{gi}">{_short_rubro(g["rubro"])}</button>'
 
 # Aplicativo "Apadrina la Misión 88": selector (carta + lo que falta + rubros) + WhatsApp
 WA_CONTACTS = EST['marca']['contacto_whatsapp']['contactos']
@@ -183,7 +198,7 @@ wa_btns = "".join(
     f'<span class="wa-name" id="wa-{i}-n">WhatsApp a {c["nombre"]}</span></a>'
     for i, c in enumerate(WA_CONTACTS))
 
-datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha,
+datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha, "subOperativo": sub_operativo,
                        "fechaCierrePagos": FECHA_CPAGO, "fechaRetiro": FECHA_RET, "locale": "es-DO", "moneda": "RD$",
                        "wa": [{"n": c["nombre"], "num": c["wa"]} for c in WA_CONTACTS]}, ensure_ascii=False)
 
@@ -314,6 +329,43 @@ CSS = r'''
   .pres-it .apad-mini{grid-column:2;grid-row:2;justify-self:end;margin-top:2px}
   .qbig.hl{color:var(--gold)}
   .hl-amt{color:var(--gold)}
+  /* explorador + simulador del presupuesto */
+  .bud-ctrls{display:flex;flex-direction:column;gap:12px;margin:6px 0 16px}
+  .bchips{display:flex;flex-wrap:wrap;gap:7px}
+  .bchip{font-family:inherit;cursor:pointer;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);border-radius:100px;padding:6px 13px;font-size:.82rem;font-weight:600;min-height:32px}
+  .bchip.on{background:rgba(56,189,248,.16);border-color:var(--sky);color:#cfeafe}
+  .bud-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .bud-sort{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.85rem}
+  .bud-sort select{font-family:inherit;font-size:.9rem;color:var(--ink);background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .bud-simbtn{font-family:inherit;cursor:pointer;border-radius:100px;padding:9px 16px;font-size:.85rem;font-weight:700;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.12);color:#8df3b3}
+  .bud-simbtn.on{background:var(--green);color:#04241a;border-color:var(--green)}
+  .bi{display:grid;grid-template-columns:1fr auto auto auto auto;gap:6px 14px;align-items:center;padding:9px 4px;border-top:1px solid rgba(255,255,255,.06)}
+  .bi-head{color:var(--muted2);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;border-top:none;padding-bottom:4px}
+  .bi-main{display:flex;flex-direction:column;min-width:0}
+  .bi-n{color:var(--ink);font-size:.9rem}
+  .bi-rub{color:var(--muted2);font-size:.72rem}
+  .bi-q,.bi-p{color:var(--muted);font-size:.84rem;font-variant-numeric:tabular-nums;white-space:nowrap}.bi-q b{color:var(--ink)}
+  .bi-t{color:var(--sky);font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+  .bi.chg .bi-t{color:var(--gold)}
+  .bi-qi,.bi-pi{font-family:inherit;width:5ch;font-size:.84rem;color:var(--ink);background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:8px;padding:4px 6px;font-variant-numeric:tabular-nums}
+  .bi-pi{width:7ch}
+  .bud-foot{margin-top:12px;color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}.bud-foot b{color:var(--ink)}
+  .sim2{margin-top:18px;background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.3);border-radius:16px;padding:16px}
+  .sim2-h{color:var(--green);font-weight:700;font-size:.82rem;margin-bottom:12px;letter-spacing:.02em}
+  .sim2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:680px){.sim2-grid{grid-template-columns:1fr}}
+  .sim2-l{color:var(--muted);font-size:.78rem;margin-bottom:3px}
+  .sim2-v{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}.sim2-v.red{color:var(--red)}
+  .sim2-dif{font-size:1.15rem;font-weight:700}.sim2-dif.save{color:var(--green)}.sim2-dif.up{color:var(--red)}
+  @media(max-width:640px){
+    .bi{grid-template-columns:1fr auto;gap:3px 10px}
+    .bi-head{display:none}
+    .bi-main{grid-column:1;grid-row:1}
+    .bi-t{grid-column:2;grid-row:1;justify-self:end}
+    .bi-q{grid-column:1;grid-row:2}
+    .bi-p{grid-column:2;grid-row:2;justify-self:end}
+    .bi .apad-mini{grid-column:1 / -1;grid-row:3;justify-self:start;margin-top:5px}
+  }
 '''
 
 JS = r'''
@@ -380,6 +432,44 @@ recompute();
     if(s){ var fi=-1; for(var k=0;k<s.options.length;k++){ if(s.options[k].getAttribute('data-label')===b.dataset.label){fi=k;break;} } s.selectedIndex = fi>=0?fi:0; }
     var p=$('apad-panel'); if(p) p.scrollIntoView({behavior:'smooth',block:'start'}); });
   upd();
+})();
+/* explorador + simulador del presupuesto */
+(function(){
+  var list=$('bud-list'); if(!list) return;
+  var rows=[].slice.call(list.getElementsByClassName('bi'));
+  var base=0; rows.forEach(function(r){ base+=(+r.dataset.monto); });
+  var simOn=false, factor = base ? (datos.costoTotal/base) : 1.1;
+  function val(r,w){ if(simOn){ var i=r.querySelector(w==='q'?'.bi-qi':'.bi-pi'); if(i) return parseFloat(i.value)||0; } return parseFloat(w==='q'?r.dataset.qty:r.dataset.precio)||0; }
+  function monto(r){ return simOn ? val(r,'q')*val(r,'p') : (+r.dataset.monto); }
+  function paint(r){ var t=r.querySelector('.bi-t'); if(t) t.textContent=money(monto(r)); r.classList.toggle('chg', simOn && Math.abs(monto(r)-(+r.dataset.monto))>0.5); }
+  function recompute(){ var sub=0,n=0,all=0;
+    rows.forEach(function(r){ var m=monto(r); all+=m; if(r.style.display!=='none'){n++;sub+=m;} });
+    setText('bud-count',n); setText('bud-sub',money(sub));
+    var metaSim=all*factor, falta=metaSim-datos.cuotas, dif=datos.costoTotal-metaSim;
+    setText('sim2-meta',money(metaSim)); setText('sim2-falta',money(Math.max(0,falta)));
+    var d=$('sim2-dif'); if(d){ if(Math.abs(dif)<1){d.textContent='igual al original';d.className='sim2-dif';}
+      else if(dif>0){d.textContent='↓ ahorro de '+money(dif);d.className='sim2-dif save';}
+      else{d.textContent='↑ aumento de '+money(-dif);d.className='sim2-dif up';} } }
+  function filter(rub){ rows.forEach(function(r){ r.style.display=(rub==='all'||r.dataset.rubro===rub)?'':'none'; });
+    var cs=document.getElementsByClassName('bchip'); for(var i=0;i<cs.length;i++) cs[i].classList.toggle('on',cs[i].dataset.rub===rub); recompute(); }
+  function sortBy(mode){ rows.slice().sort(function(a,b){
+      if(mode==='monto-asc') return monto(a)-monto(b);
+      if(mode==='qty-desc')  return val(b,'q')-val(a,'q');
+      if(mode==='name')      return a.dataset.item.localeCompare(b.dataset.item,'es');
+      return monto(b)-monto(a); }).forEach(function(r){ list.appendChild(r); }); }
+  function setSim(on){ simOn=on; var b=$('bud-simbtn'); if(b){ b.classList.toggle('on',on); b.textContent=on?'✓ Simulando — toca para salir':'🧮 Simular cantidades y precios'; }
+    rows.forEach(function(r){ var q=r.querySelector('.bi-q'), p=r.querySelector('.bi-p'); var u=q.getAttribute('data-u')||'';
+      if(on){ q.innerHTML='<input class="bi-qi" type="number" min="0" inputmode="decimal" value="'+r.dataset.qty+'"> '+u; p.innerHTML='RD$ <input class="bi-pi" type="number" min="0" inputmode="decimal" value="'+r.dataset.precio+'">'; }
+      else  { q.innerHTML='<b>'+(+r.dataset.qty).toLocaleString(datos.locale)+'</b> '+u; p.textContent='× '+money(+r.dataset.precio); }
+      paint(r); });
+    var s=$('sim2'); if(s) s.style.display=on?'':'none'; recompute(); }
+  function reset(){ rows.forEach(function(r){ var q=r.querySelector('.bi-qi'), p=r.querySelector('.bi-pi'); if(q)q.value=r.dataset.qty; if(p)p.value=r.dataset.precio; paint(r); }); recompute(); }
+  var cb=document.querySelector('.bchips'); if(cb) cb.addEventListener('click',function(e){ var b=e.target.closest('.bchip'); if(b) filter(b.dataset.rub); });
+  var ss=$('bud-sort'); if(ss) ss.addEventListener('change',function(e){ sortBy(e.target.value); });
+  var sb=$('bud-simbtn'); if(sb) sb.addEventListener('click',function(){ setSim(!simOn); });
+  var rb=$('sim2-reset'); if(rb) rb.addEventListener('click',reset);
+  list.addEventListener('input',function(e){ if(e.target.classList.contains('bi-qi')||e.target.classList.contains('bi-pi')){ paint(e.target.closest('.bi')); recompute(); } });
+  sortBy('monto-desc');
 })();
 '''.replace('__DATOS_JS__', datos_js)
 
@@ -530,10 +620,28 @@ BODY = f'''
     <p class="apad-note">Se abre WhatsApp con el mensaje ya escrito; tú solo lo revisas y envías. El donante elige a qué director escribir.</p>
   </section>
 
-  <section class="panel reveal">
-    <h2>El presupuesto completo</h2>
-    <p class="h2note">Transparencia total: despliega cada rubro para ver su detalle. La cocina es el menú. (Precios estimados de junio 2026.)</p>
-    {pres_html}
+  <section class="panel bud reveal" id="bud-panel">
+    <h2>Explora y simula el presupuesto</h2>
+    <p class="h2note">Los {len(bud_items)} ítems del Maestro. Filtra por rubro, ordena por precio o cantidad, y activa el simulador para "rejugar" cantidades y precios y ver cómo cambia lo que falta. (Para tocar y simular, ábrelo en un navegador.)</p>
+    <div class="bud-ctrls">
+      <div class="bchips">{bud_chips}</div>
+      <div class="bud-tools">
+        <label class="bud-sort">Ordenar <select id="bud-sort"><option value="monto-desc" selected>Mayor precio total</option><option value="monto-asc">Menor precio total</option><option value="qty-desc">Mayor cantidad</option><option value="name">Nombre (A–Z)</option></select></label>
+        <button type="button" class="bud-simbtn" id="bud-simbtn">🧮 Simular cantidades y precios</button>
+      </div>
+    </div>
+    <div class="bi bi-head" aria-hidden="true"><span class="bi-main">Ítem</span><span class="bi-q">Cantidad</span><span class="bi-p">Precio unit.</span><b class="bi-t">Total</b><span></span></div>
+    <div class="bud-list" id="bud-list">{bud_rows}</div>
+    <div class="bud-foot"><b id="bud-count">{len(bud_items)}</b> ítems mostrados · subtotal mostrado <b id="bud-sub">{money(sub_operativo)}</b></div>
+    <div class="sim2" id="sim2" style="display:none">
+      <div class="sim2-h">SIMULADOR · esto NO cambia el presupuesto real — es un "¿y si…?"</div>
+      <div class="sim2-grid">
+        <div class="sim2-c"><div class="sim2-l">Meta simulada (con ~10%)</div><div class="sim2-v" id="sim2-meta">{money(meta)}</div></div>
+        <div class="sim2-c"><div class="sim2-l">vs. original</div><div class="sim2-dif" id="sim2-dif">igual al original</div></div>
+        <div class="sim2-c"><div class="sim2-l">Falta por reunir (simulado)</div><div class="sim2-v red" id="sim2-falta">{money(brecha)}</div></div>
+      </div>
+      <button type="button" class="sim-btn" id="sim2-reset">Reiniciar valores</button>
+    </div>
     <p class="pres-foot">Subtotal operativo <b>{money(sub_operativo)}</b> + 10% de imprevistos = <b>{money(meta)}</b> (la meta de la misión).</p>
   </section>
 
