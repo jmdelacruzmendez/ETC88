@@ -457,6 +457,10 @@ PAGE = ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">'
 
 with open(os.path.join(REPO, 'tablero_campana_etc88.html'), 'w', encoding='utf-8') as f:
     f.write(PAGE)
+# copia lista para hosting privado (Cloudflare Pages / repo-connect): public/index.html
+_pub = os.path.join(REPO, 'public'); os.makedirs(_pub, exist_ok=True)
+with open(os.path.join(_pub, 'index.html'), 'w', encoding='utf-8') as f:
+    f.write(PAGE)
 
 print("OK  tablero_campana_etc88.html  (contenido renderizado en HTML — legible sin JS / en móvil)")
 print(f"    cita: «{cita['valor']}» {cita['cita']}")
