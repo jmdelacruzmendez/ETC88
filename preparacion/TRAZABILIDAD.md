@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 56 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
@@ -32,6 +32,7 @@
 | `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
+| `marca.cita_mision_88` | Los cielos cuentan la gloria de Dios | director (17-jun-2026) | Cita bíblica para el Tablero de la Misión 88 (tema espacial). El lema … |
 | `marca.lema_retiro` | Donde está tu tesoro, allí estará tu corazón | director | Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro… |
 | `marca.hilo_espiritual` | El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, all… | director |  |
 | `marca.tematica` | expedición · el tesoro y el corazón | director | Temática confirmada: la expedición es hacia adentro — la brújula del c… |
