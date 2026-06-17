@@ -2,32 +2,26 @@
 """Genera el Tablero de Campaña (recaudación) del ETC 88 como UN archivo HTML
 autocontenido (HTML + CSS + JS nativo, sin dependencias externas, sin CDNs).
 
-Comunica 3 mensajes al EQUIPO:
-  1. El COSTO REAL del retiro (por participante y por equipo, y de qué se
-     compone) — para dimensionar el esfuerzo, que no es solo cuota+donaciones
-     ni responsabilidad exclusiva de los directores.
-  2. Los DRIVERS que alivianan el costo (Profondo, donaciones al presupuesto,
-     donaciones en especie) — juntos lo bajamos.
-  3. La CORRESPONSABILIDAD: qué cubre/prepara cada área (Guías, Música, Cocina,
-     Directores).
+Mensajes al EQUIPO:
+  1. El COSTO REAL del retiro (por participante y por equipo, y de qué se compone).
+  2. Los DRIVERS que alivianan el costo (Profondo, donaciones, especie) — juntos lo bajamos.
+  3. La CORRESPONSABILIDAD: qué cubre cada área (Guías, Música, Cocina, Directores).
+  4. La CUOTA del equipo escalonada (4 pagos de 500) + tracker con todos los nombres.
 
-Cifras trazadas a data/estado.json (Presupuesto Maestro + papel de costos por
-persona, conciliado al peso con LADO A del Maestro):
-  meta 553,622 · cuotas firmes 256,000 · palancas 215,000 · especie 114,701 ·
-  proyección 585,701 · superávit +32,079 · brecha 297,622 ·
-  costo/participante 6,548.92 · costo/equipo 4,523.53 (con 10% de imprevistos).
+Cifras desde data/estado.json (Maestro + papel de costos por persona, conciliado
+al peso con LADO A). Roster del tracker desde data/equipo.json.
 
-REGLAS ETC 88: nada se inventa (montos desde estado.json); lo no firme va como
-'estimado'; fechas del ICS; es GENERADO (regla #2).
+REGLAS ETC 88: nada se inventa; lo no firme va como 'estimado'/[PROPUESTA];
+la avanzada va aparte (no toca la meta confirmada 553,622); es GENERADO (regla #2).
 
-Salida:  tablero_campana_etc88.html
-Uso:     python scripts/build_campana.py
+Salida:  tablero_campana_etc88.html      Uso: python scripts/build_campana.py
 """
 import json
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EST = json.load(open(os.path.join(REPO, 'data', 'estado.json'), encoding='utf-8'))
+EQ  = json.load(open(os.path.join(REPO, 'data', 'equipo.json'), encoding='utf-8'))['equipo']
 
 # ----------------------------------------------------------- leer estado.json
 fin = EST['finanzas']
@@ -36,36 +30,56 @@ desg = meta_blk['desglose']
 plan = fin['plan_recaudacion']['fuentes_caja_plan_a']
 cpp = fin['costos_por_persona']
 corr = fin['corresponsabilidad_areas']
+av = fin['avanzada_estimada']
 
-meta      = meta_blk['valor']                 # 553_622
-cuotas    = desg['cuotas_firmes']             # 256_000
-brecha    = desg['brecha_tras_cuotas']        # 297_622
-especie   = desg['especie_potencial']         # 114_701
-margen    = desg['margen_proyectado']         # 32_079
-rifa      = plan['rifa_profondo']['monto']    # 90_000
-garaje    = plan['venta_garaje']['monto']     # 60_000
-comida    = plan['venta_comida']['monto']     # 25_000
-efectivo  = plan['donaciones_efectivo']['monto']   # 40_000
-caja_obj  = plan['total_caja_objetivo']       # 471_000
+meta      = meta_blk['valor']
+cuotas    = desg['cuotas_firmes']
+brecha    = desg['brecha_tras_cuotas']
+especie   = desg['especie_potencial']
+margen    = desg['margen_proyectado']
+rifa      = plan['rifa_profondo']['monto']
+garaje    = plan['venta_garaje']['monto']
+comida    = plan['venta_comida']['monto']
+efectivo  = plan['donaciones_efectivo']['monto']
+caja_obj  = plan['total_caja_objetivo']
 
-cuota_part   = fin['cuota_participante']['valor']        # 3_000
-n_part       = fin['participantes_objetivo']['valor']    # 50
-part_cuotas  = cuota_part * n_part                       # 150_000
-equipo_cuotas = cuotas - part_cuotas                     # 106_000
+cuota_part   = fin['cuota_participante']['valor']
+n_part       = fin['participantes_objetivo']['valor']
+part_cuotas  = cuota_part * n_part
+equipo_cuotas = cuotas - part_cuotas
 
 desglose   = cpp['participante']['desglose_persona']
-part_costo = cpp['participante']['con_imprevistos_persona']   # 6_548.92
-eq_costo   = cpp['equipo']['con_imprevistos_persona']         # 4_523.53
-part_oper  = cpp['participante']['operativo_persona']         # 5_953.56
-eq_oper    = cpp['equipo']['operativo_persona']               # 4_112.13
+part_costo = cpp['participante']['con_imprevistos_persona']
+eq_costo   = cpp['equipo']['con_imprevistos_persona']
+part_oper  = cpp['participante']['operativo_persona']
+eq_oper    = cpp['equipo']['operativo_persona']
+
+eq_cuota_mensual = fin['cuota_equipo']['valor']['mensual']    # 500
+eq_cuota_total   = fin['cuota_equipo']['valor']['total']      # 2000
+n_pagos = eq_cuota_total // eq_cuota_mensual                  # 4
 
 lema = EST['marca']['lema_retiro']['valor']
 
+# ----------------------------------------- roster del equipo (cuota tracker) --
+AREA_ORDER = ['directores', 'asesores', 'asesores_espirituales', 'guias', 'musica',
+              'cocina', 'asesores_cocina', 'asesores_diocesanos']
+AREA_LABEL = {
+    'directores': 'Co-Dirección', 'asesores': 'Asesores',
+    'asesores_espirituales': 'Asesores Espirituales', 'guias': 'Guías',
+    'musica': 'Música', 'cocina': 'Cocina', 'asesores_cocina': 'Asesoras de Cocina',
+    'asesores_diocesanos': 'Asesores de Comunidad',
+}
+integrantes = []
+for area in AREA_ORDER:
+    for p in EQ:
+        if p['area'] == area and not p.get('backup') and not p.get('vacante'):
+            integrantes.append({"nombre": p['nombre'], "area": AREA_LABEL[area]})
+
 # ----------------------------------------------------- chequeo de aritmética
-palancas   = rifa + garaje + comida + efectivo            # 215_000
-profondo   = rifa + garaje + comida                       # 175_000
-proyeccion = cuotas + palancas + especie                  # 585_701
-superavit  = proyeccion - meta                            # 32_079
+palancas   = rifa + garaje + comida + efectivo
+profondo   = rifa + garaje + comida
+proyeccion = cuotas + palancas + especie
+superavit  = proyeccion - meta
 
 errores = []
 if palancas + cuotas != caja_obj:
@@ -76,9 +90,10 @@ if superavit != margen:
     errores.append(f"superávit {superavit} ≠ margen estado.json {margen}")
 if round(sum(desglose.values()), 2) != part_oper:
     errores.append(f"desglose participante {sum(desglose.values())} ≠ {part_oper}")
-tie = round(part_costo * n_part + eq_costo * cpp['base_personas']['equipo'])
-if abs(tie - meta) > 5:
-    errores.append(f"costo/persona×50 {tie} no amarra con meta {meta}")
+if len(integrantes) * eq_cuota_total != equipo_cuotas:
+    errores.append(f"tracker {len(integrantes)}×{eq_cuota_total} ≠ cuotas equipo {equipo_cuotas}")
+if av['total_estimado'] != av['comidas']['subtotal'] + av['hospedaje']['subtotal']:
+    errores.append("avanzada: total ≠ comidas+hospedaje")
 if errores:
     raise SystemExit("CIFRAS NO CUADRAN con estado.json:\n  - " + "\n  - ".join(errores))
 
@@ -86,21 +101,14 @@ if errores:
 datos = {
     "evento": "Retiro ETC 88",
     "subtitulo": "El costo real del retiro · cómo lo bajamos entre todos · quién cubre qué",
-    "lema": lema,
-    "citaBiblica": "Mt 6, 21",
-    "moneda": "RD$",
-    "locale": "es-DO",
-    "actualizado": "17 de junio de 2026",
+    "lema": lema, "citaBiblica": "Mt 6, 21",
+    "moneda": "RD$", "locale": "es-DO", "actualizado": "17 de junio de 2026",
 
-    "fechaCierrePagos": "2026-08-30",
-    "fechaCierrePagosTexto": "30 de agosto de 2026",
-    "fechaRetiro": "2026-09-04",
-    "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
+    "fechaCierrePagos": "2026-08-30", "fechaCierrePagosTexto": "30 de agosto de 2026",
+    "fechaRetiro": "2026-09-04", "fechaRetiroTexto": "4 – 6 de septiembre de 2026",
 
-    "costoTotal": meta,
-    "recaudado": cuotas,
+    "costoTotal": meta, "recaudado": cuotas,
 
-    # Fuentes (gráfico). tipo: firme|estimado|especie · grupo: cuota|profondo|donacion|especie
     "fuentes": [
         {"nombre": "Cuotas (participantes + equipo)", "monto": cuotas,   "tipo": "firme",    "grupo": "cuota"},
         {"nombre": "Rifa / Profondo",                 "monto": rifa,     "tipo": "estimado", "grupo": "profondo"},
@@ -110,20 +118,27 @@ datos = {
         {"nombre": "Donaciones en especie",           "monto": especie,  "tipo": "especie",  "grupo": "especie"},
     ],
 
-    "cuotasDetalle": {
-        "participantes": part_cuotas, "equipo": equipo_cuotas,
-        "notaParticipantes": f"{n_part} × {cuota_part:,}", "notaEquipo": "53 × 2,000",
-    },
-
     "costoPersona": {
-        "base": "incluye el 10% de imprevistos",
         "participante": {"costo": part_costo, "cuota": cpp['participante']['cuota'], "operativo": part_oper},
         "equipo":       {"costo": eq_costo,   "cuota": cpp['equipo']['cuota'],       "operativo": eq_oper},
-        "numParticipantes": cpp['base_personas']['participantes'],
-        "numEquipo": cpp['base_personas']['equipo'],
     },
     "desgloseParticipante": desglose,
     "corresponsabilidad": corr['areas'],
+
+    # avanzada (PROPUESTA · no toca la meta)
+    "avanzada": {
+        "personas": av['personas'],
+        "comidas": av['comidas']['cantidad'],
+        "noches": av['hospedaje']['noches'],
+        "total": av['total_estimado'],
+    },
+
+    # cuota del equipo escalonada + tracker
+    "equipoCuota": {
+        "cuotaTotal": eq_cuota_total, "pagoMonto": eq_cuota_mensual, "pagos": n_pagos,
+        "meses": ["Jun", "Jul", "Ago", "Sep"][:n_pagos],
+        "objetivo": equipo_cuotas, "integrantes": integrantes,
+    },
 }
 
 datos_json = json.dumps(datos, ensure_ascii=False, indent=2)
@@ -148,32 +163,28 @@ TEMPLATE = r'''<!DOCTYPE html>
   }
   *{box-sizing:border-box; margin:0; padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink); line-height:1.5; min-height:100vh;
     background:
       radial-gradient(1100px 700px at 12% -8%, rgba(52,211,153,.13), transparent 60%),
       radial-gradient(900px 600px at 95% 0%, rgba(56,189,248,.12), transparent 55%),
       radial-gradient(1200px 900px at 50% 120%, rgba(16,185,129,.08), transparent 60%),
       linear-gradient(160deg, var(--bg2), var(--bg) 45%, var(--bg3));
-    background-attachment:fixed; -webkit-font-smoothing:antialiased; padding:clamp(16px,3vw,40px);
-  }
+    background-attachment:fixed; -webkit-font-smoothing:antialiased; padding:clamp(16px,3vw,40px)}
   .wrap{max-width:1180px; margin:0 auto}
 
   header{text-align:center; padding:clamp(20px,4vw,48px) 0 clamp(14px,2vw,26px)}
-  .eyebrow{display:inline-block; font-size:clamp(.72rem,1.4vw,.86rem); letter-spacing:.28em;
-    text-transform:uppercase; color:var(--green); font-weight:700; padding:7px 16px;
-    border:1px solid rgba(52,211,153,.35); border-radius:100px; background:rgba(52,211,153,.08)}
+  .eyebrow{display:inline-block; font-size:clamp(.72rem,1.4vw,.86rem); letter-spacing:.28em; text-transform:uppercase;
+    color:var(--green); font-weight:700; padding:7px 16px; border:1px solid rgba(52,211,153,.35); border-radius:100px; background:rgba(52,211,153,.08)}
   h1{font-size:clamp(2.4rem,7vw,5rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:18px 0 6px;
     background:linear-gradient(180deg,#fff,#cfe0ff 70%,#9db2d4); -webkit-background-clip:text; background-clip:text; color:transparent}
   .sub{color:var(--muted); font-size:clamp(1rem,2.2vw,1.32rem); font-weight:500}
   .lema{margin:18px auto 0; max-width:680px; color:var(--gold); font-style:italic; font-size:clamp(1rem,2.4vw,1.45rem); line-height:1.35}
   .lema b{font-style:normal; color:var(--muted2); font-size:.8em; display:block; margin-top:6px; letter-spacing:.04em}
 
-  .kpis{display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(20px,3vw,34px) 0;
-    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-  .kpi{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(16px,2vw,24px);
-    position:relative; overflow:hidden; transition:transform .35s ease, background .35s ease, border-color .35s ease}
+  .kpis{display:grid; gap:clamp(10px,1.6vw,18px); margin:clamp(20px,3vw,34px) 0; grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .kpi{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(16px,2vw,24px); position:relative; overflow:hidden;
+    transition:transform .35s ease, background .35s ease, border-color .35s ease}
   .kpi:hover{transform:translateY(-4px); background:var(--card-h); border-color:rgba(255,255,255,.2)}
   .kpi::before{content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--green),var(--sky))}
   .kpi .lbl{font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
@@ -181,14 +192,12 @@ TEMPLATE = r'''<!DOCTYPE html>
   .kpi .note{font-size:.82rem; color:var(--muted2); margin-top:6px}
   .kpi.accent .val{color:var(--green)} .kpi.warn .val{color:var(--amber)}
 
-  .panel{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(18px,2.6vw,32px);
-    box-shadow:var(--shadow); margin-bottom:clamp(14px,2vw,22px)}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:clamp(18px,2.6vw,32px); box-shadow:var(--shadow); margin-bottom:clamp(14px,2vw,22px)}
   .panel h2{font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:700; letter-spacing:-.01em}
   .panel .h2note{color:var(--muted); font-size:.9rem; margin-top:4px; margin-bottom:18px}
   .grid2{display:grid; gap:clamp(14px,2vw,22px); grid-template-columns:1fr 1fr}
   @media(max-width:820px){ .grid2{grid-template-columns:1fr} }
 
-  /* costo por persona */
   .pcard{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:clamp(18px,2.4vw,26px)}
   .pc-tag{color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; font-weight:700}
   .pc-cost{font-size:clamp(2rem,6vw,3rem); font-weight:800; color:var(--green); margin:6px 0 16px; font-variant-numeric:tabular-nums; line-height:1}
@@ -198,9 +207,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .cover{height:12px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden}
   .cover i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width 1.3s cubic-bezier(.16,1,.3,1)}
   .cover-lbl{color:var(--muted); font-size:.85rem; margin-top:8px} .cover-lbl b{color:var(--ink)}
-  .pc-foot{color:var(--muted); margin-top:18px; font-size:.92rem} .pc-foot b{color:var(--ink)}
 
-  /* composición del costo */
   .compo{margin-top:24px; padding-top:22px; border-top:1px solid var(--line)}
   .compo-h{font-weight:700; margin-bottom:16px}
   .compo-row{display:grid; grid-template-columns:1fr auto; gap:5px 12px; align-items:center; margin-bottom:13px}
@@ -209,7 +216,13 @@ TEMPLATE = r'''<!DOCTYPE html>
   .compo-row .ct i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width 1s cubic-bezier(.16,1,.3,1)}
   .compo-foot{color:var(--muted); margin-top:8px; font-size:.92rem} .compo-foot b{color:var(--ink)}
 
-  /* thermometer */
+  /* gap / por contemplar */
+  .gap-note{background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.32); border-radius:14px; padding:16px 18px;
+    color:var(--muted); font-size:clamp(.92rem,2vw,1.05rem); margin-bottom:clamp(14px,2vw,22px); font-variant-numeric:tabular-nums; line-height:1.55}
+  .gap-note b{color:var(--ink)}
+  .tag-prop{display:inline-block; background:rgba(251,191,36,.18); color:var(--amber); font-weight:700; font-size:.78em;
+    padding:1px 8px; border-radius:100px; letter-spacing:.04em}
+
   .thermo-flex{display:flex; gap:clamp(14px,3vw,30px); align-items:center}
   .thermo-svg{width:clamp(120px,28vw,168px); flex:none}
   .thermo-svg svg{display:block; width:100%; height:auto; overflow:visible}
@@ -222,7 +235,6 @@ TEMPLATE = r'''<!DOCTYPE html>
   .th-row .k{color:var(--muted); font-size:.95rem} .th-row .v{font-weight:700; font-size:1.1rem}
   .th-row.is-falta .v{color:var(--amber)}
 
-  /* countdown */
   .cd-two{display:grid; gap:14px}
   .cd-block{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:14px; padding:14px 14px 16px}
   .cd-block.urgent{border-color:rgba(251,191,36,.45); background:rgba(251,191,36,.06)}
@@ -235,14 +247,12 @@ TEMPLATE = r'''<!DOCTYPE html>
   .cd-block.urgent .cd-num{background:linear-gradient(180deg,#fff,#ffe2a6); -webkit-background-clip:text; background-clip:text}
   .cd-lbl{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:7px}
 
-  /* bar chart */
   #chart-svg{width:100%; height:auto; display:block}
   .legend{display:flex; flex-wrap:wrap; gap:14px 22px; margin-top:18px; color:var(--muted); font-size:.88rem}
   .legend span{display:inline-flex; align-items:center; gap:8px}
   .sw{width:14px; height:14px; border-radius:4px; flex:none}
   .sw.firme{background:var(--green)} .sw.estimado{background:var(--amber)} .sw.especie{background:var(--sky)}
 
-  /* drivers + projection */
   .proj{background:linear-gradient(135deg, rgba(52,211,153,.16), rgba(56,189,248,.08) 70%, transparent), var(--card); border:1px solid rgba(52,211,153,.3)}
   .drivers{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:6px 0 20px}
   .driver{background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:14px; padding:16px}
@@ -268,16 +278,36 @@ TEMPLATE = r'''<!DOCTYPE html>
   .msg{margin-top:18px; padding:18px 20px; border-radius:14px; background:rgba(0,0,0,.22); border-left:4px solid var(--green); font-size:clamp(1.02rem,2.3vw,1.28rem); line-height:1.5}
   .msg b{color:var(--green)}
 
-  /* corresponsabilidad por área */
   .areas-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:14px}
   .area-card{background:rgba(0,0,0,.18); border:1px solid var(--line); border-radius:16px; padding:18px 20px; border-top:3px solid var(--green)}
   .area-h{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:12px; padding-bottom:11px; border-bottom:1px solid var(--line)}
-  .area-name{font-weight:800; font-size:1.18rem}
-  .area-amt{color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.95rem}
+  .area-name{font-weight:800; font-size:1.18rem} .area-amt{color:var(--muted); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.95rem}
   .area-items{list-style:none; display:grid; gap:8px}
   .area-items li{color:var(--muted); padding-left:18px; position:relative; font-size:.95rem}
   .area-items li::before{content:""; position:absolute; left:3px; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--green)}
   .areas-foot{color:var(--muted); margin-top:16px; font-size:.9rem} .areas-foot b{color:var(--ink)}
+
+  /* cuota escalonada + tracker */
+  .cuota-msg{background:rgba(52,211,153,.08); border:1px solid rgba(52,211,153,.28); border-radius:14px; padding:16px 18px;
+    font-size:clamp(.95rem,2vw,1.1rem); line-height:1.55; margin-bottom:18px}
+  .cuota-msg b{color:var(--green)}
+  .cuota-summary{display:grid; grid-template-columns:auto 1fr auto; gap:10px 18px; align-items:center; margin-bottom:18px}
+  @media(max-width:680px){ .cuota-summary{grid-template-columns:1fr} }
+  .cs-big{font-size:clamp(1.6rem,5vw,2.4rem); font-weight:800; color:var(--green); font-variant-numeric:tabular-nums; line-height:1}
+  .cs-lbl{color:var(--muted); font-size:.85rem; margin-top:4px}
+  .cs-bar{height:12px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden; min-width:120px}
+  .cs-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--green3)); transition:width .5s ease}
+  .cs-note{color:var(--muted); font-size:.85rem; white-space:nowrap; font-variant-numeric:tabular-nums}
+  .trk-group{margin-bottom:14px}
+  .trk-area{font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--green); font-weight:700; margin:14px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--line)}
+  .trk-row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 0; flex-wrap:wrap}
+  .trk-name{font-size:.98rem}
+  .trk-boxes{display:flex; gap:6px}
+  .pay-box{width:46px; height:32px; border-radius:8px; border:1px solid var(--line); background:rgba(0,0,0,.2);
+    color:var(--muted2); font-size:.72rem; font-weight:700; cursor:pointer; transition:all .18s ease; font-family:inherit}
+  .pay-box:hover{border-color:rgba(255,255,255,.3)}
+  .pay-box.on{background:linear-gradient(180deg,var(--green2),var(--green3)); color:#04241a; border-color:var(--green)}
+  .tracker-foot{color:var(--muted2); font-size:.84rem; margin-top:16px}
 
   footer{text-align:center; color:var(--muted2); font-size:.82rem; padding:26px 0 8px; line-height:1.7}
 
@@ -285,7 +315,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .reveal.visible{opacity:1; transform:none}
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1; transform:none; transition:none}
-    .stack i, .cover i, .compo-row .ct i{transition:none}
+    .stack i, .cover i, .compo-row .ct i, .cs-bar i{transition:none}
     html{scroll-behavior:auto}
   }
 </style>
@@ -300,7 +330,6 @@ TEMPLATE = r'''<!DOCTYPE html>
     <p class="lema" id="lema"></p>
   </header>
 
-  <!-- KPI row -->
   <section class="kpis reveal" id="kpis">
     <div class="kpi"><div class="lbl">Costo total (meta)</div><div class="val" id="kpi-costo">RD$ 0</div><div class="note">cubrir el costo del retiro</div></div>
     <div class="kpi accent"><div class="lbl">Recaudado a la fecha</div><div class="val" id="kpi-recaudado">RD$ 0</div><div class="note">cuotas firmes comprometidas</div></div>
@@ -341,6 +370,9 @@ TEMPLATE = r'''<!DOCTYPE html>
       <div class="compo-foot">Suma <b id="compo-sum">RD$ 0</b> (operativo) + 10% de imprevistos = <b id="compo-total">RD$ 0</b> por participante. Lo que la cuota no cubre <b>no recae en el participante</b>: lo bajan los drivers de abajo.</div>
     </div>
   </section>
+
+  <!-- por contemplar: avanzada -->
+  <div class="gap-note reveal" id="gap-avanzada"></div>
 
   <!-- thermometer + countdowns -->
   <div class="grid2">
@@ -452,9 +484,23 @@ TEMPLATE = r'''<!DOCTYPE html>
     <p class="areas-foot">Montos <b>indicativos</b> del Presupuesto Maestro. Además, <b>casa, transporte y la coordinación general</b> completan el costo total (RD$ 553,622).</p>
   </section>
 
+  <!-- 4 · cuota escalonada + tracker -->
+  <section class="panel reveal" id="cuota-panel">
+    <h2 id="cuota-h2">4 · Cuota del equipo</h2>
+    <p class="h2note">Escalonada para que sea alcanzable · marca cada pago al tocar la casilla</p>
+    <div class="cuota-msg" id="cuota-msg"></div>
+    <div class="cuota-summary">
+      <div><div class="cs-big" id="cuota-cobrado">RD$ 0</div><div class="cs-lbl" id="cuota-cobrado-lbl">cobrado en cuotas de equipo</div></div>
+      <div class="cs-bar"><i id="cuota-bar"></i></div>
+      <div class="cs-note" id="cuota-boxes">0 pagos</div>
+    </div>
+    <div id="tracker"></div>
+    <p class="tracker-foot">Las marcas se guardan en este dispositivo (no se comparten). La fuente oficial de pagos es Tesorería.</p>
+  </section>
+
   <footer>
-    Generado desde <b>data/estado.json</b> (Presupuesto Maestro · papel de costos por persona conciliado al peso) · actualizado <span id="ft-fecha"></span>.<br>
-    Cifras: cuotas = firmes · palancas y especie = <b>estimadas (no firmes)</b>. Edita el objeto <code>datos</code> para actualizar.
+    Generado desde <b>data/estado.json</b> + <b>data/equipo.json</b> (Maestro · papel de costos · roster) · actualizado <span id="ft-fecha"></span>.<br>
+    Cifras: cuotas = firmes · palancas y especie = <b>estimadas</b> · avanzada = <b>[PROPUESTA]</b> (no toca la meta). Edita el objeto <code>datos</code> para actualizar.
   </footer>
 
 </div>
@@ -462,27 +508,22 @@ TEMPLATE = r'''<!DOCTYPE html>
 <script>
 /* =========================================================================
    ETC 88 · TABLERO DE CAMPAÑA  —  DATOS EDITABLES (objeto `datos`)
-   Cifras trazadas a data/estado.json. Edita un valor y recarga: el %, la
-   brecha, la proyección, el superávit y los costos por persona se recalculan.
+   Cifras trazadas a data/estado.json + data/equipo.json. Edita y recarga.
    ========================================================================= */
 const datos = __DATOS_JSON__;
 
-/* ---- Derivados (se calculan solos) ------------------------------------ */
+/* ---- Derivados -------------------------------------------------------- */
 const sumTipo  = t => datos.fuentes.filter(f => f.tipo  === t).reduce((a, f) => a + f.monto, 0);
 const sumGrupo = g => datos.fuentes.filter(f => f.grupo === g).reduce((a, f) => a + f.monto, 0);
 const D = { cuotas:sumTipo('firme'), palancas:sumTipo('estimado'), especie:sumTipo('especie') };
 D.proyeccion = datos.fuentes.reduce((a, f) => a + f.monto, 0);
-D.pct        = Math.min(100, (datos.recaudado / datos.costoTotal) * 100);
-D.falta      = Math.max(0, datos.costoTotal - datos.recaudado);
-D.superavit  = D.proyeccion - datos.costoTotal;
+D.pct = Math.min(100, (datos.recaudado / datos.costoTotal) * 100);
+D.falta = Math.max(0, datos.costoTotal - datos.recaudado);
+D.superavit = D.proyeccion - datos.costoTotal;
 D.cajaTrasEspecie = datos.costoTotal - D.especie;
 const DR = { profondo:sumGrupo('profondo'), donacion:sumGrupo('donacion'), especie:sumGrupo('especie') };
-
 const CP = datos.costoPersona;
-['participante', 'equipo'].forEach(k => {
-  CP[k].noCubre  = CP[k].costo - CP[k].cuota;
-  CP[k].cubrePct = CP[k].cuota / CP[k].costo * 100;
-});
+['participante', 'equipo'].forEach(k => { CP[k].noCubre = CP[k].costo - CP[k].cuota; CP[k].cubrePct = CP[k].cuota / CP[k].costo * 100; });
 
 /* ---- Utilidades ------------------------------------------------------- */
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -494,15 +535,10 @@ const pctTxt = n => n.toFixed(1).replace('.', ',');
 const $ = id => document.getElementById(id);
 const setText = (id, v) => { const e = $(id); if (e) e.textContent = v; };
 const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
-
 function animate(duration, onUpdate, onDone){
   if (REDUCE){ onUpdate(1); if (onDone) onDone(); return; }
   const t0 = performance.now();
-  function frame(now){
-    const t = Math.min(1, (now - t0) / duration);
-    onUpdate(easeOutCubic(t));
-    if (t < 1) requestAnimationFrame(frame); else if (onDone) onDone();
-  }
+  function frame(now){ const t = Math.min(1, (now - t0) / duration); onUpdate(easeOutCubic(t)); if (t < 1) requestAnimationFrame(frame); else if (onDone) onDone(); }
   requestAnimationFrame(frame);
 }
 function countUp(id, to, fmt, dur){ const e = $(id); if (!e) return; animate(dur || 1600, p => { e.textContent = fmt(to * p); }); }
@@ -517,7 +553,25 @@ setText('ft-fecha', datos.actualizado);
 setText('th-meta', money(datos.costoTotal));
 setText('pr-meta', money(datos.costoTotal));
 
-/* ---- Fechas objetivo (medianoche local) ------------------------------- */
+/* ---- avanzada (por contemplar) ---------------------------------------- */
+(function(){
+  const a = datos.avanzada;
+  $('gap-avanzada').innerHTML = '<b>Por contemplar — no está en la meta:</b> avanzada del equipo · '
+    + a.personas + ' personas suben el jueves: ' + a.comidas + ' comidas extra + ' + a.noches + ' noche de hospedaje ≈ <b>'
+    + money(a.total) + '</b> <span class="tag-prop">PROPUESTA</span> · por cotizar con la casa/cocina. '
+    + 'Con avanzada, el costo subiría a ≈ <b>' + money(datos.costoTotal + a.total) + '</b>.';
+})();
+
+/* ---- cuota escalonada (mensaje) --------------------------------------- */
+(function(){
+  const q = datos.equipoCuota;
+  setText('cuota-h2', '4 · Cuota del equipo: ' + q.pagos + ' pagos de ' + money(q.pagoMonto));
+  $('cuota-msg').innerHTML = 'La cuota del equipo (<b>' + money(q.cuotaTotal) + '</b>) se paga en <b>' + q.pagos
+    + ' cuotas de ' + money(q.pagoMonto) + '</b> (' + q.meses.join(' · ') + '). Escalonarla la hace <b>alcanzable para todos</b> — y es una <b>necesidad</b>: sostiene el ensayo general, el prorrateo del salón, el transporte y la comida del proceso.';
+  setText('cuota-cobrado-lbl', 'cobrado en cuotas de equipo · meta ' + money(q.objetivo));
+})();
+
+/* ---- Fechas / countdown ----------------------------------------------- */
 function dateLocal(iso){ const p = iso.split('-').map(Number); return new Date(p[0], p[1]-1, p[2], 0,0,0,0); }
 function diffParts(iso){
   let ms = Math.max(0, dateLocal(iso).getTime() - Date.now());
@@ -527,13 +581,7 @@ function diffParts(iso){
   return {d, h, m, s:Math.floor(ms/1000)};
 }
 function mkCountdown(prefix, iso){
-  function tick(){
-    const t = diffParts(iso);
-    setText(prefix+'-d', t.d);
-    setText(prefix+'-h', String(t.h).padStart(2,'0'));
-    setText(prefix+'-m', String(t.m).padStart(2,'0'));
-    setText(prefix+'-s', String(t.s).padStart(2,'0'));
-  }
+  function tick(){ const t = diffParts(iso); setText(prefix+'-d', t.d); setText(prefix+'-h', String(t.h).padStart(2,'0')); setText(prefix+'-m', String(t.m).padStart(2,'0')); setText(prefix+'-s', String(t.s).padStart(2,'0')); }
   tick(); setInterval(tick, 1000);
 }
 
@@ -561,7 +609,6 @@ function runCosto(){
   setText('pc-eq-pct', pctTxt(CP.equipo.cubrePct) + '%');
   const fillCover = () => { $('pc-part-bar').style.width = CP.participante.cubrePct+'%'; $('pc-eq-bar').style.width = CP.equipo.cubrePct+'%'; };
   if (REDUCE) fillCover(); else setTimeout(fillCover, 120);
-  // composición
   const wrap = $('compo-bars'), d = datos.desgloseParticipante;
   const max = Math.max.apply(null, DESG_ORDER.map(k => d[k]));
   let sum = 0;
@@ -578,11 +625,10 @@ function runCosto(){
   if (REDUCE) fillCompo(); else setTimeout(fillCompo, 160);
 }
 
-/* ---- Termómetro -------------------------------------------------------- */
+/* ---- Termómetro ------------------------------------------------------- */
 function runThermo(){
   const fill = $('thermo-fill'), marker = $('thermo-marker'), mpct = $('thermo-marker-pct');
-  const TOP = 24, BOTTOM = 374, RANGE = BOTTOM - TOP;
-  const fracTarget = D.pct / 100;
+  const TOP = 24, BOTTOM = 374, RANGE = BOTTOM - TOP, fracTarget = D.pct / 100;
   setText('th-recaudado', money(datos.recaudado));
   setText('th-falta', money(D.falta));
   animate(1800, p => {
@@ -619,25 +665,16 @@ function renderChart(){
   });
   return fills;
 }
-function animateChart(fills){
-  fills.forEach((it, i) => animate(1500 + i*90, p => {
-    it.bar.setAttribute('width', it.wTarget * Math.min(1, p));
-    it.amt.textContent = money(it.monto * Math.min(1, p));
-  }));
-}
+function animateChart(fills){ fills.forEach((it, i) => animate(1500 + i*90, p => { it.bar.setAttribute('width', it.wTarget * Math.min(1, p)); it.amt.textContent = money(it.monto * Math.min(1, p)); })); }
 
 /* ---- Drivers + proyección --------------------------------------------- */
 function runProjection(){
   const wrap = $('drivers');
-  const items = [
-    {n:'Profondo (rifa + comida + garaje)', v:DR.profondo, c:'amber'},
-    {n:'Donaciones al presupuesto (efectivo)', v:DR.donacion, c:'amber'},
-    {n:'Donaciones en especie', v:DR.especie, c:'sky'},
-  ];
-  items.forEach(it => {
+  [{n:'Profondo (rifa + comida + garaje)', v:DR.profondo, c:'amber'},
+   {n:'Donaciones al presupuesto (efectivo)', v:DR.donacion, c:'amber'},
+   {n:'Donaciones en especie', v:DR.especie, c:'sky'}].forEach(it => {
     const d = document.createElement('div'); d.className = 'driver ' + it.c;
-    d.innerHTML = '<div class="dv">' + money(it.v) + '</div><div class="dn">' + it.n + '</div>';
-    wrap.appendChild(d);
+    d.innerHTML = '<div class="dv">' + money(it.v) + '</div><div class="dn">' + it.n + '</div>'; wrap.appendChild(d);
   });
   countUp('pr-superavit', D.superavit, n => (n >= 0 ? '+' : '') + money(n));
   countUp('pr-cuotas', D.cuotas, money);
@@ -661,7 +698,7 @@ function runProjection(){
   if (REDUCE) fill(); else setTimeout(fill, 120);
 }
 
-/* ---- Corresponsabilidad por área -------------------------------------- */
+/* ---- Corresponsabilidad ----------------------------------------------- */
 const AREA_COLOR = {'Guías':'#34D399', 'Música':'#FBBF24', 'Cocina':'#38BDF8', 'Directores':'#F2C572'};
 function renderAreas(){
   const grid = $('areas-grid');
@@ -670,17 +707,57 @@ function renderAreas(){
     const c = document.createElement('div'); c.className = 'area-card'; c.style.borderTopColor = col;
     const li = a.items.map(x => '<li>' + x + '</li>').join('');
     c.innerHTML = '<div class="area-h"><span class="area-name" style="color:' + col + '">' + a.area + '</span>'
-                + '<span class="area-amt">≈ ' + money(a.monto_indicativo) + '</span></div>'
-                + '<ul class="area-items">' + li + '</ul>';
-    grid.querySelectorAll && grid.appendChild(c);
+                + '<span class="area-amt">≈ ' + money(a.monto_indicativo) + '</span></div><ul class="area-items">' + li + '</ul>';
+    grid.appendChild(c);
   });
+}
+
+/* ---- Tracker de cuota del equipo (4 pagos · localStorage) ------------- */
+function renderTracker(){
+  const q = datos.equipoCuota, wrap = $('tracker'), KEY = 'etc88_cuota_v1';
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  const groups = {};
+  q.integrantes.forEach((p, idx) => { (groups[p.area] = groups[p.area] || []).push({nombre:p.nombre, idx:idx}); });
+  function recompute(){
+    let boxes = 0;
+    q.integrantes.forEach((p, idx) => { (saved[idx] || []).forEach(v => { if (v) boxes++; }); });
+    const total = boxes * q.pagoMonto;
+    setText('cuota-cobrado', money(total));
+    setText('cuota-boxes', boxes + ' / ' + (q.integrantes.length * q.pagos) + ' pagos · ' + q.integrantes.length + ' del equipo');
+    const pct = q.objetivo ? total / q.objetivo * 100 : 0;
+    $('cuota-bar').style.width = Math.min(100, pct) + '%';
+  }
+  let html = '';
+  Object.keys(groups).forEach(area => {
+    html += '<div class="trk-group"><div class="trk-area">' + area + ' · ' + groups[area].length + '</div>';
+    groups[area].forEach(p => {
+      let boxes = '';
+      for (let m = 0; m < q.pagos; m++){
+        const on = (saved[p.idx] && saved[p.idx][m]) ? ' on' : '';
+        boxes += '<button type="button" class="pay-box' + on + '" data-idx="' + p.idx + '" data-m="' + m + '">' + q.meses[m] + '</button>';
+      }
+      html += '<div class="trk-row"><span class="trk-name">' + p.nombre + '</span><div class="trk-boxes">' + boxes + '</div></div>';
+    });
+    html += '</div>';
+  });
+  wrap.innerHTML = html;
+  wrap.addEventListener('click', e => {
+    const b = e.target.closest('.pay-box'); if (!b) return;
+    const idx = b.dataset.idx, m = +b.dataset.m;
+    saved[idx] = saved[idx] || [];
+    saved[idx][m] = !saved[idx][m];
+    b.classList.toggle('on', !!saved[idx][m]);
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    recompute();
+  });
+  recompute();
 }
 
 /* ---- Reveal + init ---------------------------------------------------- */
 function onVisible(node, cb){
   if (!node) return;
   if (!('IntersectionObserver' in window)){ cb(); return; }
-  const io = new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting){ cb(); obs.disconnect(); } }); }, {threshold:.2});
+  const io = new IntersectionObserver((entries, obs) => { entries.forEach(e => { if (e.isIntersecting){ cb(); obs.disconnect(); } }); }, {threshold:.15});
   io.observe(node);
 }
 window.addEventListener('DOMContentLoaded', () => {
@@ -688,6 +765,7 @@ window.addEventListener('DOMContentLoaded', () => {
   mkCountdown('cpago', datos.fechaCierrePagos);
   mkCountdown('ret', datos.fechaRetiro);
   renderAreas();
+  renderTracker();
   let chartFills = null;
   onVisible($('kpis'), runKpis);
   onVisible($('costo-panel'), runCosto);
@@ -706,11 +784,9 @@ with open(out, 'w', encoding='utf-8') as f:
     f.write(html)
 
 print("OK  tablero_campana_etc88.html")
-print(f"    meta              RD$ {meta:,}")
-print(f"    costo/participante RD$ {part_costo:,.2f}  (operativo {part_oper:,.2f} + 10%)")
-print(f"    costo/equipo       RD$ {eq_costo:,.2f}")
-print(f"    composición part.  {' + '.join(f'{k} {v:,.2f}' for k,v in desglose.items())}")
-print(f"    drivers           Profondo {profondo:,} · efectivo {efectivo:,} · especie {especie:,}")
-print(f"    áreas             {', '.join(a['area']+' ≈'+format(a['monto_indicativo'],',') for a in corr['areas'])}")
-print(f"    proyección        RD$ {proyeccion:,}  · superávit RD$ {superavit:,}")
-print("    aritmética cuadra con data/estado.json ✓  (imagen ≡ LADO A del Maestro)")
+print(f"    meta confirmada    RD$ {meta:,}  (avanzada NO incluida)")
+print(f"    avanzada [PROP]    RD$ {av['total_estimado']:,}  ({av['personas']} pax · {av['comidas']['cantidad']} comidas + {av['hospedaje']['noches']} noche) → costo c/avanzada ≈ {meta+av['total_estimado']:,}")
+print(f"    costo/participante RD$ {part_costo:,.2f}  ·  costo/equipo RD$ {eq_costo:,.2f}")
+print(f"    cuota equipo       {n_pagos} × {eq_cuota_mensual:,} = {eq_cuota_total:,}  ·  tracker {len(integrantes)} nombres → meta {equipo_cuotas:,}")
+print(f"    áreas              {', '.join(a['area'] for a in corr['areas'])}")
+print("    aritmética cuadra con data/estado.json ✓")

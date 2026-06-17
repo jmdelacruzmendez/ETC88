@@ -253,6 +253,15 @@
         }
       }
     },
+    "avanzada_estimada": {
+      "estado": "propuesta",
+      "fuente": "director (17-jun, escenario jueves noche) · estimado, por cotizar con la casa/cocina",
+      "nota": "NO está en la meta confirmada (553,622); el rubro 'avanzada' del LADO A sigue en 0. ~15 personas suben el jueves 3-sep: 3 comidas extra (cena, desayuno, almuerzo) + 1 noche de hospedaje. Estimado: comidas 15×3×~100 = 4,500 + hospedaje 15×1×~1,000 = 15,000. Cotizar el monto real con la casa y cocina; al confirmarse, sube a rubros.avanzada y recalcula la meta. Inconsistencia a resolver: ICS dice avanzada jueves 3-sep; el horario de la Carpeta pone a Cocina llegando viernes 10 AM.",
+      "personas": 15,
+      "comidas": { "cantidad": 3, "precio_unitario_est": 100, "subtotal": 4500 },
+      "hospedaje": { "noches": 1, "precio_persona_noche_est": 1000, "subtotal": 15000 },
+      "total_estimado": 19500
+    },
     "plan_recaudacion": {
       "estado": "confirmado",
       "fuente": "director · Análisis y Plan de Recaudación 14-jun-2026",
