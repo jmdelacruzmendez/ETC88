@@ -19,6 +19,7 @@ Uso: python scripts/build_campana.py
 import json
 import os
 import base64
+import urllib.parse
 import datetime as dt
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -163,12 +164,24 @@ for g in presupuesto:
 
 # Aplicativo "Apadrina la Misión 88": selector (carta + lo que falta + rubros) + WhatsApp
 WA_CONTACTS = EST['marca']['contacto_whatsapp']['contactos']
-_sel = ['<option value="carta" data-tipo="carta" data-label="Carta de donación" selected>Pedir una carta de donación</option>',
+_sel = ['<option value="__sel" hidden>— elegido desde el presupuesto —</option>',
+        '<option value="carta" data-tipo="carta" data-label="Carta de donación" selected>Pedir una carta de donación</option>',
         f'<option data-tipo="meta" data-label="Lo que falta de la misión" data-monto="{brecha}">Lo que falta de la misión — {money(brecha)}</option>']
 for g in presupuesto:
     if g['subtotal'] > 0:
         _sel.append(f'<option data-tipo="rubro" data-label="{_esc(g["rubro"])}" data-monto="{g["subtotal"]}">{g["rubro"]} — {money(g["subtotal"])}</option>')
 APAD_OPTS = "".join(_sel)
+
+# Botones de WhatsApp renderizados en el HTML (funcionan aun SIN JS: llevan href y
+# nombre del director; el JS solo refina el mensaje según lo elegido).
+WA_ICON = ('<svg class="wa-ic" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor">'
+           '<path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.04 20.15h-.003a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01s-.43.06-.66.31c-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>')
+_wa_default = urllib.parse.quote("Hola. Quiero apoyar el ETC · Misión 88 (Encuentro Total con Cristo).")
+wa_btns = "".join(
+    f'<a class="wa-btn" id="wa-{i}" target="_blank" rel="noopener" '
+    f'href="https://wa.me/{c["wa"]}?text={_wa_default}">{WA_ICON}'
+    f'<span class="wa-name" id="wa-{i}-n">WhatsApp a {c["nombre"]}</span></a>'
+    for i, c in enumerate(WA_CONTACTS))
 
 datos_js = json.dumps({"costoTotal": meta, "cuotas": cuotas, "brecha": brecha,
                        "fechaCierrePagos": FECHA_CPAGO, "fechaRetiro": FECHA_RET, "locale": "es-DO", "moneda": "RD$",
@@ -292,9 +305,11 @@ CSS = r'''
   .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#053a1e;font-weight:800;padding:13px 20px;border-radius:100px;text-decoration:none;font-size:1rem}
   .wa-btn:hover{filter:brightness(1.07)}
   .apad-note{color:var(--muted2);font-size:.85rem;margin-top:12px}
-  .apad-mini{font-family:inherit;cursor:pointer;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#7ef0a8;border-radius:100px;padding:3px 11px;font-size:.72rem;font-weight:700;white-space:nowrap}
+  .apad-mini{font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;min-height:30px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#8df3b3;border-radius:100px;padding:5px 13px;font-size:.76rem;font-weight:700;white-space:nowrap}
   .apad-mini:hover{background:rgba(37,211,102,.26)}
-  .rub-mini{margin-bottom:8px}
+  .apad-mini:active{transform:scale(.97)}
+  .rub-mini{margin-bottom:10px}
+  .wa-btn .wa-ic{flex:none}
   .pres-it .pi-n{grid-column:1;grid-row:1}
   .pres-it .apad-mini{grid-column:2;grid-row:2;justify-self:end;margin-top:2px}
   .qbig.hl{font-size:clamp(2.1rem,7vw,3.3rem);color:var(--gold)}
@@ -346,19 +361,24 @@ recompute();
 /* apadrinar por WhatsApp */
 (function(){
   var WA = datos.wa || [];
+  var s = $('apad-sel');
   var sel = {label:'Carta de donación', monto:null, tipo:'carta'};
   function msg(){ var n=(($('apad-name')||{}).value||'').trim(); var hi = n ? ('Hola, soy '+n+'. ') : 'Hola. ';
     if(sel.tipo==='carta') return hi+'Quiero pedir una carta de donación para el ETC · Misión 88 (Encuentro Total con Cristo).';
+    if(sel.tipo==='meta')  return hi+'Me gustaría aportar a lo que falta de la misión'+(sel.monto?(' ('+money(sel.monto)+')'):'')+' del ETC · Misión 88.';
     return hi+'Me gustaría apadrinar: '+sel.label+(sel.monto?(' ('+money(sel.monto)+')'):'')+' para el ETC · Misión 88.'; }
   function upd(){ var t=encodeURIComponent(msg());
-    WA.forEach(function(c,i){ var a=$('wa-'+i); if(a){ a.href='https://wa.me/'+c.num+'?text='+t; a.textContent='WhatsApp a '+c.n; } });
-    var r=$('apad-read'); if(r){ r.innerHTML = sel.tipo==='carta' ? 'Vas a: <b>pedir una carta de donación</b>' : 'Vas a apadrinar: <b>'+sel.label+'</b>'+(sel.monto?(' — '+money(sel.monto)):''); } }
+    WA.forEach(function(c,i){ var a=$('wa-'+i); if(a) a.href='https://wa.me/'+c.num+'?text='+t; var e=$('wa-'+i+'-n'); if(e) e.textContent='WhatsApp a '+c.n; });
+    var r=$('apad-read'); if(r){ r.innerHTML = sel.tipo==='carta' ? 'Vas a: <b>pedir una carta de donación</b>'
+      : (sel.tipo==='meta' ? 'Vas a: <b>aportar a lo que falta</b>'+(sel.monto?(' — '+money(sel.monto)):'')
+        : 'Vas a apadrinar: <b>'+sel.label+'</b>'+(sel.monto?(' — '+money(sel.monto)):'')); } }
   function setSel(label,monto,tipo){ sel={label:label||'Carta de donación', monto:(monto?+monto:null), tipo:tipo||'item'}; upd(); }
-  var s=$('apad-sel'); if(s){ s.addEventListener('change',function(e){ var o=e.target.selectedOptions[0]; setSel(o.dataset.label||o.textContent, o.dataset.monto, o.dataset.tipo); }); }
+  if(s){ s.addEventListener('change',function(e){ var o=e.target.selectedOptions[0]; setSel(o.dataset.label||o.textContent, o.dataset.monto, o.dataset.tipo); }); }
   var nm=$('apad-name'); if(nm){ nm.addEventListener('input', upd); }
-  document.addEventListener('click', function(e){ var b=e.target.closest('[data-apad]'); if(!b) return; e.preventDefault(); e.stopPropagation();
+  document.addEventListener('click', function(e){ var b=e.target.closest('[data-apad]'); if(!b) return; e.preventDefault();
     setSel(b.dataset.label, b.dataset.monto, b.dataset.tipo);
-    var p=document.getElementById('apad-panel'); if(p) p.scrollIntoView({behavior:'smooth',block:'start'}); });
+    if(s){ var fi=-1; for(var k=0;k<s.options.length;k++){ if(s.options[k].getAttribute('data-label')===b.dataset.label){fi=k;break;} } s.selectedIndex = fi>=0?fi:0; }
+    var p=$('apad-panel'); if(p) p.scrollIntoView({behavior:'smooth',block:'start'}); });
   upd();
 })();
 '''.replace('__DATOS_JS__', datos_js)
@@ -401,7 +421,7 @@ cd_cell = lambda v, lbl, idp: f'<div class="cd-cell"><div class="cd-num" id="{id
 
 BODY = f'''
 <div class="stars" id="stars" aria-hidden="true"></div>
-<div class="wrap">
+<main class="wrap">
   <header class="reveal">
     {LOGO_HTML}
     <h1>ETC · Misión 88</h1>
@@ -492,10 +512,7 @@ BODY = f'''
       <label class="apad-f"><span>¿Qué quieres apoyar?</span><select id="apad-sel">{APAD_OPTS}</select></label>
     </div>
     <div class="apad-read" id="apad-read">Vas a: <b>pedir una carta de donación</b></div>
-    <div class="apad-btns">
-      <a class="wa-btn" id="wa-0" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="wa-btn" id="wa-1" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
+    <div class="apad-btns">{wa_btns}</div>
     <p class="apad-note">Se abre WhatsApp con el mensaje ya escrito; tú solo lo revisas y envías. El donante elige a qué director escribir.</p>
   </section>
 
@@ -510,10 +527,11 @@ BODY = f'''
     Hecho por la tripulación · desde data/estado.json y el Presupuesto Maestro · actualizado {ACTUALIZADO}.<br>
     La avanzada del equipo (jueves, ~{av['personas']} personas: {av['comidas']['cantidad']} comidas + {av['hospedaje']['noches']} noche) está como PROPUESTA y NO se suma al costo. El control de pagos por nombre es interno (Excel de Tesorería).
   </footer>
-</div>'''
+</main>'''
 
 PAGE = ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+        '<meta name="description" content="ETC · Misión 88: lo que cuesta la misión y cómo, como tripulación, la hacemos posible. Apadrina un rubro o pide una carta de donación.">'
         '<title>ETC · Misión 88 · Tablero de la Tripulación</title>'
         '<style>' + CSS + '</style></head>'
         '<body class="no-js">' + BODY +
