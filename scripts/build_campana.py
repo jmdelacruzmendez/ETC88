@@ -18,6 +18,7 @@ Uso: python scripts/build_campana.py
 """
 import json
 import os
+import base64
 import datetime as dt
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -324,6 +325,15 @@ PATCH = r'''<svg class="patch" viewBox="0 0 200 200" role="img" aria-label="ETC 
   <text x="100" y="178" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="4" fill="#fff" font-family="-apple-system,Segoe UI,Roboto,sans-serif">MISIÓN 88</text>
 </svg>'''
 
+# Logo original Misión 88 (extraído del chat, fondo transparente). Si existe el
+# archivo, se incrusta tal cual (base64, self-contained); si no, cae al SVG.
+_logo_path = os.path.join(REPO, 'design', 'logo_mision88.png')
+if os.path.exists(_logo_path):
+    _b64 = base64.b64encode(open(_logo_path, 'rb').read()).decode()
+    LOGO_HTML = '<img class="patch" src="data:image/png;base64,' + _b64 + '" alt="ETC · Misión 88">'
+else:
+    LOGO_HTML = PATCH
+
 ROCKET = r'''<svg viewBox="0 0 160 430">
   <defs><linearGradient id="fuelG" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0c8fce"/><stop offset="55%" stop-color="#34D399"/><stop offset="100%" stop-color="#A7F3D0"/></linearGradient>
   <clipPath id="bodyClip"><rect x="55" y="78" width="50" height="250" rx="12"/></clipPath></defs>
@@ -343,7 +353,7 @@ BODY = f'''
 <div class="stars" id="stars" aria-hidden="true"></div>
 <div class="wrap">
   <header class="reveal">
-    {PATCH}
+    {LOGO_HTML}
     <h1>ETC · Misión 88</h1>
     <p class="sub">Lo que cuesta la misión, y cómo —trabajando como tripulación— la hacemos posible</p>
     <p class="cita">«{cita['valor']}»<b>{cita['cita']}</b></p>
