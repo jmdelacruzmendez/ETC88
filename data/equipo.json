@@ -619,9 +619,10 @@
         "estado_equipo": "confirmado",
         "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable). Incluye también la organización de las Actividades Profondo (#1 31-jul→2-ago) — el equipo de Profondo es el MISMO que el de Recaudación (decisión director 10-jun-2026).",
         "responsable": {
-          "valor": "Por nombrar (Co-Dir decide)",
-          "estado": "pendiente",
-          "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables."
+          "valor": "Dorian",
+          "estado": "confirmado",
+          "fuente": "director (18-jun-2026)",
+          "nota": "Dorian coordina Recaudación/Profondo (confirmado 18-jun). A definir en reunión: si Profondo solo monta la actividad/estrategia o si comparte con Finanzas la gestión económica. (Roberto Figueroa y Guido solo aportaron ideas en el formulario col 18.)"
         },
         "miembros": [
           "Dorian",
@@ -661,9 +662,10 @@
         "estado_equipo": "confirmado",
         "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
         "responsable": {
-          "valor": "Por nombrar dentro del equipo (Co-Dir decide)",
-          "estado": "pendiente",
-          "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección."
+          "valor": "Luisa",
+          "estado": "confirmado",
+          "fuente": "director (18-jun-2026)",
+          "nota": "Luisa = responsable única de Tesorería (confirmada 18-jun). Desbloquea el inicio de la recaudación (medida #3 Informe 85). Equipo: Risaira, Dayrelins."
         },
         "miembros": [
           "Luisa",
@@ -902,10 +904,10 @@
     "gaps_post_informe_85": {
       "_nota": "Recomendaciones tomadas del Informe Final ETC 85. Cada una es [PROPUESTA] / [POR DEFINIR] hasta que el director la apruebe.",
       "responsable_financiero": {
-        "valor": null,
-        "estado": "pendiente",
-        "fuente": "Informe 85 + director (3-jun)",
-        "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)."
+        "valor": "Luisa (responsable de Tesorería) · equipo: Risaira, Dayrelins",
+        "estado": "confirmado",
+        "fuente": "director (18-jun-2026)",
+        "nota": "Confirmado: Luisa lidera Tesorería (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real."
       },
       "informe_post_retiro": {
         "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.",
@@ -1172,6 +1174,7 @@
       "10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).",
       "10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.",
       "18-jun-2026: Director confirma miembros de equipos auxiliares — Profondo/Recaudación: Dorian, Daylin, Kelvin, Ivanna, Wilka · Intersección (diáspora): Isauris, Carol, Kharla Vanessa · Finanzas/Tesorería: Luisa, Risaira, Dayrelins.",
+      "18-jun-2026: Líderes confirmados — Tesorería: Luisa · Recaudación/Profondo: Dorian. Transporte/Guagua se difiere (no prioritario; se define cerca del retiro). A reunión: definición de cuentas de recaudo y si Profondo solo monta actividad/estrategia o comparte con Finanzas la gestión económica. Exención de la casa con el P. Paul: se gestiona cuando el monto esté firme.",
       "10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.",
       "10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.",
       "10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.",
@@ -1213,8 +1216,8 @@
         "Ivanna",
         "Wilka"
       ],
-      "responsable_sugerido": "Por nombrar (Co-Dir decide)",
-      "responsable_estado": "pendiente"
+      "responsable_sugerido": "Dorian",
+      "responsable_estado": "confirmado"
     },
     {
       "nombre": "Guagua (Transporte)",
@@ -1245,8 +1248,8 @@
         "Risaira",
         "Dayrelins"
       ],
-      "responsable_sugerido": "Por nombrar dentro del equipo (Co-Dir decide)",
-      "responsable_estado": "pendiente"
+      "responsable_sugerido": "Luisa",
+      "responsable_estado": "confirmado"
     }
   ],
   "marca": {

@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 56 confirmados · 11 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 59 confirmados · 11 propuestas · 4 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
@@ -36,6 +36,8 @@
 | `marca.lema_retiro` | Donde está tu tesoro, allí estará tu corazón | director | Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro… |
 | `marca.hilo_espiritual` | El corazón y el tesoro (Mt 6,21): donde pongo mi tesoro, all… | director |  |
 | `marca.tematica` | expedición · el tesoro y el corazón | director | Temática confirmada: la expedición es hacia adentro — la brújula del c… |
+| `equipos_auxiliares[0].responsable` | Dorian | director (18-jun-2026) | Dorian coordina Recaudación/Profondo (confirmado 18-jun). A definir en… |
+| `equipos_auxiliares[3].responsable` | Luisa | director (18-jun-2026) | Luisa = responsable única de Tesorería (confirmada 18-jun). Desbloquea… |
 | `comunidades_y_parroquias.parroquia_spm` | San José Obrero (SPM) | director | Parroquia de referencia en SPM (misas etecianas y posibles actividades… |
 | `comunidades_y_parroquias.parroquia_pc` | Nuestra Señora del Pilar (Punta Cana) | director | Parroquia en PC con representación del 88 en el equipo; aún no se han … |
 | `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |
@@ -65,6 +67,7 @@
 | `historial.drive_88_carpetas_vacias` | ["Operaciones", "Finanzas"] | exploración Drive 2026-06-02 | Las subcarpetas Operaciones y Finanzas del ETC 88 están vacías (los pa… |
 | `historial.revision_cruzada_completa` | 78/79/83/85 revisados a fondo 2026-06-04 | Drive: lectura de los 5 folders | Síntesis en preparacion/RESUMEN_MIGRACION_ETCS.md. 79 tiene el set doc… |
 | `historial.asesoras_cocina_continuidad` | Petra Morales + Johanny García sirvieron en ETC 83 y ETC 85 | Informe Final ETC 85 (roster: 'Asesores de cocina: Johani y Petra') + Presupuesto cocina ETC 83 | Continuidad de asesoras de cocina confirmada en 83 y 85. Son cantera c… |
+| `gaps_post_informe_85.responsable_financiero` | Luisa (responsable de Tesorería) · equipo: Risaira, Dayrelin… | director (18-jun-2026) | Confirmado: Luisa lidera Tesorería (medida financiera #3 del Informe 8… |
 | `mapa_donaciones_por_rubro.zonas.spm` | San Pedro de Macorís — parroquia San José Obrero + comercios… | director |  |
 | `mapa_donaciones_por_rubro.zonas.higuey` | Higüey — cerca de la casa, proveedores locales (insumos pesa… | ubicación de la casa |  |
 | `mapa_donaciones_por_rubro.zonas.pc` | Punta Cana — parroquia Nuestra Señora del Pilar + hoteles pa… | director |  |
@@ -87,13 +90,10 @@
 ## 🔴 Pendientes (faltan — se muestran [POR DEFINIR])
 | Campo | Valor | Fuente | Nota |
 |---|---|---|---|
-| `equipos_auxiliares[0].responsable` | Por nombrar (Co-Dir decide) | — | Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas d… |
 | `equipos_auxiliares[2].responsable` | Por nombrar (Co-Dir decide) | — | El director clarificó (3-jun) que Intersección es tradicionalmente la … |
-| `equipos_auxiliares[3].responsable` | Por nombrar dentro del equipo (Co-Dir decide) | — | El director (3-jun) pidió identificar responsable o equipo financiero … |
 | `pendientes_direccion.fecha_limite_cotizar_transporte` | None | director | Fecha límite para cotizar transporte, biblias y peces. Definir. |
 | `pendientes_direccion.asignacion_entradas` | None | director | Política de earmark (qué entrada se destina a qué compromiso). Se revi… |
 | `pendientes_direccion.visiteo_coordinadores_casa` | None | director | Visiteo OBLIGATORIO de coordinadores a la casa de retiro ANTES del ret… |
-| `gaps_post_informe_85.responsable_financiero` | None | Informe 85 + director (3-jun) | Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxil… |
 
 ## Decisiones confirmadas (lista del director)
 - Retiro ETC 88: 4–6 de septiembre de 2026, Casa de Retiro La Ceiba del Salado, Higüey.
@@ -129,6 +129,7 @@
 - 10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).
 - 10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.
 - 18-jun-2026: Director confirma miembros de equipos auxiliares — Profondo/Recaudación: Dorian, Daylin, Kelvin, Ivanna, Wilka · Intersección (diáspora): Isauris, Carol, Kharla Vanessa · Finanzas/Tesorería: Luisa, Risaira, Dayrelins.
+- 18-jun-2026: Líderes confirmados — Tesorería: Luisa · Recaudación/Profondo: Dorian. Transporte/Guagua se difiere (no prioritario; se define cerca del retiro). A reunión: definición de cuentas de recaudo y si Profondo solo monta actividad/estrategia o comparte con Finanzas la gestión económica. Exención de la casa con el P. Paul: se gestiona cuando el monto esté firme.
 - 10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.
 - 10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.
 - 10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.
