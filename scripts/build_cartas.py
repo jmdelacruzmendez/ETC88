@@ -136,26 +136,19 @@ def destinatario(doc, lineas):
 def carta_induveca():
     doc = new_doc()
     membrete(doc, FECHA_HOY)
-    destinatario(doc, ['Señores', 'INDUVECA (Grupo SID)',
-                       "At'n.: Departamento de Responsabilidad Social",
+    destinatario(doc, ['Señora', 'Daisy Medina', 'Induveca (Grupo SID)',
                        'Av. Máximo Gómez #182, Santo Domingo, R.D.'])
     _p(doc, SALUDO)
     _p(doc, ACTIVIDAD)
     _p(doc, 'Conocedores del compromiso social de Grupo SID con las familias dominicanas, '
-            'apelamos a la generosidad de Induveca solicitando su colaboración con embutidos y '
-            'productos cárnicos de su línea —que ya forman parte de nuestro presupuesto de '
-            'cocina— para alimentar a los jóvenes durante el retiro, tales como:')
-    table(doc, ['Cantidad (aprox.)', 'Unidad', 'Producto Induveca'], [
-        ['12', 'barras (3 lb)', 'Salami Super Especial'],
-        ['12', 'libras', 'Jamón'],
-        ['8', 'libras', 'Salchichón'],
-        ['8', 'libras', 'Mortadela'],
-        ['6', 'paquetes', 'Salchichas'],
-    ])
-    _p(doc, 'Si dentro del Grupo SID fuera posible, también nos ayudaría muchísimo el aceite '
-            'comestible (Crisol / Mazola) y la harina de MercaSID. Cualquier aporte, en producto '
-            'o en efectivo, será de gran ayuda; por ser una asociación de fieles de la Diócesis '
-            'de San Pedro de Macorís podemos emitir la constancia de su donación que requieran, y '
+            'apelamos a la generosidad de Induveca solicitando su colaboración, según su '
+            'disponibilidad, con productos de su línea de embutidos y cárnicos (jamón, salami, '
+            'salchichón, mortadela, salchichas, entre otros) para la alimentación de los jóvenes '
+            'durante el fin de semana del retiro.')
+    _p(doc, 'Si dentro del Grupo SID fuera posible, también nos ayudaría el aceite comestible '
+            '(Crisol / Mazola) y la harina de MercaSID. Cualquier aporte, en producto o en '
+            'efectivo, será de gran ayuda; por ser una asociación de fieles de la Diócesis de '
+            'San Pedro de Macorís podemos emitir la constancia de su donación que requieran, y '
             'con gusto los incluimos en nuestra cadena de oración.')
     _p(doc, DESPEDIDA)
     firma(doc)
