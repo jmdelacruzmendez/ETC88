@@ -24,6 +24,7 @@ python scripts/build_trabajo.py
 python scripts/build_entrega_diseno.py
 python scripts/build_doc_trabajo_88.py
 python scripts/build_carpeta_docx.py
+python scripts/build_cartas.py
 echo "== Compuerta de verificación =="
 python scripts/verify.py
 echo "== Listo. Si dice TODO PASS, el sistema está coherente. =="

@@ -149,7 +149,7 @@ Buscar **donado** (no comprado). Opciones por atractivo/facilidad:
 |---|---|---|
 | **Arroz, habichuelas, aceite** | Parroquia del Padre Paul | **[DATO]** (donado en el 78) |
 | Pollo / fajitas de res | Carnicerías SPM | [PROPUESTA] (en 78 donó Joan Felix) |
-| Lácteos (leche, evaporada, mantequilla, crema) | **Iberia**, Pricesmart | [PROPUESTA] (Iberia confirmado 78) |
+| Lácteos (leche, evaporada, mantequilla, crema) | **Iberia**, Pricesmart | [PROPUESTA] (Iberia: SOLICITADO 78; especie probable —presupuesto 78—, no efectivo · verificar) |
 | Frutas y vegetales | Agricultores/supermercados SPM | [PROPUESTA] (en 78 donó Eduardo) |
 | Café · galletas · pan | Iberia · panadería local | [PROPUESTA] |
 | Refrescos | Embotelladoras locales | [PROPUESTA] |
@@ -209,7 +209,7 @@ Fechas 4–6 sep 2026 · Casa de Retiro La Ceiba del Salado, Higüey · 100 pers
 | Prioridad | Destinatario | Plantilla | Pedir |
 |---|---|:--:|---|
 | **1 · mayor probabilidad** | Padre Paul (parroquia base) | B | exención (RNC) + vino + formas + rosarios + arroz/habichuelas/aceite |
-| 1 | Iberia | A | lácteos · pan (donante confirmado 78) |
+| 1 | Iberia | A | lácteos · pan (SOLICITADO 78; especie probable, no confirmada) |
 | 1 | Print Mate (SPM) | A | impresión talonarios rifa + cancionero + carnets |
 | 1 | Multibox (SPM) | A | cofre de palancas + cajas |
 | 1 | Cactus (SPM) | A | libretas/cuadernos PG · papelería |

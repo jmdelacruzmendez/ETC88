@@ -60,8 +60,8 @@
       },
       "co_direccion": {
         "valor": [
-          "Juan Manuel de la Cruz",
-          "Jean Carlo de la Cruz"
+          "Juan Manuel de la Cruz Méndez",
+          "Jean Carlo de la Cruz Méndez"
         ],
         "estado": "confirmado",
         "fuente": "director"
@@ -984,7 +984,7 @@
           "sectores_propuesta": [
             "MERCADOM",
             "El Suplidor",
-            "Iberia (lácteos · ETC 78)",
+            "Iberia (SOLICITADO 78 por carta; especie probable —5 víveres del presupuesto 78—, NO efectivo · verificar)",
             "Pricemart",
             "agricultores SPM/PC",
             "carnicerías SPM"

@@ -16,7 +16,7 @@
 | `retiro.romano` | LXXXVIII | director |  |
 | `retiro.fechas` | 4–6 de septiembre de 2026 | director |  |
 | `retiro.lugar` | Casa de Retiro La Ceiba del Salado, Higüey | director |  |
-| `retiro.co_direccion` | ["Juan Manuel de la Cruz", "Jean Carlo de la Cruz"] | director |  |
+| `retiro.co_direccion` | ["Juan Manuel de la Cruz Méndez", "Jean Carlo de la Cruz Mén… | director |  |
 | `reglas.parejas_guias` | 7 | director | REGLA: 7 parejas de guías (14 guías). No hay más ni menos parejas. Lo … |
 | `reglas.participantes_solo_mayores` | True | director (3-jun) | El ETC 88 NO admite menores de edad como participantes. Por tanto NO e… |
 | `reglas.camiseta_solo_equipo` | True | director (3-jun) | La camiseta es SOLO del equipo de servidores. Los participantes NO lle… |
