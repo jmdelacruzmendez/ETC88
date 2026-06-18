@@ -182,6 +182,24 @@ def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY):
     firma_imagen(doc)
     doc.save(out_name); print(f'Wrote {out_name}')
 
+def carta_personal_firmada(destino_lineas, out_name, fecha=FECHA_HOY):
+    """Carta a padrino/particular CON firma+sello reales — solo cambia fecha y nombre."""
+    doc = new_doc()
+    membrete(doc, fecha)
+    destinatario(doc, destino_lineas)
+    _p(doc, SALUDO); _p(doc, ACTIVIDAD)
+    _p(doc, 'Para que ningún joven se quede fuera por razones económicas, te invitamos a '
+            'APADRINAR de una de estas formas:')
+    for b in [f'Beca de un joven (su cuota): {CUOTA_TXT}',
+              'Una Biblia o un pez con el nombre del padrino y del participante',
+              'Un aporte libre, en el monto que decidas']:
+        doc.add_paragraph(style='List Bullet').add_run(b)
+    _p(doc, 'Puedes hacerlo por transferencia [cuenta — POR DEFINIR]. Con gusto te emitimos una '
+            'constancia y te incluimos en nuestra cadena de oración y en la Misa de clausura.')
+    _p(doc, DESPEDIDA)
+    firma_imagen(doc)
+    doc.save(out_name); print(f'Wrote {out_name}')
+
 def carta_modelo_empresa():
     doc = new_doc()
     _p(doc, f'MODELO — Carta a Empresa / Negocio · ETC {NUM}', bold=True, align=CEN, size=16, color=MAR)
@@ -357,6 +375,7 @@ def main():
     carta_induveca(firmada=True)
     carta_modelo_empresa()
     carta_modelo_personal()
+    carta_personal_firmada(['Estimado(a) [nombre]', '[ciudad]'], f'{REPO}/Carta_Modelo_Personal_FIRMADA_ETC88.docx')
     directorio_doc()
     donantes_doc()
     write_tracker()
@@ -370,5 +389,10 @@ if __name__ == '__main__':
         lineas = ['Señores', donante] + ([f"At'n.: {atn}"] if atn else [])
         slug = ''.join(c if c.isalnum() else '_' for c in donante).strip('_')[:40]
         carta_firmada(lineas, f'{REPO}/Carta_Firmada_{slug}.docx')
+    elif len(sys.argv) >= 3 and sys.argv[1] == 'firmada-personal':
+        # On-demand particular: python scripts/build_cartas.py firmada-personal "Nombre"
+        nombre = sys.argv[2]
+        slug = ''.join(c if c.isalnum() else '_' for c in nombre).strip('_')[:40]
+        carta_personal_firmada([f'Estimado(a) {nombre}', '[ciudad]'], f'{REPO}/Carta_Firmada_Personal_{slug}.docx')
     else:
         main()
