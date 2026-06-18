@@ -143,8 +143,8 @@ def carta_induveca():
     _p(doc, 'Conocedores del compromiso social de Grupo SID con las familias dominicanas, '
             'apelamos a la generosidad de Induveca solicitando su colaboración, según su '
             'disponibilidad, con productos de su línea de embutidos y cárnicos (jamón, salami, '
-            'salchichón, mortadela, salchichas, entre otros) para la alimentación de los jóvenes '
-            'durante el fin de semana del retiro.')
+            'salchichón, mortadela, salchichas), entre otros productos de su marca, para la '
+            'alimentación de los jóvenes durante el fin de semana del retiro.')
     _p(doc, 'Si dentro del Grupo SID fuera posible, también nos ayudaría el aceite comestible '
             '(Crisol / Mazola) y la harina de MercaSID. Cualquier aporte, en producto o en '
             'efectivo, será de gran ayuda; por ser una asociación de fieles de la Diócesis de '
