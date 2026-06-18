@@ -128,6 +128,7 @@
 - 10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.
 - 10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).
 - 10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.
+- 18-jun-2026: Director confirma miembros de equipos auxiliares — Profondo/Recaudación: Dorian, Daylin, Kelvin, Ivanna, Wilka · Intersección (diáspora): Isauris, Carol, Kharla Vanessa · Finanzas/Tesorería: Luisa, Risaira, Dayrelins.
 - 10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.
 - 10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.
 - 10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.
