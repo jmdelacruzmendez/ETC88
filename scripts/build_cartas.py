@@ -28,6 +28,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 REPO = '/home/user/ETC88'
 LOGO = f'{REPO}/data/logo_etc.png'
+FIRMA_SELLO = f'{REPO}/data/firma_sello.png'  # firma+sello reales (recorte del escaneo firmado)
 D = json.load(open(f'{REPO}/data/equipo.json'))
 EST = D['estado']
 
@@ -109,6 +110,15 @@ def firma(doc):
     t.rows[2].cells[1].paragraphs[0].add_run(TELS[1] if len(TELS) > 1 else '')
     _p(doc, f'Co-Dirección · Encuentro Total con Cristo (ETC) {NUM}')
 
+def firma_imagen(doc):
+    """Inserta la firma+sello reales (data/firma_sello.png, recorte del escaneo firmado).
+    Solo con autorización de la Co-Dirección. Si falta el archivo, cae a la firma tipográfica."""
+    _p(doc)
+    if os.path.exists(FIRMA_SELLO):
+        doc.add_paragraph().add_run().add_picture(FIRMA_SELLO, width=Inches(6.2))
+    else:
+        firma(doc)
+
 SALUDO = ('Reciba un afectuoso saludo de nuestra parte y que la paz y el amor de Dios esté '
           'llenando cada espacio de su vida. Después de un cordial saludo en Cristo Jesús, '
           'hacemos de su conocimiento que el Encuentro Total con Cristo (ETC), asociación de '
@@ -133,7 +143,7 @@ def destinatario(doc, lineas):
     _p(doc)
 
 # ------------------------------------------------------------------ cartas ----
-def carta_induveca():
+def carta_induveca(firmada=False):
     doc = new_doc()
     membrete(doc, FECHA_HOY)
     destinatario(doc, ['Señora', 'Daisy Medina', 'Induveca (Grupo SID)',
@@ -151,9 +161,26 @@ def carta_induveca():
             'San Pedro de Macorís podemos emitir la constancia de su donación que requieran, y '
             'con gusto los incluimos en nuestra cadena de oración.')
     _p(doc, DESPEDIDA)
-    firma(doc)
-    out = f'{REPO}/Carta_Induveca_ETC88.docx'
+    (firma_imagen if firmada else firma)(doc)
+    out = f'{REPO}/Carta_Induveca_FIRMADA_ETC88.docx' if firmada else f'{REPO}/Carta_Induveca_ETC88.docx'
     doc.save(out); print(f'Wrote {out}')
+
+def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY):
+    """Carta de donación a empresa CON firma+sello reales — solo cambian fecha y donante.
+    Cuerpo general (apto para cualquier donante)."""
+    doc = new_doc()
+    membrete(doc, fecha)
+    destinatario(doc, donante_lineas)
+    _p(doc, SALUDO); _p(doc, ACTIVIDAD)
+    _p(doc, 'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
+            'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
+            'nos haga una donación para este retiro, de forma que sirva de apoyo a nuestro '
+            'presupuesto general. Por ser asociación de fieles de la Diócesis de San Pedro de '
+            'Macorís podemos emitir la constancia de su donación; con gusto lo incluimos en '
+            'nuestra cadena de oración.')
+    _p(doc, DESPEDIDA)
+    firma_imagen(doc)
+    doc.save(out_name); print(f'Wrote {out_name}')
 
 def carta_modelo_empresa():
     doc = new_doc()
@@ -326,7 +353,8 @@ def write_tracker():
     print(f'Wrote {path}')
 
 def main():
-    carta_induveca()
+    carta_induveca(firmada=False)
+    carta_induveca(firmada=True)
     carta_modelo_empresa()
     carta_modelo_personal()
     directorio_doc()
@@ -334,4 +362,13 @@ def main():
     write_tracker()
 
 if __name__ == '__main__':
-    main()
+    import sys
+    if len(sys.argv) >= 3 and sys.argv[1] == 'firmada':
+        # On-demand: python scripts/build_cartas.py firmada "Razón social" ["At'n. nombre"]
+        donante = sys.argv[2]
+        atn = sys.argv[3] if len(sys.argv) > 3 else None
+        lineas = ['Señores', donante] + ([f"At'n.: {atn}"] if atn else [])
+        slug = ''.join(c if c.isalnum() else '_' for c in donante).strip('_')[:40]
+        carta_firmada(lineas, f'{REPO}/Carta_Firmada_{slug}.docx')
+    else:
+        main()
