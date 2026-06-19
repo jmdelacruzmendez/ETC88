@@ -60,8 +60,8 @@
       },
       "co_direccion": {
         "valor": [
-          "Juan Manuel de la Cruz",
-          "Jean Carlo de la Cruz"
+          "Juan Manuel de la Cruz Méndez",
+          "Jean Carlo de la Cruz Méndez"
         ],
         "estado": "confirmado",
         "fuente": "director"
@@ -167,6 +167,105 @@
         "fuente": "director · Presupuesto Maestro 14-jun-2026",
         "nota": "El modelo del Maestro asume 50 participantes (cierre con 48 op + 2 asesoras cocina = 50 equipo cubierto + 50 part = 100 personas en casa). El rango operativo sigue siendo 45–50."
       },
+      "costos_por_persona": {
+        "estado": "confirmado",
+        "fuente": "director · papel de estimación de precios y distribución (17-jun-2026)",
+        "nota": "Reparto del costo OPERATIVO (503,293) entre 50 participantes y 50 de equipo cubierto. El participante asume biblias+peces, su propio bus y materiales de guía; casa, música y litúrgico se prorratean entre 100 personas. 'con_imprevistos' aplica el 10% (×1.1) y amarra con la meta total 553,622 (327,446 + 226,176 ≈ 553,622). Reemplaza el placeholder previo (6,660.56 / 1,093). Las cuotas firmes (256,000) cuentan 53 de equipo; el reparto de costo usa 50 — no se contradicen.",
+        "mostrar": "con_imprevistos",
+        "base_personas": {
+          "participantes": 50,
+          "equipo": 50
+        },
+        "participante": {
+          "cuota": 3000,
+          "operativo_persona": 5953.56,
+          "con_imprevistos_persona": 6548.92,
+          "operativo_total_50": 297678,
+          "desglose_persona": {
+            "casa": 2000,
+            "cocina": 1455.56,
+            "biblias_y_peces": 1280,
+            "transporte": 680,
+            "guias": 340,
+            "liturgico": 153,
+            "musica": 45
+          }
+        },
+        "equipo": {
+          "cuota": 2000,
+          "operativo_persona": 4112.3,
+          "con_imprevistos_persona": 4523.53,
+          "operativo_total_50": 205615,
+          "desglose_persona": {
+            "casa": 2000,
+            "transporte": 870,
+            "camisetas": 400,
+            "eventos_formativos": 326.3,
+            "almuerzo_ensayo": 318,
+            "liturgico": 153,
+            "musica": 45
+          }
+        }
+      },
+      "cuota_equipo_exentos": {
+        "estado": "confirmado",
+        "fuente": "director (17-jun-2026)",
+        "nota": "Quién NO paga la cuota del equipo. Los backups no van al retiro y no pagan. Las cuotas de la Sor y del Padre Paul las asume la Co-Dirección (no las pagan ellos); la meta de cuotas (106,000) se mantiene porque la parte asumida igual entra. Esto NO se muestra persona a persona en el HTML; el control de pagos por nombre va en el Excel interno de Tesorería.",
+        "asumidos_por_codireccion": [
+          "Sor Angelina Lebrón",
+          "Padre Paul Ramírez"
+        ]
+      },
+      "corresponsabilidad_areas": {
+        "estado": "confirmado",
+        "fuente": "director (17-jun-2026)",
+        "nota": "Qué prepara/cubre cada área del equipo (corresponsabilidad: el esfuerzo no recae solo en los directores ni en las cuotas). Montos indicativos del LADO A del Maestro; banderín, oficina y decoración del plenario no tienen línea propia (van dentro de partidas mayores). No suman el total: casa, transporte y comida son el grueso logístico.",
+        "areas": [
+          {
+            "area": "Guías",
+            "monto_indicativo": 17000,
+            "items": [
+              "Libretas",
+              "Rosario",
+              "Bolsa (tote / mochila)",
+              "Separadores de libros (para la Biblia)",
+              "Identificadores de habitación",
+              "Decoración del pequeño grupo"
+            ]
+          },
+          {
+            "area": "Música",
+            "monto_indicativo": 4500,
+            "items": [
+              "Chocolates",
+              "Crema",
+              "Combustible para el Bayuyo"
+            ]
+          },
+          {
+            "area": "Cocina",
+            "monto_indicativo": 72778,
+            "items": [
+              "Comida del retiro (3 días)",
+              "Detalles"
+            ]
+          },
+          {
+            "area": "Directores",
+            "monto_indicativo": 79300,
+            "items": [
+              "Biblias",
+              "Peces",
+              "Materiales del banderín",
+              "Materiales de oficina (resma de papel, etc.)",
+              "Decoración del espacio de plenario",
+              "Liturgia: formas (pan y vino)",
+              "Aporte a los sacerdotes para la confesión"
+            ],
+            "nota": "Responsabilidad principal y global. Indicativo = biblias+peces (64,000) + litúrgico (15,300). El banderín lo ejecutan los guías pero lo costean los directores (hoy está dentro de la línea de Guías, 17,000). Oficina/plenario sin línea propia."
+          }
+        ]
+      },
       "meta_recaudacion_total": {
         "valor": 553622,
         "estado": "confirmado",
@@ -225,6 +324,85 @@
             "estado": "pendiente · verificar con cocina"
           }
         }
+      },
+      "avanzada_estimada": {
+        "estado": "propuesta",
+        "fuente": "director (17-jun, escenario jueves noche) · estimado, por cotizar con la casa/cocina",
+        "nota": "NO está en la meta confirmada (553,622); el rubro 'avanzada' del LADO A sigue en 0. ~15 personas suben el jueves 3-sep: 3 comidas extra (cena, desayuno, almuerzo) + 1 noche de hospedaje. Estimado: comidas 15×3×~100 = 4,500 + hospedaje 15×1×~1,000 = 15,000. Cotizar el monto real con la casa y cocina; al confirmarse, sube a rubros.avanzada y recalcula la meta. Inconsistencia a resolver: ICS dice avanzada jueves 3-sep; el horario de la Carpeta pone a Cocina llegando viernes 10 AM.",
+        "personas": 15,
+        "comidas": {
+          "cantidad": 3,
+          "precio_unitario_est": 100,
+          "subtotal": 4500
+        },
+        "hospedaje": {
+          "noches": 1,
+          "precio_persona_noche_est": 1000,
+          "subtotal": 15000
+        },
+        "total_estimado": 19500
+      },
+      "rubros_simulador": {
+        "estado": "confirmado",
+        "fuente": "LADO A del Presupuesto Maestro (agrupado por rubro, no producto a producto)",
+        "nota": "Para el ejercicio de la tripulación en el HTML: cada rubro se puede marcar 'lo conseguimos (donación / gestión / exención)' y baja lo que hay que reunir entre todos. La suma de los montos = meta 553,622. 'donable' = lo más realista de gestionar (cuadra con el potencial en especie).",
+        "items": [
+          {
+            "nombre": "Casa (hospedaje)",
+            "monto": 200000,
+            "donable": false
+          },
+          {
+            "nombre": "Transporte (3 buses)",
+            "monto": 77500,
+            "donable": false
+          },
+          {
+            "nombre": "Comida (cocina, 3 días)",
+            "monto": 72778,
+            "donable": true
+          },
+          {
+            "nombre": "Biblias y peces",
+            "monto": 64000,
+            "donable": true
+          },
+          {
+            "nombre": "Imprevistos (10%)",
+            "monto": 50329,
+            "donable": false
+          },
+          {
+            "nombre": "Camisetas del equipo",
+            "monto": 20000,
+            "donable": true
+          },
+          {
+            "nombre": "Materiales de guía / PG",
+            "monto": 17000,
+            "donable": true
+          },
+          {
+            "nombre": "Eventos formativos",
+            "monto": 16315,
+            "donable": false
+          },
+          {
+            "nombre": "Almuerzo del ensayo",
+            "monto": 15900,
+            "donable": false
+          },
+          {
+            "nombre": "Litúrgico",
+            "monto": 15300,
+            "donable": true
+          },
+          {
+            "nombre": "Música",
+            "monto": 4500,
+            "donable": true
+          }
+        ]
       },
       "plan_recaudacion": {
         "estado": "confirmado",
@@ -359,6 +537,54 @@
         "cita": "Jn 15:15",
         "cita_texto": "Ya no os llamo siervos, os he llamado amigos"
       },
+      "cita_mision_88": {
+        "valor": "Los cielos cuentan la gloria de Dios",
+        "cita": "Salmo 19, 1",
+        "estado": "confirmado",
+        "fuente": "director (17-jun-2026)",
+        "nota": "Cita bíblica para el Tablero de la Misión 88 (tema espacial). El lema del retiro sigue siendo Mt 6,21 (ver lema_retiro)."
+      },
+      "contacto_whatsapp": {
+        "estado": "confirmado",
+        "fuente": "director · Carpeta (17-jun-2026)",
+        "nota": "Para el bloque 'Apadrina la Misión 88' del tablero. El donante elige a quién escribir. Tesorería aún no nombrada; por ahora Co-Dirección.",
+        "contactos": [
+          {
+            "nombre": "Juan Manuel",
+            "wa": "18298981416"
+          },
+          {
+            "nombre": "Jean Carlo",
+            "wa": "18498595178"
+          }
+        ]
+      },
+      "aporte": {
+        "estado": "pendiente",
+        "fuente": "—",
+        "nota": "Bloque 'Cómo pagar tu cuota' del tablero: transferencia + reenviar comprobante + PayPal opcional (diáspora). La cuenta real y el responsable de Tesorería los confirma el director (regla #1). Hasta entonces: cuenta [POR DEFINIR], PayPal desactivado, y el contacto del comprobante va a Co-Dirección (provisional). BLOQUEANTE vigente: no recaudar antes de nombrar Tesorería.",
+        "cuenta": {
+          "estado": "pendiente",
+          "banco": "",
+          "tipo": "",
+          "numero": "",
+          "titular": "",
+          "documento_tipo": "Cédula",
+          "documento": ""
+        },
+        "contacto_financiero": {
+          "estado": "propuesta",
+          "nota": "Provisional: vacío => usa los contactos de Co-Dirección (marca.contacto_whatsapp) hasta nombrar Tesorería. Cuando se nombre, llenar 'contactos' con {nombre, wa}.",
+          "contactos": []
+        },
+        "paypal": {
+          "estado": "pendiente",
+          "habilitado": false,
+          "url": "",
+          "usuario": "",
+          "nota": "Opcional, solo para quien no tiene cuenta local (diáspora). Poner habilitado=true y la url (PayPal.me) cuando exista. PayPal cobra comisión."
+        }
+      },
       "lema_retiro": {
         "valor": "Donde está tu tesoro, allí estará tu corazón",
         "estado": "confirmado",
@@ -393,11 +619,18 @@
         "estado_equipo": "confirmado",
         "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable). Incluye también la organización de las Actividades Profondo (#1 31-jul→2-ago) — el equipo de Profondo es el MISMO que el de Recaudación (decisión director 10-jun-2026).",
         "responsable": {
-          "valor": "Por nombrar (Co-Dir decide)",
-          "estado": "pendiente",
-          "nota": "Roberto Figueroa y Guido propusieron en el formulario (col 18) ideas de donaciones (Roberto: 'donaciones de etecianos viejos'; Guido: 'solicitudes a empresas') — son APORTES de idea, no implica que sean los responsables."
+          "valor": "Dorian",
+          "estado": "confirmado",
+          "fuente": "director (18-jun-2026)",
+          "nota": "Dorian coordina Recaudación/Profondo (confirmado 18-jun). A definir en reunión: si Profondo solo monta la actividad/estrategia o si comparte con Finanzas la gestión económica. (Roberto Figueroa y Guido solo aportaron ideas en el formulario col 18.)"
         },
-        "miembros": []
+        "miembros": [
+          "Dorian",
+          "Daylin",
+          "Kelvin",
+          "Ivanna",
+          "Wilka"
+        ]
       },
       {
         "nombre": "Guagua (Transporte)",
@@ -418,18 +651,27 @@
           "estado": "pendiente",
           "nota": "El director clarificó (3-jun) que Intersección es tradicionalmente la DIÁSPORA, no el equipo espiritual transversal. Los Asesores Espirituales (Paul + Sor) siguen siendo transversales (ver asesores_espirituales)."
         },
-        "miembros": []
+        "miembros": [
+          "Isauris",
+          "Carol",
+          "Kharla Vanessa"
+        ]
       },
       {
         "nombre": "Finanzas / Tesorería (auxiliar)",
         "estado_equipo": "confirmado",
         "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
         "responsable": {
-          "valor": "Por nombrar dentro del equipo (Co-Dir decide)",
-          "estado": "pendiente",
-          "nota": "El director (3-jun) pidió identificar responsable o equipo financiero dentro del equipo que auxilie a la Co-Dirección."
+          "valor": "Luisa",
+          "estado": "confirmado",
+          "fuente": "director (18-jun-2026)",
+          "nota": "Luisa = responsable única de Tesorería (confirmada 18-jun). Desbloquea el inicio de la recaudación (medida #3 Informe 85). Equipo: Risaira, Dayrelins."
         },
-        "miembros": []
+        "miembros": [
+          "Luisa",
+          "Risaira",
+          "Dayrelins"
+        ]
       }
     ],
     "comunidades_y_parroquias": {
@@ -662,10 +904,10 @@
     "gaps_post_informe_85": {
       "_nota": "Recomendaciones tomadas del Informe Final ETC 85. Cada una es [PROPUESTA] / [POR DEFINIR] hasta que el director la apruebe.",
       "responsable_financiero": {
-        "valor": null,
-        "estado": "pendiente",
-        "fuente": "Informe 85 + director (3-jun)",
-        "nota": "Nombrar 1-2 personas dentro del equipo como Finanzas / Tesorería auxiliar (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real. Ver equipos_auxiliares (entrada 5)."
+        "valor": "Luisa (responsable de Tesorería) · equipo: Risaira, Dayrelins",
+        "estado": "confirmado",
+        "fuente": "director (18-jun-2026)",
+        "nota": "Confirmado: Luisa lidera Tesorería (medida financiera #3 del Informe 85). Encargo: control de pagos, recibos, conciliación y reportes planificado vs real."
       },
       "informe_post_retiro": {
         "valor": "Comparar presupuesto planificado vs gastos reales tras el retiro; identificar dónde se puede ahorrar.",
@@ -758,7 +1000,7 @@
           "sectores_propuesta": [
             "MERCADOM",
             "El Suplidor",
-            "Iberia (lácteos · ETC 78)",
+            "Iberia (SOLICITADO 78 por carta; especie probable —5 víveres del presupuesto 78—, NO efectivo · verificar)",
             "Pricemart",
             "agricultores SPM/PC",
             "carnicerías SPM"
@@ -931,6 +1173,8 @@
       "10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.",
       "10-jun-2026: Hilo espiritual y reglas estéticas/branding confirmados (trabajados con Claude Design — detalles vivos en el material de diseño).",
       "10-jun-2026: Equipo de Profondo = Equipo de Recaudación (es UN solo equipo, no dos). Equipos auxiliares pasan de 5 a 4.",
+      "18-jun-2026: Director confirma miembros de equipos auxiliares — Profondo/Recaudación: Dorian, Daylin, Kelvin, Ivanna, Wilka · Intersección (diáspora): Isauris, Carol, Kharla Vanessa · Finanzas/Tesorería: Luisa, Risaira, Dayrelins.",
+      "18-jun-2026: Líderes confirmados — Tesorería: Luisa · Recaudación/Profondo: Dorian. Transporte/Guagua se difiere (no prioritario; se define cerca del retiro). A reunión: definición de cuentas de recaudo y si Profondo solo monta actividad/estrategia o comparte con Finanzas la gestión económica. Exención de la casa con el P. Paul: se gestiona cuando el monto esté firme.",
       "10-jun-2026: Asesores Comunidad (Leticia · Marleny · Sandrita) son representación que envía la comunidad (no decisión interna del equipo). Sus datos personales (tel/cumple) no son bloqueante interno.",
       "10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.",
       "10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.",
@@ -965,9 +1209,15 @@
       "nombre": "Recaudación / Profondo",
       "descripcion": "Levantamiento de fondos + aportes en especie. Donaciones a empresas/particulares = responsabilidad de Directores (delegable). Incluye también la organización de las Actividades Profondo (#1 31-jul→2-ago) — el equipo de Profondo es el MISMO que el de Recaudación (decisión director 10-jun-2026).",
       "estado": "Por formular",
-      "miembros": [],
-      "responsable_sugerido": "Por nombrar (Co-Dir decide)",
-      "responsable_estado": "pendiente"
+      "miembros": [
+        "Dorian",
+        "Daylin",
+        "Kelvin",
+        "Ivanna",
+        "Wilka"
+      ],
+      "responsable_sugerido": "Dorian",
+      "responsable_estado": "confirmado"
     },
     {
       "nombre": "Guagua (Transporte)",
@@ -981,7 +1231,11 @@
       "nombre": "Intersección (diáspora)",
       "descripcion": "Vínculo con la diáspora — etecianos del 88 (y comunidad eteciana amplia) que residen fuera del país y apoyan al retiro: padrinazgo, oración, donaciones desde el exterior. Rol tradicional del equipo de Intersección.",
       "estado": "Por formular",
-      "miembros": [],
+      "miembros": [
+        "Isauris",
+        "Carol",
+        "Kharla Vanessa"
+      ],
       "responsable_sugerido": "Por nombrar (Co-Dir decide)",
       "responsable_estado": "pendiente"
     },
@@ -989,9 +1243,13 @@
       "nombre": "Finanzas / Tesorería (auxiliar)",
       "descripcion": "Control de pagos, recibos, conciliación y reportes de gastos (planificado vs real). Auxilia a la Co-Dirección. Responde a la medida #3 del Informe Final ETC 85.",
       "estado": "Por formular",
-      "miembros": [],
-      "responsable_sugerido": "Por nombrar dentro del equipo (Co-Dir decide)",
-      "responsable_estado": "pendiente"
+      "miembros": [
+        "Luisa",
+        "Risaira",
+        "Dayrelins"
+      ],
+      "responsable_sugerido": "Luisa",
+      "responsable_estado": "confirmado"
     }
   ],
   "marca": {

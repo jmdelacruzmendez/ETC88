@@ -17,11 +17,14 @@ python scripts/build_trazabilidad.py
 python scripts/build_cantera.py
 python scripts/build_captacion.py
 python scripts/build_web.py
+python scripts/build_campana.py
+python scripts/build_tripulacion_xlsx.py
 python scripts/build_drive.py
 python scripts/build_trabajo.py
 python scripts/build_entrega_diseno.py
 python scripts/build_doc_trabajo_88.py
 python scripts/build_carpeta_docx.py
+python scripts/build_cartas.py
 echo "== Compuerta de verificación =="
 python scripts/verify.py
 echo "== Listo. Si dice TODO PASS, el sistema está coherente. =="

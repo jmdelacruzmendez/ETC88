@@ -46,6 +46,8 @@ python scripts/build_trazabilidad.py # → preparacion/TRAZABILIDAD.md (registro
 python scripts/build_cantera.py     # → Cantera_ETC88.xlsx (maqueta: padrinos + auxiliares)
 python scripts/build_captacion.py   # → /tmp/drive_captacion.csv (tracker de participantes, desde data/participantes.json)
 python scripts/build_web.py         # → web/*.csv + web/tablero_offline.html (tablero: vivo/snapshot + autocontenido para compartir privado; ver web/LEEME.md)
+python scripts/build_campana.py     # → tablero_campana_etc88.html (Tablero de la Tripulación · Misión 88: costo/persona, cuotas, SIMULADOR interactivo, cuenta regresiva; sin nombres de pagos)
+python scripts/build_tripulacion_xlsx.py # → Tripulacion_ETC88.xlsx (Excel INTERNO de Tesorería: costo/persona, cuotas, simulador y control de pagos por nombre)
 python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```
