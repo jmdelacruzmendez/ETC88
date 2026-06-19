@@ -165,19 +165,19 @@ def carta_induveca(firmada=False):
     out = f'{REPO}/Carta_Induveca_FIRMADA_ETC88.docx' if firmada else f'{REPO}/Carta_Induveca_ETC88.docx'
     doc.save(out); print(f'Wrote {out}')
 
-def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY):
-    """Carta de donación a empresa CON firma+sello reales — solo cambian fecha y donante.
-    Cuerpo general (apto para cualquier donante)."""
+def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY, pedido=None):
+    """Carta de donación CON firma+sello reales — cambian fecha, donante y (opcional) el pedido."""
     doc = new_doc()
     membrete(doc, fecha)
     destinatario(doc, donante_lineas)
     _p(doc, SALUDO); _p(doc, ACTIVIDAD)
-    _p(doc, 'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
-            'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
-            'nos haga una donación para este retiro, de forma que sirva de apoyo a nuestro '
-            'presupuesto general. Por ser asociación de fieles de la Diócesis de San Pedro de '
-            'Macorís podemos emitir la constancia de su donación; con gusto lo incluimos en '
-            'nuestra cadena de oración.')
+    _p(doc, pedido or (
+        'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
+        'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
+        'nos haga una donación para este retiro, de forma que sirva de apoyo a nuestro '
+        'presupuesto general. Por ser asociación de fieles de la Diócesis de San Pedro de '
+        'Macorís podemos emitir la constancia de su donación; con gusto lo incluimos en '
+        'nuestra cadena de oración.'))
     _p(doc, DESPEDIDA)
     firma_imagen(doc)
     doc.save(out_name); print(f'Wrote {out_name}')
