@@ -298,6 +298,20 @@ tr:hover { background: var(--pergamino-claro); }
     <p class="f-serif italic text-sm mt-1" style="color: rgba(247,239,217,0.7);">
       No fuimos a buscarlo: él nos estaba esperando.
     </p>
+    <!-- Tira viva: fecha actual + countdown + contacto Co-Dir -->
+    <div class="mt-5 pt-4 border-t flex flex-wrap items-center gap-3 md:gap-5 text-xs md:text-sm" style="border-color: rgba(247,239,217,0.18); color: rgba(247,239,217,0.85);">
+      <span class="f-cond uppercase tracking-widest" style="color: var(--ambar);">📅 <span x-text="hoy()"></span></span>
+      <span class="f-mono" style="color: rgba(247,239,217,0.6);">·</span>
+      <span class="f-cond uppercase tracking-widest">🐟 <span x-text="diasAlRetiro()"></span></span>
+      <span class="f-mono" style="color: rgba(247,239,217,0.6);">·</span>
+      <span class="f-cond uppercase tracking-widest" style="color: rgba(247,239,217,0.7);">Co-Dirección:</span>
+      <a class="f-cond underline decoration-dotted" :href="'https://wa.me/' + '18298981416'" target="_blank" rel="noopener" style="color: var(--vela);">
+        Juan Manuel · 829-898-1416
+      </a>
+      <a class="f-cond underline decoration-dotted" :href="'https://wa.me/' + '18498595178'" target="_blank" rel="noopener" style="color: var(--vela);">
+        Jean Carlo · 849-859-5178
+      </a>
+    </div>
   </div>
 </header>
 
@@ -438,6 +452,96 @@ tr:hover { background: var(--pergamino-claro); }
       </div>
     </template>
   </div>
+</section>
+
+<!-- TAB: Tesoro (Presupuesto · sincronizado con Maestro) -->
+<section x-show="activeTab === 'tesoro'" x-transition>
+  <h2 class="section-title">Tesoro · presupuesto del retiro</h2>
+  <p class="section-sub">Cifras vivas sincronizadas con el Presupuesto Maestro (Co-Dir.) · LADO A = costo · cuotas + palancas = recaudación.</p>
+
+  <!-- Bloque 1: Indicadores clave -->
+  <div class="grid md:grid-cols-3 gap-4 mb-6">
+    <div class="bg-cuero text-vela p-5 rounded-sm">
+      <div class="f-cond uppercase tracking-widest text-xs opacity-80">Costo total del retiro</div>
+      <div class="f-display text-3xl mt-1">RD$ <span x-text="(data.finanzas.meta_recaudacion_total||0).toLocaleString('es-DO')"></span></div>
+      <div class="f-mono text-xs mt-1 opacity-70">LADO A · 100 personas en la casa</div>
+    </div>
+    <div class="bg-safari text-vela p-5 rounded-sm">
+      <div class="f-cond uppercase tracking-widest text-xs opacity-80">Cuotas firmes</div>
+      <div class="f-display text-3xl mt-1">RD$ 256,000</div>
+      <div class="f-mono text-xs mt-1 opacity-70">46% del LADO A · ya cuadradas</div>
+    </div>
+    <div class="bg-tierra text-vela p-5 rounded-sm">
+      <div class="f-cond uppercase tracking-widest text-xs opacity-80">Brecha a producir</div>
+      <div class="f-display text-3xl mt-1">RD$ 297,622</div>
+      <div class="f-mono text-xs mt-1 opacity-70">54% · cubrir con palancas + especie</div>
+    </div>
+  </div>
+
+  <!-- Bloque 2: Desglose Cuotas -->
+  <div class="bg-pergamino-claro border border-rule p-5 mb-6">
+    <h3 class="team-panel-title mb-3">Cuotas firmes · qué cubre cada una</h3>
+    <div class="grid md:grid-cols-2 gap-4 text-sm">
+      <div>
+        <div class="f-cond uppercase tracking-widest text-xs text-cuero mb-1">🙋 Participantes · 50 × $3,000 = <strong>$150,000</strong></div>
+        <p>Transporte al retiro · comida del retiro · casa (hospedaje) · pez ICTUS · biblia.</p>
+      </div>
+      <div>
+        <div class="f-cond uppercase tracking-widest text-xs text-cuero mb-1">👥 Equipo · 53 × $2,000 = <strong>$106,000</strong></div>
+        <p>Ensayo general · prorrateo del alquiler del salón · transporte al retiro · comida del ensayo · camiseta del equipo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 3: Plan A de Recaudación -->
+  <div class="bg-vela border border-rule p-5 mb-6">
+    <h3 class="team-panel-title mb-3">Plan A · cómo cerramos la brecha</h3>
+    <table class="w-full text-sm">
+      <thead class="f-cond uppercase tracking-widest text-xs text-cuero border-b border-rule">
+        <tr><th class="text-left py-2">Fuente</th><th class="text-right">Meta RD$</th><th class="text-right">Prob.</th><th class="text-left pl-3">Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-rule"><td class="py-2">Donaciones en especie</td><td class="text-right">114,701</td><td class="text-right">80%</td><td class="pl-3 text-muted">Bajan el costo · no entran como caja</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Rifa / Profondo</td><td class="text-right">90,000</td><td class="text-right">50%</td><td class="pl-3 text-muted">600 boletos × 200 − premio 30,000</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Venta de garaje</td><td class="text-right">60,000</td><td class="text-right">60%</td><td class="pl-3 text-muted">IG de Profondo · artículos donados</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Donaciones en efectivo</td><td class="text-right">40,000</td><td class="text-right">40%</td><td class="pl-3 text-muted">Padrinos · parroquia · diáspora</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Venta de comida × 2</td><td class="text-right">25,000</td><td class="text-right">65%</td><td class="pl-3 text-muted">Sancocho · cherca · postres</td></tr>
+        <tr class="font-bold"><td class="py-2">Margen proyectado</td><td class="text-right text-safari">+32,079</td><td class="text-right">—</td><td class="pl-3 text-muted">Cierre POSITIVO · NO empatado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bloque 4: Flujo de caja mensual -->
+  <div class="bg-pergamino-claro border border-rule p-5 mb-6">
+    <h3 class="team-panel-title mb-3">Flujo de caja · jun → sep</h3>
+    <table class="w-full text-sm">
+      <thead class="f-cond uppercase tracking-widest text-xs text-cuero border-b border-rule">
+        <tr><th class="text-left py-2">Mes</th><th class="text-right">Entradas</th><th class="text-right">Salidas</th><th class="text-right">Saldo acum.</th><th class="text-left pl-3">Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-rule"><td class="py-2">Jun</td><td class="text-right">128,000</td><td class="text-right">60,000</td><td class="text-right">68,000</td><td class="pl-3 text-muted">Salón pagado + anticipo casa</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Jul</td><td class="text-right">200,500</td><td class="text-right">81,000</td><td class="text-right">187,500</td><td class="pl-3 text-muted">Biblias, peces, materiales guías</td></tr>
+        <tr class="border-b border-rule"><td class="py-2">Ago</td><td class="text-right">142,500</td><td class="text-right">88,750</td><td class="text-right">241,250</td><td class="pl-3 text-muted">Anticipo transporte, camisetas</td></tr>
+        <tr class="border-b border-rule font-bold text-tierra"><td class="py-2">Sep</td><td class="text-right">0</td><td class="text-right">209,171</td><td class="text-right">32,079</td><td class="pl-3">⚠ MES PICO · TODA la caja antes del 1-sep</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bloque 5: Caja vivo + deudas -->
+  <div class="grid md:grid-cols-2 gap-4 mb-6">
+    <div class="bg-vela border border-rule p-5">
+      <h3 class="team-panel-title mb-2">Caja actual</h3>
+      <div class="f-display text-3xl text-mar">RD$ 0</div>
+      <div class="text-xs text-muted mt-1">Reserva casa 23,600 devuelta el 7-jun · salón 10,000 pagado.</div>
+    </div>
+    <div class="bg-vela border border-rule p-5">
+      <h3 class="team-panel-title mb-2">Deudas por reembolsar</h3>
+      <div class="f-display text-2xl text-tierra">RD$ 10,000</div>
+      <div class="text-xs mt-1">A Juan Manuel (Co-Dir.) · pagó salón con dinero personal (2026-06-07).</div>
+    </div>
+  </div>
+
+  <p class="text-xs text-muted">📑 Detalle granular: <code>data/presupuesto/ETC88_Presupuesto_Maestro.xlsx</code> · 7 hojas (LADO A · LADO B · Calendario · Caja · Benchmarks · Cuotas).</p>
 </section>
 
 <!-- TAB: Dimensiones por equipo (NEW) -->
@@ -892,6 +996,7 @@ function app() {
     activeTab: 'tripulacion',
     tabs: [
       {id:'tripulacion', label:'Tripulación'},
+      {id:'tesoro', label:'Tesoro 💰'},
       {id:'dimensiones', label:'Dimensiones'},
       {id:'auxiliares', label:'Equipos auxiliares'},
       {id:'bitacora', label:'Bitácora'},
@@ -900,6 +1005,21 @@ function app() {
       {id:'cartas', label:'Cartas náuticas'},
       {id:'invitados', label:'Invitados & vituallas'},
     ],
+    // Fecha viva (siempre HOY) y countdown al retiro
+    hoy() {
+      const d = new Date();
+      return d.toLocaleDateString('es-DO', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+    },
+    diasAlRetiro() {
+      const retiro = new Date('2026-09-04T00:00:00');
+      const ahora = new Date();
+      const dias = Math.ceil((retiro - ahora) / (1000*60*60*24));
+      if (dias > 1) return dias + ' días al retiro';
+      if (dias === 1) return 'mañana arranca el retiro';
+      if (dias === 0) return '¡HOY ARRANCA EL RETIRO!';
+      if (dias > -3) return 'EN EL RETIRO';
+      return 'retiro vivido · ' + (-dias) + ' días atrás';
+    },
     search: '',
     filterOperativo: '',
     filterArea: '',
