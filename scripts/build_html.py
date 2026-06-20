@@ -300,9 +300,9 @@ tr:hover { background: var(--pergamino-claro); }
     </p>
     <!-- Tira viva: fecha actual + countdown + contacto Co-Dir -->
     <div class="mt-5 pt-4 border-t flex flex-wrap items-center gap-3 md:gap-5 text-xs md:text-sm" style="border-color: rgba(247,239,217,0.18); color: rgba(247,239,217,0.85);">
-      <span class="f-cond uppercase tracking-widest" style="color: var(--ambar);">📅 <span x-text="hoy()"></span></span>
+      <span class="f-cond uppercase tracking-widest" style="color: var(--ambar);">📅 <span x-text="_hoy"></span></span>
       <span class="f-mono" style="color: rgba(247,239,217,0.6);">·</span>
-      <span class="f-cond uppercase tracking-widest">🐟 <span x-text="diasAlRetiro()"></span></span>
+      <span class="f-cond uppercase tracking-widest">🐟 <span x-text="_dias"></span></span>
       <span class="f-mono" style="color: rgba(247,239,217,0.6);">·</span>
       <span class="f-cond uppercase tracking-widest" style="color: rgba(247,239,217,0.7);">Co-Dirección:</span>
       <a class="f-cond underline decoration-dotted" :href="'https://wa.me/' + '18298981416'" target="_blank" rel="noopener" style="color: var(--vela);">
@@ -1005,20 +1005,21 @@ function app() {
       {id:'cartas', label:'Cartas náuticas'},
       {id:'invitados', label:'Invitados & vituallas'},
     ],
-    // Fecha viva (siempre HOY) y countdown al retiro
-    hoy() {
+    // Reloj vivo del header: se actualiza cada minuto via setInterval (ver init()).
+    // _hoy y _dias son propiedades reactivas: cambian → Alpine re-renderiza el DOM.
+    _hoy: '',
+    _dias: '',
+    _tickTimer: null,
+    tick() {
       const d = new Date();
-      return d.toLocaleDateString('es-DO', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
-    },
-    diasAlRetiro() {
+      this._hoy = d.toLocaleDateString('es-DO', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
       const retiro = new Date('2026-09-04T00:00:00');
-      const ahora = new Date();
-      const dias = Math.ceil((retiro - ahora) / (1000*60*60*24));
-      if (dias > 1) return dias + ' días al retiro';
-      if (dias === 1) return 'mañana arranca el retiro';
-      if (dias === 0) return '¡HOY ARRANCA EL RETIRO!';
-      if (dias > -3) return 'EN EL RETIRO';
-      return 'retiro vivido · ' + (-dias) + ' días atrás';
+      const dias = Math.ceil((retiro - d) / (1000*60*60*24));
+      if (dias > 1) this._dias = dias + ' días al retiro';
+      else if (dias === 1) this._dias = 'mañana arranca el retiro';
+      else if (dias === 0) this._dias = '¡HOY ARRANCA EL RETIRO!';
+      else if (dias > -3) this._dias = 'EN EL RETIRO';
+      else this._dias = 'retiro vivido · ' + (-dias) + ' días atrás';
     },
     search: '',
     filterOperativo: '',
@@ -1448,6 +1449,10 @@ function app() {
         if (val === 'bitacora') this.$nextTick(() => this.initCharts());
       });
       if (this.sheetUrl) this.loadFromSheet(this.sheetUrl);
+      // Reloj vivo: arranca y refresca cada 60s. Si pestaña queda visible mucho tiempo,
+      // la fecha cambia sola a medianoche y el countdown baja a diario sin recargar.
+      this.tick();
+      this._tickTimer = setInterval(() => this.tick(), 60000);
     }
   };
 }
