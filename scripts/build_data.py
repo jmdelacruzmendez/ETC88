@@ -260,13 +260,10 @@ PLACEHOLDERS_OP = [
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
 ]
-# Backups de COCINA (4-jun): cantera del equipo de cocina. NO operativos. Nombres como los dio el director.
-# 7-jun: Merkin sale de backup → sube a titular (PLACEHOLDERS_OP) como 'Merkin Jean'.
-PLACEHOLDERS_BACKUP_COCINA = [
-    'Emily de la Rosa', 'Zahir', 'Vileimi', 'Yileivi', 'Eduardo', 'Emmanuel',
-    'Ricaira', 'Nestor', 'Leandro', 'Samuel', 'Emily',
-    'Emilio', 'Carlos', 'Rosanna', 'Inomar',
-]
+# Backups de COCINA: ELIMINADOS por decisión del director (20-jun-2026).
+# El equipo de cocina queda solo con los 21 titulares (PLACEHOLDERS_OP/xlsx).
+# Si la cantera vuelve a necesitarse, se reactiva esta lista.
+PLACEHOLDERS_BACKUP_COCINA = []
 # Asesores transversales: Paul y Sor Angelina están en TODO el proceso (no solo retiro)
 PLACEHOLDERS_TRANSVERSAL = [
     ('Padre Paul Ramírez', 'asesores_espirituales', 'Asesor Espiritual transversal', 'M'),

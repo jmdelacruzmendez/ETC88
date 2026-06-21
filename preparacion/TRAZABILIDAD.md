@@ -6,7 +6,7 @@
 **Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
+- Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
 - Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
@@ -136,6 +136,7 @@
 - 14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).
 - 14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).
 - 14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.
+- 20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.
 
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] 🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.

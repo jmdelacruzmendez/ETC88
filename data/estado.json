@@ -39,8 +39,8 @@
     }
   },
   "conteos_esperados": {
-    "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15).",
-    "total_equipo": 71,
+    "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15. 20-jun: backups cocina eliminados (15→0); total 71→56.).",
+    "total_equipo": 56,
     "operativos": 48,
     "operativos_titulares_por_area": {
       "directores": 2,
@@ -51,10 +51,10 @@
       "musica": 6
     },
     "vacantes": 0,
-    "backups": 18,
+    "backups": 3,
     "backups_detalle": {
       "guias": 3,
-      "cocina": 15
+      "cocina": 0
     },
     "asesores_cocina": 2,
     "asesores_diocesanos": 3
@@ -910,7 +910,8 @@
     "14-jun-2026: Target presupuestario 50 participantes (rango operativo 45–50). Cierra casa con 100 personas (50 part. + 50 equipo cubierto).",
     "14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).",
     "14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).",
-    "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`."
+    "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.",
+    "20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen."
   ],
   "pendientes": [
     "🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.",
