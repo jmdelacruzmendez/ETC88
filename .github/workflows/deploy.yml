@@ -1,0 +1,65 @@
+name: Tablero ETC 88 — build & deploy (Pages)
+
+# Qué hace:
+#  - build: instala dependencias, REGENERA todo el sistema (run_all.sh) y corre verify.py
+#           (la compuerta). Sube public/ como artefacto de Pages.
+#  - deploy: publica ese artefacto en GitHub Pages.
+# Cuándo:
+#  - en cada push (build+verify; deploy solo desde main / manual / cron)
+#  - cron diario  -> mantiene la cuenta regresiva y las cifras "al día" sin tocar nada
+#  - manual (workflow_dispatch)
+#
+# REQUISITO ÚNICO (una sola vez, lo haces tú): Settings -> Pages ->
+#   "Build and deployment" -> Source: "GitHub Actions".
+# Nota: los cron solo corren desde la rama por defecto (main); fusiona esta rama a main
+# para que el "al día" diario quede activo.
+
+on:
+  push:
+    branches: [main, "claude/sleepy-cerf-8su6yj"]
+  schedule:
+    - cron: "15 11 * * *"   # ~07:15 AST (RD, UTC-4) = 11:15 UTC, diario
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Dependencias del sistema (libcairo para cairosvg)
+        run: sudo apt-get update && sudo apt-get install -y libcairo2
+      - name: Dependencias Python
+        run: pip install -r requirements.txt
+      - name: Regenerar sistema + compuerta (verify.py)
+        run: bash scripts/run_all.sh
+      - name: Subir artefacto de Pages (public/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy a GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
