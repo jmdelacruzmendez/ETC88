@@ -49,12 +49,12 @@
 // Si se dejan vacías, el tablero lee los CSV locales (web/*.csv), que el pipeline regenera.
 const CONFIG = {
   equipo:     "",   // Sheet "Equipo (roster oficial)" → publicar como CSV
-  pagos:      "",   // Sheet "Control de Pagos"        → publicar como CSV
+  pagos:      "https://docs.google.com/spreadsheets/d/1u1OQPGRJzEwOx3cJ_Wd8zZ9RiasOFJVR6SREEH23tLU/export?format=csv",   // Control de Pagos (vivo, carpeta Finanzas) — ACTIVA al compartir la hoja "cualquiera con el enlace"
   captacion:  "",   // Sheet "Captación"               → publicar como CSV
   pendientes: ""    // Sheet "Pendientes"              → publicar como CSV
 };
 const LOCAL = {equipo:"equipo.csv", pagos:"control_pagos.csv", captacion:"captacion.csv", pendientes:"pendientes.csv"};
-const META = 583281, PARTIC_META = 52, RETIRO = new Date("2026-09-04T00:00:00");
+const META = 553622, PARTIC_META = 52, RETIRO = new Date("2026-09-04T00:00:00");
 // Modo autocontenido: build_web.py inyecta window.__ETC88_EMBED__ en tablero_offline.html.
 // Si no está presente (este archivo), el tablero lee CONFIG/local como siempre.
 const EMBED = (typeof window!=='undefined' && window.__ETC88_EMBED__) || {};
