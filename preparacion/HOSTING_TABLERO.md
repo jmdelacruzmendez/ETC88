@@ -13,8 +13,8 @@ cuenta (no los puede hacer Claude). Abajo, qué quedó hecho y qué falta.
 
 ## Lo que falta — 3 pasos tuyos (una sola vez)
 1. **Activar Pages:** repo → *Settings* → *Pages* → *Build and deployment* → **Source: GitHub Actions**.
-2. **Fusionar esta rama a `main`** (los cron solo corren desde la rama por defecto). Tras el merge,
-   el tablero se redepliega en cada push y **se actualiza solo cada día**.
+2. **Fusionar esta rama a la rama por defecto** del repo (los cron y el deploy automático solo
+   corren desde ahí). Tras el merge, el tablero se redepliega en cada push y **se actualiza solo cada día**.
 3. (Opcional) **Dominio propio** en *Settings → Pages → Custom domain*.
 
 > Resultado de la Fase 1: **tablero de campaña público, en una URL de GitHub, al día.**
