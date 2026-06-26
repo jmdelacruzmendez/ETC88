@@ -378,7 +378,7 @@ CSS = r'''
   .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#053a1e;font-weight:800;padding:13px 20px;border-radius:100px;text-decoration:none;font-size:1rem}
   .wa-btn:hover{filter:brightness(1.07)}
   .apad-note{color:var(--muted2);font-size:.85rem;margin-top:12px}
-  .apad-mini{font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;min-height:30px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#8df3b3;border-radius:100px;padding:5px 13px;font-size:.76rem;font-weight:700;white-space:nowrap}
+  .apad-mini{font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;min-height:36px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#8df3b3;border-radius:100px;padding:7px 14px;font-size:.76rem;font-weight:700;white-space:nowrap}
   .apad-mini:hover{background:rgba(37,211,102,.26)}
   .apad-mini:active{transform:scale(.97)}
   .rub-mini{margin-bottom:10px}
@@ -470,7 +470,7 @@ function cd(pfx,iso,alsoKpi){function t(){const x=diff(iso);setText(pfx+'-d',x.d
 cd('cpago',datos.fechaCierrePagos,true); cd('ret',datos.fechaRetiro,false);
 /* simulador (cohete) */
 const RBOT=328,RRANGE=250; let fuelCur=0;
-function setFuel(fr){var f=$('fuel');if(!f)return;f.setAttribute('y',RBOT-fr*RRANGE);f.setAttribute('height',fr*RRANGE);
+function setFuel(fr){var f=$('fuel');if(!f)return;fr=fr<0?0:(fr>1?1:fr);var hg=fr*RRANGE;f.setAttribute('y',RBOT-hg);f.setAttribute('height',hg);
   var fl=$('flame');if(fl){fl.setAttribute('transform','translate(80 330) scale('+(0.7+fr*0.6)+','+(0.4+fr*1.4)+') translate(-80 -330)');fl.setAttribute('opacity',(0.4+fr*0.5).toFixed(2));}}
 function aFuel(t){if(REDUCE){setFuel(t);fuelCur=t;return;}const from=fuelCur;animate(600,p=>setFuel(from+(t-from)*p),()=>{fuelCur=t;});}
 function recompute(){let S=0;document.querySelectorAll('.rub.on').forEach(b=>S+=+b.dataset.monto);
