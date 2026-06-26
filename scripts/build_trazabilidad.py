@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Registro de TRAZABILIDAD del ETC 88 — se genera desde data/estado.json + data/equipo.json.
 
 Lista todo hecho con su ESTADO (confirmado/propuesta/pendiente) y su FUENTE, para tener
@@ -10,7 +12,7 @@ Salida: preparacion/TRAZABILIDAD.md
 import json
 from collections import Counter
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 EST = json.load(open(f'{REPO}/data/estado.json'))
 EQ = json.load(open(f'{REPO}/data/equipo.json'))
 

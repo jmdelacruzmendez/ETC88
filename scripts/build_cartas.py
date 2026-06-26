@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Genera los documentos de recaudación del ETC 88 (.docx) + el tracker (CSV).
 
 Por qué .docx: subir markdown/text a Drive escapa símbolos (\\-, \\[, \\#) y rompe
@@ -26,7 +28,7 @@ from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 LOGO = f'{REPO}/data/logo_etc.png'
 FIRMA_SELLO = f'{REPO}/data/firma_sello.png'  # firma+sello reales (recorte del escaneo firmado)
 D = json.load(open(f'{REPO}/data/equipo.json'))

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Generate an editable master Excel (single source of truth) from the team data.
 
 Idea: this xlsx is what YOU edit. Columns with dropdowns (Área, Rol, Coordinador,
@@ -212,5 +214,5 @@ for i, (txt, isheader) in enumerate(notes, start=1):
         cell.font = Font(size=11)
 ws4.column_dimensions['A'].width = 120
 
-wb.save('/home/user/ETC88/Equipo_ETC88.xlsx')
+wb.save(f'{_R}/Equipo_ETC88.xlsx')
 print(f"Wrote Equipo_ETC88.xlsx ({last_row - hdr} personas en hoja Equipo)")

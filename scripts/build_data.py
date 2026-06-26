@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Apply v2 changes: new area structure, re-include Mary Carmen + Roberto,
 add Daylin + vacantes, add comunidad field, remove Lazos."""
 import openpyxl, json, re, os
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 # El xlsx fuente puede estar en el dir efímero de uploads o en la copia durable del repo.
 # El repo es la fuente única de verdad (Regla #1 de CLAUDE.md). La copia de uploads
 # era un fallback histórico que quedó como PREFERIDA por error de orden — corregido

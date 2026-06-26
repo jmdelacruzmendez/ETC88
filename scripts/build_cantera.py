@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Maqueta de la CANTERA del ETC 88 — gente que NO va a participar (ni equipo ni
 participante), organizada en: PADRINOS y candidatos a EQUIPOS AUXILIARES.
 
@@ -13,7 +15,7 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 CAN = json.load(open(f'{REPO}/data/cantera.json'))
 EQ = json.load(open(f'{REPO}/data/equipo.json'))
 

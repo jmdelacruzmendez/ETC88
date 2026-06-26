@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Genera el DIRECTORIO del equipo (lista de nombres por área, con cumpleaños) desde
 data/equipo.json. Fuente única: equipo.json. Salida compartible para la Carpeta /
 Claude Design. NO se edita a mano la lista; se corrige el roster y se regenera (regla #2).
@@ -6,7 +8,7 @@ No incluye cantera/backups (solo titulares del equipo)."""
 import json, os
 from collections import defaultdict
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 e = json.load(open(f'{REPO}/data/equipo.json', encoding='utf-8'))
 team = e['equipo'] if isinstance(e, dict) and 'equipo' in e else e
 

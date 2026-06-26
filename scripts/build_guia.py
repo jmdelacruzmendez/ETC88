@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Genera la GUÍA DEL ETC 88 (la 'carpeta' que se entrega en F1).
 Jala equipo + calendario del data; embebe el contenido canónico (base LXXXV) adaptado al 88."""
 import json
@@ -184,5 +186,5 @@ A("---")
 A(f"*Guía ETC LXXXVIII · {d['meta']['version']} · generada del Tablero de la Tripulación. El lema y el branding se confirman esta semana.*")
 
 txt = "\n".join(L)
-open('/home/user/ETC88/GUIA_ETC88.md','w').write(txt)
+open(f'{_R}/GUIA_ETC88.md','w').write(txt)
 print(f"Wrote GUIA_ETC88.md ({len(txt)} chars, {len(L)} líneas)")

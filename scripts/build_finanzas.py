@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Sheet vivo de Finanzas ETC 88 — multi-pestaña editable.
 Construye un xlsx con: Resumen · Casa · Menú · Cocina-Compras · Materiales/Litúrgico ·
 Guías · Música · Formaciones · Transporte · Recaudación · Pagos equipo · Cómo usar.
@@ -18,7 +20,7 @@ border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
 # ===== Cifras-decisión: SIEMPRE desde data/estado.json (no hardcodear inventos) =====
 import json, re as _re
-_estado = json.load(open('/home/user/ETC88/data/estado.json'))
+_estado = json.load(open(f'{_R}/data/estado.json'))
 def _ev(n): return n['valor'] if isinstance(n, dict) and 'valor' in n else n
 _ef = _estado['finanzas']; _er = _estado['recaudacion']
 CASA_SIN  = _ev(_ef['casa_por_persona_sin_exencion'])   # 2300 confirmado
@@ -460,5 +462,5 @@ json.dump({
 }, open('/tmp/etc88_costos.json', 'w'), ensure_ascii=False, indent=2)
 
 # Save
-wb.save('/home/user/ETC88/Finanzas_ETC88.xlsx')
+wb.save(f'{_R}/Finanzas_ETC88.xlsx')
 print(f"Wrote Finanzas_ETC88.xlsx — {len(wb.sheetnames)} pestañas: {', '.join(wb.sheetnames)}")

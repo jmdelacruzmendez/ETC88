@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Genera versiones LIMPIAS para Google Drive (text/plain -> Google Doc, text/csv ->
 Google Sheet) SIN sintaxis markdown, porque Google escapa el markdown de text/plain
 (\\#, \\-, \\[ ]). Reglas: encabezados en MAYÚSCULA, viñetas con '•', etiquetas con
@@ -10,7 +12,7 @@ Salidas en /tmp para subir con el MCP de Drive:
 """
 import json, re, csv, io
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 D = json.load(open(f'{REPO}/data/equipo.json'))
 EST = D['estado']
 

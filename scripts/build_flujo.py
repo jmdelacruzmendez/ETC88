@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Modelo económico del ETC 88 — borrador para la reunión de coordinadores.
 
 Modela: recaudación, donaciones, FLUJO DE CAJA mensual, TOPES por área y OPTIMIZACIÓN,
@@ -17,7 +19,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 C = json.load(open('/tmp/etc88_costos.json'))
-EST = json.load(open('/home/user/ETC88/data/estado.json'))
+EST = json.load(open(f'{_R}/data/estado.json'))
 
 TINTA, CREMA = '1C140B', 'F7EBCC'
 MAR, TIERRA, SAFARI, AMBAR, CUERO = '1B3A52', 'B25028', '4A5D2E', 'C57920', '6B4423'
@@ -203,5 +205,5 @@ for e in esc:
 row(ws, r, ('= TOTAL recaudación variable', tot, f'debe igualar la brecha ${BRECHA:,}', ''), bold=True, fill='F3E4BE'); r += 2
 ws.cell(row=r, column=1, value='Lectura: el Profondo #1 es la palanca #1. Si los insumos se donan y la cocina consigue especie, la donación en efectivo necesaria baja.').font = Font(italic=True, size=10)
 
-wb.save('/home/user/ETC88/Flujo_Caja_ETC88.xlsx')
+wb.save(f'{_R}/Flujo_Caja_ETC88.xlsx')
 print(f"Wrote Flujo_Caja_ETC88.xlsx — {len(wb.sheetnames)} pestañas · brecha ${BRECHA:,}")

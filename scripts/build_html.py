@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Assemble the Tripulación HTML dashboard v3 (45 tripulantes, no vacantes, batches temáticos)."""
 with open('/tmp/etc88_data_min.json') as f:
     data_str = f.read()
@@ -1337,6 +1339,6 @@ function app() {
 '''
 
 output = HTML.replace('__DATA_JSON__', data_str)
-with open('/home/user/ETC88/index.html', 'w', encoding='utf-8') as f:
+with open(f'{_R}/index.html', 'w', encoding='utf-8') as f:
     f.write(output)
-print(f"Wrote /home/user/ETC88/index.html ({len(output)} bytes)")
+print(f"Wrote {_R}/index.html ({len(output)} bytes)")

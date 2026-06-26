@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """COMPUERTA DE VERIFICACIÓN — se corre SIEMPRE antes de entregar algo del ETC 88.
 
 Bloquea la entrega si algo no cuadra: conteos, nombres inventados, cifras sin
@@ -11,7 +13,7 @@ import json, os, re, subprocess, sys
 from docx import Document
 import openpyxl
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 results = []  # (nombre, ok, detalle)
 
 def check(nombre, ok, detalle=''):

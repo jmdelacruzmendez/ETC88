@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Documento para la reunión del equipo de Finanzas / Tesorería del ETC 88.
 
 Resumen financiero + cuotas + plan de recaudación + flujo de caja + caja actual +
@@ -12,7 +14,7 @@ from docx import Document
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 D = json.load(open(f'{REPO}/data/equipo.json')); EST = D['estado']
 F = EST['finanzas']
 

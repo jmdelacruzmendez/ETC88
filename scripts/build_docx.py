@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+_R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 """Genera los 2 .docx OFICIALES del ETC 88 con python-docx.
 
 Por qué .docx y no markdown/text: Google Drive, al importar text/plain, trata el
@@ -18,7 +20,7 @@ from docx import Document
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-REPO = '/home/user/ETC88'
+REPO = f'{_R}'
 D = json.load(open(f'{REPO}/data/equipo.json'))
 EST = D['estado']
 
