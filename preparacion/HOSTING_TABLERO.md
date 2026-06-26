@@ -1,40 +1,56 @@
-# Hosting del Tablero ETC 88 — al día, en GitHub, y dinámico con Drive
+# Hosting del Tablero ETC 88 — privacidad primero
 
-Estado: **Fase 1 lista en código** (este commit). Faltan 3 pasos que dependen de tu
-cuenta (no los puede hacer Claude). Abajo, qué quedó hecho y qué falta.
+> **Decisión (26-jun-2026):** el repositorio principal pasa a **PRIVADO** y el tablero
+> público se hospeda **APARTE**. Motivo: el repo estaba **público** y versionaba datos
+> sensibles (salud/alergias/medicamentos y teléfonos del equipo, nombres de
+> participantes **menores**, donantes personales y el formulario crudo). Un repo
+> privado es el "portón" que pide la regla de privacidad de CLAUDE.md.
 
-## Lo que YA quedó hecho (código)
-- `requirements.txt` — dependencias del pipeline (para que el CI sea reproducible).
-- `.github/workflows/deploy.yml` — GitHub Actions:
-  - **build**: instala deps, corre `run_all.sh` + `verify.py` (compuerta) y sube `public/`.
-  - **deploy**: publica `public/` en GitHub Pages.
-  - Dispara en: cada push (build+verify), **cron diario** (cuenta regresiva al día) y manual.
-- `public/index.html` ya lo genera `build_campana.py` (el tablero de campaña, sin nombres de pagos).
+## Qué es PÚBLICO y qué es PRIVADO
+- **Público (se puede hospedar y compartir):** el **Tablero de la Tripulación**
+  (`tablero_campana_etc88.html`, idéntico a `public/index.html`). Autocontenido
+  (HTML+CSS+JS, sin archivos externos). Verificado **sin nombres**: solo cifras
+  agregadas (costo, cuotas, meta, brecha, simulador, cuenta regresiva) y los
+  contactos de **Co-Dirección** (que ya van firmados en las cartas).
+- **Privado (NUNCA en hosting público):** `data/equipo.json` (salud), `data/participantes.json`
+  y `web/captacion.csv` (menores), `web/equipo.csv` (roster), `data/fuente_formulario.xlsx`
+  (formulario crudo), directorios de donantes, y el **tablero interno**
+  `web/tablero.html` (muestra equipo y captación **con nombres**).
 
-## Lo que falta — 3 pasos tuyos (una sola vez)
-1. **Activar Pages:** repo → *Settings* → *Pages* → *Build and deployment* → **Source: GitHub Actions**.
-2. **Fusionar esta rama a la rama por defecto** del repo (los cron y el deploy automático solo
-   corren desde ahí). Tras el merge, el tablero se redepliega en cada push y **se actualiza solo cada día**.
-3. (Opcional) **Dominio propio** en *Settings → Pages → Custom domain*.
+## Paso 1 — Poner el repo en PRIVADO (lo haces tú, ~30 s) — URGENTE
+GitHub → repo **ETC88** → **Settings** → (pestaña *General*, hasta abajo)
+*Danger Zone* → **Change repository visibility** → **Make private** → confirmar.
+Esto corta la exposición pública al instante.
 
-> Resultado de la Fase 1: **tablero de campaña público, en una URL de GitHub, al día.**
+## Paso 2 — Hospedar el tablero público APARTE
+GitHub Pages **gratis no sirve en repo privado**, por eso el tablero va aparte.
+Es **un solo archivo autocontenido**, así que hay dos rutas fáciles:
 
-## Fase 2 — "dinámico con Drive" (datos vivos)
-El tablero `web/tablero.html` ya trae un bloque `CONFIG` para **modo vivo**:
-- **Datos agregados (público):** en Google Sheets → *Archivo → Compartir → Publicar en la web → CSV*,
-  copia cada URL en `CONFIG` de `web/tablero.html`. El tablero se actualiza cuando el equipo edita la hoja.
-  *Ojo: "publicar" = público para cualquiera con el link.* Úsalo solo para cifras SIN nombres.
-- **Datos por nombre (Control de Pagos / Captación — privados):** NO publicar. Dos rutas:
-  1. **Google Apps Script** (web app que lee las hojas privadas, restringida a una lista de correos).
-  2. **GitHub Action + cuenta de servicio de Google** (lee las hojas por API, regenera y despliega)
-     detrás de un **portón por correo** (Cloudflare Access, gratis ≤50). Requiere crear la cuenta de
-     servicio y guardar su credencial como **secreto del repo** (eso lo haces tú).
+**A) Repo público nuevo + GitHub Pages (recomendado, todo en GitHub)**
+1. Crea un repo **nuevo y público**, p. ej. `etc88-tablero` (vacío).
+2. Sube el archivo `tablero_campana_etc88.html` y renómbralo **`index.html`**
+   (arrastrar y soltar en la web de GitHub → *commit*).
+3. *Settings → Pages → Build and deployment → Source: Deploy from a branch →*
+   rama por defecto, carpeta `/ (root)` → *Save*.
+4. Link: **`https://jmdelacruzmendez.github.io/etc88-tablero/`** (sale tras el 1.er deploy).
+
+**B) Cloudflare Pages (sin segundo repo)**
+Cuenta gratis → *Create a project → Direct Upload* → arrastra el archivo (como
+`index.html`) → publica. Link: `https://<proyecto>.pages.dev`.
+
+> Como el archivo es autocontenido, también se puede simplemente **enviar por
+> WhatsApp/Drive** y se abre en cualquier navegador, sin hosting.
+
+## "Dinámico con Drive" (datos vivos) — estado
+- El tablero **público** muestra cifras **confirmadas** (de `estado.json`) + cuenta
+  regresiva. Es estático (se regenera con el pipeline).
+- El tablero **interno** `web/tablero.html` ya lee **en vivo** la hoja *Control de Pagos*
+  de Drive (CSV, sin nombres en esa hoja) — pero como también pinta equipo/captación
+  **con nombres**, se queda **privado**.
+- **Opción pendiente de tu visto bueno:** añadir al tablero **público** un dato vivo
+  **"Recaudado a la fecha"** (termómetro, **sin nombres**) leído de la hoja de Drive.
+  Es coherente con lo que ya muestra (meta/brecha) y da el "vivo con Drive" sin exponer a nadie.
 
 ## Regla que NO cambia
-`data/estado.json` sigue siendo la **fuente de los hechos confirmados** (presupuesto, cuotas,
-decisiones). El Sheet de Drive solo alimenta **lo que se mueve** (pagos recibidos, donaciones,
-captación). Así no hay dos "verdades" y `verify.py` sigue cuidando lo confirmado.
-
-## Privacidad (resumen)
-- **Público:** tablero de campaña (costo, presupuesto, cuotas, simulador — *sin nombres*).
-- **Privado:** Control de Pagos y Captación (con nombres) → siempre detrás de portón o en el Excel interno.
+`data/estado.json` es la **fuente de los hechos confirmados**. La hoja de Drive solo
+alimenta **lo que se mueve** (pagos). `verify.py` sigue siendo la compuerta.
