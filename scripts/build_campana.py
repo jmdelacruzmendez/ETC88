@@ -487,7 +487,10 @@ recompute();
 /* reveal */
 (function(){var ns=document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window)){ns.forEach(n=>n.classList.add('visible'));return;}
-  var io=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:.12});
+  // threshold:0 = se revela en cuanto cualquier parte entra al viewport. NO usar un
+  // threshold >0: un panel más alto que (viewport/threshold) — p.ej. el presupuesto
+  // desagregado en móvil (~9400px) — nunca alcanza ese ratio y se quedaría invisible.
+  var io=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px 200px 0px'});
   ns.forEach(n=>io.observe(n));})();
 /* apadrinar por WhatsApp */
 (function(){
