@@ -2,5 +2,6 @@
 # Instalar:  pip install -r requirements.txt   (además de Node para verify.py: node --check)
 openpyxl        # lee/escribe los .xlsx (presupuesto, equipo, flujo, tripulación)
 python-docx     # genera los .docx (asesores, carpeta, cartas, reunión finanzas)
+python-pptx     # genera la presentación (Presentacion_ETC88.pptx)
 cairosvg        # build_doc_trabajo_88.py: rasteriza SVG -> PNG (necesita libcairo2 en el SO)
 pillow          # manejo de imágenes (logo/firma) si algún builder lo requiere
