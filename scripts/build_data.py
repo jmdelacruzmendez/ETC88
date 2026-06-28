@@ -348,6 +348,13 @@ for p in equipo:
     if p['nombre'] in RENAMES:
         p['nombre'] = RENAMES[p['nombre']]
         p['id'] = re.sub(r'[^a-z0-9]+', '-', p['nombre'].lower()).strip('-')
+# Teléfonos corregidos por el director (clave = nombre ya normalizado).
+PHONE_FIXES = {
+    'Jean Carlo De la Cruz Mendez': '18498505178',  # Co-Dir confirmó 849-850-5178 (28-jun-2026); el formulario tenía ...859...
+}
+for p in equipo:
+    if p['nombre'] in PHONE_FIXES:
+        p['telefono'] = PHONE_FIXES[p['nombre']]
     ce = p.get('contacto_emergencia')
     if ce:
         for bad, good in SURNAME_FIX.items():

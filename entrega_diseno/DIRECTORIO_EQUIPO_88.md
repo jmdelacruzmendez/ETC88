@@ -7,7 +7,7 @@
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
-| Jean Carlo De la Cruz Mendez | Director | 12 may | (849) 859-5178 |
+| Jean Carlo De la Cruz Mendez | Director | 12 may | (849) 850-5178 |
 | Juan Manuel de la Cruz Méndez | Director | 20 ene | (829) 898-1416 |
 
 ## Asesores (3)
