@@ -6,7 +6,7 @@
 **Resumen:** 59 confirmados · 11 propuestas · 4 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 71 · operativos titulares 48 · vacantes 0 · backups 18.
+- Total 69 · operativos titulares 48 · vacantes 0 · backups 16.
 - Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
@@ -105,7 +105,7 @@
 - Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).
 - Apellido de Leober: Soriano.
 - Roselyn DENTRO de cocina (4-jun): el director confirmó que Roselyn y Randol están AMBOS en cocina; Pamela queda fuera. Cocina sigue en 21.
-- Backups (4-jun; actualizado 7-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (15). Total 18 backups. NO son operativos. (Merkin subió de backup a titular cocina el 7-jun, reemplazando a Fabelly Maciel que salió del equipo.)
+- Backups (4-jun; act. 1-jul): Backup de GUÍAS = Scarlett Nivar, Kamila Todd (2). Backup de COCINA = Emily de la Rosa, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (14). Total 16 backups. NO son operativos. (Merkin subió a titular cocina el 7-jun; 1-jul: Zahir Valoy sube de backup a titular cocina reemplazando a Tommy Nova Nolasco, y Rodolfo Telémaco sale del equipo.)
 - Cambio de equipo 7-jun: Fabelly Maciel Fabian Bello SALE del equipo. Merkin Jean sube de backup a titular en cocina. Cocina sigue en 21 titulares.
 - Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).
 - Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).
@@ -123,6 +123,9 @@
 - 10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).
 - 10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary "Petra" 19-oct · Johanny 13-feb.
 - 10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).
+- 1-jul-2026: Tommy Nova Nolasco SALE del equipo (decisión Co-Dir). Reemplazado por Zahir Valoy como titular de cocina.
+- 1-jul-2026: Zahir Valoy entra como titular de cocina (respondió formulario 29-jun: 19 años, cumple 7-jun-2007, WhatsApp 849-460-1030, ETC 85/2025, talla L). Sube desde backup de cocina. Sexo M inferido del nombre (confirmar).
+- 1-jul-2026: Rodolfo Telémaco Arrendel FUERA del equipo por completo (decisión Co-Dir); ya no figura ni como backup de guías.
 - 10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director.
 - 10-jun-2026: Target de participantes confirmado en 45–48 (para completar ~100 personas en la casa con los 48 operativos).
 - 10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.

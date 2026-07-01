@@ -2,7 +2,7 @@ BEGIN:VCARD
 VERSION:3.0
 N:Jean Carlo De la Cruz Mendez;;;;
 FN:ETC88·Dir Jean Carlo De la Cruz Mendez
-TEL;TYPE=CELL:+18498595178
+TEL;TYPE=CELL:+18498505178
 NOTE:Equipo ETC 88 · Dir
 END:VCARD
 BEGIN:VCARD
@@ -189,13 +189,6 @@ NOTE:Equipo ETC 88 · Cocina
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
-N:Jordelis Mateo;;;;
-FN:ETC88·Cocina Jordelis Mateo
-TEL;TYPE=CELL:+18296101254
-NOTE:Equipo ETC 88 · Cocina
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
 N:Kelvin Alexis Ventura Santana;;;;
 FN:ETC88·Cocina Kelvin Alexis Ventura Santana
 TEL;TYPE=CELL:+18094633990
@@ -224,8 +217,15 @@ NOTE:Equipo ETC 88 · Cocina
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
-N:Randol Joseph Payano;;;;
-FN:ETC88·Cocina Randol Joseph Payano
+N:Pamela Colón;;;;
+FN:ETC88·Cocina Pamela Colón
+TEL;TYPE=CELL:+18293422888
+NOTE:Equipo ETC 88 · Cocina
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Randol Joseph payano;;;;
+FN:ETC88·Cocina Randol Joseph payano
 TEL;TYPE=CELL:+18299639360
 NOTE:Equipo ETC 88 · Cocina
 END:VCARD
@@ -259,16 +259,16 @@ NOTE:Equipo ETC 88 · Cocina
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
-N:Tommy Nova Nolasco;;;;
-FN:ETC88·Cocina Tommy Nova Nolasco
-TEL;TYPE=CELL:+18492666296
+N:Wirna Miguelina Stapleton Pilier;;;;
+FN:ETC88·Cocina Wirna Miguelina Stapleton Pilier
+TEL;TYPE=CELL:+18298019927
 NOTE:Equipo ETC 88 · Cocina
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
-N:Wirna Miguelina Stapleton Pilier;;;;
-FN:ETC88·Cocina Wirna Miguelina Stapleton Pilier
-TEL;TYPE=CELL:+18298019927
+N:Zahir Valoy;;;;
+FN:ETC88·Cocina Zahir Valoy
+TEL;TYPE=CELL:+18494601030
 NOTE:Equipo ETC 88 · Cocina
 END:VCARD
 BEGIN:VCARD

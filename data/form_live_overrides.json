@@ -30,6 +30,14 @@
       "cumple_mes": 10, "cumple_dia": 19,
       "nota_telefono": "Confirmado por el director (6-jun-2026).",
       "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
+    },
+    "Zahir Valoy": {
+      "telefono": "8494601030",
+      "edad": 19,
+      "cumple_mes": 6, "cumple_dia": 7, "cumple_anio": 2007,
+      "etc_propio": 85, "etc_anio_propio": 2025, "etcs_servidos": 0,
+      "talla": "L", "comunidad": "Belén",
+      "nota_fuente": "Respondió formulario 29-jun-2026 (hoja viva de Drive, id 1Vx0vmoqhirWqAiLs7B2emOIGibdyvbSshtVYRCmJPA4). 1-jul: sube de backup a titular de cocina (reemplaza a Tommy). Sexo M inferido del nombre — confirmar."
     }
   }
 }

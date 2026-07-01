@@ -157,7 +157,8 @@ def parse_etc_propio(s):
 REMOVED_FROM_TEAM = {
     'Fabelle maciel fabian bello',  # 7-jun: sale del equipo. Reemplazada por Merkin Jean (titular cocina).
     'Jordelis Mateo',  # 10-jun: sale del equipo. Reemplazada por Pamela Colón (titular cocina).
-    'Rodolfo Telémaco Arrendel',  # 10-jun: llenó form pero sigue como backup guía; el placeholder lo maneja.
+    'Rodolfo Telémaco Arrendel',  # 10-jun llenó form; 1-jul: FUERA del equipo (decisión Co-Dir), ya ni backup.
+    'Tommy Nova Nolasco',  # 1-jul: sale del equipo. Reemplazado por Zahir Valoy (titular cocina).
 }
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
@@ -258,14 +259,14 @@ for p in equipo:
 # form (asesor externo); Scarlett y Kamila son backups que no respondieron.
 PLACEHOLDERS_OP = [
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
-    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías (llenó form 10-jun pero sigue backup; xlsx excluido vía REMOVED_FROM_TEAM)
+    ('Zahir Valoy', 'cocina', 'Cocina', 'M'),            # 1-jul: sube de backup a titular cocina (reemplaza a Tommy). Datos del form (29-jun) vía form_live_overrides. Sexo M inferido del nombre.
     ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
     ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
 ]
 # Backups de COCINA (4-jun): cantera del equipo de cocina. NO operativos. Nombres como los dio el director.
 # 7-jun: Merkin sale de backup → sube a titular (PLACEHOLDERS_OP) como 'Merkin Jean'.
 PLACEHOLDERS_BACKUP_COCINA = [
-    'Emily de la Rosa', 'Zahir', 'Vileimi', 'Yileivi', 'Eduardo', 'Emmanuel',
+    'Emily de la Rosa', 'Vileimi', 'Yileivi', 'Eduardo', 'Emmanuel',
     'Ricaira', 'Nestor', 'Leandro', 'Samuel', 'Emily',
     'Emilio', 'Carlos', 'Rosanna', 'Inomar',
 ]
@@ -402,7 +403,7 @@ banderas = [
     {'n':1, 'bandera':'Cumple en F1', 'persona':'Ismarie Sthepanie Constanzo Ramos', 'accion':'Preparar momento corto en F1', 'resp':'Directores'},
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
     {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun)', 'resp':'Directores'},
-    {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
+    {'n':4, 'bandera':'Cumple post-retiro Wilka (8-sep)', 'persona':'Wilka María Reyes Mota', 'accion':'Mencionar/celebrar en bienvenida (Tommy salió del equipo 1-jul)', 'resp':'Directores'},
     {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'— (era Fabelly)', 'accion':'Caducó: Fabelly fuera del equipo (7-jun)', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun); Jhonnalia sigue en bandera #8', 'resp':'Coord. Cocina'},

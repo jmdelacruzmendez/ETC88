@@ -3,9 +3,9 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "version": "v8-2026-06-02",
-    "total_equipo": 71,
+    "total_equipo": 69,
     "operativos": 48,
-    "no_operativos": 23
+    "no_operativos": 21
   },
   "finanzas": {
     "casa_por_persona_sin_exencion": 2300,
@@ -68,8 +68,8 @@
       }
     },
     "conteos_esperados": {
-      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15).",
-      "total_equipo": 71,
+      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15). 1-jul: Tommy Nova Nolasco y Rodolfo Telémaco salen del equipo; Zahir Valoy sube de backup a titular cocina (titulares cocina sigue 21; total 71→69; backups 18→16).",
+      "total_equipo": 69,
       "operativos": 48,
       "operativos_titulares_por_area": {
         "directores": 2,
@@ -80,10 +80,10 @@
         "musica": 6
       },
       "vacantes": 0,
-      "backups": 18,
+      "backups": 16,
       "backups_detalle": {
-        "guias": 3,
-        "cocina": 15
+        "guias": 2,
+        "cocina": 14
       },
       "asesores_cocina": 2,
       "asesores_diocesanos": 3
@@ -692,9 +692,7 @@
           "Candy Elizabeth Gatwood Ramos",
           "Dorian Elina Rodriguez Belliard",
           "Ivanna Marien Mercedes Sosa",
-          "Jordelis Mateo",
           "José Ángel Tusen Russo",
-          "Tommy Nova Nolasco",
           "Yelaxni Mota"
         ],
         "estado": "confirmado",
@@ -1150,7 +1148,7 @@
       "Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).",
       "Apellido de Leober: Soriano.",
       "Roselyn DENTRO de cocina (4-jun): el director confirmó que Roselyn y Randol están AMBOS en cocina; Pamela queda fuera. Cocina sigue en 21.",
-      "Backups (4-jun; actualizado 7-jun): Backup de GUÍAS = Rodolfo Telémaco, Scarlett Nivar, Kamila Todd (3). Backup de COCINA = Emily de la Rosa, Zahir, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (15). Total 18 backups. NO son operativos. (Merkin subió de backup a titular cocina el 7-jun, reemplazando a Fabelly Maciel que salió del equipo.)",
+      "Backups (4-jun; act. 1-jul): Backup de GUÍAS = Scarlett Nivar, Kamila Todd (2). Backup de COCINA = Emily de la Rosa, Vileimi, Yileivi, Eduardo, Emmanuel, Ricaira, Nestor, Leandro, Samuel, Emily, Emilio, Carlos, Rosanna, Inomar (14). Total 16 backups. NO son operativos. (Merkin subió a titular cocina el 7-jun; 1-jul: Zahir Valoy sube de backup a titular cocina reemplazando a Tommy Nova Nolasco, y Rodolfo Telémaco sale del equipo.)",
       "Cambio de equipo 7-jun: Fabelly Maciel Fabian Bello SALE del equipo. Merkin Jean sube de backup a titular en cocina. Cocina sigue en 21 titulares.",
       "Equipos auxiliares (5): Recaudación y Donaciones · Guagua (Transporte) · Actividad Profondo · Intersección (diáspora) · Finanzas / Tesorería (auxiliar).",
       "Intersección (auxiliar) = vínculo con la diáspora (etecianos fuera del país que apoyan); NO es el equipo espiritual transversal — esa función la cubren Paul + Sor como Asesores Espirituales transversales (ya en asesores_espirituales).",
@@ -1168,6 +1166,9 @@
       "10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).",
       "10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary \"Petra\" 19-oct · Johanny 13-feb.",
       "10-jun-2026: Rodolfo Telémaco Arrendel llenó formulario pero sigue como backup de Guías sin cambio (decisión Co-Dir).",
+      "1-jul-2026: Tommy Nova Nolasco SALE del equipo (decisión Co-Dir). Reemplazado por Zahir Valoy como titular de cocina.",
+      "1-jul-2026: Zahir Valoy entra como titular de cocina (respondió formulario 29-jun: 19 años, cumple 7-jun-2007, WhatsApp 849-460-1030, ETC 85/2025, talla L). Sube desde backup de cocina. Sexo M inferido del nombre (confirmar).",
+      "1-jul-2026: Rodolfo Telémaco Arrendel FUERA del equipo por completo (decisión Co-Dir); ya no figura ni como backup de guías.",
       "10-jun-2026: Risaira y Risairi Santana Rosario son hermanas (no es typo). Confirmado por director.",
       "10-jun-2026: Target de participantes confirmado en 45–48 (para completar ~100 personas en la casa con los 48 operativos).",
       "10-jun-2026: Mensaje de WhatsApp para F1 (dom 14-jun, 9:30 AM, Sta. Clara de Asís) enviado al equipo.",
@@ -2696,42 +2697,6 @@
       "transversal": false
     },
     {
-      "id": "tommy-nova-nolasco",
-      "nombre": "Tommy Nova Nolasco",
-      "sexo": "M",
-      "edad": 25,
-      "cumple_mes": 9,
-      "cumple_dia": 7,
-      "cumple_anio": 2000,
-      "etc_propio": 85,
-      "etc_anio_propio": 2025,
-      "etcs_servidos": 0,
-      "residencia": "Punta Cana",
-      "comunidad": "Belén",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "XL",
-      "telefono": "18492666296",
-      "que_espera": "Vivir la experiencia detrás de cámaras ",
-      "miedos": "Ninguno",
-      "tema_dios": "Mi consistencia en la fe",
-      "invita": "Todavía no sé",
-      "idea_recaudacion": "Rifas y lavado de autos",
-      "alergias": "Ninguna",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguna",
-      "contacto_emergencia": "Jaina Ramirez - Hermana - 829 964 0229",
-      "palabra": "Entusiasmo ",
-      "dudas": "Nada que comentar ",
-      "algo_directores": "Nada por el momento ",
-      "invitados": [],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "wirna-miguelina-stapleton-pilier",
       "nombre": "Wirna Miguelina Stapleton Pilier",
       "sexo": "F",
@@ -2766,6 +2731,42 @@
       "backup": false,
       "vacante": false,
       "transversal": false
+    },
+    {
+      "id": "zahir-valoy",
+      "nombre": "Zahir Valoy",
+      "sexo": "M",
+      "edad": 19,
+      "cumple_mes": 6,
+      "cumple_dia": 7,
+      "cumple_anio": 2007,
+      "etc_propio": 85,
+      "etc_anio_propio": 2025,
+      "etcs_servidos": 0,
+      "residencia": "—",
+      "comunidad": "Belén",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "L",
+      "telefono": "8494601030",
+      "que_espera": null,
+      "miedos": null,
+      "tema_dios": null,
+      "invita": null,
+      "alergias": null,
+      "condiciones": null,
+      "medicamentos": null,
+      "contacto_emergencia": null,
+      "palabra": null,
+      "dudas": null,
+      "algo_directores": null,
+      "invitados": [],
+      "sin_formulario": true,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false,
+      "nota_fuente": "Respondió formulario 29-jun-2026 (hoja viva de Drive, id 1Vx0vmoqhirWqAiLs7B2emOIGibdyvbSshtVYRCmJPA4). 1-jul: sube de backup a titular de cocina (reemplaza a Tommy). Sexo M inferido del nombre — confirmar."
     },
     {
       "id": "jos-ngel-tusen-russo",
@@ -3624,41 +3625,6 @@
       "transversal": false
     },
     {
-      "id": "rodolfo-tel-maco",
-      "nombre": "Rodolfo Telémaco",
-      "sexo": "M",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "guias",
-      "rol": "Backup Guía",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": true,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "rosanna",
       "nombre": "Rosanna",
       "sexo": null,
@@ -3867,41 +3833,6 @@
       "backup": true,
       "vacante": false,
       "transversal": false
-    },
-    {
-      "id": "zahir",
-      "nombre": "Zahir",
-      "sexo": null,
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "cocina",
-      "rol": "Backup Cocina",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": true,
-      "vacante": false,
-      "transversal": false
     }
   ],
   "calendario": [
@@ -4023,9 +3954,9 @@
     },
     {
       "n": 4,
-      "bandera": "Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)",
-      "persona": "Tommy, Wilka",
-      "accion": "Mencionar/celebrar en bienvenida",
+      "bandera": "Cumple post-retiro Wilka (8-sep)",
+      "persona": "Wilka María Reyes Mota",
+      "accion": "Mencionar/celebrar en bienvenida (Tommy salió del equipo 1-jul)",
       "resp": "Directores"
     },
     {
@@ -4418,7 +4349,7 @@
     "top": [
       {
         "propuesta": "Rifa",
-        "menciones": 23
+        "menciones": 22
       },
       {
         "propuesta": "Venta de comida",
@@ -4445,10 +4376,6 @@
         "menciones": 2
       },
       {
-        "propuesta": "Lavado de autos",
-        "menciones": 2
-      },
-      {
         "propuesta": "Donaciones (etecianos / empresas)",
         "menciones": 2
       },
@@ -4458,6 +4385,10 @@
       },
       {
         "propuesta": "Merch eteciana",
+        "menciones": 1
+      },
+      {
+        "propuesta": "Lavado de autos",
         "menciones": 1
       }
     ],
@@ -4585,10 +4516,6 @@
       {
         "persona": "Roberto Figueroa",
         "idea": "Donaciones de etecianos viejos"
-      },
-      {
-        "persona": "Tommy Nova Nolasco",
-        "idea": "Rifas y lavado de autos"
       },
       {
         "persona": "Wirna Miguelina Stapleton Pilier",

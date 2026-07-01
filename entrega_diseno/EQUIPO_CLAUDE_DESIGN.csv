@@ -1,5 +1,5 @@
 #,Área,Rol,Nombre,Cumple,Teléfono,Comunidad,Sexo,Edad,Salud relevante
-1,Dirección,Director,Jean Carlo De la Cruz Mendez,12-may,849-859-5178,Betania,M,35,
+1,Dirección,Director,Jean Carlo De la Cruz Mendez,12-may,849-850-5178,Betania,M,35,
 2,Dirección,Director,Juan Manuel de la Cruz Méndez,20-ene,829-898-1416,Betania,M,33,Alergias: N.A | Condiciones: N.A | Medicamentos: N.A
 3,Asesores,Asesor + Banderín,Frank Morales,11-jul,809-710-1743,Por confirmar,M,,
 4,Asesores,Asesora,Laura Fernández,26-oct,829-697-3316,Betania,F,30,Alergias: Mariscos.
@@ -39,8 +39,8 @@
 38,Cocina,Cocina,Risairi Santana Rosario,28-mar,829-376-2582,Belén,F,19,
 39,Cocina,Cocina,Roberto Figueroa,12-may,809-717-1329,Betania,M,45,Medicamentos: Nimguno
 40,Cocina,Cocina,Roselyn Quiroz,02-nov,829-933-0230,Belén,F,20,
-41,Cocina,Cocina,Tommy Nova Nolasco,07-sep,849-266-6296,Belén,M,25,
-42,Cocina,Cocina,Wirna Miguelina Stapleton Pilier,29-sep,829-801-9927,Betania,F,32,Alergias: No
+41,Cocina,Cocina,Wirna Miguelina Stapleton Pilier,29-sep,829-801-9927,Betania,F,32,Alergias: No
+42,Cocina,Cocina,Zahir Valoy,07-jun,849-460-1030,Belén,M,19,
 43,Música,Música,Daylin M Rambalde Moreta,23-nov,829-863-9956,Betania,F,29,"Alergias: Al polvo, polen, aromas fuertes | Condiciones: Resistencia a la insulina | Medicamentos: Metformina"
 44,Música,Música,Dorian Elina Rodriguez Belliard,21-mar,829-986-0995,Betania,F,21,"Alergias: Polvo, gatos, etc.. (pero no se preocupen tengo siempre tengo antialérgico) | Condiciones: Migraña | Medicamentos: Antialérgicos, antimigrañosos"
 45,Música,Música,Ismarie Sthepanie Constanzo Ramos,14-jun,849-386-5474,Betania,F,20,Alergias: Neo-Melubrina (metamizol sódico) | Condiciones: Ninguna. | Medicamentos: Analgésicos y triptanes.

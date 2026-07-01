@@ -22,6 +22,8 @@ python scripts/build_tripulacion_xlsx.py
 python scripts/build_drive.py
 python scripts/build_trabajo.py
 python scripts/build_entrega_diseno.py
+python scripts/build_difusion.py          # entrega_diseno/EQUIPO_ETC88.csv + .vcf (contactos importables)
+python scripts/build_claude_design_csv.py # entrega_diseno/EQUIPO_CLAUDE_DESIGN.csv
 python scripts/build_doc_trabajo_88.py
 python scripts/build_carpeta_docx.py
 python scripts/build_cartas.py

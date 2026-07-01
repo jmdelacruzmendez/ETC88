@@ -67,8 +67,8 @@
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |
 | Roberto Figueroa | Cocina | 12 may | (809) 717-1329 |
 | Roselyn Quiroz | Cocina | 2 nov | (829) 933-0230 |
-| Tommy Nova Nolasco | Cocina | 7 sep | (849) 266-6296 |
 | Wirna Miguelina Stapleton Pilier | Cocina | 29 sep | (829) 801-9927 |
+| Zahir Valoy | Cocina | 7 jun | (849) 460-1030 |
 
 ## Música (6)
 
