@@ -90,8 +90,6 @@
 
 ## Asesores de comunidad (3)
 
-- **Santo Domingo** — 2 asesores de comunidad
-- **La Vega** — 1 asesor de comunidad
 
 ---
 *53 servidores del equipo (sin cantera ni backups). Asesores de comunidad se muestran sin nombres — solo la comunidad que representan (decisión 5-jun: la comunidad reconoce a sus propios asesores).*

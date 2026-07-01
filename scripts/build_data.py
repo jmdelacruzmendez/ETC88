@@ -279,9 +279,10 @@ PLACEHOLDERS_TRANSVERSAL = [
 PLACEHOLDERS_NO_OP = [
     ('Mary "Petra" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Johanny García', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Sandrita', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
-    ('Marleny', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
-    ('Leticia González', 'asesores_diocesanos', 'Asesora Comunidad La Vega', 'F'),
+    # 1-jul: el director pidió dejar EN BLANCO las 3 plazas de asesor de comunidad (sin nombre, por definir).
+    ('Por definir — Santo Domingo (1)', 'asesores_diocesanos', 'Asesor de comunidad', 'F'),
+    ('Por definir — Santo Domingo (2)', 'asesores_diocesanos', 'Asesor de comunidad', 'F'),
+    ('Por definir — La Vega', 'asesores_diocesanos', 'Asesor de comunidad', 'F'),
 ]
 
 def make_placeholder(name, area, rol, sexo, operativo):

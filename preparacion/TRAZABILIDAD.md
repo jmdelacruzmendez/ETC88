@@ -117,8 +117,8 @@
 - Reunión de coordinadores: jueves 4-jun (Corpus Christi, virtual).
 - Piso de personas: completar 100 en la casa de retiro.
 - La meta de recaudación = el costo total del retiro (se cubre con cuotas + Profondo #1 y #2 + donaciones).
-- Santo Domingo: 2 asesores de comunidad, Marleny y Sandrita.
-- La Vega: 1 asesor de comunidad, Leticia González.
+- Santo Domingo: 2 asesores de comunidad (por definir; nombres en blanco por decisión del director 1-jul).
+- La Vega: 1 asesor de comunidad (por definir; nombre en blanco por decisión del director 1-jul).
 - Nombres corregidos: Guido Maldonado · Fabelly Maciel Fabian Bello.
 - 10-jun-2026: Pamela Colón entra a Cocina (titular); Jordelis Mateo sale del equipo. Pamela respondió formulario 10-jun (cumple 15-may, tel 829-342-2888). Condición de salud relevante: Migralepsia — riesgo con mucho calor o sin desayunar (bandera #35).
 - 10-jun-2026: Cumpleaños confirmados vía Carpeta v9 PDF: Paul 9-nov · Sor Angelina 22-oct · Frank 11-jul · Mary "Petra" 19-oct · Johanny 13-feb.

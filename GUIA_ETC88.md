@@ -39,7 +39,7 @@ Somos **48 servidores operativos** + asesores ampliados y transversales. Una sol
 
 **Asesores Espirituales (transversales):** Padre Paul Ramírez · Sor Angelina Lebrón
 **Asesoras de Cocina:** Johanny García · Mary "Petra" Morales
-**Asesores de Comunidad:** Leticia González · Marleny · Sandrita
+**Asesores de Comunidad:** Por definir — La Vega · Por definir — Santo Domingo (1) · Por definir — Santo Domingo (2)
 
 **Equipos auxiliares:** Recaudación / Profondo · Guagua (Transporte) · Intersección (diáspora) · Finanzas / Tesorería (auxiliar)
 
