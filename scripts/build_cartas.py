@@ -121,6 +121,52 @@ def firma_imagen(doc):
     else:
         firma(doc)
 
+FIRMA_JM = f'{REPO}/data/firma_jm.png'      # firma digital Juan Manuel (9-jul-2026)
+FIRMA_JC = f'{REPO}/data/firma_jc.png'      # firma digital Jean Carlo (9-jul-2026)
+SELLO_SOLO = f'{REPO}/data/sello_solo.png'  # sello de la comunidad (recorte del escaneo)
+
+def firma_digital(doc):
+    """Bloque de firmas DIGITALES de ambos co-directores + sello (para modelos listos a llenar)."""
+    _p(doc)
+    t = doc.add_table(rows=1, cols=3)  # sin estilo = sin bordes
+    t.columns[0].width = Inches(2.6); t.columns[1].width = Inches(2.6); t.columns[2].width = Inches(1.6)
+    c0, c1, c2 = t.rows[0].cells
+    for cell, img, h, nombre, tel in [
+        (c0, FIRMA_JM, 0.85, CODIR[0] if CODIR else '[Co-Director]', TELS[0] if TELS else ''),
+        (c1, FIRMA_JC, 0.55, CODIR[1] if len(CODIR) > 1 else '', TELS[1] if len(TELS) > 1 else ''),
+    ]:
+        p = cell.paragraphs[0]; p.alignment = CEN
+        if os.path.exists(img):
+            p.add_run().add_picture(img, height=Inches(h))
+        pl = cell.add_paragraph(); pl.alignment = CEN; pl.add_run('____________________')
+        pn = cell.add_paragraph(); pn.alignment = CEN
+        r = pn.add_run(nombre); r.bold = True
+        pt = cell.add_paragraph(); pt.alignment = CEN; pt.add_run(tel)
+    p2 = c2.paragraphs[0]; p2.alignment = CEN
+    if os.path.exists(SELLO_SOLO):
+        p2.add_run().add_picture(SELLO_SOLO, width=Inches(1.45))
+    _p(doc, f'Co-Directores · Encuentro Total con Cristo (ETC) {NUM}', align=CEN, size=9, color=GRIS)
+
+def carta_modelo_firmada():
+    """Modelo VACÍO para completar (fecha/destinatario/pedido) con firma digital + sello ya puestos."""
+    doc = new_doc()
+    membrete(doc, '[FECHA]')
+    destinatario(doc, ['[Señores / Señora / Señor]', '[Nombre del contacto]',
+                       '[Empresa / Institución]', '[Ciudad]'])
+    _p(doc, SALUDO)
+    _p(doc, ACTIVIDAD)
+    _p(doc, 'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
+            'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
+            'nos haga un donativo para este retiro, de forma que sirva de apoyo a nuestro '
+            'presupuesto general. [OPCIONAL: detallar aquí el pedido específico o la lista de '
+            'productos.] Por ser asociación de fieles de la Diócesis de San Pedro de Macorís '
+            'podemos emitir la constancia de su donativo; con gusto lo incluimos en nuestra '
+            'cadena de oración.')
+    _p(doc, DESPEDIDA)
+    firma_digital(doc)
+    out = f'{REPO}/Carta_Modelo_FIRMADA_ETC88.docx'
+    doc.save(out); print(f'Wrote {out}')
+
 SALUDO = ('Reciba un afectuoso saludo de nuestra parte y que la paz y el amor de Dios esté '
           'llenando cada espacio de su vida. Después de un cordial saludo en Cristo Jesús, '
           'hacemos de su conocimiento que el Encuentro Total con Cristo (ETC), asociación de '
@@ -380,6 +426,7 @@ def main():
     carta_induveca(firmada=True)
     carta_modelo_empresa()
     carta_modelo_personal()
+    carta_modelo_firmada()
     carta_personal_firmada(['Estimado(a) [nombre]', '[ciudad]'], f'{REPO}/Carta_Modelo_Personal_FIRMADA_ETC88.docx')
     directorio_doc()
     donantes_doc()
