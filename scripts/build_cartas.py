@@ -342,7 +342,10 @@ def donantes_doc():
 
 # ---------------------------------------------------------------- tracker ----
 TARGETS = [
-    ['1', 'Induveca (Grupo SID)', 'Alimentos (embutidos)', 'Empresa-rubro', 'servicioalcliente@induveca.com.do', 'web·verificar · PRIMERA carta enviada', 'salami, jamón, salchichón, mortadela'],
+    ['1', 'Induveca (Grupo SID) — At\'n. Daisy Medina', 'Alimentos (embutidos/jugos/lácteos)', 'Empresa-rubro', 'servicioalcliente@induveca.com.do', 'carta FIRMADA v2 lista (PDF 1-ago-2026, tabla de 7 productos + anexo)', 'jamón, salami, salchicha, Jugo Santal, leche, aceite, harina'],
+    ['1', 'AFUTUSOL', 'Donativo general', 'Empresa', '[verificar]', 'carta FIRMADA lista (PDF 1-ago-2026, donativo sin productos + anexo)', 'donativo al presupuesto general'],
+    ['1', 'Estación de Combustible La Macorisana', 'Combustible', 'Empresa-rubro', 'SPM · [verificar]', 'carta FIRMADA lista (PDF 1-ago-2026 + anexo)', 'combustible para transporte'],
+    ['1', 'Sharina Berroa', 'Donativo personal', 'Personal', '[verificar]', 'carta FIRMADA lista (PDF 1-ago-2026 + anexo)', 'donativo al presupuesto general'],
     ['1', 'Grupo SID / MercaSID', 'Alimentos (aceite/harina)', 'Empresa-rubro', 'compras@mercasid.com.do · 809-565-2151', 'web·verificar (dona producto)', 'aceite Crisol, harina'],
     ['1', 'César Iglesias S.A. (Lic. Luis Velázquez)', 'Alimentos/limpieza', 'Empresa-rubro', 'SPM · [verificar]', 'SOLICITADO 2023 y 2025 (repetida)', 'aceite, pasta, cloro, papel'],
     ['1', 'Almacenes Iberia (Sr. Alberto Rivera)', 'Alimentos', 'Empresa-rubro', '809-529-2799 (SPM)', 'SOLICITADO 78 · especie probable [verificar]', 'lácteos, pan, víveres'],
