@@ -72,6 +72,19 @@ Todo lo demás (`preparacion/`) es **DOCUMENTO DE TRABAJO**, no entregable.
    una sugerencia de idea. Solo el director confirma roles operativos; sin confirmación,
    siempre `[POR DEFINIR]` + nota "(Co-Dir decide)".
 
+## Las 5 reglas (continuación) — Regla #7
+7. **Cartas de donación: SOLO lo que el director indique.** De una carta, únicamente se
+   pone lo que el director diga textualmente: **destinatario · fecha · pedido**. El
+   **pedido va solo si él lo dice** — nunca se deduce del rubro/nombre de la empresa
+   (p. ej. NO pedir agua a una aguatera ni combustible a una gasolinera salvo que lo pida).
+   Si no da pedido → **donativo general** (sin producto). **Prohibido de fábrica:**
+   "constancia de donativo/donación", "cadena de oración", "Misa de clausura" y cualquier
+   cláusula/frase extra — solo se agregan si el director las pide. La **carta base fija**
+   = membrete + logo (pez) · saludo · párrafo del retiro (4–6 sep, ~100 jóvenes) ·
+   despedida · firma+sello (firmas digitales en `data/firma_jm.png` + `data/firma_jc.png`,
+   sello en `data/sello_solo.png`). Si falta un dato (destinatario/fecha/pedido) → **preguntar,
+   no asumir**.
+
 ## Decisiones que son del director (NO inventar — quedan `propuesta`/`pendiente`)
 Lema del retiro · hilo espiritual · reglas estéticas/branding (van a Claude Design) ·
 monto final de la cuota del equipo · número final de participantes · varón de cocina ·

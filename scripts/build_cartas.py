@@ -159,9 +159,7 @@ def carta_modelo_firmada():
             'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
             'nos haga un donativo para este retiro, de forma que sirva de apoyo a nuestro '
             'presupuesto general. [OPCIONAL: detallar aquí el pedido específico o la lista de '
-            'productos.] Por ser asociación de fieles de la Diócesis de San Pedro de Macorís '
-            'podemos emitir la constancia de su donativo; con gusto lo incluimos en nuestra '
-            'cadena de oración.')
+            'productos, solo si el director lo indica — regla #7.]')
     _p(doc, DESPEDIDA)
     firma_digital(doc)
     out = f'{REPO}/Carta_Modelo_FIRMADA_ETC88.docx'
@@ -205,9 +203,7 @@ def carta_induveca(firmada=False):
             'alimentación de los jóvenes durante el fin de semana del retiro.')
     _p(doc, 'Si dentro del Grupo SID fuera posible, también nos ayudaría el aceite comestible '
             '(Crisol / Mazola) y la harina de MercaSID. Cualquier aporte, en producto o en '
-            'efectivo, será de gran ayuda; por ser una asociación de fieles de la Diócesis de '
-            'San Pedro de Macorís podemos emitir la constancia de su donación que requieran, y '
-            'con gusto los incluimos en nuestra cadena de oración.')
+            'efectivo, será de gran ayuda.')
     _p(doc, DESPEDIDA)
     (firma_imagen if firmada else firma)(doc)
     out = f'{REPO}/Carta_Induveca_FIRMADA_ETC88.docx' if firmada else f'{REPO}/Carta_Induveca_ETC88.docx'
@@ -223,9 +219,7 @@ def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY, pedido=None):
         'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
         'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
         'nos haga una donación para este retiro, de forma que sirva de apoyo a nuestro '
-        'presupuesto general. Por ser asociación de fieles de la Diócesis de San Pedro de '
-        'Macorís podemos emitir la constancia de su donación; con gusto lo incluimos en '
-        'nuestra cadena de oración.'))
+        'presupuesto general.'))
     _p(doc, DESPEDIDA)
     firma_imagen(doc)
     doc.save(out_name); print(f'Wrote {out_name}')
@@ -242,8 +236,7 @@ def carta_personal_firmada(destino_lineas, out_name, fecha=FECHA_HOY):
               'Una Biblia o un pez con el nombre del padrino y del participante',
               'Un aporte libre, en el monto que decidas']:
         doc.add_paragraph(style='List Bullet').add_run(b)
-    _p(doc, 'Puedes hacerlo por transferencia [cuenta — POR DEFINIR]. Con gusto te emitimos una '
-            'constancia y te incluimos en nuestra cadena de oración y en la Misa de clausura.')
+    _p(doc, 'Puedes hacerlo por transferencia [cuenta — POR DEFINIR].')
     _p(doc, DESPEDIDA)
     firma_imagen(doc)
     doc.save(out_name); print(f'Wrote {out_name}')
@@ -261,8 +254,7 @@ def carta_modelo_empresa():
     _p(doc, 'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
             'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
             'nos haga una donación para este retiro, de forma que sirva de apoyo a nuestro '
-            'presupuesto general. Por ser asociación de fieles de la Diócesis de SPM podemos '
-            'emitir la constancia de su donación; con gusto lo incluimos en nuestra cadena de oración.')
+            'presupuesto general.')
     _p(doc, DESPEDIDA); firma(doc)
     doc.add_page_break()
     _p(doc, 'Variante 2 — Por rubro (artículos del presupuesto)', bold=True, color=MAR)
@@ -289,8 +281,7 @@ def carta_modelo_personal():
               'Una Biblia o un pez con el nombre del padrino y del participante',
               'Un aporte libre, en el monto que decidas']:
         doc.add_paragraph(style='List Bullet').add_run(b)
-    _p(doc, 'Puedes hacerlo por transferencia [cuenta — POR DEFINIR]. Con gusto te emitimos una '
-            'constancia y te incluimos en nuestra cadena de oración y en la Misa de clausura.')
+    _p(doc, 'Puedes hacerlo por transferencia [cuenta — POR DEFINIR].')
     _p(doc, DESPEDIDA); firma(doc)
     out = f'{REPO}/Carta_Modelo_Personal_ETC88.docx'
     doc.save(out); print(f'Wrote {out}')
