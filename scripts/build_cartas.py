@@ -262,6 +262,49 @@ def carta_paniagua():
     out = f'{REPO}/Carta_Paniagua_ETC88.docx'
     doc.save(out); print(f'Wrote {out}')
 
+def carta_printmate():
+    """Carta a Print Mate, S.R.L. — SIMPLE, 1 página, SIN firma digital ni sello (se firma a
+    mano). Pedido = Listado Fausto (materiales e impresiones), dado textualmente por el director.
+    Márgenes/tipografía compactos para que la tabla de 10 renglones quepa en una sola página."""
+    doc = new_doc()
+    sec = doc.sections[0]
+    sec.top_margin = Inches(0.6); sec.bottom_margin = Inches(0.5)
+    sec.left_margin = Inches(0.85); sec.right_margin = Inches(0.85)
+    st = doc.styles['Normal']; st.font.size = Pt(10.5)
+    st.paragraph_format.space_after = Pt(3); st.paragraph_format.line_spacing = 1.0
+    # membrete compacto (logo más pequeño, sin párrafo extra)
+    if os.path.exists(LOGO):
+        p = doc.add_paragraph(); p.alignment = CEN; p.paragraph_format.space_after = Pt(2)
+        p.add_run().add_picture(LOGO, width=Inches(1.05))
+    _p(doc, 'DIÓCESIS DE SAN PEDRO DE MACORÍS', bold=True, align=CEN, size=12.5, color=MAR)
+    _p(doc, 'Encuentro Total con Cristo (ETC) · Comunidad «Caminos de Vida»', italic=True, align=CEN, size=9.5)
+    _p(doc, 'Asociación de fieles', align=CEN, size=8.5, color=GRIS)
+    _p(doc, f'San Pedro de Macorís, Rep. Dom. — {FECHA_CESAR}', italic=True, align=DER)
+    destinatario(doc, ['Señor', 'Fausto De La Rosa', 'Print Mate, S.R.L.',
+                       'San Pedro de Macorís, Rep. Dom.'])
+    _p(doc, SALUDO)
+    _p(doc, ACTIVIDAD)
+    _p(doc, 'Conocedores de su trabajo en Print Mate, apelamos a su generosidad solicitando su '
+            'colaboración, según su disponibilidad, con algunos materiales e impresiones que '
+            'necesitamos para el retiro, a saber:')
+    table(doc, ['Cantidad', 'Artículo / Servicio'], [
+        ['55', 'Camisetas (Dryfit)'],
+        ['2', 'Resmas de papel'],
+        ['', 'Papelógrafo'],
+        ['60', 'Sobres'],
+        ['2', 'Paquetes de lapiceros'],
+        ['9', 'Cartulinas blancas'],
+        ['', 'Impresión de separadores / identificadores'],
+        ['70', 'Porta identificaciones'],
+        ['14', 'Marcadores (3 verdes, 3 azules, 3 rojos, 5 negros)'],
+        ['9', 'Páginas — impresión en papel bond grande'],
+    ])
+    _p(doc, 'Cualquier colaboración, en material o en efectivo, será recibida con enorme gratitud.')
+    _p(doc, DESPEDIDA)
+    firma(doc)
+    out = f'{REPO}/Carta_PrintMate_ETC88.docx'
+    doc.save(out); print(f'Wrote {out}')
+
 def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY, pedido=None):
     """Carta de donación CON firma+sello reales — cambian fecha, donante y (opcional) el pedido."""
     doc = new_doc()
@@ -470,6 +513,7 @@ def main():
     carta_induveca(firmada=True)
     carta_cesar_iglesias()
     carta_paniagua()
+    carta_printmate()
     carta_modelo_empresa()
     carta_modelo_personal()
     carta_modelo_firmada()
