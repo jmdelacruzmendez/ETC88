@@ -47,6 +47,7 @@ TELS = ['829-898-1416', '849-850-5178']  # Juan Manuel · Jean Carlo (Co-Dir, 18
 CUOTA = _v(EST.get('finanzas', {}).get('cuota_participante', 3000))
 CUOTA_TXT = f"RD${CUOTA:,}" if isinstance(CUOTA, (int, float)) else f"RD${CUOTA}"
 FECHA_HOY = '18 de junio de 2026'
+FECHA_CESAR = '2 de agosto de 2026'  # César Iglesias — sin fecha dada por el director; hoy (ajustable)
 
 MAR = RGBColor(0x1B, 0x3A, 0x52)
 GRIS = RGBColor(0x80, 0x80, 0x80)
@@ -207,6 +208,58 @@ def carta_induveca(firmada=False):
     _p(doc, DESPEDIDA)
     (firma_imagen if firmada else firma)(doc)
     out = f'{REPO}/Carta_Induveca_FIRMADA_ETC88.docx' if firmada else f'{REPO}/Carta_Induveca_ETC88.docx'
+    doc.save(out); print(f'Wrote {out}')
+
+def carta_cesar_iglesias():
+    """Carta a César Iglesias, S.A. — pedido de productos (pasta/harina/aceite/limpieza) con
+    cuadro de cantidades (del presupuesto) + producto sugerido de su propia línea.
+    Marcas verificadas por web (regla #1): pastas Del César/Alianza · aceite El Gallo ·
+    detergente Brillante · lavaplatos Bolazul · jabón Hispano. Firma digital + sello."""
+    doc = new_doc()
+    membrete(doc, FECHA_CESAR)
+    destinatario(doc, ['Señores', 'César Iglesias, S.A.', "At'n.: Depto. de Responsabilidad Social",
+                       'San Pedro de Macorís, Rep. Dom.'])
+    _p(doc, SALUDO)
+    _p(doc, ACTIVIDAD)
+    _p(doc, 'Conocedores de la trayectoria de César Iglesias, S.A. —empresa fundada en nuestra '
+            'ciudad de San Pedro de Macorís— y de su compromiso con las familias dominicanas, '
+            'apelamos a su generosidad solicitando su colaboración, según su disponibilidad, con '
+            'algunos productos de sus líneas de alimentos y limpieza que forman parte de nuestro '
+            'presupuesto para la alimentación de los jóvenes durante el fin de semana del retiro. '
+            'A modo de referencia:')
+    table(doc, ['Producto', 'Cantidad (aprox.)', 'Sugerencia (línea César Iglesias)'], [
+        ['Pasta larga (espagueti)', '14 libras', 'Pastas Del César / Alianza'],
+        ['Pasta de espirales', '8 libras', 'Pastas Del César / Alianza'],
+        ['Harina de trigo', '20 libras', 'Harina de trigo'],
+        ['Aceite vegetal', '2 galones', 'Aceite El Gallo'],
+        ['Jabón para fregar (lavaplatos)', '1 galón', 'Bolazul'],
+        ['Papel higiénico', '2 fardos', 'Papel higiénico'],
+        ['Papel toalla', '10 unidades', 'Toallas de papel'],
+        ['Servilletas', '2 paquetes', 'Servilletas'],
+    ])
+    _p(doc, 'Asimismo, cualquier aporte de detergente (Brillante), jabón de lavar (Hispano), '
+            'cloro u otros productos de limpieza de su línea será de gran ayuda. Cualquier '
+            'colaboración, en producto o en efectivo, será recibida con enorme gratitud.')
+    _p(doc, DESPEDIDA)
+    firma_digital(doc)
+    out = f'{REPO}/Carta_Cesar_Iglesias_ETC88.docx'
+    doc.save(out); print(f'Wrote {out}')
+
+def carta_paniagua():
+    """Carta a D'Paniagua Technology — donativo general (sin producto), fecha 20-jul-2026.
+    Dirigida al Sr. José Alberto Paniagua (dueño) a nombre de su negocio. Firma digital + sello."""
+    doc = new_doc()
+    membrete(doc, '20 de julio de 2026')
+    destinatario(doc, ['Señor', 'José Alberto Paniagua', "D'Paniagua Technology"])
+    _p(doc, SALUDO)
+    _p(doc, ACTIVIDAD)
+    _p(doc, 'Para realizar este encuentro acudimos a la generosidad de instituciones y personas '
+            'que colaboran con esta obra; por tal motivo le solicitamos que, según su posibilidad, '
+            'nos haga un donativo para este retiro, de forma que sirva de apoyo a nuestro '
+            'presupuesto general.')
+    _p(doc, DESPEDIDA)
+    firma_digital(doc)
+    out = f'{REPO}/Carta_Paniagua_ETC88.docx'
     doc.save(out); print(f'Wrote {out}')
 
 def carta_firmada(donante_lineas, out_name, fecha=FECHA_HOY, pedido=None):
@@ -415,6 +468,8 @@ def write_tracker():
 def main():
     carta_induveca(firmada=False)
     carta_induveca(firmada=True)
+    carta_cesar_iglesias()
+    carta_paniagua()
     carta_modelo_empresa()
     carta_modelo_personal()
     carta_modelo_firmada()
