@@ -83,9 +83,11 @@ by = defaultdict(list)
 for p in team:
     by[p['area']].append(p)
 
+n_titulares = sum(1 for p in team if not p.get('backup') and not p.get('vacante'))
+
 lines = []
 lines.append('# Directorio del equipo — ETC 88')
-lines.append('### Lista de servidores por área · 53 servidores · generada desde data/equipo.json (fuente única)')
+lines.append(f'### Lista de servidores por área · {n_titulares} servidores · generada desde data/equipo.json (fuente única)')
 lines.append('')
 lines.append('> No editar a mano. Si un nombre cambia, se corrige el roster y se regenera con `python scripts/build_directorio.py`.')
 lines.append('')
@@ -113,6 +115,16 @@ for a in ORDER:
 
     lines.append(f'## {LABELS.get(a, a)} ({len(ppl)})')
     lines.append('')
+    if a == 'guias':
+        lines.append('| Nombre | Rol | Pareja (color) | Cumpleaños | Teléfono |')
+        lines.append('|---|---|---|---|---|')
+        for p in ppl:
+            color = p.get('color_equipo')
+            comp = p.get('companero_pareja')
+            pareja = f'{color} · con {comp}' if color and comp else (color or '—')
+            lines.append(f'| {p["nombre"]} | {rol_tag(p, a)} | {pareja} | {cumple_str(p)} | {telefono_str(p)} |')
+        lines.append('')
+        continue
     lines.append('| Nombre | Rol | Cumpleaños | Teléfono |')
     lines.append('|---|---|---|---|')
     for p in ppl:

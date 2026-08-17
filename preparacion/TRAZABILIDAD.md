@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 56 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 53 · operativos titulares 48 · vacantes 0 · backups 0.
@@ -42,6 +42,7 @@
 | `asesores_externos.cocina` | ["Mary \"Petra\" Morales", "Johanny García"] | director |  |
 | `asesores_externos.comunidad_sd` | ["Yraisa Álvarez", "Manuel Almonte"] | director | 2 asesores de la comunidad de Santo Domingo. 17-ago-2026: el director … |
 | `asesores_externos.comunidad_la_vega` | ["Leticia González"] | director | 1 representante (asesor): Leticia González. |
+| `parejas_guias` | [{"color": "Azul", "guias": ["Priscilla Hidalgo Pou", "Ferna… | director (17-ago-2026) | 7 parejas de guías, cada una con su color de equipo. Los nombres son l… |
 | `calendario_hitos.reunion_coordinadores` | jueves 4-jun (Corpus Christi, virtual) | coordinadores |  |
 | `calendario_hitos.misa_eteciana_7jun` | domingo 7-jun | ics | Misa Eteciana. |
 | `calendario_hitos.formacion_1` | domingo 14-jun | ics | Primera Formación. |

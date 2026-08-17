@@ -491,6 +491,62 @@
         "nota": "1 representante (asesor): Leticia González."
       }
     },
+    "parejas_guias": {
+      "estado": "confirmado",
+      "fuente": "director (17-ago-2026)",
+      "nota": "7 parejas de guías, cada una con su color de equipo. Los nombres son los del roster (data/equipo.json).",
+      "valor": [
+        {
+          "color": "Azul",
+          "guias": [
+            "Priscilla Hidalgo Pou",
+            "Fernando Cordero"
+          ]
+        },
+        {
+          "color": "Naranja",
+          "guias": [
+            "Wilka María Reyes Mota",
+            "Luisa Maria Fiorentino Brugal"
+          ]
+        },
+        {
+          "color": "Rosado",
+          "guias": [
+            "Juan Pablo Argüello Alzate",
+            "Victoria Lorenzo Rivera"
+          ]
+        },
+        {
+          "color": "Verde",
+          "guias": [
+            "Jhonnalia Franchesca Silvestre Guzmán",
+            "Oliver Rafael De León Ramírez"
+          ]
+        },
+        {
+          "color": "Morado",
+          "guias": [
+            "Yelaxni Mota",
+            "Ivanna Marien Mercedes Sosa"
+          ]
+        },
+        {
+          "color": "Amarillo",
+          "guias": [
+            "Camila Fernández Hazim",
+            "Jonathan Andres Medina Mota"
+          ]
+        },
+        {
+          "color": "Rojo",
+          "guias": [
+            "Franklin De Jesús Silverio Delgadillo",
+            "Darianny Rodriguez Belliard"
+          ]
+        }
+      ]
+    },
     "calendario_hitos": {
       "_fuente": "data/calendario.ics (Misiones Diocesanas SPM, publicado 17-may-2026). Calendario oficial del equipo: formaciones dominicales, misas etecianas, Profondo, Convivencia, Ensayo, Avanzada y retiro. Para items internos de la dirección ver 'pendientes_direccion' más abajo.",
       "reunion_coordinadores": {
@@ -1186,7 +1242,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Amarillo",
+      "companero_pareja": "Jonathan Andres Medina Mota"
     },
     {
       "id": "priscilla-hidalgo-pou",
@@ -1222,7 +1280,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Azul",
+      "companero_pareja": "Fernando Cordero"
     },
     {
       "id": "darianny-rodriguez-belliard",
@@ -1258,7 +1318,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Rojo",
+      "companero_pareja": "Franklin De Jesús Silverio Delgadillo"
     },
     {
       "id": "fernando-cordero",
@@ -1300,7 +1362,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Azul",
+      "companero_pareja": "Priscilla Hidalgo Pou"
     },
     {
       "id": "franklin-de-jes-s-silverio-delgadillo",
@@ -1347,7 +1411,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Rojo",
+      "companero_pareja": "Darianny Rodriguez Belliard"
     },
     {
       "id": "ivanna-marien-mercedes-sosa",
@@ -1389,7 +1455,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Morado",
+      "companero_pareja": "Yelaxni Mota"
     },
     {
       "id": "jhonnalia-franchesca-silvestre-guzm-n",
@@ -1425,7 +1493,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Verde",
+      "companero_pareja": "Oliver Rafael De León Ramírez"
     },
     {
       "id": "jonathan-andres-medina-mota",
@@ -1461,7 +1531,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Amarillo",
+      "companero_pareja": "Camila Fernández Hazim"
     },
     {
       "id": "juan-pablo-arg-ello-alzate",
@@ -1497,7 +1569,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Rosado",
+      "companero_pareja": "Victoria Lorenzo Rivera"
     },
     {
       "id": "luisa-maria-fiorentino-brugal",
@@ -1533,7 +1607,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Naranja",
+      "companero_pareja": "Wilka María Reyes Mota"
     },
     {
       "id": "oliver-rafael-de-le-n-ram-rez",
@@ -1569,7 +1645,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Verde",
+      "companero_pareja": "Jhonnalia Franchesca Silvestre Guzmán"
     },
     {
       "id": "victoria-lorenzo-rivera",
@@ -1605,7 +1683,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Rosado",
+      "companero_pareja": "Juan Pablo Argüello Alzate"
     },
     {
       "id": "wilka-mar-a-reyes-mota",
@@ -1641,7 +1721,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Naranja",
+      "companero_pareja": "Luisa Maria Fiorentino Brugal"
     },
     {
       "id": "yelaxni-mota",
@@ -1677,7 +1759,9 @@
       "operativo": true,
       "backup": false,
       "vacante": false,
-      "transversal": false
+      "transversal": false,
+      "color_equipo": "Morado",
+      "companero_pareja": "Ivanna Marien Mercedes Sosa"
     },
     {
       "id": "johnnito-richiez-brugal",
@@ -3017,6 +3101,57 @@
       "backup": false,
       "vacante": false,
       "transversal": false
+    }
+  ],
+  "parejas_guias": [
+    {
+      "color": "Azul",
+      "guias": [
+        "Priscilla Hidalgo Pou",
+        "Fernando Cordero"
+      ]
+    },
+    {
+      "color": "Naranja",
+      "guias": [
+        "Wilka María Reyes Mota",
+        "Luisa Maria Fiorentino Brugal"
+      ]
+    },
+    {
+      "color": "Rosado",
+      "guias": [
+        "Juan Pablo Argüello Alzate",
+        "Victoria Lorenzo Rivera"
+      ]
+    },
+    {
+      "color": "Verde",
+      "guias": [
+        "Jhonnalia Franchesca Silvestre Guzmán",
+        "Oliver Rafael De León Ramírez"
+      ]
+    },
+    {
+      "color": "Morado",
+      "guias": [
+        "Yelaxni Mota",
+        "Ivanna Marien Mercedes Sosa"
+      ]
+    },
+    {
+      "color": "Amarillo",
+      "guias": [
+        "Camila Fernández Hazim",
+        "Jonathan Andres Medina Mota"
+      ]
+    },
+    {
+      "color": "Rojo",
+      "guias": [
+        "Franklin De Jesús Silverio Delgadillo",
+        "Darianny Rodriguez Belliard"
+      ]
     }
   ],
   "calendario": [

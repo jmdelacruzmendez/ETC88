@@ -491,6 +491,24 @@ recaudacion = {
 # banderas confirmado/propuesta/pendiente). Los docs renderizan esas banderas.
 estado = json.load(open(f'{REPO}/data/estado.json'))
 
+# v9 (17-ago): parejas de guías + color de equipo (fuente: estado.json → parejas_guias).
+# Cada guía recibe su color y su compañero/a de pareja. La fuente son los nombres del roster.
+_pareja_por_guia = {}
+for _pg in estado.get('parejas_guias', {}).get('valor', []):
+    _miembros = _pg.get('guias', [])
+    for _i, _nm in enumerate(_miembros):
+        _companero = _miembros[1 - _i] if len(_miembros) == 2 else None
+        _pareja_por_guia[_nm] = {'color_equipo': _pg['color'], 'companero_pareja': _companero}
+for p in equipo:
+    if p['area'] == 'guias' and not p.get('backup') and not p.get('vacante'):
+        pg = _pareja_por_guia.get(p['nombre'])
+        p['color_equipo'] = pg['color_equipo'] if pg else None
+        p['companero_pareja'] = pg['companero_pareja'] if pg else None
+_guias_sin_pareja = [p['nombre'] for p in equipo if p['area'] == 'guias'
+                     and p.get('operativo') and not p.get('backup') and not p.get('color_equipo')]
+if _guias_sin_pareja:
+    print('⚠ Guías sin pareja/color asignado:', _guias_sin_pareja)
+
 def _v(node):
     """Extrae .valor de un nodo {valor, estado, ...}; si no, devuelve el nodo tal cual."""
     return node['valor'] if isinstance(node, dict) and 'valor' in node else node
@@ -546,6 +564,7 @@ data = {
         'sub':'Tripulación para una expedición',
     },
     'equipo': equipo,
+    'parejas_guias': _v(estado['parejas_guias']),
     'calendario': calendario,
     'banderas': banderas,
     'invitados': invitados_list,

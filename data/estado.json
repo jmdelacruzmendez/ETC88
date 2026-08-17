@@ -462,6 +462,20 @@
       "nota": "1 representante (asesor): Leticia González."
     }
   },
+  "parejas_guias": {
+    "estado": "confirmado",
+    "fuente": "director (17-ago-2026)",
+    "nota": "7 parejas de guías, cada una con su color de equipo. Los nombres son los del roster (data/equipo.json).",
+    "valor": [
+      {"color": "Azul",     "guias": ["Priscilla Hidalgo Pou", "Fernando Cordero"]},
+      {"color": "Naranja",  "guias": ["Wilka María Reyes Mota", "Luisa Maria Fiorentino Brugal"]},
+      {"color": "Rosado",   "guias": ["Juan Pablo Argüello Alzate", "Victoria Lorenzo Rivera"]},
+      {"color": "Verde",    "guias": ["Jhonnalia Franchesca Silvestre Guzmán", "Oliver Rafael De León Ramírez"]},
+      {"color": "Morado",   "guias": ["Yelaxni Mota", "Ivanna Marien Mercedes Sosa"]},
+      {"color": "Amarillo", "guias": ["Camila Fernández Hazim", "Jonathan Andres Medina Mota"]},
+      {"color": "Rojo",     "guias": ["Franklin De Jesús Silverio Delgadillo", "Darianny Rodriguez Belliard"]}
+    ]
+  },
   "calendario_hitos": {
     "_fuente": "data/calendario.ics (Misiones Diocesanas SPM, publicado 17-may-2026). Calendario oficial del equipo: formaciones dominicales, misas etecianas, Profondo, Convivencia, Ensayo, Avanzada y retiro. Para items internos de la dirección ver 'pendientes_direccion' más abajo.",
     "reunion_coordinadores": {

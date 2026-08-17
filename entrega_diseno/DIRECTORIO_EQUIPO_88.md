@@ -27,22 +27,22 @@
 
 ## Guías (14)
 
-| Nombre | Rol | Cumpleaños | Teléfono |
-|---|---|---|---|
-| Camila Fernández Hazim | Coordinador/a | 18 ago | (809) 961-5497 |
-| Priscilla Hidalgo Pou | Coordinador/a | 16 jul | (829) 478-3840 |
-| Darianny Rodriguez Belliard | Guía | 30 ene | (829) 372-6925 |
-| Fernando Cordero | Guía | 20 dic | (809) 639-8714 |
-| Franklin De Jesús Silverio Delgadillo | Guía | 18 feb | (849) 864-8510 |
-| Ivanna Marien Mercedes Sosa | Guía | 9 nov | (829) 994-6731 |
-| Jhonnalia Franchesca Silvestre Guzmán | Guía | 20 oct | (829) 918-0666 |
-| Jonathan Andres Medina Mota | Guía | 26 sep | (809) 779-2446 |
-| Juan Pablo Argüello Alzate | Guía | 21 ene | (829) 879-0121 |
-| Luisa Maria Fiorentino Brugal | Guía | 19 may | (809) 972-2327 |
-| Oliver Rafael De León Ramírez | Guía | 24 abr | (809) 263-6802 |
-| Victoria Lorenzo Rivera | Guía | 21 sep | (809) 882-6523 |
-| Wilka María Reyes Mota | Guía | 8 sep | (829) 861-8355 |
-| Yelaxni Mota | Guía | 25 sep | (809) 491-1672 |
+| Nombre | Rol | Pareja (color) | Cumpleaños | Teléfono |
+|---|---|---|---|---|
+| Camila Fernández Hazim | Coordinador/a | Amarillo · con Jonathan Andres Medina Mota | 18 ago | (809) 961-5497 |
+| Priscilla Hidalgo Pou | Coordinador/a | Azul · con Fernando Cordero | 16 jul | (829) 478-3840 |
+| Darianny Rodriguez Belliard | Guía | Rojo · con Franklin De Jesús Silverio Delgadillo | 30 ene | (829) 372-6925 |
+| Fernando Cordero | Guía | Azul · con Priscilla Hidalgo Pou | 20 dic | (809) 639-8714 |
+| Franklin De Jesús Silverio Delgadillo | Guía | Rojo · con Darianny Rodriguez Belliard | 18 feb | (849) 864-8510 |
+| Ivanna Marien Mercedes Sosa | Guía | Morado · con Yelaxni Mota | 9 nov | (829) 994-6731 |
+| Jhonnalia Franchesca Silvestre Guzmán | Guía | Verde · con Oliver Rafael De León Ramírez | 20 oct | (829) 918-0666 |
+| Jonathan Andres Medina Mota | Guía | Amarillo · con Camila Fernández Hazim | 26 sep | (809) 779-2446 |
+| Juan Pablo Argüello Alzate | Guía | Rosado · con Victoria Lorenzo Rivera | 21 ene | (829) 879-0121 |
+| Luisa Maria Fiorentino Brugal | Guía | Naranja · con Wilka María Reyes Mota | 19 may | (809) 972-2327 |
+| Oliver Rafael De León Ramírez | Guía | Verde · con Jhonnalia Franchesca Silvestre Guzmán | 24 abr | (809) 263-6802 |
+| Victoria Lorenzo Rivera | Guía | Rosado · con Juan Pablo Argüello Alzate | 21 sep | (809) 882-6523 |
+| Wilka María Reyes Mota | Guía | Naranja · con Luisa Maria Fiorentino Brugal | 8 sep | (829) 861-8355 |
+| Yelaxni Mota | Guía | Morado · con Ivanna Marien Mercedes Sosa | 25 sep | (809) 491-1672 |
 
 ## Cocina (21)
 
