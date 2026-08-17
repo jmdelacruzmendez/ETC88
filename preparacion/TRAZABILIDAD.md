@@ -6,7 +6,7 @@
 **Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
+- Total 53 · operativos titulares 48 · vacantes 0 · backups 0.
 - Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
@@ -40,7 +40,7 @@
 | `comunidades_y_parroquias.etecianos_pc_en_88` | ["Candy Elizabeth Gatwood Ramos", "Dorian Elina Rodriguez Be… | data/equipo.json (residencia=Punta Cana) | Etecianos del 88 residentes en Punta Cana — base natural para activar … |
 | `comunidades_y_parroquias.liga_softball_etecianos` | Equipo/liga de softball de etecianos que ya se reúne y juega | director | Actividad existente de la comunidad eteciana — potenciable para profon… |
 | `asesores_externos.cocina` | ["Mary \"Petra\" Morales", "Johanny García"] | director |  |
-| `asesores_externos.comunidad_sd` | ["Marleny", "Sandrita"] | director | 2 representantes (asesores) de la comunidad de Santo Domingo. |
+| `asesores_externos.comunidad_sd` | ["Yraisa Álvarez", "Manuel Almonte"] | director | 2 asesores de la comunidad de Santo Domingo. 17-ago-2026: el director … |
 | `asesores_externos.comunidad_la_vega` | ["Leticia González"] | director | 1 representante (asesor): Leticia González. |
 | `calendario_hitos.reunion_coordinadores` | jueves 4-jun (Corpus Christi, virtual) | coordinadores |  |
 | `calendario_hitos.misa_eteciana_7jun` | domingo 7-jun | ics | Misa Eteciana. |
@@ -137,6 +137,7 @@
 - 14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).
 - 14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.
 - 20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.
+- 17-ago-2026 (v9): Cambios de roster confirmados por el director. SALEN de Cocina: Guido Maldonado, Randol Joseph Payano, Tommy Nova Nolasco. ENTRAN a Cocina (titulares): Nelson Mariano Morales Aybar, Zahir Valoy, Cristopher Jiménez ('entran por los que salieron'; cocina sigue en 21). Backups de Guías (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar) ELIMINADOS (backups 3→0). 'Cesar Morales Mora' apareció en el formulario pero resultó ser Frank Morales (Asesor + Banderín) — mismo teléfono (809-710-1743), cumpleaños (11-jul) y apellido; el director confirmó que es la misma persona. Se fusionó en el registro de Frank (NO es asesor nuevo); asesores sigue en 3. Petra Yamina Morales llenó el formulario = la Asesora de Cocina 'Mary Petra Morales' (datos reales fusionados; sigue no operativa). Asesores de la comunidad de Santo Domingo ahora Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita). Total 56→53; operativos sigue 48. Fuente: formulario vivo (re-exportado 17-ago) + instrucción del director.
 
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] 🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.

@@ -24,6 +24,9 @@ GENDER = {
     'Juan Manuel de la Cruz Méndez':'M', 'Roberto Figueroa':'M',
     'Jonathan Andres Medina Mota':'M', 'Johnnito Richiez Brugal':'M',
     'Guido Mardonado':'M', 'Tomás Lorenzo':'M',
+    # v9 (17-ago): altas confirmadas por el director
+    'Nelson Mariano Morales Aybar':'M', 'Zahir Valoy':'M',
+    'Cristopher Jimenez':'M',
 }
 
 RESIDENCIA = {
@@ -85,17 +88,19 @@ AREA = {
     'Marian Olanlly Ortiz Carrasco':       ('cocina', 'Cocina'),
     'Ambar Liz Jáquez Lebrón':             ('cocina', 'Cocina'),
     'Brianelis Abreu Calderón':            ('cocina', 'Cocina'),
-    'Tommy Nova Nolasco':                  ('cocina', 'Cocina'),
     'Maria del Carmen Mejías Mateo':       ('cocina', 'Cocina'),
     'Risaira Santana Rosario':             ('cocina', 'Cocina'),
     'Adrián Francisco Santana Puente':     ('cocina', 'Cocina'),
     'Risairi Santana Rosario':             ('cocina', 'Cocina'),
     'Chantal Melissa Carpio Jiménez':      ('cocina', 'Cocina'),
     'Roberto Figueroa':                    ('cocina', 'Cocina'),
-    'Guido Mardonado':                     ('cocina', 'Cocina'),
-    'Randol Joseph payano':                ('cocina', 'Cocina'),  # p minúscula como llegó del form
     'Merkin Jean Vásquez':                 ('cocina', 'Cocina'),
     'Roselyn Quiroz':                      ('cocina', 'Cocina'),
+    # v9 (17-ago): Nelson/Zahir/Cristopher entran a Cocina "por los que salieron"
+    # (Guido, Randol, Tommy — ver REMOVED_FROM_TEAM). Cocina sigue en 21. Decisión Co-Dir.
+    'Nelson Mariano Morales Aybar':        ('cocina', 'Cocina'),
+    'Zahir Valoy':                         ('cocina', 'Cocina'),
+    'Cristopher Jimenez':                  ('cocina', 'Cocina'),
 }
 
 def _telefono(value):
@@ -156,6 +161,18 @@ REMOVED_FROM_TEAM = {
     'Fabelle maciel fabian bello',  # 7-jun: sale del equipo. Reemplazada por Merkin Jean (titular cocina).
     'Jordelis Mateo',  # 10-jun: sale del equipo. Reemplazada por Pamela Colón (titular cocina).
     'Rodolfo Telémaco Arrendel',  # 10-jun: llenó form pero sigue como backup guía; el placeholder lo maneja.
+    # v9 (17-ago-2026): salidas de cocina confirmadas por el director. Reemplazados por
+    # Nelson/Zahir/Cristopher (cocina sigue en 21).
+    'Guido Mardonado',      # sale del equipo (Co-Dir).
+    'Randol Joseph payano', # sale del equipo (Co-Dir).
+    'Tommy Nova Nolasco',   # sale del equipo (Co-Dir).
+    # Petra llenó el form (Petra Yamina Morales) pero sigue como Asesora de Cocina NO operativa:
+    # se excluye su fila y sus datos reales se fusionan en el placeholder vía form_live_overrides.json.
+    'Petra Yamina Morales',
+    # Cesar Morales Mora = Frank Morales (mismo tel/cumple/apellido; confirmado por el director
+    # 17-ago). 'Frank' es el nombre informal; llenó el form con su nombre completo. Se excluye su
+    # fila y sus datos reales se fusionan en el placeholder 'Frank Morales' vía form_live_overrides.json.
+    'Cesar Morales Mora',
 }
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
@@ -256,9 +273,8 @@ for p in equipo:
 # form (asesor externo); Scarlett y Kamila son backups que no respondieron.
 PLACEHOLDERS_OP = [
     ('Frank Morales', 'asesores', 'Asesor + Banderín', 'M'),  # asesor normal; además lleva el Banderín
-    ('Rodolfo Telémaco', 'guias', 'Backup Guía', 'M'),   # backup de guías (llenó form 10-jun pero sigue backup; xlsx excluido vía REMOVED_FROM_TEAM)
-    ('Scarlett Nivar', 'guias', 'Backup Guía', 'F'),     # backup de guías
-    ('Kamila Todd', 'guias', 'Backup Guía', 'F'),        # backup de guías
+    # v9 (17-ago-2026): backups de GUÍAS eliminados por decisión del director
+    # (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar). Guías queda solo con los 14 titulares.
 ]
 # Backups de COCINA: ELIMINADOS por decisión del director (20-jun-2026).
 # El equipo de cocina queda solo con los 21 titulares (PLACEHOLDERS_OP/xlsx).
@@ -273,8 +289,10 @@ PLACEHOLDERS_TRANSVERSAL = [
 PLACEHOLDERS_NO_OP = [
     ('Mary "Petra" Morales', 'asesores_cocina', 'Asesora Cocina', 'F'),
     ('Johanny García', 'asesores_cocina', 'Asesora Cocina', 'F'),
-    ('Sandrita', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
-    ('Marleny', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
+    # v9 (17-ago-2026): asesores de la comunidad de Santo Domingo = Yraisa Álvarez y
+    # Manuel Almonte (reemplazan a Marleny y Sandrita). Decisión del director.
+    ('Yraisa Álvarez', 'asesores_diocesanos', 'Asesora Comunidad SD', 'F'),
+    ('Manuel Almonte', 'asesores_diocesanos', 'Asesor Comunidad SD', 'M'),
     ('Leticia González', 'asesores_diocesanos', 'Asesora Comunidad La Vega', 'F'),
 ]
 
@@ -390,7 +408,7 @@ banderas = [
     {'n':1, 'bandera':'Cumple en F1', 'persona':'Ismarie Sthepanie Constanzo Ramos', 'accion':'Preparar momento corto en F1', 'resp':'Directores'},
     {'n':2, 'bandera':'Cumple en Reunión final pre-retiro', 'persona':'Dayrelins Jazmin Santana Salas', 'accion':'Preparar momento corto', 'resp':'Directores'},
     {'n':3, 'bandera':'Cumple en Día del Padre (sin formación)', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun)', 'resp':'Directores'},
-    {'n':4, 'bandera':'Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)', 'persona':'Tommy, Wilka', 'accion':'Mencionar/celebrar en bienvenida', 'resp':'Directores'},
+    {'n':4, 'bandera':'Cumple post-retiro Wilka (8-sep)', 'persona':'Wilka', 'accion':'Mencionar/celebrar en bienvenida (Tommy salió del equipo 17-ago)', 'resp':'Directores'},
     {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'— (era Fabelly)', 'accion':'Caducó: Fabelly fuera del equipo (7-jun)', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun); Jhonnalia sigue en bandera #8', 'resp':'Coord. Cocina'},

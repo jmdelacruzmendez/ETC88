@@ -55,20 +55,20 @@
 | Brianelis Abreu Calderón | Cocina | 12 nov | (809) 842-1217 |
 | Candy Elizabeth Gatwood Ramos | Cocina | 5 ene | (849) 538-4498 |
 | Chantal Melissa Carpio Jiménez | Cocina | 24 dic | (829) 260-8939 |
+| Cristopher Jimenez | Cocina | 3 ene | (809) 882-8282 |
 | Dayrelins Jazmin Santana Salas | Cocina | 30 ago | (809) 426-4150 |
-| Guido Maldonado | Cocina | 30 nov | 5512144384 |
 | Kelvin Alexis Ventura Santana | Cocina | 28 jul | (809) 463-3990 |
 | Maria del Carmen Mejías Mateo | Cocina | 29 ago | (829) 713-7943 |
 | Marian Olanlly Ortiz Carrasco | Cocina | 23 oct | (849) 406-2313 |
 | Merkin Jean Vásquez | Cocina | 4 may | (829) 618-5249 |
+| Nelson Mariano Morales Aybar | Cocina | 5 ene | (809) 914-4264 |
 | Pamela Colón | Cocina | 15 may | (829) 342-2888 |
-| Randol Joseph payano | Cocina | 18 dic | (829) 963-9360 |
 | Risaira Santana Rosario | Cocina | 29 jun | (829) 203-2829 |
 | Risairi Santana Rosario | Cocina | 28 mar | (829) 376-2582 |
 | Roberto Figueroa | Cocina | 12 may | (809) 717-1329 |
 | Roselyn Quiroz | Cocina | 2 nov | (829) 933-0230 |
-| Tommy Nova Nolasco | Cocina | 7 sep | (849) 266-6296 |
 | Wirna Miguelina Stapleton Pilier | Cocina | 29 sep | (829) 801-9927 |
+| Zahir Valoy | Cocina | 7 jun | (849) 460-1030 |
 
 ## Música (6)
 

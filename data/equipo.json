@@ -3,9 +3,9 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "version": "v8-2026-06-02",
-    "total_equipo": 56,
+    "total_equipo": 53,
     "operativos": 48,
-    "no_operativos": 8
+    "no_operativos": 5
   },
   "finanzas": {
     "casa_por_persona_sin_exencion": 2300,
@@ -68,8 +68,8 @@
       }
     },
     "conteos_esperados": {
-      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale del equipo, Merkin Jean sube de backup a titular cocina (titulares cocina sigue 21, backups cocina baja 16→15. 20-jun: backups cocina eliminados (15→0); total 71→56.).",
-      "total_equipo": 56,
+      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale, Merkin sube a titular cocina. 20-jun: backups cocina eliminados (15→0); total 71→56. 17-ago (v9): salen Guido/Randol/Tommy (cocina) y entran Nelson/Zahir/Cristopher (cocina sigue 21); backups de guías eliminados (3→0); Petra Yamina Morales fusionada en su registro de Asesora Cocina; Cesar Morales Mora resultó ser Frank Morales (mismo tel/cumple/apellido) — fusionado en Frank, NO es asesor nuevo; asesores sigue en 3; asesores de SD ahora Yraisa Álvarez + Manuel Almonte (reemplazan a Marleny/Sandrita). Total 56→53, operativos sigue 48.",
+      "total_equipo": 53,
       "operativos": 48,
       "operativos_titulares_por_area": {
         "directores": 2,
@@ -80,9 +80,9 @@
         "musica": 6
       },
       "vacantes": 0,
-      "backups": 3,
+      "backups": 0,
       "backups_detalle": {
-        "guias": 3,
+        "guias": 0,
         "cocina": 0
       },
       "asesores_cocina": 2,
@@ -450,9 +450,7 @@
           "Candy Elizabeth Gatwood Ramos",
           "Dorian Elina Rodriguez Belliard",
           "Ivanna Marien Mercedes Sosa",
-          "Jordelis Mateo",
           "José Ángel Tusen Russo",
-          "Tommy Nova Nolasco",
           "Yelaxni Mota"
         ],
         "estado": "confirmado",
@@ -477,12 +475,12 @@
       },
       "comunidad_sd": {
         "valor": [
-          "Marleny",
-          "Sandrita"
+          "Yraisa Álvarez",
+          "Manuel Almonte"
         ],
         "estado": "confirmado",
         "fuente": "director",
-        "nota": "2 representantes (asesores) de la comunidad de Santo Domingo."
+        "nota": "2 asesores de la comunidad de Santo Domingo. 17-ago-2026: el director confirmó a Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita)."
       },
       "comunidad_la_vega": {
         "valor": [
@@ -940,7 +938,8 @@
       "14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).",
       "14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).",
       "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.",
-      "20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen."
+      "20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.",
+      "17-ago-2026 (v9): Cambios de roster confirmados por el director. SALEN de Cocina: Guido Maldonado, Randol Joseph Payano, Tommy Nova Nolasco. ENTRAN a Cocina (titulares): Nelson Mariano Morales Aybar, Zahir Valoy, Cristopher Jiménez ('entran por los que salieron'; cocina sigue en 21). Backups de Guías (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar) ELIMINADOS (backups 3→0). 'Cesar Morales Mora' apareció en el formulario pero resultó ser Frank Morales (Asesor + Banderín) — mismo teléfono (809-710-1743), cumpleaños (11-jul) y apellido; el director confirmó que es la misma persona. Se fusionó en el registro de Frank (NO es asesor nuevo); asesores sigue en 3. Petra Yamina Morales llenó el formulario = la Asesora de Cocina 'Mary Petra Morales' (datos reales fusionados; sigue no operativa). Asesores de la comunidad de Santo Domingo ahora Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita). Total 56→53; operativos sigue 48. Fuente: formulario vivo (re-exportado 17-ago) + instrucción del director."
     ],
     "pendientes": [
       "🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.",
@@ -1967,6 +1966,42 @@
       "transversal": false
     },
     {
+      "id": "cristopher-jimenez",
+      "nombre": "Cristopher Jimenez",
+      "sexo": "M",
+      "edad": 25,
+      "cumple_mes": 1,
+      "cumple_dia": 3,
+      "cumple_anio": 2001,
+      "etc_propio": 77,
+      "etc_anio_propio": 2019,
+      "etcs_servidos": 0,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "M",
+      "telefono": "8098828282",
+      "que_espera": "La experiencia del dar lo ya recibido ",
+      "miedos": "Desequilibrio constante en mi disciplina y consistencia en cuanto a la participación en comunidad y desarrollo personal ",
+      "tema_dios": "Fidelidad, responsabilidad ",
+      "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifas",
+      "alergias": "Polvo y Aromas fuertes (rinitis alérgica)",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno",
+      "contacto_emergencia": "Sonia Trinidad - Madre -8297870545",
+      "palabra": "Compromiso ",
+      "dudas": "Ninguna por el momento ",
+      "algo_directores": "Es mi primera vez participando ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
+    },
+    {
       "id": "dayrelins-jazmin-santana-salas",
       "nombre": "Dayrelins Jazmin Santana Salas",
       "sexo": "F",
@@ -1996,48 +2031,6 @@
       "dudas": null,
       "algo_directores": null,
       "invitados": [],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
-      "id": "guido-maldonado",
-      "nombre": "Guido Maldonado",
-      "sexo": "M",
-      "edad": 29,
-      "cumple_mes": 11,
-      "cumple_dia": 30,
-      "cumple_anio": 1996,
-      "etc_propio": 70,
-      "etc_anio_propio": null,
-      "etcs_servidos": 0,
-      "residencia": "SPM",
-      "comunidad": "Betania",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "L",
-      "telefono": "15512144384",
-      "que_espera": "Brindar, llevar y dar todo por el todo para aquellos que necesitan un encuentro con Cristo",
-      "miedos": "Ninguno",
-      "tema_dios": "Persistencia y paciencia",
-      "invita": "Sí",
-      "idea_recaudacion": "Rifa y enviar solicitudes de donacion a empresas",
-      "alergias": "No",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguno",
-      "contacto_emergencia": "Guido Maldonado, Padre, 809-844-7093",
-      "palabra": "Disposicion",
-      "dudas": "Ninguna",
-      "algo_directores": "No",
-      "invitados": [
-        {
-          "nombre": "Eurys Caraballo",
-          "edad": "22.0",
-          "relacion": "Amigo"
-        }
-      ],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
@@ -2206,6 +2199,48 @@
       "transversal": false
     },
     {
+      "id": "nelson-mariano-morales-aybar",
+      "nombre": "Nelson Mariano Morales Aybar",
+      "sexo": "M",
+      "edad": 33,
+      "cumple_mes": 1,
+      "cumple_dia": 5,
+      "cumple_anio": 1993,
+      "etc_propio": 55,
+      "etc_anio_propio": null,
+      "etcs_servidos": 1,
+      "residencia": "SPM",
+      "comunidad": "Betania",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "M",
+      "telefono": "18099144264",
+      "que_espera": "Revivir gran parte de mi ETC desde otra perspectiva ",
+      "miedos": "Ninguno",
+      "tema_dios": "No identifico algo en específico ",
+      "invita": "Sí",
+      "idea_recaudacion": "Carrera 5k ",
+      "alergias": "Ninguna",
+      "condiciones": "Ninguna",
+      "medicamentos": "Ninguno",
+      "contacto_emergencia": "María Gisela Aybar Jorge, madre, 8098182213",
+      "palabra": "Disposición ",
+      "dudas": "Ninguna",
+      "algo_directores": "No",
+      "invitados": [
+        {
+          "nombre": "Parmenia María Morales Aybar",
+          "edad": "27.0",
+          "relacion": "Familiar"
+        }
+      ],
+      "sin_formulario": false,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
+    },
+    {
       "id": "pamela-col-n",
       "nombre": "Pamela Colón",
       "sexo": "F",
@@ -2241,42 +2276,6 @@
           "relacion": "Amigo"
         }
       ],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
-      "id": "randol-joseph-payano",
-      "nombre": "Randol Joseph payano",
-      "sexo": "F",
-      "edad": 19,
-      "cumple_mes": 12,
-      "cumple_dia": 18,
-      "cumple_anio": 2006,
-      "etc_propio": 85,
-      "etc_anio_propio": 2025,
-      "etcs_servidos": 0,
-      "residencia": "SPM",
-      "comunidad": "Belén",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "L",
-      "telefono": "18299639360",
-      "que_espera": "Buena amistad y todos nos divertamos trabajando en equipo para ver cómo fue que los nuestros ETC85 trabajaron y vivir esa experiencia ",
-      "miedos": "Tendré un poco de curiosidad el primer día pero todo saldrá bien ",
-      "tema_dios": "El llamado \nNo pensar todavía estar listo para servir en un ETC nuevo que se formaria ",
-      "invita": "Todavía no sé",
-      "idea_recaudacion": null,
-      "alergias": "Ambroxol ",
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": "809-715-0438.   829-989-7914. 829-602-3608. ",
-      "palabra": "Todo que si y dispuesto ",
-      "dudas": null,
-      "algo_directores": "Tendrán mi ayuda en todo lo que me digan y estaré pendiente ",
-      "invitados": [],
       "sin_formulario": false,
       "operativo": true,
       "backup": false,
@@ -2439,42 +2438,6 @@
       "transversal": false
     },
     {
-      "id": "tommy-nova-nolasco",
-      "nombre": "Tommy Nova Nolasco",
-      "sexo": "M",
-      "edad": 25,
-      "cumple_mes": 9,
-      "cumple_dia": 7,
-      "cumple_anio": 2000,
-      "etc_propio": 85,
-      "etc_anio_propio": 2025,
-      "etcs_servidos": 0,
-      "residencia": "Punta Cana",
-      "comunidad": "Belén",
-      "area": "cocina",
-      "rol": "Cocina",
-      "talla": "XL",
-      "telefono": "18492666296",
-      "que_espera": "Vivir la experiencia detrás de cámaras ",
-      "miedos": "Ninguno",
-      "tema_dios": "Mi consistencia en la fe",
-      "invita": "Todavía no sé",
-      "idea_recaudacion": "Rifas y lavado de autos",
-      "alergias": "Ninguna",
-      "condiciones": "Ninguna",
-      "medicamentos": "Ninguna",
-      "contacto_emergencia": "Jaina Ramirez - Hermana - 829 964 0229",
-      "palabra": "Entusiasmo ",
-      "dudas": "Nada que comentar ",
-      "algo_directores": "Nada por el momento ",
-      "invitados": [],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "wirna-miguelina-stapleton-pilier",
       "nombre": "Wirna Miguelina Stapleton Pilier",
       "sexo": "F",
@@ -2503,6 +2466,42 @@
       "palabra": "Coherencia ",
       "dudas": "Que voy hacer ",
       "algo_directores": "No se dejen humillar ",
+      "invitados": [],
+      "sin_formulario": false,
+      "operativo": true,
+      "backup": false,
+      "vacante": false,
+      "transversal": false
+    },
+    {
+      "id": "zahir-valoy",
+      "nombre": "Zahir Valoy",
+      "sexo": "M",
+      "edad": 19,
+      "cumple_mes": 6,
+      "cumple_dia": 7,
+      "cumple_anio": 2007,
+      "etc_propio": 85,
+      "etc_anio_propio": 2025,
+      "etcs_servidos": 0,
+      "residencia": "SPM",
+      "comunidad": "Belén",
+      "area": "cocina",
+      "rol": "Cocina",
+      "talla": "L",
+      "telefono": "8494601030",
+      "que_espera": "Espero conocer a los demás etc y servir de buena manera para este propósito ",
+      "miedos": "Miedo a ser rechazado socialmente ",
+      "tema_dios": "Que sienta, no ",
+      "invita": "Todavía no sé",
+      "idea_recaudacion": "Rifa o torneo de alguna actividad en específico ",
+      "alergias": "Ninguna ",
+      "condiciones": "Ninguna ",
+      "medicamentos": "Antialérgico ",
+      "contacto_emergencia": "Solangel Martínez, madre, 809-880-6698 ",
+      "palabra": "Entusiasmo ",
+      "dudas": "Ninguna ",
+      "algo_directores": "Nada ",
       "invitados": [],
       "sin_formulario": false,
       "operativo": true,
@@ -2730,18 +2729,18 @@
       "id": "frank-morales",
       "nombre": "Frank Morales",
       "sexo": "M",
-      "edad": null,
+      "edad": 63,
       "cumple_mes": 7,
       "cumple_dia": 11,
-      "cumple_anio": null,
-      "etc_propio": null,
+      "cumple_anio": 1963,
+      "etc_propio": 17,
       "etc_anio_propio": null,
       "etcs_servidos": null,
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores",
       "rol": "Asesor + Banderín",
-      "talla": null,
+      "talla": "M",
       "telefono": "8097101743",
       "que_espera": null,
       "miedos": null,
@@ -2761,7 +2760,8 @@
       "vacante": false,
       "transversal": false,
       "nota_telefono": "Confirmado por el director (6-jun-2026).",
-      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF).",
+      "nota_form": "17-ago-2026: llenó el formulario con su nombre completo 'Cesar Morales Mora' (mismo tel/cumple/apellido). El director confirmó que es la misma persona; 'Frank' es el nombre informal. Datos reales del form fusionados aquí."
     },
     {
       "id": "padre-paul-ram-rez",
@@ -2878,18 +2878,18 @@
       "id": "mary-petra-morales",
       "nombre": "Mary \"Petra\" Morales",
       "sexo": "F",
-      "edad": null,
+      "edad": 52,
       "cumple_mes": 10,
       "cumple_dia": 19,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
+      "cumple_anio": 1973,
+      "etc_propio": 25,
+      "etc_anio_propio": 2001,
       "etcs_servidos": null,
       "residencia": "—",
       "comunidad": "Por confirmar",
       "area": "asesores_cocina",
       "rol": "Asesora Cocina",
-      "talla": null,
+      "talla": "L",
       "telefono": "8092244482",
       "que_espera": null,
       "miedos": null,
@@ -2908,43 +2908,10 @@
       "backup": false,
       "vacante": false,
       "transversal": false,
+      "idea_recaudacion": "Reencuentro pasadia de Etecianos",
       "nota_telefono": "Confirmado por el director (6-jun-2026).",
-      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF)."
-    },
-    {
-      "id": "kamila-todd",
-      "nombre": "Kamila Todd",
-      "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "guias",
-      "rol": "Backup Guía",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": true,
-      "vacante": false,
-      "transversal": false
+      "nota_cumple": "Confirmado por el director (10-jun-2026, vía Carpeta v9 PDF).",
+      "nota_form": "17-ago-2026: llenó el formulario (Petra Yamina Morales). Datos reales fusionados; sigue como Asesora de Cocina no operativa."
     },
     {
       "id": "leticia-gonz-lez",
@@ -2982,43 +2949,8 @@
       "transversal": false
     },
     {
-      "id": "marleny",
-      "nombre": "Marleny",
-      "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "asesores_diocesanos",
-      "rol": "Asesora Comunidad SD",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
-      "id": "rodolfo-tel-maco",
-      "nombre": "Rodolfo Telémaco",
+      "id": "manuel-almonte",
+      "nombre": "Manuel Almonte",
       "sexo": "M",
       "edad": null,
       "cumple_mes": null,
@@ -3029,8 +2961,8 @@
       "etcs_servidos": null,
       "residencia": "—",
       "comunidad": "Por confirmar",
-      "area": "guias",
-      "rol": "Backup Guía",
+      "area": "asesores_diocesanos",
+      "rol": "Asesor Comunidad SD",
       "talla": null,
       "telefono": null,
       "que_espera": null,
@@ -3047,13 +2979,13 @@
       "invitados": [],
       "sin_formulario": true,
       "operativo": false,
-      "backup": true,
+      "backup": false,
       "vacante": false,
       "transversal": false
     },
     {
-      "id": "sandrita",
-      "nombre": "Sandrita",
+      "id": "yraisa-lvarez",
+      "nombre": "Yraisa Álvarez",
       "sexo": "F",
       "edad": null,
       "cumple_mes": null,
@@ -3083,41 +3015,6 @@
       "sin_formulario": true,
       "operativo": false,
       "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
-      "id": "scarlett-nivar",
-      "nombre": "Scarlett Nivar",
-      "sexo": "F",
-      "edad": null,
-      "cumple_mes": null,
-      "cumple_dia": null,
-      "cumple_anio": null,
-      "etc_propio": null,
-      "etc_anio_propio": null,
-      "etcs_servidos": null,
-      "residencia": "—",
-      "comunidad": "Por confirmar",
-      "area": "guias",
-      "rol": "Backup Guía",
-      "talla": null,
-      "telefono": null,
-      "que_espera": null,
-      "miedos": null,
-      "tema_dios": null,
-      "invita": null,
-      "alergias": null,
-      "condiciones": null,
-      "medicamentos": null,
-      "contacto_emergencia": null,
-      "palabra": null,
-      "dudas": null,
-      "algo_directores": null,
-      "invitados": [],
-      "sin_formulario": true,
-      "operativo": false,
-      "backup": true,
       "vacante": false,
       "transversal": false
     }
@@ -3241,9 +3138,9 @@
     },
     {
       "n": 4,
-      "bandera": "Cumples post-retiro Tommy (7-sep) y Wilka (8-sep)",
-      "persona": "Tommy, Wilka",
-      "accion": "Mencionar/celebrar en bienvenida",
+      "bandera": "Cumple post-retiro Wilka (8-sep)",
+      "persona": "Wilka",
+      "accion": "Mencionar/celebrar en bienvenida (Tommy salió del equipo 17-ago)",
       "resp": "Directores"
     },
     {
@@ -3572,16 +3469,6 @@
       ]
     },
     {
-      "inviter": "Guido Maldonado",
-      "invitados": [
-        {
-          "nombre": "Eurys Caraballo",
-          "edad": "22.0",
-          "relacion": "Amigo"
-        }
-      ]
-    },
-    {
       "inviter": "Kelvin Alexis Ventura Santana",
       "invitados": [
         {
@@ -3603,6 +3490,16 @@
           "nombre": "Hemerson Asencio",
           "edad": "18.0",
           "relacion": "Amigo"
+        }
+      ]
+    },
+    {
+      "inviter": "Nelson Mariano Morales Aybar",
+      "invitados": [
+        {
+          "nombre": "Parmenia María Morales Aybar",
+          "edad": "27.0",
+          "relacion": "Familiar"
         }
       ]
     },
@@ -3647,6 +3544,10 @@
         "menciones": 4
       },
       {
+        "propuesta": "Actividad deportiva / rally / 5K",
+        "menciones": 4
+      },
+      {
         "propuesta": "Rifa/viaje (boletos, avión)",
         "menciones": 3
       },
@@ -3655,19 +3556,7 @@
         "menciones": 3
       },
       {
-        "propuesta": "Actividad deportiva / rally / 5K",
-        "menciones": 3
-      },
-      {
         "propuesta": "Taller / charlas",
-        "menciones": 2
-      },
-      {
-        "propuesta": "Lavado de autos",
-        "menciones": 2
-      },
-      {
-        "propuesta": "Donaciones (etecianos / empresas)",
         "menciones": 2
       },
       {
@@ -3676,6 +3565,14 @@
       },
       {
         "propuesta": "Merch eteciana",
+        "menciones": 1
+      },
+      {
+        "propuesta": "Lavado de autos",
+        "menciones": 1
+      },
+      {
+        "propuesta": "Donaciones (etecianos / empresas)",
         "menciones": 1
       }
     ],
@@ -3773,12 +3670,12 @@
         "idea": "Las rifas, realmente he podido ver que son muy buena opción. Actualmente están muy de moda las carreras, tipo un 5k-10k (no sé qué tan viable es preparar eso perooo, también he visto que hacen tipo carreras y luego coffee party para actividades de recaudación por alguna causa)."
       },
       {
-        "persona": "Dayrelins Jazmin Santana Salas",
-        "idea": "Rifa 💯"
+        "persona": "Cristopher Jimenez",
+        "idea": "Rifas"
       },
       {
-        "persona": "Guido Maldonado",
-        "idea": "Rifa y enviar solicitudes de donacion a empresas"
+        "persona": "Dayrelins Jazmin Santana Salas",
+        "idea": "Rifa 💯"
       },
       {
         "persona": "Kelvin Alexis Ventura Santana",
@@ -3797,6 +3694,10 @@
         "idea": "Ventas tipo kermés, rifas"
       },
       {
+        "persona": "Nelson Mariano Morales Aybar",
+        "idea": "Carrera 5k"
+      },
+      {
         "persona": "Pamela Colón",
         "idea": "Podría ser tipo una noche de cine cobrando entrada y cosas así.\nUn torneo de juegos (pero que juguemos los etecainos tambien)"
       },
@@ -3805,12 +3706,12 @@
         "idea": "Donaciones de etecianos viejos"
       },
       {
-        "persona": "Tommy Nova Nolasco",
-        "idea": "Rifas y lavado de autos"
-      },
-      {
         "persona": "Wirna Miguelina Stapleton Pilier",
         "idea": "Rifa"
+      },
+      {
+        "persona": "Zahir Valoy",
+        "idea": "Rifa o torneo de alguna actividad en específico"
       },
       {
         "persona": "José Ángel Tusen Russo",
@@ -3831,6 +3732,10 @@
       {
         "persona": "Mary Carmen Ramírez Vásquez",
         "idea": "Algún rally o actividad de comida"
+      },
+      {
+        "persona": "Mary \"Petra\" Morales",
+        "idea": "Reencuentro pasadia de Etecianos"
       }
     ],
     "fuente": "Formulario col 18 \"¿Qué tipo de actividad de recaudación propondrías?\"",
