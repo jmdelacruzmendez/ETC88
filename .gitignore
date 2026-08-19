@@ -14,3 +14,9 @@
 /tmp/
 __pycache__/
 *.pyc
+
+# Datos de salud consolidados equipo + PARTICIPANTES (incluye menores de edad).
+# NO se versionan por privacidad. Viven local / se comparten por WhatsApp o Drive
+# según decida la dirección. El bloque salud DEL EQUIPO sí vive en data/ (fuente).
+/preparacion/ALERGIAS_Y_CONDICIONES_88.md
+/preparacion/ALERGIAS_WHATSAPP_88.txt
