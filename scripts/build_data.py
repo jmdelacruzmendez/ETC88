@@ -571,7 +571,7 @@ data = {
     'recaudacion': recaudacion,
     'salud': {
         'alergias_alimentarias': {
-            'mariscos': ['Priscilla Hidalgo Pou','Ivanna Marien Mercedes Sosa','Jonathan Andres Medina Mota','Laura Fernández'],
+            'mariscos': ['Priscilla Hidalgo Pou','Ivanna Marien Mercedes Sosa','Jonathan Andres Medina Mota','Laura Fernández','Pamela Colón'],  # Pamela: camarones (form perfil)
             'pina': ['Wilka María Reyes Mota','Candy Elizabeth Gatwood Ramos','José Ángel Tusen Russo'],
             'huevo': ['José Ángel Tusen Russo'],
             'canela': ['Wilka María Reyes Mota'],
@@ -592,11 +592,13 @@ data = {
             'Postoperatoria reciente':['Jhonnalia Franchesca Silvestre Guzmán'],
             'Postquirúrgica escoliosis':['Mary Carmen Ramírez Vásquez'],
             'Pastillas presión':['Maria del Carmen Mejías Mateo'],
+            'Resistencia a la insulina':['Daylin M Rambalde Moreta'],
+            'Rinitis alérgica':['Cristopher Jimenez'],
         },
         'ambiente_higuey': [
             'Confirmar gatos en Casa de Retiro (Dorian alérgica)',
             'NO fumigar (Baygon) durante retiro (José Ángel alérgico)',
-            'Limpieza profunda de polvo previa (4 sensibles)',
+            'Limpieza profunda de polvo previa (sensibles al polvo/aromas: Luisa, Fernando, Victoria, Dorian, Daylin, Cristopher)',
             'Usar productos de limpieza suaves (Victoria atópica)',
             'Jabón alternativo en duchas (Franklin alérgico al de cuaba)',
             'Tener espacio oscuro/silencioso disponible (Dorian, Ismarie migrañas; Pamela migralepsia)',
