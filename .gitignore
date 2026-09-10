@@ -20,3 +20,7 @@ __pycache__/
 # según decida la dirección. El bloque salud DEL EQUIPO sí vive en data/ (fuente).
 /preparacion/ALERGIAS_Y_CONDICIONES_88.md
 /preparacion/ALERGIAS_WHATSAPP_88.txt
+
+# Directorio de cumpleaños equipo + PARTICIPANTES (nombres, teléfonos, fechas; incl. menores).
+# Fuera de git por privacidad; se comparte por WhatsApp/Drive según la dirección.
+/preparacion/CUMPLEANOS_ETC88.md
