@@ -234,6 +234,12 @@ para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 10
 doc.add_heading('10. Lo que queda por dejar constancia', 1)
 notas = [x for x in pendientes if x[0] in ('ABIERTO', 'NOTA')]
 bullets([(f'{t}: ', (f_ or det)) for _, t, det, f_ in notas])
+doc.add_heading('10.1 Texto propuesto para el acta', 2)
+cuadro('Dos donaciones en efectivo requieren constancia. La primera es un depósito de RD$ 1,000 recibido el 10 de septiembre: '
+       'es una donación real que entró a la cuenta y cuyo autor nunca se pudo identificar, pese a haberlo buscado; se registra como '
+       'donación anónima. La segunda es el aporte de RD$ 1,000 de Yendry Rincón: el donante está identificado y el dinero entró, '
+       'pero no se recibió la captura del comprobante. Ambas están incluidas en los RD$ 155,021 de donaciones en efectivo y '
+       'cuadran con el estado de cuenta.')
 para('Todo lo demás está cerrado y verificado: la casa, el transporte, el desglose de los pagos, el salón de formaciones, el impuesto bancario, el profondo con su liquidación, las cuotas del equipo, los 46 pagos de participantes revisados uno por uno, y las donaciones en especie. El sobrante de {} se expondrá en la actividad de cierre para decidirlo con el equipo.'.format(n(REAL)), italic=True, color=GRIS)
 
 # ── 11. Base y recomendaciones ──

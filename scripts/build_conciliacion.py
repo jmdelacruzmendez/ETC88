@@ -69,7 +69,7 @@ donaciones = [
     ("30/07","Gilberto Vásquez",6000,"Vía Johnnito R",""),
     ("31/07","Víctor Fernández",3000,"Papá de Laura",""),
     ("01/08","Scarlett Nivar",1000,"",""),
-    ("02/08","Wilfrid",1000,"Transferencia 'fantasma' (atribución inferida)","NOTA"),
+    ("02/08","Wilfrid",1000,"Llegó como transferencia sin identificar y se ubicó: es Wilfrid, gestión de Ivanna (lista del director, 10-sep)",""),
     ("04/08","Sahoni Angomas",2000,"",""),
     ("06/08","Roosbert Mejía",800,"#Dóname1biblia",""),
     ("06/08","Pamela Nivar",800,"#Dóname1biblia",""),
@@ -80,7 +80,7 @@ donaciones = [
     ("10/08","Julio Muñoz",5831,"Gestión JM",""),
     ("11/08","Carol Fernández",8400,"Donación biblias",""),
     ("12/08","Emmanuel Ureña",5000,"Gestión Nelson",""),
-    ("13/08","Yendry Rincón",1000,"Aún no se reporta comprobante","NOTA"),
+    ("13/08","Yendry Rincón",1000,"Donante identificado; lo que faltó fue la captura del comprobante. El dinero entró y cuadra con el banco","NOTA"),
     ("13/08","Kharla C.",4500,"Donación biblias",""),
     ("14/08","Therapia Café",4500,"",""),
     ("16/08","Wirna (biblias)",2000,"Vía Wirna",""),
@@ -109,8 +109,8 @@ donaciones = [
     ("03/09","Yaneris Almeida",5000,"",""),
     ("07/09","Sol Brito",1000,"",""),
     ("07/09","Maria Vizcaíno",2000,"",""),
-    ("10/09","Depósito no identificado",1000,"Nunca se encontró el dueño (director: donación real)","NOTA"),
-    ("10/09","Johan",3500,"Transferencia 'fantasma' (confirmada por director)","NOTA"),
+    ("10/09","Depósito no identificado",1000,"⚠ ÚNICA sin identificar: donación real que entró a la cuenta y cuyo autor nunca se pudo ubicar (director, 11-sep)","NOTA"),
+    ("10/09","Johan",3500,"Llegó como transferencia sin anunciar y se ubicó: Johan (Joan), confirmado por el director el 11-sep",""),
 ]
 DONAC_EFEC = sum(m for _,_,m,_,_ in donaciones)
 assert DONAC_EFEC == 155021 and len(donaciones) == 49, f"donaciones={DONAC_EFEC} n={len(donaciones)}"
@@ -372,7 +372,7 @@ pendientes = [
  ('CERRADO', 'Efectivo de imprevistos 15,000 y salón de formaciones', f'Del efectivo de 15,000 (07/09) se dieron {EFECTIVO_COCINA:,} a cocina en la casa de retiro y {EFECTIVO_SALON:,} fueron el reembolso a Juan Manuel de las 5 formaciones en Santa Clara (5 × 2,000, pagadas el 07-jun en efectivo a Franklin Pozo con su aporte personal). El efectivo queda liquidado completo y el salón pagado con dinero del grupo. Confirmado 11-sep.', ''),
  ('CERRADO', 'Participantes: 48 en el retiro, 46 con cuota', f'Al retiro fueron 48 participantes: 46 con cuota y 2 exonerados de antemano, Cristofer y Dahiony, invitados de la sor Angelina. La exoneración estaba prevista desde el inicio, por eso el cierre cuenta 46 cuotas y no 48. Los {PART_ESPER:,} son la referencia teórica de esos 46 × {CUOTA_PARTICIPANTE:,}, no una meta de cobro: cuatro pagaron menos de {CUOTA_PARTICIPANTE:,} (Karen Berroa 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000). Por eso lo recibido es {PARTICIP:,}. NO hay pagos de participantes pendientes. Confirmado 11-sep.', ''),
  ('CERRADO', 'Profondo: boletas no pagadas 14,700', f'73.5 boletas colocadas × 200 = {PROF_POR_COBRAR:,} quedaron sin pagar. No se cobrarán (decisión de la dirección, 11-sep).', ''),
- ('NOTA',    'Donaciones sin identificar (6,500)', 'Wilfrid 1,000 · depósito no identificado 1,000 · Johan 3,500 (transferencias sin dueño) · Yendry Rincón 1,000 (sin comprobante).', 'Nota explícita en el acta.'),
+ ('NOTA',    'Una donación sin identificar (1,000)', 'Barrido de las cuatro que estaban marcadas: Wilfrid (1,000) llegó sin identificar y se ubicó, es gestión de Ivanna; Johan o Joan (3,500) también se ubicó, confirmado por el director; Yendry Rincón (1,000) está identificada y solo faltó la captura del comprobante. Queda una sola sin dueño: el depósito de 1,000 del 10/09, que es una donación real que entró a la cuenta y cuyo autor nunca se pudo ubicar.', 'Dejar constancia en el acta de ese depósito de 1,000 y de que la donación de Yendry Rincón no tiene captura.'),
  ('CERRADO', 'Impuestos bancarios y copias', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f} = impuesto bancario por transacción ({IMPUESTOS_BANCO:,.2f}, {IMPUESTO_TASA*100:.2f}% sobre los {IMPUESTO_BASE:,.2f} que se movieron) + copias pagadas ({COPIAS_PAGADAS:,.2f}).', 'Las líneas del estado de cuenta que lo documentan.'),
  ('CERRADO', 'Cuotas del equipo: quiénes no pagaron', 'No pagaron cuota el padre Paul, la sor Angelina, Petra y Johanny (los cuatro asesores). Cristopher Jiménez, de cocina, sí pagó: es una persona distinta de Cristofer el participante. 56 del equipo − 3 guías de reserva − 4 asesores = 49 miembros × 2,000 = 98,000, que es lo recibido.', ''),
  ('CERRADO', 'Impresión de libretas 1,260', 'El presupuesto operativo la marcaba "donado por guías" en la columna equivocada, por eso no sumaba. Sumada a la especie por confirmación del director (11-sep).', ''),
@@ -435,7 +435,7 @@ checks = [
  ('Cotización Iberia: exento + gravado + ITBIS', 77044.05, round(46003.05 + 26408.73 + 4632.27, 2), True, 'a nombre de Paloma Méndez, 01-sep'),
  ('Iberia: cotizado − pagado = vino 1,995 + platos foam 540', 2535.00, _dif_iberia, True, 'coincidencia; 0.05 de redondeo', 0.10),
  ('Biblias: reembolso 35,360 = proforma 34,000 + 1,360; donaciones etiquetadas "biblia"', 16500, _bib, True, 'Roosbert, Pamela Nivar, Carol, Kharla, Wirna'),
- ('Donaciones con nota pendiente (Wilfrid, Yendry, fantasma, Johan)', 6500, _flag, True, ''),
+ ('Donaciones que requieren nota: el depósito sin dueño y la de Yendry sin captura', 2000, _flag, True, 'las de Wilfrid y Johan se ubicaron: ya no llevan nota'),
  ('Costo del retiro = caja + especie + cortesías (8 × 500 + 2 × 2,360)', SALIDAS + ESPECIE_TOTAL + 4000 + 4720, COSTO_ECON, True, ''),
  ('Apoyo total donado = efectivo + especie', DONAC_EFEC + ESPECIE_TOTAL, 155021 + 92405, True, ''),
 ]
@@ -750,7 +750,7 @@ for f, d_, m, n_, flag in donaciones:
     for cc in range(1, 6): ws3.cell(r, cc).border = border
     r += 1
 ws3.cell(r, 2, 'TOTAL (= tablero)').font = font(11, True); money(ws3, r, 3, DONAC_EFEC).font = font(11, True); band(ws3, r, 1, 3, 'E8F5E9'); r += 2
-note(ws3, r, 2, '⚠ = requiere nota explícita para el Consejo (origen no verificado o sin comprobante). Suman 6,500.', AMBAR); r += 1
+note(ws3, r, 2, f'⚠ = requiere una nota en el acta: el depósito de 1,000 del 10/09, cuyo autor nunca se ubicó, y la de Yendry Rincón (1,000), identificada pero sin captura del comprobante. Suman {_flag:,}. Las de Wilfrid y Johan llegaron sin identificar y sí se ubicaron.', AMBAR); r += 1
 note(ws3, r, 2, 'Jonathan Medina 1,500 (31/08) es el neto del pago de Boris (participante que no asistió) tras devolverle una porción.')
 ws3.freeze_panes = 'A4'
 

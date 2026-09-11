@@ -167,7 +167,7 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 - Efectivo de imprevistos ({n(15000)}): liquidado, {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones.
 - Participantes: fueron 48, 46 con cuota y 2 exonerados (invitados de la sor); no hay pagos pendientes. La referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro pagaron menos de 3,500.
 - Profondo: {n(P_COBRAR)} en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
-- Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
+- Donaciones: una sola sin identificar, un depósito de 1,000 cuyo autor nunca se ubicó, más el aporte de 1,000 de Yendry Rincón que está identificado pero sin captura del comprobante. Dejar constancia de ambas en el acta.
 - Sobrante de {n(REAL)} en cuentas: se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo.
 
 Visual: lista de cinco puntos con una marca de estado; solo el de la nota en el acta queda pendiente.
