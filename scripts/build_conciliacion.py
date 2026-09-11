@@ -44,10 +44,10 @@ gastos = [
     ("10/09","Compra de comida (transferencia a Iberia)",74509,"Cotización Paloma 01-sep 77,044.05 → pagado 74,509"),
     ("10/09","Pago a JM (transporte + imprevistos)",37500,"Reembolso. Desglose del director: transporte 2ª mitad 17,500 (10,000 + 7,500) + desvío 10,000 + ofrenda P. Héctor confesiones 10,000. ⚠ Desglose NO está en el ledger."),
     ("10/09","Devolución del 10% del pago de la casa al Consejo",23600,"Reserva/avance de la casa"),
-    ("10/09","Cocina (detalles) + gasolina",15980,""),
+    ("10/09","Cocina (detalles) + gasolina",15980,"Pagado a Paloma: detalles de cocina + combustible. El ledger no desglosa las dos partes"),
     ("10/09","Comida de ensayo (a JC)",14730,""),
     ("10/09","Bizcocho de bienvenida",6000,""),
-    ("10/09","Pago de la Casa (final)",216620,"97 pers × 2,360 − avance 23,600 + jueves 19×500 + habitaciones"),
+    ("10/09","Pago de la Casa (final)",216620,"99 en la casa, 97 facturadas × 2,360 (2 cortesía) − avance 23,600 + jueves 19×500 + habitaciones"),
 ]
 GASTOS_TOT = sum(m for _,_,m,_ in gastos)
 assert GASTOS_TOT == 515944, f"gastos={GASTOS_TOT}"
@@ -326,6 +326,7 @@ notas = [
  ('CERRADO', 'Priscila: donó materiales (7,340) y recibió 2,000 en efectivo (21/07). Su donación neta es 5,340; la especie de Guías ya lo descuenta.'),
  ('CERRADO', 'Balance 117,611 de la hoja General del presupuesto: celda manual de ~11-ago, pre-retiro. No es un segundo balance. El oficial es 36,543.40 → real 34,337 (dif 2,206.40 impuestos/comisiones).'),
  ('CERRADO', 'Casa: 216,620 final + 23,600 avance = 240,220. vs 11-Ago (236,000): +4,220. vs Sistem (200,000): +40,220 — el Sistem nunca actualizó la tarifa de 2,360.'),
+ ('NOTA',    'Casa, dos detalles menores: (a) fuimos 99 y se facturaron 97; las 2 cortesías son el padre y la sor o el director (10-sep se dijo "mía y la del padre", 11-sep "la sor y el padre"): confirmar quiénes. (b) Habitaciones: desglose verbal 1,400 + 800 = 2,200 vs 1,800 implícitos en lo pagado → 400 de diferencia.'),
  ('INFO',    f'Especie total {ESPECIE_TOTAL:,.0f}: el Sheet de presupuesto solo reflejaba 30,301 (flags sin actualizar). Peces (36,000, La Vega), decoración (10,300), Bono Olé (4,588), oficina y cocina no estaban marcados.'),
  ('INFO',    'Ambos presupuestos siguen marcados "Tentativo — sujeto a ajustes" (2/7/2026). Lección: cerrar formalmente el presupuesto antes del retiro.'),
  ('OPORT.',  f'Participantes: faltan {PART_ESPER-PARTICIP:,} por cobrar (97.4% de {PART_ESPER:,}).'),
@@ -340,10 +341,14 @@ for tag, txt in notas:
 # pagado = los 22 gastos del ledger asignados a partidas del presupuesto (el reembolso a JM
 # de 37,500 se abre en transporte 27,500 + ofrenda 10,000). donado = especie a valor de ppto.
 # La casa se abre en base + jueves + habitaciones: 228,920 + 9,500 + 1,800 = 240,220 (registrado).
+# Fuimos 99; la casa facturó 97 (2 cortesía). 10-sep el director dijo "mi habitación y la del padre";
+# 11-sep dijo "la sor y el padre" → quiénes son las 2 cortesías queda por confirmar (el monto no cambia).
 CORTESIA_JUEVES = 8 * 500   # 8 personas del jueves sin cobro (valor recibido, no está en ESPECIE)
+CORTESIA_HOSP   = 2 * 2360  # 2 personas vie–dom sin cobro (padre + sor/director, confirmar)
 cruce = [
  # (área, partida, ppto 11-Ago, ppto Sistem, pagado, donado, fuente / nota)
- ('Casa','Hospedaje base: 97 pers × 2,360 (vie–dom)',236000,200000,228920,0,'Casa La Ceiba · avance 23,600 (repuesto al Consejo 10/09) + pago final 216,620 (10/09)'),
+ ('Casa','Hospedaje base: 97 pers × 2,360 (vie–dom)',236000,200000,228920,0,'Fuimos 99, facturadas 97. Casa La Ceiba · avance 23,600 (repuesto al Consejo 10/09) + pago final 216,620 (10/09)'),
+ ('Casa','Cortesía de la casa: 2 pers vie–dom sin cobro',None,None,0,CORTESIA_HOSP,'2 × 2,360 no cobrados (valor recibido). Padre + sor/director: CONFIRMAR quiénes (10-sep: "mía y la del padre"; 11-sep: "la sor y el padre")'),
  ('Casa','Noche del jueves (avanzada): 19 pers × 500',None,None,9500,0,'Llegamos JUEVES, no viernes. 27 personas: 19 pagaron 500/noche, 8 cortesía de la casa'),
  ('Casa','Cortesía de la casa: 8 pers del jueves sin cobro',None,None,0,CORTESIA_JUEVES,'8 × 500 no cobrados (valor recibido)'),
  ('Casa','Habitaciones dirección / extra (2 días)',None,None,1800,0,'Registrado 1,800 = 240,220 − 228,920 − 9,500. Desglose verbal (1,400 + 800 = 2,200) difiere en 400'),
@@ -365,7 +370,7 @@ cruce = [
  ('Equipo','Camisetas del equipo (60)',22400,28800,28800,0,'50% 16/08 + 50% 21/08'),
  ('Guías','Materiales de guías (mochilas, rosarios, forros, libretas…)',24157.86,27757.86,7720,especie_tot['Guías'],'Pagado: courier 2,120 + impresión mochilas 3,600 + Priscila 2,000. Donado: Pri, Luisa, Camila, Darianny, guías (neto de los 2,000 a Pri)'),
  ('Música','Llaveros + insumos',10511.86,10511.86,9000,especie_tot['Música'],'Llaveros 4,500 × 2. Donado: pilas, M&M, alambre'),
- ('Cocina','Compra de comida (Iberia) + detalles/gasolina',132639.84,112384.84,90489,especie_tot['Cocina']-10300,'Iberia 74,509 (10/09) + detalles/gasolina 15,980. Donado: Yelaxni, P. Paul, César Iglesia, Bono Olé'),
+ ('Cocina','Compra de comida (Iberia) + detalles/gasolina',132639.84,112384.84,90489,especie_tot['Cocina']-10300,'Iberia 74,509 (10/09; cotización Paloma 77,044.05) + detalles de cocina y combustible pagados a Paloma 15,980 (sin desglose en el ledger). Donado: Yelaxni, P. Paul, César Iglesia, Bono Olé'),
  ('Eventos','Bizcocho de bienvenida post-ETC',3000,1500,6000,0,'Pagado 10/09'),
  ('Eventos','Helados premios',0,0,1740,0,'Pagado 07/09'),
  ('Imprevistos','Efectivo para imprevistos',23900,0,15000,0,'⚠ SIN LIQUIDAR (07/09). Ppto 11-Ago: imprevistos 5% = 23,900'),
@@ -373,10 +378,10 @@ cruce = [
 CRUCE_PAGADO = sum(p for _,_,_,_,p,_,_ in cruce)
 CRUCE_DONADO = sum(d for _,_,_,_,_,d,_ in cruce)
 assert CRUCE_PAGADO == 515944, f"cruce pagado={CRUCE_PAGADO} ≠ 515,944"
-assert abs(CRUCE_DONADO - ESPECIE_TOTAL - CORTESIA_JUEVES) < 1, f"cruce donado={CRUCE_DONADO}"
+assert abs(CRUCE_DONADO - ESPECIE_TOTAL - CORTESIA_JUEVES - CORTESIA_HOSP) < 1, f"cruce donado={CRUCE_DONADO}"
 OFICINA_EXTRA = OFICINA_REAL - 2300                 # 3,006.11 asumidos por directores sobre lo valorado: SOLO INFORMATIVO, no suma (instrucción del director)
-COSTO_ECON = SALIDAS + ESPECIE_TOTAL + CORTESIA_JUEVES   # firme (oficina valorada a ppto 2,300 dentro de especie)
-PERSONAS = 97
+COSTO_ECON = SALIDAS + ESPECIE_TOTAL + CORTESIA_JUEVES + CORTESIA_HOSP   # firme (oficina valorada a ppto 2,300 dentro de especie)
+PERSONAS = 99   # todos los que dormimos en la casa (97 facturados + 2 cortesía)
 
 # ────── 8. CRUCE POR PARTIDA ──────
 ws8 = wb.create_sheet('Cruce por partida'); widths(ws8, 12, 46, 14, 14, 14, 14, 78)
@@ -417,6 +422,7 @@ for label, val, nota in [
     ('Salidas de caja', SALIDAS, ''),
     ('+ Donaciones en especie (a valor de presupuesto)', ESPECIE_TOTAL, 'peces, decoración, guías, cocina, oficina, música'),
     ('+ Cortesía de la casa: 8 pers del jueves sin cobro', CORTESIA_JUEVES, '8 × 500'),
+    ('+ Cortesía de la casa: 2 pers vie–dom sin cobro', CORTESIA_HOSP, '2 × 2,360 · padre + sor/director (confirmar)'),
 ]:
     ws9.cell(r,1,label).font = font(10); money(ws9,r,2,val); ws9.cell(r,3,nota).font = font(9, color='888888'); r += 1
 ws9.cell(r,1,'= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9,r,2,COSTO_ECON).font = font(11, True)
@@ -426,7 +432,7 @@ ws9.cell(r,1,'   + no cuantificado: local de formaciones si fue exonerado (ppto 
 ws9.cell(r,1,f'   + solo informativo (no suma, por instrucción del director): oficina costó realmente {OFICINA_REAL:,.2f} vs 2,300 valorados → {OFICINA_EXTRA:,.2f} asumidos por los directores').font = font(9, color=AMBAR); r += 2
 ws9.cell(r,1,'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE').font = font(12, True, VERDE); r += 1
 ws9.cell(r,1,'Valor recibido sin pagar (especie + cortesías)').font = font(10); money(ws9,r,2,COSTO_ECON - SALIDAS); ws9.cell(r,3,f'{(COSTO_ECON-SALIDAS)/COSTO_ECON*100:.1f}% del costo económico').font = font(9, color='888888'); r += 2
-ws9.cell(r,1,'D · POR PERSONA (97 en la casa)').font = font(12, True, MAR); r += 1
+ws9.cell(r,1,'D · POR PERSONA (99 en la casa)').font = font(12, True, MAR); r += 1
 ws9.cell(r,1,'Costo de caja por persona').font = font(10); money(ws9,r,2,SALIDAS/PERSONAS); r += 1
 ws9.cell(r,1,'Costo económico por persona').font = font(10); money(ws9,r,2,COSTO_ECON/PERSONAS); r += 1
 ws9.cell(r,1,'Cuota que pagó un participante').font = font(10); money(ws9,r,2,3500); ws9.cell(r,3,'cubre ~66% de su costo de caja; el resto lo cubren donaciones y profondo').font = font(9, color='888888'); r += 2
@@ -440,11 +446,12 @@ for cc in range(1,3): ws9.cell(r,cc).fill = fill('E8F5E9')
 r += 2
 ws9.cell(r,1,'F · LA CASA, AL DETALLE').font = font(12, True, MAR); r += 1
 for label, val, nota in [
-    ('Hospedaje base 97 pers × 2,360 (vie–dom)', 228920, '99 en casa − 2 habitaciones (director, padre) no facturadas por persona'),
+    ('Hospedaje base 97 pers × 2,360 (vie–dom)', 228920, 'fuimos 99; la casa facturó 97 y dio 2 de cortesía (padre + sor/director: confirmar quiénes)'),
     ('Noche del jueves: 19 pers × 500', 9500, 'llegamos jueves (avanzada). 27 personas: 19 pagaron, 8 cortesía'),
     ('Habitaciones dirección / extra, 2 días', 1800, 'registrado (verbal 1,400 + 800 = 2,200 → dif 400)'),
     ('= Total pagado a la casa', CASA_TOTAL, 'avance 23,600 (repuesto al Consejo) + final 216,620'),
-    ('Cortesía no cobrada (8 × 500)', CORTESIA_JUEVES, 'valor recibido'),
+    ('Cortesía no cobrada: jueves (8 × 500)', CORTESIA_JUEVES, 'valor recibido'),
+    ('Cortesía no cobrada: 2 pers vie–dom (2 × 2,360)', CORTESIA_HOSP, 'valor recibido · padre + sor/director (confirmar)'),
     ('Comida de avanzada del jueves (ppto Sistem 3,900)', 0, 'sin gasto propio: absorbida en Iberia / cocina detalles'),
     ('vs presupuesto 11-Ago (236,000)', CASA_TOTAL-236000, ''),
     ('vs presupuesto Sistem (200,000)', CASA_TOTAL-200000, 'el Sistem nunca actualizó la tarifa de 2,360 ni contempló el jueves'),
