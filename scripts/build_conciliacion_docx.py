@@ -132,7 +132,7 @@ doc.add_heading('2.1 Presupuesto', 2)
 para(f'El presupuesto se elaboró en febrero por áreas (Directores, Cocina, Guías y Música) y se actualizó el 11 de agosto con la tarifa real de la casa. Esa versión del 11 de agosto, de {d(PPTO)}, es el presupuesto oficial contra el que se compara todo en este informe. '
      f'Existió además una versión operativa, la que alimentaba el tablero de finanzas, de {d(PPTO_S)}; la diferencia entre ambas (83,390) está en la casa, los peces, la cocina y el transporte.')
 doc.add_heading('2.2 Cuotas y plan de recaudación', 2)
-para(f'Cada participante pagó una cuota de {n(CUOTA_P)} y cada miembro del equipo una de {n(CUOTA_E)} (49 miembros, {n(CUOTAS)}). Al retiro fueron 48 participantes: 46 pagaron y dos entraron sin cuota. Como las cuotas no cubrían el presupuesto, el plan de recaudación se apoyó en tres fuentes más: donaciones en efectivo, la actividad Profondo (rifa y venta de comida y helados) y donaciones en especie que redujeron lo que había que comprar.')
+para(f'Cada participante pagó una cuota de {n(CUOTA_P)} y cada miembro del equipo una de {n(CUOTA_E)} (49 miembros, {n(CUOTAS)}). Al retiro fueron 48 participantes: 46 con cuota y dos exonerados de antemano, invitados de la sor Angelina. Como las cuotas no cubrían el presupuesto, el plan de recaudación se apoyó en tres fuentes más: donaciones en efectivo, la actividad Profondo (rifa y venta de comida y helados) y donaciones en especie que redujeron lo que había que comprar.')
 doc.add_heading('2.3 Tesorería y registro', 2)
 para('La tesorería la llevaron tres personas con roles de recibir, registrar y conciliar, más un cuarto rol de manejo de la plataforma. Todo movimiento se registró en el tablero de finanzas: 22 gastos, 49 donaciones en efectivo y 8 entregas de la comisión de Profondo.')
 doc.add_heading('2.4 El retiro', 2)
@@ -228,7 +228,7 @@ table([['Concepto', 'RD$'],
        ['Costo total por persona', COSTO / PERSONAS],
        ['Cuota de cada participante', CUOTA_P],
        ['Cuota de cada miembro del equipo', CUOTA_E]], widths=[11, 4])
-para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron las donaciones, el profondo y las cuotas del equipo. Dos participantes entraron sin cuota, {n(2*CUOTA_P)} que no se recaudaron. Del equipo no pagaron cuota los cuatro asesores (el padre Paul, la sor, Petra y Johanny); los tres guías de reserva no entran en el conteo de 49.')
+para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron las donaciones, el profondo y las cuotas del equipo. Dos participantes estaban exonerados de la cuota desde el inicio, invitados de la sor Angelina ({n(2*CUOTA_P)} que no formaban parte de la meta de recaudación). Del equipo no pagaron cuota los cuatro asesores (el padre Paul, la sor, Petra y Johanny); los tres guías de reserva no entran en el conteo de 49.')
 
 # ── 10. Lo que queda ──
 doc.add_heading('10. Lo que queda por dejar constancia', 1)

@@ -361,7 +361,7 @@ RECOMENDACIONES_89 = [
    'Cada efectivo entregado se liquida en 7 días con recibos; una línea por concepto, sin pagos agrupados.',
    'Tesorería con los cuatro roles que ya funcionaron en el 88: recibir, registrar, conciliar y manejar la plataforma; conciliación tablero–banco de 15 minutos cada mes.',
    f'Cuotas fijas desde el inicio (participante {CUOTA_PARTICIPANTE:,}, equipo {CUOTA_EQUIPO:,}) y meta de recaudación = costo previsto − cuotas, repartida por fuente con fechas.',
-   f'Prever becas: en el 88 dos participantes entraron sin pagar cuota ({2 * CUOTA_PARTICIPANTE:,} que no se recaudaron). Presupuestarlas como partida, no como imprevisto.',
+   f'Acordar las exoneraciones al fijar la cuota y restarlas de la meta de recaudación desde el inicio: en el 88 fueron 2 invitados de la sor ({2 * CUOTA_PARTICIPANTE:,}), previstos pero no reflejados en el presupuesto.',
    'Cierre económico a los 10 días del retiro, con esta misma estructura.',
  ]),
 ]
@@ -370,7 +370,7 @@ RECOMENDACIONES_89 = [
 pendientes = [
  # (estado, tema, detalle, qué falta)
  ('CERRADO', 'Efectivo de imprevistos 15,000 y salón de formaciones', f'Del efectivo de 15,000 (07/09) se dieron {EFECTIVO_COCINA:,} a cocina en la casa de retiro y {EFECTIVO_SALON:,} fueron el reembolso a Juan Manuel de las 5 formaciones en Santa Clara (5 × 2,000, pagadas el 07-jun en efectivo a Franklin Pozo con su aporte personal). El efectivo queda liquidado completo y el salón pagado con dinero del grupo. Confirmado 11-sep.', ''),
- ('CERRADO', 'Participantes: 48 en el retiro, 46 pagaron', f'Al retiro fueron 48 participantes: 46 pagaron (esos son los que cuenta el cierre) y 2 no pagaron cuota, Cristofer y Dahiony, que quedan fuera del conteo de 46. Los {PART_ESPER:,} son la referencia teórica de esos 46 × {CUOTA_PARTICIPANTE:,}, no una meta de cobro: cuatro pagaron menos de {CUOTA_PARTICIPANTE:,} (Karen Berroa 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000). Por eso lo recibido es {PARTICIP:,}. NO hay pagos de participantes pendientes. Confirmado 11-sep.', ''),
+ ('CERRADO', 'Participantes: 48 en el retiro, 46 con cuota', f'Al retiro fueron 48 participantes: 46 con cuota y 2 exonerados de antemano, Cristofer y Dahiony, invitados de la sor Angelina. La exoneración estaba prevista desde el inicio, por eso el cierre cuenta 46 cuotas y no 48. Los {PART_ESPER:,} son la referencia teórica de esos 46 × {CUOTA_PARTICIPANTE:,}, no una meta de cobro: cuatro pagaron menos de {CUOTA_PARTICIPANTE:,} (Karen Berroa 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000). Por eso lo recibido es {PARTICIP:,}. NO hay pagos de participantes pendientes. Confirmado 11-sep.', ''),
  ('CERRADO', 'Profondo: boletas no pagadas 14,700', f'73.5 boletas colocadas × 200 = {PROF_POR_COBRAR:,} quedaron sin pagar. No se cobrarán (decisión de la dirección, 11-sep).', ''),
  ('NOTA',    'Donaciones sin identificar (6,500)', 'Wilfrid 1,000 · depósito no identificado 1,000 · Johan 3,500 (transferencias sin dueño) · Yendry Rincón 1,000 (sin comprobante).', 'Nota explícita en el acta.'),
  ('CERRADO', 'Impuestos bancarios y copias', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f} = impuesto bancario por transacción ({IMPUESTOS_BANCO:,.2f}, {IMPUESTO_TASA*100:.2f}% sobre los {IMPUESTO_BASE:,.2f} que se movieron) + copias pagadas ({COPIAS_PAGADAS:,.2f}).', 'Las líneas del estado de cuenta que lo documentan.'),
@@ -416,8 +416,8 @@ checks = [
  ('Impuesto bancario + copias = la diferencia con el banco', IMPUESTOS, IMPUESTOS_BANCO + COPIAS_PAGADAS, True, f'{IMPUESTO_TASA*100:.2f}% sobre {IMPUESTO_BASE:,.0f} = {IMPUESTOS_BANCO:,.2f} · copias {COPIAS_PAGADAS:,.2f}'),
  ('Cuotas del equipo = 49 miembros × 2,000', 49 * CUOTA_EQUIPO, CUOTAS, True, 'de los 56 del equipo: 3 guías de reserva fuera del conteo y 4 asesores sin cuota. Incluye a quien pagó y no asistió (Mary Carmen)'),
  ('Participantes: 46 × 3,500 de referencia − lo recibido = lo que cuatro pagaron de menos', 4200, PART_ESPER - PARTICIP, True, 'no es una deuda: Karen Berroa pagó 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000'),
- ('Personas en la casa = participantes (48) + equipo', 99, 48 + 51, True, '46 participantes con cuota + Cristofer y Dahiony sin cuota; 51 del equipo de los 53 titulares (Mary Carmen no asistió)'),
- ('Cuota no cobrada a los 2 participantes sin pago (becas de hecho)', 7000, 2 * CUOTA_PARTICIPANTE, True, 'Cristofer y Dahiony: no es un costo, es recaudación que no entró'),
+ ('Personas en la casa = participantes (48) + equipo', 99, 48 + 51, True, '46 participantes con cuota + Cristofer y Dahiony exonerados; 51 del equipo de los 53 titulares (Mary Carmen no asistió)'),
+ ('Cuota de los 2 participantes exonerados (invitados de la sor)', 7000, 2 * CUOTA_PARTICIPANTE, True, 'Cristofer y Dahiony: exoneración prevista, fuera de la meta de recaudación'),
  ('Lista del director (10-sep): personas distintas = participantes del tablero', 46, 46, True, '57 líneas de pago → 46 personas (Karen aparte de Karen Berroa)'),
  ('Pagos a nombre de Amanda Rivera o de Boris dentro de los 156,800', 0, 0, True, 'ninguno: verificado contra la lista del director, el registro de cuotas y las 49 donaciones'),
  ('Lista del director (10-sep): 132,800 con cifra + 7 sin cifra (6 × 3,500 + 1 × 3,000) = total', 156800, 132800 + 6 * 3500 + 3000, True, 'confirmado por el director (11-sep)'),
@@ -536,7 +536,7 @@ ws.merge_cells('A2:C2'); c = ws['A2']; c.value = 'fuente: registro de tesorería
 r = 4
 subtitle(ws, r, 'ENTRADAS', MAR); r += 1
 for label, val, nota in [
-    ('Pagos de participantes', PARTICIP, f'46 de los 48 participantes pagaron · cuota {CUOTA_PARTICIPANTE:,} · cuatro pagaron menos (referencia teórica {PART_ESPER:,})'),
+    ('Pagos de participantes', PARTICIP, f'46 de los 48 participantes con cuota (2 exonerados) · cuota {CUOTA_PARTICIPANTE:,} · cuatro pagaron menos (referencia teórica {PART_ESPER:,})'),
     ('Donaciones en efectivo', DONAC_EFEC, '49 aportantes'),
     ('Profondo (rifa + venta de comida y helados) — entregado neto', PROFONDO, f'bruto {PROF_BRUTO:,} − premios {PROF_COSTOS:,} + ventas posteriores {PROF_ADICIONAL:,.2f}'),
     ('Cuotas del equipo', CUOTAS, f'49 miembros × {CUOTA_EQUIPO:,} · 100%. De los 56 del equipo quedan fuera los 3 guías de reserva y los 4 asesores que no pagaron cuota (el padre Paul, la sor, Petra y Johanny)'),
@@ -628,9 +628,9 @@ subtitle(ws9, r, f'D · POR PERSONA ({PERSONAS} en la casa)', MAR); r += 1
 ws9.cell(r, 1, 'Costo de caja por persona').font = font(10); money(ws9, r, 2, SALIDAS / PERSONAS); r += 1
 ws9.cell(r, 1, 'Costo total por persona').font = font(10); money(ws9, r, 2, COSTO_ECON / PERSONAS); r += 1
 ws9.cell(r, 1, 'Cuota que pagó cada participante').font = font(10); money(ws9, r, 2, CUOTA_PARTICIPANTE); note(ws9, r, 3, f'cubre el {CUOTA_PARTICIPANTE / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron donaciones y profondo'); r += 1
-ws9.cell(r, 1, 'Participantes sin cuota (becas de hecho)').font = font(10); money(ws9, r, 2, 2 * CUOTA_PARTICIPANTE); note(ws9, r, 3, 'Cristofer y Dahiony: 2 × 3,500 que no entraron. No es un costo, es recaudación que no se cobró'); r += 1
+ws9.cell(r, 1, 'Participantes exonerados de cuota (2)').font = font(10); money(ws9, r, 2, 2 * CUOTA_PARTICIPANTE); note(ws9, r, 3, 'Cristofer y Dahiony, invitados de la sor Angelina: exoneración prevista desde el inicio, no una cuota impagada'); r += 1
 ws9.cell(r, 1, 'Cuota que pagó cada miembro del equipo').font = font(10); money(ws9, r, 2, CUOTA_EQUIPO); note(ws9, r, 3, f'49 miembros = {CUOTAS:,}'); r += 1
-note(ws9, r, 1, f'   {PERSONAS} en la casa = 48 participantes (46 con cuota pagada + Cristofer y Dahiony sin cuota) y 51 del equipo. Mary Carmen pagó su cuota y no asistió; entre los 46 que pagaron no hay ninguno registrado como ausente (ver hoja 5).'); r += 2
+note(ws9, r, 1, f'   {PERSONAS} en la casa = 48 participantes (46 con cuota + Cristofer y Dahiony exonerados, invitados de la sor) y 51 del equipo. Mary Carmen pagó su cuota y no asistió; entre los 46 con cuota no hay ninguno registrado como ausente (ver hoja 5).'); r += 2
 subtitle(ws9, r, 'E · CÓMO SE FINANCIÓ LA CAJA', MAR); r += 1
 for label, val in FUENTES:
     ws9.cell(r, 1, label).font = font(10); money(ws9, r, 2, val); note(ws9, r, 3, f'{val / ENTRADAS * 100:.1f}% de las entradas'); r += 1

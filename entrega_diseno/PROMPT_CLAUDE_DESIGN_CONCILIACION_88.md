@@ -125,7 +125,7 @@ Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cu
 
 - Costo de caja por persona (99): 5,212
 - Costo total por persona: 6,233
-- Cuota de cada participante: 3,500, que cubre el 67% de su costo de caja; dos de los 48 participantes entraron sin cuota (7,000 que no se recaudaron)
+- Cuota de cada participante: 3,500, que cubre el 67% de su costo de caja; dos de los 48 participantes estaban exonerados, invitados de la sor Angelina
 - Cuota de cada miembro del equipo: 2,000 (49 miembros = 98,000)
 
 Visual: las cifras por persona y una barra que muestre la parte que cubre la cuota del participante y la parte que cubrieron donaciones, profondo y cuotas del equipo.
@@ -133,7 +133,7 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 ## Lámina 11 · Lo que queda por dejar constancia
 
 - Efectivo de imprevistos (15,000): liquidado, 5,000 a cocina en la casa y 10,000 de reembolso del salón de formaciones.
-- Participantes: fueron 48, de los que 46 pagaron; no hay pagos pendientes. La referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro pagaron menos de 3,500.
+- Participantes: fueron 48, 46 con cuota y 2 exonerados (invitados de la sor); no hay pagos pendientes. La referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro pagaron menos de 3,500.
 - Profondo: 14,700 en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
 - Donaciones sin identificar: 6,500 en cuatro transferencias; dejar constancia.
 - Sobrante de 34,337 en cuentas: se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo.
