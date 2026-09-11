@@ -159,15 +159,15 @@ Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cu
 
 Visual: las cifras por persona y una barra que muestre la parte que cubre la cuota del participante y la parte que cubrieron donaciones, profondo y cuotas del equipo.
 
-## Lámina 11 · Lo que queda por cerrar
+## Lámina 11 · Lo que queda por dejar constancia
 
-- Efectivo de imprevistos ({n(15000)}): {n(EF_COCINA)} a cocina en la casa; confirmar que los {n(EF_SALON)} restantes fueron el reembolso del salón de formaciones.
-- Participantes: {n(PART_PEND)} por cobrar entre cuatro personas; decidir si se cobra.
-- Profondo: {n(P_COBRAR)} en boletas colocadas y no pagadas; decidir si se cobran.
+- Efectivo de imprevistos ({n(15000)}): liquidado, {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones.
+- Participantes: {n(PART_PEND)} fueron abonos que no se completaron hasta 3,500 en cuatro casos.
+- Profondo: {n(P_COBRAR)} en boletas colocadas y no pagadas; no se cobrarán.
 - Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
 - Uso de los {n(REAL)} en cuentas: decisión de la dirección y del Consejo.
 
-Visual: lista de cinco puntos con una marca de estado por punto.
+Visual: lista de cinco puntos con una marca de estado por punto (los tres primeros cerrados, los dos últimos abiertos).
 
 ## Lámina 12 · Base y recomendaciones para el ETC 89
 
@@ -177,13 +177,15 @@ Cifras:
 - Base recurrente: {n(BASE_REC)} ({n(BASE_REC / PERSONAS)} por persona), sin el desvío de transporte ni el bizcocho de bienvenida
 - Partidas por persona: casa 2,360 · comida {n(COMIDA_PP)} · biblia 680 · pez 600 · camiseta 480 por miembro del equipo
 
-Recomendaciones, en tres bloques:
+Recomendaciones, en cinco bloques cortos:
 
 - Cerrar temprano: presupuesto cerrado 90 días antes, con la tarifa de la casa firmada y tres cotizaciones para transporte y comida; después solo cambia con el visto bueno de los dos directores.
 - Tope: techo por área = costo real del 88 × asistentes; reserva de imprevistos del 3% con responsable, liquidada con recibos en una semana; nada fuera de partida sin mover otra.
-- Logística: una sola caja desde el primer día; categorías iguales a las partidas; cada donación en especie anotada al recibirla; efectivos liquidados en 7 días; una línea por concepto; tesorería de tres personas (recibir, registrar, conciliar) con conciliación mensual; boletas del profondo cobradas antes del sorteo; cierre económico a los 10 días del retiro.
+- Profondo: lanzarlo al cerrar el presupuesto; vender y cobrar en cada formación; sorteo en la convivencia, dos semanas antes del retiro; boletas pagadas al recibirlas, sin crédito.
+- Donaciones en especie: lista de necesidades con valor de referencia al cerrar el presupuesto; una persona de tesorería las registra al recibirlas; corte de compromisos 45 días antes; lo no cubierto se compra a 30 días.
+- Logística: una sola caja desde el primer día; categorías iguales a las partidas; efectivos liquidados en 7 días; una línea por concepto; tesorería con cuatro roles (recibir, registrar, conciliar, plataforma) y conciliación mensual; cierre económico a los 10 días del retiro.
 
-Visual: dos cifras grandes arriba, la fila de partidas por persona como iconos, los tres bloques de recomendaciones en columnas.
+Visual: dos cifras grandes arriba, la fila de partidas por persona como iconos, los cinco bloques de recomendaciones como tarjetas.
 """
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
