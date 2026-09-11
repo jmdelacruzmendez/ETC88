@@ -33,7 +33,7 @@ gastos = [
     ("16/08","Compra merienda convivencia",3420,""),
     ("16/08","Pago 50% t-shirt equipo",14400,""),
     ("16/08","Pago impresiones guías (mochilas)",3600,"Distinto de 'impresiones diversas' donadas por Darianny (director)"),
-    ("19/08","Pago salón para Ensayo (dom 23-ago)",3000,""),
+    ("19/08","Pago salón para Ensayo (dom 23-ago)",3000,"Parroquia Santa Clara: día adicional para el ensayo general"),
     ("19/08","Pago a JM x pago Biblias ETC 88",35360,"Reembolso. Proforma Paulinas 34,000 + 1,360"),
     ("21/08","Pago 50% faltante de camisetas",14400,""),
     ("28/08","Cajitas para palancas",2965,""),
@@ -150,6 +150,7 @@ especie = {
     ('Resmas de papel', 800, 'directores · materiales oficina'),
     ('Sobres carta compromiso + lapiceros', 1500, 'directores · materiales oficina'),
     ('Banderín (tela, pintura)', 0, 'Frank (sin valor presupuestado)'),
+    ('Insumos de misa (pan y vino) · litúrgico', 3000, 'Jonathan Medina y Fernando Cordero (valorado a ppto)'),
   ],
   'Cocina': [
     ('Plátanos verdes (200 ud)', 4000, 'Yelaxni Mota'),
@@ -169,7 +170,7 @@ especie = {
 }
 especie_tot = {a: sum(v for _,v,_ in items) for a, items in especie.items()}
 ESPECIE_TOTAL = sum(especie_tot.values())
-assert abs(ESPECIE_TOTAL - 87494) <= 2, f"especie={ESPECIE_TOTAL} (esperado ~87,494)"
+assert abs(ESPECIE_TOTAL - 90494) <= 2, f"especie={ESPECIE_TOTAL} (esperado ~90,494)"
 OFICINA_REAL = 3140.07 + 726.04 + 1440.00   # 5,306.11 — recibos Cactus + Medamax (03/09), asumido por directores; NO entra a costos por instrucción del director
 
 # ══════════ PRESUPUESTO — dos baselines ══════════
@@ -327,7 +328,7 @@ notas = [
  ('CERRADO', 'Balance 117,611 de la hoja General del presupuesto: celda manual de ~11-ago, pre-retiro. No es un segundo balance. El oficial es 36,543.40 → real 34,337 (dif 2,206.40 impuestos/comisiones).'),
  ('CERRADO', 'Casa: 216,620 final + 23,600 avance = 240,220. vs 11-Ago (236,000): +4,220. vs Sistem (200,000): +40,220 — el Sistem nunca actualizó la tarifa de 2,360.'),
  ('NOTA',    'Casa, dos detalles menores: (a) fuimos 99 y se facturaron 97; las 2 cortesías son el padre y la sor o el director (10-sep se dijo "mía y la del padre", 11-sep "la sor y el padre"): confirmar quiénes. (b) Habitaciones: desglose verbal 1,400 + 800 = 2,200 vs 1,800 implícitos en lo pagado → 400 de diferencia.'),
- ('INFO',    f'Especie total {ESPECIE_TOTAL:,.0f}: el Sheet de presupuesto solo reflejaba 30,301 (flags sin actualizar). Peces (36,000, La Vega), decoración (10,300), Bono Olé (4,588), oficina y cocina no estaban marcados.'),
+ ('INFO',    f'Especie total {ESPECIE_TOTAL:,.0f}: el Sheet de presupuesto solo reflejaba 30,301 (flags sin actualizar). Peces (36,000, La Vega), decoración (10,300), Bono Olé (4,588), insumos de misa (3,000, Jonathan Medina y Fernando Cordero), oficina y cocina no estaban marcados.'),
  ('INFO',    'Ambos presupuestos siguen marcados "Tentativo — sujeto a ajustes" (2/7/2026). Lección: cerrar formalmente el presupuesto antes del retiro.'),
  ('OPORT.',  f'Participantes: faltan {PART_ESPER-PARTICIP:,} por cobrar (97.4% de {PART_ESPER:,}).'),
 ]
@@ -361,11 +362,11 @@ cruce = [
  ('Materiales','Banderín',0,0,0,0,'DONADO por Frank (sin valor presupuestado)'),
  ('Materiales','Decoración plenario / comedor',0,0,0,10300,'DONADA (el presupuesto la tenía en Cocina como "Decoración")'),
  ('Litúrgico','Ofrendas sacerdotes (confesiones)',12000,12000,10000,0,'P. Héctor 10,000 dentro del reembolso a JM (10/09). Ppto 4 × 3,000'),
- ('Litúrgico','Insumos de misa (pan y vino)',3000,3000,0,0,'Vino (3 gal ≈ 1,995) fue dentro de la compra Iberia; sin línea propia'),
- ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',13000,10000,0,0,'Sin gasto registrado → ¿exonerado por la parroquia? (confirmar)'),
+ ('Litúrgico','Insumos de misa (pan y vino)',3000,3000,0,3000,'DONADOS: los asumieron Jonathan Medina y Fernando Cordero (valorado a ppto). La cotización Iberia traía 3 gal de vino (1,995); cotización − pago = 2,535.05 = vino 1,995 + platos foam 540 → consistente con que el vino no se compró en Iberia (confirmar)'),
+ ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',13000,10000,0,0,'Sin cobro: la parroquia solo cobró el día adicional del ensayo (3,000, fila siguiente). ¿Valorar las 5 formaciones como cortesía de la parroquia (ppto 10,000)? (confirmar)'),
  ('Formación','Formaciones: merienda F3',None,None,2500,0,'Pagado 05/07 · cubierto por donación "Mamá de Juan Manuel" 5,000'),
  ('Formación','Convivencia: merienda',8000,4000,3420,0,'Pagado 16/08'),
- ('Formación','Ensayo general: salón',0,3000,3000,0,'Pagado 19/08'),
+ ('Formación','Ensayo general: Sta. Clara, día adicional',0,3000,3000,0,'Pagado 19/08 a la parroquia por el día adicional (ensayo dom 23-ago). Contemplado en Sistem (3,000); no en 11-Ago'),
  ('Formación','Ensayo general: almuerzo 53 pers',16000,14840,14730,0,'Pagado 10/09 (a JC)'),
  ('Equipo','Camisetas del equipo (60)',22400,28800,28800,0,'50% 16/08 + 50% 21/08'),
  ('Guías','Materiales de guías (mochilas, rosarios, forros, libretas…)',24157.86,27757.86,7720,especie_tot['Guías'],'Pagado: courier 2,120 + impresión mochilas 3,600 + Priscila 2,000. Donado: Pri, Luisa, Camila, Darianny, guías (neto de los 2,000 a Pri)'),
@@ -403,7 +404,7 @@ for a, p, b1, b2, pag, don, nota in cruce:
     r += 1
 ws8.cell(r,2,'TOTALES').font = font(11, True); money(ws8,r,3,PPTO_11AGO).font = font(11, True); money(ws8,r,4,PPTO_SISTEM).font = font(11, True)
 money(ws8,r,5,CRUCE_PAGADO).font = font(11, True); money(ws8,r,6,CRUCE_DONADO).font = font(11, True)
-ws8.cell(r,7,'PAGADO = salidas del panel (515,944) · DONADO = especie 87,495 + cortesía casa 4,000').font = font(9, color='888888')
+ws8.cell(r,7,f'PAGADO = salidas del panel ({SALIDAS:,}) · DONADO = especie {ESPECIE_TOTAL:,} + cortesías de la casa {CORTESIA_JUEVES+CORTESIA_HOSP:,}').font = font(9, color='888888')
 for cc in range(1,8): ws8.cell(r,cc).fill = fill('E3F2FD')
 r += 2
 ws8.cell(r,2,'Lectura: cada peso de los 22 gastos del ledger está asignado a una partida; ninguna partida queda sin origen.').font = font(9, color='888888'); r += 1
@@ -420,7 +421,7 @@ r += 2
 ws9.cell(r,1,'B · LO QUE VALE EL RETIRO (costo económico)').font = font(12, True, AZUL); r += 1
 for label, val, nota in [
     ('Salidas de caja', SALIDAS, ''),
-    ('+ Donaciones en especie (a valor de presupuesto)', ESPECIE_TOTAL, 'peces, decoración, guías, cocina, oficina, música'),
+    ('+ Donaciones en especie (a valor de presupuesto)', ESPECIE_TOTAL, 'peces, decoración, guías, cocina, oficina, música, insumos de misa'),
     ('+ Cortesía de la casa: 8 pers del jueves sin cobro', CORTESIA_JUEVES, '8 × 500'),
     ('+ Cortesía de la casa: 2 pers vie–dom sin cobro', CORTESIA_HOSP, '2 × 2,360 · padre + sor/director (confirmar)'),
 ]:
@@ -428,7 +429,7 @@ for label, val, nota in [
 ws9.cell(r,1,'= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9,r,2,COSTO_ECON).font = font(11, True)
 for cc in range(1,3): ws9.cell(r,cc).fill = fill('E3F2FD')
 r += 1
-ws9.cell(r,1,'   + no cuantificado: local de formaciones si fue exonerado (ppto 10,000) · costos del profondo (premio/abanico, boletos)').font = font(9, color=AMBAR); r += 1
+ws9.cell(r,1,'   + no cuantificado: Santa Clara no cobró las 5 formaciones, solo el día adicional del ensayo (ppto local 10,000) · costos del profondo (premio/abanico, boletos)').font = font(9, color=AMBAR); r += 1
 ws9.cell(r,1,f'   + solo informativo (no suma, por instrucción del director): oficina costó realmente {OFICINA_REAL:,.2f} vs 2,300 valorados → {OFICINA_EXTRA:,.2f} asumidos por los directores').font = font(9, color=AMBAR); r += 2
 ws9.cell(r,1,'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE').font = font(12, True, VERDE); r += 1
 ws9.cell(r,1,'Valor recibido sin pagar (especie + cortesías)').font = font(10); money(ws9,r,2,COSTO_ECON - SALIDAS); ws9.cell(r,3,f'{(COSTO_ECON-SALIDAS)/COSTO_ECON*100:.1f}% del costo económico').font = font(9, color='888888'); r += 2
