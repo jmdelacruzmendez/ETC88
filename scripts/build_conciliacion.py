@@ -90,14 +90,17 @@ donac_efectivo = [
     ("Carolina Almánzar",800),("Papa de J&J",5000),("Justin Méndez",5000),("Melida Marian Feliz",800),
     ("Jonathan Medina",1500),("Glenys Sosa",2000),("Yaneris Almeida",5000),("Maria vizcaino",2000),
     ("Sol Brito",1000),
+    ("Joan",3500),   # 11-sep: confirmada por el director; faltaba en el listado original
 ]
-donac_list_tot = sum(v for _,v in donac_efectivo)  # 150,521.92
-donac_otras = DONAC_EFEC - donac_list_tot           # dif vs tablero (~4,499)
+donac_list_tot = sum(v for _,v in donac_efectivo)  # 154,021.92
+# Tablero 155,021 − listado 154,021.92 ≈ 1,000 = la "donación fantasma" (11-sep).
+# VERIFICAR: ¿es un error de registro (quitar del tablero) o una donación anónima real?
+donac_otras = DONAC_EFEC - donac_list_tot           # ≈ 999 → 'fantasma'
 
 # Salidas de caja (listado) + casa + ajustes = total tablero
 salidas_caja = [
     ("Compra de comida (cotización Paloma 01-sep)", 74509.62),
-    ("Pago a JM (reembolso adelanto)", 37500),
+    ("Pago a JM — reembolso: transporte 2ª mitad 17,500 (10,000 + 7,500) + desvío 10,000 + ofrenda P. Paul confesiones 10,000", 37500),
     ("Pago a JM x Biblias ETC 88 (reembolso)", 35360),
     ("Concejo (reserva 10% casa)", 23600),
     ("Mitad de transporte", 17500),
@@ -119,9 +122,12 @@ salidas_caja = [
 ]
 caja_tot = sum(v for _,v in salidas_caja)  # 284,324.62
 CASA_FINAL = 217020        # pago final casa (fuera de la caja del listado)
-TRANSPORTE_EXTRA = 10000   # pagado de más vs presupuesto
-# El resto hasta cuadrar salidas del tablero = impuestos/ITBIS y ajustes menores
-AJUSTE_IMP = SALIDAS - (caja_tot + CASA_FINAL + TRANSPORTE_EXTRA)  # ~4,599
+# Transporte TOTAL = 45,000, TODO dentro de caja: 17,500 ('mitad') + 17,500 + 10,000 desvío
+# (estos dos últimos dentro del reembolso a JM de 37,500). Antes se sumaban 10,000 aparte: era doble conteo.
+TRANSPORTE_TOTAL = 17500 + 17500 + 10000
+# Residual = salidas del tablero NO identificadas ni en caja ni en casa. PENDIENTE: detalle
+# de salidas del tablero (acceso admin). NO etiquetar como impuestos sin respaldo.
+RESIDUAL_SALIDAS = SALIDAS - (caja_tot + CASA_FINAL)  # ~14,599
 
 # Presupuesto por área (excel 11-Aug) + real
 ppto = [
@@ -153,14 +159,14 @@ ws.column_dimensions['C'].width = 40
 ws.merge_cells('A1:C1')
 c = ws['A1']; c.value = 'CONCILIACIÓN FINAL · ETC 88'; c.font = Font(size=15, bold=True, color=CREMA); c.fill = fill(MAR); c.alignment = Alignment(horizontal='center')
 ws.merge_cells('A2:C2')
-c = ws['A2']; c.value = '10 de septiembre de 2026 · post-retiro · cifras del tablero oficial'; c.font = Font(size=9, italic=True, color='666666'); c.alignment = Alignment(horizontal='center')
+c = ws['A2']; c.value = '11 de septiembre de 2026 · post-retiro · cifras del tablero oficial · estado de cuenta al 11-sep-2026'; c.font = Font(size=9, italic=True, color='666666'); c.alignment = Alignment(horizontal='center')
 
 r = 4
 ws.cell(r,1,'ENTRADAS').font = font(12, True, MAR); r+=1
 for label, val, nota in [
     ('Cuotas del equipo', CUOTAS, '49 miembros × 2,000 (100%)'),
     ('Tardanzas', TARDANZAS, 'multas de formaciones'),
-    ('Donaciones en efectivo', DONAC_EFEC, '~47 aportantes'),
+    ('Donaciones en efectivo', DONAC_EFEC, '48 aportantes + 1 por verificar'),
     ('Pagos de participantes', PARTICIP, '97% del esperado'),
     ('Profondo (rifa)', PROFONDO, 'actividades pro-fondo · sin salidas'),
 ]:
@@ -179,7 +185,7 @@ ws.cell(r,1,'Balance (entradas − salidas)').font = font(11, True); money(ws,r,
 for cc in range(1,3): ws.cell(r,cc).fill = fill('E3F2FD')
 r+=1
 ws.cell(r,1,'Dinero real en cuentas (tuya + Day)').font = font(); money(ws,r,2,REAL_CUENTAS); r+=1
-ws.cell(r,1,'Diferencia = impuestos no reflejados').font = font(9, color='888888'); money(ws,r,2,IMPUESTOS).font = font(9, color='888888'); r+=2
+ws.cell(r,1,"Diferencia (director: impuestos · si la 'fantasma' es error, baja a 1,206)").font = font(9, color='888888'); money(ws,r,2,IMPUESTOS).font = font(9, color='888888'); r+=2
 
 ws.cell(r,1,'APOYO TOTAL DONADO').font = font(12, True, VERDE); r+=1
 ws.cell(r,1,'Donaciones en efectivo (entraron a caja)').font = font(); money(ws,r,2,DONAC_EFEC); r+=1
@@ -196,7 +202,7 @@ r=4
 for n,v in donac_efectivo:
     ws2.cell(r,1,n).font=font(10); money(ws2,r,2,v); r+=1
 ws2.cell(r,1,'Subtotal listado').font=font(10,True); money(ws2,r,2,donac_list_tot).font=font(10,True); r+=1
-ws2.cell(r,1,'Otras donaciones (registradas en tablero)').font=font(9,color='888888'); money(ws2,r,2,donac_otras); r+=1
+ws2.cell(r,1,"Donación 'fantasma' en tablero — VERIFICAR (¿error de registro o anónima?)").font=font(9,color='888888'); money(ws2,r,2,donac_otras); r+=1
 ws2.cell(r,1,'TOTAL (tablero)').font=font(11,True); money(ws2,r,2,DONAC_EFEC).font=font(11,True)
 for cc in range(1,3): ws2.cell(r,cc).fill=fill('E8F5E9')
 
@@ -227,9 +233,9 @@ for n,v in salidas_caja:
 ws4.cell(r,1,'Subtotal caja').font=font(10,True); money(ws4,r,2,caja_tot).font=font(10,True); r+=2
 ws4.cell(r,1,'B · Pagados por otras vías').font=font(11,True,MAR); r+=1
 for n,v in [('Casa — pago final (97 pers + jueves + habitaciones)',CASA_FINAL),
-            ('Transporte pagado de más vs presupuesto',TRANSPORTE_EXTRA),
-            ('Impuestos / ITBIS y ajustes menores',AJUSTE_IMP)]:
+            ('Salidas en tablero NO identificadas (pendiente detalle admin)',RESIDUAL_SALIDAS)]:
     ws4.cell(r,1,n).font=font(10); money(ws4,r,2,v); r+=1
+ws4.cell(r,1,f'Nota: transporte total {TRANSPORTE_TOTAL:,} (17,500 + 17,500 + 10,000 desvío) está íntegro dentro de la caja.').font=font(9,color='888888'); r+=1
 ws4.cell(r,1,'TOTAL SALIDAS (tablero)').font=font(11,True); money(ws4,r,2,SALIDAS).font=font(11,True)
 for cc in range(1,3): ws4.cell(r,cc).fill=fill('FDE8E8')
 
@@ -261,4 +267,4 @@ print(f'✓ Wrote {OUT}')
 print(f'  Entradas {ENTRADAS:,} = cuotas {CUOTAS:,}+tard {TARDANZAS:,}+don {DONAC_EFEC:,}+part {PARTICIP:,}+profondo {PROFONDO:,}')
 print(f'  Balance {BALANCE:,} · real {REAL_CUENTAS:,} · impuestos {IMPUESTOS:,}')
 print(f'  Especie {ESPECIE_TOTAL:,} · Apoyo total donado {DONAC_EFEC+ESPECIE_TOTAL:,}')
-print(f'  Salidas: caja {caja_tot:,.2f} + casa {CASA_FINAL:,} + transp {TRANSPORTE_EXTRA:,} + imp/ajuste {AJUSTE_IMP:,.2f} = {SALIDAS:,}')
+print(f'  Salidas: caja {caja_tot:,.2f} + casa {CASA_FINAL:,} + NO identificadas {RESIDUAL_SALIDAS:,.2f} = {SALIDAS:,}  | transporte {TRANSPORTE_TOTAL:,} dentro de caja')
