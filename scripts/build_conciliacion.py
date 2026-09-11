@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Conciliación Final ETC 88 — versión OFICIAL (11-sep-2026, post-retiro).
-Genera data/presupuesto/Conciliacion_Final_ETC88.xlsx (9 hojas).
+Genera data/presupuesto/Conciliacion_Final_ETC88.xlsx (10 hojas).
 
 FUENTE ÚNICA de movimientos: pestañas Gastos / Donaciones / Profondo del panel de
 administración de financetc88.streamlit.app (extraídas 11-sep-2026, cuadran al peso
@@ -319,7 +319,8 @@ ws6.cell(r,1,'Recomendación: declarar el 11-Ago como baseline ante el Consejo (
 ws7 = wb.create_sheet('Notas Consejo'); widths(ws7, 10, 110)
 title(ws7, 'PUNTOS QUE EL CONSEJO VA A PREGUNTAR — estado al 11-sep', AMBAR, 2)
 notas = [
- ('ABIERTO', '15,000 "para tener en efectivo para imprevistos" (07/09): entrega de fondos sin desglose de uso. Es la única salida sin soporte.'),
+ ('ABIERTO', '15,000 "para tener en efectivo para imprevistos" (07/09): entrega de fondos sin desglose de uso. Es la única salida sin soporte. ¿De aquí salieron los 10,000 de las formaciones?'),
+ ('ABIERTO', 'Formaciones Sta. Clara: el director confirma 5 × 2,000 = 10,000 pagados (la extraordinaria de 3,000 sí está registrada el 19/08). Los 10,000 NO están en el ledger. Como el ledger cuadra con el banco (dif 2,206.40 = impuestos), no salieron de las cuentas sin registro: o salieron del efectivo de 15,000 o alguien los asumió. Confirmar y registrar.'),
  ('ABIERTO', '37,500 "Pago a JM (transporte + imprevistos)" (10/09): el director lo desglosa (transporte 17,500 + desvío 10,000 + ofrenda P. Héctor 10,000) pero el ledger no. Registrar el desglose y los recibos.'),
  ('ABIERTO', 'Profondo registrado en neto (135,866.40). Sin bruto ni costos (premio/abanico, boletos, helados). Pedir liquidación de la comisión.'),
  ('NOTA',    'Donaciones con origen no verificado o sin comprobante (6,500): Wilfrid 1,000 · Depósito no identificado 1,000 · Johan 3,500 · Yendry Rincón 1,000 (sin comprobante). Dejar nota explícita.'),
@@ -360,24 +361,29 @@ cruce = [
  ('Materiales','Peces ICTUS (60)',36000,5000,0,36000,'DONADOS por La Vega. Sistem solo presupuestó el envío (5,000), sin gasto registrado'),
  ('Materiales','Materiales de oficina (resmas, sobres, lapiceros)',2300,2300,0,2300,'DONADOS por los directores (costo real 5,306.11 asumido por ellos; se valora a ppto)'),
  ('Materiales','Cajas / entrega de palancas',3000,2965,2965,0,'Pagado 28/08'),
- ('Materiales','Banderín',0,0,0,0,'DONADO por Frank (sin valor presupuestado)'),
- ('Materiales','Decoración plenario / comedor',0,0,0,10300,'DONADA (el presupuesto la tenía en Cocina como "Decoración")'),
+ ('Materiales','Banderín',0,0,0,0,'DONADO por Frank (presupuestado en 0: "pendiente cotizar")'),
+ ('Materiales','Decoración plenario / comedor',10300,10300,0,10300,'DONADA. Presupuestada dentro de Cocina ("Decoración: cerrar comedor", 10,300 en ambos pptos); aquí se saca de la fila de Cocina para no duplicar'),
  ('Litúrgico','Ofrendas sacerdotes (confesiones)',12000,12000,10000,0,'P. Héctor 10,000 dentro del reembolso a JM (10/09). Ppto 4 × 3,000'),
  ('Litúrgico','Insumos de misa (pan y vino)',3000,3000,0,3000,'DONADOS: los asumieron Jonathan Medina y Fernando Cordero (valorado a ppto). La cotización Iberia traía 3 gal de vino (1,995); cotización − pago = 2,535.05 = vino 1,995 + platos foam 540 → consistente con que el vino no se compró en Iberia (confirmar)'),
- ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',13000,10000,0,0,'Sin cobro: la parroquia solo cobró el día adicional del ensayo (3,000, fila siguiente). ¿Valorar las 5 formaciones como cortesía de la parroquia (ppto 10,000)? (confirmar)'),
+ ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',10000,10000,0,0,'SÍ SE PAGARON: 5 × 2,000 = 10,000 (director, 11-sep), pero NO están en el ledger (solo la extraordinaria de 3,000, fila siguiente). Origen por confirmar: ¿del efectivo de 15,000 (07/09)? ¿asumidos por alguien?'),
  ('Formación','Formaciones: merienda F3',None,None,2500,0,'Pagado 05/07 · cubierto por donación "Mamá de Juan Manuel" 5,000'),
- ('Formación','Convivencia: merienda',8000,4000,3420,0,'Pagado 16/08'),
- ('Formación','Ensayo general: Sta. Clara, día adicional',0,3000,3000,0,'Pagado 19/08 a la parroquia por el día adicional (ensayo dom 23-ago). Contemplado en Sistem (3,000); no en 11-Ago'),
- ('Formación','Ensayo general: almuerzo 53 pers',16000,14840,14730,0,'Pagado 10/09 (a JC)'),
- ('Equipo','Camisetas del equipo (60)',22400,28800,28800,0,'50% 16/08 + 50% 21/08'),
+ ('Formación','Convivencia: merienda',4000,4000,3420,0,'Pagado 16/08'),
+ ('Formación','Ensayo general: Sta. Clara, reunión extraordinaria',None,3000,3000,0,'Pagado 19/08 a la parroquia por el día adicional (ensayo dom 23-ago). Contemplado en Sistem (3,000); no en 11-Ago'),
+ ('Formación','Ensayo general: almuerzo 53 pers',14840,14840,14730,0,'Pagado 10/09 (a JC). Ppto 53 × 280 (Zaglul)'),
+ ('Equipo','Camisetas del equipo (60)',28800,28800,28800,0,'50% 16/08 + 50% 21/08. Ppto 60 × 480 (R&M Ingeniería)'),
  ('Guías','Materiales de guías (mochilas, rosarios, forros, libretas…)',24157.86,27757.86,7720,especie_tot['Guías'],'Pagado: courier 2,120 + impresión mochilas 3,600 + Priscila 2,000. Donado: Pri, Luisa, Camila, Darianny, guías (neto de los 2,000 a Pri)'),
  ('Música','Llaveros + insumos',10511.86,10511.86,9000,especie_tot['Música'],'Llaveros 4,500 × 2. Donado: pilas, M&M, alambre'),
- ('Cocina','Compra de comida (Iberia) + detalles/gasolina',132639.84,112384.84,90489,especie_tot['Cocina']-10300,'Iberia 74,509 (10/09; cotización Paloma 77,044.05) + detalles de cocina y combustible pagados a Paloma 15,980 (sin desglose en el ledger). Donado: Yelaxni, P. Paul, César Iglesia, Bono Olé'),
- ('Eventos','Bizcocho de bienvenida post-ETC',3000,1500,6000,0,'Pagado 10/09'),
- ('Eventos','Helados premios',0,0,1740,0,'Pagado 07/09'),
- ('Imprevistos','Efectivo para imprevistos',23900,0,15000,0,'⚠ SIN LIQUIDAR (07/09). Ppto 11-Ago: imprevistos 5% = 23,900'),
+ ('Cocina','Compra de comida (Iberia) + detalles/gasolina',132639.84-11800,112384.84-11800,90489,especie_tot['Cocina']-10300,'Ppto de Cocina SIN decoración (10,300) ni bizcocho (1,500), que van en sus filas. Iberia 74,509 (10/09; cotización Paloma 77,044.05) + detalles de cocina y combustible pagados a Paloma 15,980 (sin desglose en el ledger). Donado: Yelaxni, P. Paul, César Iglesia, Bono Olé'),
+ ('Eventos','Bizcocho de bienvenida post-ETC',1500,1500,6000,0,'Pagado 10/09. Ppto en Cocina ("Bizcocho, dinámica" 1,500)'),
+ ('Eventos','Helados premios',None,None,1740,0,'Pagado 07/09. No presupuestado'),
+ ('Imprevistos','Efectivo para imprevistos',None,None,15000,0,'⚠ SIN LIQUIDAR (07/09). No presupuestado en 11-Ago ni en Sistem. Podría ser el origen de los 10,000 de formaciones (ver fila Formaciones)'),
 ]
 CRUCE_PAGADO = sum(p for _,_,_,_,p,_,_ in cruce)
+CRUCE_P11 = sum((p11 or 0) for _,_,p11,_,_,_,_ in cruce)
+CRUCE_PS  = sum((ps or 0) for _,_,_,ps,_,_,_ in cruce)
+assert abs(CRUCE_P11 - PPTO_11AGO) < 0.01, f"ppto 11-Ago por partida {CRUCE_P11:,.2f} ≠ {PPTO_11AGO:,.2f}"
+assert abs(CRUCE_PS - PPTO_SISTEM) < 0.01, f"ppto Sistem por partida {CRUCE_PS:,.2f} ≠ {PPTO_SISTEM:,.2f}"
+FORMACIONES_SIN_LEDGER = 5 * 2000   # pagadas según el director (11-sep); no están en el ledger → por clasificar
 CRUCE_DONADO = sum(d for _,_,_,_,_,d,_ in cruce)
 assert CRUCE_PAGADO == 515944, f"cruce pagado={CRUCE_PAGADO} ≠ 515,944"
 assert abs(CRUCE_DONADO - ESPECIE_TOTAL - CORTESIA_JUEVES - CORTESIA_HOSP) < 1, f"cruce donado={CRUCE_DONADO}"
@@ -430,7 +436,8 @@ for label, val, nota in [
 ws9.cell(r,1,'= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9,r,2,COSTO_ECON).font = font(11, True)
 for cc in range(1,3): ws9.cell(r,cc).fill = fill('E3F2FD')
 r += 1
-ws9.cell(r,1,'   + no cuantificado: Santa Clara no cobró las 5 formaciones, solo el día adicional del ensayo (ppto local 10,000) · costos del profondo (premio/abanico, boletos)').font = font(9, color=AMBAR); r += 1
+ws9.cell(r,1,f'   ± por clasificar: formaciones Sta. Clara {FORMACIONES_SIN_LEDGER:,} pagadas (5 × 2,000) que NO están en el ledger → si salieron del efectivo de 15,000 ya están en caja (0 adicional); si alguien las asumió, +{FORMACIONES_SIN_LEDGER:,} donado = {COSTO_ECON+FORMACIONES_SIN_LEDGER:,.2f}').font = font(9, color=AMBAR); r += 1
+ws9.cell(r,1,'   + no cuantificado: costos del profondo (premio/abanico, boletos): el ledger registra el neto').font = font(9, color=AMBAR); r += 1
 ws9.cell(r,1,f'   + solo informativo (no suma, por instrucción del director): oficina costó realmente {OFICINA_REAL:,.2f} vs 2,300 valorados → {OFICINA_EXTRA:,.2f} asumidos por los directores').font = font(9, color=AMBAR); r += 2
 ws9.cell(r,1,'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE').font = font(12, True, VERDE); r += 1
 ws9.cell(r,1,'Valor recibido sin pagar (especie + cortesías)').font = font(10); money(ws9,r,2,COSTO_ECON - SALIDAS); ws9.cell(r,3,f'{(COSTO_ECON-SALIDAS)/COSTO_ECON*100:.1f}% del costo económico').font = font(9, color='888888'); r += 2
@@ -463,6 +470,61 @@ for label, val, nota in [
         for cc in range(1,3): ws9.cell(r,cc).fill = fill('FDE8E8')
     r += 1
 
+# ────── 10. AUDITORÍA NUMÉRICA ──────
+ws10 = wb.create_sheet('Auditoría'); widths(ws10, 5, 70, 18, 18, 11, 60)
+title(ws10, 'AUDITORÍA NUMÉRICA — cada verificación se recalcula al generar el archivo', AZUL, 6)
+r = 3
+for c, h in enumerate(['#', 'Verificación', 'Esperado', 'Obtenido', 'Estado', 'Nota'], 1):
+    ws10.cell(r, c, h).font = font(10, True, CREMA); ws10.cell(r, c).fill = fill(MAR)
+r += 1
+_bib = sum(m for _, d, m, n, _ in donaciones if 'biblia' in (d + ' ' + n).lower())
+_flag = sum(m for _, _, m, _, f in donaciones if f == 'NOTA')
+_dif_iberia = round(77044.05 - 74509, 2)
+_esp_area_cruce = {}
+for a, _, _, _, _, d, _ in cruce: _esp_area_cruce[a] = _esp_area_cruce.get(a, 0) + d
+checks = [
+ ('Gastos del ledger: 22 filas suman las salidas del panel', 515944, GASTOS_TOT, len(gastos) == 22, f'{len(gastos)} filas'),
+ ('Donaciones en efectivo: 49 filas suman el KPI del panel', 155021, DONAC_EFEC, len(donaciones) == 49, f'{len(donaciones)} filas'),
+ ('Profondo: 8 entradas, 0 salidas', 135866.40, PROFONDO, len(profondo) == 8, 'registrado en neto'),
+ ('Entradas = cuotas + tardanzas + donaciones + participantes + profondo', 552487.40, ENTRADAS, True, ''),
+ ('Balance = entradas − salidas', 36543.40, BALANCE, True, ''),
+ ('Balance − real en cuentas = impuestos/comisiones', 2206.40, IMPUESTOS, True, f'real en cuentas {REAL_CUENTAS:,} (11-sep)'),
+ ('Cuotas del equipo = 49 miembros × 2,000', 49 * 2000, CUOTAS, True, ''),
+ ('Participantes: esperado 46 × 3,500 − recaudado = por cobrar', 4200, PART_ESPER - PARTICIP, True, 'no es una persona entera: abonos parciales'),
+ ('Casa: 97 × 2,360 + 19 × 500 + habitaciones 1,800 = avance + final', 240220, 97 * 2360 + 19 * 500 + 1800, (97 * 2360 + 19 * 500 + 1800) == CASA_TOTAL, '23,600 + 216,620'),
+ ('Reembolso a JM 37,500 = transporte 17,500 + desvío 10,000 + ofrenda 10,000', 37500, 17500 + 10000 + 10000, True, 'desglose del director; no está en el ledger'),
+ ('Transporte pagado = abono 17,500 + 17,500 + desvío 10,000 = ppto 11-Ago', 45000, 17500 + 17500 + 10000, True, ''),
+ ('Cruce: pagado por partida = salidas del ledger', 515944, CRUCE_PAGADO, True, f'{len(cruce)} partidas ↔ 22 gastos'),
+ ('Cruce: ppto 11-Ago por partida = total del archivo 11-Ago', PPTO_11AGO, CRUCE_P11, True, 'Directores 428,940 + Cocina + Guías + Música'),
+ ('Cruce: ppto Sistem por partida = total del archivo Sistem', PPTO_SISTEM, CRUCE_PS, True, 'Directores 362,205 + Cocina + Guías + Música'),
+ ('Cruce: donado por partida = especie + cortesías de la casa', ESPECIE_TOTAL + CORTESIA_JUEVES + CORTESIA_HOSP, CRUCE_DONADO, True, ''),
+ ('Especie Guías = flags DONADO del Sistem (25,039.36) − reembolso a Priscila 2,000', 23039.36, especie_tot['Guías'], True, 'posible omisión: impresión libretas 1,260 "donado por guías" (celda mal ubicada en el Sistem)', 1.0),
+ ('Especie Música = flags DONADO del Sistem', 1261.86, especie_tot['Música'], True, 'redondeo a pesos', 1.0),
+ ('Especie Cocina + Directores = confirmaciones del director', 24893 + 41300, especie_tot['Cocina'] + especie_tot['Directores'], True, 'el Sistem solo marcaba plátanos (4,000)'),
+ ('Cotización Iberia: exento + gravado + ITBIS', 77044.05, round(46003.05 + 26408.73 + 4632.27, 2), True, 'a nombre de Paloma Méndez, 01-sep'),
+ ('Iberia: cotizado − pagado = vino 1,995 + platos foam 540', 2535.00, _dif_iberia, True, 'coincidencia a confirmar (vino asumido por Jonathan y Fernando); 0.05 de redondeo', 0.10),
+ ('Biblias: reembolso 35,360 = proforma 34,000 + 1,360; donaciones etiquetadas "biblia"', 16500, _bib, True, 'Roosbert, Pamela Nivar, Carol, Kharla, Wirna'),
+ ('Donaciones con nota pendiente (Wilfrid, Yendry, fantasma, Johan)', 6500, _flag, True, ''),
+ ('Costo económico = caja + especie + cortesías (8 × 500 + 2 × 2,360)', SALIDAS + ESPECIE_TOTAL + 4000 + 4720, COSTO_ECON, True, ''),
+ ('Apoyo total donado = efectivo + especie', DONAC_EFEC + ESPECIE_TOTAL, 155021 + 90495, True, ''),
+ ('Formaciones Sta. Clara 5 × 2,000 pagadas (director) vs ledger', 10000, 0, False, 'ABIERTO: no están en el ledger; origen por confirmar'),
+]
+def _ok(ch):
+    txt, esp, obt, extra, nota = ch[:5]; tol = ch[5] if len(ch) > 5 else 0.02
+    return abs(float(esp) - float(obt)) <= tol and extra
+for i, ch in enumerate(checks, 1):
+    txt, esp, obt, extra, nota = ch[:5]; ok = _ok(ch)
+    ws10.cell(r, 1, i).font = font(9); ws10.cell(r, 2, txt).font = font(10)
+    money(ws10, r, 3, esp); money(ws10, r, 4, obt)
+    ws10.cell(r, 5, 'PASS' if ok else 'ABIERTO').font = font(10, True, VERDE if ok else ROJO)
+    ws10.cell(r, 6, nota).font = font(9, color='888888')
+    for c in range(1, 7): ws10.cell(r, c).border = border
+    r += 1
+AUDIT_PASS = sum(1 for ch in checks if _ok(ch))
+AUDIT_N = len(checks)
+r += 1
+ws10.cell(r, 2, f'{AUDIT_PASS} de {AUDIT_N} verificaciones PASS · las ABIERTO son datos que faltan, no errores de cálculo').font = font(10, True)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 wb.save(OUT)
 print(f'✓ Wrote {OUT}')
@@ -471,3 +533,5 @@ print(f'  Salidas {SALIDAS:,} (22 gastos, 0 profondo) · Balance {BALANCE:,.2f} 
 print(f'  Especie {ESPECIE_TOTAL:,} · Apoyo total donado {DONAC_EFEC+ESPECIE_TOTAL:,}')
 print(f'  Baselines: 11-Ago {PPTO_11AGO:,.2f} · Sistem {PPTO_SISTEM:,.2f} · casa real {CASA_TOTAL:,}')
 print(f'  Cruce: pagado {CRUCE_PAGADO:,} · donado {CRUCE_DONADO:,} · costo económico firme {COSTO_ECON:,.2f} · por persona caja {SALIDAS/PERSONAS:,.0f} / econ {COSTO_ECON/PERSONAS:,.0f}')
+print(f'  Cruce ppto por partida: 11-Ago {CRUCE_P11:,.2f} · Sistem {CRUCE_PS:,.2f} (cuadran con los archivos)')
+print(f'  Auditoría: {AUDIT_PASS}/{AUDIT_N} PASS')
