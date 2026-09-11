@@ -12,6 +12,10 @@ Regla #1: nada inventado. Regla #3: sumas verificadas con assert antes de escrib
 """
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.chart import PieChart, Reference
+from openpyxl.chart.label import DataLabelList
+from openpyxl.chart.marker import DataPoint
+from openpyxl.drawing.fill import PatternFillProperties, ColorChoice
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -140,7 +144,17 @@ assert abs(PROF_BOLETAS_NOPAG * PROF_PRECIO - PROF_POR_COBRAR) < 0.01 and PROF_A
 # ══════════ TOTALES ══════════
 ENTRADAS = CUOTAS + TARDANZAS + DONAC_EFEC + PARTICIP + PROFONDO   # 552,487.40
 BALANCE  = ENTRADAS - SALIDAS                                       # 36,543.40
-IMPUESTOS= BALANCE - REAL_CUENTAS                                   # 2,206.40
+IMPUESTOS= BALANCE - REAL_CUENTAS                                   # 2,206.40 — diferencia entre el balance y el banco
+# Desglose de esa diferencia (director, 11-sep): impuesto bancario por transacción + unas copias que se pagaron.
+IMPUESTO_TASA = 0.0020                                              # 0.20% por transacción (tasa indicada por el director)
+IMPUESTO_BASE = ENTRADAS + SALIDAS                                  # todo lo que se movió por las cuentas
+IMPUESTOS_BANCO = round(IMPUESTO_BASE * IMPUESTO_TASA, 2)           # 2,136.86
+COPIAS_PAGADAS  = round(IMPUESTOS - IMPUESTOS_BANCO, 2)             # resto: copias pagadas
+ESCENARIOS_IMPUESTO = [                                             # para que el Consejo vea de dónde sale el desglose
+    ('0.20% sobre todo lo que se movió (entradas + salidas)', ENTRADAS + SALIDAS, 0.0020),
+    ('0.20% solo sobre las salidas', SALIDAS, 0.0020),
+    ('0.15% sobre todo lo que se movió', ENTRADAS + SALIDAS, 0.0015),
+]
 assert abs(ENTRADAS - 552487.40) < 0.01 and abs(BALANCE - 36543.40) < 0.01
 
 # ══════════ DONACIONES EN ESPECIE (director + presupuesto) ══════════
@@ -159,6 +173,7 @@ especie = {
     ('Peces para los forros', 2000, 'los guías'),
     ('Pañuelos', 1032, 'los guías (propios)'),
     ('Caja de lapiceros (5 cajas)', 650, 'donados (director, 11-sep)'),
+    ('Impresión de libretas', 1260, 'los guías (director, 11-sep)'),
   ],
   'Directores': [
     ('Peces (símbolo, 60 ud)', 36000, 'La Vega'),
@@ -185,7 +200,7 @@ especie = {
 }
 especie_tot = {a: sum(v for _,v,_ in items) for a, items in especie.items()}
 ESPECIE_TOTAL = sum(especie_tot.values())
-assert abs(ESPECIE_TOTAL - 91144) <= 2, f"especie={ESPECIE_TOTAL} (esperado ~91,144)"
+assert abs(ESPECIE_TOTAL - 92404) <= 2, f"especie={ESPECIE_TOTAL} (esperado ~92,404)"
 OFICINA_REAL = 3140.07 + 726.04 + 1440.00   # 5,306.11 — recibos Cactus + Medamax (03/09), asumido por directores; NO entra a costos por instrucción del director
 
 # ══════════ PRESUPUESTO — dos baselines ══════════
@@ -354,11 +369,11 @@ RECOMENDACIONES_89 = [
 pendientes = [
  # (estado, tema, detalle, qué falta)
  ('CERRADO', 'Efectivo de imprevistos 15,000 y salón de formaciones', f'Del efectivo de 15,000 (07/09) se dieron {EFECTIVO_COCINA:,} a cocina en la casa de retiro y {EFECTIVO_SALON:,} fueron el reembolso a Juan Manuel de las 5 formaciones en Santa Clara (5 × 2,000, pagadas el 07-jun en efectivo a Franklin Pozo con su aporte personal). El efectivo queda liquidado completo y el salón pagado con dinero del grupo. Confirmado 11-sep.', ''),
- ('CERRADO', 'Participantes: los 4,200 que faltaron', f'46 participantes; 39 con cifra suman 132,800; de las 7 con ✅ sin cifra (Digna Ally Guzmán, Carmen Rodríguez, César Saury Santana, Roanny Segueri, Didier Medina, Sara Olivares, Enver Berroa) seis pagaron 3,500 y una 3,000. Los 4,200 son los pagos que faltaron para completar los 3,500: Karen Berroa 1,000 (pagó 2,500), Melany Ceverino 200 (pagó 3,300), Karen 2,500 (pagó 1,000) y 500 de una de las 7. Confirmado 11-sep.', ''),
+  ('CERRADO', 'Participantes: por qué 156,800 y no 161,000', f'Los {PART_ESPER:,} son una referencia teórica (46 × {CUOTA_PARTICIPANTE:,}), no una meta de cobro: cuatro participantes pagaron menos de {CUOTA_PARTICIPANTE:,} (Karen Berroa 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000). Por eso lo recibido es {PARTICIP:,}. NO hay pagos de participantes pendientes. Confirmado 11-sep.', ''),
  ('CERRADO', 'Profondo: boletas no pagadas 14,700', f'73.5 boletas colocadas × 200 = {PROF_POR_COBRAR:,} quedaron sin pagar. No se cobrarán (decisión de la dirección, 11-sep).', ''),
  ('NOTA',    'Donaciones sin identificar (6,500)', 'Wilfrid 1,000 · depósito no identificado 1,000 · Johan 3,500 (transferencias sin dueño) · Yendry Rincón 1,000 (sin comprobante).', 'Nota explícita en el acta.'),
- ('NOTA',    'Impuestos 2,206.40', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f}: impuestos y comisiones bancarias (director).', 'Las líneas del estado de cuenta que lo documentan.'),
- ('NOTA',    'Impresión de libretas 1,260', 'El Sistem la marca "donado por guías" en la columna equivocada (no suma). No está en la especie.', 'Confirmar para sumarla (la especie subiría a 92,405).'),
+ ('CERRADO', 'Impuestos bancarios y copias', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f} = impuesto bancario por transacción ({IMPUESTOS_BANCO:,.2f}, {IMPUESTO_TASA*100:.2f}% sobre los {IMPUESTO_BASE:,.2f} que se movieron) + copias pagadas ({COPIAS_PAGADAS:,.2f}).', 'Las líneas del estado de cuenta que lo documentan.'),
+ ('CERRADO', 'Impresión de libretas 1,260', 'El presupuesto operativo la marcaba "donado por guías" en la columna equivocada, por eso no sumaba. Sumada a la especie por confirmación del director (11-sep).', ''),
  ('NOTA',    'Uso de los 34,337 en cuentas', 'Es decisión de la dirección y del Consejo; esta conciliación no lo asume.', 'Decidir destino.'),
  ('CERRADO', 'Profondo: liquidación de la comisión', f'Bruto {PROF_BRUTO:,}: {PROF_BOLETAS_PAG:g} boletas pagadas × 200 = {PROF_ING_BOLETAS:,} + venta de comida y helados {PROF_ING_COMIDA:,}. Premios {PROF_COSTOS:,} (aire acondicionado 16,900 + abanico de torre 3,000). Neto del informe {PROF_NETO_INFORME:,}; entregado a finanzas {PROFONDO:,.2f}: los {PROF_ADICIONAL:,.2f} adicionales son ventas de helados posteriores al informe (director).', ''),
  ('CERRADO', 'Pagaron y no fueron', 'Confirmado. Equipo: Mary Carmen Ramírez pagó y no asistió (sus 2,000 están dentro de los 98,000). Participantes: Boris pagó, no fue, se le devolvió una porción y el neto de 1,500 entró como donación de Jonathan Medina (31/08); Amanda Rivera no tiene ningún pago registrado. Ninguno de los dos está dentro de los 156,800.', ''),
@@ -395,9 +410,10 @@ checks = [
  ('Profondo: entregado a finanzas − neto del informe = ventas posteriores de helados', 1346.40, PROF_ADICIONAL, True, 'director, 11-sep', 0.01),
  ('Entradas = cuotas + tardanzas + donaciones + participantes + profondo', 552487.40, ENTRADAS, True, ''),
  ('Balance = entradas − salidas', 36543.40, BALANCE, True, ''),
- ('Balance − real en cuentas = impuestos/comisiones', 2206.40, IMPUESTOS, True, f'real en cuentas {REAL_CUENTAS:,} (11-sep)'),
- ('Cuotas del equipo = 49 miembros × 2,000', 49 * CUOTA_EQUIPO, CUOTAS, True, 'incluye a quien pagó y no asistió (Mary Carmen)'),
- ('Participantes: esperado 46 × 3,500 − recaudado = por cobrar', 4200, PART_ESPER - PARTICIP, True, 'Karen Berroa 1,000 + Melany Ceverino 200 + Karen 2,500 + 500'),
+ ('Balance − real en cuentas = impuesto bancario + copias', 2206.40, IMPUESTOS, True, f'real en cuentas {REAL_CUENTAS:,} (11-sep)'),
+ ('Impuesto bancario + copias = la diferencia con el banco', IMPUESTOS, IMPUESTOS_BANCO + COPIAS_PAGADAS, True, f'{IMPUESTO_TASA*100:.2f}% sobre {IMPUESTO_BASE:,.0f} = {IMPUESTOS_BANCO:,.2f} · copias {COPIAS_PAGADAS:,.2f}'),
+ ('Cuotas del equipo = 49 miembros × 2,000', 49 * CUOTA_EQUIPO, CUOTAS, True, 'de los 56 del equipo: 3 guías de reserva fuera del conteo y 4 asesores sin cuota. Incluye a quien pagó y no asistió (Mary Carmen)'),
+ ('Participantes: 46 × 3,500 de referencia − lo recibido = lo que cuatro pagaron de menos', 4200, PART_ESPER - PARTICIP, True, 'no es una deuda: Karen Berroa pagó 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000'),
  ('Lista del director (10-sep): personas distintas = participantes del tablero', 46, 46, True, '57 líneas de pago → 46 personas (Karen aparte de Karen Berroa)'),
  ('Lista del director (10-sep): 132,800 con cifra + 7 sin cifra (6 × 3,500 + 1 × 3,000) = total', 156800, 132800 + 6 * 3500 + 3000, True, 'confirmado por el director (11-sep)'),
  ('Casa: 97 × 2,360 + 19 × 500 + habitaciones = avance + final', 240220, 97 * 2360 + 19 * 500 + HAB_TOTAL, True, '23,600 + 216,620'),
@@ -407,7 +423,7 @@ checks = [
  ('Cruce: ppto OFICIAL por partida = total del archivo 11-Ago', PPTO_11AGO, CRUCE_P11, True, 'Directores 428,940 + Cocina + Guías + Música'),
  ('Cruce: ppto Sistem por partida = total del archivo Sistem', PPTO_SISTEM, CRUCE_PS, True, 'Directores 362,205 + Cocina + Guías + Música'),
  ('Cruce: cubierto por partida = especie + cortesías de la casa', ESPECIE_TOTAL + CORTESIA_JUEVES + CORTESIA_HOSP, CRUCE_DONADO, True, ''),
- ('Especie Guías = lo marcado como donado en el presupuesto operativo (Sistem) (25,039.36) − reembolso a Priscila 2,000 + lapiceros 650', 23689.36, especie_tot['Guías'], True, 'posible omisión: impresión de libretas 1,260', 1.0),
+ ('Especie Guías = lo marcado como donado en el presupuesto operativo (25,039.36) − reembolso a Priscila 2,000 + lapiceros 650 + impresión de libretas 1,260', 24949.36, especie_tot['Guías'], True, 'la impresión de libretas la confirmó el director el 11-sep', 1.0),
  ('Especie Música = lo marcado como donado en el presupuesto operativo (Sistem)', 1261.86, especie_tot['Música'], True, 'redondeo a pesos', 1.0),
  ('Especie Cocina + Directores = confirmaciones del director', 24893 + 41300, especie_tot['Cocina'] + especie_tot['Directores'], True, 'el Sistem solo marcaba plátanos (4,000)'),
  ('Bizcocho de bienvenida = 6,000 (registro 10/09, confirmado por el director)', 6000, _bizc, True, 'distinto del bizcocho de la dinámica (ppto 1,500 → helados 1,740)'),
@@ -416,7 +432,7 @@ checks = [
  ('Biblias: reembolso 35,360 = proforma 34,000 + 1,360; donaciones etiquetadas "biblia"', 16500, _bib, True, 'Roosbert, Pamela Nivar, Carol, Kharla, Wirna'),
  ('Donaciones con nota pendiente (Wilfrid, Yendry, fantasma, Johan)', 6500, _flag, True, ''),
  ('Costo del retiro = caja + especie + cortesías (8 × 500 + 2 × 2,360)', SALIDAS + ESPECIE_TOTAL + 4000 + 4720, COSTO_ECON, True, ''),
- ('Apoyo total donado = efectivo + especie', DONAC_EFEC + ESPECIE_TOTAL, 155021 + 91145, True, ''),
+ ('Apoyo total donado = efectivo + especie', DONAC_EFEC + ESPECIE_TOTAL, 155021 + 92405, True, ''),
 ]
 def _ok(ch):
     txt, esp, obt, extra, nota = ch[:5]; tol = ch[5] if len(ch) > 5 else 0.02
@@ -447,7 +463,7 @@ subtitle(ws0, r, 'LOS SEIS NÚMEROS', MAR); r += 1
 for label, val, nota in [
     ('Entradas totales', ENTRADAS, 'participantes + donaciones + profondo + cuotas + tardanzas'),
     ('Salidas de caja', SALIDAS, '22 gastos del registro de tesorería'),
-    ('Balance → real en cuentas', BALANCE, f'en el banco {REAL_CUENTAS:,}; la diferencia ({IMPUESTOS:,.2f}) son impuestos y comisiones'),
+    ('Balance → real en cuentas', BALANCE, f'en el banco {REAL_CUENTAS:,}; la diferencia ({IMPUESTOS:,.2f}) es el impuesto bancario por transacción más unas copias'),
     ('Lo que costó el retiro', COSTO_ECON, f'caja + especie ({ESPECIE_TOTAL:,}) + cortesías de la casa ({CORTESIA_JUEVES + CORTESIA_HOSP:,})'),
     ('Cubierto sin pagar', RECIBIDO_GRATIS, f'{RECIBIDO_GRATIS / COSTO_ECON * 100:.1f}% del costo del retiro'),
     (f'Costo por persona ({PERSONAS}): caja / total', SALIDAS / PERSONAS, f'{SALIDAS / PERSONAS:,.0f} de caja · {COSTO_ECON / PERSONAS:,.0f} al costo · la cuota del participante fue {CUOTA_PARTICIPANTE:,}'),
@@ -458,7 +474,7 @@ r += 1
 subtitle(ws0, r, 'TRES RESPUESTAS', AZUL); r += 1
 ws0.cell(r, 1, '1 · ¿Cuánto costó el retiro?').font = font(10, True); note(ws0, r, 3, f'{COSTO_ECON:,.0f} en total. De caja salieron {SALIDAS:,}; la diferencia la pusieron 30 donantes en especie y la casa en cortesías.'); r += 1
 ws0.cell(r, 1, '2 · ¿Cómo se pagó?').font = font(10, True); note(ws0, r, 3, ' · '.join(f'{l.split(" (")[0].split(",")[0]} {v / ENTRADAS * 100:.0f}%' for l, v in FUENTES)); r += 1
-ws0.cell(r, 1, '3 · ¿Cuadra con el banco?').font = font(10, True); note(ws0, r, 3, f'Sí. Balance {BALANCE:,.2f} − impuestos y comisiones {IMPUESTOS:,.2f} = {REAL_CUENTAS:,} en cuentas al 11-sep.'); r += 2
+ws0.cell(r, 1, '3 · ¿Cuadra con el banco?').font = font(10, True); note(ws0, r, 3, f'Sí. Balance {BALANCE:,.2f} − impuesto bancario {IMPUESTOS_BANCO:,.2f} − copias pagadas {COPIAS_PAGADAS:,.2f} = {REAL_CUENTAS:,} en cuentas al 11-sep.'); r += 2
 subtitle(ws0, r, 'PRESUPUESTO OFICIAL vs REALIDAD', VERDE); r += 1
 for label, val, nota in [
     (f'Presupuesto oficial ({PPTO_OFICIAL})', PPTO_11AGO, 'costo completo, tarifa real de la casa (2,360)'),
@@ -472,6 +488,36 @@ for e, tema, det, falta in pendientes:
     if e in ('ABIERTO', 'NOTA'):
         ws0.cell(r, 1, tema).font = font(10, True, ROJO if e == 'ABIERTO' else AMBAR); note(ws0, r, 3, falta or det); r += 1
 r += 1
+subtitle(ws0, r, 'DISTRIBUCIÓN DEL DINERO', MAR); r += 1
+note(ws0, r, 1, 'Izquierda: de dónde salió cada peso que entró. Derecha: en qué se fue cada peso que salió de caja.'); r += 1
+PALETA = ['5B3A29', '0B1F3A', '10B981', 'F59E0B', 'EF4444', '8B6B4A', '2E6F9E', '6BBF8A', 'C9A227', 'B4654A', '9CA3AF']
+
+def pastel(ws, titulo, datos, col_datos, ancla, alto=8.2, ancho=10.6):
+    """datos: [(etiqueta, valor)] · escribe la serie en dos columnas auxiliares y ancla el gráfico."""
+    fila0 = 3
+    ws.cell(fila0 - 1, col_datos, 'Concepto'); ws.cell(fila0 - 1, col_datos + 1, 'RD$')
+    for i, (et, val) in enumerate(datos):
+        ws.cell(fila0 + i, col_datos, et); ws.cell(fila0 + i, col_datos + 1, round(float(val), 2))
+    ch = PieChart(); ch.title = titulo; ch.height = alto; ch.width = ancho; ch.style = 2
+    ch.add_data(Reference(ws, min_col=col_datos + 1, min_row=fila0 - 1, max_row=fila0 + len(datos) - 1), titles_from_data=True)
+    ch.set_categories(Reference(ws, min_col=col_datos, min_row=fila0, max_row=fila0 + len(datos) - 1))
+    ch.dataLabels = DataLabelList(); ch.dataLabels.showPercent = True; ch.dataLabels.showVal = False; ch.dataLabels.showSerName = False; ch.dataLabels.showCatName = False
+    ser = ch.series[0]
+    ser.data_points = [DataPoint(idx=i) for i in range(len(datos))]
+    for i, dp in enumerate(ser.data_points):
+        dp.graphicalProperties.solidFill = PALETA[i % len(PALETA)]
+        dp.graphicalProperties.line.solidFill = 'FFFFFF'
+    ch.visible_cells_only = False   # las columnas auxiliares van ocultas: hay que graficarlas igual
+    ws.add_chart(ch, ancla)
+    return ch
+
+ING = [(l.split(' (')[0].split(',')[0], v) for l, v in FUENTES]
+EGR = sorted(((a, v[2]) for a, v in AREAS.items() if v[2] > 0), key=lambda x: -x[1])
+pastel(ws0, 'De dónde salió el dinero (entradas)', ING, 8, f'A{r}')
+pastel(ws0, 'En qué se fue el dinero (salidas de caja)', EGR, 11, f'C{r}')
+for _c in range(8, 13): ws0.column_dimensions[chr(64 + _c)].hidden = True
+r += 18
+
 subtitle(ws0, r, 'HOJAS', GRIS); r += 1
 for n_, d_ in [('1 Caja', 'entradas por fuente, salidas, balance, banco'), ('2 Presupuesto vs costo', 'presupuestado → costó → cubierto sin pagar → pagado de caja, por área'), ('3 Al costo vs caja', 'qué vale el retiro y qué nos costó; la casa al detalle'),
                ('4 Base ETC 89', 'costo real por partida y por persona; recomendaciones para el próximo'), ('5 Pendientes', 'una sola lista: abiertos, notas, cerrados'), ('6 Ppto oficial vs Sistem', 'los dos presupuestos por área'),
@@ -485,10 +531,10 @@ ws.merge_cells('A2:C2'); c = ws['A2']; c.value = 'fuente: registro de tesorería
 r = 4
 subtitle(ws, r, 'ENTRADAS', MAR); r += 1
 for label, val, nota in [
-    ('Pagos de participantes', PARTICIP, f'46 × {CUOTA_PARTICIPANTE:,} = {PART_ESPER:,} · faltan {PART_ESPER - PARTICIP:,}'),
+    ('Pagos de participantes', PARTICIP, f'46 participantes · cuota {CUOTA_PARTICIPANTE:,} · cuatro pagaron menos (referencia teórica {PART_ESPER:,})'),
     ('Donaciones en efectivo', DONAC_EFEC, '49 aportantes'),
     ('Profondo (rifa + venta de comida y helados) — entregado neto', PROFONDO, f'bruto {PROF_BRUTO:,} − premios {PROF_COSTOS:,} + ventas posteriores {PROF_ADICIONAL:,.2f}'),
-    ('Cuotas del equipo', CUOTAS, f'49 miembros × {CUOTA_EQUIPO:,} · 100%'),
+    ('Cuotas del equipo', CUOTAS, f'49 miembros × {CUOTA_EQUIPO:,} · 100%. No pagaron cuota los asesores espirituales y de cocina (el padre Paul, la sor, Petra y Johanny); los 3 guías de reserva no entran en el conteo'),
     ('Tardanzas', TARDANZAS, 'multas de formaciones'),
 ]:
     ws.cell(r, 1, label).font = font(); money(ws, r, 2, val); note(ws, r, 3, f'{val / ENTRADAS * 100:.1f}% · {nota}')
@@ -502,7 +548,18 @@ ws.cell(r, 1, 'SALIDAS TOTALES').font = font(11, True); money(ws, r, 2, SALIDAS)
 subtitle(ws, r, 'BALANCE', AZUL); r += 1
 ws.cell(r, 1, 'Balance (entradas − salidas)').font = font(11, True); money(ws, r, 2, BALANCE).font = font(11, True); band(ws, r, 1, 2, 'E3F2FD'); r += 1
 ws.cell(r, 1, 'Dinero real en cuentas al 11-sep').font = font(); money(ws, r, 2, REAL_CUENTAS); r += 1
-ws.cell(r, 1, 'Diferencia = impuestos y comisiones (director)').font = font(9, color=GRIS); money(ws, r, 2, IMPUESTOS).font = font(9, color=GRIS); r += 1
+ws.cell(r, 1, f'Impuesto bancario por transacción ({IMPUESTO_TASA*100:.2f}% sobre {IMPUESTO_BASE:,.0f})').font = font(9, color=GRIS); money(ws, r, 2, -IMPUESTOS_BANCO).font = font(9, color=GRIS); r += 1
+ws.cell(r, 1, 'Copias pagadas').font = font(9, color=GRIS); money(ws, r, 2, -COPIAS_PAGADAS).font = font(9, color=GRIS); r += 2
+subtitle(ws, r, 'DE DÓNDE SALE LA DIFERENCIA CON EL BANCO', GRIS); r += 1
+header(ws, r, ['Escenario de impuesto', 'Impuesto', 'Resto: copias'], GRIS); r += 1
+for _lbl, _base, _tasa in ESCENARIOS_IMPUESTO:
+    _imp = round(_base * _tasa, 2)
+    ws.cell(r, 1, _lbl).font = font(10, _tasa == IMPUESTO_TASA and _base == IMPUESTO_BASE)
+    money(ws, r, 2, _imp); money(ws, r, 3, round(IMPUESTOS - _imp, 2))
+    if _tasa == IMPUESTO_TASA and _base == IMPUESTO_BASE: band(ws, r, 1, 3, 'E3F2FD')
+    for _c in range(1, 4): ws.cell(r, _c).border = border
+    r += 1
+note(ws, r, 1, 'El escenario resaltado es el que usa este archivo. Si el estado de cuenta muestra otra tasa, se cambia el dato y todo se recalcula.'); r += 2
 ws.cell(r, 1, 'Efectivo de imprevistos 15,000: cocina en la casa + reembolso del salón').font = font(9, color=GRIS); money(ws, r, 2, EFECTIVO_COCINA + EFECTIVO_SALON).font = font(9, color=GRIS); note(ws, r, 3, f'{EFECTIVO_COCINA:,} a cocina en la casa + {EFECTIVO_SALON:,} reembolso del salón de formaciones (liquidado)'); r += 2
 subtitle(ws, r, 'APOYO TOTAL DONADO', VERDE); r += 1
 ws.cell(r, 1, 'Donaciones en efectivo (entraron a caja)').font = font(); money(ws, r, 2, DONAC_EFEC); r += 1
@@ -558,7 +615,7 @@ for label, val, nota in [
     ('+ Cortesía de la casa: 2 pers vie–dom sin cobro', CORTESIA_HOSP, '2 × 2,360 · el padre y la sor'),
 ]:
     ws9.cell(r, 1, label).font = font(10); money(ws9, r, 2, val); note(ws9, r, 3, nota); r += 1
-ws9.cell(r, 1, '= LO QUE COSTÓ EL RETIRO').font = font(11, True); money(ws9, r, 2, COSTO_ECON).font = font(11, True); band(ws9, r, 1, 2, 'E3F2FD'); r += 1
+ws9.cell(r, 1, 'TOTAL · LO QUE COSTÓ EL RETIRO').font = font(11, True); money(ws9, r, 2, COSTO_ECON).font = font(11, True); band(ws9, r, 1, 2, 'E3F2FD'); r += 1
 note(ws9, r, 1, '   + no incluido: los premios del profondo (19,900) son costo de recaudar, no del retiro, y ya están descontados del neto entregado · oficina a costo real (+3,006.11, solo informativo)', AMBAR); r += 2
 subtitle(ws9, r, 'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE', VERDE); r += 1
 ws9.cell(r, 1, 'Cubierto sin pagar (especie + cortesías)').font = font(10); money(ws9, r, 2, RECIBIDO_GRATIS); note(ws9, r, 3, f'{RECIBIDO_GRATIS / COSTO_ECON * 100:.1f}% del costo · 30 donantes en especie + la casa'); r += 2
@@ -571,22 +628,22 @@ note(ws9, r, 1, '   99 = todos los que dormimos en la casa. Hubo gente que pagó
 subtitle(ws9, r, 'E · CÓMO SE FINANCIÓ LA CAJA', MAR); r += 1
 for label, val in FUENTES:
     ws9.cell(r, 1, label).font = font(10); money(ws9, r, 2, val); note(ws9, r, 3, f'{val / ENTRADAS * 100:.1f}% de las entradas'); r += 1
-ws9.cell(r, 1, '= Entradas totales').font = font(11, True); money(ws9, r, 2, ENTRADAS).font = font(11, True); r += 1
+ws9.cell(r, 1, 'Total de entradas').font = font(11, True); money(ws9, r, 2, ENTRADAS).font = font(11, True); r += 1
 ws9.cell(r, 1, '− Salidas').font = font(10); money(ws9, r, 2, -SALIDAS); r += 1
-ws9.cell(r, 1, '= Superávit').font = font(11, True); money(ws9, r, 2, BALANCE).font = font(11, True); note(ws9, r, 3, f'{BALANCE / ENTRADAS * 100:.1f}% de las entradas · real en cuentas {REAL_CUENTAS:,}'); band(ws9, r, 1, 2, 'E8F5E9'); r += 2
+ws9.cell(r, 1, 'Superávit').font = font(11, True); money(ws9, r, 2, BALANCE).font = font(11, True); note(ws9, r, 3, f'{BALANCE / ENTRADAS * 100:.1f}% de las entradas · real en cuentas {REAL_CUENTAS:,}'); band(ws9, r, 1, 2, 'E8F5E9'); r += 2
 subtitle(ws9, r, 'F · LA CASA, AL DETALLE', MAR); r += 1
 for label, val, nota in [
     ('Hospedaje base 97 pers × 2,360 (vie–dom)', 228920, 'fuimos 99; la casa facturó 97 y dio 2 de cortesía: el padre y la sor (la del director, cedida a la sor)'),
     ('Noche del jueves: 19 pers × 500', 9500, 'llegamos jueves (avanzada). 27 personas: 19 pagaron, 8 sin cobro'),
     ('Habitaciones para pequeños grupos, 2 noches', HAB_TOTAL, f'tarifa inferida {HAB_TARIFA:,.0f}/noche'),
-    ('= Total pagado a la casa', CASA_TOTAL, 'avance 23,600 (repuesto al Consejo) + final 216,620'),
+    ('Total pagado a la casa', CASA_TOTAL, 'avance 23,600 (repuesto al Consejo) + final 216,620'),
     ('Cortesía no cobrada: jueves (8 × 500)', CORTESIA_JUEVES, 'valor recibido'),
     ('Cortesía no cobrada: 2 pers vie–dom (2 × 2,360)', CORTESIA_HOSP, 'valor recibido · el padre y la sor'),
     ('Comida de avanzada del jueves (ppto Sistem 3,900)', 0, 'sin gasto propio: absorbida en Iberia / detalles de cocina'),
     (f'vs presupuesto oficial {PPTO_OFICIAL} (236,000)', CASA_TOTAL - 236000, 'el jueves y las habitaciones'),
     ('vs presupuesto Sistem (200,000)', CASA_TOTAL - 200000, 'el Sistem nunca actualizó la tarifa de 2,360 ni contempló el jueves'),
 ]:
-    ws9.cell(r, 1, label).font = font(10, label.startswith('=')); money(ws9, r, 2, val).font = font(10, label.startswith('=')); note(ws9, r, 3, nota); r += 1
+    _b = label.startswith(('Total', 'TOTAL')); ws9.cell(r, 1, label).font = font(10, _b); money(ws9, r, 2, val).font = font(10, _b); note(ws9, r, 3, nota); r += 1
 
 # ────── 4. BASE ETC 89 ──────
 wsb = wb.create_sheet('4 Base ETC 89'); widths(wsb, 12, 56, 16, 16, 14, 22, 62)
@@ -609,7 +666,7 @@ for area in AREAS:
 wsb.cell(r, 2, 'COSTO REAL ETC 88').font = font(11, True); money(wsb, r, 3, PPTO_11AGO).font = font(11, True); money(wsb, r, 4, BASE_TOTAL).font = font(11, True); money(wsb, r, 5, BASE_TOTAL / PERSONAS).font = font(11, True); band(wsb, r, 1, 7, 'E8F5E9'); r += 1
 assert abs(BASE_TOTAL - COSTO_ECON) < 0.01
 wsb.cell(r, 2, '− puntuales (desvío del transporte, bizcocho de bienvenida)').font = font(10); money(wsb, r, 4, -PUNTUALES); r += 1
-wsb.cell(r, 2, '= Base recurrente (lo que un retiro igual cuesta, con todo lo donado valorado)').font = font(11, True); money(wsb, r, 4, BASE_REC).font = font(11, True); money(wsb, r, 5, BASE_REC / PERSONAS).font = font(11, True); band(wsb, r, 1, 7, 'FFF4E0'); r += 2
+wsb.cell(r, 2, 'Base recurrente (lo que un retiro igual cuesta, con todo lo donado valorado)').font = font(11, True); money(wsb, r, 4, BASE_REC).font = font(11, True); money(wsb, r, 5, BASE_REC / PERSONAS).font = font(11, True); band(wsb, r, 1, 7, 'FFF4E0'); r += 2
 subtitle(wsb, r, 'CÓMO SE FINANCIÓ EL 88 (base para el plan de recaudación del 89)', MAR); r += 1
 for label, val in FUENTES:
     wsb.cell(r, 2, label).font = font(10); money(wsb, r, 4, val); note(wsb, r, 7, f'{val / ENTRADAS * 100:.1f}% de las entradas'); r += 1
@@ -706,7 +763,7 @@ for area, items in especie.items():
 ws5.cell(r, 1, 'TOTAL DONADO EN ESPECIE').font = font(11, True); money(ws5, r, 2, ESPECIE_TOTAL).font = font(11, True); band(ws5, r, 1, 2, 'E8F5E9'); r += 1
 ws5.cell(r, 1, 'Cortesías de la casa (no son especie; valor recibido)').font = font(10); money(ws5, r, 2, CORTESIA_JUEVES + CORTESIA_HOSP); note(ws5, r, 3, '8 × 500 del jueves + 2 × 2,360'); r += 2
 note(ws5, r, 1, f'Materiales de oficina costaron realmente {OFICINA_REAL:,.2f} (Cactus 3,140.07 + 726.04 · Medamax 1,440.00 · 03/09), asumidos por los directores. Aquí se valoran a presupuesto (2,300) por instrucción del director.'); r += 1
-note(ws5, r, 1, 'Posible omisión por confirmar: impresión de libretas 1,260 (Sistem: "donado por guías").')
+note(ws5, r, 1, 'La impresión de libretas (1,260) estaba marcada como donada en la columna equivocada del presupuesto operativo; se sumó por confirmación del director.')
 
 # ────── 10. PROFONDO ──────
 ws4 = wb.create_sheet('10 Profondo'); widths(ws4, 8, 52, 16, 56)
@@ -717,16 +774,17 @@ subtitle(ws4, r, 'LIQUIDACIÓN DE LA COMISIÓN', AZUL); r += 1
 for label, val, nota in [
     (f'Boletas colocadas y pagadas: {PROF_BOLETAS_PAG:g} × {PROF_PRECIO}', PROF_ING_BOLETAS, f'de {PROF_BOLETAS_PAG + PROF_BOLETAS_NOPAG:g} boletas colocadas'),
     ('Venta de comida y helados', PROF_ING_COMIDA, ''),
-    ('= Ingresos brutos', PROF_BRUTO, ''),
+    ('Ingresos brutos', PROF_BRUTO, ''),
     ('− Aire acondicionado (premio principal)', -16900, ''),
     ('− Abanico de torre (premio secundario)', -3000, ''),
-    ('= Neto del informe', PROF_NETO_INFORME, ''),
+    ('Neto del informe', PROF_NETO_INFORME, ''),
     ('+ Ventas de helados posteriores al informe', PROF_ADICIONAL, 'director, 11-sep'),
-    ('= Entregado a finanzas', PROFONDO, 'coincide con las 8 entregas de abajo'),
-    (f'Boletas colocadas NO pagadas: {PROF_BOLETAS_NOPAG:g} × {PROF_PRECIO}', PROF_POR_COBRAR, 'por cobrar (ver hoja 5 Pendientes)'),
+    ('Entregado a finanzas', PROFONDO, 'coincide con las 8 entregas de abajo'),
+    (f'Boletas colocadas NO pagadas: {PROF_BOLETAS_NOPAG:g} × {PROF_PRECIO}', PROF_POR_COBRAR, 'colocadas y nunca cobradas; la dirección decidió no cobrarlas'),
 ]:
-    ws4.cell(r, 2, label).font = font(11 if label.startswith('=') else 10, label.startswith('=')); money(ws4, r, 3, val).font = font(11 if label.startswith('=') else 10, label.startswith('=')); note(ws4, r, 4, nota)
-    if label.startswith('='): band(ws4, r, 2, 3, 'E3F2FD')
+    _b = label in ('Ingresos brutos', 'Neto del informe', 'Entregado a finanzas')
+    ws4.cell(r, 2, label).font = font(11 if _b else 10, _b); money(ws4, r, 3, val).font = font(11 if _b else 10, _b); note(ws4, r, 4, nota)
+    if _b: band(ws4, r, 2, 3, 'E3F2FD')
     for cc in range(2, 5): ws4.cell(r, cc).border = border
     r += 1
 r += 1

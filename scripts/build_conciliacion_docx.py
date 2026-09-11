@@ -42,6 +42,7 @@ CUOTAS, TARDANZAS, DONAC, PARTICIP, PART_ESPER, PROFONDO = D['CUOTAS'], D['TARDA
 P_BRUTO, P_COSTOS, P_NETO, P_ADIC, P_COBRAR = D['PROF_BRUTO'], D['PROF_COSTOS'], D['PROF_NETO_INFORME'], D['PROF_ADICIONAL'], D['PROF_POR_COBRAR']
 P_BOL_PAG, P_BOL_NO, P_ING_BOL, P_ING_COM = D['PROF_BOLETAS_PAG'], D['PROF_BOLETAS_NOPAG'], D['PROF_ING_BOLETAS'], D['PROF_ING_COMIDA']
 EF_COCINA, EF_SALON = D['EFECTIVO_COCINA'], D['EFECTIVO_SALON']
+IMP_BANCO, COPIAS, IMP_TASA, IMP_BASE = D['IMPUESTOS_BANCO'], D['COPIAS_PAGADAS'], D['IMPUESTO_TASA'], D['IMPUESTO_BASE']
 pendientes, checks, AUDIT_N, AUDIT_PASS = D['pendientes'], D['checks'], D['AUDIT_N'], D['AUDIT_PASS']
 RECS = D['RECOMENDACIONES_89']; gastos, donaciones, profondo = D['gastos'], D['donaciones'], D['profondo']
 COMIDA_PP = (90489 + esp['Cocina'] - 10300) / PERSONAS
@@ -118,7 +119,7 @@ doc.add_heading('1. El retiro en seis números', 1)
 table([['Concepto', 'RD$', 'Qué significa'],
        ['Entradas totales', ENTRADAS, 'participantes, donaciones, profondo, cuotas del equipo y tardanzas'],
        ['Salidas de caja', SALIDAS, '22 gastos del registro de tesorería'],
-       ['Balance', BALANCE, f'entradas − salidas; en el banco {n(REAL)}, la diferencia ({d(IMPUESTOS)}) son impuestos y comisiones'],
+       ['Balance', BALANCE, f'entradas − salidas; en el banco {n(REAL)}, la diferencia ({d(IMPUESTOS)}) es el impuesto bancario por transacción más unas copias'],
        ['Lo que costó el retiro', COSTO, f'caja + donaciones en especie ({n(ESPECIE)}) + cortesías de la casa ({n(CORT)})'],
        ['Cubierto sin pagar', GRATIS, f'{pct(GRATIS, COSTO)} del costo'],
        ['Por persona', f'{n(SALIDAS / PERSONAS)} / {n(COSTO / PERSONAS)}', f'de caja / al costo; cada participante pagó {n(CUOTA_P)} y cada miembro del equipo {n(CUOTA_E)}']],
@@ -215,9 +216,10 @@ table([['Paso', 'RD$'],
        ['Entradas', ENTRADAS],
        ['− Salidas', -SALIDAS],
        ['= Balance', BALANCE],
-       ['− Impuestos y comisiones bancarias', -IMPUESTOS],
-       ['= En cuentas al 11 de septiembre', REAL]], widths=[11, 4], bold_last=True)
-para(f'El efectivo de imprevistos (15,000) quedó liquidado: {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones. Los pagos de participantes suman {n(PARTICIP)} de {n(PART_ESPER)} esperados; los 4,200 que faltaron son abonos que no se completaron hasta 3,500 en cuatro casos.')
+       [f'− Impuesto bancario por transacción ({IMP_TASA*100:.2f}% sobre {n(IMP_BASE)})', -IMP_BANCO],
+       ['− Copias pagadas', -COPIAS],
+       ['En cuentas al 11 de septiembre', REAL]], widths=[11, 4], bold_last=True)
+para(f'El efectivo de imprevistos (15,000) quedó liquidado: {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones. Los pagos de participantes suman {n(PARTICIP)}: no hay pagos pendientes; la referencia teórica de {n(PART_ESPER)} (46 × {n(CUOTA_P)}) es mayor porque cuatro participantes pagaron menos de {n(CUOTA_P)}.')
 
 # ── 9. Por persona ──
 doc.add_heading('9. Por persona', 1)
@@ -226,7 +228,7 @@ table([['Concepto', 'RD$'],
        ['Costo total por persona', COSTO / PERSONAS],
        ['Cuota de cada participante', CUOTA_P],
        ['Cuota de cada miembro del equipo', CUOTA_E]], widths=[11, 4])
-para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron las donaciones, el profondo y las cuotas del equipo.')
+para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron las donaciones, el profondo y las cuotas del equipo. No pagaron cuota los asesores espirituales y de cocina (el padre Paul, la sor, Petra y Johanny); los tres guías de reserva no entran en el conteo de 49.')
 
 # ── 10. Lo que queda ──
 doc.add_heading('10. Lo que queda por dejar constancia', 1)

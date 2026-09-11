@@ -38,6 +38,7 @@ DON_FLAG = sum(m for _, _, m, _, f in D['donaciones'] if f == 'NOTA')
 PROFONDO = D['PROFONDO']; P_BRUTO, P_COSTOS, P_NETO, P_ADIC, P_COBRAR = D['PROF_BRUTO'], D['PROF_COSTOS'], D['PROF_NETO_INFORME'], D['PROF_ADICIONAL'], D['PROF_POR_COBRAR']
 P_BOL_PAG, P_ING_BOL, P_ING_COM = D['PROF_BOLETAS_PAG'], D['PROF_ING_BOLETAS'], D['PROF_ING_COMIDA']
 EF_COCINA, EF_SALON = D['EFECTIVO_COCINA'], D['EFECTIVO_SALON']
+IMP_BANCO, COPIAS, IMP_TASA, IMP_BASE = D['IMPUESTOS_BANCO'], D['COPIAS_PAGADAS'], D['IMPUESTO_TASA'], D['IMPUESTO_BASE']
 
 fuentes_rows = '\n'.join(f'| {l.split(" (")[0].split(",")[0]} | {n(v) if float(v).is_integer() else d(v)} | {v / ENTRADAS * 100:.0f}% |' for l, v in FUENTES)
 area_rows = '\n'.join(f'| {a} | {n(p11)} | {n(pag + don)} | {n(don)} | {n(pag)} | {pag + don - p11:+,.0f} |' for a, (p11, ps, pag, don) in AREAS.items())
@@ -146,7 +147,9 @@ Visual: tres barras (presupuesto, costo, caja) con la brecha entre costo y caja 
 
 Cadena de cifras:
 
-Entradas {d(ENTRADAS)} − Salidas {n(SALIDAS)} = Balance {d(BALANCE)} − Impuestos y comisiones bancarias {d(IMPUESTOS)} = En cuentas {n(REAL)}
+Entradas {d(ENTRADAS)} − Salidas {n(SALIDAS)} = Balance {d(BALANCE)} − Impuesto bancario {d(IMP_BANCO)} − Copias pagadas {d(COPIAS)} = En cuentas {n(REAL)}
+
+Al pie, en pequeño: el impuesto es el {IMP_TASA*100:.2f}% por transacción sobre los {n(IMP_BASE)} que se movieron por las cuentas.
 
 Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cuentas.
 
@@ -162,8 +165,8 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 ## Lámina 11 · Lo que queda por dejar constancia
 
 - Efectivo de imprevistos ({n(15000)}): liquidado, {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones.
-- Participantes: {n(PART_PEND)} fueron abonos que no se completaron hasta 3,500 en cuatro casos.
-- Profondo: {n(P_COBRAR)} en boletas colocadas y no pagadas; no se cobrarán.
+- Participantes: no hay pagos pendientes; la referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro participantes pagaron menos de 3,500.
+- Profondo: {n(P_COBRAR)} en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
 - Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
 - Uso de los {n(REAL)} en cuentas: decisión de la dirección y del Consejo.
 
