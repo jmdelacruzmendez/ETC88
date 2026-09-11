@@ -75,7 +75,7 @@ ESPECIE_TOTAL = sum(especie_tot.values())
 # ~85,894 (los montos donados son aproximados; ±2 por redondeo de centavos)
 assert abs(ESPECIE_TOTAL - 85894) <= 2, f"especie={ESPECIE_TOTAL} (esperado ~85,894)"
 
-# Donaciones en efectivo (listado del director — 47 aportantes)
+# Donaciones en efectivo (listado del director — 49 aportantes, incl. 1 no identificado)
 donac_efectivo = [
     ("Mamá J & J",5000),("Sobrante",100),("Maria Astacio",2000),("Gilberto Vásquez",6000),
     ("Víctor Fernández",3000),("Scarlett Nivar",1000),("Daysiber",4000),("Wilfrid (Ivanna)",1000),
@@ -91,16 +91,16 @@ donac_efectivo = [
     ("Jonathan Medina",1500),("Glenys Sosa",2000),("Yaneris Almeida",5000),("Maria vizcaino",2000),
     ("Sol Brito",1000),
     ("Joan",3500),   # 11-sep: confirmada por el director; faltaba en el listado original
+    ("Donante no identificado",1000),   # 11-sep: donación REAL cuyo autor no se pudo ubicar (director)
 ]
-donac_list_tot = sum(v for _,v in donac_efectivo)  # 154,021.92
-# Tablero 155,021 − listado 154,021.92 ≈ 1,000 = la "donación fantasma" (11-sep).
-# VERIFICAR: ¿es un error de registro (quitar del tablero) o una donación anónima real?
-donac_otras = DONAC_EFEC - donac_list_tot           # ≈ 999 → 'fantasma'
+donac_list_tot = sum(v for _,v in donac_efectivo)  # 155,021.92
+# Tablero 155,021 − listado 155,021.92 = −0.92: el tablero registra enteros (centavos de Julio Muñoz).
+donac_otras = DONAC_EFEC - donac_list_tot           # ≈ −0.92 → redondeo
 
 # Salidas de caja (listado) + casa + ajustes = total tablero
 salidas_caja = [
     ("Compra de comida (cotización Paloma 01-sep)", 74509.62),
-    ("Pago a JM — reembolso: transporte 2ª mitad 17,500 (10,000 + 7,500) + desvío 10,000 + ofrenda P. Paul confesiones 10,000", 37500),
+    ("Pago a JM — reembolso: transporte 2ª mitad 17,500 (10,000 + 7,500) + desvío 10,000 + ofrenda P. Héctor confesiones 10,000", 37500),
     ("Pago a JM x Biblias ETC 88 (reembolso)", 35360),
     ("Concejo (reserva 10% casa)", 23600),
     ("Mitad de transporte", 17500),
@@ -166,7 +166,7 @@ ws.cell(r,1,'ENTRADAS').font = font(12, True, MAR); r+=1
 for label, val, nota in [
     ('Cuotas del equipo', CUOTAS, '49 miembros × 2,000 (100%)'),
     ('Tardanzas', TARDANZAS, 'multas de formaciones'),
-    ('Donaciones en efectivo', DONAC_EFEC, '48 aportantes + 1 por verificar'),
+    ('Donaciones en efectivo', DONAC_EFEC, '49 aportantes (1 no identificado)'),
     ('Pagos de participantes', PARTICIP, '97% del esperado'),
     ('Profondo (rifa)', PROFONDO, 'actividades pro-fondo · sin salidas'),
 ]:
@@ -185,7 +185,7 @@ ws.cell(r,1,'Balance (entradas − salidas)').font = font(11, True); money(ws,r,
 for cc in range(1,3): ws.cell(r,cc).fill = fill('E3F2FD')
 r+=1
 ws.cell(r,1,'Dinero real en cuentas (tuya + Day)').font = font(); money(ws,r,2,REAL_CUENTAS); r+=1
-ws.cell(r,1,"Diferencia (director: impuestos · si la 'fantasma' es error, baja a 1,206)").font = font(9, color='888888'); money(ws,r,2,IMPUESTOS).font = font(9, color='888888'); r+=2
+ws.cell(r,1,'Diferencia = impuestos no reflejados (director)').font = font(9, color='888888'); money(ws,r,2,IMPUESTOS).font = font(9, color='888888'); r+=2
 
 ws.cell(r,1,'APOYO TOTAL DONADO').font = font(12, True, VERDE); r+=1
 ws.cell(r,1,'Donaciones en efectivo (entraron a caja)').font = font(); money(ws,r,2,DONAC_EFEC); r+=1
@@ -202,7 +202,7 @@ r=4
 for n,v in donac_efectivo:
     ws2.cell(r,1,n).font=font(10); money(ws2,r,2,v); r+=1
 ws2.cell(r,1,'Subtotal listado').font=font(10,True); money(ws2,r,2,donac_list_tot).font=font(10,True); r+=1
-ws2.cell(r,1,"Donación 'fantasma' en tablero — VERIFICAR (¿error de registro o anónima?)").font=font(9,color='888888'); money(ws2,r,2,donac_otras); r+=1
+ws2.cell(r,1,'Redondeo vs tablero (registra enteros; centavos)').font=font(9,color='888888'); money(ws2,r,2,donac_otras); r+=1
 ws2.cell(r,1,'TOTAL (tablero)').font=font(11,True); money(ws2,r,2,DONAC_EFEC).font=font(11,True)
 for cc in range(1,3): ws2.cell(r,cc).fill=fill('E8F5E9')
 
