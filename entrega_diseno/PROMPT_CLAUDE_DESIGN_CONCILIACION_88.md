@@ -31,7 +31,7 @@ Cinco pasos encadenados, cada uno con su cifra como protagonista:
 2. Caja: entradas 552,487.40 · salidas 515,944
 3. Cruce con el presupuesto oficial del 11 de agosto: 596,249.56 en 28 partidas
 4. Lo que no pasó por caja: donaciones en especie 92,405 + cortesías de la casa 8,720
-5. 36 verificaciones numéricas sobre el resultado
+5. 37 verificaciones numéricas sobre el resultado
 
 Visual: flujo horizontal de cinco pasos.
 

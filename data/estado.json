@@ -371,8 +371,16 @@
         "data/presupuesto/Conciliacion_ETC88_Presentacion.pptx",
         "entrega_diseno/PROMPT_CLAUDE_DESIGN_CONCILIACION_88.md"
       ],
-      "pendiente_unico": "Constancia en el acta del depósito de 1,000 sin dueño y de la donación de Yendry Rincón sin captura. Texto redactado en el informe (10.1).",
-      "destino_del_sobrante": "Los 34,337 se expondrán en la actividad de cierre (evaluación) para decidirlos con el equipo."
+      "pendiente_unico": "Dos cosas menores: la constancia en el acta del depósito de 1,000 sin dueño y de la donación de Yendry Rincón sin captura (texto redactado en el informe, 10.1), y confirmar con Camila Fernández las 2 biblias que el grupo terminó pagando.",
+      "destino_del_sobrante": "Los 34,337 se expondrán en la actividad de cierre (evaluación) para decidirlos con el equipo.",
+      "biblias": {
+        "pedidas": 52,
+        "precio_unitario": 680,
+        "pagado_por_el_grupo": 35360,
+        "presupuestado": 34000,
+        "nota": "52 × 680 = 35,360 exactos, reembolsados a Juan Manuel el 19/08. El presupuesto oficial solo contemplaba 50 porque 2 las pagaría Camila Fernández; esas 2 (1,360) quedaron dentro de lo que pagó el grupo. No hay aporte suyo en las 49 donaciones en efectivo. POR CONFIRMAR: si Camila puso 1,360 de su bolsillo, se le reembolsa o se registra como donación en especie; la caja y el cuadre con el banco no cambian.",
+        "donaciones_efectivo_etiquetadas_biblia": 16500
+      }
     }
   },
   "recaudacion": {
