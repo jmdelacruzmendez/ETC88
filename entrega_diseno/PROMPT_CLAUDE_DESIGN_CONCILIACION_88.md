@@ -15,7 +15,7 @@ Diseña una presentación de 12 láminas (16:9) con el design system del ETC 88.
 
 Tres cifras grandes, en este orden:
 
-- Lo que valió el retiro: RD$ 615,809 (todo lo que costó, incluido lo que otros pusieron)
+- Lo que costó el retiro: RD$ 615,809 (todo, incluido lo que otros pusieron)
 - Lo que salió de caja: RD$ 515,944
 - Lo que quedó en cuentas: RD$ 34,337
 
@@ -31,7 +31,7 @@ Cinco pasos encadenados, cada uno con su cifra como protagonista:
 2. Caja: entradas 552,487.40 · salidas 515,944
 3. Cruce con el presupuesto oficial del 11 de agosto: 596,249.56 en 28 partidas
 4. Lo que no pasó por caja: donaciones en especie 91,145 + cortesías de la casa 8,720
-5. 30 verificaciones numéricas sobre el resultado
+5. 32 verificaciones numéricas sobre el resultado
 
 Visual: flujo horizontal de cinco pasos.
 
@@ -46,30 +46,31 @@ Visual: flujo horizontal de cinco pasos.
 | Tardanzas | 6,800 | 1% |
 | Entradas totales | 552,487.40 | 100% |
 
-Mensaje: participantes y donaciones aportaron por igual; el profondo (rifa y venta de helados) fue la tercera fuente.
+Debajo, en pequeño, el profondo abierto: 680.5 boletas pagadas × 200 = 136,100 + venta de comida y helados 18,320 = 154,420 brutos − premios 19,900 (aire acondicionado y abanico) = 134,520; con las ventas de helados posteriores, 135,866.40 entregados.
+
+Mensaje: participantes y donaciones aportaron por igual; el profondo fue la tercera fuente.
 
 Visual: barras horizontales ordenadas de mayor a menor, con el porcentaje al final de cada barra.
 
-## Lámina 5 · En qué se gastó
+## Lámina 5 · Presupuesto y costo, por área
 
-| Área | Presupuesto | Pagado | Recibido sin pagar | Costo real |
-|---|---|---|---|---|
-| Casa | 236,000 | 240,220 | 8,720 | 248,940 |
-| Transporte | 45,000 | 45,000 | 0 | 45,000 |
-| Materiales | 85,600 | 38,325 | 48,600 | 86,925 |
-| Litúrgico | 15,000 | 10,000 | 3,000 | 13,000 |
-| Formación | 28,840 | 33,650 | 0 | 33,650 |
-| Equipo | 28,800 | 28,800 | 0 | 28,800 |
-| Guías | 24,158 | 7,720 | 23,690 | 31,410 |
-| Música | 10,512 | 9,000 | 1,262 | 10,262 |
-| Cocina | 120,840 | 90,489 | 14,593 | 105,082 |
-| Eventos | 1,500 | 7,740 | 0 | 7,740 |
-| Imprevistos | 0 | 15,000 | 0 | 15,000 |
-| Total | 596,249.56 | 525,944 | 99,865 | 625,809 |
+| Área | Presupuestado | Costó | Cubierto sin pagar | Pagado de caja | Diferencia |
+|---|---|---|---|---|---|
+| Casa | 236,000 | 248,940 | 8,720 | 240,220 | +12,940 |
+| Transporte | 45,000 | 45,000 | 0 | 45,000 | +0 |
+| Materiales | 85,600 | 86,925 | 48,600 | 38,325 | +1,325 |
+| Litúrgico | 15,000 | 13,000 | 3,000 | 10,000 | -2,000 |
+| Formación | 28,840 | 33,650 | 0 | 33,650 | +4,810 |
+| Equipo | 28,800 | 28,800 | 0 | 28,800 | +0 |
+| Guías | 24,158 | 31,410 | 23,690 | 7,720 | +7,252 |
+| Música | 10,512 | 10,262 | 1,262 | 9,000 | -250 |
+| Cocina | 120,840 | 110,082 | 14,593 | 95,489 | -10,758 |
+| Eventos | 1,500 | 7,740 | 0 | 7,740 | +6,240 |
+| Total | 596,249.56 | 615,809 | 99,865 | 515,944 | +19,559 |
 
-Nota al pie: "Pagado" incluye los 10,000 del salón de formaciones, pagados aparte del registro de caja.
+Costó = pagado de caja + cubierto sin pagar. Diferencia = costó − presupuestado.
 
-Visual: barras apiladas por área (pagado + recibido sin pagar), la tabla al lado.
+Visual: la tabla completa; en cada área, una barra con dos tramos (pagado de caja y cubierto sin pagar) contra una marca del presupuesto.
 
 ## Lámina 6 · Lo que otros pusieron: RD$ 99,865
 
@@ -103,12 +104,12 @@ Visual: tabla limpia; la línea del total destacada.
 Tres cifras:
 
 - Presupuesto oficial (11 de agosto): 596,250
-- Costo real del retiro: 615,809 (+3.3%)
+- Lo que costó el retiro: 615,809 (+3.3%)
 - Lo que salió de caja: 515,944 (-13.5%)
 
-Mensaje: el retiro valió un poco más de lo presupuestado y costó bastante menos, porque uno de cada seis pesos lo puso alguien más.
+Mensaje: el retiro costó un poco más de lo presupuestado y salió bastante menos de caja, porque uno de cada seis pesos lo puso alguien más.
 
-Visual: tres barras (presupuesto, costo real, caja) con la brecha entre costo real y caja marcada como "lo que pusieron otros".
+Visual: tres barras (presupuesto, costo, caja) con la brecha entre costo y caja marcada como "lo que pusieron otros".
 
 ## Lámina 9 · Las cuentas cuadran
 
@@ -121,27 +122,34 @@ Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cu
 ## Lámina 10 · Por persona
 
 - Costo de caja por persona (99): 5,212
-- Costo real por persona: 6,220
-- Cuota que pagó cada participante: 3,500, que cubre el 67% de su costo de caja
+- Costo total por persona: 6,220
+- Cuota de cada participante: 3,500, que cubre el 67% de su costo de caja
+- Cuota de cada miembro del equipo: 2,000 (49 miembros = 98,000)
 
-Visual: tres cifras; una barra que muestre la parte que cubre la cuota y la parte que cubrieron donaciones y profondo.
+Visual: las cifras por persona y una barra que muestre la parte que cubre la cuota del participante y la parte que cubrieron donaciones, profondo y cuotas del equipo.
 
 ## Lámina 11 · Lo que queda por cerrar
 
-- Salón de formaciones (10,000): ya reembolsado; identificar de qué salida de caja salió el reembolso.
-- Efectivo para imprevistos (15,000): desglose de uso y sobrante.
-- Profondo: liquidación en bruto (boletos vendidos y premio).
+- Efectivo de imprevistos (15,000): 5,000 a cocina en la casa; confirmar que los 10,000 restantes fueron el reembolso del salón de formaciones.
 - Participantes: 4,200 por cobrar entre cuatro personas; decidir si se cobra.
+- Profondo: 14,700 en boletas colocadas y no pagadas; decidir si se cobran.
 - Donaciones sin identificar: 6,500 en cuatro transferencias; dejar constancia.
 - Uso de los 34,337 en cuentas: decisión de la dirección y del Consejo.
 
-Visual: lista de seis puntos con una marca de estado por punto.
+Visual: lista de cinco puntos con una marca de estado por punto.
 
-## Lámina 12 · Base para el ETC 89
+## Lámina 12 · Base y recomendaciones para el ETC 89
 
-- Costo completo real del ETC 88: 625,809 (6,321 por persona)
-- Base recurrente: 594,809 (6,008 por persona), sin el desvío de transporte, el bizcocho de bienvenida y el efectivo sin liquidar
-- Partidas por persona para el próximo presupuesto: casa 2,360 · comida 1,061 · biblia 680 · pez 600 · camiseta 480 por miembro del equipo
-- Lecciones: cerrar el presupuesto antes del retiro · registrar cada donación en especie con su valor · categorías de gastos iguales a las partidas del presupuesto · liquidar los efectivos en una semana
+Cifras:
 
-Visual: dos cifras grandes arriba, la regla de partidas por persona como fila de iconos, las lecciones como cuatro puntos.
+- Costo real del ETC 88: 615,809 (6,220 por persona)
+- Base recurrente: 599,809 (6,059 por persona), sin el desvío de transporte ni el bizcocho de bienvenida
+- Partidas por persona: casa 2,360 · comida 1,061 · biblia 680 · pez 600 · camiseta 480 por miembro del equipo
+
+Recomendaciones, en tres bloques:
+
+- Cerrar temprano: presupuesto cerrado 90 días antes, con la tarifa de la casa firmada y tres cotizaciones para transporte y comida; después solo cambia con el visto bueno de los dos directores.
+- Tope: techo por área = costo real del 88 × asistentes; reserva de imprevistos del 3% con responsable, liquidada con recibos en una semana; nada fuera de partida sin mover otra.
+- Logística: una sola caja desde el primer día; categorías iguales a las partidas; cada donación en especie anotada al recibirla; efectivos liquidados en 7 días; una línea por concepto; tesorería de tres personas (recibir, registrar, conciliar) con conciliación mensual; boletas del profondo cobradas antes del sorteo; cierre económico a los 10 días del retiro.
+
+Visual: dos cifras grandes arriba, la fila de partidas por persona como iconos, los tres bloques de recomendaciones en columnas.

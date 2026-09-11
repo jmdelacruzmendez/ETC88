@@ -25,25 +25,22 @@ def d(v):  # con centavos
 
 ENTRADAS, SALIDAS, BALANCE = D['ENTRADAS'], D['SALIDAS'], D['BALANCE']
 REAL, IMPUESTOS = D['REAL_CUENTAS'], D['IMPUESTOS']
-COSTO_ECON, COSTO_COMPLETO, GRATIS = D['COSTO_ECON'], D['COSTO_COMPLETO'], D['RECIBIDO_GRATIS']
+COSTO, GRATIS = D['COSTO_ECON'], D['RECIBIDO_GRATIS']
 ESPECIE, C_JUE, C_HOSP = D['ESPECIE_TOTAL'], D['CORTESIA_JUEVES'], D['CORTESIA_HOSP']
 CORT = C_JUE + C_HOSP
 PPTO, PERSONAS, FUENTES, AREAS, cruce = D['PPTO_11AGO'], D['PERSONAS'], D['FUENTES'], D['AREAS'], D['cruce']
-esp = D['especie_tot']; FORM = D['FORMACIONES_SIN_LEDGER']; HAB_T, HAB_TAR = D['HAB_TOTAL'], D['HAB_TARIFA']; CASA = D['CASA_TOTAL']
-tipo_89 = D['tipo_89']
-PUNTUALES = sum(pag + don for _, p, _, _, pag, don, _ in cruce if tipo_89(p)[0] in ('puntual', 'reserva'))
-BASE_REC = COSTO_COMPLETO - PUNTUALES
+esp = D['especie_tot']; HAB_T, HAB_TAR = D['HAB_TOTAL'], D['HAB_TARIFA']; CASA = D['CASA_TOTAL']
+BASE_REC, PUNTUALES = D['BASE_REC'], D['PUNTUALES']
+CUOTA_P, CUOTA_E = D['CUOTA_PARTICIPANTE'], D['CUOTA_EQUIPO']
 COMIDA_PP = (90489 + esp['Cocina'] - 10300) / PERSONAS
-CUOTA = 3500
 PART_PEND = D['PART_ESPER'] - D['PARTICIP']
 DON_FLAG = sum(m for _, _, m, _, f in D['donaciones'] if f == 'NOTA')
+PROFONDO = D['PROFONDO']; P_BRUTO, P_COSTOS, P_NETO, P_ADIC, P_COBRAR = D['PROF_BRUTO'], D['PROF_COSTOS'], D['PROF_NETO_INFORME'], D['PROF_ADICIONAL'], D['PROF_POR_COBRAR']
+P_BOL_PAG, P_ING_BOL, P_ING_COM = D['PROF_BOLETAS_PAG'], D['PROF_ING_BOLETAS'], D['PROF_ING_COMIDA']
+EF_COCINA, EF_SALON = D['EFECTIVO_COCINA'], D['EFECTIVO_SALON']
 
 fuentes_rows = '\n'.join(f'| {l.split(" (")[0].split(",")[0]} | {n(v) if float(v).is_integer() else d(v)} | {v / ENTRADAS * 100:.0f}% |' for l, v in FUENTES)
-area_rows = []
-for a, (p11, ps, pag, don) in AREAS.items():
-    extra = FORM if a == 'Formación' else 0
-    area_rows.append(f'| {a} | {n(p11)} | {n(pag + extra)} | {n(don)} | {n(pag + don + extra)} |')
-area_rows = '\n'.join(area_rows)
+area_rows = '\n'.join(f'| {a} | {n(p11)} | {n(pag + don)} | {n(don)} | {n(pag)} | {pag + don - p11:+,.0f} |' for a, (p11, ps, pag, don) in AREAS.items())
 
 md = f"""# Prompt para Claude Design · Presentación "ETC 88 · Conciliación final"
 
@@ -62,11 +59,11 @@ Diseña una presentación de 12 láminas (16:9) con el design system del ETC 88.
 
 Tres cifras grandes, en este orden:
 
-- Lo que valió el retiro: RD$ {n(COSTO_ECON)} (todo lo que costó, incluido lo que otros pusieron)
+- Lo que costó el retiro: RD$ {n(COSTO)} (todo, incluido lo que otros pusieron)
 - Lo que salió de caja: RD$ {n(SALIDAS)}
 - Lo que quedó en cuentas: RD$ {n(REAL)}
 
-Debajo, una sola línea: RD$ {n(GRATIS)} ({GRATIS / COSTO_ECON * 100:.0f}%) llegaron sin pasar por caja: 30 donantes en especie y las cortesías de la casa.
+Debajo, una sola línea: RD$ {n(GRATIS)} ({GRATIS / COSTO * 100:.0f}%) llegaron sin pasar por caja: 30 donantes en especie y las cortesías de la casa.
 
 Visual: tres tarjetas; la diferencia entre la primera y la segunda resaltada como "lo que pusieron otros".
 
@@ -89,20 +86,22 @@ Visual: flujo horizontal de cinco pasos.
 {fuentes_rows}
 | Entradas totales | {d(ENTRADAS)} | 100% |
 
-Mensaje: participantes y donaciones aportaron por igual; el profondo (rifa y venta de helados) fue la tercera fuente.
+Debajo, en pequeño, el profondo abierto: {P_BOL_PAG:g} boletas pagadas × 200 = {n(P_ING_BOL)} + venta de comida y helados {n(P_ING_COM)} = {n(P_BRUTO)} brutos − premios {n(P_COSTOS)} (aire acondicionado y abanico) = {n(P_NETO)}; con las ventas de helados posteriores, {d(PROFONDO)} entregados.
+
+Mensaje: participantes y donaciones aportaron por igual; el profondo fue la tercera fuente.
 
 Visual: barras horizontales ordenadas de mayor a menor, con el porcentaje al final de cada barra.
 
-## Lámina 5 · En qué se gastó
+## Lámina 5 · Presupuesto y costo, por área
 
-| Área | Presupuesto | Pagado | Recibido sin pagar | Costo real |
-|---|---|---|---|---|
+| Área | Presupuestado | Costó | Cubierto sin pagar | Pagado de caja | Diferencia |
+|---|---|---|---|---|---|
 {area_rows}
-| Total | {d(PPTO)} | {n(SALIDAS + FORM)} | {n(GRATIS)} | {n(COSTO_COMPLETO)} |
+| Total | {d(PPTO)} | {n(COSTO)} | {n(GRATIS)} | {n(SALIDAS)} | {COSTO - PPTO:+,.0f} |
 
-Nota al pie: "Pagado" incluye los {n(FORM)} del salón de formaciones, pagados aparte del registro de caja.
+Costó = pagado de caja + cubierto sin pagar. Diferencia = costó − presupuestado.
 
-Visual: barras apiladas por área (pagado + recibido sin pagar), la tabla al lado.
+Visual: la tabla completa; en cada área, una barra con dos tramos (pagado de caja y cubierto sin pagar) contra una marca del presupuesto.
 
 ## Lámina 6 · Lo que otros pusieron: RD$ {n(GRATIS)}
 
@@ -114,7 +113,7 @@ Visual: barras apiladas por área (pagado + recibido sin pagar), la tabla al lad
 - Música (pilas, chocolates, alambre): {n(esp['Música'])}
 - Cortesías de la casa: {n(CORT)} (8 personas la noche del jueves y 2 personas el fin de semana)
 
-Visual: barras o tarjetas por rubro; el total {n(GRATIS)} = {GRATIS / COSTO_ECON * 100:.0f}% del costo del retiro como cifra grande.
+Visual: barras o tarjetas por rubro; el total {n(GRATIS)} = {GRATIS / COSTO * 100:.0f}% del costo del retiro como cifra grande.
 
 ## Lámina 7 · La casa
 
@@ -136,12 +135,12 @@ Visual: tabla limpia; la línea del total destacada.
 Tres cifras:
 
 - Presupuesto oficial (11 de agosto): {n(PPTO)}
-- Costo real del retiro: {n(COSTO_ECON)} ({(COSTO_ECON / PPTO - 1) * 100:+.1f}%)
+- Lo que costó el retiro: {n(COSTO)} ({(COSTO / PPTO - 1) * 100:+.1f}%)
 - Lo que salió de caja: {n(SALIDAS)} ({(SALIDAS / PPTO - 1) * 100:+.1f}%)
 
-Mensaje: el retiro valió un poco más de lo presupuestado y costó bastante menos, porque uno de cada seis pesos lo puso alguien más.
+Mensaje: el retiro costó un poco más de lo presupuestado y salió bastante menos de caja, porque uno de cada seis pesos lo puso alguien más.
 
-Visual: tres barras (presupuesto, costo real, caja) con la brecha entre costo real y caja marcada como "lo que pusieron otros".
+Visual: tres barras (presupuesto, costo, caja) con la brecha entre costo y caja marcada como "lo que pusieron otros".
 
 ## Lámina 9 · Las cuentas cuadran
 
@@ -154,30 +153,37 @@ Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cu
 ## Lámina 10 · Por persona
 
 - Costo de caja por persona ({PERSONAS}): {n(SALIDAS / PERSONAS)}
-- Costo real por persona: {n(COSTO_ECON / PERSONAS)}
-- Cuota que pagó cada participante: {n(CUOTA)}, que cubre el {CUOTA / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja
+- Costo total por persona: {n(COSTO / PERSONAS)}
+- Cuota de cada participante: {n(CUOTA_P)}, que cubre el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja
+- Cuota de cada miembro del equipo: {n(CUOTA_E)} (49 miembros = {n(D['CUOTAS'])})
 
-Visual: tres cifras; una barra que muestre la parte que cubre la cuota y la parte que cubrieron donaciones y profondo.
+Visual: las cifras por persona y una barra que muestre la parte que cubre la cuota del participante y la parte que cubrieron donaciones, profondo y cuotas del equipo.
 
 ## Lámina 11 · Lo que queda por cerrar
 
-- Salón de formaciones ({n(FORM)}): ya reembolsado; identificar de qué salida de caja salió el reembolso.
-- Efectivo para imprevistos ({n(15000)}): desglose de uso y sobrante.
-- Profondo: liquidación en bruto (boletos vendidos y premio).
+- Efectivo de imprevistos ({n(15000)}): {n(EF_COCINA)} a cocina en la casa; confirmar que los {n(EF_SALON)} restantes fueron el reembolso del salón de formaciones.
 - Participantes: {n(PART_PEND)} por cobrar entre cuatro personas; decidir si se cobra.
+- Profondo: {n(P_COBRAR)} en boletas colocadas y no pagadas; decidir si se cobran.
 - Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
 - Uso de los {n(REAL)} en cuentas: decisión de la dirección y del Consejo.
 
-Visual: lista de seis puntos con una marca de estado por punto.
+Visual: lista de cinco puntos con una marca de estado por punto.
 
-## Lámina 12 · Base para el ETC 89
+## Lámina 12 · Base y recomendaciones para el ETC 89
 
-- Costo completo real del ETC 88: {n(COSTO_COMPLETO)} ({n(COSTO_COMPLETO / PERSONAS)} por persona)
-- Base recurrente: {n(BASE_REC)} ({n(BASE_REC / PERSONAS)} por persona), sin el desvío de transporte, el bizcocho de bienvenida y el efectivo sin liquidar
-- Partidas por persona para el próximo presupuesto: casa 2,360 · comida {n(COMIDA_PP)} · biblia 680 · pez 600 · camiseta 480 por miembro del equipo
-- Lecciones: cerrar el presupuesto antes del retiro · registrar cada donación en especie con su valor · categorías de gastos iguales a las partidas del presupuesto · liquidar los efectivos en una semana
+Cifras:
 
-Visual: dos cifras grandes arriba, la regla de partidas por persona como fila de iconos, las lecciones como cuatro puntos.
+- Costo real del ETC 88: {n(COSTO)} ({n(COSTO / PERSONAS)} por persona)
+- Base recurrente: {n(BASE_REC)} ({n(BASE_REC / PERSONAS)} por persona), sin el desvío de transporte ni el bizcocho de bienvenida
+- Partidas por persona: casa 2,360 · comida {n(COMIDA_PP)} · biblia 680 · pez 600 · camiseta 480 por miembro del equipo
+
+Recomendaciones, en tres bloques:
+
+- Cerrar temprano: presupuesto cerrado 90 días antes, con la tarifa de la casa firmada y tres cotizaciones para transporte y comida; después solo cambia con el visto bueno de los dos directores.
+- Tope: techo por área = costo real del 88 × asistentes; reserva de imprevistos del 3% con responsable, liquidada con recibos en una semana; nada fuera de partida sin mover otra.
+- Logística: una sola caja desde el primer día; categorías iguales a las partidas; cada donación en especie anotada al recibirla; efectivos liquidados en 7 días; una línea por concepto; tesorería de tres personas (recibir, registrar, conciliar) con conciliación mensual; boletas del profondo cobradas antes del sorteo; cierre económico a los 10 días del retiro.
+
+Visual: dos cifras grandes arriba, la fila de partidas por persona como iconos, los tres bloques de recomendaciones en columnas.
 """
 
 OUT.parent.mkdir(parents=True, exist_ok=True)

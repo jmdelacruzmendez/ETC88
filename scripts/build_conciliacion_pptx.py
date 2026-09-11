@@ -114,15 +114,14 @@ def bar_chart(s, cats, series, left, top, width, height, stacked=False, title=No
 # ── cifras ──
 ENTRADAS, SALIDAS, BALANCE = D['ENTRADAS'], D['SALIDAS'], D['BALANCE']
 REAL, IMPUESTOS = D['REAL_CUENTAS'], D['IMPUESTOS']
-COSTO_ECON, COSTO_COMPLETO, GRATIS = D['COSTO_ECON'], D['COSTO_COMPLETO'], D['RECIBIDO_GRATIS']
+COSTO_ECON, GRATIS = D['COSTO_ECON'], D['RECIBIDO_GRATIS']; COSTO_COMPLETO = COSTO_ECON
 ESPECIE, CORT = D['ESPECIE_TOTAL'], D['CORTESIA_JUEVES'] + D['CORTESIA_HOSP']
 PPTO, PPTO_S, OFICIAL = D['PPTO_11AGO'], D['PPTO_SISTEM'], D['PPTO_OFICIAL']
 PERSONAS, FUENTES, AREAS, cruce = D['PERSONAS'], D['FUENTES'], D['AREAS'], D['cruce']
 pendientes, checks, AUDIT_PASS, AUDIT_N = D['pendientes'], D['checks'], D['AUDIT_PASS'], D['AUDIT_N']
-FORM = D['FORMACIONES_SIN_LEDGER']; HAB_T, HAB_TAR = D['HAB_TOTAL'], D['HAB_TARIFA']; CASA_TOTAL = D['CASA_TOTAL']
+FORM = 0; HAB_T, HAB_TAR = D['HAB_TOTAL'], D['HAB_TARIFA']; CASA_TOTAL = D['CASA_TOTAL']
 tipo_89 = D['tipo_89']
-PUNTUALES = sum(pag + don for _, p, _, _, pag, don, _ in cruce if tipo_89(p)[0] in ('puntual', 'reserva'))
-BASE_REC = COSTO_COMPLETO - PUNTUALES
+PUNTUALES = D['PUNTUALES']; BASE_REC = D['BASE_REC']
 abiertos = [x for x in pendientes if x[0] == 'ABIERTO']; notas = [x for x in pendientes if x[0] == 'NOTA']
 
 # ── 1. Portada ──
@@ -136,11 +135,11 @@ text(s, Inches(0.8), Inches(5.1), W - Inches(1.6), Inches(0.5), f'Cifras en RD$ 
 
 # ── 2. En una frase ──
 s = new_slide('En una frase', 'lo que el Consejo necesita saber antes de abrir el Excel')
-cards(s, [('Lo que valió el retiro', f'{COSTO_ECON:,.0f}', 'caja + especie + cortesías (costo económico)', AZUL),
-          ('Lo que salió de caja', f'{SALIDAS:,}', '22 asientos del ledger', ROJO),
+cards(s, [('Lo que costó el retiro', f'{COSTO_ECON:,.0f}', 'caja + especie + cortesías', AZUL),
+          ('Lo que salió de caja', f'{SALIDAS:,}', '22 gastos', ROJO),
           ('Lo que quedó en cuentas', f'{REAL:,}', f'balance {BALANCE:,.2f} − impuestos {IMPUESTOS:,.2f}', VERDE)], Inches(1.8))
 bullets(s, [
-    ('El retiro valió más de lo presupuestado y nos costó menos. ', f'Al costo, {COSTO_ECON:,.0f} ({(COSTO_ECON / PPTO - 1) * 100:+.1f}% sobre el presupuesto oficial); de caja, {SALIDAS:,} ({(SALIDAS / PPTO - 1) * 100:+.1f}%).'),
+    ('El retiro costó más de lo presupuestado y salió menos de caja. ', f'Costó {COSTO_ECON:,.0f} ({(COSTO_ECON / PPTO - 1) * 100:+.1f}% sobre el presupuesto oficial); de caja, {SALIDAS:,} ({(SALIDAS / PPTO - 1) * 100:+.1f}%).'),
     ('La diferencia la pusieron otros. ', f'{GRATIS:,.0f} ({GRATIS / COSTO_ECON * 100:.0f}% del costo) llegaron sin pasar por caja: 30 donantes en especie y la casa en cortesías.'),
     ('Las cuentas cuadran. ', f'Entradas {ENTRADAS:,.2f} − salidas {SALIDAS:,} = {BALANCE:,.2f}; en el banco hay {REAL:,}; los {IMPUESTOS:,.2f} de diferencia son impuestos y comisiones.'),
     ('Cada persona costó ', f'{SALIDAS / PERSONAS:,.0f} de caja y {COSTO_ECON / PERSONAS:,.0f} al costo; el participante pagó 3,500.'),
@@ -149,11 +148,11 @@ bullets(s, [
 # ── 3. Cómo se hizo ──
 s = new_slide('Cómo se hizo esta conciliación', 'el proceso, paso a paso')
 bullets(s, [
-    ('1 · Fuentes. ', 'Ledger de administración del panel (22 gastos, 49 donaciones, 8 entregas del profondo), tarjetas KPI, estado de cuenta al 11-sep, los dos presupuestos (11-Ago y Sistem), la cotización de Iberia, las listas y aclaraciones del director (10 y 11 sep) y la caja de junio del Presupuesto Maestro.'),
-    ('2 · Una sola caja. ', 'El ledger es la fuente única de lo que entró y salió. Cuadra al peso con el panel y, tras los impuestos, con el banco.'),
+    ('1 · Fuentes. ', 'Registro de tesorería del tablero de finanzas (22 gastos, 49 donaciones, 8 entregas del profondo), totales del tablero, estado de cuenta al 11-sep, los dos presupuestos (11-Ago y Sistem), la cotización de Iberia, las listas y aclaraciones del director (10 y 11 sep) y la caja de junio del Presupuesto Maestro.'),
+    ('2 · Una sola caja. ', 'El registro de tesorería es la fuente única de lo que entró y salió. Cuadra al peso con el tablero y, tras los impuestos, con el banco.'),
     ('3 · Cruce con el presupuesto. ', f'Cada gasto se asignó a una partida del presupuesto oficial ({OFICIAL}); el presupuesto por partida cuadra al centavo con el archivo. El pago único a JM de 37,500 se abrió en sus tres conceptos.'),
     ('4 · Lo que no pasó por caja. ', 'Las donaciones en especie se valoraron a precio de presupuesto (no a factura) y las cortesías de la casa como valor recibido.'),
-    ('5 · Costo económico. ', f'caja {SALIDAS:,} + especie {ESPECIE:,} + cortesías {CORT:,} = {COSTO_ECON:,.0f}. Con las formaciones pagadas fuera del ledger, {COSTO_COMPLETO:,.0f}.'),
+    ('5 · Lo que costó. ', f'caja {SALIDAS:,} + especie {ESPECIE:,} + cortesías {CORT:,} = {COSTO_ECON:,.0f}.'),
     ('6 · Auditoría. ', f'{AUDIT_N} verificaciones se recalculan cada vez que se genera el archivo; {AUDIT_PASS} pasan y la restante es un dato pendiente, no un error de suma.'),
     ('7 · Nada a mano. ', 'Excel y presentación salen de un mismo script a partir de los datos; para corregir algo se cambia el dato y se regenera.'),
 ], Inches(0.6), Inches(1.8), W - Inches(1.2), Inches(5.2), size=14, gap=9)
@@ -161,12 +160,12 @@ bullets(s, [
 # ── 4. Los seis números ──
 s = new_slide('Los seis números', 'todo lo demás es detalle de estos')
 cards(s, [('Entradas', f'{ENTRADAS:,.2f}', 'participantes + donaciones + profondo + cuotas + tardanzas', MAR),
-          ('Salidas de caja', f'{SALIDAS:,}', '22 asientos del ledger', ROJO),
+          ('Salidas de caja', f'{SALIDAS:,}', '22 gastos', ROJO),
           ('Balance → banco', f'{BALANCE:,.2f}', f'{REAL:,} en cuentas · {IMPUESTOS:,.2f} impuestos', AZUL)], Inches(1.8))
 cards(s, [('Costo económico', f'{COSTO_ECON:,.0f}', f'caja + especie ({ESPECIE:,}) + cortesías ({CORT:,})', AZUL),
           ('Recibido sin pagar', f'{GRATIS:,.0f}', f'{GRATIS / COSTO_ECON * 100:.1f}% del costo económico', VERDE),
           ('Por persona (99)', f'{SALIDAS / PERSONAS:,.0f} / {COSTO_ECON / PERSONAS:,.0f}', 'de caja / al costo · cuota del participante 3,500', MAR)], Inches(3.7))
-text(s, Inches(0.6), Inches(5.6), W - Inches(1.2), Inches(1), f'Con las formaciones de Santa Clara (10,000 pagadas y reembolsadas fuera del ledger) el costo completo es {COSTO_COMPLETO:,.0f}, {COSTO_COMPLETO / PERSONAS:,.0f} por persona. Es la base para presupuestar el ETC 89.', size=13, color=GRIS, italic=True)
+text(s, Inches(0.6), Inches(5.6), W - Inches(1.2), Inches(1), f'Base para presupuestar el ETC 89: {COSTO_ECON:,.0f} en total, {COSTO_ECON / PERSONAS:,.0f} por persona.', size=13, color=GRIS, italic=True)
 
 # ── 5. De dónde salió el dinero ──
 s = new_slide('De dónde salió el dinero', f'entradas {ENTRADAS:,.2f} · cinco fuentes')
@@ -185,7 +184,7 @@ for a, (p11, ps, pag, don) in AREAS.items():
 rows.append(['Total', PPTO, SALIDAS + FORM, D['CRUCE_DONADO'], COSTO_COMPLETO])
 table(s, rows, Inches(0.5), Inches(1.7), Inches(7.6), [Inches(2.8), Inches(1.2), Inches(1.2), Inches(1.2), Inches(1.2)], size=11, row_h=Inches(0.33), bold_last=True)
 bar_chart(s, list(AREAS.keys()), [('Pagado', [v[2] for v in AREAS.values()]), ('Donado', [v[3] for v in AREAS.values()])], Inches(8.3), Inches(1.6), Inches(4.7), Inches(5.3), stacked=True, colors=(ROJO, VERDE), labels=False)
-text(s, Inches(0.5), Inches(6.35), Inches(7.6), Inches(0.6), 'Pagado incluye las formaciones de Santa Clara (10,000) reembolsadas fuera del ledger; por eso el total pagado (525,944) supera las salidas de caja (515,944).', size=10, color=GRIS, italic=True)
+text(s, Inches(0.5), Inches(6.35), Inches(7.6), Inches(0.6), 'Costo real = pagado de caja + cubierto sin pagar (donaciones en especie y cortesías de la casa).', size=10, color=GRIS, italic=True)
 
 # ── 7. La casa ──
 s = new_slide('La casa, al detalle', f'Casa La Ceiba del Salado · total pagado {CASA_TOTAL:,}')
@@ -222,11 +221,11 @@ bullets(s, [
 s = new_slide('Balance y banco', 'las cuentas cuadran')
 rows = [['Concepto', 'RD$', 'Nota'],
         ['Entradas totales', ENTRADAS, 'cinco fuentes'],
-        ['Salidas de caja', SALIDAS, '22 asientos del ledger'],
+        ['Salidas de caja', SALIDAS, '22 gastos'],
         ['Balance', BALANCE, 'entradas − salidas'],
         ['Real en cuentas al 11-sep', REAL, 'cuenta del director + cuenta de Day'],
         ['Diferencia', IMPUESTOS, 'impuestos y comisiones bancarias'],
-        ['Formaciones Sta. Clara pagadas fuera del ledger', FORM, 'pagadas 07-jun y reembolsadas a JM; falta identificar de qué salida salió']]
+        ]
 table(s, rows, Inches(0.5), Inches(1.7), Inches(12.3), [Inches(4.2), Inches(1.8), Inches(6.3)], size=12)
 bullets(s, [
     ('Apoyo total recibido: ', f'{D["DONAC_EFEC"]:,} en efectivo + {ESPECIE:,} en especie + {CORT:,} en cortesías = {D["DONAC_EFEC"] + ESPECIE + CORT:,}.'),
@@ -240,13 +239,13 @@ table(s, rows, Inches(0.5), Inches(1.7), Inches(12.3), [Inches(1.1), Inches(3.2)
 
 # ── 11. Base ETC 89 ──
 s = new_slide('Base para el ETC 89', 'el número real sobre el cual presupuestar', color=VERDE)
-cards(s, [('Costo completo real 88', f'{COSTO_COMPLETO:,.0f}', f'{COSTO_COMPLETO / PERSONAS:,.0f} por persona · con todo lo donado valorado', AZUL),
-          ('Base recurrente', f'{BASE_REC:,.0f}', f'{BASE_REC / PERSONAS:,.0f} por persona · sin desvío, bizcocho de bienvenida y efectivo sin liquidar', VERDE),
+cards(s, [('Costo real 88', f'{COSTO_ECON:,.0f}', f'{COSTO_ECON / PERSONAS:,.0f} por persona · con todo lo donado valorado', AZUL),
+          ('Base recurrente', f'{BASE_REC:,.0f}', f'{BASE_REC / PERSONAS:,.0f} por persona · sin desvío ni bizcocho de bienvenida', VERDE),
           ('Lo que hubo que financiar', f'{SALIDAS:,}', 'si el 89 no consigue las mismas donaciones, la cifra sube al costo completo', MAR)], Inches(1.8))
 bullets(s, [
     ('Cómo usar la hoja 4 del Excel: ', 'cada partida trae su costo real y su tipo. "Por persona" se multiplica por asistentes (casa 2,360; comida ~1,061; biblias 680; peces 600; camisetas 480); "fijo" se cotiza; "puntual" se decide.'),
     ('Financiamiento del 88 como referencia: ', ' · '.join(f'{l.split(" (")[0].split(",")[0]} {v / ENTRADAS * 100:.0f}%' for l, v in FUENTES) + '.'),
-    ('Lecciones: ', 'cerrar el presupuesto formalmente (los dos quedaron "Tentativo"); registrar cada donación en especie con su valor al recibirla; ledger con las mismas categorías que el presupuesto; liquidar los efectivos en 7 días; una línea por concepto.'),
+    ('Lecciones: ', 'cerrar el presupuesto formalmente (los dos quedaron "Tentativo"); registrar cada donación en especie con su valor al recibirla; registro de tesorería con las mismas categorías que el presupuesto; liquidar los efectivos en 7 días; una línea por concepto.'),
 ], Inches(0.6), Inches(3.7), W - Inches(1.2), Inches(3.3), size=14, gap=10)
 
 # ── 12. Cómo leer el Excel ──
