@@ -168,9 +168,9 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 - Participantes: no hay pagos pendientes; la referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro participantes pagaron menos de 3,500.
 - Profondo: {n(P_COBRAR)} en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
 - Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
-- Uso de los {n(REAL)} en cuentas: decisión de la dirección y del Consejo.
+- Sobrante de {n(REAL)} en cuentas: se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo.
 
-Visual: lista de cinco puntos con una marca de estado por punto (los tres primeros cerrados, los dos últimos abiertos).
+Visual: lista de cinco puntos con una marca de estado; solo el de la nota en el acta queda pendiente.
 
 ## Lámina 12 · Base y recomendaciones para el ETC 89
 

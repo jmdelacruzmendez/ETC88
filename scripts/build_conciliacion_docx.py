@@ -234,7 +234,7 @@ para(f'La cuota del participante cubrió el {CUOTA_P / (SALIDAS / PERSONAS) * 10
 doc.add_heading('10. Lo que queda por dejar constancia', 1)
 notas = [x for x in pendientes if x[0] in ('ABIERTO', 'NOTA')]
 bullets([(f'{t}: ', (f_ or det)) for _, t, det, f_ in notas])
-para('Todo lo demás está cerrado: la casa, el transporte, el desglose de los pagos, el salón de formaciones, el profondo, los participantes que pagaron y no asistieron, y las donaciones en especie.', italic=True, color=GRIS)
+para('Todo lo demás está cerrado y verificado: la casa, el transporte, el desglose de los pagos, el salón de formaciones, el impuesto bancario, el profondo con su liquidación, las cuotas del equipo, los 46 pagos de participantes revisados uno por uno, y las donaciones en especie. El sobrante de {} se expondrá en la actividad de cierre para decidirlo con el equipo.'.format(n(REAL)), italic=True, color=GRIS)
 
 # ── 11. Base y recomendaciones ──
 doc.add_heading('11. Base y recomendaciones para el ETC 89', 1)

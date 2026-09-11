@@ -31,7 +31,7 @@ Cinco pasos encadenados, cada uno con su cifra como protagonista:
 2. Caja: entradas 552,487.40 · salidas 515,944
 3. Cruce con el presupuesto oficial del 11 de agosto: 596,249.56 en 28 partidas
 4. Lo que no pasó por caja: donaciones en especie 92,405 + cortesías de la casa 8,720
-5. 33 verificaciones numéricas sobre el resultado
+5. 34 verificaciones numéricas sobre el resultado
 
 Visual: flujo horizontal de cinco pasos.
 
@@ -136,9 +136,9 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 - Participantes: no hay pagos pendientes; la referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro participantes pagaron menos de 3,500.
 - Profondo: 14,700 en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
 - Donaciones sin identificar: 6,500 en cuatro transferencias; dejar constancia.
-- Uso de los 34,337 en cuentas: decisión de la dirección y del Consejo.
+- Sobrante de 34,337 en cuentas: se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo.
 
-Visual: lista de cinco puntos con una marca de estado por punto (los tres primeros cerrados, los dos últimos abiertos).
+Visual: lista de cinco puntos con una marca de estado; solo el de la nota en el acta queda pendiente.
 
 ## Lámina 12 · Base y recomendaciones para el ETC 89
 

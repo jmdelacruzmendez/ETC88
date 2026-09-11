@@ -373,10 +373,11 @@ pendientes = [
  ('CERRADO', 'Profondo: boletas no pagadas 14,700', f'73.5 boletas colocadas × 200 = {PROF_POR_COBRAR:,} quedaron sin pagar. No se cobrarán (decisión de la dirección, 11-sep).', ''),
  ('NOTA',    'Donaciones sin identificar (6,500)', 'Wilfrid 1,000 · depósito no identificado 1,000 · Johan 3,500 (transferencias sin dueño) · Yendry Rincón 1,000 (sin comprobante).', 'Nota explícita en el acta.'),
  ('CERRADO', 'Impuestos bancarios y copias', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f} = impuesto bancario por transacción ({IMPUESTOS_BANCO:,.2f}, {IMPUESTO_TASA*100:.2f}% sobre los {IMPUESTO_BASE:,.2f} que se movieron) + copias pagadas ({COPIAS_PAGADAS:,.2f}).', 'Las líneas del estado de cuenta que lo documentan.'),
+ ('CERRADO', 'Cuotas: quiénes no pagaron', 'No pagaron cuota el padre Paul, la sor Angelina, Petra y Johanny (asesores). Cristofer (Cristopher Jiménez, cocina) figuraba en 0 en el registro de junio, pero el cierre muestra los 21 de cocina al 100% (42,000), así que completó después. De Dahiony no hay rastro en ninguna lista: ni en los 56 del equipo ni en los 46 participantes. 56 − 3 guías de reserva − 4 asesores = 49 miembros × 2,000 = 98,000, que es lo recibido.', ''),
  ('CERRADO', 'Impresión de libretas 1,260', 'El presupuesto operativo la marcaba "donado por guías" en la columna equivocada, por eso no sumaba. Sumada a la especie por confirmación del director (11-sep).', ''),
- ('NOTA',    'Uso de los 34,337 en cuentas', 'Es decisión de la dirección y del Consejo; esta conciliación no lo asume.', 'Decidir destino.'),
+ ('CERRADO', 'Uso de los 34,337 en cuentas', 'La dirección lo expondrá en la actividad de cierre (evaluación) del ETC 88 para decidirlo con el equipo (11-sep).', ''),
  ('CERRADO', 'Profondo: liquidación de la comisión', f'Bruto {PROF_BRUTO:,}: {PROF_BOLETAS_PAG:g} boletas pagadas × 200 = {PROF_ING_BOLETAS:,} + venta de comida y helados {PROF_ING_COMIDA:,}. Premios {PROF_COSTOS:,} (aire acondicionado 16,900 + abanico de torre 3,000). Neto del informe {PROF_NETO_INFORME:,}; entregado a finanzas {PROFONDO:,.2f}: los {PROF_ADICIONAL:,.2f} adicionales son ventas de helados posteriores al informe (director).', ''),
- ('CERRADO', 'Pagaron y no fueron', 'Confirmado. Equipo: Mary Carmen Ramírez pagó y no asistió (sus 2,000 están dentro de los 98,000). Participantes: Boris pagó, no fue, se le devolvió una porción y el neto de 1,500 entró como donación de Jonathan Medina (31/08); Amanda Rivera no tiene ningún pago registrado. Ninguno de los dos está dentro de los 156,800.', ''),
+ ('CERRADO', 'Pagaron y no fueron', 'Verificado nombre por nombre contra la lista de pagos del director (10-sep, 57 líneas), el registro de cuotas y las 49 donaciones. Equipo: Mary Carmen Ramírez pagó y no asistió; sus 2,000 están dentro de los 98,000. Participantes: los 46 que pagaron están todos identificados con nombre y ninguno figura como ausente. Boris pagó, no fue, se le devolvió una parte y el neto de 1,500 entró como donación a nombre de Jonathan Medina (31/08): su dinero NO está en los 156,800. De Amanda Rivera no hay ningún pago en ninguna fuente; solo aparece en el formulario de junio como invitada de Pamela Colón y Roselyn Quiroz. Los únicos abonos de 500 de la lista son de Melany Ceverino y Erilis Polanco, ambas personas que sí asistieron.', ''),
  ('CERRADO', 'Presupuesto oficial', f'Declarado OFICIAL el de 11-Ago ({PPTO_11AGO:,.2f}, costo completo, tarifa real de la casa). El Sistem ({PPTO_SISTEM:,.2f}) es la referencia operativa del tablero.', ''),
  ('CERRADO', 'Pago a JM 37,500', 'Desglosado en la hoja de Gastos: transporte 2ª mitad 17,500 (10,000 + 7,500) + desvío 10,000 + ofrenda P. Héctor 10,000.', 'Registrar el desglose en el tablero.'),
  ('CERRADO', 'Casa', 'Fuimos 99, facturadas 97. Cortesías: el padre y la sor (la del director cedida a la sor). Jueves: 27 personas, 19 pagaron 500, 8 sin cobro. Habitaciones de pequeños grupos: 900 × 2 noches. Total 240,220 = avance 23,600 + final 216,620.', ''),
@@ -415,6 +416,7 @@ checks = [
  ('Cuotas del equipo = 49 miembros × 2,000', 49 * CUOTA_EQUIPO, CUOTAS, True, 'de los 56 del equipo: 3 guías de reserva fuera del conteo y 4 asesores sin cuota. Incluye a quien pagó y no asistió (Mary Carmen)'),
  ('Participantes: 46 × 3,500 de referencia − lo recibido = lo que cuatro pagaron de menos', 4200, PART_ESPER - PARTICIP, True, 'no es una deuda: Karen Berroa pagó 2,500, Melany Ceverino 3,300, Karen 1,000 y una de las siete 3,000'),
  ('Lista del director (10-sep): personas distintas = participantes del tablero', 46, 46, True, '57 líneas de pago → 46 personas (Karen aparte de Karen Berroa)'),
+ ('Pagos a nombre de Amanda Rivera o de Boris dentro de los 156,800', 0, 0, True, 'ninguno: verificado contra la lista del director, el registro de cuotas y las 49 donaciones'),
  ('Lista del director (10-sep): 132,800 con cifra + 7 sin cifra (6 × 3,500 + 1 × 3,000) = total', 156800, 132800 + 6 * 3500 + 3000, True, 'confirmado por el director (11-sep)'),
  ('Casa: 97 × 2,360 + 19 × 500 + habitaciones = avance + final', 240220, 97 * 2360 + 19 * 500 + HAB_TOTAL, True, '23,600 + 216,620'),
  ('Habitaciones pequeños grupos: tarifa inferida × 2 noches', 1800, HAB_TARIFA * HAB_NOCHES, True, f'{HAB_TARIFA:,.0f}/noche'),
@@ -534,7 +536,7 @@ for label, val, nota in [
     ('Pagos de participantes', PARTICIP, f'46 participantes · cuota {CUOTA_PARTICIPANTE:,} · cuatro pagaron menos (referencia teórica {PART_ESPER:,})'),
     ('Donaciones en efectivo', DONAC_EFEC, '49 aportantes'),
     ('Profondo (rifa + venta de comida y helados) — entregado neto', PROFONDO, f'bruto {PROF_BRUTO:,} − premios {PROF_COSTOS:,} + ventas posteriores {PROF_ADICIONAL:,.2f}'),
-    ('Cuotas del equipo', CUOTAS, f'49 miembros × {CUOTA_EQUIPO:,} · 100%. No pagaron cuota los asesores espirituales y de cocina (el padre Paul, la sor, Petra y Johanny); los 3 guías de reserva no entran en el conteo'),
+    ('Cuotas del equipo', CUOTAS, f'49 miembros × {CUOTA_EQUIPO:,} · 100%. De los 56 del equipo quedan fuera los 3 guías de reserva y los 4 asesores que no pagaron cuota (el padre Paul, la sor, Petra y Johanny)'),
     ('Tardanzas', TARDANZAS, 'multas de formaciones'),
 ]:
     ws.cell(r, 1, label).font = font(); money(ws, r, 2, val); note(ws, r, 3, f'{val / ENTRADAS * 100:.1f}% · {nota}')
@@ -624,7 +626,7 @@ ws9.cell(r, 1, 'Costo de caja por persona').font = font(10); money(ws9, r, 2, SA
 ws9.cell(r, 1, 'Costo total por persona').font = font(10); money(ws9, r, 2, COSTO_ECON / PERSONAS); r += 1
 ws9.cell(r, 1, 'Cuota que pagó cada participante').font = font(10); money(ws9, r, 2, CUOTA_PARTICIPANTE); note(ws9, r, 3, f'cubre el {CUOTA_PARTICIPANTE / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; el resto lo cubrieron donaciones y profondo'); r += 1
 ws9.cell(r, 1, 'Cuota que pagó cada miembro del equipo').font = font(10); money(ws9, r, 2, CUOTA_EQUIPO); note(ws9, r, 3, f'49 miembros = {CUOTAS:,}'); r += 1
-note(ws9, r, 1, '   99 = todos los que dormimos en la casa. Hubo gente que pagó y no asistió (ver hoja 5 Pendientes).'); r += 2
+note(ws9, r, 1, f'   {PERSONAS} = todos los que dormimos en la casa, según lo que facturó la casa (97) más las 2 cortesías. Del equipo, Mary Carmen pagó su cuota y no asistió; entre los 46 participantes que pagaron no hay ninguno registrado como ausente (ver hoja 5).'); r += 2
 subtitle(ws9, r, 'E · CÓMO SE FINANCIÓ LA CAJA', MAR); r += 1
 for label, val in FUENTES:
     ws9.cell(r, 1, label).font = font(10); money(ws9, r, 2, val); note(ws9, r, 3, f'{val / ENTRADAS * 100:.1f}% de las entradas'); r += 1
