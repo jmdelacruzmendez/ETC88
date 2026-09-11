@@ -94,19 +94,21 @@ def cards(s, items, top, height=Inches(1.55), left0=Inches(0.5), total_w=None):
         p2 = tf.add_paragraph(); p2.alignment = PP_ALIGN.CENTER; r2 = p2.add_run(); r2.text = val; r2.font.size = Pt(22); r2.font.bold = True; r2.font.color.rgb = rgb(color)
         p3 = tf.add_paragraph(); p3.alignment = PP_ALIGN.CENTER; r3 = p3.add_run(); r3.text = sub; r3.font.size = Pt(9); r3.font.color.rgb = rgb(TINTA)
 
-def bar_chart(s, cats, series, left, top, width, height, stacked=False, title=None, colors=(MAR, VERDE, AZUL, AMBAR, ROJO)):
+def bar_chart(s, cats, series, left, top, width, height, stacked=False, title=None, colors=(MAR, VERDE, AZUL, AMBAR, ROJO), labels=True):
     cd = CategoryChartData(); cd.categories = cats
     for name, vals in series: cd.add_series(name, vals)
     ct = XL_CHART_TYPE.BAR_STACKED if stacked else XL_CHART_TYPE.BAR_CLUSTERED
     ch = s.shapes.add_chart(ct, left, top, width, height, cd).chart
     ch.has_legend = len(series) > 1
     if ch.has_legend: ch.legend.position = XL_LEGEND_POSITION.BOTTOM; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(10)
-    plot = ch.plots[0]; plot.has_data_labels = True; plot.data_labels.number_format = '#,##0'; plot.data_labels.number_format_is_linked = False; plot.data_labels.font.size = Pt(9)
+    plot = ch.plots[0]; plot.has_data_labels = labels
+    if labels: plot.data_labels.number_format = '#,##0'; plot.data_labels.number_format_is_linked = False; plot.data_labels.font.size = Pt(9)
     plot.gap_width = 60
     ch.category_axis.tick_labels.font.size = Pt(10); ch.value_axis.tick_labels.font.size = Pt(9); ch.value_axis.has_major_gridlines = False
     ch.value_axis.tick_labels.number_format = '#,##0'; ch.value_axis.tick_labels.number_format_is_linked = False
     for i, ser in enumerate(ch.series): f = ser.format.fill; f.solid(); f.fore_color.rgb = rgb(colors[i % len(colors)])
     if title: ch.has_title = True; ch.chart_title.text_frame.text = title; ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12); ch.chart_title.text_frame.paragraphs[0].font.bold = True
+    else: ch.has_title = False
     return ch
 
 # ── cifras ──
@@ -182,7 +184,8 @@ for a, (p11, ps, pag, don) in AREAS.items():
     rows.append([a + (' (+ formaciones 10,000)' if extra else ''), p11, pag + extra, don, pag + don + extra])
 rows.append(['Total', PPTO, SALIDAS + FORM, D['CRUCE_DONADO'], COSTO_COMPLETO])
 table(s, rows, Inches(0.5), Inches(1.7), Inches(7.6), [Inches(2.8), Inches(1.2), Inches(1.2), Inches(1.2), Inches(1.2)], size=11, row_h=Inches(0.33), bold_last=True)
-bar_chart(s, list(AREAS.keys()), [('Pagado', [v[2] for v in AREAS.values()]), ('Donado', [v[3] for v in AREAS.values()])], Inches(8.3), Inches(1.6), Inches(4.7), Inches(5.3), stacked=True, colors=(ROJO, VERDE))
+bar_chart(s, list(AREAS.keys()), [('Pagado', [v[2] for v in AREAS.values()]), ('Donado', [v[3] for v in AREAS.values()])], Inches(8.3), Inches(1.6), Inches(4.7), Inches(5.3), stacked=True, colors=(ROJO, VERDE), labels=False)
+text(s, Inches(0.5), Inches(6.35), Inches(7.6), Inches(0.6), 'Pagado incluye las formaciones de Santa Clara (10,000) reembolsadas fuera del ledger; por eso el total pagado (525,944) supera las salidas de caja (515,944).', size=10, color=GRIS, italic=True)
 
 # ── 7. La casa ──
 s = new_slide('La casa, al detalle', f'Casa La Ceiba del Salado · total pagado {CASA_TOTAL:,}')
