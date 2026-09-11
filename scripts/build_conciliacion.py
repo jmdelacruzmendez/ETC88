@@ -327,7 +327,8 @@ notas = [
  ('CERRADO', 'Priscila: donó materiales (7,340) y recibió 2,000 en efectivo (21/07). Su donación neta es 5,340; la especie de Guías ya lo descuenta.'),
  ('CERRADO', 'Balance 117,611 de la hoja General del presupuesto: celda manual de ~11-ago, pre-retiro. No es un segundo balance. El oficial es 36,543.40 → real 34,337 (dif 2,206.40 impuestos/comisiones).'),
  ('CERRADO', 'Casa: 216,620 final + 23,600 avance = 240,220. vs 11-Ago (236,000): +4,220. vs Sistem (200,000): +40,220 — el Sistem nunca actualizó la tarifa de 2,360.'),
- ('NOTA',    'Casa, dos detalles menores: (a) fuimos 99 y se facturaron 97; las 2 cortesías son el padre y la sor o el director (10-sep se dijo "mía y la del padre", 11-sep "la sor y el padre"): confirmar quiénes. (b) Habitaciones: desglose verbal 1,400 + 800 = 2,200 vs 1,800 implícitos en lo pagado → 400 de diferencia.'),
+ ('CERRADO', 'Casa: fuimos 99 y se facturaron 97. Las 2 cortesías fueron para el padre y la sor (el director cedió la suya a la sor). Jueves: 27 personas, 19 pagaron 500 y 8 no se cobraron.'),
+ ('NOTA',    'Habitaciones usadas para pequeños grupos, 2 noches: lo pagado implica 1,800 (240,220 − 228,920 − 9,500), que cuadra con 900 por noche × 2. El desglose verbal del 10-sep (700 × 2 = 1,400 + 800 extra = 2,200) daría 400 más de lo pagado. Confirmar la tarifa con la factura de la casa.'),
  ('INFO',    f'Especie total {ESPECIE_TOTAL:,.0f}: el Sheet de presupuesto solo reflejaba 30,301 (flags sin actualizar). Peces (36,000, La Vega), decoración (10,300), Bono Olé (4,588), insumos de misa (3,000, Jonathan Medina y Fernando Cordero), oficina y cocina no estaban marcados.'),
  ('INFO',    'Ambos presupuestos siguen marcados "Tentativo — sujeto a ajustes" (2/7/2026). Lección: cerrar formalmente el presupuesto antes del retiro.'),
  ('OPORT.',  f'Participantes: faltan {PART_ESPER-PARTICIP:,} por cobrar (97.4% de {PART_ESPER:,}).'),
@@ -342,17 +343,17 @@ for tag, txt in notas:
 # pagado = los 22 gastos del ledger asignados a partidas del presupuesto (el reembolso a JM
 # de 37,500 se abre en transporte 27,500 + ofrenda 10,000). donado = especie a valor de ppto.
 # La casa se abre en base + jueves + habitaciones: 228,920 + 9,500 + 1,800 = 240,220 (registrado).
-# Fuimos 99; la casa facturó 97 (2 cortesía). 10-sep el director dijo "mi habitación y la del padre";
-# 11-sep dijo "la sor y el padre" → quiénes son las 2 cortesías queda por confirmar (el monto no cambia).
+# Fuimos 99; la casa facturó 97. Las 2 cortesías: el padre y la sor (el director cedió la suya a la sor).
+# Habitaciones para pequeños grupos, 2 noches: 1,800 pagados = 900/noche × 2 (tarifa por confirmar con factura).
 CORTESIA_JUEVES = 8 * 500   # 8 personas del jueves sin cobro (valor recibido, no está en ESPECIE)
-CORTESIA_HOSP   = 2 * 2360  # 2 personas vie–dom sin cobro (padre + sor/director, confirmar)
+CORTESIA_HOSP   = 2 * 2360  # 2 personas vie–dom sin cobro: el padre y la sor (cortesía del director cedida a la sor)
 cruce = [
  # (área, partida, ppto 11-Ago, ppto Sistem, pagado, donado, fuente / nota)
  ('Casa','Hospedaje base: 97 pers × 2,360 (vie–dom)',236000,200000,228920,0,'Fuimos 99, facturadas 97. Casa La Ceiba · avance 23,600 (repuesto al Consejo 10/09) + pago final 216,620 (10/09)'),
- ('Casa','Cortesía de la casa: 2 pers vie–dom sin cobro',None,None,0,CORTESIA_HOSP,'2 × 2,360 no cobrados (valor recibido). Padre + sor/director: CONFIRMAR quiénes (10-sep: "mía y la del padre"; 11-sep: "la sor y el padre")'),
+ ('Casa','Cortesía de la casa: 2 pers vie–dom sin cobro',None,None,0,CORTESIA_HOSP,'2 × 2,360 no cobrados (valor recibido): el padre y la sor (el director cedió su cortesía a la sor)'),
  ('Casa','Noche del jueves (avanzada): 19 pers × 500',None,None,9500,0,'Llegamos JUEVES, no viernes. 27 personas: 19 pagaron 500/noche, 8 cortesía de la casa'),
  ('Casa','Cortesía de la casa: 8 pers del jueves sin cobro',None,None,0,CORTESIA_JUEVES,'8 × 500 no cobrados (valor recibido)'),
- ('Casa','Habitaciones dirección / extra (2 días)',None,None,1800,0,'Registrado 1,800 = 240,220 − 228,920 − 9,500. Desglose verbal (1,400 + 800 = 2,200) difiere en 400'),
+ ('Casa','Habitaciones para pequeños grupos (2 noches)',None,None,1800,0,'Implícito 1,800 = 240,220 − 228,920 − 9,500 → cuadra con 900/noche × 2. Verbal 10-sep (700 × 2 + 800 = 2,200) daría 400 de más. Confirmar tarifa con la factura'),
  ('Casa','Comida de avanzada del jueves (comunidad/cena)',None,3900,0,0,'Presupuestada en Sistem; sin gasto propio: absorbida en compra Iberia y cocina detalles'),
  ('Transporte','Autobuses ida/vuelta + desvío',45000,40000,45000,0,'Abono 17,500 (01/09) + 17,500 + desvío 10,000 dentro del reembolso a JM (10/09)'),
  ('Materiales','Biblias (50 × 680)',34000,32400,35360,0,'Reembolso a JM (19/08). Financiadas por donaciones en efectivo etiquetadas "biblias": 16,500'),
@@ -423,7 +424,7 @@ for label, val, nota in [
     ('Salidas de caja', SALIDAS, ''),
     ('+ Donaciones en especie (a valor de presupuesto)', ESPECIE_TOTAL, 'peces, decoración, guías, cocina, oficina, música, insumos de misa'),
     ('+ Cortesía de la casa: 8 pers del jueves sin cobro', CORTESIA_JUEVES, '8 × 500'),
-    ('+ Cortesía de la casa: 2 pers vie–dom sin cobro', CORTESIA_HOSP, '2 × 2,360 · padre + sor/director (confirmar)'),
+    ('+ Cortesía de la casa: 2 pers vie–dom sin cobro', CORTESIA_HOSP, '2 × 2,360 · el padre y la sor'),
 ]:
     ws9.cell(r,1,label).font = font(10); money(ws9,r,2,val); ws9.cell(r,3,nota).font = font(9, color='888888'); r += 1
 ws9.cell(r,1,'= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9,r,2,COSTO_ECON).font = font(11, True)
@@ -447,12 +448,12 @@ for cc in range(1,3): ws9.cell(r,cc).fill = fill('E8F5E9')
 r += 2
 ws9.cell(r,1,'F · LA CASA, AL DETALLE').font = font(12, True, MAR); r += 1
 for label, val, nota in [
-    ('Hospedaje base 97 pers × 2,360 (vie–dom)', 228920, 'fuimos 99; la casa facturó 97 y dio 2 de cortesía (padre + sor/director: confirmar quiénes)'),
+    ('Hospedaje base 97 pers × 2,360 (vie–dom)', 228920, 'fuimos 99; la casa facturó 97 y dio 2 de cortesía: el padre y la sor (la del director, cedida a la sor)'),
     ('Noche del jueves: 19 pers × 500', 9500, 'llegamos jueves (avanzada). 27 personas: 19 pagaron, 8 cortesía'),
-    ('Habitaciones dirección / extra, 2 días', 1800, 'registrado (verbal 1,400 + 800 = 2,200 → dif 400)'),
+    ('Habitaciones para pequeños grupos, 2 noches', 1800, 'implícito en lo pagado = 900/noche × 2 (verbal 10-sep: 700 × 2 + 800 = 2,200 → 400 de más; confirmar con factura)'),
     ('= Total pagado a la casa', CASA_TOTAL, 'avance 23,600 (repuesto al Consejo) + final 216,620'),
     ('Cortesía no cobrada: jueves (8 × 500)', CORTESIA_JUEVES, 'valor recibido'),
-    ('Cortesía no cobrada: 2 pers vie–dom (2 × 2,360)', CORTESIA_HOSP, 'valor recibido · padre + sor/director (confirmar)'),
+    ('Cortesía no cobrada: 2 pers vie–dom (2 × 2,360)', CORTESIA_HOSP, 'valor recibido · el padre y la sor'),
     ('Comida de avanzada del jueves (ppto Sistem 3,900)', 0, 'sin gasto propio: absorbida en Iberia / cocina detalles'),
     ('vs presupuesto 11-Ago (236,000)', CASA_TOTAL-236000, ''),
     ('vs presupuesto Sistem (200,000)', CASA_TOTAL-200000, 'el Sistem nunca actualizó la tarifa de 2,360 ni contempló el jueves'),
