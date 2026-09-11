@@ -208,8 +208,8 @@ HAB_NOCHES = 2
 HAB_TOTAL  = CASA_TOTAL - 97 * 2360 - 19 * 500        # 1,800 implícitos en lo pagado a la casa
 HAB_TARIFA = HAB_TOTAL / HAB_NOCHES                   # 900/noche — INFERIDA de lo pagado (director 11-sep: "infiérela")
 assert HAB_TOTAL == 1800
-FORMACIONES_SIN_LEDGER = 5 * 2000   # 5 reuniones ordinarias × 2,000, pagadas (director 11-sep). NO están en el ledger:
-                                    # estado.json (14-jun) registra que Juan Manuel las pagó el 07-jun con dinero personal → deuda pendiente de reembolso
+FORMACIONES_SIN_LEDGER = 5 * 2000   # 5 reuniones ordinarias × 2,000: pagadas el 07-jun en efectivo (Franklin Pozo) con aporte personal de JM,
+                                    # ya REEMBOLSADO a JM (director 11-sep). No aparecen como línea del ledger → falta identificar de qué salida salió el reembolso
 COCINA_NETO_11 = 132639.84 - 10300 - 1500   # ppto Cocina sin decoración (10,300) ni bizcocho de la dinámica (1,500): van en sus filas
 COCINA_NETO_S  = 112384.84 - 10300 - 1500
 
@@ -231,7 +231,7 @@ cruce = [
  ('Materiales','Decoración plenario / comedor',10300,10300,0,10300,'DONADA. Presupuestada dentro de Cocina ("cerrar comedor"); aquí se saca de esa fila para no duplicar'),
  ('Litúrgico','Ofrendas sacerdotes (confesiones)',12000,12000,10000,0,'P. Héctor 10,000 dentro del pago a JM (10/09). Ppto 4 × 3,000'),
  ('Litúrgico','Insumos de misa (pan y vino)',3000,3000,0,3000,'DONADOS por Jonathan Medina y Fernando Cordero (valorado a ppto). Iberia: cotizado − pagado = 2,535.05 = vino 1,995 + platos foam 540 → el vino no se compró en Iberia'),
- ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',10000,10000,0,0,'PAGADAS (director 11-sep) pero NO están en el ledger: Juan Manuel las pagó el 07-jun con dinero personal (estado.json: deuda pendiente de reembolso). Decidir: reembolsar o donar'),
+ ('Formación','Formaciones: local Sta. Clara (5 × 2,000)',10000,10000,0,0,'PAGADAS 10,000 el 07-jun en efectivo (Franklin Pozo) con aporte de JM, ya reembolsado a JM (director 11-sep). Sin línea propia en el ledger: identificar de qué salida salió el reembolso (¿efectivo 15,000? ¿profondo antes de depositar? ¿dentro del 37,500?) para no contarlo dos veces'),
  ('Formación','Formaciones: merienda F3',None,None,2500,0,'Pagado 05/07 · cubierto por la donación "Mamá de Juan Manuel" 5,000'),
  ('Formación','Convivencia: merienda',4000,4000,3420,0,'Pagado 16/08'),
  ('Formación','Ensayo general: Sta. Clara, reunión extraordinaria',None,3000,3000,0,'Pagado 19/08. Contemplado en el Sistem (3,000); no en el oficial'),
@@ -302,11 +302,11 @@ def tipo_89(partida):
 # ══════════ PENDIENTES (Notas Consejo + auditoría, fusionadas) ══════════
 pendientes = [
  # (estado, tema, detalle, qué falta)
- ('ABIERTO', 'Formaciones Sta. Clara 10,000', 'El director confirma 5 × 2,000 = 10,000 pagados (la extraordinaria de 3,000 sí está en el ledger, 19/08). Los 10,000 no están en el ledger. Rastro recuperado: el Presupuesto Maestro (hoja 04 Caja, 14-jun) registra el 07-jun "Aporte personal J.M. (cubre salón)" 10,000 y "Pago de salón" 10,000 en efectivo a Franklin Pozo, y lo lista como deuda por reembolsar a Juan Manuel; estado.json lo lleva como pendiente desde junio ("Reembolsar 10,000 a Juan Manuel"). No hay reembolso en el ledger.', f'Decidir: reembolsar a JM (el disponible baja a {REAL_CUENTAS - FORMACIONES_SIN_LEDGER:,}) o dejarlo como donación (el costo económico sube a {COSTO_COMPLETO:,.0f}). Registrarlo en el ledger en cualquiera de los dos casos.'),
+ ('ABIERTO', 'Formaciones Sta. Clara 10,000', 'Las 5 reuniones ordinarias (5 × 2,000) se pagaron el 07-jun en efectivo a Franklin Pozo con un aporte personal de Juan Manuel, y ese aporte YA LE FUE REEMBOLSADO (director, 11-sep): la deuda está saldada. La extraordinaria de 3,000 sí está en el ledger (19/08). El reembolso no aparece como línea del ledger, y el ledger cuadra con el banco, así que salió de una salida ya registrada.', '¿De cuál salió? Opciones: del efectivo de 15,000 (07/09), del profondo antes de depositar, o dentro del pago a JM de 37,500. Con eso se cierra sin contar el costo dos veces.'),
  ('ABIERTO', 'Efectivo 15,000 sin liquidar', 'Salida del 07/09 "para tener en efectivo para imprevistos". Única salida sin soporte.', 'Desglose de uso y sobrante devuelto.'),
  ('ABIERTO', 'Profondo en neto', 'Rifa + venta de helados registrados en neto (135,866.40, 8 entregas). No hay bruto ni costos (premio/abanico, boletos). Los helados fueron una venta adicional, no un costo.', 'Liquidación de la comisión: boletos vendidos, premio, sobrante.'),
- ('ABIERTO', 'Pagaron y no fueron', 'Equipo: Mary Carmen Ramírez pagó (al menos una porción) y no asistió. Participantes: Amanda Rivera pudo haber aportado algo (invitada por Pamela Colón y Roselyn Quiroz); Boris pagó, no fue, se le devolvió una porción y el neto de 1,500 entró como donación de Jonathan Medina (31/08: "diferencia de la devuelta del pago de participante caído"). No hay reembolso en gastos: la devolución se hizo antes de depositar. Rastro recuperado: ni Boris ni Amanda están en la lista de pagos de participantes que envió el director el 10-sep (57 líneas = 46 personas, las mismas 46 del panel), así que ninguno de los dos está dentro de los 156,800; Boris solo existe como los 1,500 netos y de Amanda no hay ningún pago en ninguna fuente. Mary Carmen está dentro de los 98,000 (Música: 6 × 2,000, 100%).', 'Confirmar en el panel (Pagos Participantes) el monto original de Boris y lo devuelto; confirmar si Amanda aportó algo y a qué nombre entró. Con eso la lista de asistentes queda exacta.'),
- ('ABIERTO', 'Participantes: 4,200 por cobrar', f'Esperado 46 × 3,500 = {PART_ESPER:,}; recaudado {PARTICIP:,}. Rastro recuperado (lista del director, 10-sep): 39 personas con cifra suman 132,800 y 7 aparecen con ✅ sin cifra (Digna Ally Guzmán, Carmen Rodríguez, César Saury Santana, Roanny Segueri, Didier Medina, Sara Olivares, Enver Berroa). Cuadra al peso con el panel si 6 de esas 7 pagaron 3,500 y una 3,000. [HIPÓTESIS] Los 4,200 serían: Karen Berroa 1,000 (pagó 2,500) + Melany Ceverino 200 (pagó 3,300) + Karen 2,500 (pagó 1,000) + 500 de una de las 7.', 'Confirmar en Pagos Participantes del panel quiénes deben y si se cobra.'),
+ ('CERRADO', 'Pagaron y no fueron', 'Confirmado por el director (11-sep). Equipo: Mary Carmen Ramírez pagó y no asistió (sus 2,000 están dentro de los 98,000). Participantes: Boris pagó, no fue, se le devolvió una porción y el neto de 1,500 entró como donación de Jonathan Medina (31/08); Amanda Rivera no tiene ningún pago registrado. Ninguno de los dos está dentro de los 156,800: la lista del 10-sep tiene 46 personas, las mismas del panel.', ''),
+ ('ABIERTO', 'Participantes: 4,200 por cobrar', f'Confirmado por el director (11-sep): 46 participantes; 39 con cifra suman 132,800; de las 7 con ✅ sin cifra (Digna Ally Guzmán, Carmen Rodríguez, César Saury Santana, Roanny Segueri, Didier Medina, Sara Olivares, Enver Berroa) seis pagaron 3,500 y una 3,000. Los 4,200 = Karen Berroa 1,000 (pagó 2,500) + Melany Ceverino 200 (pagó 3,300) + Karen 2,500 (pagó 1,000) + 500 de una de las 7.', 'Decidir si se cobran.'),
  ('NOTA',    'Donaciones sin identificar (6,500)', 'Wilfrid 1,000 · depósito no identificado 1,000 · Johan 3,500 (transferencias sin dueño) · Yendry Rincón 1,000 (sin comprobante).', 'Nota explícita en el acta.'),
  ('NOTA',    'Impuestos 2,206.40', f'Balance {BALANCE:,.2f} − real en cuentas {REAL_CUENTAS:,} = {IMPUESTOS:,.2f}: impuestos y comisiones bancarias (director).', 'Las líneas del estado de cuenta que lo documentan.'),
  ('NOTA',    'Impresión de libretas 1,260', 'El Sistem la marca "donado por guías" en una celda mal ubicada (no suma). No está en la especie.', 'Confirmar para sumarla (la especie subiría a 92,405).'),
@@ -344,7 +344,7 @@ checks = [
  ('Cuotas del equipo = 49 miembros × 2,000', 49 * 2000, CUOTAS, True, 'incluye a quien pagó y no asistió (Mary Carmen)'),
  ('Participantes: esperado 46 × 3,500 − recaudado = por cobrar', 4200, PART_ESPER - PARTICIP, True, 'abonos parciales'),
  ('Lista del director (10-sep): personas distintas = participantes del panel', 46, 46, True, '57 líneas de pago → 46 personas (Karen aparte de Karen Berroa)'),
- ('Lista del director (10-sep): 132,800 con cifra + 7 sin cifra (6 × 3,500 + 1 × 3,000) = KPI', 156800, 132800 + 6 * 3500 + 3000, True, '[HIPÓTESIS] una de las 7 sin cifra pagó 3,000; confirmar en el panel'),
+ ('Lista del director (10-sep): 132,800 con cifra + 7 sin cifra (6 × 3,500 + 1 × 3,000) = KPI', 156800, 132800 + 6 * 3500 + 3000, True, 'confirmado por el director (11-sep): una de las 7 sin cifra pagó 3,000'),
  ('Casa: 97 × 2,360 + 19 × 500 + habitaciones = avance + final', 240220, 97 * 2360 + 19 * 500 + HAB_TOTAL, True, '23,600 + 216,620'),
  ('Habitaciones pequeños grupos: tarifa inferida × 2 noches', 1800, HAB_TARIFA * HAB_NOCHES, True, f'{HAB_TARIFA:,.0f}/noche'),
  ('Transporte: abono 17,500 + 2ª mitad 17,500 + desvío 10,000 = ppto oficial', 45000, 17500 + 17500 + 10000, True, ''),
@@ -363,7 +363,7 @@ checks = [
  ('Costo económico = caja + especie + cortesías (8 × 500 + 2 × 2,360)', SALIDAS + ESPECIE_TOTAL + 4000 + 4720, COSTO_ECON, True, ''),
  ('Costo completo (base ETC 89) = económico + formaciones pagadas fuera del ledger', COSTO_ECON + 10000, COSTO_COMPLETO, True, ''),
  ('Apoyo total donado = efectivo + especie', DONAC_EFEC + ESPECIE_TOTAL, 155021 + 91145, True, ''),
- ('Formaciones Sta. Clara 5 × 2,000 pagadas (director) vs ledger', 10000, 0, False, 'ABIERTO: pagadas por JM el 07-jun (deuda pendiente); no están en el ledger'),
+ ('Formaciones Sta. Clara 5 × 2,000 pagadas (director) vs ledger', 10000, 0, False, 'ABIERTO: pagadas el 07-jun y reembolsadas a JM; falta identificar de qué salida del ledger salió el reembolso'),
 ]
 def _ok(ch):
     txt, esp, obt, extra, nota = ch[:5]; tol = ch[5] if len(ch) > 5 else 0.02
@@ -379,6 +379,9 @@ def note(ws, r, c, text, color=GRIS, size=9):
     cell = ws.cell(r, c, text); cell.font = font(size, color=color); cell.alignment = WRAP; return cell
 def subtitle(ws, r, text, color):
     ws.cell(r, 1, text).font = font(12, True, color)
+def explain(ws, text, span):
+    ws.merge_cells(start_row=2, start_column=1, end_row=2, end_column=span)
+    c = ws.cell(2, 1, text); c.font = Font(size=9, italic=True, color='666666'); c.alignment = Alignment(horizontal='left', wrap_text=True); ws.row_dimensions[2].height = 30
 def band(ws, r, c1, c2, color):
     for cc in range(c1, c2 + 1): ws.cell(r, cc).fill = fill(color)
 
@@ -447,7 +450,7 @@ subtitle(ws, r, 'BALANCE', AZUL); r += 1
 ws.cell(r, 1, 'Balance (entradas − salidas)').font = font(11, True); money(ws, r, 2, BALANCE).font = font(11, True); band(ws, r, 1, 2, 'E3F2FD'); r += 1
 ws.cell(r, 1, 'Dinero real en cuentas al 11-sep').font = font(); money(ws, r, 2, REAL_CUENTAS); r += 1
 ws.cell(r, 1, 'Diferencia = impuestos y comisiones (director)').font = font(9, color=GRIS); money(ws, r, 2, IMPUESTOS).font = font(9, color=GRIS); r += 1
-ws.cell(r, 1, 'Deuda pendiente: formaciones pagadas por JM (07-jun)').font = font(9, color=AMBAR); money(ws, r, 2, FORMACIONES_SIN_LEDGER).font = font(9, color=AMBAR); note(ws, r, 3, f'si se reembolsa, el disponible queda en {REAL_CUENTAS - FORMACIONES_SIN_LEDGER:,}', AMBAR); r += 2
+ws.cell(r, 1, 'Formaciones Sta. Clara: 10,000 pagados el 07-jun y reembolsados a JM').font = font(9, color=AMBAR); money(ws, r, 2, FORMACIONES_SIN_LEDGER).font = font(9, color=AMBAR); note(ws, r, 3, 'costo real del retiro sin línea propia en el ledger: identificar de qué salida salió el reembolso (ver 5 Pendientes)', AMBAR); r += 2
 subtitle(ws, r, 'APOYO TOTAL DONADO', VERDE); r += 1
 ws.cell(r, 1, 'Donaciones en efectivo (entraron a caja)').font = font(); money(ws, r, 2, DONAC_EFEC); r += 1
 ws.cell(r, 1, 'Donaciones en especie (bajaron el costo · a precio de presupuesto)').font = font(); money(ws, r, 2, ESPECIE_TOTAL); r += 1
@@ -457,6 +460,7 @@ ws.cell(r, 1, 'TOTAL DONADO').font = font(11, True); money(ws, r, 2, DONAC_EFEC 
 # ────── 2. CRUCE POR PARTIDA ──────
 ws8 = wb.create_sheet('2 Cruce por partida'); widths(ws8, 12, 58, 16, 16, 16, 16, 16, 80)
 title(ws8, f'CRUCE POR PARTIDA — presupuesto oficial ({PPTO_OFICIAL}) y Sistem → pagado → donado', AZUL, 8)
+explain(ws8, 'Cómo leer: cada fila es una partida del presupuesto. Ppto = lo planificado (oficial y Sistem). Pagado = lo que salió de caja según el ledger. Donado = lo que alguien puso en especie o la casa no cobró, valorado a precio de presupuesto. Costo real = pagado + donado. Filas agrupadas por área con subtotal.', 8)
 header(ws8, 3, ['Área', 'Partida', f'Ppto oficial {PPTO_OFICIAL}', 'Ppto Sistem', 'Pagado (caja)', 'Donado (especie)', 'Costo real', 'Fuente / nota'], AZUL)
 r = 4
 for area, (a11, aS, apag, adon) in AREAS.items():
@@ -487,6 +491,7 @@ ws8.freeze_panes = 'C4'
 # ────── 3. AL COSTO vs CAJA ──────
 ws9 = wb.create_sheet('3 Al costo vs caja'); widths(ws9, 58, 18, 66)
 title(ws9, 'CUÁNTO VALE EL RETIRO "AL COSTO" vs CUÁNTO NOS COSTÓ — y por qué', AZUL, 3)
+explain(ws9, 'Cómo leer: A es lo que salió de caja; B lo que vale el retiro sumando lo que no se pagó; C la diferencia; D todo dividido entre las 99 personas; E de dónde salió el dinero; F la casa desglosada.', 3)
 r = 3
 subtitle(ws9, r, 'A · LO QUE NOS COSTÓ (caja)', ROJO); r += 1
 ws9.cell(r, 1, 'Salidas de caja (22 asientos del ledger)').font = font(11, True); money(ws9, r, 2, SALIDAS).font = font(11, True); note(ws9, r, 3, 'lo que efectivamente salió de las cuentas'); band(ws9, r, 1, 2, 'FDE8E8'); r += 2
@@ -499,7 +504,7 @@ for label, val, nota in [
 ]:
     ws9.cell(r, 1, label).font = font(10); money(ws9, r, 2, val); note(ws9, r, 3, nota); r += 1
 ws9.cell(r, 1, '= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9, r, 2, COSTO_ECON).font = font(11, True); band(ws9, r, 1, 2, 'E3F2FD'); r += 1
-ws9.cell(r, 1, '+ Formaciones Sta. Clara pagadas fuera del ledger (JM, 07-jun)').font = font(10, color=AMBAR); money(ws9, r, 2, FORMACIONES_SIN_LEDGER).font = font(10, color=AMBAR); note(ws9, r, 3, 'deuda pendiente: si se reembolsa es caja; si se dona es especie. En ambos casos es costo del retiro', AMBAR); r += 1
+ws9.cell(r, 1, '+ Formaciones Sta. Clara pagadas fuera del ledger (07-jun, reembolsadas a JM)').font = font(10, color=AMBAR); money(ws9, r, 2, FORMACIONES_SIN_LEDGER).font = font(10, color=AMBAR); note(ws9, r, 3, 'costo del retiro pagado por el grupo; sin línea propia en el ledger (salida por identificar)', AMBAR); r += 1
 ws9.cell(r, 1, '= COSTO COMPLETO (base para el ETC 89)').font = font(11, True); money(ws9, r, 2, COSTO_COMPLETO).font = font(11, True); band(ws9, r, 1, 2, 'FFF4E0'); r += 1
 note(ws9, r, 1, '   + no cuantificado: costos del profondo (premio/abanico, boletos): el ledger registra el neto · oficina a costo real (+3,006.11, solo informativo)', AMBAR); r += 2
 subtitle(ws9, r, 'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE', VERDE); r += 1
@@ -533,6 +538,7 @@ for label, val, nota in [
 # ────── 4. BASE ETC 89 ──────
 wsb = wb.create_sheet('4 Base ETC 89'); widths(wsb, 12, 56, 16, 16, 14, 22, 62)
 title(wsb, 'BASE PARA PRESUPUESTAR EL ETC 89 — el número real del ETC 88, partida por partida', VERDE, 7)
+explain(wsb, 'Cómo leer: costo real 88 = pagado + donado (más las formaciones). Por persona = entre 99. Tipo es una propuesta de cómo presupuestar cada partida en el ETC 89: "por persona" se multiplica por asistentes, "fijo" se cotiza, "puntual" se decide, "no presupuestar" fue cortesía.', 7)
 header(wsb, 3, ['Área', 'Partida', 'Ppto oficial 88', 'Costo real 88', 'Por persona (99)', 'Tipo [PROPUESTA]', 'Cómo presupuestarlo'], VERDE)
 r = 4
 BASE_TOTAL = 0
@@ -566,6 +572,7 @@ wsb.freeze_panes = 'C4'
 # ────── 5. PENDIENTES ──────
 ws7 = wb.create_sheet('5 Pendientes'); widths(ws7, 10, 30, 90, 60)
 title(ws7, f'PENDIENTES Y NOTAS PARA EL CONSEJO — estado al 11-sep · {N_ABIERTOS} abiertos', AMBAR, 4)
+explain(ws7, 'Cómo leer: ABIERTO = falta un dato o una decisión; NOTA = aclaración que conviene dejar por escrito; CERRADO = resuelto; INFO = contexto. La columna Qué falta dice exactamente qué cerrar.', 4)
 header(ws7, 3, ['Estado', 'Tema', 'Detalle', 'Qué falta'], AMBAR)
 r = 4
 for tag, tema, det, falta in pendientes:
@@ -579,6 +586,7 @@ ws7.freeze_panes = 'A4'
 # ────── 6. PRESUPUESTO OFICIAL vs SISTEM ──────
 ws6 = wb.create_sheet('6 Ppto oficial vs Sistem'); widths(ws6, 40, 18, 18, 18)
 title(ws6, f'PRESUPUESTO OFICIAL ({PPTO_OFICIAL}) vs SISTEM (panel) — por área', AZUL, 4)
+explain(ws6, 'Cómo leer: los dos presupuestos por área. El oficial (11-Ago) se compara contra el costo económico; el Sistem es el que alimenta el panel. Donado especie = lo que de esa área se recibió sin pagar.', 4)
 header(ws6, 3, ['Área', f'{PPTO_OFICIAL} (OFICIAL)', 'Sistem (panel)', 'Donado especie'], AZUL)
 r = 4
 for (a, v1), (_, v2) in zip(ppto_11ago, ppto_sistem):
@@ -598,6 +606,7 @@ note(ws6, r, 1, f'Declarado OFICIAL por el director (11-sep): {PPTO_OFICIAL}, po
 # ────── 7. GASTOS ──────
 ws2 = wb.create_sheet('7 Gastos'); widths(ws2, 8, 64, 14, 80)
 title(ws2, 'GASTOS — ledger admin (22 asientos · 24 filas: el pago a JM de 37,500 desglosado)', ROJO, 4)
+explain(ws2, 'Cómo leer: los 22 asientos del ledger del panel en orden de fecha. Las tres filas marcadas ► son el desglose de una sola transferencia de 37,500. La columna Nota explica qué es cada gasto.', 4)
 header(ws2, 3, ['Fecha', 'Concepto', 'RD$', 'Nota'], ROJO)
 r = 4
 for f, cpt, m, n in gastos:
@@ -615,6 +624,7 @@ ws2.freeze_panes = 'A4'
 # ────── 8. DONACIONES EFECTIVO ──────
 ws3 = wb.create_sheet('8 Donaciones efectivo'); widths(ws3, 8, 30, 14, 56, 8)
 title(ws3, 'DONACIONES EN EFECTIVO — ledger admin (49)', MAR, 5)
+explain(ws3, 'Cómo leer: las 49 donaciones en dinero tal como están en el ledger. ⚠ marca las que necesitan una nota explícita para el Consejo.', 5)
 header(ws3, 3, ['Fecha', 'Donante', 'RD$', 'Nota', 'Consejo'])
 r = 4
 for f, d, m, n, flag in donaciones:
@@ -630,6 +640,7 @@ ws3.freeze_panes = 'A4'
 # ────── 9. ESPECIE ──────
 ws5 = wb.create_sheet('9 Especie'); widths(ws5, 54, 14, 44)
 title(ws5, 'DONACIONES EN ESPECIE (bajaron el costo · valoradas a precio de presupuesto)', MAR, 3)
+explain(ws5, 'Cómo leer: lo que alguien puso sin que saliera dinero de caja, por área y valorado a precio de presupuesto (no a factura). El reembolso a Priscila resta porque ella recibió 2,000 en efectivo.', 3)
 r = 3
 for area, items in especie.items():
     ws5.cell(r, 1, f'{area}  —  subtotal {especie_tot[area]:,.0f}').font = font(11, True, MAR); band(ws5, r, 1, 3, 'F0EAD6'); r += 1
@@ -646,6 +657,7 @@ note(ws5, r, 1, 'Posible omisión por confirmar: impresión de libretas 1,260 (S
 # ────── 10. PROFONDO ──────
 ws4 = wb.create_sheet('10 Profondo'); widths(ws4, 8, 46, 14, 56)
 title(ws4, 'PROFONDO (rifa + venta de helados) — ledger admin (8 entradas · 0 salidas)', AZUL, 4)
+explain(ws4, 'Cómo leer: las 8 entregas de la comisión de Profondo a finanzas (rifa y venta de helados). Están en neto: ya descontados los costos que la comisión pagó en efectivo.', 4)
 header(ws4, 3, ['Fecha', 'Concepto', 'RD$', 'Nota'], AZUL)
 r = 4
 for f, cpt, m, n in profondo:
@@ -659,6 +671,7 @@ note(ws4, r, 2, 'La venta de helados fue una actividad de recaudación adicional
 # ────── 11. AUDITORÍA ──────
 ws10 = wb.create_sheet('11 Auditoría'); widths(ws10, 5, 74, 18, 18, 11, 60)
 title(ws10, 'AUDITORÍA NUMÉRICA — cada verificación se recalcula al generar el archivo', AZUL, 6)
+explain(ws10, 'Cómo leer: cada fila compara un valor esperado con el obtenido al recalcular. PASS = cuadra; ABIERTO = falta un dato, no es error de suma.', 6)
 header(ws10, 3, ['#', 'Verificación', 'Esperado', 'Obtenido', 'Estado', 'Nota'], AZUL)
 r = 4
 for i, ch in enumerate(checks, 1):
@@ -676,6 +689,7 @@ ws10.freeze_panes = 'A4'
 # ────── 12. FUENTES Y MÉTODO ──────
 wsf = wb.create_sheet('12 Fuentes y método'); widths(wsf, 34, 100)
 title(wsf, 'FUENTES Y MÉTODO — de dónde sale cada número', GRIS, 2)
+explain(wsf, 'Cómo leer: de dónde sale cada número (fuentes) y las reglas con las que se construyó el archivo (método).', 2)
 r = 3
 subtitle(wsf, r, 'FUENTES', MAR); r += 1
 for k, v in [
@@ -688,7 +702,7 @@ for k, v in [
     ('Registro de pagos (jun)', 'Registro_de_Pagos_ETC_88 (tardanzas, control de cuotas): referencia histórica; los KPI del panel son los vigentes.'),
     ('Listas del director (10-sep)', 'Mensaje con 47 donaciones, 57 líneas de pagos de participantes (46 personas) y 20 salidas. Sirvieron para cuadrar contra el ledger y el panel.'),
     ('Presupuesto Maestro (14-jun)', 'data/presupuesto/ETC88_Presupuesto_Maestro.xlsx, hoja 04 Caja: reserva 23,600 (07-jun, devuelta) y salón 10,000 pagado en efectivo a Franklin Pozo con aporte personal de Juan Manuel (deuda por reembolsar).'),
-    ('estado.json del repo', 'Caja de junio (copiada del Maestro) y pendiente vigente desde junio: "Reembolsar 10,000 a Juan Manuel por pago del salón".'),
+    ('estado.json del repo', 'Caja de junio (copiada del Maestro). El pendiente de junio "Reembolsar 10,000 a Juan Manuel" quedó saldado (director, 11-sep).'),
     ('Aclaraciones del director', '10 y 11 de septiembre: casa (99/97, jueves, cortesías, habitaciones), desglose del pago a JM, ofrenda, donaciones fantasma, oficina, Paloma, insumos de misa, Santa Clara, bizcocho y helados, lapiceros, asistencia.'),
 ]:
     wsf.cell(r, 1, k).font = font(10, True); wsf.cell(r, 1).alignment = WRAP; note(wsf, r, 2, v, '1E293B', 10); r += 1
@@ -698,7 +712,7 @@ for k, v in [
     ('Nada inventado', 'Cada cifra viene de una fuente de arriba o de una confirmación del director. Lo no confirmado se marca por confirmar / [PROPUESTA].'),
     ('Especie', 'Las donaciones en especie se valoran al precio del presupuesto, no a factura. Oficina: costo real 5,306.11 solo informativo (instrucción del director).'),
     ('Cortesías', 'Lo que la casa no cobró (8 × 500 del jueves, 2 × 2,360) cuenta como valor recibido, no como especie.'),
-    ('Costo económico', 'caja + especie + cortesías. Costo completo = económico + formaciones pagadas fuera del ledger (10,000).'),
+    ('Costo económico', 'caja + especie + cortesías. Costo completo = económico + las formaciones (10,000), pagadas y reembolsadas fuera del ledger.'),
     ('Pago a JM 37,500', 'Se muestra desglosado según el director (17,500 + 10,000 + 10,000); en el ledger es una sola línea.'),
     ('Habitaciones', f'Tarifa inferida de lo pagado: {HAB_TARIFA:,.0f}/noche × 2 noches = {HAB_TOTAL:,}.'),
     ('Profondo', 'En neto, como lo registra el ledger. La venta de helados es ingreso, no costo.'),

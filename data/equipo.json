@@ -332,7 +332,7 @@
             "concepto": "Salón pagado de su dinero personal",
             "monto": 10000,
             "fecha": "2026-06-07",
-            "estado": "pendiente reembolso"
+            "estado": "reembolsado (confirmado por el director 11-sep-2026)"
           }
         ]
       }
@@ -941,7 +941,8 @@
       "14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).",
       "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.",
       "20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.",
-      "11-sep-2026: Presupuesto OFICIAL del ETC 88 = Finanzas 11-Ago (596,249.56, costo completo con la tarifa real de la casa). El Sistem (512,859.56) queda como referencia operativa del panel. Conciliación final post-retiro generada por scripts/build_conciliacion.py (caja 515,944 · costo económico 615,809 · balance 36,543.40 → 34,337 en cuentas)."
+      "11-sep-2026: Presupuesto OFICIAL del ETC 88 = Finanzas 11-Ago (596,249.56, costo completo con la tarifa real de la casa). El Sistem (512,859.56) queda como referencia operativa del panel. Conciliación final post-retiro generada por scripts/build_conciliacion.py (caja 515,944 · costo económico 615,809 · balance 36,543.40 → 34,337 en cuentas).",
+      "11-sep-2026: Salón de formaciones (Santa Clara, 5 × 2,000 = 10,000, pagado el 07-jun en efectivo a Franklin Pozo con aporte personal de Juan Manuel): aporte YA REEMBOLSADO a Juan Manuel, deuda saldada. Participantes confirmados: 46 (156,800); los 4,200 pendientes = Karen Berroa 1,000 + Melany Ceverino 200 + Karen 2,500 + 500 de una de las 7 sin cifra. Pendiente: identificar de qué salida del ledger salió el reembolso del salón."
     ],
     "pendientes": [
       "🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.",
@@ -954,7 +955,6 @@
       "Confirmar con la casa la tarifa de la avanzada (noche/día extra del equipo que adelanta el jueves) + sus 3 comidas.",
       "Completar las tallas de camiseta del EQUIPO que faltan (Paul, Frank, Sor y demás del equipo sin talla). La camiseta es SOLO del equipo; los participantes no llevan. El mockup va tras el Design System.",
       "Pedir 3 cotizaciones reales de transporte (Metro Servicios 809-530-2850 · Transportando RD 849-803-1626 · DominicanBus 809-530-9742). Hoy 77,500 es estimado.",
-      "Reembolsar 10,000 a Juan Manuel (Co-Dir.) por pago del salón (deuda pendiente desde 2026-06-07).",
       "Lanzar rifa/profondo: 600 boletos × 200 (premio 30,000) — meta caja 90,000 para sorteo en agosto.",
       "Gestionar donaciones en especie: biblias 34K, peces 30K, camisetas 20K, materiales guías 17K = 88% del potencial 114,701.",
       "Verificar si 2 buses cubren en vez de 3 (lección ETC 86 SD usó 2×26pax) — posible ahorro estructural.",
