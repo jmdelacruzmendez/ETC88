@@ -157,7 +157,7 @@ Visual: cascada (waterfall) de izquierda a derecha, terminando en la cifra en cu
 
 - Costo de caja por persona ({PERSONAS}): {n(SALIDAS / PERSONAS)}
 - Costo total por persona: {n(COSTO / PERSONAS)}
-- Cuota de cada participante: {n(CUOTA_P)}, que cubre el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja
+- Cuota de cada participante: {n(CUOTA_P)}, que cubre el {CUOTA_P / (SALIDAS / PERSONAS) * 100:.0f}% de su costo de caja; dos de los 48 participantes entraron sin cuota ({n(2*CUOTA_P)} que no se recaudaron)
 - Cuota de cada miembro del equipo: {n(CUOTA_E)} (49 miembros = {n(D['CUOTAS'])})
 
 Visual: las cifras por persona y una barra que muestre la parte que cubre la cuota del participante y la parte que cubrieron donaciones, profondo y cuotas del equipo.
@@ -165,7 +165,7 @@ Visual: las cifras por persona y una barra que muestre la parte que cubre la cuo
 ## Lámina 11 · Lo que queda por dejar constancia
 
 - Efectivo de imprevistos ({n(15000)}): liquidado, {n(EF_COCINA)} a cocina en la casa y {n(EF_SALON)} de reembolso del salón de formaciones.
-- Participantes: no hay pagos pendientes; la referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro participantes pagaron menos de 3,500.
+- Participantes: fueron 48, de los que 46 pagaron; no hay pagos pendientes. La referencia de 161,000 (46 × 3,500) es mayor que lo recibido porque cuatro pagaron menos de 3,500.
 - Profondo: {n(P_COBRAR)} en boletas colocadas y nunca cobradas; la dirección decidió no cobrarlas.
 - Donaciones sin identificar: {n(DON_FLAG)} en cuatro transferencias; dejar constancia.
 - Sobrante de {n(REAL)} en cuentas: se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo.
