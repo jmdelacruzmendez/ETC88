@@ -74,7 +74,6 @@ AREA = {
     'Dorian Elina Rodriguez Belliard':     ('musica', 'Música'),
     'Ismarie Sthepanie Constanzo Ramos':   ('musica', 'Música'),
     'Leober Carrion Soriank':              ('musica', 'Música'),
-    'Mary Carmen Ramírez Vásquez':         ('musica', 'Música'),
     'Daylin M Rambalde Moreta':            ('musica', 'Música'),
     # Cocina (21 = 2 coords + 19, todas filas del xlsx)
     'Paloma Mendez':                       ('cocina', 'Coord. Cocina'),
@@ -173,6 +172,8 @@ REMOVED_FROM_TEAM = {
     # 17-ago). 'Frank' es el nombre informal; llenó el form con su nombre completo. Se excluye su
     # fila y sus datos reales se fusionan en el placeholder 'Frank Morales' vía form_live_overrides.json.
     'Cesar Morales Mora',
+    # 11-sep-2026: Mary Carmen Ramírez Vásquez SALE del equipo (decisión del director). Música 6→5.
+    'Mary Carmen Ramírez Vásquez',
 }
 
 wb = openpyxl.load_workbook(XLSX, data_only=True)
@@ -412,9 +413,9 @@ banderas = [
     {'n':5, 'bandera':'Viaje julio vs Profondo (31-jul a 2-ago)', 'persona':'— (era Fabelly)', 'accion':'Caducó: Fabelly fuera del equipo (7-jun)', 'resp':'Directores'},
     {'n':6, 'bandera':'Necesita rides', 'persona':'Wilka María Reyes Mota', 'accion':'Asignar buddy con auto desde F1', 'resp':'Coord. Guía'},
     {'n':7, 'bandera':'Postoperatoria', 'persona':'— (era Jordelis)', 'accion':'Caducó: Jordelis fuera del equipo (10-jun); Jhonnalia sigue en bandera #8', 'resp':'Coord. Cocina'},
-    {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia + Mary Carmen', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía / Coord. Música'},
+    {'n':8, 'bandera':'Cirugía reciente columna (escoliosis)', 'persona':'Jhonnalia', 'accion':'No esfuerzo físico + ayuda para movilizar cosas', 'resp':'Coord. Guía'},
     {'n':9, 'bandera':'Sin claridad de rol', 'persona':'Wirna Miguelina Stapleton Pilier', 'accion':'Conversación 1:1 con Directores antes de F1', 'resp':'Directores'},
-    {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi, Mary Carmen', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
+    {'n':10, 'bandera':'Timidez declarada — roles tras bastidores', 'persona':'Adrián, Risairi', 'accion':'No exposición pública obligada', 'resp':'Coordinadores'},
     {'n':11, 'bandera':'Memoria de fricciones pasadas', 'persona':'Luisa, Franklin, Juan Manuel', 'accion':'Trabajar alianza interna en Profondo #1', 'resp':'Directores'},
     {'n':12, 'bandera':'Pareja Dorian↔José Ángel — ambos en Música', 'persona':'Dorian, José Ángel', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
     {'n':13, 'bandera':'Noviazgo Kelvin↔Brianelis — ambos en Cocina', 'persona':'Kelvin, Brianelis', 'accion':'Reconsiderar: están en la misma área', 'resp':'Directores'},
@@ -590,7 +591,6 @@ data = {
             'Migraña':['Dorian Elina Rodriguez Belliard','Ismarie Sthepanie Constanzo Ramos'],
             'Migralepsia (migraña + epilepsia)':['Pamela Colón'],
             'Postoperatoria reciente':['Jhonnalia Franchesca Silvestre Guzmán'],
-            'Postquirúrgica escoliosis':['Mary Carmen Ramírez Vásquez'],
             'Pastillas presión':['Maria del Carmen Mejías Mateo'],
             'Resistencia a la insulina':['Daylin M Rambalde Moreta'],
             'Rinitis alérgica':['Cristopher Jimenez'],

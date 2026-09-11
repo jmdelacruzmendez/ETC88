@@ -20,7 +20,7 @@ Somos la **Asociación Eteciana**, una obra de la Iglesia Católica. Lo nuestro:
 ---
 ## 2. El Equipo del ETC 88
 
-Somos **48 servidores operativos** + asesores ampliados y transversales. Una sola tripulación, diferentes funciones.
+Somos **47 servidores operativos** + asesores ampliados y transversales. Una sola tripulación, diferentes funciones.
 
 **Directores (2)**
 > Jean Carlo De la Cruz Mendez · Juan Manuel de la Cruz Méndez
@@ -34,8 +34,8 @@ Somos **48 servidores operativos** + asesores ampliados y transversales. Una sol
 **Cocina (21)** — Coord.: Johnnito Richiez Brugal, Paloma Mendez
 > Johnnito Richiez Brugal · Paloma Mendez · Adrián Francisco Santana Puente · Ambar Liz Jáquez Lebrón · Brianelis Abreu Calderón · Candy Elizabeth Gatwood Ramos · Chantal Melissa Carpio Jiménez · Cristopher Jimenez · Dayrelins Jazmin Santana Salas · Kelvin Alexis Ventura Santana · Maria del Carmen Mejías Mateo · Marian Olanlly Ortiz Carrasco · Merkin Jean Vásquez · Nelson Mariano Morales Aybar · Pamela Colón · Risaira Santana Rosario · Risairi Santana Rosario · Roberto Figueroa · Roselyn Quiroz · Wirna Miguelina Stapleton Pilier · Zahir Valoy
 
-**Música (6)** — Coord.: José Ángel Tusen Russo
-> José Ángel Tusen Russo · Daylin M Rambalde Moreta · Dorian Elina Rodriguez Belliard · Ismarie Sthepanie Constanzo Ramos · Leober Carrion Soriano · Mary Carmen Ramírez Vásquez
+**Música (5)** — Coord.: José Ángel Tusen Russo
+> José Ángel Tusen Russo · Daylin M Rambalde Moreta · Dorian Elina Rodriguez Belliard · Ismarie Sthepanie Constanzo Ramos · Leober Carrion Soriano
 
 **Asesores Espirituales (transversales):** Padre Paul Ramírez · Sor Angelina Lebrón
 **Asesoras de Cocina:** Johanny García · Mary "Petra" Morales

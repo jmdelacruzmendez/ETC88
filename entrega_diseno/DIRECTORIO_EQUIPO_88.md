@@ -1,5 +1,5 @@
 # Directorio del equipo — ETC 88
-### Lista de servidores por área · 53 servidores · generada desde data/equipo.json (fuente única)
+### Lista de servidores por área · 52 servidores · generada desde data/equipo.json (fuente única)
 
 > No editar a mano. Si un nombre cambia, se corrige el roster y se regenera con `python scripts/build_directorio.py`.
 
@@ -70,7 +70,7 @@
 | Wirna Miguelina Stapleton Pilier | Cocina | 29 sep | (829) 801-9927 |
 | Zahir Valoy | Cocina | 7 jun | (849) 460-1030 |
 
-## Música (6)
+## Música (5)
 
 | Nombre | Rol | Cumpleaños | Teléfono |
 |---|---|---|---|
@@ -79,7 +79,6 @@
 | Dorian Elina Rodriguez Belliard | Música | 21 mar | (829) 986-0995 |
 | Ismarie Sthepanie Constanzo Ramos | Música | 14 jun | (849) 386-5474 |
 | Leober Carrion Soriano | Música | 4 oct | (829) 440-1305 |
-| Mary Carmen Ramírez Vásquez | Música | 29 ago | (829) 693-7582 |
 
 ## Asesoras de cocina (2)
 
@@ -94,4 +93,4 @@
 - **La Vega** — 1 asesor de comunidad
 
 ---
-*53 servidores del equipo (sin cantera ni backups). Asesores de comunidad se muestran sin nombres — solo la comunidad que representan (decisión 5-jun: la comunidad reconoce a sus propios asesores).*
+*52 servidores del equipo (sin cantera ni backups). Asesores de comunidad se muestran sin nombres — solo la comunidad que representan (decisión 5-jun: la comunidad reconoce a sus propios asesores).*

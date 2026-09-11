@@ -6,8 +6,8 @@
 **Resumen:** 56 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
-- Total 53 · operativos titulares 48 · vacantes 0 · backups 0.
-- Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 6
+- Total 52 · operativos titulares 47 · vacantes 0 · backups 0.
+- Por área (operativos): asesores 3 · asesores_espirituales 2 · cocina 21 · directores 2 · guias 14 · musica 5
 
 ## ✅ Confirmados (se pueden mostrar como hecho)
 | Campo | Valor | Fuente | Nota |
@@ -139,6 +139,7 @@
 - 14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.
 - 20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.
 - 17-ago-2026 (v9): Cambios de roster confirmados por el director. SALEN de Cocina: Guido Maldonado, Randol Joseph Payano, Tommy Nova Nolasco. ENTRAN a Cocina (titulares): Nelson Mariano Morales Aybar, Zahir Valoy, Cristopher Jiménez ('entran por los que salieron'; cocina sigue en 21). Backups de Guías (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar) ELIMINADOS (backups 3→0). 'Cesar Morales Mora' apareció en el formulario pero resultó ser Frank Morales (Asesor + Banderín) — mismo teléfono (809-710-1743), cumpleaños (11-jul) y apellido; el director confirmó que es la misma persona. Se fusionó en el registro de Frank (NO es asesor nuevo); asesores sigue en 3. Petra Yamina Morales llenó el formulario = la Asesora de Cocina 'Mary Petra Morales' (datos reales fusionados; sigue no operativa). Asesores de la comunidad de Santo Domingo ahora Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita). Total 56→53; operativos sigue 48. Fuente: formulario vivo (re-exportado 17-ago) + instrucción del director.
+- 11-sep-2026 (v10): Mary Carmen Ramírez Vásquez SALE del equipo (decisión del director). Música baja de 6 a 5. Total 53→52, operativos 48→47. (Cambios de participantes —Amanda no asistió, etc.— viven en el directorio de trabajo, no en el roster del equipo.)
 
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] 🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.

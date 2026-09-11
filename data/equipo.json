@@ -3,8 +3,8 @@
     "numero": 88,
     "romano": "LXXXVIII",
     "version": "v8-2026-06-02",
-    "total_equipo": 53,
-    "operativos": 48,
+    "total_equipo": 52,
+    "operativos": 47,
     "no_operativos": 5
   },
   "finanzas": {
@@ -68,16 +68,16 @@
       }
     },
     "conteos_esperados": {
-      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale, Merkin sube a titular cocina. 20-jun: backups cocina eliminados (15→0); total 71→56. 17-ago (v9): salen Guido/Randol/Tommy (cocina) y entran Nelson/Zahir/Cristopher (cocina sigue 21); backups de guías eliminados (3→0); Petra Yamina Morales fusionada en su registro de Asesora Cocina; Cesar Morales Mora resultó ser Frank Morales (mismo tel/cumple/apellido) — fusionado en Frank, NO es asesor nuevo; asesores sigue en 3; asesores de SD ahora Yraisa Álvarez + Manuel Almonte (reemplazan a Marleny/Sandrita). Total 56→53, operativos sigue 48.",
-      "total_equipo": 53,
-      "operativos": 48,
+      "_nota": "Derivados del roster confirmado (data/equipo.json). scripts/verify.py valida que el roster siga cuadrando con estos números. 7-jun: Fabelly Maciel sale, Merkin sube a titular cocina. 20-jun: backups cocina eliminados (15→0); total 71→56. 17-ago (v9): salen Guido/Randol/Tommy (cocina) y entran Nelson/Zahir/Cristopher (cocina sigue 21); backups de guías eliminados (3→0); Petra Yamina Morales fusionada en su registro de Asesora Cocina; Cesar Morales Mora resultó ser Frank Morales (mismo tel/cumple/apellido) — fusionado en Frank, NO es asesor nuevo; asesores sigue en 3; asesores de SD ahora Yraisa Álvarez + Manuel Almonte (reemplazan a Marleny/Sandrita). Total 56→53, operativos sigue 48. 11-sep (v10): Mary Carmen Ramírez Vásquez sale del equipo (música 6→5); total 53→52, operativos 48→47.",
+      "total_equipo": 52,
+      "operativos": 47,
       "operativos_titulares_por_area": {
         "directores": 2,
         "asesores": 3,
         "asesores_espirituales": 2,
         "guias": 14,
         "cocina": 21,
-        "musica": 6
+        "musica": 5
       },
       "vacantes": 0,
       "backups": 0,
@@ -995,7 +995,8 @@
       "14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).",
       "14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.",
       "20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.",
-      "17-ago-2026 (v9): Cambios de roster confirmados por el director. SALEN de Cocina: Guido Maldonado, Randol Joseph Payano, Tommy Nova Nolasco. ENTRAN a Cocina (titulares): Nelson Mariano Morales Aybar, Zahir Valoy, Cristopher Jiménez ('entran por los que salieron'; cocina sigue en 21). Backups de Guías (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar) ELIMINADOS (backups 3→0). 'Cesar Morales Mora' apareció en el formulario pero resultó ser Frank Morales (Asesor + Banderín) — mismo teléfono (809-710-1743), cumpleaños (11-jul) y apellido; el director confirmó que es la misma persona. Se fusionó en el registro de Frank (NO es asesor nuevo); asesores sigue en 3. Petra Yamina Morales llenó el formulario = la Asesora de Cocina 'Mary Petra Morales' (datos reales fusionados; sigue no operativa). Asesores de la comunidad de Santo Domingo ahora Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita). Total 56→53; operativos sigue 48. Fuente: formulario vivo (re-exportado 17-ago) + instrucción del director."
+      "17-ago-2026 (v9): Cambios de roster confirmados por el director. SALEN de Cocina: Guido Maldonado, Randol Joseph Payano, Tommy Nova Nolasco. ENTRAN a Cocina (titulares): Nelson Mariano Morales Aybar, Zahir Valoy, Cristopher Jiménez ('entran por los que salieron'; cocina sigue en 21). Backups de Guías (Kamila Todd, Rodolfo Telémaco, Scarlett Nivar) ELIMINADOS (backups 3→0). 'Cesar Morales Mora' apareció en el formulario pero resultó ser Frank Morales (Asesor + Banderín) — mismo teléfono (809-710-1743), cumpleaños (11-jul) y apellido; el director confirmó que es la misma persona. Se fusionó en el registro de Frank (NO es asesor nuevo); asesores sigue en 3. Petra Yamina Morales llenó el formulario = la Asesora de Cocina 'Mary Petra Morales' (datos reales fusionados; sigue no operativa). Asesores de la comunidad de Santo Domingo ahora Yraisa Álvarez y Manuel Almonte (reemplazan a Marleny y Sandrita). Total 56→53; operativos sigue 48. Fuente: formulario vivo (re-exportado 17-ago) + instrucción del director.",
+      "11-sep-2026 (v10): Mary Carmen Ramírez Vásquez SALE del equipo (decisión del director). Música baja de 6 a 5. Total 53→52, operativos 48→47. (Cambios de participantes —Amanda no asistió, etc.— viven en el directorio de trabajo, no en el roster del equipo.)"
     ],
     "pendientes": [
       "🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.",
@@ -2774,42 +2775,6 @@
       "transversal": false
     },
     {
-      "id": "mary-carmen-ram-rez-v-squez",
-      "nombre": "Mary Carmen Ramírez Vásquez",
-      "sexo": "F",
-      "edad": 27,
-      "cumple_mes": 8,
-      "cumple_dia": 29,
-      "cumple_anio": 1998,
-      "etc_propio": 73,
-      "etc_anio_propio": 2018,
-      "etcs_servidos": 2,
-      "residencia": "SPM",
-      "comunidad": "Betania",
-      "area": "musica",
-      "rol": "Música",
-      "talla": "M",
-      "telefono": "18296937582",
-      "que_espera": "Poder dar un poco de lo que tengo a los demás ",
-      "miedos": "Miedo escénico y a salir de mi zona de comfort ",
-      "tema_dios": "Creo que no ",
-      "invita": "Todavía no sé",
-      "idea_recaudacion": "Algún rally o actividad de comida ",
-      "alergias": "Ninguna ",
-      "condiciones": "Postquirurgica de la una corrección de escoliosis ",
-      "medicamentos": "Ninguna",
-      "contacto_emergencia": "Carmen Vasquez (madre) 829-313-3130, Haniel González (novio) 809-929-2042",
-      "palabra": "Seguridad",
-      "dudas": null,
-      "algo_directores": "No",
-      "invitados": [],
-      "sin_formulario": false,
-      "operativo": true,
-      "backup": false,
-      "vacante": false,
-      "transversal": false
-    },
-    {
       "id": "frank-morales",
       "nombre": "Frank Morales",
       "sexo": "M",
@@ -3302,9 +3267,9 @@
     {
       "n": 8,
       "bandera": "Cirugía reciente columna (escoliosis)",
-      "persona": "Jhonnalia + Mary Carmen",
+      "persona": "Jhonnalia",
       "accion": "No esfuerzo físico + ayuda para movilizar cosas",
-      "resp": "Coord. Guía / Coord. Música"
+      "resp": "Coord. Guía"
     },
     {
       "n": 9,
@@ -3316,7 +3281,7 @@
     {
       "n": 10,
       "bandera": "Timidez declarada — roles tras bastidores",
-      "persona": "Adrián, Risairi, Mary Carmen",
+      "persona": "Adrián, Risairi",
       "accion": "No exposición pública obligada",
       "resp": "Coordinadores"
     },
@@ -3672,14 +3637,10 @@
       },
       {
         "propuesta": "Venta de comida",
-        "menciones": 10
+        "menciones": 9
       },
       {
         "propuesta": "Noche de talento / karaoke / película",
-        "menciones": 4
-      },
-      {
-        "propuesta": "Actividad deportiva / rally / 5K",
         "menciones": 4
       },
       {
@@ -3688,6 +3649,10 @@
       },
       {
         "propuesta": "Bazar / venta de garaje",
+        "menciones": 3
+      },
+      {
+        "propuesta": "Actividad deportiva / rally / 5K",
         "menciones": 3
       },
       {
@@ -3865,10 +3830,6 @@
         "idea": "Actividad deportiva. \nNoche de películas. \nAunque no soy muy pro de las que se necesita vender boletos, hay que admitir que la última (rifa de PC) dio buenos resultados."
       },
       {
-        "persona": "Mary Carmen Ramírez Vásquez",
-        "idea": "Algún rally o actividad de comida"
-      },
-      {
         "persona": "Mary \"Petra\" Morales",
         "idea": "Reencuentro pasadia de Etecianos"
       }
@@ -3936,9 +3897,6 @@
       ],
       "Postoperatoria reciente": [
         "Jhonnalia Franchesca Silvestre Guzmán"
-      ],
-      "Postquirúrgica escoliosis": [
-        "Mary Carmen Ramírez Vásquez"
       ],
       "Pastillas presión": [
         "Maria del Carmen Mejías Mateo"
