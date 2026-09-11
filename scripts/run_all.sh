@@ -22,6 +22,11 @@ python scripts/build_trabajo.py
 python scripts/build_entrega_diseno.py
 python scripts/build_doc_trabajo_88.py
 python scripts/build_carpeta_docx.py
+# Cierre económico post-retiro (conciliación final)
+python scripts/build_conciliacion.py
+python scripts/build_conciliacion_docx.py
+python scripts/build_conciliacion_pptx.py
+python scripts/build_prompt_conciliacion.py
 echo "== Compuerta de verificación =="
 python scripts/verify.py
 echo "== Listo. Si dice TODO PASS, el sistema está coherente. =="

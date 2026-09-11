@@ -3,7 +3,7 @@
 > Generado desde `data/estado.json` + `data/equipo.json`. Todos los entregables se generan
 > de estas dos fuentes; `verify.py` bloquea cualquier desvío. Trazabilidad por construcción.
 
-**Resumen:** 55 confirmados · 11 propuestas · 7 pendientes (en estado.json).
+**Resumen:** 52 confirmados · 11 propuestas · 7 pendientes (en estado.json).
 
 ## Roster (data/equipo.json · generado del formulario)
 - Total 56 · operativos titulares 48 · vacantes 0 · backups 3.
@@ -24,12 +24,9 @@
 | `finanzas.casa_por_persona_con_exencion` | 2000 | director | Vía RNC de la parroquia del Padre Paul. Diferencia: $300/persona. |
 | `finanzas.casa_incluye` | gas y limpieza | director |  |
 | `finanzas.casa_tiene_sonido` | True | director | Música solo lleva equipo de respaldo. |
-| `finanzas.deuda_inicial` | 23600 | director | 10% de reserva de la casa (pagado 5-mar por Juan Manuel; ya le fue dev… |
-| `finanzas.cuota_participante` | 3000 | director · Presupuesto Maestro 14-jun-2026 | 1er + 2do pago. Cubre transporte/comida/casa/pez/biblia. NO cubre su c… |
+| `finanzas.cuota_participante` | 3500 | director · cierre económico 11-sep-2026 | Cuota final cobrada. El Presupuesto Maestro de junio la había fijado e… |
 | `finanzas.cuota_equipo` | {"total": 2000, "mensual": 500, "nota_plan_pago": "2,000 tot… | director · Presupuesto Maestro 14-jun-2026 | Confirmada en 2,000 (era propuesta 1,500–2,000). Cubre ensayo general … |
-| `finanzas.personas_casa_piso` | 100 | director | Piso fijado: completar 100 personas en la casa de retiro. |
-| `finanzas.meta_recaudacion_total` | 553622 | director · Presupuesto Maestro 14-jun-2026 | LADO A consolidado: subtotal operativo 503,293 + imprevistos 10% (50,3… |
-| `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubre con: cuotas de participa… |
+| `recaudacion.modelo` | cuotas + actividad de recaudación + venta de comida + donaci… | director | La meta = el costo total del retiro. Se cubrió con: cuotas de particip… |
 | `recaudacion.donaciones_responsable` | Directores (delegable) | director | Conseguir donaciones a empresas/particulares es responsabilidad de los… |
 | `marca.lema_eteciano` | Siempre amigos | asociación |  |
 | `marca.lema_retiro` | Donde está tu tesoro, allí estará tu corazón | director | Lema del retiro ETC 88 confirmado por el director (Mt 6,21). El retiro… |
@@ -99,7 +96,7 @@
 - Co-dirección: Juan Manuel de la Cruz y Jean Carlo de la Cruz.
 - Casa: $2,300/persona sin exención · $2,000/persona con exención (RNC parroquia del Padre Paul). Incluye gas y limpieza. Tiene sonido.
 - Deuda inicial: $23,600 al Consejo Eteciano (10% reserva que Juan Manuel adelantó y ya le fue devuelto).
-- Cuota de participante: $3,000.
+- Cuota de participante: RD$ 3,500 (la fijada en junio fue 3,000; subió antes del retiro).
 - Frank Morales es asesor (como Laura y Tomás) y además lleva el Banderín.
 - Padre Paul y Sor Angelina son Asesores Espirituales transversales (todo el proceso, no solo el retiro).
 - Apellido de Leober: Soriano.
@@ -131,21 +128,13 @@
 - 10-jun-2026: Biblias cotizadas. Librería Paulinas (Av. Bolívar 203 Gazcue, SD · 809-685-7542 · paulinasventasrd@gmail.com). Proforma 32397 (08-jun-2026, prep. Norberto, término 30 días). 50 × Biblia Latinoamericana bolsillo color a $800 c/u con 15% desc = $680 efectivo. Total $34,000.
 - 10-jun-2026: Pez ICTUS para participantes — referencia: Bronze Fish Pendant de Terra Sancta Guild en Amazon (B00VB37PIK). Costo y proveedor final pendiente.
 - 14-jun-2026: Presupuesto Maestro construido (Juan Manuel, Co-Dir.). Cifra TOTAL LADO A = RD$ 553,622 (reemplaza estimado previo 583,281). Subtotal operativo 503,293 + imprevistos 10% (50,329).
-- 14-jun-2026: Cuotas CONFIRMADAS: participante RD$ 3,000 (1er + 2do pago) · equipo RD$ 2,000.
+- 14-jun-2026: Cuotas CONFIRMADAS: participante RD$ 3,000 (1er + 2do pago) · equipo RD$ 2,000. [Superada: la cuota del participante subió a RD$ 3,500 antes del retiro; ver el cierre económico del 11-sep.]
 - 14-jun-2026: Target presupuestario 50 participantes (rango operativo 45–50). Cierra casa con 100 personas (50 part. + 50 equipo cubierto).
 - 14-jun-2026: Plan A de recaudación confirmado (caja objetivo 471,000 + especie 114,701). Margen proyectado +32,079 (cierre POSITIVO, no empatado · lección ETC 83).
 - 14-jun-2026: Caja registrada — Reserva casa 23,600 (depositada y devuelta el 7-jun) · Salón 10,000 (Juan Manuel pagó con dinero personal, deuda al grupo).
 - 14-jun-2026: Plan de Recaudación documentado en `data/presupuesto/ETC88_Analisis_y_Plan_de_Recaudacion.docx` + Maestro vivo en `data/presupuesto/ETC88_Presupuesto_Maestro.xlsx`.
 - 20-jun-2026: Backups de Cocina (15 personas — cantera) ELIMINADOS del repo por decisión del director. El equipo de cocina queda con sus 21 titulares + 2 asesoras cocina. Backups de Guías (3) se mantienen.
-- 11-sep-2026: Presupuesto OFICIAL del ETC 88 = Finanzas 11-Ago (596,249.56, costo completo con la tarifa real de la casa). El Sistem (512,859.56) queda como referencia operativa del panel. Conciliación final post-retiro generada por scripts/build_conciliacion.py (caja 515,944 · costo económico 615,809 · balance 36,543.40 → 34,337 en cuentas).
-- 11-sep-2026: Salón de formaciones (Santa Clara, 5 × 2,000 = 10,000, pagado el 07-jun en efectivo a Franklin Pozo con aporte personal de Juan Manuel): aporte YA REEMBOLSADO a Juan Manuel, deuda saldada. Participantes confirmados: 46 (156,800); los 4,200 pendientes = Karen Berroa 1,000 + Melany Ceverino 200 + Karen 2,500 + 500 de una de las 7 sin cifra. Pendiente: identificar de qué salida del ledger salió el reembolso del salón.
-- 11-sep-2026: Profondo liquidado por la comisión (Desglose_Ganancias_Actividad_Pro_Fondo.xlsx): bruto 154,420 (680.5 boletas pagadas × 200 = 136,100 + venta de comida y helados 18,320) − premios 19,900 (aire acondicionado 16,900 + abanico de torre 3,000) = 134,520; entregado a finanzas 135,866.40 (1,346.40 de helados posteriores al informe). Boletas colocadas no pagadas: 73.5 × 200 = 14,700 por cobrar. Efectivo de imprevistos 15,000: 5,000 a cocina en la casa de retiro; los 10,000 restantes = reembolso del salón [POR CONFIRMAR]. Cuotas: participante 3,500 · equipo 2,000.
-- 11-sep-2026: Confirmado: los 10,000 restantes del efectivo de imprevistos fueron el reembolso del salón de formaciones a Juan Manuel (efectivo 15,000 liquidado: 5,000 cocina + 10,000 salón). Los 4,200 de participantes son los pagos que faltaron para completar 3,500 (no se registran como cuenta por cobrar). Las 73.5 boletas del profondo sin pagar (14,700) NO se cobrarán. Costo del retiro 615,809 (caja 515,944 + cubierto sin pagar 99,865); base recurrente 599,809. Tesorería del 88: 3 roles (recibir, registrar, conciliar) + 1 rol de plataforma.
-- 11-sep-2026: Impresión de libretas (1,260) sumada a la especie → especie 92,405; costo del retiro 617,069. La diferencia con el banco (2,206.40) se desglosa en impuesto bancario por transacción (0.20% sobre los 1,068,431.40 movidos = 2,136.86) más copias pagadas (69.54); ninguna comisión de los directores. Participantes: no hay pagos pendientes; los 161,000 son referencia teórica (46 × 3,500) y cuatro pagaron menos. Cuotas del equipo: 98,000 = 49 × 2,000; no pagaron cuota el padre Paul, la sor, Petra y Johanny; los 3 guías de reserva no entran en el conteo.
-- 11-sep-2026: Cierre verificado nombre por nombre. No hay ningún pago a nombre de Amanda Rivera en ninguna fuente (solo figura como invitada en el formulario de junio); los únicos abonos de 500 de la lista de participantes son de Melany Ceverino y Erilis Polanco. Boris queda fuera de los 156,800 (neto 1,500 como donación de Jonathan Medina). Cristofer (Cristopher Jiménez) figuraba en 0 en junio pero los 21 de cocina cierran al 100%; de Dahiony no hay rastro en ninguna lista. Impuesto bancario confirmado en 0.20%. El sobrante de 34,337 se expondrá en la actividad de cierre (evaluación) para decidirlo con el equipo. Único pendiente: la nota en el acta de las 4 donaciones sin identificar (6,500).
-- 11-sep-2026: Son dos personas distintas: Cristopher Jiménez (cocina, sí pagó su cuota) y Cristofer (participante, no pagó). Al retiro fueron 48 participantes: 46 pagaron y 2 entraron sin cuota (Cristofer y Dahiony), 7,000 de cuota no recaudada. Los 99 de la casa = 48 participantes + 51 del equipo.
-- 11-sep-2026: Cristofer y Dahiony eran invitados de la sor Angelina y su exoneración de cuota estaba prevista desde el inicio; no son cuotas impagadas ni becas improvisadas. El retiro tuvo 48 participantes: 46 con cuota y 2 exonerados.
-- 11-sep-2026: Barrido de las 4 donaciones marcadas: Wilfrid (1,000) es gestión de Ivanna y Johan o Joan (3,500) fue confirmada por el director, las dos ubicadas; Yendry Rincón (1,000) está identificada y solo faltó la captura del comprobante. Queda UNA sin identificar: el depósito de 1,000 del 10/09, donación real cuyo autor nunca se ubicó. Texto de constancia redactado en el informe.
+- 11-sep-2026 · CIERRE ECONÓMICO DEL ETC 88. Presupuesto oficial: Finanzas 11-Ago (596,249.56). Entradas 552,487.40 · salidas de caja 515,944 · balance 36,543.40 → 34,337 en cuentas (la diferencia de 2,206.40 es el impuesto bancario del 0.20% sobre los 1,068,431.40 movidos, 2,136.86, más 69.54 de copias; ninguna comisión). El retiro costó 617,069: caja más 92,405 en especie y 8,720 en cortesías de la casa. Base recurrente para el ETC 89: 601,069. 99 personas en la casa = 48 participantes (46 con cuota de 3,500 y 2 invitados de la sor exonerados desde el inicio) + 51 del equipo. Cuotas del equipo 98,000 = 49 × 2,000; no pagaron cuota los cuatro asesores (el padre Paul, la sor, Petra y Johanny). Profondo: bruto 154,420 menos 19,900 de premios, entregados 135,866.40; las 14,700 en boletas no cobradas no se cobrarán. Efectivo de imprevistos liquidado (5,000 cocina + 10,000 reembolso del salón). Detalle completo en finanzas.cierre_economico y en los entregables. Único pendiente: la constancia en el acta de la donación de 1,000 sin dueño y de la de Yendry Rincón sin captura.
 
 ## Pendientes y decisiones por cerrar (lista del director)
 - [ ] 🚩 Verificar avanzada con Cocina (cuántas personas jue/vie 3-sep · hospedaje + 3 comidas). Hoy el LADO A tiene 0 ahí — subestima el total.

@@ -47,6 +47,10 @@ python scripts/build_cantera.py     # → Cantera_ETC88.xlsx (maqueta: padrinos 
 python scripts/build_captacion.py   # → /tmp/drive_captacion.csv (tracker de participantes, desde data/participantes.json)
 python scripts/build_web.py         # → web/*.csv + web/tablero_offline.html (tablero: vivo/snapshot + autocontenido para compartir privado; ver web/LEEME.md)
 python scripts/build_drive.py      # → /tmp/drive_*.txt|.csv (versiones LIMPIAS para Drive)
+python scripts/build_conciliacion.py      # → data/presupuesto/Conciliacion_Final_ETC88.xlsx (cierre económico, 14 hojas)
+python scripts/build_conciliacion_docx.py # → data/presupuesto/Informe_Economico_ETC88.docx (informe narrativo)
+python scripts/build_conciliacion_pptx.py # → data/presupuesto/Conciliacion_ETC88_Presentacion.pptx (12 láminas)
+python scripts/build_prompt_conciliacion.py # → entrega_diseno/PROMPT_CLAUDE_DESIGN_CONCILIACION_88.md (contenido para Claude Design)
 python scripts/verify.py           # COMPUERTA — debe imprimir TODO PASS
 ```
 
@@ -62,6 +66,19 @@ Para Drive: subir `/tmp/drive_asesores.txt` y `/tmp/drive_carpeta.txt` como `tex
 - Carpeta de Drive: **"ETC 88 · ENTREGABLES (oficial)"**.
 
 Todo lo demás (`preparacion/`) es **DOCUMENTO DE TRABAJO**, no entregable.
+
+## Cierre económico (post-retiro · 11-sep-2026)
+El retiro ya se vivió. Las cifras finales viven en **`data/estado.json → finanzas.cierre_economico`**
+(fuente única) y se renderizan en cuatro entregables generados, en `data/presupuesto/`:
+`Conciliacion_Final_ETC88.xlsx` (14 hojas) · `Informe_Economico_ETC88.docx` (informe narrativo) ·
+`Conciliacion_ETC88_Presentacion.pptx` (12 láminas) · y el contenido para Claude Design en
+`entrega_diseno/PROMPT_CLAUDE_DESIGN_CONCILIACION_88.md`.
+
+Los cuatro salen de `scripts/build_conciliacion.py`, que además corre **36 verificaciones numéricas**
+al generar (todas deben cuadrar). Los bloques de planificación de junio (`meta_recaudacion_total`,
+`plan_recaudacion`, `participantes_objetivo`, `personas_casa_piso`, `caja`) quedan marcados como
+**histórico (pre-retiro)**: no se usan como cifra vigente. Si algo del cierre cambia, se corrige
+el dato en el script o en `estado.json` y se regenera — nunca el documento de salida (regla #2).
 
 ## Las 5 reglas (continuación) — Regla #6
 6. **Nunca inferir rol desde formulario.** Una respuesta de formulario (p. ej. col 18 "¿qué
