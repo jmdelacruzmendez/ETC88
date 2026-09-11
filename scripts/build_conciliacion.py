@@ -374,8 +374,8 @@ CRUCE_PAGADO = sum(p for _,_,_,_,p,_,_ in cruce)
 CRUCE_DONADO = sum(d for _,_,_,_,_,d,_ in cruce)
 assert CRUCE_PAGADO == 515944, f"cruce pagado={CRUCE_PAGADO} ≠ 515,944"
 assert abs(CRUCE_DONADO - ESPECIE_TOTAL - CORTESIA_JUEVES) < 1, f"cruce donado={CRUCE_DONADO}"
-OFICINA_EXTRA = OFICINA_REAL - 2300                 # 3,006.11 asumidos por directores sobre lo valorado
-COSTO_ECON = SALIDAS + ESPECIE_TOTAL + CORTESIA_JUEVES + OFICINA_EXTRA   # firme
+OFICINA_EXTRA = OFICINA_REAL - 2300                 # 3,006.11 asumidos por directores sobre lo valorado: SOLO INFORMATIVO, no suma (instrucción del director)
+COSTO_ECON = SALIDAS + ESPECIE_TOTAL + CORTESIA_JUEVES   # firme (oficina valorada a ppto 2,300 dentro de especie)
 PERSONAS = 97
 
 # ────── 8. CRUCE POR PARTIDA ──────
@@ -417,13 +417,13 @@ for label, val, nota in [
     ('Salidas de caja', SALIDAS, ''),
     ('+ Donaciones en especie (a valor de presupuesto)', ESPECIE_TOTAL, 'peces, decoración, guías, cocina, oficina, música'),
     ('+ Cortesía de la casa: 8 pers del jueves sin cobro', CORTESIA_JUEVES, '8 × 500'),
-    ('+ Oficina: costo real sobre lo valorado (asumido por directores)', OFICINA_EXTRA, '5,306.11 − 2,300'),
 ]:
     ws9.cell(r,1,label).font = font(10); money(ws9,r,2,val); ws9.cell(r,3,nota).font = font(9, color='888888'); r += 1
 ws9.cell(r,1,'= COSTO ECONÓMICO FIRME').font = font(11, True); money(ws9,r,2,COSTO_ECON).font = font(11, True)
 for cc in range(1,3): ws9.cell(r,cc).fill = fill('E3F2FD')
 r += 1
-ws9.cell(r,1,'   + no cuantificado: local de formaciones si fue exonerado (ppto 10,000) · costos del profondo (premio/abanico, boletos)').font = font(9, color=AMBAR); r += 2
+ws9.cell(r,1,'   + no cuantificado: local de formaciones si fue exonerado (ppto 10,000) · costos del profondo (premio/abanico, boletos)').font = font(9, color=AMBAR); r += 1
+ws9.cell(r,1,f'   + solo informativo (no suma, por instrucción del director): oficina costó realmente {OFICINA_REAL:,.2f} vs 2,300 valorados → {OFICINA_EXTRA:,.2f} asumidos por los directores').font = font(9, color=AMBAR); r += 2
 ws9.cell(r,1,'C · POR QUÉ NOS COSTÓ MENOS DE LO QUE VALE').font = font(12, True, VERDE); r += 1
 ws9.cell(r,1,'Valor recibido sin pagar (especie + cortesías)').font = font(10); money(ws9,r,2,COSTO_ECON - SALIDAS); ws9.cell(r,3,f'{(COSTO_ECON-SALIDAS)/COSTO_ECON*100:.1f}% del costo económico').font = font(9, color='888888'); r += 2
 ws9.cell(r,1,'D · POR PERSONA (97 en la casa)').font = font(12, True, MAR); r += 1
